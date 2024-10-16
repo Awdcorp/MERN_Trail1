@@ -52,8 +52,8 @@ function ShoppingHome() {
   const { productList, productDetails } = useSelector(
     (state) => state.shopProducts
   );
-  const { featureImageList } = useSelector((state) => state.commonFeature);
-
+  //const { featureImageList } = useSelector((state) => state.commonFeature);
+  const featureImageList = [bannerOne, bannerTwo, bannerThree];
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
 
   const { user } = useSelector((state) => state.auth);
@@ -126,7 +126,7 @@ function ShoppingHome() {
         {featureImageList && featureImageList.length > 0
           ? featureImageList.map((slide, index) => (
               <img
-                src={slide?.image}
+                src={slide}
                 key={index}
                 className={`${
                   index === currentSlide ? "opacity-100" : "opacity-0"
