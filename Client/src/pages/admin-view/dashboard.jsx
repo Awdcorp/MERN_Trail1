@@ -1,6 +1,6 @@
 import ProductImageUpload from "@/components/admin-view/image-upload";
 import { Button } from "@/components/ui/button";
-import { addFeatureImage, getFeatureImages } from "@/store/common-slice";
+import { addFeatureImage, getFeatureImages, deleteFeatureImage } from "@/store/common-slice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,6 +14,7 @@ function AdminDashboard() {
   console.log(uploadedImageUrl, "uploadedImageUrl");
 
   function handleUploadFeatureImage() {
+    if (!uploadedImageUrl) return; // No image to upload
     dispatch(addFeatureImage(uploadedImageUrl)).then((data) => {
       if (data?.payload?.success) {
         dispatch(getFeatureImages());
@@ -22,6 +23,19 @@ function AdminDashboard() {
       }
     });
   }
+
+  // Delete feature image handler
+  const handleDeleteImage = (imageId) => {
+    if (!imageId) return; // No ID provided
+    dispatch(deleteFeatureImage(imageId)).then((data) => {
+      if (data?.payload?.success) {
+        console.log("Image deleted successfully");
+        dispatch(getFeatureImages()); // Refresh the image list after deletion
+      } else {
+        console.error("Failed to delete image");
+      }
+    });
+  };
 
   useEffect(() => {
     dispatch(getFeatureImages());
@@ -52,6 +66,13 @@ function AdminDashboard() {
                   src={featureImgItem.image}
                   className="w-full h-[300px] object-cover rounded-t-lg"
                 />
+                {/* Delete Button */}
+                <Button
+                  className="absolute top-2 right-2 bg-red-500 text-white"
+                  onClick={() => handleDeleteImage(featureImgItem._id)} // Assume featureImgItem has an `id`
+                >
+                  Delete
+                </Button>
               </div>
             ))
           : null}

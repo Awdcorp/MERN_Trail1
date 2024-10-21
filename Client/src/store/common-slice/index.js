@@ -29,6 +29,17 @@ export const addFeatureImage = createAsyncThunk(
   }
 );
 
+// New deleteFeatureImage action
+export const deleteFeatureImage = createAsyncThunk(
+  "order/deleteFeatureImage", // Corrected action type
+  async (id) => {
+    const response = await axios.delete(
+      `http://localhost:5000/api/common/feature/images/${id}`
+    );
+    return response.data;
+  }
+);
+
 const commonSlice = createSlice({
   name: "commonSlice",
   initialState,
@@ -45,6 +56,12 @@ const commonSlice = createSlice({
       .addCase(getFeatureImages.rejected, (state) => {
         state.isLoading = false;
         state.featureImageList = [];
+      })
+      .addCase(deleteFeatureImage.fulfilled, (state, action) => {
+        // Remove the deleted image from the state
+        state.featureImageList = state.featureImageList.filter(
+          (image) => image._id !== action.payload.data._id
+        );
       });
   },
 });
