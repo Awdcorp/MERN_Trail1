@@ -8,6 +8,8 @@ function AdminDashboard() {
   const [imageFile, setImageFile] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
   const [imageLoadingState, setImageLoadingState] = useState(false);
+  const [selectedImages, setSelectedImages] = useState([]); // Added selectedImages state
+  const [isEditMode, setIsEditMode] = useState(false); // Add isEditMode state
   const dispatch = useDispatch();
   const { featureImageList } = useSelector((state) => state.commonFeature);
 
@@ -37,6 +39,34 @@ function AdminDashboard() {
     });
   };
 
+  // Toggle image selection
+  const handleImageSelect = (imageId) => {
+    if (selectedImages.includes(imageId)) {
+      setSelectedImages(selectedImages.filter((id) => id !== imageId));
+    } else {
+      setSelectedImages([...selectedImages, imageId]);
+    }
+  };
+
+  // Bulk delete handler
+  const handleDeleteSelectedImages = () => {
+    if (selectedImages.length === 0) return; // No images selected
+
+    selectedImages.forEach((imageId) => {
+      dispatch(deleteFeatureImage(imageId)).then((data) => {
+        if (data?.payload?.success) {
+          console.log("Image deleted successfully");
+        } else {
+          console.error("Failed to delete image");
+        }
+      });
+    });
+
+    // Clear selected images and refresh the list
+    setSelectedImages([]);
+    dispatch(getFeatureImages());
+  };
+
   useEffect(() => {
     dispatch(getFeatureImages());
   }, [dispatch]);
@@ -58,14 +88,46 @@ function AdminDashboard() {
       <Button onClick={handleUploadFeatureImage} className="mt-5 w-full">
         Upload
       </Button>
+
+      {/* Edit Mode Toggle Button */}
+      <Button
+        onClick={() => setIsEditMode(!isEditMode)}
+        className="mt-5 w-full bg-blue-500 text-white"
+      >
+        {isEditMode ? "Exit Edit Mode" : "Enter Edit Mode"}
+      </Button>
+
+      {isEditMode && selectedImages.length > 0 && (
+        <Button
+          onClick={handleDeleteSelectedImages}
+          className="mt-5 w-full bg-red-500 text-white"
+        >
+          Delete Selected Images
+        </Button>
+      )}
+
       <div className="flex flex-col gap-4 mt-5">
         {featureImageList && featureImageList.length > 0
           ? featureImageList.map((featureImgItem) => (
               <div className="relative">
                 <img
                   src={featureImgItem.image}
-                  className="w-full h-[300px] object-cover rounded-t-lg"
+                  className={`w-full h-[300px] object-cover rounded-t-lg cursor-pointer ${
+                    isEditMode && selectedImages.includes(featureImgItem._id)
+                      ? "border-4 border-blue-500 opacity-70"
+                      : "border-4 border-transparent"
+                  }`}
+                  onClick={() => isEditMode && handleImageSelect(featureImgItem._id)} // Only selectable in edit mode
                 />
+                {/* Conditionally render the checkbox based on isEditMode */}
+                {isEditMode && (
+                  <input
+                    type="checkbox"
+                    className="absolute top-2 left-2"
+                    checked={selectedImages.includes(featureImgItem._id)}
+                    onChange={() => handleImageSelect(featureImgItem._id)}
+                  />
+                )}
                 {/* Delete Button */}
                 <Button
                   className="absolute top-2 right-2 bg-red-500 text-white"
