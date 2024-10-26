@@ -27,6 +27,6 @@ const store = configureStore({
 
     commonFeature: commonFeatureSlice,
   },
-});
+});//for update
 
 export default store;
