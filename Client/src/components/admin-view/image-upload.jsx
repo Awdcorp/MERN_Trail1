@@ -18,14 +18,12 @@ function ProductImageUpload({
 }) {
   const inputRef = useRef(null);
 
-  console.log(isEditMode, "isEditMode");
-
   function handleImageFileChange(event) {
-    console.log(event.target.files, "event.target.files");
     const selectedFile = event.target.files?.[0];
-    console.log(selectedFile);
-
-    if (selectedFile) setImageFile(selectedFile);
+    if (selectedFile) {
+      setImageFile(selectedFile);
+      setUploadedImageUrl(""); // Clear the uploaded image URL when a new file is selected
+    }
   }
 
   function handleDragOver(event) {
@@ -35,11 +33,15 @@ function ProductImageUpload({
   function handleDrop(event) {
     event.preventDefault();
     const droppedFile = event.dataTransfer.files?.[0];
-    if (droppedFile) setImageFile(droppedFile);
+    if (droppedFile) {
+      setImageFile(droppedFile);
+      setUploadedImageUrl(""); // Clear the uploaded image URL when a new file is dropped
+    }
   }
 
   function handleRemoveImage() {
     setImageFile(null);
+    setUploadedImageUrl("");
     if (inputRef.current) {
       inputRef.current.value = "";
     }
@@ -53,12 +55,11 @@ function ProductImageUpload({
       `${import.meta.env.VITE_API_URL}/api/admin/products/upload-image`,
       data
     );
-    console.log(response, "response");
 
     if (response?.data?.success) {
       setUploadedImageUrl(response.data.result.url);
-      setImageLoadingState(false);
     }
+    setImageLoadingState(false);
   }
 
   useEffect(() => {
@@ -67,15 +68,13 @@ function ProductImageUpload({
 
   return (
     <div
-      className={`w-full  mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}
+      className={`w-full mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}
     >
       <Label className="text-lg font-semibold mb-2 block">Upload Image</Label>
       <div
         onDragOver={handleDragOver}
         onDrop={handleDrop}
-        className={`${
-          isEditMode ? "opacity-60" : ""
-        } border-2 border-dashed rounded-lg p-4`}
+        className={`border-2 border-dashed rounded-lg p-4`}
       >
         <Input
           id="image-upload"
@@ -83,14 +82,11 @@ function ProductImageUpload({
           className="hidden"
           ref={inputRef}
           onChange={handleImageFileChange}
-          disabled={isEditMode}
         />
-        {!imageFile ? (
+        {!imageFile && !uploadedImageUrl ? (
           <Label
             htmlFor="image-upload"
-            className={`${
-              isEditMode ? "cursor-not-allowed" : ""
-            } flex flex-col items-center justify-center h-32 cursor-pointer`}
+            className="flex flex-col items-center justify-center h-32 cursor-pointer"
           >
             <UploadCloudIcon className="w-10 h-10 text-muted-foreground mb-2" />
             <span>Drag & drop or click to upload image</span>
@@ -99,10 +95,16 @@ function ProductImageUpload({
           <Skeleton className="h-10 bg-gray-100" />
         ) : (
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <FileIcon className="w-8 text-primary mr-2 h-8" />
-            </div>
-            <p className="text-sm font-medium">{imageFile.name}</p>
+            {uploadedImageUrl && (
+              <img
+                src={uploadedImageUrl}
+                alt="Uploaded Preview"
+                className="w-16 h-16 object-cover rounded mr-2"
+              />
+            )}
+            <p className="text-sm font-medium">
+              {imageFile?.name || "Current Image"}
+            </p>
             <Button
               variant="ghost"
               size="icon"

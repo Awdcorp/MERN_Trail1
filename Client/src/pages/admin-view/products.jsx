@@ -20,7 +20,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const initialFormData = {
-  image: null,
+  image: "",
   title: "",
   description: "",
   category: "",
@@ -47,36 +47,31 @@ function AdminProducts() {
   function onSubmit(event) {
     event.preventDefault();
 
+    const updatedFormData = {
+      ...formData,
+      image: uploadedImageUrl || "", // Use uploaded image URL if available
+    };
+
     currentEditedId !== null
       ? dispatch(
           editProduct({
             id: currentEditedId,
-            formData,
+            formData: updatedFormData,
           })
         ).then((data) => {
-          console.log(data, "edit");
-
           if (data?.payload?.success) {
             dispatch(fetchAllProducts());
-            setFormData(initialFormData);
-            setOpenCreateProductsDialog(false);
-            setCurrentEditedId(null);
+            resetForm();
+            toast({ title: "Product updated successfully" });
           }
         })
       : dispatch(
-          addNewProduct({
-            ...formData,
-            image: uploadedImageUrl,
-          })
+          addNewProduct(updatedFormData)
         ).then((data) => {
           if (data?.payload?.success) {
             dispatch(fetchAllProducts());
-            setOpenCreateProductsDialog(false);
-            setImageFile(null);
-            setFormData(initialFormData);
-            toast({
-              title: "Product add successfully",
-            });
+            resetForm();
+            toast({ title: "Product added successfully" });
           }
         });
   }
@@ -85,6 +80,7 @@ function AdminProducts() {
     dispatch(deleteProduct(getCurrentProductId)).then((data) => {
       if (data?.payload?.success) {
         dispatch(fetchAllProducts());
+        toast({ title: "Product deleted successfully" });
       }
     });
   }
@@ -96,11 +92,18 @@ function AdminProducts() {
       .every((item) => item);
   }
 
+  function resetForm() {
+    setFormData(initialFormData);
+    setUploadedImageUrl("");
+    setImageFile(null);
+    setImageLoadingState(false);
+    setCurrentEditedId(null);
+    setOpenCreateProductsDialog(false);
+  }
+
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, [dispatch]);
-
-  console.log(formData, "productList");
 
   return (
     <Fragment>
@@ -113,7 +116,23 @@ function AdminProducts() {
         {productList && productList.length > 0
           ? productList.map((productItem) => (
               <AdminProductTile
-                setFormData={setFormData}
+                key={productItem.id}
+                setFormData={(data) => {
+                  setFormData({
+                    title: productItem.title,
+                    description: productItem.description,
+                    category: productItem.category,
+                    brand: productItem.brand,
+                    price: productItem.price,
+                    salePrice: productItem.salePrice,
+                    totalStock: productItem.totalStock,
+                    averageReview: productItem.averageReview,
+                    image: productItem.image,
+                  });
+                  setUploadedImageUrl(productItem.image); // Set the existing image URL
+                  //setCurrentEditedId(productItem.id);
+                  //setOpenCreateProductsDialog(true);
+                }}
                 setOpenCreateProductsDialog={setOpenCreateProductsDialog}
                 setCurrentEditedId={setCurrentEditedId}
                 product={productItem}
@@ -124,10 +143,8 @@ function AdminProducts() {
       </div>
       <Sheet
         open={openCreateProductsDialog}
-        onOpenChange={() => {
-          setOpenCreateProductsDialog(false);
-          setCurrentEditedId(null);
-          setFormData(initialFormData);
+        onOpenChange={(isOpen) => {
+          if (!isOpen) resetForm();
         }}
       >
         <SheetContent side="right" className="overflow-auto">
@@ -138,7 +155,10 @@ function AdminProducts() {
           </SheetHeader>
           <ProductImageUpload
             imageFile={imageFile}
-            setImageFile={setImageFile}
+            setImageFile={(file) => {
+              setImageFile(file);
+              setUploadedImageUrl(""); // Clear old URL when new file is uploaded
+            }}
             uploadedImageUrl={uploadedImageUrl}
             setUploadedImageUrl={setUploadedImageUrl}
             setImageLoadingState={setImageLoadingState}
