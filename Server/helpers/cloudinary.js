@@ -8,15 +8,23 @@ cloudinary.config({
 });
 
 const storage = new multer.memoryStorage();
-
-async function imageUploadUtil(file) {
-  const result = await cloudinary.uploader.upload(file, {
-    resource_type: "auto",
-  });
-
-  return result;
-}
-
 const upload = multer({ storage });
 
-module.exports = { upload, imageUploadUtil };
+// ✅ Upload **multiple** images to Cloudinary under `/products/`
+async function uploadMultipleImages(files) {
+  const uploadPromises = files.map(async (file) => {
+    const b64 = Buffer.from(file.buffer).toString("base64");
+    const url = "data:" + file.mimetype + ";base64," + b64;
+
+    const result = await cloudinary.uploader.upload(url, {
+      folder: "products", // 📁 Store images inside 'products/' folder
+      resource_type: "image",
+    });
+
+    return result.secure_url; // Return only the image URL
+  });
+
+  return Promise.all(uploadPromises);
+}
+
+module.exports = { upload, uploadMultipleImages };

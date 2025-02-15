@@ -1,5 +1,6 @@
 import ProductImageUpload from "@/components/admin-view/image-upload";
 import AdminProductTile from "@/components/admin-view/product-tile";
+import ProductList from "@/components/admin-view/productList";
 import CommonForm from "@/components/common/form";
 import { Button } from "@/components/ui/button";
 import {
@@ -112,6 +113,11 @@ function AdminProducts() {
           Add New Product
         </Button>
       </div>
+      <div>
+      <h1>Products Management</h1>
+      <ProductList /> {/* Ensure this is here */}
+      <h1>Products Management End</h1>
+    </div>
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
         {productList && productList.length > 0
           ? productList.map((productItem) => (
