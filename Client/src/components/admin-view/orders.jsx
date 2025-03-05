@@ -2,58 +2,44 @@ import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Dialog } from "../ui/dialog";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../ui/table";
 import AdminOrderDetailsView from "./order-details";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAllOrdersForAdmin,
+  getOrderDetailsForAdmin,
+  resetOrderDetails,
+} from "@/store/admin/order-slice";
 import { Badge } from "../ui/badge";
-import axios from "axios";
-
-// Use environment variables for WooCommerce API
-const API_URL = `${import.meta.env.VITE_WC_API}/orders`;
-const CONSUMER_KEY = import.meta.env.VITE_WC_KEY;
-const CONSUMER_SECRET = import.meta.env.VITE_WC_SECRET;
 
 function AdminOrdersView() {
-  const [orderList, setOrderList] = useState([]);
-  const [orderDetails, setOrderDetails] = useState(null);
+  const { orderList, orderDetails } = useSelector((state) => state.adminOrder);
+  const dispatch = useDispatch();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState(null);
 
-  // Fetch Orders from WooCommerce API
-  useEffect(() => {
-    async function fetchOrders() {
-      try {
-        const response = await axios.get(API_URL, {
-          auth: {
-            username: CONSUMER_KEY,
-            password: CONSUMER_SECRET,
-          },
-        });
+  console.log(orderList, "orderList");
 
-        console.log("WooCommerce Orders API Response:", response.data); // Debugging log
-        setOrderList(response.data);
-      } catch (error) {
-        console.error("Error fetching orders:", error);
-      }
-    }
-    fetchOrders();
-  }, []);
+  function handleFetchOrderDetails(getId) {
+    console.log(`Fetching details for Order ID: ${getId}`);
 
-  // Fetch Order Details
-  async function handleFetchOrderDetails(orderId) {
-    try {
-      const response = await axios.get(`${API_URL}/${orderId}`, {
-        auth: {
-          username: CONSUMER_KEY,
-          password: CONSUMER_SECRET,
-        },
-      });
+    // ✅ Store the selected order ID before fetching details
+    setSelectedOrder(getId);
+    setOpenDetailsDialog(true);
 
-      console.log("WooCommerce Order Details API Response:", response.data); // Debugging log
-      setOrderDetails(response.data);
-      setOpenDetailsDialog(true);
-    } catch (error) {
-      console.error("Error fetching order details:", error);
-    }
+    dispatch(getOrderDetailsForAdmin(getId));
   }
+
+  useEffect(() => {
+    dispatch(getAllOrdersForAdmin());
+  }, [dispatch]);
 
   return (
     <Card>
@@ -67,42 +53,54 @@ function AdminOrdersView() {
               <TableHead>Order ID</TableHead>
               <TableHead>Order Date</TableHead>
               <TableHead>Order Status</TableHead>
-              <TableHead>Order Total</TableHead>
+              <TableHead>Order Price</TableHead>
               <TableHead>
                 <span className="sr-only">Details</span>
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {orderList.length > 0 ? (
-              orderList.map((order) => (
-                <TableRow key={order.id}>
-                  <TableCell>{order.id}</TableCell>
-                  <TableCell>{new Date(order.date_created).toLocaleDateString()}</TableCell>
+            {orderList && orderList.length > 0 ? (
+              orderList.map((orderItem) => (
+                <TableRow key={orderItem?._id}>
+                  <TableCell>{orderItem?.wc_order_id || "N/A"}</TableCell>
                   <TableCell>
-                    <Badge>{order.status}</Badge>
+                    {orderItem?.order_date
+                      ? new Date(orderItem?.order_date).toLocaleDateString()
+                      : "No Date"}
                   </TableCell>
-                  <TableCell>${order.total}</TableCell>
                   <TableCell>
-                    <Button onClick={() => handleFetchOrderDetails(order.id)}>View</Button>
+                    <Badge className={`py-1 px-3 ${orderItem?.order_status}`}>
+                      {orderItem?.order_status || "Pending"}
+                    </Badge>
+                  </TableCell>
+                  <TableCell>${orderItem?.total_amount || "0.00"}</TableCell>
+                  <TableCell>
+                    <Dialog
+                      open={openDetailsDialog && selectedOrder === orderItem?._id}
+                      onOpenChange={(isOpen) => {
+                        setOpenDetailsDialog(isOpen);
+                        if (!isOpen) dispatch(resetOrderDetails());
+                      }}
+                    >
+                      <Button onClick={() => handleFetchOrderDetails(orderItem?._id)}>
+                        View Details
+                      </Button>
+                      <AdminOrderDetailsView orderDetails={orderDetails} />
+                    </Dialog>
                   </TableCell>
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan="5">No orders found</TableCell>
+                <TableCell colSpan="5" className="text-center">
+                  No Orders Found
+                </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </CardContent>
-
-      {/* Order Details Dialog */}
-      {orderDetails && (
-        <Dialog open={openDetailsDialog} onOpenChange={setOpenDetailsDialog}>
-          <AdminOrderDetailsView orderDetails={orderDetails} />
-        </Dialog>
-      )}
     </Card>
   );
 }

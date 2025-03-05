@@ -1,15 +1,10 @@
 const express = require("express");
-
-const {
-  getAllOrdersOfAllUsers,
-  getOrderDetailsForAdmin,
-  updateOrderStatus,
-} = require("../../controllers/admin/order-controller");
-
 const router = express.Router();
+const { getAllOrdersForAdmin, getOrderDetailsForAdmin } = require("../../controllers/admin/order-controller");
 
-router.get("/get", getAllOrdersOfAllUsers);
+// Route to fetch WooCommerce orders and store in MongoDB
+router.get("/get", getAllOrdersForAdmin);
+// Fetch single order details
 router.get("/details/:id", getOrderDetailsForAdmin);
-router.put("/update/:id", updateOrderStatus);
-
 module.exports = router;
+  
