@@ -18,7 +18,7 @@ function ProductFilter({ filters, handleFilter }) {
       <div key={cat._id} style={{ marginLeft: `${level * 16}px` }}>
         <Label className="flex items-center gap-2">
           <Checkbox
-            checked={filters?.category?.includes(cat._id)}
+            checked={!!filters?.category?.includes(cat._id)}
             onCheckedChange={(checked) =>
               handleFilter("category", cat._id, checked)
             }
