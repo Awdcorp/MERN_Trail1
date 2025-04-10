@@ -56,6 +56,7 @@ app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/categories", categoryRoutes);
+app.use("/api/products", require("./routes/common/product-routes"));
 
 app.use("/api/common/feature", commonFeatureRouter);
 

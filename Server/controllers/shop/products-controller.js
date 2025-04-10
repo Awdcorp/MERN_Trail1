@@ -40,7 +40,7 @@ const getFilteredProducts = async (req, res) => {
         break;
     }
 
-    const products = await Product.find(filters).sort(sort);
+    const products = await Product.find(filters).sort(sort).populate("categories", "name slug");
 
     res.status(200).json({
       success: true,
