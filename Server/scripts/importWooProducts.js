@@ -48,27 +48,23 @@ async function uploadImageToCloudinary(originalUrl) {
 }
 
 async function findOrCreateCategory(wpCategory, allCats, parent = null) {
-    // Try to find existing by slug OR name (handle older imports)
-    let existing = allCats.find((c) =>
-      c.slug === wpCategory.slug || c.name.toLowerCase() === wpCategory.name.toLowerCase()
-    );
-    if (existing) return existing;
-  
-    // If not found, create a new category
-    const newCat = await Category.create({
-      name: wpCategory.name,
-      slug: wpCategory.slug,
-      parent: parent ? parent._id : null,
-    });
-  
-    allCats.push(newCat); // Add to in-memory cache
-    return newCat;
-  }
-  
+  let existing = allCats.find((c) =>
+    c.slug === wpCategory.slug || c.name.toLowerCase() === wpCategory.name.toLowerCase()
+  );
+  if (existing) return existing;
+
+  const newCat = await Category.create({
+    name: wpCategory.name,
+    slug: wpCategory.slug,
+    parent: parent ? parent._id : null,
+  });
+
+  allCats.push(newCat);
+  return newCat;
+}
 
 async function getFullCategoryChain(wpCat, wpAllCats, dbAllCats) {
   const chain = [];
-
   let currentCat = wpCat;
   let parentCat = null;
 
@@ -99,55 +95,62 @@ async function importProducts() {
   const dbAllCategories = await Category.find().lean();
 
   for (const wp of wpProducts) {
-    const baseSlug = slugify(wp.name || `product-${wp.id}`, {
-      lower: true,
-      strict: true,
-    });
-  
-    // Build full category chain
+    const baseSlug = slugify(wp.name || `product-${wp.id}`, { lower: true, strict: true });
+
     const categoryIds = new Set();
     for (const wpCat of wp.categories || []) {
       const chain = await getFullCategoryChain(wpCat, wpAllCategories, dbAllCategories);
       chain.forEach((cat) => categoryIds.add(cat._id.toString()));
     }
-  
-    const image = wp.images?.[0]?.src
-      ? await uploadImageToCloudinary(wp.images[0].src)
-      : null;
-  
+
+    const image = wp.images?.[0]?.src ? await uploadImageToCloudinary(wp.images[0].src) : null;
+
+    const metaMap = Object.fromEntries(wp.meta_data.map((m) => [m.key, m.value]));
+
     const productData = {
       externalId: wp.id,
       title: wp.name,
       slug: baseSlug,
       description: wp.description || "",
+      shortDescription: wp.short_description || "",
+
       sku: wp.sku || null,
       weight: wp.weight ? parseFloat(wp.weight) : null,
-      isFeatured: wp.tags.some((tag) =>
-        tag.name.toLowerCase().includes("featured")
-      ),
-      isActive: wp.stock_status === "instock", // ✅ status from Woo
+      isActive: wp.stock_status === "instock",
+      isFeatured: wp.tags.some((tag) => tag.name.toLowerCase().includes("featured")),
+
       categories: Array.from(categoryIds),
       tags: wp.tags.map((tag) => tag.name),
-      brand:
-        wp.attributes?.find(
-          (attr) => attr.name.toLowerCase() === "brand"
-        )?.options?.[0] || null,
+      brand: wp.attributes?.find(attr => attr.name.toLowerCase() === "brand")?.options?.[0] || null,
+
       price: parseFloat(wp.regular_price || "0"),
       salePrice: parseFloat(wp.sale_price || "0"),
-      totalStock: wp.manage_stock ? wp.stock_quantity || 0 : 9999, // ✅ stock fix
+      totalStock: wp.manage_stock ? wp.stock_quantity || 0 : 9999,
+
       images: image ? [image] : [],
       variants: [],
+
+      attributes: wp.attributes?.map(attr => ({ name: attr.name, options: attr.options })) || [],
+      upsellProductIds: wp.upsell_ids || [],
+      relatedProductIds: wp.related_ids || [],
+
+      seo: {
+        metaTitle: metaMap["rank_math_title"] || "",
+        metaDescription: metaMap["rank_math_description"] || "",
+        focusKeyword: metaMap["rank_math_focus_keyword"] || "",
+      },
+
+      meta: wp.meta_data || [],
     };
-  
+
     const updatedOrInserted = await Product.findOneAndUpdate(
       { $or: [{ externalId: wp.id }, { slug: baseSlug }] },
       { $set: productData },
       { new: true, upsert: true }
     );
-  
+
     console.log(`✅ Updated or Inserted: ${updatedOrInserted.title}`);
   }
-  
 
   console.log("🎉 Import complete.");
   process.exit(0);

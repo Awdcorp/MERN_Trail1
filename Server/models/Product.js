@@ -7,6 +7,11 @@ const VariantSchema = new mongoose.Schema({
   stock: Number,
 });
 
+const AttributeSchema = new mongoose.Schema({
+  name: String,
+  options: [String],
+});
+
 const ProductSchema = new mongoose.Schema(
   {
     title: String,
@@ -17,11 +22,12 @@ const ProductSchema = new mongoose.Schema(
       index: true,
     },
     description: String,
+    shortDescription: String, // <-- NEW
 
-    sku: { type: String },                  // <-- NEW
-    weight: { type: Number },              // <-- NEW (kg, optional)
-    isActive: { type: Boolean, default: true },    // <-- NEW
-    isFeatured: { type: Boolean, default: false }, // <-- NEW
+    sku: { type: String },
+    weight: { type: Number },
+    isActive: { type: Boolean, default: true },
+    isFeatured: { type: Boolean, default: false },
 
     categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
     tags: [String],
@@ -36,7 +42,19 @@ const ProductSchema = new mongoose.Schema(
     averageReview: Number,
     totalStock: Number,
 
-    externalId: String, // WooCommerce ID
+    attributes: [AttributeSchema], // <-- NEW
+    upsellProductIds: [Number], // <-- NEW
+    relatedProductIds: [Number], // <-- NEW
+
+    seo: { // <-- NEW
+      metaTitle: String,
+      metaDescription: String,
+      focusKeyword: String,
+    },
+
+    meta: Array, // <-- NEW
+
+    externalId: String,
   },
   { timestamps: true }
 );
