@@ -18,7 +18,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-async function fetchWooProducts(limit = 100) {
+async function fetchWooProducts(limit = 25) {
   try {
     const res = await axios.get(WOO_API_URL, {
       auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
@@ -99,49 +99,55 @@ async function importProducts() {
   const dbAllCategories = await Category.find().lean();
 
   for (const wp of wpProducts) {
-    const exists = await Product.findOne({ externalId: wp.id });
-    if (exists) {
-      console.log(`⏭️ Skipping existing product: ${wp.name}`);
-      continue;
-    }
-
+    const baseSlug = slugify(wp.name || `product-${wp.id}`, {
+      lower: true,
+      strict: true,
+    });
+  
     // Build full category chain
     const categoryIds = new Set();
     for (const wpCat of wp.categories || []) {
       const chain = await getFullCategoryChain(wpCat, wpAllCategories, dbAllCategories);
       chain.forEach((cat) => categoryIds.add(cat._id.toString()));
     }
-
+  
     const image = wp.images?.[0]?.src
       ? await uploadImageToCloudinary(wp.images[0].src)
       : null;
-
-    const newProduct = new Product({
+  
+    const productData = {
       externalId: wp.id,
       title: wp.name,
-      slug: slugify(wp.name, { lower: true, strict: true }),
+      slug: baseSlug,
       description: wp.description || "",
-
       sku: wp.sku || null,
       weight: wp.weight ? parseFloat(wp.weight) : null,
-      isActive: true,
-      isFeatured: wp.tags.some(tag => tag.name.toLowerCase().includes("featured")),
-
+      isFeatured: wp.tags.some((tag) =>
+        tag.name.toLowerCase().includes("featured")
+      ),
+      isActive: wp.stock_status === "instock", // ✅ status from Woo
       categories: Array.from(categoryIds),
-      tags: wp.tags.map(tag => tag.name),
-      brand: wp.attributes?.find(attr => attr.name.toLowerCase() === "brand")?.options?.[0] || null,
-
+      tags: wp.tags.map((tag) => tag.name),
+      brand:
+        wp.attributes?.find(
+          (attr) => attr.name.toLowerCase() === "brand"
+        )?.options?.[0] || null,
       price: parseFloat(wp.regular_price || "0"),
       salePrice: parseFloat(wp.sale_price || "0"),
-      totalStock: wp.stock_quantity || 0,
-
+      totalStock: wp.manage_stock ? wp.stock_quantity || 0 : 9999, // ✅ stock fix
       images: image ? [image] : [],
       variants: [],
-    });
-
-    await newProduct.save();
-    console.log(`✅ Imported: ${newProduct.title}`);
+    };
+  
+    const updatedOrInserted = await Product.findOneAndUpdate(
+      { $or: [{ externalId: wp.id }, { slug: baseSlug }] },
+      { $set: productData },
+      { new: true, upsert: true }
+    );
+  
+    console.log(`✅ Updated or Inserted: ${updatedOrInserted.title}`);
   }
+  
 
   console.log("🎉 Import complete.");
   process.exit(0);
