@@ -1,7 +1,8 @@
+// File: Server/models/Product.js
 const mongoose = require("mongoose");
 
 const VariantSchema = new mongoose.Schema({
-  label: String,           // e.g. "Red / M"
+  label: String,
   price: Number,
   stock: Number,
 });
@@ -9,8 +10,19 @@ const VariantSchema = new mongoose.Schema({
 const ProductSchema = new mongoose.Schema(
   {
     title: String,
-    slug: { type: String, unique: true },
+    slug: {
+      type: String,
+      unique: true,
+      required: true,
+      index: true,
+    },
     description: String,
+
+    sku: { type: String },                  // <-- NEW
+    weight: { type: Number },              // <-- NEW (kg, optional)
+    isActive: { type: Boolean, default: true },    // <-- NEW
+    isFeatured: { type: Boolean, default: false }, // <-- NEW
+
     categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
     tags: [String],
     brand: String,
@@ -18,13 +30,13 @@ const ProductSchema = new mongoose.Schema(
     price: Number,
     salePrice: Number,
 
-    images: [String],           // Cloudinary or Woo URLs
-    variants: [VariantSchema],  // Optional
+    images: [String],
+    variants: [VariantSchema],
 
     averageReview: Number,
     totalStock: Number,
 
-    externalId: String,         // WooCommerce product ID (for reference)
+    externalId: String, // WooCommerce ID
   },
   { timestamps: true }
 );

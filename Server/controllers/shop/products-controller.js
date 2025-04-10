@@ -1,4 +1,5 @@
 const Product = require("../../models/Product");
+const mongoose = require("mongoose");
 
 const getFilteredProducts = async (req, res) => {
   try {
@@ -7,7 +8,12 @@ const getFilteredProducts = async (req, res) => {
     let filters = {};
 
     if (category.length) {
-      filters.category = { $in: category.split(",") };
+      filters.categories  = {
+        $in: category
+          .split(",")
+          .filter(id => mongoose.Types.ObjectId.isValid(id))
+          .map(id => new mongoose.Types.ObjectId(id))
+      };
     }
 
     if (brand.length) {
@@ -39,15 +45,16 @@ const getFilteredProducts = async (req, res) => {
         sort.price = 1;
         break;
     }
+    console.log("🔍 Filters applied:", filters);
 
-    const products = await Product.find(filters).sort(sort).populate("categories", "name slug");
+    const products = await Product.find(filters).sort(sort).populate("categories", "name slug");;
 
     res.status(200).json({
       success: true,
       data: products,
     });
   } catch (e) {
-    console.log(error);
+    console.log(e);
     res.status(500).json({
       success: false,
       message: "Some error occured",
@@ -71,7 +78,7 @@ const getProductDetails = async (req, res) => {
       data: product,
     });
   } catch (e) {
-    console.log(error);
+    console.log(e);
     res.status(500).json({
       success: false,
       message: "Some error occured",
