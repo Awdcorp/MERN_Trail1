@@ -1,40 +1,52 @@
-import { filterOptions } from "@/config";
-import { Fragment } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
 import { Separator } from "../ui/separator";
 
 function ProductFilter({ filters, handleFilter }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/categories")
+      .then(res => setCategories(res.data))
+      .catch(err => console.error("❌ Failed to fetch categories:", err));
+  }, []);
+
+  const renderCategoryTree = (categoryList, level = 0) => {
+    return categoryList.map(cat => (
+      <div key={cat._id} style={{ marginLeft: `${level * 16}px` }}>
+        <Label className="flex items-center gap-2">
+          <Checkbox
+            checked={filters?.category?.includes(cat._id)}
+            onCheckedChange={(checked) =>
+              handleFilter("category", cat._id, checked)
+            }
+          />
+          {cat.name}
+        </Label>
+        {Array.isArray(cat.children) && cat.children.length > 0 && (
+          <div>{renderCategoryTree(cat.children, level + 1)}</div>
+        )}
+      </div>
+    ));
+  };
+
   return (
     <div className="bg-background rounded-lg shadow-sm">
       <div className="p-4 border-b">
         <h2 className="text-lg font-extrabold">Filters</h2>
       </div>
       <div className="p-4 space-y-4">
-        {Object.keys(filterOptions).map((keyItem) => (
-          <Fragment>
-            <div>
-              <h3 className="text-base font-bold">{keyItem}</h3>
-              <div className="grid gap-2 mt-2">
-                {filterOptions[keyItem].map((option) => (
-                  <Label className="flex font-medium items-center gap-2 ">
-                    <Checkbox
-                      checked={
-                        filters &&
-                        Object.keys(filters).length > 0 &&
-                        filters[keyItem] &&
-                        filters[keyItem].indexOf(option.id) > -1
-                      }
-                      onCheckedChange={() => handleFilter(keyItem, option.id)}
-                    />
-                    {option.label}
-                  </Label>
-                ))}
-              </div>
+        {categories.length > 0 && (
+          <div>
+            <h3 className="text-base font-bold">Category</h3>
+            <div className="grid gap-2 mt-2">
+              {renderCategoryTree(categories)}
             </div>
-            <Separator />
-          </Fragment>
-        ))}
+          </div>
+        )}
+        <Separator className="my-4" />
       </div>
     </div>
   );
