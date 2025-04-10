@@ -40,8 +40,14 @@ function ProductFilter({ filters, handleFilter }) {
       <div className="p-4 space-y-4">
         {categories.length > 0 && (
           <div>
+<button
+  className="px-3 py-1 rounded-md bg-primary text-white text-sm font-medium hover:bg-primary/80 transition-all mb-3"
+  onClick={() => handleFilter('clear')}
+>
+Clear All Filters
+</button>
             <h3 className="text-base font-bold">Category</h3>
-            <div className="grid gap-2 mt-2">
+            <div className="max-h-[300px] overflow-y-auto pr-2 gap-2 mt-2">
               {renderCategoryTree(categories)}
             </div>
           </div>

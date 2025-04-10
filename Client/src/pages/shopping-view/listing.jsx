@@ -57,6 +57,11 @@ function ShoppingListing() {
   }
 
   function handleFilter(getSectionId, getCurrentOption) {
+    if (getSectionId === "clear") {
+      setFilters({});
+      sessionStorage.removeItem("filters");
+      return;
+    }
     let cpyFilters = { ...filters };
     const indexOfCurrentSection = Object.keys(cpyFilters).indexOf(getSectionId);
 
