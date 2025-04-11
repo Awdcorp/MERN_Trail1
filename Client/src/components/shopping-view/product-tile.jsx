@@ -32,7 +32,7 @@ function ShoppingProductTile({
 
   {/* 👇 This now properly pushes footer to bottom */}
   <CardContent className="p-3 text-sm flex flex-col flex-grow cursor-pointer" onClick={() => handleGetProductDetails(product?._id)}>
-    <h3 className="text-base font-semibold mb-1">{product?.title}</h3>
+    <h3 className="text-center text-[15px] font-medium text-[#463970] leading-snug truncate mb-1">{product?.title}</h3>
     <div className="flex justify-between items-center mb-1">
       <span className="text-[14px] text-muted-foreground">
         {product?.categories?.[0]?.name || "Uncategorized"}
@@ -42,7 +42,7 @@ function ShoppingProductTile({
       </span>
     </div>
     <div className="flex flex-col items-center mt-auto">
-      <span className={`text-lg font-semibold text-primary ${product?.salePrice > 0 ? "line-through" : ""}`}>
+      <span className={`text-[14px]] font-semibold text-primary ${product?.salePrice > 0 ? "line-through" : ""}`}>
         ${product?.price}
       </span>
       {product?.salePrice > 0 && (
@@ -53,12 +53,12 @@ function ShoppingProductTile({
 
   <CardFooter>
     {product?.totalStock === 0 ? (
-      <Button className="w-full opacity-60 cursor-not-allowed" disabled>
+      <Button className="bg-[#463970] text-white rounded-2xl px-6 py-2 w-full opacity-60 cursor-not-allowed" disabled>
         Out Of Stock
       </Button>
     ) : (
       <Button
-        className="w-full"
+        className="bg-[#463970] text-white rounded-2xl px-6 py-2 w-full"
         onClick={() => handleAddtoCart(product?._id, product?.totalStock)}
       >
         Add to cart

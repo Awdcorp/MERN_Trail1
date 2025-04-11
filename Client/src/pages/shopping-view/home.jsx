@@ -13,6 +13,7 @@ import { fetchAllFilteredProducts, fetchProductDetails } from "@/store/shop/prod
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
 import OccasionCategorySection from "@/components/shopping-view/occasioncategorysection";
+import NewArrivalsSection from "@/components/shopping-view/newarrivalsslider";
 
 function ShoppingHome() {
   const dispatch = useDispatch();
@@ -71,6 +72,7 @@ function ShoppingHome() {
     <div className="space-y-6 md:space-y-10 p-4 md:p-6">
       {/* 🎯 Shop by Occasion Grid */}
       <OccasionCategorySection />
+      <NewArrivalsSection />
     </div>
   );
 }
