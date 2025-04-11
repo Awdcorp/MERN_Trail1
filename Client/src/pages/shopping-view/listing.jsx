@@ -27,7 +27,6 @@ function createSearchParamsHelper(filterParams) {
   for (const [key, value] of Object.entries(filterParams)) {
     if (Array.isArray(value) && value.length > 0) {
       const paramValue = value.join(",");
-
       queryParams.push(`${key}=${encodeURIComponent(paramValue)}`);
     }
   }
@@ -48,6 +47,7 @@ function ShoppingListing() {
   const [sort, setSort] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(24);
   const { toast } = useToast();
 
   const categorySearchParam = searchParams.get("category");
@@ -79,12 +79,10 @@ function ShoppingListing() {
   }
 
   function handleGetProductDetails(getCurrentProductId) {
-    console.log(getCurrentProductId);
     dispatch(fetchProductDetails(getCurrentProductId));
   }
 
   function handleAddtoCart(getCurrentProductId, getTotalStock) {
-    console.log(cartItems);
     let getCartItems = cartItems.items || [];
 
     if (getCartItems.length) {
@@ -98,7 +96,6 @@ function ShoppingListing() {
             title: `Only ${getQuantity} quantity can be added for this item`,
             variant: "destructive",
           });
-
           return;
         }
       }
@@ -113,9 +110,7 @@ function ShoppingListing() {
     ).then((data) => {
       if (data?.payload?.success) {
         dispatch(fetchCartItems(user?.id));
-        toast({
-          title: "Product is added to cart",
-        });
+        toast({ title: "Product is added to cart" });
       }
     });
   }
@@ -133,17 +128,20 @@ function ShoppingListing() {
   }, [filters]);
 
   useEffect(() => {
-    if (filters !== null && sort !== null)
+    if (filters !== null && sort !== null) {
       dispatch(
         fetchAllFilteredProducts({ filterParams: filters, sortParams: sort })
       );
+    }
   }, [dispatch, sort, filters]);
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
   }, [productDetails]);
 
-  console.log(productList, "productListproductListproductList");
+  useEffect(() => {
+    setVisibleCount(24);
+  }, [filters, sort]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 p-4 md:p-6">
@@ -183,8 +181,9 @@ function ShoppingListing() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
           {productList && productList.length > 0
-            ? productList.map((productItem) => (
+            ? productList.slice(0, visibleCount).map((productItem) => (
                 <ShoppingProductTile
+                  key={productItem._id}
                   handleGetProductDetails={handleGetProductDetails}
                   product={productItem}
                   handleAddtoCart={handleAddtoCart}
@@ -192,6 +191,13 @@ function ShoppingListing() {
               ))
             : null}
         </div>
+        {productList?.length > visibleCount && (
+          <div className="text-center my-6">
+            <Button onClick={() => setVisibleCount((prev) => prev + 24)}>
+              Load More
+            </Button>
+          </div>
+        )}
       </div>
       <ProductDetailsDialog
         open={openDetailsDialog}
