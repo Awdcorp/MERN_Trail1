@@ -5,31 +5,27 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 
-export default function NewArrivalsSection() {
+export default function ProductSliderSection({ title, categoryIds = [], sortBy = "date-newest" }) {
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
-    async function fetchNewArrivals() {
+    async function fetchProducts() {
       try {
         const res = await axios.get("http://localhost:5000/api/shop/products/get", {
-          params: {
-            tag: "new-arrival",
-            sortBy: "date-newest",
-          },
+          params: { category: categoryIds?.join(','), sortBy },
         });
         setProducts(res.data.data || []);
       } catch (err) {
-        console.error("❌ Failed to fetch new arrivals:", err);
+        console.error(`❌ Failed to fetch products for ${title}`, err);
       }
     }
 
-    fetchNewArrivals();
-  }, []);
+    fetchProducts();
+  }, [categoryIds, sortBy]);
 
   return (
     <div className="px-4 md:px-6 py-8">
-      <h2 className="text-xl md:text-2xl text-center mb-2 uppercase text-[#463970]">
-        NEW ARRIVALS
+      <h2 className="text-xl md:text-2xl font-light text-center mb-2 uppercase text-[#463970]">
+        {title}
       </h2>
       <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
 
