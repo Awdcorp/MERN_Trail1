@@ -13,7 +13,7 @@ export default function NewArrivalsSection() {
       try {
         const res = await axios.get("http://localhost:5000/api/shop/products/get", {
           params: {
-            tag: "new-arrival", // Customize this based on your WooCommerce tag
+            tag: "new-arrival",
             sortBy: "date-newest",
           },
         });
@@ -27,15 +27,17 @@ export default function NewArrivalsSection() {
   }, []);
 
   return (
-    <div className="p-4 md:p-6">
-      <h2 className="text-2xl font-bold text-center mb-2 uppercase" style={{ color: "#463970" }}>
-      NEW ARRIVALS
+    <div className="px-4 md:px-6 py-8">
+      <h2 className="text-xl md:text-2xl text-center mb-2 uppercase text-[#463970]">
+        NEW ARRIVALS
       </h2>
-      <div className="w-[120px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+
       <Swiper
-        spaceBetween={16}
-        slidesPerView={6}
+        spaceBetween={12}
+        slidesPerView={2}
         breakpoints={{
+          480: { slidesPerView: 2 },
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
@@ -45,7 +47,7 @@ export default function NewArrivalsSection() {
         modules={[Autoplay]}
       >
         {products.map((product) => (
-          <SwiperSlide key={product._id}>
+          <SwiperSlide key={product._id} className="pb-2">
             <ShoppingProductTile product={product} />
           </SwiperSlide>
         ))}

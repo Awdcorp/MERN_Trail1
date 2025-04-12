@@ -1,6 +1,5 @@
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Button } from "../ui/button";
-import { brandOptionsMap } from "@/config";
 import { Badge } from "../ui/badge";
 
 function ShoppingProductTile({
@@ -32,14 +31,8 @@ function ShoppingProductTile({
 
   {/* 👇 This now properly pushes footer to bottom */}
   <CardContent className="p-3 text-sm flex flex-col flex-grow cursor-pointer" onClick={() => handleGetProductDetails(product?._id)}>
-    <h3 className="text-center text-[15px] font-medium text-[#463970] leading-snug truncate mb-1">{product?.title}</h3>
+    <h3 className="text-center text-[15px] font-semibold text-[#463970] leading-snug truncate mb-1">{product?.title}</h3>
     <div className="flex justify-between items-center mb-1">
-      <span className="text-[14px] text-muted-foreground">
-        {product?.categories?.[0]?.name || "Uncategorized"}
-      </span>
-      <span className="text-[14px] text-muted-foreground">
-        {brandOptionsMap[product?.brand]}
-      </span>
     </div>
     <div className="flex flex-col items-center mt-auto">
       <span className={`text-[14px]] font-semibold text-primary ${product?.salePrice > 0 ? "line-through" : ""}`}>
@@ -58,7 +51,7 @@ function ShoppingProductTile({
       </Button>
     ) : (
       <Button
-        className="bg-[#463970] text-white rounded-2xl px-6 py-2 w-full"
+        className="bg-[#463970] text-white rounded-3xl px-6 py-2 w-full"
         onClick={() => handleAddtoCart(product?._id, product?.totalStock)}
       >
         Add to cart
