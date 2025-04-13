@@ -82,11 +82,10 @@ function ProductFilter({ filters, handleFilter }) {
   }, []);
 
   return (
-    <div className="bg-background rounded-lg shadow-sm max-h-[120vh] overflow-y-auto relative">
+    <div className="bg-background rounded-lg shadow-sm max-h-[120vh] overflow-y-auto relative scrollbar-hide">
       <div className="p-4 pb-6 border-b sticky top-0 bg-background z-10">
-        <h2 className="text-lg font-semibold mb-3 uppercase text-[#484848]">Filters</h2>
         <button
-          className="px-7 py-3 rounded-md bg-[#EB6123] text-white text-sm font-semibold hover:bg-[#463970] transition-all"
+          className="px-7 py-3 rounded-md bg-[#46396F] text-white text-sm font-semibold hover:bg-[#463970] transition-all"
           onClick={() => handleFilter("clear")}
         >
           Clear All Filters
@@ -99,7 +98,7 @@ function ProductFilter({ filters, handleFilter }) {
             <div
               className={`${
                 group.id === "color" ? "grid grid-cols-2 gap-x-2" : "space-y-1"
-              } max-h-[200px] overflow-y-auto pr-2`}
+              } max-h-[200px] overflow-y-auto pr-2 scrollbar-hide`}
             >
               {group.options.map((option) => (
                 <Label
