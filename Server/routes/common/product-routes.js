@@ -16,6 +16,22 @@ router.get("/test-populated-products", async (req, res) => {
   }
 });
 
+// GET /api/products/slug/:slug
+router.get("/slug/:slug", async (req, res) => {
+    const { slug } = req.params;
+  
+    try {
+      const product = await Product.findOne({ slug }).populate("categories", "name slug");
+  
+      if (!product) return res.status(404).json({ error: "Product not found" });
+  
+      res.json(product);
+    } catch (err) {
+      console.error("❌ Error fetching product by slug:", err);
+      res.status(500).json({ error: "Server error" });
+    }
+  });
+  
 // GET /api/products/category/:slug
 router.get("/category/:slug", async (req, res) => {
     const { slug } = req.params;

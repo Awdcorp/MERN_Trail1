@@ -23,7 +23,7 @@ import PaypalReturnPage from "./pages/shopping-view/paypal-return";
 import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from "./pages/shopping-view/search";
 import CategoryListingPage from "@/pages/shopping-view/category";
-
+import ProductPage from "@/pages/shopping-view/product";
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
     (state) => state.auth
@@ -84,6 +84,7 @@ function App() {
         >
           <Route path="home" element={<ShoppingHome />} />
           <Route path="category/:slug" element={<CategoryListingPage />} />
+          <Route path="product/:slug" element={<ProductPage />} />
           <Route path="listing" element={<ShoppingListing />} />
           <Route path="checkout" element={<ShoppingCheckout />} />
           <Route path="account" element={<ShoppingAccount />} />
