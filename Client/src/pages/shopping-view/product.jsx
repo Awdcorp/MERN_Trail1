@@ -1,32 +1,21 @@
-// File: Client/src/pages/shopping-view/product-page.jsx
+// File: Client/src/pages/shopping-view/product.jsx
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { StarIcon } from "lucide-react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCartItems, addToCart } from "@/store/shop/cart-slice";
-import { useToast } from "@/components/ui/use-toast";
-import StarRatingComponent from "@/components/common/star-rating";
-import { addReview, getReviews } from "@/store/shop/review-slice";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
+import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import { getReviews } from "@/store/shop/review-slice";
 
 export default function ProductPage() {
   const { slug } = useParams();
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
-  const { reviews } = useSelector((state) => state.shopReview);
-  const { toast } = useToast();
-
   const [product, setProduct] = useState(null);
-  const [rating, setRating] = useState(0);
-  const [reviewMsg, setReviewMsg] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     axios
@@ -40,138 +29,106 @@ export default function ProductPage() {
       });
   }, [slug]);
 
-  function handleAddToCart() {
-    const existing = cartItems.items || [];
-    const index = existing.findIndex((item) => item.productId === product?._id);
-
-    if (index > -1 && existing[index].quantity + 1 > product?.totalStock) {
-      toast({
-        title: `Only ${existing[index].quantity} quantity can be added for this item`,
-        variant: "destructive",
-      });
-      return;
-    }
-
+  const handleAddToCart = () => {
+    if (!product || product.totalStock === 0) return;
     dispatch(
       addToCart({
         userId: user?.id,
-        productId: product?._id,
-        quantity: 1,
+        productId: product._id,
+        quantity,
       })
-    ).then((data) => {
-      if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
-        toast({ title: "Product is added to cart" });
-      }
+    ).then(() => {
+      dispatch(fetchCartItems(user?.id));
     });
-  }
+  };
 
-  function handleAddReview() {
-    dispatch(
-      addReview({
-        productId: product?._id,
-        userId: user?.id,
-        userName: user?.userName,
-        reviewMessage: reviewMsg,
-        reviewValue: rating,
-      })
-    ).then((data) => {
-      if (data.payload.success) {
-        setRating(0);
-        setReviewMsg("");
-        dispatch(getReviews(product?._id));
-        toast({ title: "Review added successfully!" });
-      }
-    });
-  }
-
-  const averageReview =
-    reviews && reviews.length > 0
-      ? reviews.reduce((sum, reviewItem) => sum + reviewItem.reviewValue, 0) /
-        reviews.length
-      : 0;
-
-  if (!product) return <div className="p-10">Loading...</div>;
+  if (!product) return <div className="p-10 text-center">Product not found.</div>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-      <div>
-        <img
-          src={product.images?.[0] || "/placeholder.png"}
-          alt={product.title}
-          className="w-full h-auto rounded-lg object-contain"
-        />
-      </div>
-      <div>
-        <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
-        <div
-          className="prose max-w-none mb-4 text-muted-foreground"
-          dangerouslySetInnerHTML={{ __html: product.description || "" }}
-        ></div>
+    <>
+      {/* 🧱 Main Product Layout */}
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-10">
+        <div className="flex flex-col md:flex-row gap-10 items-start">
+          {/* 🖼️ Product Image */}
+          <div className="w-full md:w-[45%] flex justify-center">
+            <img
+              src={product.images?.[0] || "/placeholder.png"}
+              alt={product.title}
+              className="max-w-[400px] h-[400px] object-contain border rounded-xl"
+            />
+          </div>
 
-        <div className="mb-4 flex items-center gap-4">
-          <p className={`text-3xl font-bold text-primary ${product.salePrice > 0 ? "line-through" : ""}`}>
-            ${product.price}
-          </p>
-          {product.salePrice > 0 && <p className="text-2xl font-semibold">${product.salePrice}</p>}
-        </div>
+          {/* 📋 Product Info */}
+          <div className="w-full md:w-[55%] space-y-4">
+            <h1 className="text-2xl md:text-2xl font-thin text-[#46396F]">{product.title}</h1>
 
-        <div className="flex items-center gap-2 mb-4">
-          <StarRatingComponent rating={averageReview} />
-          <span className="text-muted-foreground text-sm">({averageReview.toFixed(2)})</span>
-        </div>
+            <div className="text-xl font-light text-[#334155]">
+              {product.salePrice > 0 ? (
+                <>
+                  <span className="line-through text-gray-500 mr-2">{product.price} AED</span>
+                  <span className="text-[#EB6123]">{product.salePrice} AED</span>
+                </>
+              ) : (
+                <>{product.price} AED</>
+              )}
+            </div>
 
-        <div className="mb-6">
-          {product.totalStock === 0 ? (
-            <Button className="opacity-60 cursor-not-allowed w-full" disabled>Out of Stock</Button>
-          ) : (
-            <Button className="w-full" onClick={handleAddToCart}>Add to Cart</Button>
-          )}
-        </div>
+            <div className="text-green-600 font-medium">
+              {product.totalStock > 10
+                ? "In stock"
+                : product.totalStock > 0
+                ? `Only ${product.totalStock} left in stock`
+                : "Out of stock"}
+            </div>
 
-        <Separator className="my-6" />
-
-        <div className="max-h-[300px] overflow-auto">
-          <h2 className="text-xl font-bold mb-4">Reviews</h2>
-          <div className="grid gap-6">
-            {reviews && reviews.length > 0 ? (
-              reviews.map((reviewItem) => (
-                <div className="flex gap-4">
-                  <Avatar className="w-10 h-10 border">
-                    <AvatarFallback>{reviewItem?.userName[0].toUpperCase()}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h3 className="font-bold">{reviewItem?.userName}</h3>
-                    <StarRatingComponent rating={reviewItem?.reviewValue} />
-                    <p className="text-muted-foreground text-sm">{reviewItem.reviewMessage}</p>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="text-sm">No reviews yet.</p>
-            )}
-
-            <div className="mt-8">
-              <Label>Write a review</Label>
-              <div className="flex gap-2 my-2">
-                <StarRatingComponent rating={rating} handleRatingChange={setRating} />
-              </div>
+            {/* 🛒 Quantity + Add to Cart */}
+            <div className="flex items-center gap-4 mt-4">
               <Input
-                value={reviewMsg}
-                onChange={(e) => setReviewMsg(e.target.value)}
-                placeholder="Write a review..."
+                type="number"
+                value={quantity}
+                min={1}
+                max={product.totalStock}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                className="w-20"
               />
               <Button
-                className="mt-2"
-                onClick={handleAddReview}
-                disabled={reviewMsg.trim() === "" || rating === 0}
+                onClick={handleAddToCart}
+                disabled={product.totalStock === 0}
+                className="bg-[#46396F] text-white rounded px-6"
               >
-                Submit
+                Add To Cart
               </Button>
             </div>
           </div>
         </div>
+
+        {/* 📄 Description */}
+        <div className="mt-12 text-center">
+          <h2 className="text-xl font-thin text-[#46396F] mb-6">Description</h2>
+          <div
+            className="prose prose-sm md:prose-base text-gray-700 mx-auto text-left font-light"
+            dangerouslySetInnerHTML={{ __html: product.description }}
+          />
+        </div>
       </div>
-    </div>
+
+      {/* 🎯 Full-Width Product Slider Section */}
+      <div className="w-full bg-[#f9f9f9] py-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <ProductSliderSection
+            title="Customers also purchased"
+            categoryIds={["67f844b7f1275889ad3993b8"]} // Example categoryId
+            sortBy="price-lowtohigh"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <ProductSliderSection
+            title="You might also like"
+            categoryIds={["67f844b7f1275889ad3993b8"]} // Example categoryId
+            sortBy="price-lowtohigh"
+          />
+        </div>
+      </div>
+    </>
   );
 }
