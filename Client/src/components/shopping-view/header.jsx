@@ -54,7 +54,7 @@ export default function Header() {
   ]);
 
   const formatSlug = (text) =>
-    `/product-category/${encodeURIComponent(
+    `/shop/category/${encodeURIComponent(
       text.toLowerCase().replace(/\s+/g, "-")
     )}`;
 

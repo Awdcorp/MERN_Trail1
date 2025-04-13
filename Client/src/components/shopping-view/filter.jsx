@@ -107,31 +107,25 @@ function ProductFilter({ filters, handleFilter }) {
                     group.id === "color" ? "mb-1" : ""
                   }`}
                 >
-                  <Checkbox
-                    checked={!!filters[group.id]?.includes(option)}
-                    onCheckedChange={() => handleFilter(group.id, option)}
-                    className="hidden"
-                    id={`${group.id}-${option}`}
-                  />
-                  {group.id === "color" ? (
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded-sm border"
-                        style={{ backgroundColor: getColorValue(option.toLowerCase()) }}
-                      />
-                      <span className="text-sm">{option}</span>
-                    </div>
-                  ) : (
-                    <>
-                      <input
-                        type="checkbox"
-                        readOnly
-                        checked={!!filters[group.id]?.includes(option)}
-                        className="w-4 h-4 border rounded"
-                      />
-                      <span className="text-sm">{option}</span>
-                    </>
-                  )}
+<Checkbox
+  checked={!!filters[group.id]?.includes(option)}
+  onCheckedChange={() => handleFilter(group.id, option)}
+  id={`${group.id}-${option}`}
+  className="w-4 h-4 border rounded"
+/>
+<span className="text-sm">
+  {group.id === "color" ? (
+    <div className="flex items-center gap-2">
+      <div
+        className="w-4 h-4 rounded-sm border"
+        style={{ backgroundColor: getColorValue(option.toLowerCase()) }}
+      />
+      {option}
+    </div>
+  ) : (
+    option
+  )}
+</span>
                 </Label>
               ))}
             </div>

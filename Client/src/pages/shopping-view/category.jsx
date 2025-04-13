@@ -1,42 +1,234 @@
-// ✅ Frontend: Dynamic category page to display products
-// File: Client/src/pages/shopping-view/category.jsx
-
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
-function CategoryPage() {
-  const { slug } = useParams();
-  const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("");
+import ProductFilter from "@/components/shopping-view/filter";
+import ShoppingProductTile from "@/components/shopping-view/product-tile";
+import ProductDetailsDialog from "@/components/shopping-view/product-details";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
-  useEffect(() => {
-    axios.get(`/api/products/category/${slug}`)
-      .then(res => {
-        setProducts(res.data.products);
-        setCategory(res.data.category);
-      })
-      .catch(err => console.error("❌ Failed to fetch category products:", err));
-  }, [slug]);
+import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
+import { fetchProductDetails } from "@/store/shop/products-slice";
+import { useDispatch, useSelector } from "react-redux";
 
-  return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Category: {category}</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {products.map((product) => (
-          <div key={product._id} className="border p-2 rounded shadow">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="h-32 w-full object-contain"
-            />
-            <h3 className="text-sm mt-2 font-medium">{product.title}</h3>
-            <p className="text-xs text-muted">₹{product.price}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+import categoryBanners from "@/assets/categoryBanners";
+
+function createSearchParamsHelper(filterParams) {
+  const queryParams = [];
+  for (const [key, value] of Object.entries(filterParams)) {
+    if (Array.isArray(value) && value.length > 0) {
+      const paramValue = value.join(",");
+      queryParams.push(`${key}=${encodeURIComponent(paramValue)}`);
+    }
+  }
+  return queryParams.join("&");
 }
 
-export default CategoryPage;
+export default function CategoryListingPage() {
+  const { slug } = useParams();
+  const dispatch = useDispatch();
+  const { productDetails } = useSelector((state) => state.shopProducts);
+  const { cartItems } = useSelector((state) => state.shopCart);
+  const { user } = useSelector((state) => state.auth);
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState(null);
+  const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(24);
+  const [categoryProducts, setCategoryProducts] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
+  const [notFound, setNotFound] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  const { toast } = useToast();
+  const bannerImage =
+    categoryBanners[slug] ||
+    "https://res.cloudinary.com/dyiupjfwp/image/upload/v1744509081/partyworld/occasions/hhkw5aallqijfwycgj13.jpg";
+
+  function handleSort(value) {
+    setSort(value);
+  }
+
+  function handleFilter(sectionId, option) {
+    if (sectionId === "clear") {
+      setFilters({});
+      sessionStorage.setItem("filters", JSON.stringify({}));
+      return;
+    }
+
+    let cpyFilters = { ...filters };
+    if (!cpyFilters[sectionId]) {
+      cpyFilters[sectionId] = [option];
+    } else {
+      const index = cpyFilters[sectionId].indexOf(option);
+      if (index === -1) cpyFilters[sectionId].push(option);
+      else cpyFilters[sectionId].splice(index, 1);
+    }
+
+    setFilters((prev) => {
+      sessionStorage.setItem("filters", JSON.stringify(cpyFilters));
+      return { ...cpyFilters };
+    });
+  }
+
+  function handleGetProductDetails(productId) {
+    dispatch(fetchProductDetails(productId));
+  }
+
+  function handleAddtoCart(productId, totalStock) {
+    const existing = cartItems.items || [];
+    const index = existing.findIndex((item) => item.productId === productId);
+
+    if (index > -1 && existing[index].quantity + 1 > totalStock) {
+      toast({
+        title: `Only ${existing[index].quantity} quantity can be added for this item`,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    dispatch(addToCart({ userId: user?.id, productId, quantity: 1 })).then(
+      (data) => {
+        if (data?.payload?.success) {
+          dispatch(fetchCartItems(user?.id));
+          toast({ title: "Product is added to cart" });
+        }
+      }
+    );
+  }
+
+  function getFilteredCategoryProducts() {
+    if (Object.keys(filters).length === 0) return categoryProducts;
+
+    return categoryProducts.filter((product) => {
+      const productCategoryNames = product.categories.map((cat) => cat.name);
+
+      for (const [key, selectedValues] of Object.entries(filters)) {
+        if (selectedValues.length === 0) continue;
+
+        const hasMatch = selectedValues.some((val) =>
+          productCategoryNames.includes(val)
+        );
+
+        if (!hasMatch) return false;
+      }
+
+      return true;
+    });
+  }
+
+  useEffect(() => {
+    setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
+    setSort("price-lowtohigh");
+  }, [slug]);
+
+  useEffect(() => {
+    setVisibleCount(24); // reset load count on slug change
+  }, [slug]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await axios.get(
+          `http://localhost:5000/api/products/category/${slug}`
+        );
+        if (!res.data.products || res.data.products.length === 0) {
+          setNotFound(true);
+        } else {
+          setCategoryProducts(res.data.products);
+          setNotFound(false);
+        }
+      } catch (err) {
+        console.error("❌ Failed to fetch products:", err);
+        setNotFound(true);
+      }
+    }
+
+    if (slug) fetchProducts();
+  }, [slug]);
+
+  useEffect(() => {
+    if (productDetails !== null) setOpenDetailsDialog(true);
+  }, [productDetails]);
+
+  return (
+    <>
+      {slug && (
+        <div
+          className="w-full h-[200px] md:h-[280px] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url("${bannerImage}")` }}
+        >
+          <h1 className="text-[#46396F] text-3xl md:text-4xl font-medium text-center px-6 py-3 rounded-md">
+            {slug.replace(/-/g, " ").toUpperCase()}
+          </h1>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6 p-4 md:p-6">
+        <div className="md:block w-full md:w-auto">
+          <div className="mb-4">
+            <button
+              className="px-4 py-2 bg-[#EB6123] text-white rounded font-semibold uppercase w-full md:pointer-events-none flex items-center justify-start gap-2"
+              onClick={() => setShowFilters((prev) => !prev)}
+            >
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 md:hidden ${
+                  showFilters ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+              <span>{showFilters ? "Hide Filters" : "Filters"}</span>
+            </button>
+          </div>
+          <div className={`${showFilters ? "block" : "hidden"} md:block`}>
+            <ProductFilter filters={filters} handleFilter={handleFilter} />
+          </div>
+        </div>
+
+        <div className="bg-background w-full rounded-lg shadow-sm">
+          <div className="p-3">
+            {notFound ? (
+              <div className="text-center py-10 text-lg text-red-600 font-semibold">
+                🚫 No products found for this category.
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3">
+                {getFilteredCategoryProducts()
+                  .slice(0, visibleCount)
+                  .map((productItem) => (
+                    <ShoppingProductTile
+                      key={productItem._id}
+                      handleGetProductDetails={handleGetProductDetails}
+                      product={productItem}
+                      handleAddtoCart={handleAddtoCart}
+                    />
+                  ))}
+              </div>
+            )}
+          </div>
+
+          {!notFound &&
+            getFilteredCategoryProducts().length > visibleCount && (
+              <div className="text-center my-6">
+                <Button onClick={() => setVisibleCount((prev) => prev + 24)}>
+                  Load More
+                </Button>
+              </div>
+            )}
+        </div>
+
+        <ProductDetailsDialog
+          open={openDetailsDialog}
+          setOpen={setOpenDetailsDialog}
+          productDetails={productDetails}
+        />
+      </div>
+    </>
+  );
+}
