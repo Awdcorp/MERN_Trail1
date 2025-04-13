@@ -1,58 +1,144 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { Label } from "../ui/label";
-import { Checkbox } from "../ui/checkbox";
-import { Separator } from "../ui/separator";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Separator } from "@/components/ui/separator";
 
-function ProductFilter({ filters, handleFilter }) {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/categories")
-      .then(res => setCategories(res.data))
-      .catch(err => console.error("❌ Failed to fetch categories:", err));
-  }, []);
-
-  const renderCategoryTree = (categoryList, level = 0) => {
-    return categoryList.map(cat => (
-      <div key={cat._id} style={{ marginLeft: `${level * 16}px` }}>
-        <Label className="flex items-center gap-2">
-          <Checkbox
-            checked={!!filters?.category?.includes(cat._id)}
-            onCheckedChange={(checked) =>
-              handleFilter("category", cat._id, checked)
-            }
-          />
-          {cat.name}
-        </Label>
-        {Array.isArray(cat.children) && cat.children.length > 0 && (
-          <div>{renderCategoryTree(cat.children, level + 1)}</div>
-        )}
-      </div>
-    ));
+function getColorValue(colorName) {
+  const colorMap = {
+    black: "#000000",
+    blue: "#0000FF",
+    cream: "#f8f8f2",
+    gold: "#FFD700",
+    gray: "#808080",
+    green: "#00FF00",
+    lavender: "#B57EDC",
+    multicolour: "linear-gradient(45deg, red, blue)",
+    orange: "#FFA500",
+    peach: "#FFE5B4",
+    pink: "#FFC0CB",
+    purple: "#800080",
+    red: "#FF0000",
+    rose: "#C08081",
+    "rose gold": "#b76e79",
+    silver: "#C0C0C0",
+    white: "#FFFFFF",
+    yellow: "#FFFF00",
   };
 
+  return colorMap[colorName] || "#ccc";
+}
+
+function ProductFilter({ filters, handleFilter }) {
+  const [filterGroups, setFilterGroups] = useState([]);
+
+  useEffect(() => {
+    const customFilters = [
+      {
+        id: "gender",
+        label: "Gender",
+        options: ["Male", "Female", "Unisex"],
+      },
+      {
+        id: "ageGroup",
+        label: "Age Group",
+        options: ["Baby", "Toddler", "Child", "Adult"],
+      },
+      {
+        id: "color",
+        label: "Color",
+        options: [
+          "Black", "Blue", "Cream", "Gold", "Gray", "Green", "Lavender",
+          "Multicolour", "Orange", "Peach", "Pink", "Purple", "Red",
+          "Rose Gold", "Silver", "White", "Yellow"
+        ],
+      },
+      {
+        id: "occasion",
+        label: "Occasions",
+        options: [
+          "Baby Shower", "Bachelorette", "Back to School", "Birthday", "Bridal Shower",
+          "Chinese New Year", "Christmas", "Easter", "Eid", "Engagement", "Father's Day",
+          "Gender Reveal", "Graduation", "Halloween", "Mother's Day", "Ramadan",
+          "St. Patrick's Day", "Teacher's Day", "UAE National Day", "Valentine's Day",
+          "Wedding"
+        ],
+      },
+      {
+        id: "theme",
+        label: "By Theme",
+        options: [
+          "Adult Themes", "Avengers", "Baby Shark", "Batman", "Blippi", "Boy Themes",
+          "Cars", "Cocomelon", "Construction", "Despicable Me", "Dinosaurs",
+          "Disco Fever", "Disney Themes", "Fireman Sam", "First Birthday",
+          "Fortnite", "Frozen", "Girl Themes", "Hello Kitty", "Hollywood", "Jungle",
+          "Justice League", "Marvel", "Mickey & Minnie", "Nautical", "Neon",
+          "Paw Patrol", "Pirates", "PJ Masks", "Plain Colours", "Pokemon", "Princess",
+          "Roblox", "Spiderman", "Sports", "Star Wars", "Summer Themes",
+          "Super Mario Bros", "Superman", "Young Children Themes"
+        ],
+      },
+    ];
+    setFilterGroups(customFilters);
+  }, []);
+
   return (
-    <div className="bg-background rounded-lg shadow-sm">
-      <div className="p-4 border-b">
-        <h2 className="text-lg font-extrabold">Filters</h2>
+    <div className="bg-background rounded-lg shadow-sm max-h-[120vh] overflow-y-auto relative">
+      <div className="p-4 pb-6 border-b sticky top-0 bg-background z-10">
+        <h2 className="text-lg font-semibold mb-3 uppercase text-[#484848]">Filters</h2>
+        <button
+          className="px-7 py-3 rounded-md bg-[#EB6123] text-white text-sm font-semibold hover:bg-[#463970] transition-all"
+          onClick={() => handleFilter("clear")}
+        >
+          Clear All Filters
+        </button>
       </div>
-      <div className="p-4 space-y-4">
-        {categories.length > 0 && (
-          <div>
-<button
-  className="px-3 py-1 rounded-md bg-primary text-white text-sm font-medium hover:bg-primary/80 transition-all mb-3"
-  onClick={() => handleFilter('clear')}
->
-Clear All Filters
-</button>
-            <h3 className="text-base font-bold">Category</h3>
-            <div className="max-h-[300px] overflow-y-auto pr-2 gap-2 mt-2">
-              {renderCategoryTree(categories)}
+      <div className="pl-4 pr-0 space-y-2 pt-3 pb-6">
+        {filterGroups.map((group) => (
+          <div key={group.id}>
+            <h3 className="text-base uppercase text-[13px] text-[#484848] mb-2">{group.label}</h3>
+            <div
+              className={`${
+                group.id === "color" ? "grid grid-cols-2 gap-x-2" : "space-y-1"
+              } max-h-[200px] overflow-y-auto pr-2`}
+            >
+              {group.options.map((option) => (
+                <Label
+                  key={option}
+                  className={`flex items-center gap-2 cursor-pointer text-[#484848] ${
+                    group.id === "color" ? "mb-1" : ""
+                  }`}
+                >
+                  <Checkbox
+                    checked={!!filters[group.id]?.includes(option)}
+                    onCheckedChange={() => handleFilter(group.id, option)}
+                    className="hidden"
+                    id={`${group.id}-${option}`}
+                  />
+                  {group.id === "color" ? (
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded-sm border"
+                        style={{ backgroundColor: getColorValue(option.toLowerCase()) }}
+                      />
+                      <span className="text-sm">{option}</span>
+                    </div>
+                  ) : (
+                    <>
+                      <input
+                        type="checkbox"
+                        readOnly
+                        checked={!!filters[group.id]?.includes(option)}
+                        className="w-4 h-4 border rounded"
+                      />
+                      <span className="text-sm">{option}</span>
+                    </>
+                  )}
+                </Label>
+              ))}
             </div>
+            <Separator className="my-4" />
           </div>
-        )}
-        <Separator className="my-4" />
+        ))}
       </div>
     </div>
   );

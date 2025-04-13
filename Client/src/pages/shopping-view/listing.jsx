@@ -12,51 +12,54 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import { sortOptions } from "@/config";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-import {
-  fetchAllFilteredProducts,
-  fetchProductDetails,
-} from "@/store/shop/products-slice";
+import { fetchProductDetails } from "@/store/shop/products-slice";
 import { ArrowUpDownIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import axios from "axios";
+import categoryBanners from "@/assets/categoryBanners.js";
 
 function createSearchParamsHelper(filterParams) {
   const queryParams = [];
-
   for (const [key, value] of Object.entries(filterParams)) {
     if (Array.isArray(value) && value.length > 0) {
       const paramValue = value.join(",");
       queryParams.push(`${key}=${encodeURIComponent(paramValue)}`);
     }
   }
-
-  console.log(queryParams, "queryParams");
-
   return queryParams.join("&");
 }
 
 function ShoppingListing() {
   const dispatch = useDispatch();
-  const { productList, productDetails } = useSelector(
-    (state) => state.shopProducts
-  );
+  const { productDetails } = useSelector((state) => state.shopProducts);
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const [visibleCount, setVisibleCount] = useState(24);
+  const [categoryProducts, setCategoryProducts] = useState([]);
+  
   const { toast } = useToast();
 
   const categorySearchParam = searchParams.get("category");
+  const bannerImage = categoryBanners[categorySearchParam] ||
+  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1744509081/partyworld/occasions/hhkw5aallqijfwycgj13.jpg";
 
   function handleSort(value) {
     setSort(value);
   }
 
-  function handleFilter(getSectionId, getCurrentOption) {
+  function handleFilter(getSectionId, getCurrentOption, checked) {
+    if (getSectionId === "clear") {
+      setFilters({});
+      sessionStorage.setItem("filters", JSON.stringify({}));
+      return;
+    }
+
     let cpyFilters = { ...filters };
     const indexOfCurrentSection = Object.keys(cpyFilters).indexOf(getSectionId);
 
@@ -115,6 +118,26 @@ function ShoppingListing() {
     });
   }
 
+  function getFilteredCategoryProducts() {
+    if (Object.keys(filters).length === 0) return categoryProducts;
+
+    return categoryProducts.filter((product) => {
+      const productCategoryNames = product.categories.map((cat) => cat.name);
+
+      for (const [key, selectedValues] of Object.entries(filters)) {
+        if (selectedValues.length === 0) continue;
+
+        const hasMatch = selectedValues.some((val) =>
+          productCategoryNames.includes(val)
+        );
+
+        if (!hasMatch) return false;
+      }
+
+      return true;
+    });
+  }
+
   useEffect(() => {
     setSort("price-lowtohigh");
     setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
@@ -123,88 +146,78 @@ function ShoppingListing() {
   useEffect(() => {
     if (filters && Object.keys(filters).length > 0) {
       const createQueryString = createSearchParamsHelper(filters);
-      setSearchParams(new URLSearchParams(createQueryString));
     }
   }, [filters]);
-
-  useEffect(() => {
-    if (filters !== null && sort !== null) {
-      dispatch(
-        fetchAllFilteredProducts({ filterParams: filters, sortParams: sort })
-      );
-    }
-  }, [dispatch, sort, filters]);
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
   }, [productDetails]);
 
   useEffect(() => {
-    setVisibleCount(24);
+    setVisibleCount(10);
   }, [filters, sort]);
 
+  useEffect(() => {
+    const categorySlug = searchParams.get("category");
+    if (!categorySlug) return;
+
+    axios
+      .get(`http://localhost:5000/api/products/category/${categorySlug}`)
+      .then((res) => {
+        setCategoryProducts(res.data.products);
+      })
+      .catch((err) => {
+        console.error("❌ Failed to fetch products by slug:", err);
+      });
+  }, [searchParams]);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 p-4 md:p-6">
-      <ProductFilter filters={filters} handleFilter={handleFilter} />
-      <div className="bg-background w-full rounded-lg shadow-sm">
-        <div className="p-4 border-b flex items-center justify-between">
-          <h2 className="text-lg font-extrabold">All Products</h2>
-          <div className="flex items-center gap-3">
-            <span className="text-muted-foreground">
-              {productList?.length} Products
-            </span>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex items-center gap-1"
-                >
-                  <ArrowUpDownIcon className="h-4 w-4" />
-                  <span>Sort by</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[200px]">
-                <DropdownMenuRadioGroup value={sort} onValueChange={handleSort}>
-                  {sortOptions.map((sortItem) => (
-                    <DropdownMenuRadioItem
-                      value={sortItem.id}
-                      key={sortItem.id}
-                    >
-                      {sortItem.label}
-                    </DropdownMenuRadioItem>
-                  ))}
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
-          {productList && productList.length > 0
-            ? productList.slice(0, visibleCount).map((productItem) => (
+    <>
+{categorySearchParam && (
+  <div
+    className="w-full h-[200px] md:h-[280px] bg-cover bg-center flex items-center justify-center"
+    style={{ backgroundImage: `url("${bannerImage}")` }}
+  >
+    <h1 className="text-[#46396F] text-3xl md:text-4xl font-medium text-center px-6 py-3 rounded-md">
+      {categorySearchParam.replace(/-/g, " ").toUpperCase()}
+    </h1>
+  </div>
+)}
+
+
+
+
+      <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6 p-4 md:p-6">
+        <ProductFilter filters={filters} handleFilter={handleFilter} />
+        <div className="bg-background w-full rounded-lg shadow-sm">
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
+            {getFilteredCategoryProducts()
+              .slice(0, visibleCount)
+              .map((productItem) => (
                 <ShoppingProductTile
                   key={productItem._id}
                   handleGetProductDetails={handleGetProductDetails}
                   product={productItem}
                   handleAddtoCart={handleAddtoCart}
                 />
-              ))
-            : null}
-        </div>
-        {productList?.length > visibleCount && (
-          <div className="text-center my-6">
-            <Button onClick={() => setVisibleCount((prev) => prev + 24)}>
-              Load More
-            </Button>
+              ))}
           </div>
-        )}
+          {getFilteredCategoryProducts().length > visibleCount && (
+            <div className="text-center my-6">
+              <Button onClick={() => setVisibleCount((prev) => prev + 24)}>
+                Load More
+              </Button>
+            </div>
+          )}
+        </div>
+        <ProductDetailsDialog
+          open={openDetailsDialog}
+          setOpen={setOpenDetailsDialog}
+          productDetails={productDetails}
+        />
       </div>
-      <ProductDetailsDialog
-        open={openDetailsDialog}
-        setOpen={setOpenDetailsDialog}
-        productDetails={productDetails}
-      />
-    </div>
+    </>
   );
 }
 
