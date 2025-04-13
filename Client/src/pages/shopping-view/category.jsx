@@ -14,17 +14,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import categoryBanners from "@/assets/categoryBanners";
 
-function createSearchParamsHelper(filterParams) {
-  const queryParams = [];
-  for (const [key, value] of Object.entries(filterParams)) {
-    if (Array.isArray(value) && value.length > 0) {
-      const paramValue = value.join(",");
-      queryParams.push(`${key}=${encodeURIComponent(paramValue)}`);
-    }
-  }
-  return queryParams.join("&");
-}
-
 export default function CategoryListingPage() {
   const { slug } = useParams();
   const dispatch = useDispatch();
@@ -32,22 +21,17 @@ export default function CategoryListingPage() {
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
   const [filters, setFilters] = useState({});
-  const [sort, setSort] = useState(null);
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(24);
   const [categoryProducts, setCategoryProducts] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
   const [notFound, setNotFound] = useState(false);
+  const [skipCount, setSkipCount] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 
   const { toast } = useToast();
   const bannerImage =
     categoryBanners[slug] ||
     "https://res.cloudinary.com/dyiupjfwp/image/upload/v1744509081/partyworld/occasions/hhkw5aallqijfwycgj13.jpg";
-
-  function handleSort(value) {
-    setSort(value);
-  }
 
   function handleFilter(sectionId, option) {
     if (sectionId === "clear") {
@@ -117,35 +101,39 @@ export default function CategoryListingPage() {
     });
   }
 
-  useEffect(() => {
-    setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
-    setSort("price-lowtohigh");
-  }, [slug]);
+  const fetchProducts = () => {
+    if (!slug) return;
 
-  useEffect(() => {
-    setVisibleCount(24); // reset load count on slug change
-  }, [slug]);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const res = await axios.get(
-          `http://localhost:5000/api/products/category/${slug}`
-        );
+    axios
+      .get(`http://localhost:5000/api/products/category/${slug}?limit=25&skip=${skipCount}`)
+      .then((res) => {
         if (!res.data.products || res.data.products.length === 0) {
           setNotFound(true);
         } else {
-          setCategoryProducts(res.data.products);
           setNotFound(false);
+          if (skipCount === 0) {
+            setCategoryProducts(res.data.products);
+          } else {
+            setCategoryProducts((prev) => [...prev, ...res.data.products]);
+          }
+          if (res.data.products.length < 25) setHasMore(false);
         }
-      } catch (err) {
+      })
+      .catch((err) => {
         console.error("❌ Failed to fetch products:", err);
         setNotFound(true);
-      }
-    }
+      });
+  };
 
-    if (slug) fetchProducts();
+  useEffect(() => {
+    setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
+    setSkipCount(0);
+    setHasMore(true);
   }, [slug]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [slug, skipCount]);
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
@@ -199,28 +187,25 @@ export default function CategoryListingPage() {
               </div>
             ) : (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3">
-                {getFilteredCategoryProducts()
-                  .slice(0, visibleCount)
-                  .map((productItem) => (
-                    <ShoppingProductTile
-                      key={productItem._id}
-                      handleGetProductDetails={handleGetProductDetails}
-                      product={productItem}
-                      handleAddtoCart={handleAddtoCart}
-                    />
-                  ))}
+                {getFilteredCategoryProducts().map((productItem) => (
+                  <ShoppingProductTile
+                    key={productItem._id}
+                    handleGetProductDetails={handleGetProductDetails}
+                    product={productItem}
+                    handleAddtoCart={handleAddtoCart}
+                  />
+                ))}
               </div>
             )}
           </div>
 
-          {!notFound &&
-            getFilteredCategoryProducts().length > visibleCount && (
-              <div className="text-center my-6">
-                <Button onClick={() => setVisibleCount((prev) => prev + 24)}>
-                  Load More
-                </Button>
-              </div>
-            )}
+          {!notFound && hasMore && (
+            <div className="text-center my-6">
+              <Button onClick={() => setSkipCount((prev) => prev + 25)}>
+                Load More
+              </Button>
+            </div>
+          )}
         </div>
 
         <ProductDetailsDialog

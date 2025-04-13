@@ -18,18 +18,26 @@ router.get("/test-populated-products", async (req, res) => {
 
 // GET /api/products/category/:slug
 router.get("/category/:slug", async (req, res) => {
-  const { slug } = req.params;
-  try {
-    const category = await Category.findOne({ slug });
-    if (!category) return res.status(404).json({ error: "Category not found" });
-
-    const products = await Product.find({ categories: category._id }).populate("categories", "name slug");
-    res.json({ category: category.name, products });
-  } catch (err) {
-    console.error("❌ Error fetching category products:", err);
-    res.status(500).json({ error: "Server error" });
-  }
-});
+    const { slug } = req.params;
+    const limit = parseInt(req.query.limit) || 25;
+    const skip = parseInt(req.query.skip) || 0;
+  
+    try {
+      const category = await Category.findOne({ slug });
+      if (!category) return res.status(404).json({ error: "Category not found" });
+  
+      const products = await Product.find({ categories: category._id })
+        .skip(skip)
+        .limit(limit)
+        .populate("categories", "name slug");
+  
+      res.json({ category: category.name, products });
+    } catch (err) {
+      console.error("❌ Error fetching category products:", err);
+      res.status(500).json({ error: "Server error" });
+    }
+  });
+  
 
 // GET /api/products
 router.get("/", async (req, res) => {

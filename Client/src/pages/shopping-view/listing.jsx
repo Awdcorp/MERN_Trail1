@@ -40,9 +40,10 @@ function ShoppingListing() {
   const [sort, setSort] = useState(null);
   const [searchParams] = useSearchParams();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(24);
   const [categoryProducts, setCategoryProducts] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
+  const [skipCount, setSkipCount] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
 
   const { toast } = useToast();
 
@@ -54,7 +55,7 @@ function ShoppingListing() {
     setSort(value);
   }
 
-  function handleFilter(getSectionId, getCurrentOption, checked) {
+  function handleFilter(getSectionId, getCurrentOption) {
     if (getSectionId === "clear") {
       setFilters({});
       sessionStorage.setItem("filters", JSON.stringify({}));
@@ -139,24 +140,36 @@ function ShoppingListing() {
     });
   }
 
-  useEffect(() => {
-    setSort("price-lowtohigh");
-    setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
-  }, [categorySearchParam]);
-
-  useEffect(() => {
+  const fetchProducts = () => {
     const categorySlug = searchParams.get("category");
     if (!categorySlug) return;
 
     axios
-      .get(`http://localhost:5000/api/products/category/${categorySlug}`)
+      .get(`http://localhost:5000/api/products/category/${categorySlug}?limit=25&skip=${skipCount}`)
       .then((res) => {
-        setCategoryProducts(res.data.products);
+        if (skipCount === 0) {
+          setCategoryProducts(res.data.products);
+        } else {
+          setCategoryProducts((prev) => [...prev, ...res.data.products]);
+        }
+
+        if (res.data.products.length < 25) setHasMore(false);
       })
       .catch((err) => {
         console.error("❌ Failed to fetch products by slug:", err);
       });
-  }, [searchParams]);
+  };
+
+  useEffect(() => {
+    setSort("price-lowtohigh");
+    setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
+    setSkipCount(0);
+    setHasMore(true);
+  }, [categorySearchParam]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [searchParams, skipCount]);
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
@@ -241,7 +254,6 @@ function ShoppingListing() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
             {getFilteredCategoryProducts()
-              .slice(0, visibleCount)
               .map((productItem) => (
                 <ShoppingProductTile
                   key={productItem._id}
@@ -252,9 +264,9 @@ function ShoppingListing() {
               ))}
           </div>
 
-          {getFilteredCategoryProducts().length > visibleCount && (
+          {hasMore && (
             <div className="text-center my-6">
-              <Button onClick={() => setVisibleCount((prev) => prev + 24)}>
+              <Button onClick={() => setSkipCount((prev) => prev + 25)}>
                 Load More
               </Button>
             </div>
