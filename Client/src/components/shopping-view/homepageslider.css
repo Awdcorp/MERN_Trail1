@@ -1,0 +1,13 @@
+/* File: Client/src/components/home/slider.css */
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #00B0BA;
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+}

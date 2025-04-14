@@ -1,0 +1,10 @@
+[2025-04-14T14:20:16.143Z] === Upload Started ===
+[2025-04-14T14:20:17.298Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/04/1920x413-world-book-day-2.webp ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/04/1920x413-world-book-day-2.webp
+[2025-04-14T14:20:17.579Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Superheor-Hamepage.webp ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Superheor-Hamepage.webp
+[2025-04-14T14:20:17.877Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/World-Book-Day.webp ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/World-Book-Day.webp
+[2025-04-14T14:20:18.240Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Easter-hope-page.webp ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Easter-hope-page.webp
+[2025-04-14T14:20:18.539Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Easter-Mob.jpg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Easter-Mob.jpg
+[2025-04-14T14:20:18.843Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Superhero-Mob.jpg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Superhero-Mob.jpg
+[2025-04-14T14:20:19.151Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Book-Day-Mob.jpg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/Book-Day-Mob.jpg
+[2025-04-14T14:20:19.450Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/04/375x475-world-book-day-mobile.webp ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/04/375x475-world-book-day-mobile.webp
+[2025-04-14T14:20:19.451Z] === Upload Completed ===

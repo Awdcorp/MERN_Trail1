@@ -14,6 +14,7 @@ import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
 import OccasionCategorySection from "@/components/shopping-view/occasioncategorysection";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import HomepageSlider from "@/components/shopping-view/homepageslider";
 
 function ShoppingHome() {
   const dispatch = useDispatch();
@@ -69,17 +70,25 @@ function ShoppingHome() {
   ];
 
   return (
-    <div className="space-y-6 md:space-y-10 p-4 md:p-6">
+    <div className="pt-0 pb-6 md:pb-10 px-4 md:px-6 space-y-6 md:space-y-10">
+  
+      {/* 🖼️ Responsive Full-Width Occasion Banner Slider */}
+      <div className="-mx-8">
+        <HomepageSlider />
+      </div>
+  
       {/* 🎯 Shop by Occasion Grid */}
       <OccasionCategorySection />
+  
+      {/* 🎭 Costume Category Product Slider */}
       <ProductSliderSection
-  title="Costume Picks"
-  categoryIds={["67f844b7f1275889ad3993b8"]} // Your MongoDB category IDs
-  sortBy="price-lowtohigh"
-/>
-
+        title="Costume Picks"
+        categoryIds={["67f844b7f1275889ad3993b8"]}
+        sortBy="price-lowtohigh"
+      />
     </div>
   );
+  
 }
 
 export default ShoppingHome;
