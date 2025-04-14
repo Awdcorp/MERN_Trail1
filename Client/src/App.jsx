@@ -42,7 +42,10 @@ function App() {
     <div className="flex flex-col overflow-hidden bg-white">
 <Routes>
   {/* ✅ Public Homepage */}
-  <Route path="/" element={<ShoppingHome />} />
+  <Route path="/" element={<ShoppingLayout />}>
+  <Route index element={<ShoppingHome />} />
+</Route>
+
 
   {/* ✅ Auth routes */}
   <Route

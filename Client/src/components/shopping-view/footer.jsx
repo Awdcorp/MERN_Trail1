@@ -60,7 +60,7 @@ import {
         <div className="w-full bg-white">
           <div className="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 text-sm text-[#2D2D2D]">
             {/* Logo & Social */}
-            <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left text-[#46396F] space-y-2">
+            <div className="col-span-2 md:col-span-1 pb-5 md:pb-0 flex flex-col items-center md:items-start text-center md:text-left text-[#46396F] space-y-2">
               <img src={logofooter} alt="PartyWorld Logo" className="w-36 md:w-28 mb-1" />
               <div className="w-[50%] h-[1px] bg-[#46396F] mt-1" />
               <p className="text-base md:text-sm font-medium">@partyworld.ae</p>
@@ -136,15 +136,15 @@ import {
     Copyright  © {new Date().getFullYear()} Party World.
     </p>
 
-    <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md">
-      <div className="rounded-full px-2 flex items-center justify-center">
-        <img src={MastercardIcon} alt="Mastercard" className="h-5 w-auto" />
+    <div className="flex items-center gap-2 bg-white px-1 py-0 rounded-lg shadow-md">
+      <div className="rounded-full px-1 flex items-center justify-center">
+        <img src={MastercardIcon} alt="Mastercard" className="h-5 w-auto object-cover" />
       </div>
-      <div className="rounded-full px-2 flex items-center justify-center">
-        <img src={VisaIcon} alt="Visa" className="h-5 w-auto" />
+      <div className="rounded-full px-1 flex items-center justify-center">
+        <img src={VisaIcon} alt="Visa" className="h-7 w-auto object-cover" />
       </div>
-      <div className="rounded-full px-2 flex items-center justify-center">
-        <img src={ApplePayIcon} alt="Apple Pay" className="h-5 w-auto" />
+      <div className="rounded-full px-1 flex items-center justify-center">
+        <img src={ApplePayIcon} alt="Apple Pay" className="h-8 w-auto object-cover" />
       </div>
     </div>
   </div>
