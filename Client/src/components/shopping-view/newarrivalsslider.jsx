@@ -5,7 +5,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 
-export default function ProductSliderSection({ title, categoryIds = [], sortBy = "date-newest", customProducts }) {
+export default function ProductSliderSection({ title, categoryIds = [], sortBy = "date-newest", customProducts, onAddToCart }) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     if (customProducts) {
@@ -48,7 +48,8 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
       >
         {products.map((product) => (
           <SwiperSlide key={product._id} className="pb-2">
-            <ShoppingProductTile product={product} />
+            <ShoppingProductTile product={product}
+            handleAddtoCart={() => onAddToCart?.(product._id)} />
           </SwiperSlide>
         ))}
       </Swiper>

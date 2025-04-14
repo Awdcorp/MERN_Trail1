@@ -10,6 +10,8 @@ import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import { getReviews } from "@/store/shop/review-slice";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
+import { useToast } from "@/components/ui/use-toast";
+
 export default function ProductPage() {
   const { slug } = useParams();
   const dispatch = useDispatch();
@@ -18,7 +20,8 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [upsellProducts, setUpsellProducts] = useState([]);
   const [relatedProducts, setRelatedProducts] = useState([]);
-
+  const { toast } = useToast();
+  
   useEffect(() => {
     setProduct(null);
     setUpsellProducts([]);
@@ -81,17 +84,42 @@ export default function ProductPage() {
 
   const handleAddToCart = () => {
     if (!product || product.totalStock === 0) return;
+  
     dispatch(
       addToCart({
-        userId: user?.id,
+        userId: user?.id || "guest",
         productId: product._id,
         quantity,
       })
-    ).then(() => {
-      dispatch(fetchCartItems(user?.id));
-    });
+    )
+      .then(() => {
+        dispatch(fetchCartItems(user?.id || "guest"));
+        if (typeof setOpenCartSheet === "function") {
+          setOpenCartSheet(true); // ✅ open cart drawer if function passed
+        }
+        toast?.({ title: "Added to cart!" }); // ✅ show toast if available
+      })
+      .catch((err) => {
+        console.error("❌ Add to Cart failed:", err);
+      });
   };
-
+  const handleAddToCartFromList = (productId) => {
+    dispatch(
+      addToCart({
+        userId: user?.id || "guest",
+        productId,
+        quantity: 1,
+      })
+    )
+      .then(() => {
+        dispatch(fetchCartItems(user?.id || "guest"));
+        toast?.({ title: "Added to cart!" });
+      })
+      .catch((err) => {
+        console.error("❌ Add to Cart failed:", err);
+      });
+  };
+  
   if (!product) return <div className="p-10 text-center">Product not found.</div>;
 
   return (
@@ -168,7 +196,9 @@ export default function ProductPage() {
           <ShoppingProductTile
             key={productItem._id}
             product={productItem}
-            handleAddtoCart={() => {}}
+            handleAddtoCart={() =>
+                handleAddToCartFromList(productItem._id)
+            }
           />
         ))}
       </div>
@@ -186,7 +216,9 @@ export default function ProductPage() {
           <ShoppingProductTile
             key={productItem._id}
             product={productItem}
-            handleAddtoCart={() => {}}
+            handleAddtoCart={() =>
+                handleAddToCartFromList(productItem._id)
+            }
           />
         ))}
       </div>

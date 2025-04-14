@@ -85,6 +85,7 @@ function ShoppingHome() {
         title="Costume Picks"
         categoryIds={["67f844b7f1275889ad3993b8"]}
         sortBy="price-lowtohigh"
+        onAddToCart={handleAddtoCart}
       />
     </div>
   );

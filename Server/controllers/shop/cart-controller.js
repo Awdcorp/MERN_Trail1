@@ -5,7 +5,7 @@ const addToCart = async (req, res) => {
   try {
     const { userId, productId, quantity } = req.body;
 
-    if (!userId || !productId || quantity <= 0) {
+    if (!productId || quantity <= 0) {
       return res.status(400).json({
         success: false,
         message: "Invalid data provided!",
@@ -13,7 +13,6 @@ const addToCart = async (req, res) => {
     }
 
     const product = await Product.findById(productId);
-
     if (!product) {
       return res.status(404).json({
         success: false,
@@ -21,23 +20,29 @@ const addToCart = async (req, res) => {
       });
     }
 
-    let cart = await Cart.findOne({ userId });
+    // 🔁 Allow guest cart by defaulting to IP or "guest"
+    const normalizedGuestId = req.ip === "::1" ? "guest" : req.ip;
+const cartKey = userId || normalizedGuestId || "guest";
 
+
+    let cart = await Cart.findOne({ userId: cartKey });
     if (!cart) {
-      cart = new Cart({ userId, items: [] });
+      cart = new Cart({ userId: cartKey, items: [] });
     }
 
-    const findCurrentProductIndex = cart.items.findIndex(
+    const existingIndex = cart.items.findIndex(
       (item) => item.productId.toString() === productId
     );
 
-    if (findCurrentProductIndex === -1) {
+    if (existingIndex === -1) {
       cart.items.push({ productId, quantity });
     } else {
-      cart.items[findCurrentProductIndex].quantity += quantity;
+      cart.items[existingIndex].quantity += quantity;
     }
 
     await cart.save();
+    console.log("🛒 Cart saved for", cartKey, cart);
+
     res.status(200).json({
       success: true,
       data: cart,
@@ -51,6 +56,7 @@ const addToCart = async (req, res) => {
   }
 };
 
+
 const fetchCartItems = async (req, res) => {
   try {
     const { userId } = req.params;
@@ -61,6 +67,11 @@ const fetchCartItems = async (req, res) => {
         message: "User id is manadatory!",
       });
     }
+
+        // ✅ Normalize guest ID — convert "::1" to "guest"
+        if (userId === "::1") {
+          userId = "guest";
+        }
 
     const cart = await Cart.findOne({ userId }).populate({
       path: "items.productId",
