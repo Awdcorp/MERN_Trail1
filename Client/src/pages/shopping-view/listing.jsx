@@ -145,7 +145,7 @@ function ShoppingListing() {
     if (!categorySlug) return;
 
     axios
-      .get(`http://localhost:5000/api/products/category/${categorySlug}?limit=25&skip=${skipCount}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/products/category/${categorySlug}?limit=25&skip=${skipCount}`)
       .then((res) => {
         if (skipCount === 0) {
           setCategoryProducts(res.data.products);

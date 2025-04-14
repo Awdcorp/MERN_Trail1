@@ -27,7 +27,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/slug/${slug}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/products/slug/${slug}`)
       .then((res) => {
         console.log("🎯 Product fetched:", res.data);
         setProduct(res.data);
@@ -36,7 +36,7 @@ export default function ProductPage() {
         if (res.data.upsellProductIds?.length > 0) {
           console.log("🔗 Upsell IDs:", res.data.upsellProductIds);
           axios
-            .get(`http://localhost:5000/api/products/multiple`, {
+            .get(`${import.meta.env.VITE_API_URL}/api/products/multiple`, {
               params: { ids: res.data.upsellProductIds.join(","),
               limit: 5, // 🎯 fetch only 5 
               },
@@ -56,7 +56,7 @@ export default function ProductPage() {
         if (res.data.relatedProductIds?.length > 0) {
           console.log("🔁 Related IDs:", res.data.relatedProductIds);
           axios
-            .get(`http://localhost:5000/api/products/multiple`, {
+            .get(`${import.meta.env.VITE_API_URL}/api/products/multiple`, {
               params: { ids: res.data.relatedProductIds.join(","),
               limit: 5, // 🎯 fetch only 5 
               },

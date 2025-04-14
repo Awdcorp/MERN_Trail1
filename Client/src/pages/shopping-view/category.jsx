@@ -105,7 +105,7 @@ export default function CategoryListingPage() {
     if (!slug) return;
 
     axios
-      .get(`http://localhost:5000/api/products/category/${slug}?limit=25&skip=${skipCount}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/products/category/${slug}?limit=25&skip=${skipCount}`)
       .then((res) => {
         if (!res.data.products || res.data.products.length === 0) {
           setNotFound(true);
