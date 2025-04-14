@@ -9,19 +9,69 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import { getReviews } from "@/store/shop/review-slice";
-
+import ShoppingProductTile from "@/components/shopping-view/product-tile";
 export default function ProductPage() {
   const { slug } = useParams();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [upsellProducts, setUpsellProducts] = useState([]);
+  const [relatedProducts, setRelatedProducts] = useState([]);
+
+  useEffect(() => {
+    setProduct(null);
+    setUpsellProducts([]);
+    setRelatedProducts([]);
+  }, [slug]);
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/products/slug/${slug}`)
       .then((res) => {
+        console.log("🎯 Product fetched:", res.data);
         setProduct(res.data);
+
+        // ✅ Fetch upsell products
+        if (res.data.upsellProductIds?.length > 0) {
+          console.log("🔗 Upsell IDs:", res.data.upsellProductIds);
+          axios
+            .get(`http://localhost:5000/api/products/multiple`, {
+              params: { ids: res.data.upsellProductIds.join(","),
+              limit: 5, // 🎯 fetch only 5 
+              },
+            })
+            .then((res2) => {
+              console.log("📦 Upsell Products:", res2.data.products);
+              setUpsellProducts(res2.data.products || []);
+            })
+            .catch((err2) => {
+              console.error("❌ Error fetching upsell products:", err2);
+            });
+        } else {
+          console.warn("⚠️ No upsell_ids found for product");
+        }
+
+        // ✅ Fetch related products
+        if (res.data.relatedProductIds?.length > 0) {
+          console.log("🔁 Related IDs:", res.data.relatedProductIds);
+          axios
+            .get(`http://localhost:5000/api/products/multiple`, {
+              params: { ids: res.data.relatedProductIds.join(","),
+              limit: 5, // 🎯 fetch only 5 
+              },
+            })
+            .then((res3) => {
+              console.log("🧩 Related Products:", res3.data.products);
+              setRelatedProducts(res3.data.products || []);
+            })
+            .catch((err3) => {
+              console.error("❌ Error fetching related products:", err3);
+            });
+        } else {
+          console.warn("⚠️ No related_ids found for product");
+        }
+
         dispatch(getReviews(res.data._id));
       })
       .catch((err) => {
@@ -46,10 +96,8 @@ export default function ProductPage() {
 
   return (
     <>
-      {/* 🧱 Main Product Layout */}
       <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-10">
         <div className="flex flex-col md:flex-row gap-10 items-start">
-          {/* 🖼️ Product Image */}
           <div className="w-full md:w-[45%] flex justify-center">
             <img
               src={product.images?.[0] || "/placeholder.png"}
@@ -58,18 +106,16 @@ export default function ProductPage() {
             />
           </div>
 
-          {/* 📋 Product Info */}
           <div className="w-full md:w-[55%] space-y-4">
             <h1 className="text-2xl md:text-2xl font-thin text-[#46396F]">{product.title}</h1>
-
-            <div className="text-xl font-light text-[#334155]">
+            <div className="font-light text-[#334155]">
               {product.salePrice > 0 ? (
                 <>
                   <span className="line-through text-gray-500 mr-2">{product.price} AED</span>
                   <span className="text-[#EB6123]">{product.salePrice} AED</span>
                 </>
               ) : (
-                <>{product.price} AED</>
+                <>{product.price}.00 AED</>
               )}
             </div>
 
@@ -81,7 +127,6 @@ export default function ProductPage() {
                 : "Out of stock"}
             </div>
 
-            {/* 🛒 Quantity + Add to Cart */}
             <div className="flex items-center gap-4 mt-4">
               <Input
                 type="number"
@@ -94,7 +139,7 @@ export default function ProductPage() {
               <Button
                 onClick={handleAddToCart}
                 disabled={product.totalStock === 0}
-                className="bg-[#46396F] text-white rounded px-6"
+                className="bg-[#46396F] text-white rounded-3xl px-6"
               >
                 Add To Cart
               </Button>
@@ -102,7 +147,6 @@ export default function ProductPage() {
           </div>
         </div>
 
-        {/* 📄 Description */}
         <div className="mt-12 text-center">
           <h2 className="text-xl font-thin text-[#46396F] mb-6">Description</h2>
           <div
@@ -112,22 +156,44 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* 🎯 Full-Width Product Slider Section */}
-      <div className="w-full bg-[#f9f9f9] py-10">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <ProductSliderSection
-            title="Customers also purchased"
-            categoryIds={["67f844b7f1275889ad3993b8"]} // Example categoryId
-            sortBy="price-lowtohigh"
+      <div className="w-full py-10">
+
+        {relatedProducts.length > 0 && (
+  <div className="mt-16">
+    <div className="max-w-6xl mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-light text-center mb-2 uppercase text-[#463970]">You Might Also Like</h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+        {upsellProducts.map((productItem) => (
+          <ShoppingProductTile
+            key={productItem._id}
+            product={productItem}
+            handleAddtoCart={() => {}}
           />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <ProductSliderSection
-            title="You might also like"
-            categoryIds={["67f844b7f1275889ad3993b8"]} // Example categoryId
-            sortBy="price-lowtohigh"
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+{relatedProducts.length > 0 && (
+  <div className="mt-16">
+    <div className="max-w-6xl mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-light text-center mb-2 uppercase text-[#463970]">Customers Also Purchased</h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+        {relatedProducts.map((productItem) => (
+          <ShoppingProductTile
+            key={productItem._id}
+            product={productItem}
+            handleAddtoCart={() => {}}
           />
-        </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </>
   );

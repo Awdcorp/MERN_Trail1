@@ -5,9 +5,13 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 
-export default function ProductSliderSection({ title, categoryIds = [], sortBy = "date-newest" }) {
+export default function ProductSliderSection({ title, categoryIds = [], sortBy = "date-newest", customProducts }) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
+    if (customProducts) {
+      setProducts(customProducts);
+      return;
+    }
     async function fetchProducts() {
       try {
         const res = await axios.get("http://localhost:5000/api/shop/products/get", {
@@ -20,7 +24,7 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
     }
 
     fetchProducts();
-  }, [categoryIds, sortBy]);
+  }, [customProducts, categoryIds, sortBy]);
 
   return (
     <div className="px-4 md:px-6 py-8">

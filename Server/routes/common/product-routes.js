@@ -54,7 +54,33 @@ router.get("/category/:slug", async (req, res) => {
     }
   });
   
-
+// GET /api/products/multiple?ids=31612,31613,31626&limit=5
+router.get("/multiple", async (req, res) => {
+    const idsParam = req.query.ids;
+    const limit = parseInt(req.query.limit) || 0;
+  
+    if (!idsParam) {
+      return res.status(400).json({ error: "Missing ids parameter" });
+    }
+  
+    const idArray = idsParam.split(",").map((id) => id.trim());
+  
+    try {
+      let query = Product.find({ externalId: { $in: idArray } }).populate("categories", "name slug");
+  
+      if (limit > 0) {
+        query = query.limit(limit);
+      }
+  
+      const products = await query.exec();
+      res.json({ products });
+    } catch (err) {
+      console.error("❌ Error fetching multiple products by externalId:", err);
+      res.status(500).json({ error: "Server error" });
+    }
+  });
+  
+  
 // GET /api/products
 router.get("/", async (req, res) => {
   try {

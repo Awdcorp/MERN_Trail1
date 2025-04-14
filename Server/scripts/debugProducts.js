@@ -11,16 +11,25 @@ async function debugProducts() {
 
   const products = await Product.find()
     .populate("categories", "name slug")
-    .limit(5)
+    .limit(15)
     .lean();
 
   for (const product of products) {
-    console.log("📦", product.title);
-    console.log("Categories:", product.categories);
-    console.log("Slug:", product.slug);
-    console.log("Tags:", product.tags);
-    console.log("Brand:", product.brand);
-    console.log("---------\n");
+    console.log("🛍️  Product:", product.title);
+    console.log("🔗 Slug:", product.slug);
+    console.log("🏷️  Brand:", product.brand || "—");
+    console.log("💰 Price:", product.price, "| Sale:", product.salePrice || "—");
+    console.log("📦 Stock:", product.totalStock ?? "N/A");
+    console.log("🏷️  Tags:", product.tags?.join(", ") || "None");
+
+    console.log("🗂️  Categories:");
+    product.categories.forEach(cat => {
+      console.log(`   - ${cat.name} (${cat.slug})`);
+    });
+
+    console.log("🧲 Upsells:", (product.upsellProductIds?.length ? product.upsellProductIds.join(", ") : "None"));
+    console.log("🧩 Related:", (product.relatedProductIds?.length ? product.relatedProductIds.join(", ") : "None"));
+    console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
   }
 
   process.exit(0);
