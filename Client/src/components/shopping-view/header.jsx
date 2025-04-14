@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
+import UserCartWrapper from "@/components/shopping-view/cart-wrapper";
+
 import {
   Menu,
   X,
@@ -46,6 +50,9 @@ const megaMenu = {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [openCartSheet, setOpenCartSheet] = useState(false);
+const { cartItems } = useSelector((state) => state.shopCart);
+console.log("🛒 Cart Items from Redux:", cartItems);
 
   const navLinks = Object.keys(megaMenu).concat([
     "Entertainment",
@@ -79,7 +86,19 @@ export default function Header() {
               <img src={logo} alt="PartyWorld Logo" className="h-10" />
             </Link>
             <div className="flex items-center gap-4">
-              <ShoppingCart className="h-5 w-5 text-[#463970]" />
+            <button
+  onClick={() => setOpenCartSheet(true)}
+  className="relative"
+>
+  <ShoppingCart className="h-5 w-5 text-[#463970]" />
+  {(Array.isArray(cartItems?.items) ? cartItems.items : cartItems)?.length > 0 && (
+  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] leading-none px-1.5 py-0.5 rounded-full">
+    {(Array.isArray(cartItems?.items) ? cartItems.items : cartItems).length}
+  </span>
+)}
+
+</button>
+
               <button onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? (
                   <X className="h-6 w-6 text-[#463970]" />
@@ -110,7 +129,19 @@ export default function Header() {
             {/* Icons */}
             <div className="flex gap-6 items-center">
               <User className="h-5 w-5 text-[#463970]" />
-              <ShoppingCart className="h-5 w-5 text-[#463970]" />
+              <button
+  onClick={() => setOpenCartSheet(true)}
+  className="relative"
+>
+  <ShoppingCart className="h-5 w-5 text-[#463970]" />
+  {(Array.isArray(cartItems?.items) ? cartItems.items : cartItems)?.length > 0 && (
+  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] leading-none px-1.5 py-0.5 rounded-full">
+    {(Array.isArray(cartItems?.items) ? cartItems.items : cartItems).length}
+  </span>
+)}
+
+</button>
+
               <Heart className="h-5 w-5 text-[#463970]" />
               <MapPin className="h-5 w-5 text-[#463970]" />
             </div>
@@ -249,6 +280,20 @@ export default function Header() {
 
 
       </div>
+      <Sheet open={openCartSheet} onOpenChange={setOpenCartSheet}>
+  <SheetContent className="sm:max-w-md" aria-describedby="cart-content-description">
+    <div id="cart-content-description" className="sr-only">
+      Your current shopping cart items
+    </div>
+
+    <UserCartWrapper
+      cartItems={cartItems?.items || []}
+      setOpenCartSheet={setOpenCartSheet}
+    />
+  </SheetContent>
+</Sheet>
+
+
     </header>
   );
 }

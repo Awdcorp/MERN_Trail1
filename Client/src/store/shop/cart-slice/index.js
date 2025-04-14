@@ -9,10 +9,11 @@ const initialState = {
 export const addToCart = createAsyncThunk(
   "cart/addToCart",
   async ({ userId, productId, quantity }) => {
+    const fallbackUserId = userId || "guest"; // 🧠 fallback to guest
     const response = await axios.post(
       `${import.meta.env.VITE_API_URL}/api/shop/cart/add`,
       {
-        userId,
+        userId: fallbackUserId,
         productId,
         quantity,
       }
@@ -25,8 +26,9 @@ export const addToCart = createAsyncThunk(
 export const fetchCartItems = createAsyncThunk(
   "cart/fetchCartItems",
   async (userId) => {
+    const fallbackUserId = userId || "guest";
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/shop/cart/get/${userId}`
+      `${import.meta.env.VITE_API_URL}/api/shop/cart/get/${fallbackUserId}`
     );
 
     return response.data;

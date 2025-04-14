@@ -65,7 +65,7 @@ function SearchProducts() {
       })
     ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
+        dispatch(fetchCartItems(user?.id || "guest"));
         toast({
           title: "Product is added to cart",
         });

@@ -1,7 +1,7 @@
 import { Minus, Plus, Trash } from "lucide-react";
 import { Button } from "../ui/button";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCartItem, updateCartQuantity } from "@/store/shop/cart-slice";
+import { deleteCartItem, updateCartQuantity, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "../ui/use-toast";
 
 function UserCartItemsContent({ cartItem }) {
@@ -43,7 +43,7 @@ function UserCartItemsContent({ cartItem }) {
 
     dispatch(
       updateCartQuantity({
-        userId: user?.id,
+        userId: user?.id || "guest",
         productId: getCartItem?.productId,
         quantity:
           typeOfAction === "plus"
@@ -55,26 +55,27 @@ function UserCartItemsContent({ cartItem }) {
         toast({
           title: "Cart item is updated successfully",
         });
+        dispatch(fetchCartItems(user?.id || "guest")); // ✅ Refresh cart data after update
       }
     });
   }
 
   function handleCartItemDelete(getCartItem) {
     dispatch(
-      deleteCartItem({ userId: user?.id, productId: getCartItem?.productId })
+      deleteCartItem({ userId: user?.id || "guest", productId: getCartItem?.productId })
     ).then((data) => {
       if (data?.payload?.success) {
-        toast({
-          title: "Cart item is deleted successfully",
-        });
+        toast({ title: "Cart item is deleted successfully" });
+        dispatch(fetchCartItems(user?.id || "guest")); // ✅ Refresh cart after deletion
       }
     });
+    
   }
 
   return (
     <div className="flex items-center space-x-4">
       <img
-        src={cartItem?.image}
+        src={cartItem?.image || "/placeholder.png"}
         alt={cartItem?.title}
         className="w-20 h-20 rounded object-cover"
       />

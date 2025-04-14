@@ -49,7 +49,7 @@ function ShoppingHome() {
 
     dispatch(addToCart({ userId: user?.id, productId, quantity: 1 })).then((res) => {
       if (res?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
+        dispatch(fetchCartItems(user?.id || "guest"));
         toast({ title: "Added to cart!" });
       }
     });
