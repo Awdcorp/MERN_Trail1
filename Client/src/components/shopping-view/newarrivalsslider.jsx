@@ -28,10 +28,10 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
 
   return (
     <div className="px-4 md:px-6 py-8">
-      <h2 className="text-xl md:text-2xl font-light text-center mb-2 uppercase text-[#463970]">
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
         {title}
       </h2>
-      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+      <div className="w-[140px] h-[1px] bg-[#A3A3A399] mx-auto mb-6" />
 
       <Swiper
         spaceBetween={12}

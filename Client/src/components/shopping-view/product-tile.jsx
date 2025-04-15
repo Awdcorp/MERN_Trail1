@@ -30,15 +30,15 @@ function ShoppingProductTile({ product, handleAddtoCart }) {
 
   {/* 👇 This now properly pushes footer to bottom */}
   <CardContent className="p-3 text-sm flex flex-col flex-grow cursor-pointer" onClick={() => handleGetProductDetails(product?._id)}>
-    <h3 className="text-center text-[15px] font-semibold text-[#463970] leading-snug truncate mb-1">{product?.title}</h3>
+    <h3 className="text-center text-[15px] font-medium text-[#463970] leading-snug truncate mb-1">{product?.title}</h3>
     <div className="flex justify-between items-center mb-1">
     </div>
     <div className="flex flex-col items-center mt-auto">
-      <span className={`text-[14px]] font-semibold text-primary ${product?.salePrice > 0 ? "line-through" : ""}`}>
-        ${product?.price}
+      <span className={`text-[14px]] font-medium text-primary ${product?.salePrice > 0 ? "line-through" : ""}`}>
+        {product?.price}.00 AED
       </span>
       {product?.salePrice > 0 && (
-        <span className="text-lg font-semibold text-primary mt-1">${product?.salePrice}</span>
+        <span className="text-lg font-semibold text-primary mt-1">{product?.salePrice}.00 AED</span>
       )}
     </div>
   </CardContent>

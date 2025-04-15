@@ -1,0 +1,8 @@
+[2025-04-14T23:13:58.517Z] === Upload Started ===
+[2025-04-14T23:13:59.604Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Pinatas.jpeg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Pinatas.jpeg
+[2025-04-14T23:13:59.922Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Goodie-Bags.jpeg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Goodie-Bags.jpeg
+[2025-04-14T23:14:00.217Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Balloons.jpeg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Balloons.jpeg
+[2025-04-14T23:14:00.529Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Tableware.jpeg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Tableware.jpeg
+[2025-04-14T23:14:00.911Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Decorations.jpeg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Decorations.jpeg
+[2025-04-14T23:14:01.331Z] ❌ Error uploading: https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Party-Essentials.jpeg ❗ Resource not found - https://i0.wp.com/partyworld.ae/wp-content/uploads/2024/08/Party-Essentials.jpeg
+[2025-04-14T23:14:01.331Z] === Upload Completed ===

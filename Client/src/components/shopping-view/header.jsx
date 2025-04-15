@@ -70,7 +70,7 @@ console.log("🛒 Cart Items from Redux:", cartItems);
       {/* Top Bar */}
       <div className="bg-[#00B0BA] text-white text-xs md:text-sm py-3 text-center">
         <div className="max-w-screen-xl mx-auto px-4 md:px-0">
-          <div className="flex flex-col md:flex-row md:justify-between items-center gap-2">
+          <div className="flex flex-col md:flex-row font-normal md:justify-between items-center gap-2">
             <span>10% OFF FIRST ORDER: USE CODE HELLOPW</span>
             <span>FREE DELIVERIES IN UAE ON ORDERS OVER AED 200</span>
           </div>

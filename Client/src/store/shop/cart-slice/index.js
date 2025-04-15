@@ -115,4 +115,11 @@ const shoppingCartSlice = createSlice({
   },
 });
 
+// File: Client/src/store/shop/cart-slice.js
+
+export const initializeCart = () => (dispatch) => {
+  const userId = localStorage.getItem("userId") || "guest";
+  dispatch(fetchCartItems(userId));
+};
+
 export default shoppingCartSlice.reducer;

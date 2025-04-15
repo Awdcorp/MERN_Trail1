@@ -1,0 +1,8 @@
+[2025-04-14T23:14:55.207Z] === Upload Started ===
+[2025-04-14T23:14:57.631Z] ✅ Uploaded: Pinatas | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1744672497/partyworld/occasions/ujvr53e4w5mekfi2egfd.jpg
+[2025-04-14T23:14:58.588Z] ✅ Uploaded: Goodie-Bags | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1744672499/partyworld/occasions/pzsa2itmcme0hgeqmetf.jpg
+[2025-04-14T23:14:59.467Z] ✅ Uploaded: Balloons | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1744672500/partyworld/occasions/km1rip1sayxriw80p3dm.jpg
+[2025-04-14T23:15:00.426Z] ✅ Uploaded: Tableware | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1744672500/partyworld/occasions/lcuxp8kefrezekddzjae.jpg
+[2025-04-14T23:15:01.749Z] ✅ Uploaded: Decorations | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1744672502/partyworld/occasions/kugpk04bdink3tv5fucr.jpg
+[2025-04-14T23:15:02.572Z] ✅ Uploaded: Party-Essentials | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1744672503/partyworld/occasions/d7qoydfkftv4skkrae6w.jpg
+[2025-04-14T23:15:02.572Z] === Upload Completed ===

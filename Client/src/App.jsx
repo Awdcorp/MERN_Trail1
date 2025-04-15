@@ -24,6 +24,8 @@ import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from "./pages/shopping-view/search";
 import CategoryListingPage from "@/pages/shopping-view/category";
 import ProductPage from "@/pages/shopping-view/product";
+import { initializeCart } from "@/store/shop/cart-slice";
+
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
     (state) => state.auth
@@ -32,7 +34,9 @@ function App() {
 
   useEffect(() => {
     dispatch(checkAuth());
+    dispatch(initializeCart());
   }, [dispatch]);
+
 
   if (isLoading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
 
