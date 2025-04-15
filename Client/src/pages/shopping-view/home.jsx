@@ -97,81 +97,173 @@ function ShoppingHome() {
         onAddToCart={handleAddtoCart}
       />
       <CategorySection groupName="Plan Your Birthday" isSlider={true} />
-
       <div className="px-4 md:px-8 mt-10">
   <h2 className="text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
-  Party PACKAGES
+    Party PACKAGES
   </h2>
   <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
 
   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+    {[
+      {
+        name: "The Value Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/children-celebrating-birthday-party-scaled-1.jpg",
+        link: "the-value-package-2",
+      },
+      {
+        name: "The Value Plus Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/children-with-party-horns-celebrating-birthday-scaled-1.jpg",
+        link: "the-value-plus-package-2",
+      },
+      {
+        name: "The Premium Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/group-happy-kids-with-colorful-candies-having-fun-birthday-party-isolated-white-scaled-1.jpg",
+        link: "the-premium-package",
+      },
+      {
+        name: "The Entertainment Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/children-smiling-happiness-friendship-togetherness-celebration-studio-portrait-scaled-1.jpg",
+        link: "the-entertainment-package",
+      },
+      {
+        name: "The Superior Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/children-holding-colorful-balloons-blowing-party-horn-during-birthday-scaled-1.jpg",
+        link: "the-superior-package",
+      },
+      {
+        name: "The Deluxe Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/madness-birthday-party-scaled-1.jpg",
+        link: "the-deluxe-package",
+      },
+      {
+        name: "The Ultimate Package",
+        image: "https://partyworld.ae/wp-content/uploads/2025/03/portrait-happy-friends-wearing-party-hat-standing-together-scaled-1.jpg",
+        link: "the-ultimate-package",
+      },
+    ].map((item, idx) => (
+      <a
+        key={idx}
+        href={`/shop/product/${item.link}`}
+        className="flex flex-col items-center justify-start"
+      >
+        {/* Image Container with Fixed Height */}
+        <div className="w-full h-[190px] mb-3">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-full h-full object-cover rounded-md"
+          />
+        </div>
+
+        {/* Title with Fixed Height to Prevent Shifting */}
+        <span
+          className="text-sm text-center"
+          style={{
+            color: "#463970",
+            fontSize: "15px",
+            fontWeight: 400,
+            minHeight: "40px", // 🟢 Locks title area height
+            lineHeight: "1.2rem",
+            display: "block",
+            textOverflow: "ellipsis",
+            overflow: "hidden",
+            whiteSpace: "normal",
+          }}
+        >
+          {item.name}
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <div className="px-4 md:px-8 mt-10">
+  <h2 className="text-2xl font-medium text-center mb-2 pt-5 uppercase text-[#463970]">
+    Visit Our Stores
+  </h2>
+  <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
   {[
   {
-    name: "The Value Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/children-celebrating-birthday-party-scaled-1.jpg",
-    link: "the-value-package-2",
+    name: "AL BARSHA",
+    address: "Iridium building, Umm Suqeim Road, Barsha, Dubai",
+    color: "from-[#B7117A]",
+    buttonColor: "#B7117A",
+    mapSrc: "https://www.google.com/maps/embed?...",
   },
   {
-    name: "The Value Plus Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/children-with-party-horns-celebrating-birthday-scaled-1.jpg",
-    link: "the-value-plus-package-2",
+    name: "THE SPRINGS SOUK",
+    address: "The Springs Souk, Ground floor, Dubai",
+    color: "from-[#00B0BA]",
+    buttonColor: "#00B0BA",
+    mapSrc: "https://www.google.com/maps/embed?...",
   },
   {
-    name: "The Premium Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/group-happy-kids-with-colorful-candies-having-fun-birthday-party-isolated-white-scaled-1.jpg",
-    link: "the-premium-package",
+    name: "MOTORCITY",
+    address: "Foxhill 9 building, Ground floor, Motor City, Dubai",
+    color: "from-[#F18074]",
+    buttonColor: "#F18074",
+    mapSrc: "https://www.google.com/maps/embed?...",
   },
   {
-    name: "The Entertainment Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/children-smiling-happiness-friendship-togetherness-celebration-studio-portrait-scaled-1.jpg",
-    link: "the-entertainment-package",
+    name: "ARABIAN RANCHES",
+    address: "Arabian Ranches III Souk, Dubai",
+    color: "from-[#B7117A]",
+    buttonColor: "#B7117A",
+    mapSrc: "https://www.google.com/maps/embed?...",
   },
-  {
-    name: "The Superior Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/children-holding-colorful-balloons-blowing-party-horn-during-birthday-scaled-1.jpg",
-    link: "the-superior-package",
-  },
-  {
-    name: "The Deluxe Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/madness-birthday-party-scaled-1.jpg",
-    link: "the-deluxe-package",
-  },
-  {
-    name: "The Ultimate Package",
-    image: "https://partyworld.ae/wp-content/uploads/2025/03/portrait-happy-friends-wearing-party-hat-standing-together-scaled-1.jpg",
-    link: "the-ultimate-package",
-  },
-].map((item, idx) => (
-  <a
+].map((store, idx) => (
+  <div
     key={idx}
-    href={`/shop/product/${item.link}`}
-    className="flex flex-col items-center justify-center"
+    className="relative overflow-hidden rounded-xl shadow-md text-center text-[#2D2D2D]"
   >
-    <img
-      src={item.image}
-      alt={item.name}
-      className="w-full h-48 object-cover rounded-md mb-4"
+    {/* Gradient bottom */}
+    <div
+      className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t ${store.color} to-transparent z-0`}
     />
-    <span
-      className="text-sm text-center"
-      style={{
-        color: "#463970",
-        fontSize: "15px",
-        fontWeight: 400,
-      }}
-    >
-      {item.name}
-    </span>
-  </a>
+    <div className="relative z-10 p-4 flex flex-col items-center">
+      {/* 🟣 Matching Color Tag */}
+      <div
+  className="text-white text-xs font-semibold tracking-widest uppercase h-10 w-44 flex items-center justify-center rounded-md mx-auto"
+  style={{ backgroundColor: store.buttonColor }}
+>
+  {store.name}
+</div>
+
+
+      <h3 className="text-center text-[14px] font-medium leading-snug mb-1 pt-5 max-w-[80%] mx-auto px-2">
+      {store.address}
+</h3>
+      <div className="w-[100%] h-[1px] bg-black my-3" />
+
+      <iframe
+        src={store.mapSrc}
+        width="100%"
+        height="230"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title={store.name}
+        className="rounded-md"
+      ></iframe>
+    </div>
+  </div>
 ))}
 
   </div>
 </div>
 
 
+
+
+</div>
+
+
+
     </div>
   );
-  
+
 }
 
 export default ShoppingHome;

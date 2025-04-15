@@ -1,8 +1,6 @@
 require("dotenv").config();
 const axios = require("axios");
 const mongoose = require("mongoose");
-const fs = require("fs");
-const path = require("path");
 const cloudinary = require("cloudinary").v2;
 const slugify = require("slugify");
 
@@ -13,11 +11,6 @@ const WOO_API_URL = "https://partyworld.ae/wp-json/wc/v3/products";
 const WOO_API_KEY = process.env.WOO_API_KEY;
 const WOO_API_SECRET = process.env.WOO_API_SECRET;
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGO_URL;
-const LOG_FILE_PATH = path.join(__dirname, "import-log.txt");
-
-function logToFile(message) {
-  fs.appendFileSync(LOG_FILE_PATH, `[${new Date().toISOString()}] ${message}\n`);
-}
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_API_CLOUD_NAME,
@@ -25,35 +18,17 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-async function fetchAllWooProducts() {
-  const allProducts = [];
-  let page = 1;
-  const perPage = 100;
-
-  while (true) {
-    try {
-      const res = await axios.get(WOO_API_URL, {
-        auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
-        params: { per_page: perPage, page },
-      });
-
-      const products = res.data;
-      if (!products.length) break;
-
-      allProducts.push(...products);
-      console.log(`✅ Fetched page ${page} (${products.length} products)`);
-      logToFile(`✅ Fetched page ${page} (${products.length} products)`);
-      page++;
-    } catch (err) {
-      console.error("❌ Error fetching products on page", page, err.response?.data || err);
-      logToFile("❌ Error fetching products on page " + page);
-      break;
-    }
+async function fetchWooProducts(limit = 25) {
+  try {
+    const res = await axios.get(WOO_API_URL, {
+      auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
+      params: { per_page: limit },
+    });
+    return res.data;
+  } catch (err) {
+    console.error("❌ Failed to fetch WooCommerce products:", err.response?.data || err);
+    process.exit(1);
   }
-
-  console.log(`🎉 Total products fetched: ${allProducts.length}`);
-  logToFile(`🎉 Total products fetched: ${allProducts.length}`);
-  return allProducts;
 }
 
 async function uploadImageToCloudinary(originalUrl) {
@@ -68,7 +43,6 @@ async function uploadImageToCloudinary(originalUrl) {
     return result.secure_url;
   } catch (err) {
     console.warn("⚠️ Failed to upload image to Cloudinary:", originalUrl);
-    logToFile("⚠️ Failed to upload image: " + originalUrl);
     return null;
   }
 }
@@ -86,7 +60,6 @@ async function findOrCreateCategory(wpCategory, allCats, parent = null) {
   });
 
   allCats.push(newCat);
-  logToFile(`📂 Created new category: ${newCat.name} (${newCat.slug})`);
   return newCat;
 }
 
@@ -113,9 +86,8 @@ async function getFullCategoryChain(wpCat, wpAllCats, dbAllCats) {
 async function importProducts() {
   await mongoose.connect(MONGO_URI);
   console.log("✅ Connected to MongoDB");
-  logToFile("✅ Connected to MongoDB");
 
-  const wpProducts = await fetchAllWooProducts();
+  const wpProducts = await fetchWooProducts(100);
   const wpAllCategories = (await axios.get("https://partyworld.ae/wp-json/wc/v3/products/categories", {
     auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
   })).data;
@@ -131,11 +103,7 @@ async function importProducts() {
       chain.forEach((cat) => categoryIds.add(cat._id.toString()));
     }
 
-    const cloudImages = [];
-    for (const img of wp.images || []) {
-      const uploadedUrl = await uploadImageToCloudinary(img.src);
-      if (uploadedUrl) cloudImages.push(uploadedUrl);
-    }
+    const image = wp.images?.[0]?.src ? await uploadImageToCloudinary(wp.images[0].src) : null;
 
     const metaMap = Object.fromEntries(wp.meta_data.map((m) => [m.key, m.value]));
 
@@ -145,26 +113,33 @@ async function importProducts() {
       slug: baseSlug,
       description: wp.description || "",
       shortDescription: wp.short_description || "",
+
       sku: wp.sku || null,
       weight: wp.weight ? parseFloat(wp.weight) : null,
       isActive: wp.stock_status === "instock",
       isFeatured: wp.tags.some((tag) => tag.name.toLowerCase().includes("featured")),
+
       categories: Array.from(categoryIds),
       tags: wp.tags.map((tag) => tag.name),
       brand: wp.attributes?.find(attr => attr.name.toLowerCase() === "brand")?.options?.[0] || null,
+
       price: parseFloat(wp.regular_price || "0"),
       salePrice: parseFloat(wp.sale_price || "0"),
       totalStock: wp.manage_stock ? wp.stock_quantity || 0 : 9999,
-      images: cloudImages,
+
+      images: image ? [image] : [],
       variants: [],
+
       attributes: wp.attributes?.map(attr => ({ name: attr.name, options: attr.options })) || [],
       upsellProductIds: wp.upsell_ids || [],
       relatedProductIds: wp.related_ids || [],
+
       seo: {
         metaTitle: metaMap["rank_math_title"] || "",
         metaDescription: metaMap["rank_math_description"] || "",
         focusKeyword: metaMap["rank_math_focus_keyword"] || "",
       },
+
       meta: wp.meta_data || [],
     };
 
@@ -175,22 +150,9 @@ async function importProducts() {
     );
 
     console.log(`✅ Updated or Inserted: ${updatedOrInserted.title}`);
-    logToFile(`✅ Imported Product:`);
-    logToFile(`- Title: ${updatedOrInserted.title}`);
-    logToFile(`- Slug: ${updatedOrInserted.slug}`);
-    logToFile(`- SKU: ${updatedOrInserted.sku}`);
-    logToFile(`- Categories: ${updatedOrInserted.categories.join(", ")}`);
-    logToFile(`- Tags: ${updatedOrInserted.tags.join(", ")}`);
-    logToFile(`- Images: ${updatedOrInserted.images.length}`);
-    logToFile(`- Price: ${updatedOrInserted.price}`);
-    logToFile(`- Sale Price: ${updatedOrInserted.salePrice}`);
-    logToFile(`- Stock: ${updatedOrInserted.totalStock}`);
-    logToFile(`- SEO: ${JSON.stringify(updatedOrInserted.seo)}`);
-    logToFile(`--------------------------------------------`);
   }
 
   console.log("🎉 Import complete.");
-  logToFile("🎉 Import complete.");
   process.exit(0);
 }
 
