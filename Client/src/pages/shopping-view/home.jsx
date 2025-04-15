@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import bannerOne from "../../assets/banner-1.webp";
@@ -25,12 +25,12 @@ function ShoppingHome() {
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
 
   useEffect(() => {
-    dispatch(
-      fetchAllFilteredProducts({
-        filterParams: { isFeatured: true },
-        sortParams: "price-lowtohigh",
-      })
-    );
+    const filterParams = { isFeatured: true, limit: 10 };
+    const sortParams = "price-lowtohigh";
+
+    console.log("📦 [HOME] Fetching featured products with params:", filterParams, sortParams);
+    console.log("🏠 [HOME COMPONENT] Rendered");
+    dispatch(fetchAllFilteredProducts({ filterParams, sortParams }));
   }, [dispatch]);
 
   useEffect(() => {
@@ -67,6 +67,7 @@ function ShoppingHome() {
     { name: "Engagement", image: "/placeholders/engagement.jpg", slug: "engagement" },
     { name: "Gender Reveal", image: "/placeholders/gender-reveal.jpg", slug: "gender-reveal" },
   ];
+  const costumeCategoryIds = useMemo(() => ["67f844b7f1275889ad3993b8"], []);
 
   return (
     <div className="space-y-6 md:space-y-10 p-4 md:p-6">
@@ -74,7 +75,7 @@ function ShoppingHome() {
       <OccasionCategorySection />
       <ProductSliderSection
   title="Costume Picks"
-  categoryIds={["67f844b7f1275889ad3993b8"]} // Your MongoDB category IDs
+  categoryIds={costumeCategoryIds} // ✅ useMemo ensures no repeated useEffect
   sortBy="price-lowtohigh"
 />
 

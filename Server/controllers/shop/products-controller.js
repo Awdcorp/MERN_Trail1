@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const getFilteredProducts = async (req, res) => {
   try {
-    const { category = [], brand = [], sortBy = "price-lowtohigh" } = req.query;
+    const { category = [], brand = [], sortBy = "price-lowtohigh", limit = 0 } = req.query;
 
     let filters = {};
 
@@ -21,7 +21,6 @@ const getFilteredProducts = async (req, res) => {
     }
 
     let sort = {};
-
     switch (sortBy) {
       case "price-lowtohigh":
         sort.price = 1;
@@ -40,12 +39,19 @@ const getFilteredProducts = async (req, res) => {
         break;
     }
 
+    const numericLimit = parseInt(limit);
+
     console.log("🔍 [FILTERED PRODUCTS] Filters applied:", filters);
     console.log("🧭 [FILTERED PRODUCTS] Sort option:", sort);
+    console.log("📏 [FILTERED PRODUCTS] Limit applied:", numericLimit > 0 ? numericLimit : "No limit");
 
-    const products = await Product.find(filters)
-      .sort(sort)
-      .populate("categories", "name slug");
+    let query = Product.find(filters).sort(sort).populate("categories", "name slug");
+
+    if (numericLimit > 0) {
+      query = query.limit(numericLimit);
+    }
+
+    const products = await query.exec();
 
     console.log(`✅ [FILTERED PRODUCTS] Total fetched: ${products.length}`);
 
