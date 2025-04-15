@@ -105,7 +105,7 @@ async function importSpecificUpsellProducts(wooProductIds = []) {
 
 // === 🔢 REPLACE THESE IDs ===
 const upsellWooIds = [
-  287, 414, 386, 291, 247
+  287, 414, 386, 291, 247, 1129, 1127, 414, 303
 ];
 
 importSpecificUpsellProducts(upsellWooIds);

@@ -19,7 +19,13 @@ import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";
  import { FaWhatsapp } from "react-icons/fa"; // <-- install this if not already
+ import axios from "axios";
+ import { Swiper, SwiperSlide } from "swiper/react";
+ import { Autoplay } from "swiper/modules";
+ import "swiper/css";
+ import newArrivals from "@/components/shopping-view/newArrivals";
 
+ const sliderProducts = newArrivals;
 function ShoppingHome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,7 +35,26 @@ function ShoppingHome() {
   const { toast } = useToast();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
 
-  
+  const [relatedSliderProducts, setRelatedSliderProducts] = useState([]);
+
+useEffect(() => {
+  async function fetchSliderProducts() {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/shop/products/get`, {
+        params: {
+          category: "67f844b7f1275889ad3993b8", // ✅ hardcoded category ID
+          sortBy: "price-lowtohigh",
+          limit: 10,
+        },
+      });
+      setRelatedSliderProducts(res.data.data || []);
+    } catch (err) {
+      console.error("❌ Failed to fetch related slider products:", err);
+    }
+  }
+
+  fetchSliderProducts();
+}, []);
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
@@ -75,12 +100,73 @@ function ShoppingHome() {
          <HomepageSlider />
        </div>
        
-      <ProductSliderSection
-  title="NEW ARRIVALS"
-  categoryIds={costumeCategoryIds} // ✅ useMemo ensures no repeated useEffect
-  sortBy="price-lowtohigh"
-/>
+       {relatedSliderProducts.length > 0 && (
+  <div className="mt-16">
+    <div className=" mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+      NEW ARRIVALS
+      </h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
 
+      <Swiper
+        spaceBetween={12}
+        slidesPerView={2}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+          1280: { slidesPerView: 6 },
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[Autoplay]}
+      >
+        {relatedSliderProducts.map((productItem) => (
+          <SwiperSlide key={productItem._id} className="pb-2">
+            <ShoppingProductTile
+              product={productItem}
+              handleAddtoCart={() => {}}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </div>
+)}
+
+{sliderProducts.length > 0 && (
+  <div className="mt-16">
+    <div className=" mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+      NEW ARRIVALS
+      </h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+
+      <Swiper
+        spaceBetween={12}
+        slidesPerView={2}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+          1280: { slidesPerView: 6 },
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[Autoplay]}
+      >
+        {sliderProducts.map((productItem) => (
+          <SwiperSlide key={productItem._id} className="pb-2">
+            <ShoppingProductTile
+              product={productItem}
+              handleAddtoCart={() => {}}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </div>
+)}
 <CategorySection groupName="Shop by Occasion" isSlider={true} />
 
        <ThemeCategorySection title="SHOP BY THEME" limit={4} />
