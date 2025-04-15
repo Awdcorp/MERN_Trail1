@@ -16,7 +16,8 @@ import CategorySection from "@/components/shopping-view/occasioncategorysection"
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
-
+import { PhoneCall } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"; // <-- install this if not already
 function ShoppingHome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -253,6 +254,38 @@ function ShoppingHome() {
 
   </div>
 </div>
+
+
+
+
+
+    <div className="px-4 pt-10 md:px-8 py-10 bg-white text-center">
+      {/* Contact Info Row */}
+      <div className="flex flex-col pt-10 md:flex-row justify-center items-center gap-10 md:gap-20 mb-10">
+        {/* Phone */}
+        <div className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+          <PhoneCall size={28} className="text-[#463970]" />
+          <span>600572789</span>
+        </div>
+
+        {/* WhatsApp 1 */}
+        <div className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+          <FaWhatsapp size={28} className="text-[#25D366]" />
+          <span>0503735574</span>
+        </div>
+
+        {/* WhatsApp 2 */}
+        <div className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+          <FaWhatsapp size={28} className="bg-[#463970] text-white p-1 rounded" />
+          <span>0565577610</span>
+        </div>
+      </div>
+
+      {/* Contact Us Button */}
+      <button className="bg-[#463970] text-white px-6 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
+        Contact Us
+      </button>
+    </div>
 
 
 

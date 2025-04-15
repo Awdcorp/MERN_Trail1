@@ -42145,3 +42145,1796 @@
 [2025-04-15T01:58:25.192Z] - Stock: 18
 [2025-04-15T01:58:25.192Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
 [2025-04-15T01:58:25.192Z] --------------------------------------------
+[2025-04-15T01:58:26.379Z] ✅ Imported Product:
+[2025-04-15T01:58:26.379Z] - Title: Despicable Me Mini Candles 4pcs
+[2025-04-15T01:58:26.379Z] - Slug: despicable-me-mini-candles-4pcs
+[2025-04-15T01:58:26.379Z] - SKU: 00035537
+[2025-04-15T01:58:26.379Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8465b5955b8057aa084af, 67f8274db3cbe403ed79e86d, 67fdb031fe7e95cf337582b4, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67fdb883fe7e95cf33758ffb, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:26.379Z] - Tags: Birthdays, Blue, Candles, DESPICABLE ME MINI CANDLES, Green, Multicolour, Party Supplies, Themed birthday, Unisex, White, Young Children theme
+[2025-04-15T01:58:26.379Z] - Images: 1
+[2025-04-15T01:58:26.380Z] - Price: 32
+[2025-04-15T01:58:26.380Z] - Sale Price: 0
+[2025-04-15T01:58:26.380Z] - Stock: 1
+[2025-04-15T01:58:26.380Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:26.380Z] --------------------------------------------
+[2025-04-15T01:58:27.623Z] ✅ Imported Product:
+[2025-04-15T01:58:27.623Z] - Title: Despicable Me Napkin 16pcs
+[2025-04-15T01:58:27.623Z] - Slug: despicable-me-napkin-16pcs
+[2025-04-15T01:58:27.623Z] - SKU: 100000013815
+[2025-04-15T01:58:27.623Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67fdb031fe7e95cf337582b4, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:27.623Z] - Tags: Birthdays, Blue, Child, DESPICABLE ME NAPKIN, Multicolour, Napkins, Party Supplies, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:58:27.623Z] - Images: 1
+[2025-04-15T01:58:27.623Z] - Price: 20
+[2025-04-15T01:58:27.624Z] - Sale Price: 0
+[2025-04-15T01:58:27.624Z] - Stock: 11
+[2025-04-15T01:58:27.624Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:27.624Z] --------------------------------------------
+[2025-04-15T01:58:28.496Z] ✅ Imported Product:
+[2025-04-15T01:58:28.496Z] - Title: Love & Leaves Bridal Shower Balloon Bouquet 5pcs
+[2025-04-15T01:58:28.497Z] - Slug: love-and-leaves-bridal-shower-balloon-bouquet-5pcs
+[2025-04-15T01:58:28.497Z] - SKU: 100000012516
+[2025-04-15T01:58:28.497Z] - Categories: 67f7c88f2a38a098e893418c, 67f7c88f2a38a098e8934196, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548a5, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548b4, 67f7d19bd107819e654548bb, 67f7d19bd107819e654548be, 67f7d19cd107819e654548c7, 67f7d19ed107819e6545490a, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67fdaebafe7e95cf337580ec, 67f8278bcd23acad75619f67, 67fdaf31fe7e95cf33758177, 67f8278bcd23acad75619f69, 67f8466b5955b8057aa084ff, 67f8465c5955b8057aa084b8, 67f846a15955b8057aa085cf, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084ba, 67f8465c5955b8057aa084bc, 67f8465c5955b8057aa084c0, 67f8465d5955b8057aa084c9, 67f846775955b8057aa08530
+[2025-04-15T01:58:28.497Z] - Tags: Bouquet, Bridal Shower, Bride, Bride To Be, Engagement, Female, Foil, Gold, Green, Multicolour, White
+[2025-04-15T01:58:28.497Z] - Images: 1
+[2025-04-15T01:58:28.497Z] - Price: 90
+[2025-04-15T01:58:28.498Z] - Sale Price: 0
+[2025-04-15T01:58:28.498Z] - Stock: 8
+[2025-04-15T01:58:28.498Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:28.498Z] --------------------------------------------
+[2025-04-15T01:58:29.829Z] ✅ Imported Product:
+[2025-04-15T01:58:29.829Z] - Title: Kicker Party Paper Cups 8pcs
+[2025-04-15T01:58:29.829Z] - Slug: kicker-party-paper-cups-8pcs
+[2025-04-15T01:58:29.829Z] - SKU: 100000010179
+[2025-04-15T01:58:29.829Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f846a05955b8057aa085ca, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846775955b8057aa08530, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:29.829Z] - Tags: Adult, Birthdays, Black, Child, Green, KICKER PARTY PAPER CUPS, Paper Cups, Party Supplies, Themed birthday, White, Young Children theme
+[2025-04-15T01:58:29.829Z] - Images: 1
+[2025-04-15T01:58:29.830Z] - Price: 18
+[2025-04-15T01:58:29.830Z] - Sale Price: 0
+[2025-04-15T01:58:29.830Z] - Stock: 16
+[2025-04-15T01:58:29.830Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:29.830Z] --------------------------------------------
+[2025-04-15T01:58:30.912Z] ✅ Imported Product:
+[2025-04-15T01:58:30.912Z] - Title: Bachelorette Bride To Be Necklace Hen Night
+[2025-04-15T01:58:30.912Z] - Slug: bachelorette-bride-to-be-necklace-hen-night
+[2025-04-15T01:58:30.912Z] - SKU: 00033524
+[2025-04-15T01:58:30.913Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f8278bcd23acad75619f69, 67fdbd0dfe7e95cf33759525, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846a05955b8057aa085c5, 67f8465a5955b8057aa084aa
+[2025-04-15T01:58:30.913Z] - Tags: Adult, Adult Theme, Bachelorette, Female, Hen Night, Necklace, Pink, Silver
+[2025-04-15T01:58:30.913Z] - Images: 1
+[2025-04-15T01:58:30.913Z] - Price: 17
+[2025-04-15T01:58:30.913Z] - Sale Price: 0
+[2025-04-15T01:58:30.913Z] - Stock: 8
+[2025-04-15T01:58:30.913Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:30.914Z] --------------------------------------------
+[2025-04-15T01:58:31.950Z] ✅ Imported Product:
+[2025-04-15T01:58:31.951Z] - Title: Despicable Me Cups 8pcs
+[2025-04-15T01:58:31.951Z] - Slug: despicable-me-cups-8pcs
+[2025-04-15T01:58:31.951Z] - SKU: 100000013816
+[2025-04-15T01:58:31.952Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67fdb031fe7e95cf337582b4, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:31.952Z] - Tags: Birthdays, Blue, Child, DESPICABLE ME CUPS, Multicolour, Paper Cups, Party Supplies, Themed birthday, Unisex, White, Yellow, Young Children theme
+[2025-04-15T01:58:31.952Z] - Images: 1
+[2025-04-15T01:58:31.952Z] - Price: 18
+[2025-04-15T01:58:31.952Z] - Sale Price: 0
+[2025-04-15T01:58:31.952Z] - Stock: 3
+[2025-04-15T01:58:31.952Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:31.953Z] --------------------------------------------
+[2025-04-15T01:58:32.979Z] ✅ Imported Product:
+[2025-04-15T01:58:32.979Z] - Title: Despicable Me Party Balloon Bouquet 5pcs
+[2025-04-15T01:58:32.979Z] - Slug: despicable-me-party-balloon-bouquet-5pcs
+[2025-04-15T01:58:32.979Z] - SKU: 00034328
+[2025-04-15T01:58:32.980Z] - Categories: 67f7c88f2a38a098e893418c, 67f7c88f2a38a098e8934196, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548a5, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548b4, 67f7d19bd107819e654548bb, 67f7d19bd107819e654548be, 67f7d19cd107819e654548c1, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e6545490a, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67fdb031fe7e95cf337582b4, 67f8466b5955b8057aa084ff, 67f8465c5955b8057aa084b8, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f71, 67f8465c5955b8057aa084c0, 67f8465d5955b8057aa084c9, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:32.980Z] - Tags: Balloon Bouquet, Birthdays, Blue, Child, Despicable Me Party Balloon Bouquet, Foil Balloon, Multicolour, Orange, Themed birthday, Unisex, White, Young Children theme
+[2025-04-15T01:58:32.980Z] - Images: 1
+[2025-04-15T01:58:32.981Z] - Price: 90
+[2025-04-15T01:58:32.981Z] - Sale Price: 0
+[2025-04-15T01:58:32.981Z] - Stock: 2
+[2025-04-15T01:58:32.981Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:32.981Z] --------------------------------------------
+[2025-04-15T01:58:33.894Z] ✅ Imported Product:
+[2025-04-15T01:58:33.894Z] - Title: Despicable Me Swirl Decorations 6pcs
+[2025-04-15T01:58:33.894Z] - Slug: despicable-me-swirl-decorations-6pcs
+[2025-04-15T01:58:33.894Z] - SKU: 100000013817
+[2025-04-15T01:58:33.895Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67fdb031fe7e95cf337582b4, 67f846a05955b8057aa085ca, 67f8465a5955b8057aa084a1, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846ab5955b8057aa085f4, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:33.895Z] - Tags: Birthdays, Blue, Child, Despicable Me Swirl Decorations, Green, Multicolour, Party Supplies, Swirl Decorations, Themed birthday, Unisex, White, Yellow, Young Children theme
+[2025-04-15T01:58:33.895Z] - Images: 1
+[2025-04-15T01:58:33.896Z] - Price: 24
+[2025-04-15T01:58:33.896Z] - Sale Price: 0
+[2025-04-15T01:58:33.896Z] - Stock: 0
+[2025-04-15T01:58:33.896Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:33.896Z] --------------------------------------------
+[2025-04-15T01:58:35.348Z] ✅ Imported Product:
+[2025-04-15T01:58:35.348Z] - Title: Happy Dinoasaur Bday Candle
+[2025-04-15T01:58:35.348Z] - Slug: happy-dinoasaur-bday-candle
+[2025-04-15T01:58:35.348Z] - SKU: 100000002319
+[2025-04-15T01:58:35.348Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8465b5955b8057aa084af, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67fdb883fe7e95cf33758ffb, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:35.348Z] - Tags: Baby, Birthday, Boy, Candle, Child, Dinosaur, Happy Dinosaur, Multicolour, Toddler, Triceratops, Tyrannosaurus Rex, Unisex
+[2025-04-15T01:58:35.348Z] - Images: 1
+[2025-04-15T01:58:35.349Z] - Price: 18
+[2025-04-15T01:58:35.349Z] - Sale Price: 0
+[2025-04-15T01:58:35.349Z] - Stock: 1
+[2025-04-15T01:58:35.349Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:35.349Z] --------------------------------------------
+[2025-04-15T01:58:36.723Z] ✅ Imported Product:
+[2025-04-15T01:58:36.723Z] - Title: Happy Dinosaur Beverage Napkins
+[2025-04-15T01:58:36.724Z] - Slug: happy-dinosaur-beverage-napkins
+[2025-04-15T01:58:36.724Z] - SKU: 100000012144
+[2025-04-15T01:58:36.724Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:36.724Z] - Tags: Baby, Beverage Napkins, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Multicolour, Napkins, Tissue, Toddler, Unisex
+[2025-04-15T01:58:36.724Z] - Images: 1
+[2025-04-15T01:58:36.724Z] - Price: 18
+[2025-04-15T01:58:36.724Z] - Sale Price: 0
+[2025-04-15T01:58:36.724Z] - Stock: 4
+[2025-04-15T01:58:36.724Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:36.724Z] --------------------------------------------
+[2025-04-15T01:58:38.167Z] ✅ Imported Product:
+[2025-04-15T01:58:38.167Z] - Title: Happy Dinosaur Cake Bunting
+[2025-04-15T01:58:38.167Z] - Slug: happy-dinosaur-cake-bunting
+[2025-04-15T01:58:38.168Z] - SKU: 100000012150
+[2025-04-15T01:58:38.168Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548fa, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67fdaf88fe7e95cf337581e8, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:38.168Z] - Tags: Baby, Birthday, Boy, Cake Bunting, Cake Topper, Child, Dinosaur, Happy Dinosaur, Multicolour, Toddler, Unisex
+[2025-04-15T01:58:38.168Z] - Images: 1
+[2025-04-15T01:58:38.168Z] - Price: 21
+[2025-04-15T01:58:38.169Z] - Sale Price: 0
+[2025-04-15T01:58:38.169Z] - Stock: 14
+[2025-04-15T01:58:38.169Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:38.169Z] --------------------------------------------
+[2025-04-15T01:58:38.967Z] ✅ Imported Product:
+[2025-04-15T01:58:38.967Z] - Title: Happy Dinosaur Letter Banner
+[2025-04-15T01:58:38.967Z] - Slug: happy-dinosaur-letter-banner
+[2025-04-15T01:58:38.967Z] - SKU: 100000012148
+[2025-04-15T01:58:38.967Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f846595955b8057aa0849d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:38.967Z] - Tags: Baby, Banner, Birthday, Boy, Child, Dinosaur, Happy Birthday, Happy Birthday Banner, Happy Dinosaur, Letter banner, Multicolour, Toddler, Triceratops, Tyrannosaurus Rex, Unisex
+[2025-04-15T01:58:38.968Z] - Images: 1
+[2025-04-15T01:58:38.968Z] - Price: 24
+[2025-04-15T01:58:38.968Z] - Sale Price: 0
+[2025-04-15T01:58:38.969Z] - Stock: 174
+[2025-04-15T01:58:38.969Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:38.969Z] --------------------------------------------
+[2025-04-15T01:58:40.137Z] ✅ Imported Product:
+[2025-04-15T01:58:40.138Z] - Title: Happy Dinosaur Lunch Napkins
+[2025-04-15T01:58:40.138Z] - Slug: happy-dinosaur-lunch-napkins
+[2025-04-15T01:58:40.138Z] - SKU: 100000012143
+[2025-04-15T01:58:40.138Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:40.138Z] - Tags: Baby, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Lunch Napkin, Multicolour, Napkin, Tissues, Toddler, Triceratops, Tyrannosaurus Rex, Unisex
+[2025-04-15T01:58:40.138Z] - Images: 1
+[2025-04-15T01:58:40.138Z] - Price: 20
+[2025-04-15T01:58:40.138Z] - Sale Price: 0
+[2025-04-15T01:58:40.139Z] - Stock: 154
+[2025-04-15T01:58:40.139Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:40.139Z] --------------------------------------------
+[2025-04-15T01:58:41.575Z] ✅ Imported Product:
+[2025-04-15T01:58:41.575Z] - Title: Happy Dinosaur Paper Plates 7in
+[2025-04-15T01:58:41.576Z] - Slug: happy-dinosaur-paper-plates-7in
+[2025-04-15T01:58:41.576Z] - SKU: 100000012141
+[2025-04-15T01:58:41.576Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:41.576Z] - Tags: 7 inch Plates, 7 inches, Baby, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Multicolour, Paper Plates, Plates, Toddler, Triceratops, Tyrannosaurus Rex, Unisex
+[2025-04-15T01:58:41.576Z] - Images: 1
+[2025-04-15T01:58:41.576Z] - Price: 21
+[2025-04-15T01:58:41.576Z] - Sale Price: 0
+[2025-04-15T01:58:41.576Z] - Stock: 2
+[2025-04-15T01:58:41.576Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:41.576Z] --------------------------------------------
+[2025-04-15T01:58:42.608Z] ✅ Imported Product:
+[2025-04-15T01:58:42.609Z] - Title: Happy Dinosaur Paper Plate 9in
+[2025-04-15T01:58:42.609Z] - Slug: happy-dinosaur-paper-plate-9in
+[2025-04-15T01:58:42.609Z] - SKU: 100000012140
+[2025-04-15T01:58:42.609Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:42.609Z] - Tags: 9 inches, Baby, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Multicolour, Paper Plates, Plates, Toddler, Unisex
+[2025-04-15T01:58:42.609Z] - Images: 1
+[2025-04-15T01:58:42.609Z] - Price: 23
+[2025-04-15T01:58:42.609Z] - Sale Price: 0
+[2025-04-15T01:58:42.609Z] - Stock: 12
+[2025-04-15T01:58:42.609Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:42.610Z] --------------------------------------------
+[2025-04-15T01:58:43.729Z] ✅ Imported Product:
+[2025-04-15T01:58:43.729Z] - Title: Happy Dinosaur Party Bags With Stickers 4pcs
+[2025-04-15T01:58:43.729Z] - Slug: happy-dinosaur-party-bags-with-stickers-4pcs
+[2025-04-15T01:58:43.730Z] - SKU: 00033634
+[2025-04-15T01:58:43.730Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f8278fcd23acad75619f8f, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278fcd23acad75619f91, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:43.730Z] - Tags: Baby, Birthday, Boy, Brachiosaurus, Child, Dinosaur, Happy Dinosaur, Loot Bag, Multicolour, Party Bag, Stickers, Toddler, Triceratops, Tyrannosaurus Rex, Unisex
+[2025-04-15T01:58:43.730Z] - Images: 1
+[2025-04-15T01:58:43.730Z] - Price: 16
+[2025-04-15T01:58:43.730Z] - Sale Price: 0
+[2025-04-15T01:58:43.730Z] - Stock: 17
+[2025-04-15T01:58:43.730Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:43.730Z] --------------------------------------------
+[2025-04-15T01:58:44.478Z] ⚠️ Failed to upload image: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/9907317_Despicable-Me-Loot-Bags-6pcs_01_1024x1024%402x.jpg?fit=2000%2C2000&ssl=1
+[2025-04-15T01:58:44.774Z] ✅ Imported Product:
+[2025-04-15T01:58:44.775Z] - Title: Despicable Me Paper Loot Bag
+[2025-04-15T01:58:44.775Z] - Slug: despicable-me-paper-loot-bag
+[2025-04-15T01:58:44.775Z] - SKU: 1000000142321
+[2025-04-15T01:58:44.775Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67fdb031fe7e95cf337582b4, 67f8278fcd23acad75619f8f, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67fdb20cfe7e95cf3375855a, 67f8278fcd23acad75619f91, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:44.775Z] - Tags: Birthdays, Blue, Child, DESPICABLE ME PAPER LOOT BAG, Green, Multicolour, Party Favor Bags, Party Supplies, Themed birthday, Unisex, White, Yellow, Young Children theme
+[2025-04-15T01:58:44.775Z] - Images: 0
+[2025-04-15T01:58:44.775Z] - Price: 13
+[2025-04-15T01:58:44.775Z] - Sale Price: 0
+[2025-04-15T01:58:44.775Z] - Stock: 2
+[2025-04-15T01:58:44.776Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:44.776Z] --------------------------------------------
+[2025-04-15T01:58:45.960Z] ✅ Imported Product:
+[2025-04-15T01:58:45.960Z] - Title: Despicable Me Paper Plate 9in
+[2025-04-15T01:58:45.960Z] - Slug: despicable-me-paper-plate-9in
+[2025-04-15T01:58:45.960Z] - SKU: 100000013814
+[2025-04-15T01:58:45.961Z] - Categories: 67f7c88f2a38a098e89341ac, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67fdb031fe7e95cf337582b4, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:45.961Z] - Tags: Birthdays, Blue, Child, DESPICABLE ME PAPER PLATE, Green, Multicolour, Paper Plates, Party Supplies, Teen, Themed birthday, White, Yellow, Young Children theme
+[2025-04-15T01:58:45.961Z] - Images: 1
+[2025-04-15T01:58:45.961Z] - Price: 22
+[2025-04-15T01:58:45.961Z] - Sale Price: 0
+[2025-04-15T01:58:45.961Z] - Stock: 0
+[2025-04-15T01:58:45.961Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:45.961Z] --------------------------------------------
+[2025-04-15T01:58:47.150Z] ✅ Imported Product:
+[2025-04-15T01:58:47.151Z] - Title: Despicable Me Paper Table Cover
+[2025-04-15T01:58:47.151Z] - Slug: despicable-me-paper-table-cover
+[2025-04-15T01:58:47.151Z] - SKU: 100000014212
+[2025-04-15T01:58:47.151Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67fdb031fe7e95cf337582b4, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:47.151Z] - Tags: Birthdays, Blue, Child, DESPICABLE ME PAPER TABLE COVER, Multicolour, Party Supplies, Table Cover, Teen, Themed birthday, Unisex, White, Yellow, Young Children theme
+[2025-04-15T01:58:47.152Z] - Images: 1
+[2025-04-15T01:58:47.152Z] - Price: 28
+[2025-04-15T01:58:47.152Z] - Sale Price: 0
+[2025-04-15T01:58:47.152Z] - Stock: 6
+[2025-04-15T01:58:47.153Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:47.153Z] --------------------------------------------
+[2025-04-15T01:58:48.171Z] ✅ Imported Product:
+[2025-04-15T01:58:48.171Z] - Title: Happy Dinosaur Cups 8pcs
+[2025-04-15T01:58:48.172Z] - Slug: happy-dinosaur-cups-8pcs
+[2025-04-15T01:58:48.172Z] - SKU: 100000012142
+[2025-04-15T01:58:48.172Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67fdb053fe7e95cf337582dd, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:48.172Z] - Tags: Baby, Birthday, Boy, Child, Cups, Dinosaur, Happy Dinosaur, Multicolour, Toddler, Triceratops, Tyrannosaurus Rex, Tyrannosaurus Rex and a Triceratops, Unisex
+[2025-04-15T01:58:48.172Z] - Images: 1
+[2025-04-15T01:58:48.172Z] - Price: 19
+[2025-04-15T01:58:48.172Z] - Sale Price: 0
+[2025-04-15T01:58:48.172Z] - Stock: 57
+[2025-04-15T01:58:48.172Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:48.173Z] --------------------------------------------
+[2025-04-15T01:58:49.319Z] ✅ Imported Product:
+[2025-04-15T01:58:49.319Z] - Title: Golden Age Birthday Letter Banner 7in
+[2025-04-15T01:58:49.319Z] - Slug: golden-age-birthday-letter-banner-7in
+[2025-04-15T01:58:49.319Z] - SKU: 00036200
+[2025-04-15T01:58:49.319Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f846595955b8057aa0849d, 67f846a15955b8057aa085cf, 67f8278bcd23acad75619f73, 67f846615955b8057aa084db
+[2025-04-15T01:58:49.320Z] - Tags: Adult, Birthdays, Gold, Golden Age Birthday Letter Banner Fringed, Letter banner, Party Supplies, Unisex
+[2025-04-15T01:58:49.320Z] - Images: 1
+[2025-04-15T01:58:49.320Z] - Price: 35
+[2025-04-15T01:58:49.320Z] - Sale Price: 0
+[2025-04-15T01:58:49.320Z] - Stock: 3
+[2025-04-15T01:58:49.320Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:49.320Z] --------------------------------------------
+[2025-04-15T01:58:50.457Z] ✅ Imported Product:
+[2025-04-15T01:58:50.457Z] - Title: Bachelorette Night Metallic Plates 7in 8pcs
+[2025-04-15T01:58:50.457Z] - Slug: bachelorette-night-metallic-plates-7in-8pcs
+[2025-04-15T01:58:50.457Z] - SKU: 100000008719
+[2025-04-15T01:58:50.457Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f844b7f1275889ad3993b8, 67f8278bcd23acad75619f69, 67f846a15955b8057aa085cf, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580
+[2025-04-15T01:58:50.457Z] - Tags: 7 inches, Adult, Adult Theme, Bachelorette, Black, Female, Gold, Metallic, Multicolour, Paper Plates, Pink
+[2025-04-15T01:58:50.458Z] - Images: 1
+[2025-04-15T01:58:50.458Z] - Price: 18
+[2025-04-15T01:58:50.458Z] - Sale Price: 0
+[2025-04-15T01:58:50.458Z] - Stock: 18
+[2025-04-15T01:58:50.458Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:50.458Z] --------------------------------------------
+[2025-04-15T01:58:51.391Z] ✅ Imported Product:
+[2025-04-15T01:58:51.391Z] - Title: Giant Diamond Ring Necklace 30in
+[2025-04-15T01:58:51.392Z] - Slug: giant-diamond-ring-necklace-30in
+[2025-04-15T01:58:51.392Z] - SKU: 100000004749
+[2025-04-15T01:58:51.392Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f8278bcd23acad75619f69, 67fdbd0dfe7e95cf33759525, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f846a05955b8057aa085c5, 67f8465a5955b8057aa084aa
+[2025-04-15T01:58:51.392Z] - Tags: Adult, Adult Theme, Bachelorette, Diamond, Female, Giant, Necklace, Silver
+[2025-04-15T01:58:51.392Z] - Images: 1
+[2025-04-15T01:58:51.392Z] - Price: 18
+[2025-04-15T01:58:51.392Z] - Sale Price: 0
+[2025-04-15T01:58:51.392Z] - Stock: 3
+[2025-04-15T01:58:51.392Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:51.392Z] --------------------------------------------
+[2025-04-15T01:58:54.326Z] ✅ Imported Product:
+[2025-04-15T01:58:54.327Z] - Title: Golden Age Birthday Hexagon Metallic Plates 9in 8pcs
+[2025-04-15T01:58:54.327Z] - Slug: golden-age-birthday-hexagon-metallic-plates-9in-8pcs
+[2025-04-15T01:58:54.327Z] - SKU: 00036142
+[2025-04-15T01:58:54.327Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f846a15955b8057aa085cf, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f846615955b8057aa084db, 67f846775955b8057aa08530
+[2025-04-15T01:58:54.327Z] - Tags: Adult, Birthdays, Gold, Golden Age Birthday Hexagon Metallic Plates, Paper Plates, Party Supplies, Unisex, White
+[2025-04-15T01:58:54.327Z] - Images: 1
+[2025-04-15T01:58:54.327Z] - Price: 24
+[2025-04-15T01:58:54.327Z] - Sale Price: 0
+[2025-04-15T01:58:54.328Z] - Stock: 7
+[2025-04-15T01:58:54.328Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:54.328Z] --------------------------------------------
+[2025-04-15T01:58:55.336Z] ✅ Imported Product:
+[2025-04-15T01:58:55.336Z] - Title: Golden Age Birthday Hexagon Metallic Plates 7in 8pcs
+[2025-04-15T01:58:55.337Z] - Slug: golden-age-birthday-hexagon-metallic-plates-7in-8pcs
+[2025-04-15T01:58:55.337Z] - SKU: 00036144
+[2025-04-15T01:58:55.337Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f846a15955b8057aa085cf, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f846615955b8057aa084db, 67f846775955b8057aa08530
+[2025-04-15T01:58:55.337Z] - Tags: Adult, Birthdays, Gold, Golden Age Birthday Hexagon Metallic Plates, Paper Plates, Party Supplies, Unisex, White
+[2025-04-15T01:58:55.337Z] - Images: 1
+[2025-04-15T01:58:55.337Z] - Price: 19
+[2025-04-15T01:58:55.337Z] - Sale Price: 0
+[2025-04-15T01:58:55.337Z] - Stock: 13
+[2025-04-15T01:58:55.337Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:55.338Z] --------------------------------------------
+[2025-04-15T01:58:56.224Z] ✅ Imported Product:
+[2025-04-15T01:58:56.224Z] - Title: Golden Age Birthday Beverage Napkins 16pcs
+[2025-04-15T01:58:56.224Z] - Slug: golden-age-birthday-beverage-napkins-16pcs
+[2025-04-15T01:58:56.224Z] - SKU: 00036202
+[2025-04-15T01:58:56.224Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f846a15955b8057aa085cf, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f846615955b8057aa084db
+[2025-04-15T01:58:56.224Z] - Tags: Birthdays, Gold, Golden Age Birthday Beverage Napkins, Napkins, Party Supplies, Themed birthday, Unisex
+[2025-04-15T01:58:56.224Z] - Images: 1
+[2025-04-15T01:58:56.224Z] - Price: 21
+[2025-04-15T01:58:56.225Z] - Sale Price: 0
+[2025-04-15T01:58:56.225Z] - Stock: 3
+[2025-04-15T01:58:56.225Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:56.225Z] --------------------------------------------
+[2025-04-15T01:58:57.542Z] ✅ Imported Product:
+[2025-04-15T01:58:57.543Z] - Title: Luminous Iridescent Round Paper Plates 9in 8pcs
+[2025-04-15T01:58:57.543Z] - Slug: luminous-iridescent-round-paper-plates-9in-8pcs
+[2025-04-15T01:58:57.543Z] - SKU: 00036190
+[2025-04-15T01:58:57.543Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67fdaf91fe7e95cf33758200, 67f846a05955b8057aa085c5, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:57.543Z] - Tags: Adult, Birthdays, Female, Girls theme, Lavander, Luminous Iridescent Round Paper Plates, Multicolour, Paper Plates, Party Supplies, Purple, Unisex, Young Children theme
+[2025-04-15T01:58:57.543Z] - Images: 1
+[2025-04-15T01:58:57.543Z] - Price: 24
+[2025-04-15T01:58:57.544Z] - Sale Price: 0
+[2025-04-15T01:58:57.544Z] - Stock: 13
+[2025-04-15T01:58:57.544Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:57.544Z] --------------------------------------------
+[2025-04-15T01:58:58.572Z] ✅ Imported Product:
+[2025-04-15T01:58:58.573Z] - Title: Luminous Beverage Napkins Hot-Stamped 16pcs
+[2025-04-15T01:58:58.573Z] - Slug: luminous-beverage-napkins-hot-stamped-16pcs
+[2025-04-15T01:58:58.573Z] - SKU: 00036198
+[2025-04-15T01:58:58.573Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f846a05955b8057aa085c5, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:58.574Z] - Tags: Adult, Birthdays, Female, Girls theme, Lavander, Luminous Birthday Beverage Napkins Hot-Stamped, Multicolour, Napkins, Purple, Unisex, Young Children theme
+[2025-04-15T01:58:58.574Z] - Images: 1
+[2025-04-15T01:58:58.574Z] - Price: 23
+[2025-04-15T01:58:58.574Z] - Sale Price: 0
+[2025-04-15T01:58:58.574Z] - Stock: -1
+[2025-04-15T01:58:58.574Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:58.574Z] --------------------------------------------
+[2025-04-15T01:58:59.891Z] ✅ Imported Product:
+[2025-04-15T01:58:59.892Z] - Title: Luminous Iridescent Shaped Paper Plates 7in 8pcs
+[2025-04-15T01:58:59.892Z] - Slug: luminous-iridescent-shaped-paper-plates-7in-8pcs
+[2025-04-15T01:58:59.892Z] - SKU: 00036194
+[2025-04-15T01:58:59.892Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:58:59.893Z] - Tags: Birthdays, Female, Girls theme, Lavander, Luminous Iridescent Shaped Paper Plates, Multicolour, Paper Plates, Party Supplies, Pink, Star Shaped Plate, Unisex, Young Children theme
+[2025-04-15T01:58:59.893Z] - Images: 1
+[2025-04-15T01:58:59.893Z] - Price: 21
+[2025-04-15T01:58:59.893Z] - Sale Price: 0
+[2025-04-15T01:58:59.893Z] - Stock: 13
+[2025-04-15T01:58:59.893Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:58:59.893Z] --------------------------------------------
+[2025-04-15T01:59:01.093Z] ✅ Imported Product:
+[2025-04-15T01:59:01.093Z] - Title: Flutter Round Paper Plates 9in 8pcs
+[2025-04-15T01:59:01.093Z] - Slug: flutter-round-paper-plates-9in-8pcs
+[2025-04-15T01:59:01.094Z] - SKU: 00036150
+[2025-04-15T01:59:01.094Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b6, 67f8274db3cbe403ed79e86d, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:01.094Z] - Tags: Birthdays, Flutter Round Paper Plates, Girls theme, Lavander, Multicolour, Paper Plates, Party Supplies, Pink, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:01.094Z] - Images: 1
+[2025-04-15T01:59:01.094Z] - Price: 21
+[2025-04-15T01:59:01.094Z] - Sale Price: 0
+[2025-04-15T01:59:01.094Z] - Stock: 9
+[2025-04-15T01:59:01.094Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:01.094Z] --------------------------------------------
+[2025-04-15T01:59:02.210Z] ✅ Imported Product:
+[2025-04-15T01:59:02.211Z] - Title: Love And Leaves Beverage Napkins 16pcs
+[2025-04-15T01:59:02.211Z] - Slug: love-and-leaves-beverage-napkins-16pcs
+[2025-04-15T01:59:02.211Z] - SKU: 100000012302
+[2025-04-15T01:59:02.211Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67fdaebafe7e95cf337580ec, 67fdaf31fe7e95cf33758177, 67f8278bcd23acad75619f69, 67f846a15955b8057aa085cf, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f846775955b8057aa08530
+[2025-04-15T01:59:02.211Z] - Tags: Beverage Napkins, Bridal Shower, Bride, Engagement, Green, Multicolour, Napkins, Tissue, White
+[2025-04-15T01:59:02.211Z] - Images: 1
+[2025-04-15T01:59:02.211Z] - Price: 17
+[2025-04-15T01:59:02.211Z] - Sale Price: 0
+[2025-04-15T01:59:02.211Z] - Stock: 16
+[2025-04-15T01:59:02.211Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:02.211Z] --------------------------------------------
+[2025-04-15T01:59:03.220Z] ✅ Imported Product:
+[2025-04-15T01:59:03.220Z] - Title: Bride To Be Hen Night Foil Banner 760cm
+[2025-04-15T01:59:03.220Z] - Slug: bride-to-be-hen-night-foil-banner-760cm
+[2025-04-15T01:59:03.220Z] - SKU: 100000009816
+[2025-04-15T01:59:03.220Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f7d19fd107819e65454940, 67f846595955b8057aa0849d, 67f8278bcd23acad75619f69, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846a05955b8057aa085c5, 67f846775955b8057aa08530
+[2025-04-15T01:59:03.220Z] - Tags: Adult, Bachelorette, Female, Foil Banner, Multicolour, Pink, Silver
+[2025-04-15T01:59:03.220Z] - Images: 1
+[2025-04-15T01:59:03.220Z] - Price: 21
+[2025-04-15T01:59:03.220Z] - Sale Price: 0
+[2025-04-15T01:59:03.220Z] - Stock: 0
+[2025-04-15T01:59:03.221Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:03.221Z] --------------------------------------------
+[2025-04-15T01:59:04.134Z] ✅ Imported Product:
+[2025-04-15T01:59:04.134Z] - Title: Love And Leaves Table Centerpiece Decorating Kit
+[2025-04-15T01:59:04.134Z] - Slug: love-and-leaves-table-centerpiece-decorating-kit
+[2025-04-15T01:59:04.134Z] - SKU: 100000012269
+[2025-04-15T01:59:04.134Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67fdaebafe7e95cf337580ec, 67f8468a5955b8057aa08576, 67f846595955b8057aa0849d, 67fdaf31fe7e95cf33758177, 67f8278bcd23acad75619f69, 67f846a15955b8057aa085cf, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846775955b8057aa08530
+[2025-04-15T01:59:04.135Z] - Tags: Bridal Shower, Bride, Decoration Kit, Engagement, Female, Leaves, Love, Multicolour, Table, Table Decoration
+[2025-04-15T01:59:04.135Z] - Images: 1
+[2025-04-15T01:59:04.135Z] - Price: 32
+[2025-04-15T01:59:04.136Z] - Sale Price: 0
+[2025-04-15T01:59:04.136Z] - Stock: 21
+[2025-04-15T01:59:04.136Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:04.136Z] --------------------------------------------
+[2025-04-15T01:59:05.024Z] ✅ Imported Product:
+[2025-04-15T01:59:05.024Z] - Title: Love And Leaves Photo Props 13pcs
+[2025-04-15T01:59:05.024Z] - Slug: love-and-leaves-photo-props-13pcs
+[2025-04-15T01:59:05.024Z] - SKU: 100000012165
+[2025-04-15T01:59:05.024Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67fdaebafe7e95cf337580ec, 67fdaf31fe7e95cf33758177, 67f8278bcd23acad75619f69, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67fdb169fe7e95cf33758465, 67f8278bcd23acad75619f73, 67f8465a5955b8057aa084aa, 67f846775955b8057aa08530
+[2025-04-15T01:59:05.024Z] - Tags: Bridal Shower, Bride, Decoration, Engagement, Female, Green, Multicolour, Photoprops, White
+[2025-04-15T01:59:05.024Z] - Images: 1
+[2025-04-15T01:59:05.025Z] - Price: 34
+[2025-04-15T01:59:05.025Z] - Sale Price: 0
+[2025-04-15T01:59:05.025Z] - Stock: 2
+[2025-04-15T01:59:05.025Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:05.025Z] --------------------------------------------
+[2025-04-15T01:59:06.178Z] ✅ Imported Product:
+[2025-04-15T01:59:06.178Z] - Title: Golden Age Birthday Luncheon Napkins 16pcs
+[2025-04-15T01:59:06.178Z] - Slug: golden-age-birthday-luncheon-napkins-16pcs
+[2025-04-15T01:59:06.178Z] - SKU: 00036309
+[2025-04-15T01:59:06.178Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f846a15955b8057aa085cf, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f846615955b8057aa084db
+[2025-04-15T01:59:06.178Z] - Tags: Adult, Birthdays, Gold, Golden Age Birthday Luncheon Napkins, Napkins, Party Supplies, Unisex
+[2025-04-15T01:59:06.178Z] - Images: 1
+[2025-04-15T01:59:06.178Z] - Price: 26
+[2025-04-15T01:59:06.178Z] - Sale Price: 0
+[2025-04-15T01:59:06.179Z] - Stock: 3
+[2025-04-15T01:59:06.179Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:06.179Z] --------------------------------------------
+[2025-04-15T01:59:07.067Z] ✅ Imported Product:
+[2025-04-15T01:59:07.068Z] - Title: Masha And The Bear Plastic Cups 200ml 8pcs
+[2025-04-15T01:59:07.068Z] - Slug: masha-and-the-bear-plastic-cups-200ml-8pcs
+[2025-04-15T01:59:07.068Z] - SKU: 00036329
+[2025-04-15T01:59:07.068Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:07.068Z] - Tags: Birthday, Female, Girls theme, Masha And The Bear Plastic Cups, Multicolour, Party Supplies, Plastic Cups, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:07.068Z] - Images: 1
+[2025-04-15T01:59:07.068Z] - Price: 14
+[2025-04-15T01:59:07.068Z] - Sale Price: 0
+[2025-04-15T01:59:07.068Z] - Stock: 8
+[2025-04-15T01:59:07.068Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:07.068Z] --------------------------------------------
+[2025-04-15T01:59:07.985Z] ✅ Imported Product:
+[2025-04-15T01:59:07.985Z] - Title: Golden Age Birthday Centerpiece Foil
+[2025-04-15T01:59:07.985Z] - Slug: golden-age-birthday-centerpiece-foil
+[2025-04-15T01:59:07.985Z] - SKU: 00036297
+[2025-04-15T01:59:07.986Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8468a5955b8057aa08576, 67f846595955b8057aa0849d, 67f846a15955b8057aa085cf, 67f8278bcd23acad75619f73, 67f846615955b8057aa084db
+[2025-04-15T01:59:07.986Z] - Tags: Adult, Birthdays, Gold, Golden Age Birthday Centerpiece Foil, Party Supplies, Table Centerpiece, Table Decoration, Unisex
+[2025-04-15T01:59:07.986Z] - Images: 1
+[2025-04-15T01:59:07.986Z] - Price: 28
+[2025-04-15T01:59:07.986Z] - Sale Price: 0
+[2025-04-15T01:59:07.986Z] - Stock: 5
+[2025-04-15T01:59:07.986Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:07.986Z] --------------------------------------------
+[2025-04-15T01:59:08.781Z] ✅ Imported Product:
+[2025-04-15T01:59:08.781Z] - Title: Bachelorette Party Invitation Cards 8pcs
+[2025-04-15T01:59:08.781Z] - Slug: bachelorette-party-invitation-cards-8pcs
+[2025-04-15T01:59:08.781Z] - SKU: 100000004519
+[2025-04-15T01:59:08.782Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f844b7f1275889ad3993b8, 67f8278bcd23acad75619f69, 67f8278bcd23acad75619f75
+[2025-04-15T01:59:08.782Z] - Tags: Adult Theme, Bachelorette, Black, Female, Invitation Cards, Pink
+[2025-04-15T01:59:08.782Z] - Images: 1
+[2025-04-15T01:59:08.782Z] - Price: 16
+[2025-04-15T01:59:08.782Z] - Sale Price: 0
+[2025-04-15T01:59:08.782Z] - Stock: 14
+[2025-04-15T01:59:08.783Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:08.783Z] --------------------------------------------
+[2025-04-15T01:59:09.960Z] ✅ Imported Product:
+[2025-04-15T01:59:09.961Z] - Title: Luminous Birthday Foil Balloon 45cm
+[2025-04-15T01:59:09.961Z] - Slug: luminous-birthday-foil-balloon-45cm
+[2025-04-15T01:59:09.961Z] - SKU: 00033498
+[2025-04-15T01:59:09.961Z] - Categories: 67f7c88f2a38a098e893418c, 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548b4, 67f7d19bd107819e654548bb, 67f7d19bd107819e654548be, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67f8278bcd23acad75619f69, 67f8465c5955b8057aa084b8, 67f8278bcd23acad75619f6b, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084ba, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f6f, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f846a05955b8057aa085c5, 67f8465c5955b8057aa084c0, 67f844b7f1275889ad3993bc, 67f8278bcd23acad75619f77, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:09.962Z] - Tags: Adult, Birthdays, Female, Foil Balloons, Girls theme, Lavander, Luminous Birthday Foil Balloon, Multicolour, Pink, Purple, Unisex
+[2025-04-15T01:59:09.962Z] - Images: 1
+[2025-04-15T01:59:09.962Z] - Price: 18
+[2025-04-15T01:59:09.962Z] - Sale Price: 0
+[2025-04-15T01:59:09.962Z] - Stock: 4
+[2025-04-15T01:59:09.962Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:09.962Z] --------------------------------------------
+[2025-04-15T01:59:11.057Z] ✅ Imported Product:
+[2025-04-15T01:59:11.058Z] - Title: Mickey Mouse Tattoo Favors 8pcs
+[2025-04-15T01:59:11.058Z] - Slug: mickey-mouse-tattoo-favors-8pcs
+[2025-04-15T01:59:11.058Z] - SKU: 100000014084
+[2025-04-15T01:59:11.058Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb114fe7e95cf337583ef, 67fdb840fe7e95cf33758faa, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67fdb1a1fe7e95cf337584a4, 67f8278fcd23acad75619f91, 67f8278bcd23acad75619f73, 67fdb377fe7e95cf33758853, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T01:59:11.058Z] - Tags: Baby, Birthday, Boys Theme, Child, Disney, Gifts, Male, Mickey Mouse, Multicolour, Party Favors, Tattoo, Toddler, Unisex
+[2025-04-15T01:59:11.058Z] - Images: 1
+[2025-04-15T01:59:11.058Z] - Price: 12
+[2025-04-15T01:59:11.058Z] - Sale Price: 0
+[2025-04-15T01:59:11.058Z] - Stock: 1
+[2025-04-15T01:59:11.058Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:11.059Z] --------------------------------------------
+[2025-04-15T01:59:12.192Z] ✅ Imported Product:
+[2025-04-15T01:59:12.192Z] - Title: Encanto Round Paper Plates 9in 8pcs
+[2025-04-15T01:59:12.192Z] - Slug: encanto-round-paper-plates-9in-8pcs
+[2025-04-15T01:59:12.192Z] - SKU: 00036353
+[2025-04-15T01:59:12.193Z] - Categories: 67f7c88f2a38a098e89341ac, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f8278bcd23acad75619f77, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:12.193Z] - Tags: Birthday, Encanto Round Paper Plates, Girls theme, Paper Plates, Party Supplies, Young Children theme
+[2025-04-15T01:59:12.193Z] - Images: 1
+[2025-04-15T01:59:12.193Z] - Price: 23
+[2025-04-15T01:59:12.193Z] - Sale Price: 0
+[2025-04-15T01:59:12.193Z] - Stock: 16
+[2025-04-15T01:59:12.193Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:12.193Z] --------------------------------------------
+[2025-04-15T01:59:13.089Z] ✅ Imported Product:
+[2025-04-15T01:59:13.090Z] - Title: Encanto Paper Cups 9Oz 8pcs
+[2025-04-15T01:59:13.090Z] - Slug: encanto-paper-cups-9oz-8pcs
+[2025-04-15T01:59:13.090Z] - SKU: 00036357
+[2025-04-15T01:59:13.090Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67fdb226fe7e95cf3375858f, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f8278bcd23acad75619f77, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:13.090Z] - Tags: Birthday, encanto, Encanto Paper Cups, Girls theme, Paper Cups, Party Supplies, Young Children theme
+[2025-04-15T01:59:13.090Z] - Images: 1
+[2025-04-15T01:59:13.091Z] - Price: 19
+[2025-04-15T01:59:13.091Z] - Sale Price: 0
+[2025-04-15T01:59:13.091Z] - Stock: 13
+[2025-04-15T01:59:13.091Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:13.092Z] --------------------------------------------
+[2025-04-15T01:59:14.146Z] ✅ Imported Product:
+[2025-04-15T01:59:14.146Z] - Title: Mickey Mouse Forever Paper Cups 8pcs
+[2025-04-15T01:59:14.146Z] - Slug: mickey-mouse-forever-paper-cups-8pcs
+[2025-04-15T01:59:14.146Z] - SKU: 00033490
+[2025-04-15T01:59:14.147Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67fdb114fe7e95cf337583ef, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T01:59:14.147Z] - Tags: Baby, Black, Boys Theme, Child, Male, Mickey Mouse, Paper Cups, Red, Toddler, Unisex
+[2025-04-15T01:59:14.147Z] - Images: 1
+[2025-04-15T01:59:14.147Z] - Price: 16
+[2025-04-15T01:59:14.147Z] - Sale Price: 0
+[2025-04-15T01:59:14.148Z] - Stock: 21
+[2025-04-15T01:59:14.148Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:14.148Z] --------------------------------------------
+[2025-04-15T01:59:16.009Z] ✅ Imported Product:
+[2025-04-15T01:59:16.009Z] - Title: Encanto Assorted Paper Plates 7in 8pcs
+[2025-04-15T01:59:16.009Z] - Slug: encanto-assorted-paper-plates-7in-8pcs
+[2025-04-15T01:59:16.010Z] - SKU: 00036351
+[2025-04-15T01:59:16.010Z] - Categories: 67f7c88f2a38a098e89341a6, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:16.010Z] - Tags: Birthday, encanto, Encanto Assorted Paper Plates, Girls theme, Party Supplies, Young Children theme
+[2025-04-15T01:59:16.010Z] - Images: 2
+[2025-04-15T01:59:16.010Z] - Price: 20
+[2025-04-15T01:59:16.010Z] - Sale Price: 0
+[2025-04-15T01:59:16.010Z] - Stock: 24
+[2025-04-15T01:59:16.010Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:16.010Z] --------------------------------------------
+[2025-04-15T01:59:17.334Z] ✅ Imported Product:
+[2025-04-15T01:59:17.334Z] - Title: Encanto Spiral Decorations Paper Cutouts 5in
+[2025-04-15T01:59:17.334Z] - Slug: encanto-spiral-decorations-paper-cutouts-5in
+[2025-04-15T01:59:17.334Z] - SKU: 00046114
+[2025-04-15T01:59:17.334Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465a5955b8057aa084a1, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f846ab5955b8057aa085f4, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:17.334Z] - Tags: Birthdays, Encanto Spiral Decorations With 5 inch Cutouts Paper, Girls theme, Spiral Decorations, Young Children theme
+[2025-04-15T01:59:17.334Z] - Images: 1
+[2025-04-15T01:59:17.334Z] - Price: 37
+[2025-04-15T01:59:17.334Z] - Sale Price: 0
+[2025-04-15T01:59:17.335Z] - Stock: 9
+[2025-04-15T01:59:17.335Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:17.335Z] --------------------------------------------
+[2025-04-15T01:59:18.846Z] ✅ Imported Product:
+[2025-04-15T01:59:18.846Z] - Title: Disney Encanto Party Plastic Table Cover 54x96in
+[2025-04-15T01:59:18.846Z] - Slug: disney-encanto-party-plastic-table-cover-54x96in
+[2025-04-15T01:59:18.846Z] - SKU: 00036355
+[2025-04-15T01:59:18.846Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:18.846Z] - Tags: Birthdays, encanto, Encanto Plastic Table Cover, Girls theme, Party Supplies, Table Cover, Young Children theme
+[2025-04-15T01:59:18.847Z] - Images: 1
+[2025-04-15T01:59:18.847Z] - Price: 29
+[2025-04-15T01:59:18.847Z] - Sale Price: 0
+[2025-04-15T01:59:18.847Z] - Stock: 22
+[2025-04-15T01:59:18.847Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:18.847Z] --------------------------------------------
+[2025-04-15T01:59:21.402Z] ✅ Imported Product:
+[2025-04-15T01:59:21.402Z] - Title: Flutter Beverage Napkins 16pcs
+[2025-04-15T01:59:21.402Z] - Slug: flutter-beverage-napkins-16pcs
+[2025-04-15T01:59:21.402Z] - SKU: 00036156
+[2025-04-15T01:59:21.402Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:21.402Z] - Tags: Adult, Birthdays, Female, Flutter Beverage Napkins, Girls theme, Lavander, Napkins, Party Supplies, Pink, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:21.402Z] - Images: 1
+[2025-04-15T01:59:21.403Z] - Price: 18
+[2025-04-15T01:59:21.403Z] - Sale Price: 0
+[2025-04-15T01:59:21.403Z] - Stock: 19
+[2025-04-15T01:59:21.404Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:21.404Z] --------------------------------------------
+[2025-04-15T01:59:22.357Z] ✅ Imported Product:
+[2025-04-15T01:59:22.358Z] - Title: Elegant Bride Sash
+[2025-04-15T01:59:22.358Z] - Slug: elegant-bride-sash
+[2025-04-15T01:59:22.358Z] - SKU: 100000011318
+[2025-04-15T01:59:22.358Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f8278bcd23acad75619f69, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdbd11fe7e95cf3375952a, 67f8465a5955b8057aa084aa, 67f846775955b8057aa08530
+[2025-04-15T01:59:22.358Z] - Tags: Adult, Bachelorette, Female, Pink, Sash, White
+[2025-04-15T01:59:22.358Z] - Images: 1
+[2025-04-15T01:59:22.358Z] - Price: 26
+[2025-04-15T01:59:22.359Z] - Sale Price: 0
+[2025-04-15T01:59:22.359Z] - Stock: 8
+[2025-04-15T01:59:22.359Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:22.359Z] --------------------------------------------
+[2025-04-15T01:59:23.279Z] ✅ Imported Product:
+[2025-04-15T01:59:23.279Z] - Title: Love And Leaves Pennant Banner
+[2025-04-15T01:59:23.279Z] - Slug: love-and-leaves-pennant-banner
+[2025-04-15T01:59:23.279Z] - SKU: 100000012277
+[2025-04-15T01:59:23.280Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19fd107819e65454940, 67fdaebafe7e95cf337580ec, 67f846595955b8057aa0849d, 67fdaf31fe7e95cf33758177, 67f8278bcd23acad75619f69, 67f846a15955b8057aa085cf, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846775955b8057aa08530
+[2025-04-15T01:59:23.280Z] - Tags: Bridal Shower, Bride, Engagement, Female, Green, Hanging Decoration, Letter banner, Multicolour, Pennant, Unisex, White
+[2025-04-15T01:59:23.280Z] - Images: 1
+[2025-04-15T01:59:23.280Z] - Price: 18
+[2025-04-15T01:59:23.280Z] - Sale Price: 0
+[2025-04-15T01:59:23.280Z] - Stock: 9
+[2025-04-15T01:59:23.281Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:23.281Z] --------------------------------------------
+[2025-04-15T01:59:24.193Z] ✅ Imported Product:
+[2025-04-15T01:59:24.193Z] - Title: Flutter Luncheon Napkins 16pcs
+[2025-04-15T01:59:24.193Z] - Slug: flutter-luncheon-napkins-16pcs
+[2025-04-15T01:59:24.193Z] - SKU: 00036154
+[2025-04-15T01:59:24.193Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b6, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:24.193Z] - Tags: Adult, Birthdays, Flutter Luncheon Napkins, Girls theme, Multicolour, Napkins, Party Supplies, Pink, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:24.194Z] - Images: 1
+[2025-04-15T01:59:24.194Z] - Price: 17
+[2025-04-15T01:59:24.194Z] - Sale Price: 0
+[2025-04-15T01:59:24.194Z] - Stock: 11
+[2025-04-15T01:59:24.194Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:24.194Z] --------------------------------------------
+[2025-04-15T01:59:25.233Z] ✅ Imported Product:
+[2025-04-15T01:59:25.234Z] - Title: Encanto Balloon Bouquet 5pcs
+[2025-04-15T01:59:25.234Z] - Slug: encanto-balloon-bouquet-5pcs
+[2025-04-15T01:59:25.234Z] - SKU: 00034855
+[2025-04-15T01:59:25.234Z] - Categories: 67f7c88f2a38a098e893418c, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548a5, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548bb, 67f7d19bd107819e654548be, 67f7d19cd107819e654548c1, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e6545490a, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f8466b5955b8057aa084ff, 67f8465c5955b8057aa084b8, 67fdaff7fe7e95cf33758274, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084ba, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f8465c5955b8057aa084c0, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:25.234Z] - Tags: Balloon Bouquet, Birthdays, Encanto Balloon Bouquet, Girls theme, Themed Birthdays, Young Children theme
+[2025-04-15T01:59:25.234Z] - Images: 1
+[2025-04-15T01:59:25.234Z] - Price: 90
+[2025-04-15T01:59:25.234Z] - Sale Price: 0
+[2025-04-15T01:59:25.234Z] - Stock: 13
+[2025-04-15T01:59:25.235Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:25.235Z] --------------------------------------------
+[2025-04-15T01:59:26.260Z] ✅ Imported Product:
+[2025-04-15T01:59:26.260Z] - Title: Flutter Plastic Table Cover
+[2025-04-15T01:59:26.260Z] - Slug: flutter-plastic-table-cover
+[2025-04-15T01:59:26.260Z] - SKU: 00036152
+[2025-04-15T01:59:26.260Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b6, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:26.260Z] - Tags: Adult, Birthdays, Female, Flutter Plastic Table Cover, Girls theme, Multicolour, Party Supplies, Pink, Table Cover, Themed birthday, Young Children theme
+[2025-04-15T01:59:26.261Z] - Images: 1
+[2025-04-15T01:59:26.261Z] - Price: 29
+[2025-04-15T01:59:26.261Z] - Sale Price: 0
+[2025-04-15T01:59:26.261Z] - Stock: 8
+[2025-04-15T01:59:26.261Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:26.261Z] --------------------------------------------
+[2025-04-15T01:59:27.096Z] ✅ Imported Product:
+[2025-04-15T01:59:27.096Z] - Title: Love And Leaves Jumbo Letter Banner Kit
+[2025-04-15T01:59:27.096Z] - Slug: love-and-leaves-jumbo-letter-banner-kit
+[2025-04-15T01:59:27.096Z] - SKU: 00032968
+[2025-04-15T01:59:27.096Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19fd107819e65454940, 67fdaebafe7e95cf337580ec, 67f846595955b8057aa0849d, 67fdaf31fe7e95cf33758177, 67f8278bcd23acad75619f69, 67f846a05955b8057aa085ca, 67f8465a5955b8057aa084a1, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846615955b8057aa084db, 67f8469b5955b8057aa085b7, 67f846775955b8057aa08530
+[2025-04-15T01:59:27.096Z] - Tags: Adult, Bridal Shower, Congratulation, Engagement, Female, Green, Hanging Decoration, Letter banner, Male, Multicolour, Unisex, White
+[2025-04-15T01:59:27.097Z] - Images: 1
+[2025-04-15T01:59:27.097Z] - Price: 33
+[2025-04-15T01:59:27.097Z] - Sale Price: 0
+[2025-04-15T01:59:27.097Z] - Stock: 3
+[2025-04-15T01:59:27.097Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:27.097Z] --------------------------------------------
+[2025-04-15T01:59:28.265Z] ✅ Imported Product:
+[2025-04-15T01:59:28.265Z] - Title: Disney Encanto Birthday Party Tattoos 8 Count
+[2025-04-15T01:59:28.266Z] - Slug: disney-encanto-birthday-party-tattoos-8-count
+[2025-04-15T01:59:28.266Z] - SKU: 00036345
+[2025-04-15T01:59:28.266Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67fdb377fe7e95cf33758853, 67f844b7f1275889ad3993bc, 67f8278bcd23acad75619f77, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:28.267Z] - Tags: Birthdays, encanto, Encanto Tattoo Favors, Girls theme, Tattoo Favors, Themed Birthdays, Young Children theme
+[2025-04-15T01:59:28.267Z] - Images: 1
+[2025-04-15T01:59:28.267Z] - Price: 12
+[2025-04-15T01:59:28.267Z] - Sale Price: 0
+[2025-04-15T01:59:28.268Z] - Stock: 26
+[2025-04-15T01:59:28.268Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:28.268Z] --------------------------------------------
+[2025-04-15T01:59:28.834Z] ⚠️ Failed to upload image: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/086511_Masha-and-the-Bear-Paper-Plates-9in-8pcs_01_1024x1024%402x.jpg?fit=1300%2C1300&ssl=1
+[2025-04-15T01:59:28.875Z] ✅ Imported Product:
+[2025-04-15T01:59:28.875Z] - Title: Masha And The Bear Paper Plates 9in 8pcs
+[2025-04-15T01:59:28.875Z] - Slug: masha-and-the-bear-paper-plates-9in-8pcs
+[2025-04-15T01:59:28.875Z] - SKU: 00036327
+[2025-04-15T01:59:28.875Z] - Categories: 67f7c88f2a38a098e89341ac, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:28.875Z] - Tags: Birthdays, Female, Girls theme, Masha And The Bear Paper Plates, Multicolour, Paper Plates, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:28.875Z] - Images: 0
+[2025-04-15T01:59:28.875Z] - Price: 17
+[2025-04-15T01:59:28.876Z] - Sale Price: 0
+[2025-04-15T01:59:28.876Z] - Stock: 2
+[2025-04-15T01:59:28.876Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:28.876Z] --------------------------------------------
+[2025-04-15T01:59:29.459Z] ⚠️ Failed to upload image: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/086514_Masha-and-the-Bear-Paper-Tissues-20pcs_01_1024x1024%402x.jpg?fit=1450%2C1450&ssl=1
+[2025-04-15T01:59:29.500Z] ✅ Imported Product:
+[2025-04-15T01:59:29.500Z] - Title: Masha And The Bear Paper Tissues 20pcs
+[2025-04-15T01:59:29.500Z] - Slug: masha-and-the-bear-paper-tissues-20pcs
+[2025-04-15T01:59:29.500Z] - SKU: 00036331
+[2025-04-15T01:59:29.500Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:29.500Z] - Tags: Birthdays, Female, Girls theme, Masha And The Bear Paper Tissues, Multicolour, Napkins, Party Supplies, Pink, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:29.501Z] - Images: 0
+[2025-04-15T01:59:29.501Z] - Price: 17
+[2025-04-15T01:59:29.501Z] - Sale Price: 0
+[2025-04-15T01:59:29.501Z] - Stock: 7
+[2025-04-15T01:59:29.501Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:29.501Z] --------------------------------------------
+[2025-04-15T01:59:30.413Z] ✅ Imported Product:
+[2025-04-15T01:59:30.414Z] - Title: Bachelorette Bride To Be Sequin Sash Hen Night
+[2025-04-15T01:59:30.414Z] - Slug: bachelorette-bride-to-be-sequin-sash-hen-night
+[2025-04-15T01:59:30.414Z] - SKU: 100000009817
+[2025-04-15T01:59:30.414Z] - Categories: 67f7c8902a38a098e89341b0, 67f7d19ad107819e65454888, 67f7d19dd107819e654548f1, 67f844b7f1275889ad3993b8, 67f8278bcd23acad75619f69, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdbd11fe7e95cf3375952a, 67f8465a5955b8057aa084aa
+[2025-04-15T01:59:30.414Z] - Tags: Adult, Bachelorette, Black, Female, Pink, Sash
+[2025-04-15T01:59:30.414Z] - Images: 1
+[2025-04-15T01:59:30.414Z] - Price: 26
+[2025-04-15T01:59:30.414Z] - Sale Price: 0
+[2025-04-15T01:59:30.415Z] - Stock: 0
+[2025-04-15T01:59:30.415Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:30.415Z] --------------------------------------------
+[2025-04-15T01:59:31.203Z] ✅ Imported Product:
+[2025-04-15T01:59:31.204Z] - Title: Masha And The Bear Triangle Flag Banner
+[2025-04-15T01:59:31.204Z] - Slug: masha-and-the-bear-triangle-flag-banner
+[2025-04-15T01:59:31.204Z] - SKU: 00036335
+[2025-04-15T01:59:31.204Z] - Categories: 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:31.204Z] - Tags: Banners, Birthday, Female, Girls theme, Masha And The Bear Triangle Flag Banner, Multicolour, Party Supplies, Themed birthday, Young Children theme
+[2025-04-15T01:59:31.204Z] - Images: 1
+[2025-04-15T01:59:31.204Z] - Price: 15
+[2025-04-15T01:59:31.204Z] - Sale Price: 0
+[2025-04-15T01:59:31.204Z] - Stock: 15
+[2025-04-15T01:59:31.205Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:31.205Z] --------------------------------------------
+[2025-04-15T01:59:31.702Z] ⚠️ Failed to upload image: https://i0.wp.com/partyworld.ae/wp-content/uploads/2025/03/086566_Masha-and-the-Bear-Hats-6pcs_01_1024x1024%402x.jpg?fit=2000%2C2000&ssl=1
+[2025-04-15T01:59:31.742Z] ✅ Imported Product:
+[2025-04-15T01:59:31.743Z] - Title: Masha And The Bear Hats 6pcs
+[2025-04-15T01:59:31.743Z] - Slug: masha-and-the-bear-hats-6pcs
+[2025-04-15T01:59:31.743Z] - SKU: 00036339
+[2025-04-15T01:59:31.743Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67fdb169fe7e95cf33758463, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f8465a5955b8057aa084aa, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:31.743Z] - Tags: Birthday, Girls theme, Masha And The Bear Hats, Multicolour, Party Hats, Party Supplies, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:31.743Z] - Images: 0
+[2025-04-15T01:59:31.743Z] - Price: 13
+[2025-04-15T01:59:31.744Z] - Sale Price: 0
+[2025-04-15T01:59:31.744Z] - Stock: 0
+[2025-04-15T01:59:31.744Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:31.744Z] --------------------------------------------
+[2025-04-15T01:59:32.599Z] ✅ Imported Product:
+[2025-04-15T01:59:32.599Z] - Title: Masha And The Bear Plastic Tablecover
+[2025-04-15T01:59:32.600Z] - Slug: masha-and-the-bear-plastic-tablecover
+[2025-04-15T01:59:32.600Z] - SKU: 00036333
+[2025-04-15T01:59:32.600Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:32.600Z] - Tags: Birthday, Female, Girls theme, Masha And The Bear Plastic Tablecover, Party Supplies, Table Cover, Themed birthday, Unisex, Young Children theme
+[2025-04-15T01:59:32.601Z] - Images: 1
+[2025-04-15T01:59:32.601Z] - Price: 24
+[2025-04-15T01:59:32.601Z] - Sale Price: 0
+[2025-04-15T01:59:32.601Z] - Stock: 8
+[2025-04-15T01:59:32.601Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:32.601Z] --------------------------------------------
+[2025-04-15T01:59:33.714Z] ✅ Imported Product:
+[2025-04-15T01:59:33.714Z] - Title: Encanto Beverage Napkins Lowcount 16pcs
+[2025-04-15T01:59:33.714Z] - Slug: encanto-beverage-napkins-lowcount-16pcs
+[2025-04-15T01:59:33.714Z] - SKU: 00036347
+[2025-04-15T01:59:33.715Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:33.715Z] - Tags: Birthday, encanto, Encanto Beverage Napkins, Girls theme, Napkins, Party Supplies, Young Children theme
+[2025-04-15T01:59:33.715Z] - Images: 1
+[2025-04-15T01:59:33.715Z] - Price: 20
+[2025-04-15T01:59:33.715Z] - Sale Price: 0
+[2025-04-15T01:59:33.715Z] - Stock: 19
+[2025-04-15T01:59:33.715Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:33.715Z] --------------------------------------------
+[2025-04-15T01:59:34.624Z] ✅ Imported Product:
+[2025-04-15T01:59:34.625Z] - Title: Encanto Supershape Foil Balloon 66x91cm
+[2025-04-15T01:59:34.625Z] - Slug: encanto-supershape-foil-balloon-66x91cm
+[2025-04-15T01:59:34.625Z] - SKU: 00034837
+[2025-04-15T01:59:34.625Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:34.625Z] - Tags: Birthday, Encanto Supershape Foil Balloon, Foil Balloons, Girls theme, Party Supplies, Young Children theme
+[2025-04-15T01:59:34.625Z] - Images: 1
+[2025-04-15T01:59:34.625Z] - Price: 40
+[2025-04-15T01:59:34.625Z] - Sale Price: 0
+[2025-04-15T01:59:34.625Z] - Stock: 9
+[2025-04-15T01:59:34.625Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:34.625Z] --------------------------------------------
+[2025-04-15T01:59:35.472Z] ✅ Imported Product:
+[2025-04-15T01:59:35.472Z] - Title: Mickey Mouse Add An Age Letter Banner
+[2025-04-15T01:59:35.472Z] - Slug: mickey-mouse-add-an-age-letter-banner
+[2025-04-15T01:59:35.473Z] - SKU: 100000012169
+[2025-04-15T01:59:35.473Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67fdb114fe7e95cf337583ef, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f846775955b8057aa08530
+[2025-04-15T01:59:35.473Z] - Tags: Add an age, Baby, Banner, Birthday, Blue, Boys Theme, Child, Disney, Mickey Mouse, Multicolour, Toddler, White
+[2025-04-15T01:59:35.473Z] - Images: 1
+[2025-04-15T01:59:35.473Z] - Price: 20
+[2025-04-15T01:59:35.473Z] - Sale Price: 0
+[2025-04-15T01:59:35.473Z] - Stock: 4
+[2025-04-15T01:59:35.473Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:35.473Z] --------------------------------------------
+[2025-04-15T01:59:36.548Z] ✅ Imported Product:
+[2025-04-15T01:59:36.548Z] - Title: Encanto Lunch Napkin Lowcount 16pcs
+[2025-04-15T01:59:36.548Z] - Slug: encanto-lunch-napkin-lowcount-16pcs
+[2025-04-15T01:59:36.548Z] - SKU: 00036349
+[2025-04-15T01:59:36.549Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:36.549Z] - Tags: Birthday, Encanto Lunch Napkin Lowcount, Girls theme, Napkins, Party Supplies, Young Children theme
+[2025-04-15T01:59:36.549Z] - Images: 1
+[2025-04-15T01:59:36.549Z] - Price: 21
+[2025-04-15T01:59:36.549Z] - Sale Price: 0
+[2025-04-15T01:59:36.549Z] - Stock: 20
+[2025-04-15T01:59:36.549Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:36.549Z] --------------------------------------------
+[2025-04-15T01:59:37.412Z] ✅ Imported Product:
+[2025-04-15T01:59:37.412Z] - Title: Mickey Mouse Candle Set
+[2025-04-15T01:59:37.412Z] - Slug: mickey-mouse-candle-set
+[2025-04-15T01:59:37.412Z] - SKU: 100000010040
+[2025-04-15T01:59:37.412Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8465b5955b8057aa084af, 67f8274db3cbe403ed79e86d, 67fdb114fe7e95cf337583ef, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67fdb883fe7e95cf33758ffb, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T01:59:37.412Z] - Tags: Baby, Birthday, Boys Theme, Child, Disney, Male, Mickey Mouse, Multicolour, Themed Candle, Toddler, Unisex
+[2025-04-15T01:59:37.412Z] - Images: 1
+[2025-04-15T01:59:37.412Z] - Price: 21
+[2025-04-15T01:59:37.412Z] - Sale Price: 0
+[2025-04-15T01:59:37.412Z] - Stock: 165
+[2025-04-15T01:59:37.412Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:37.413Z] --------------------------------------------
+[2025-04-15T01:59:38.403Z] ✅ Imported Product:
+[2025-04-15T01:59:38.403Z] - Title: Mickey Mouse Forever Beverage Napkins
+[2025-04-15T01:59:38.404Z] - Slug: mickey-mouse-forever-beverage-napkins
+[2025-04-15T01:59:38.404Z] - SKU: 100000014080
+[2025-04-15T01:59:38.404Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb114fe7e95cf337583ef, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be
+[2025-04-15T01:59:38.404Z] - Tags: Baby, Black, Boys Theme, Child, Disney, Male, Mickey Mouse, Multicolour, Napkins, Toddler, Unisex, Yellow
+[2025-04-15T01:59:38.404Z] - Images: 1
+[2025-04-15T01:59:38.405Z] - Price: 17
+[2025-04-15T01:59:38.405Z] - Sale Price: 0
+[2025-04-15T01:59:38.405Z] - Stock: 10
+[2025-04-15T01:59:38.405Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:38.405Z] --------------------------------------------
+[2025-04-15T01:59:39.542Z] ✅ Imported Product:
+[2025-04-15T01:59:39.542Z] - Title: Encanto Scene Setter With Props - Paper & Plastic
+[2025-04-15T01:59:39.542Z] - Slug: encanto-scene-setter-with-props-paper-and-plastic
+[2025-04-15T01:59:39.542Z] - SKU: 00036359
+[2025-04-15T01:59:39.542Z] - Categories: 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67fdb165fe7e95cf3375845c, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:39.543Z] - Tags: Birthdays, Encanto Scene Setter With Props - Paper &amp; Plastic, Girls theme, Party Supplies, Scene Setter, Young Children theme
+[2025-04-15T01:59:39.543Z] - Images: 1
+[2025-04-15T01:59:39.543Z] - Price: 72
+[2025-04-15T01:59:39.543Z] - Sale Price: 0
+[2025-04-15T01:59:39.543Z] - Stock: 10
+[2025-04-15T01:59:39.543Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:39.543Z] --------------------------------------------
+[2025-04-15T01:59:40.511Z] ✅ Imported Product:
+[2025-04-15T01:59:40.511Z] - Title: Encanto Jumbo Add-An-Age Letter Banner Paper
+[2025-04-15T01:59:40.512Z] - Slug: encanto-jumbo-add-an-age-letter-banner-paper
+[2025-04-15T01:59:40.512Z] - SKU: 00036341
+[2025-04-15T01:59:40.512Z] - Categories: 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67fdb226fe7e95cf3375858f, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb226fe7e95cf33758591, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67fdaf91fe7e95cf33758200, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:40.512Z] - Tags: Birthdays, Encanto Jumbo Add-An-Age Letter Banner Paper, Girls theme, Letter banner, Party Supplies, Themed Birthdays, Young Children theme
+[2025-04-15T01:59:40.512Z] - Images: 1
+[2025-04-15T01:59:40.512Z] - Price: 39
+[2025-04-15T01:59:40.512Z] - Sale Price: 0
+[2025-04-15T01:59:40.512Z] - Stock: 13
+[2025-04-15T01:59:40.512Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:40.513Z] --------------------------------------------
+[2025-04-15T01:59:41.489Z] ✅ Imported Product:
+[2025-04-15T01:59:41.489Z] - Title: Happy Dinosaur Party Caps
+[2025-04-15T01:59:41.489Z] - Slug: happy-dinosaur-party-caps
+[2025-04-15T01:59:41.489Z] - SKU: 100000012147
+[2025-04-15T01:59:41.489Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f846a05955b8057aa085ca, 67f844b7f1275889ad3993ba, 67f8278dcd23acad75619f81, 67fdb169fe7e95cf33758463, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67f8465a5955b8057aa084aa, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:41.490Z] - Tags: Baby, Birthday, Boy, Cap, Child, Dinosaur, Happy Dinosaur, Hat, Multicolour, Toddler, Unisex
+[2025-04-15T01:59:41.490Z] - Images: 1
+[2025-04-15T01:59:41.490Z] - Price: 18
+[2025-04-15T01:59:41.490Z] - Sale Price: 0
+[2025-04-15T01:59:41.490Z] - Stock: 0
+[2025-04-15T01:59:41.490Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:41.490Z] --------------------------------------------
+[2025-04-15T01:59:42.468Z] ✅ Imported Product:
+[2025-04-15T01:59:42.469Z] - Title: Happy Dinosaur String Decoration
+[2025-04-15T01:59:42.469Z] - Slug: happy-dinosaur-string-decoration
+[2025-04-15T01:59:42.469Z] - SKU: 100000012149
+[2025-04-15T01:59:42.469Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67fdb053fe7e95cf337582dd, 67f8465a5955b8057aa084a1, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdb7d6fe7e95cf33758f4c, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:42.469Z] - Tags: Baby, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Multicolour, Table Cover, Tablecover, Toddler, Unisex
+[2025-04-15T01:59:42.469Z] - Images: 1
+[2025-04-15T01:59:42.469Z] - Price: 19
+[2025-04-15T01:59:42.469Z] - Sale Price: 0
+[2025-04-15T01:59:42.469Z] - Stock: 6
+[2025-04-15T01:59:42.469Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:42.469Z] --------------------------------------------
+[2025-04-15T01:59:43.427Z] ✅ Imported Product:
+[2025-04-15T01:59:43.428Z] - Title: Happy Dinosaur Table Cards 8pcs
+[2025-04-15T01:59:43.428Z] - Slug: happy-dinosaur-table-cards-8pcs
+[2025-04-15T01:59:43.428Z] - SKU: 100000012146
+[2025-04-15T01:59:43.428Z] - Categories: 67f7d19cd107819e654548d9, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f846a05955b8057aa085ca, 67f8278ecd23acad75619f88, 67f844b7f1275889ad3993ba, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:43.428Z] - Tags: Baby, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Multicolour, Table Card, Toddler, Unisex
+[2025-04-15T01:59:43.428Z] - Images: 1
+[2025-04-15T01:59:43.428Z] - Price: 18
+[2025-04-15T01:59:43.428Z] - Sale Price: 0
+[2025-04-15T01:59:43.428Z] - Stock: 7
+[2025-04-15T01:59:43.428Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:43.428Z] --------------------------------------------
+[2025-04-15T01:59:44.404Z] ✅ Imported Product:
+[2025-04-15T01:59:44.405Z] - Title: Happy Dinosaur Table Cover
+[2025-04-15T01:59:44.405Z] - Slug: happy-dinosaur-table-cover
+[2025-04-15T01:59:44.405Z] - SKU: 100000012145
+[2025-04-15T01:59:44.405Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb053fe7e95cf337582dd, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:44.405Z] - Tags: Baby, Birthday, Boy, Child, Dinosaur, Happy Dinosaur, Multicolour, Table Cover, Tablecover, Toddler, Unisex
+[2025-04-15T01:59:44.405Z] - Images: 1
+[2025-04-15T01:59:44.405Z] - Price: 25
+[2025-04-15T01:59:44.405Z] - Sale Price: 0
+[2025-04-15T01:59:44.405Z] - Stock: 8
+[2025-04-15T01:59:44.405Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:44.405Z] --------------------------------------------
+[2025-04-15T01:59:45.568Z] ✅ Imported Product:
+[2025-04-15T01:59:45.568Z] - Title: Miraculous Plastic Table Cover 120cm
+[2025-04-15T01:59:45.568Z] - Slug: miraculous-plastic-table-cover-120cm
+[2025-04-15T01:59:45.568Z] - SKU: 00046106
+[2025-04-15T01:59:45.569Z] - Categories: 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:45.569Z] - Tags: Birthday, Child, Girl, Girls theme, Ladybug, Miraculous Table Cover, Party Supplies, SuperHero, Table Cover, Teen, Tikki, Unisex, Young Children theme
+[2025-04-15T01:59:45.569Z] - Images: 1
+[2025-04-15T01:59:45.569Z] - Price: 33
+[2025-04-15T01:59:45.569Z] - Sale Price: 0
+[2025-04-15T01:59:45.569Z] - Stock: 9
+[2025-04-15T01:59:45.569Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:45.569Z] --------------------------------------------
+[2025-04-15T01:59:46.566Z] ✅ Imported Product:
+[2025-04-15T01:59:46.566Z] - Title: Miraculous Round Paper Plates 9in 8pcs
+[2025-04-15T01:59:46.566Z] - Slug: miraculous-round-paper-plates-9in-8pcs
+[2025-04-15T01:59:46.566Z] - SKU: 00035916
+[2025-04-15T01:59:46.567Z] - Categories: 67f7c88f2a38a098e89341ac, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8278bcd23acad75619f69, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f846705955b8057aa08515, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:46.567Z] - Tags: Birthday, Child, Girl, Girls theme, Ladybug, Miraculous round plates, Paper Plate, Party Supplies, Plate, Teen, Tikki, Unisex, Young Children theme
+[2025-04-15T01:59:46.567Z] - Images: 1
+[2025-04-15T01:59:46.567Z] - Price: 23
+[2025-04-15T01:59:46.567Z] - Sale Price: 0
+[2025-04-15T01:59:46.567Z] - Stock: 12
+[2025-04-15T01:59:46.567Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:46.568Z] --------------------------------------------
+[2025-04-15T01:59:47.404Z] ✅ Imported Product:
+[2025-04-15T01:59:47.404Z] - Title: Miraculous Loot Bags 8pcs
+[2025-04-15T01:59:47.404Z] - Slug: miraculous-loot-bags-8pcs
+[2025-04-15T01:59:47.404Z] - SKU: 00046110
+[2025-04-15T01:59:47.405Z] - Categories: 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f846b15955b8057aa0860a, 67f8278fcd23acad75619f8f, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278fcd23acad75619f91, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:47.405Z] - Tags: Birthday, Child, Girl, Ladybug, Lootbags, Miraculous, Party Bag, Party Favor Bags, SuperHero, Teen, Tikki, Unisex
+[2025-04-15T01:59:47.405Z] - Images: 1
+[2025-04-15T01:59:47.405Z] - Price: 13
+[2025-04-15T01:59:47.405Z] - Sale Price: 0
+[2025-04-15T01:59:47.405Z] - Stock: 4
+[2025-04-15T01:59:47.406Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:47.406Z] --------------------------------------------
+[2025-04-15T01:59:48.371Z] ✅ Imported Product:
+[2025-04-15T01:59:48.372Z] - Title: Miraculous Paper Cups 8pcs
+[2025-04-15T01:59:48.372Z] - Slug: miraculous-paper-cups-8pcs
+[2025-04-15T01:59:48.372Z] - SKU: 00046112
+[2025-04-15T01:59:48.372Z] - Categories: 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:48.372Z] - Tags: Girl theme, Ladybug, Miraculous Cups, Tikki, Young Children theme
+[2025-04-15T01:59:48.373Z] - Images: 1
+[2025-04-15T01:59:48.373Z] - Price: 20
+[2025-04-15T01:59:48.373Z] - Sale Price: 0
+[2025-04-15T01:59:48.373Z] - Stock: 12
+[2025-04-15T01:59:48.373Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:48.373Z] --------------------------------------------
+[2025-04-15T01:59:49.275Z] ✅ Imported Product:
+[2025-04-15T01:59:49.276Z] - Title: Justice League Heroes Unite Birthday Candle Set
+[2025-04-15T01:59:49.276Z] - Slug: justice-league-heroes-unite-birthday-candle-set
+[2025-04-15T01:59:49.276Z] - SKU: 00032860
+[2025-04-15T01:59:49.276Z] - Categories: 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8469a5955b8057aa085b0, 67f8465b5955b8057aa084af, 67f8274db3cbe403ed79e86d, 67f846825955b8057aa08556, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67fdb498fe7e95cf33758a61, 67f844b7f1275889ad3993bc, 67fdb883fe7e95cf33758ffb, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be
+[2025-04-15T01:59:49.276Z] - Tags: Batman, Birthday, Blue, Boy, Candle, Flash, Heroes Unite, Justice League, Multicolour, Red, Superman, Themed birthday, Unisex, Yellow
+[2025-04-15T01:59:49.276Z] - Images: 1
+[2025-04-15T01:59:49.276Z] - Price: 25
+[2025-04-15T01:59:49.276Z] - Sale Price: 0
+[2025-04-15T01:59:49.276Z] - Stock: 11
+[2025-04-15T01:59:49.276Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:49.276Z] --------------------------------------------
+[2025-04-15T01:59:50.438Z] ✅ Imported Product:
+[2025-04-15T01:59:50.438Z] - Title: Justice League Heroes Unite Beverage Napkins 16pcs
+[2025-04-15T01:59:50.438Z] - Slug: justice-league-heroes-unite-beverage-napkins-16pcs
+[2025-04-15T01:59:50.439Z] - SKU: 00033096
+[2025-04-15T01:59:50.439Z] - Categories: 67f7d19ad107819e6545488e, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67fdb711fe7e95cf33758e08, 67f8278bcd23acad75619f6b, 67f846825955b8057aa08556, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f6f, 67f8278bcd23acad75619f73, 67fdb498fe7e95cf33758a61, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f8278bcd23acad75619f77, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f846775955b8057aa08530
+[2025-04-15T01:59:50.439Z] - Tags: Batman, Beverage Napkins, Birthdays, Boy, Flash, Heroes Unite, Justice League, Lunch Tissue, Multicolour, Napkins, Powers unite, Superman, Themed birthday, Tissues, Unisex, White
+[2025-04-15T01:59:50.439Z] - Images: 1
+[2025-04-15T01:59:50.439Z] - Price: 19
+[2025-04-15T01:59:50.439Z] - Sale Price: 0
+[2025-04-15T01:59:50.439Z] - Stock: 16
+[2025-04-15T01:59:50.439Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:50.439Z] --------------------------------------------
+[2025-04-15T01:59:51.276Z] ✅ Imported Product:
+[2025-04-15T01:59:51.276Z] - Title: Justice League Heroes Unite Plastic Table Cover
+[2025-04-15T01:59:51.276Z] - Slug: justice-league-heroes-unite-plastic-table-cover
+[2025-04-15T01:59:51.277Z] - SKU: 100000142334
+[2025-04-15T01:59:51.277Z] - Categories: 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846825955b8057aa08556, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdb498fe7e95cf33758a61, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f846775955b8057aa08530
+[2025-04-15T01:59:51.277Z] - Tags: Batman, Birthday, Boy, Flash, Heroes Unite, Justice League, Multicolour, SuperHero, Superman, Table Cover, Themed birthday, Unisex, White
+[2025-04-15T01:59:51.277Z] - Images: 1
+[2025-04-15T01:59:51.277Z] - Price: 29
+[2025-04-15T01:59:51.277Z] - Sale Price: 0
+[2025-04-15T01:59:51.277Z] - Stock: 15
+[2025-04-15T01:59:51.277Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:51.277Z] --------------------------------------------
+[2025-04-15T01:59:52.204Z] ✅ Imported Product:
+[2025-04-15T01:59:52.205Z] - Title: Miraculous Letter Banner
+[2025-04-15T01:59:52.205Z] - Slug: miraculous-letter-banner
+[2025-04-15T01:59:52.205Z] - SKU: 00035906
+[2025-04-15T01:59:52.205Z] - Categories: 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:52.205Z] - Tags: Birthday, Child, Girl, Girl theme, Ladybug, Miraculous, Miraculous Letter Banner, Party Supplies, SuperHero, Teen, Tikki, Unisex, Young Children theme
+[2025-04-15T01:59:52.205Z] - Images: 1
+[2025-04-15T01:59:52.205Z] - Price: 30
+[2025-04-15T01:59:52.205Z] - Sale Price: 0
+[2025-04-15T01:59:52.206Z] - Stock: 6
+[2025-04-15T01:59:52.206Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:52.206Z] --------------------------------------------
+[2025-04-15T01:59:53.230Z] ✅ Imported Product:
+[2025-04-15T01:59:53.231Z] - Title: Heroes Unite  Superman Round Plates 9in
+[2025-04-15T01:59:53.231Z] - Slug: heroes-unite-superman-round-plates-9in
+[2025-04-15T01:59:53.231Z] - SKU: 100000014075
+[2025-04-15T01:59:53.231Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19ad107819e6545488e, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67fdb711fe7e95cf33758e08, 67f8278bcd23acad75619f6b, 67f846825955b8057aa08556, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f6f, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67fdb498fe7e95cf33758a61, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f8278bcd23acad75619f77, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T01:59:53.231Z] - Tags: Birthday, Blue, Boy, Heroes Unite, Justice League, Multicolour, Paper Plates, Plates 9 inches, SuperHero, Superman, Themed birthday, Unisex
+[2025-04-15T01:59:53.231Z] - Images: 1
+[2025-04-15T01:59:53.232Z] - Price: 22
+[2025-04-15T01:59:53.232Z] - Sale Price: 0
+[2025-04-15T01:59:53.232Z] - Stock: 14
+[2025-04-15T01:59:53.232Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:53.232Z] --------------------------------------------
+[2025-04-15T01:59:54.213Z] ✅ Imported Product:
+[2025-04-15T01:59:54.214Z] - Title: Miraculous Lunch Napkins
+[2025-04-15T01:59:54.214Z] - Slug: miraculous-lunch-napkins
+[2025-04-15T01:59:54.214Z] - SKU: 00035910
+[2025-04-15T01:59:54.214Z] - Categories: 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:54.214Z] - Tags: Birthday, Black, Child, Girl, Girl theme, Ladybug, Lunch napkins, Miraculous, Multicolour, Red, SuperHero, Teen, Tikki, Unisex, Young Children theme
+[2025-04-15T01:59:54.214Z] - Images: 1
+[2025-04-15T01:59:54.214Z] - Price: 20
+[2025-04-15T01:59:54.215Z] - Sale Price: 0
+[2025-04-15T01:59:54.215Z] - Stock: 9
+[2025-04-15T01:59:54.215Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:54.215Z] --------------------------------------------
+[2025-04-15T01:59:55.061Z] ✅ Imported Product:
+[2025-04-15T01:59:55.061Z] - Title: Miraculous Face Masks
+[2025-04-15T01:59:55.061Z] - Slug: miraculous-face-masks
+[2025-04-15T01:59:55.061Z] - SKU: 00035908
+[2025-04-15T01:59:55.062Z] - Categories: 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465a5955b8057aa084a8, 67fdb288fe7e95cf33758624, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f844b7f1275889ad3993bc, 67f846615955b8057aa084db, 67f8465a5955b8057aa084aa, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:55.062Z] - Tags: Birthday, Black, Child, Face Mask, Girl, Ladybug, Mask, Miraculous, Red, SuperHero, Tikki, Unisex, Young children
+[2025-04-15T01:59:55.062Z] - Images: 1
+[2025-04-15T01:59:55.062Z] - Price: 24
+[2025-04-15T01:59:55.062Z] - Sale Price: 0
+[2025-04-15T01:59:55.062Z] - Stock: 7
+[2025-04-15T01:59:55.062Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:55.063Z] --------------------------------------------
+[2025-04-15T01:59:56.019Z] ✅ Imported Product:
+[2025-04-15T01:59:56.019Z] - Title: PJ Masks Party Hats 6pcs
+[2025-04-15T01:59:56.020Z] - Slug: pj-masks-party-hats-6pcs
+[2025-04-15T01:59:56.020Z] - SKU: 100000009648
+[2025-04-15T01:59:56.020Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67fdb169fe7e95cf33758463, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f8465a5955b8057aa084aa, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:56.020Z] - Tags: Baby, Birthday, Catboy, Child, Gekko, Hats, Multicolour, Owlette, PJ Masks, Toddler, Unisex
+[2025-04-15T01:59:56.020Z] - Images: 1
+[2025-04-15T01:59:56.020Z] - Price: 17
+[2025-04-15T01:59:56.021Z] - Sale Price: 0
+[2025-04-15T01:59:56.021Z] - Stock: 13
+[2025-04-15T01:59:56.021Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:56.021Z] --------------------------------------------
+[2025-04-15T01:59:57.082Z] ✅ Imported Product:
+[2025-04-15T01:59:57.083Z] - Title: PJ Masks Party Bags 6pcs
+[2025-04-15T01:59:57.083Z] - Slug: pj-masks-party-bags-6pcs
+[2025-04-15T01:59:57.083Z] - SKU: 100000009647
+[2025-04-15T01:59:57.083Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f8278fcd23acad75619f8f, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278fcd23acad75619f91, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:57.083Z] - Tags: Baby, Birthday, Catboy, Child, Favor Bags, Favour Bags, Gekko, Multicolour, Owlette, Party Bags, PJ Masks, Toddler, Unisex
+[2025-04-15T01:59:57.083Z] - Images: 1
+[2025-04-15T01:59:57.084Z] - Price: 12
+[2025-04-15T01:59:57.084Z] - Sale Price: 0
+[2025-04-15T01:59:57.084Z] - Stock: 25
+[2025-04-15T01:59:57.084Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:57.084Z] --------------------------------------------
+[2025-04-15T01:59:57.883Z] ✅ Imported Product:
+[2025-04-15T01:59:57.884Z] - Title: PJ Masks Napkins 20pcs
+[2025-04-15T01:59:57.884Z] - Slug: pj-masks-napkins-20pcs
+[2025-04-15T01:59:57.884Z] - SKU: 100000009644
+[2025-04-15T01:59:57.884Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:57.884Z] - Tags: Baby, Birthday, Catboy, Child, Gekko, Multicolour, Napkins, Owlette, PJ Masks, Tissues, Toddler, Unisex
+[2025-04-15T01:59:57.884Z] - Images: 1
+[2025-04-15T01:59:57.885Z] - Price: 18
+[2025-04-15T01:59:57.885Z] - Sale Price: 0
+[2025-04-15T01:59:57.885Z] - Stock: 13
+[2025-04-15T01:59:57.885Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:57.885Z] --------------------------------------------
+[2025-04-15T01:59:58.884Z] ✅ Imported Product:
+[2025-04-15T01:59:58.884Z] - Title: PJ Masks Plastic Cups 8pcs
+[2025-04-15T01:59:58.884Z] - Slug: pj-masks-plastic-cups-8pcs
+[2025-04-15T01:59:58.884Z] - SKU: 100000009643
+[2025-04-15T01:59:58.885Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T01:59:58.885Z] - Tags: Baby, Birthday, Catboy, Child, Cups, Gekko, Multicolour, Owlette, PJ Masks, Plastic Cups, Toddler, Unisex
+[2025-04-15T01:59:58.885Z] - Images: 1
+[2025-04-15T01:59:58.885Z] - Price: 12.6
+[2025-04-15T01:59:58.885Z] - Sale Price: 0
+[2025-04-15T01:59:58.885Z] - Stock: 4
+[2025-04-15T01:59:58.885Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T01:59:58.885Z] --------------------------------------------
+[2025-04-15T02:00:00.019Z] ✅ Imported Product:
+[2025-04-15T02:00:00.019Z] - Title: PJ Masks Paper Plates 7in 8pcs
+[2025-04-15T02:00:00.019Z] - Slug: pj-masks-paper-plates-7in-8pcs
+[2025-04-15T02:00:00.019Z] - SKU: 100000009642
+[2025-04-15T02:00:00.020Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:00.020Z] - Tags: 7 inches, Baby, Birthday, Boy, Catboy, Child, Gekko, Multicolour, Owlette, Paper Plates, PJ Masks, Plate, Toddler, Unisex
+[2025-04-15T02:00:00.020Z] - Images: 1
+[2025-04-15T02:00:00.020Z] - Price: 12
+[2025-04-15T02:00:00.020Z] - Sale Price: 0
+[2025-04-15T02:00:00.020Z] - Stock: 10
+[2025-04-15T02:00:00.020Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:00.020Z] --------------------------------------------
+[2025-04-15T02:00:00.985Z] ✅ Imported Product:
+[2025-04-15T02:00:00.985Z] - Title: PJ Masks Paper Plates 9in 8pcs
+[2025-04-15T02:00:00.985Z] - Slug: pj-masks-paper-plates-9in-8pcs
+[2025-04-15T02:00:00.985Z] - SKU: 100000009641
+[2025-04-15T02:00:00.985Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:00.985Z] - Tags: 9 inches, Baby, Birthday, Boy, Catboy, Child, Gekko, Multicolour, Owlette, Paper Plate, PJ Masks, Plate, Toddler, Unisex
+[2025-04-15T02:00:00.986Z] - Images: 1
+[2025-04-15T02:00:00.986Z] - Price: 17
+[2025-04-15T02:00:00.986Z] - Sale Price: 0
+[2025-04-15T02:00:00.986Z] - Stock: 20
+[2025-04-15T02:00:00.986Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:00.986Z] --------------------------------------------
+[2025-04-15T02:00:03.428Z] ✅ Imported Product:
+[2025-04-15T02:00:03.429Z] - Title: PI Masks Airwalker Balloon
+[2025-04-15T02:00:03.429Z] - Slug: pi-masks-airwalker-balloon
+[2025-04-15T02:00:03.429Z] - SKU: 100000009654
+[2025-04-15T02:00:03.429Z] - Categories: 67f7c88f2a38a098e8934196, 67f7d19ad107819e6545488e, 67f7d19ad107819e6545489a, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548bb, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67f8465c5955b8057aa084b8, 67f846a05955b8057aa085ca, 67f8465c5955b8057aa084ba, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f75, 67fdaf84fe7e95cf337581e1, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:03.430Z] - Tags: Airwalker, Baby, Balloon, Birthday, Boy, Catboy, Child, Foil Balloon, Gekko, Multicolour, Owlette, PJ Masks, Toddler, Unisex
+[2025-04-15T02:00:03.430Z] - Images: 2
+[2025-04-15T02:00:03.430Z] - Price: 100
+[2025-04-15T02:00:03.430Z] - Sale Price: 0
+[2025-04-15T02:00:03.431Z] - Stock: 8
+[2025-04-15T02:00:03.431Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:03.431Z] --------------------------------------------
+[2025-04-15T02:00:04.310Z] ✅ Imported Product:
+[2025-04-15T02:00:04.311Z] - Title: Mickey Mouse Forever Plates 10in
+[2025-04-15T02:00:04.311Z] - Slug: mickey-mouse-forever-plates-10in
+[2025-04-15T02:00:04.311Z] - SKU: 100000014072
+[2025-04-15T02:00:04.311Z] - Categories: 67f7c88f2a38a098e8934182, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb114fe7e95cf337583ef, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f846705955b8057aa08515, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:04.311Z] - Tags: Baby, Child, Disney, Male, Mickey Mouse, Mickey-shaped, Paper Plates, Toddler, Unisex
+[2025-04-15T02:00:04.311Z] - Images: 1
+[2025-04-15T02:00:04.311Z] - Price: 31
+[2025-04-15T02:00:04.312Z] - Sale Price: 0
+[2025-04-15T02:00:04.312Z] - Stock: 8
+[2025-04-15T02:00:04.312Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:04.312Z] --------------------------------------------
+[2025-04-15T02:00:05.348Z] ✅ Imported Product:
+[2025-04-15T02:00:05.348Z] - Title: Mickey Mouse Forever Plates 9in
+[2025-04-15T02:00:05.348Z] - Slug: mickey-mouse-forever-plates-9in
+[2025-04-15T02:00:05.348Z] - SKU: 100000014074
+[2025-04-15T02:00:05.348Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb114fe7e95cf337583ef, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f844b7f1275889ad3993be, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:05.349Z] - Tags: Baby, Birthday, Child, Disney, Mickey Mouse, Plate 9, Toddler, Unisex
+[2025-04-15T02:00:05.349Z] - Images: 1
+[2025-04-15T02:00:05.349Z] - Price: 22
+[2025-04-15T02:00:05.349Z] - Sale Price: 0
+[2025-04-15T02:00:05.349Z] - Stock: 21
+[2025-04-15T02:00:05.349Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:05.350Z] --------------------------------------------
+[2025-04-15T02:00:06.910Z] ✅ Imported Product:
+[2025-04-15T02:00:06.911Z] - Title: PJ Masks Die Cut Happy Birthday Banner
+[2025-04-15T02:00:06.911Z] - Slug: pj-masks-die-cut-happy-birthday-banner
+[2025-04-15T02:00:06.911Z] - SKU: 100000011918
+[2025-04-15T02:00:06.911Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:06.912Z] - Tags: Baby, Banner, Birthday, Catboy, Child, Gekko, Happy Birthday, Multicolour, Owlette, PJ Masks, Toddler, Unisex
+[2025-04-15T02:00:06.912Z] - Images: 1
+[2025-04-15T02:00:06.912Z] - Price: 26
+[2025-04-15T02:00:06.912Z] - Sale Price: 0
+[2025-04-15T02:00:06.912Z] - Stock: 24
+[2025-04-15T02:00:06.912Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:06.912Z] --------------------------------------------
+[2025-04-15T02:00:08.540Z] ✅ Imported Product:
+[2025-04-15T02:00:08.540Z] - Title: PJ Masks Plastic Table Cover
+[2025-04-15T02:00:08.540Z] - Slug: pj-masks-plastic-table-cover
+[2025-04-15T02:00:08.540Z] - SKU: 100000009645
+[2025-04-15T02:00:08.541Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:08.541Z] - Tags: Baby, Birthday, Boy, Catboy, Child, Gekko, Male, Multicolour, Owlette, PJ Masks, Table Cover, Toddler, Unisex
+[2025-04-15T02:00:08.541Z] - Images: 1
+[2025-04-15T02:00:08.541Z] - Price: 24
+[2025-04-15T02:00:08.541Z] - Sale Price: 0
+[2025-04-15T02:00:08.541Z] - Stock: 20
+[2025-04-15T02:00:08.541Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:08.541Z] --------------------------------------------
+[2025-04-15T02:00:09.588Z] ✅ Imported Product:
+[2025-04-15T02:00:09.588Z] - Title: Mickey Mouse Forever Table Cover
+[2025-04-15T02:00:09.589Z] - Slug: mickey-mouse-forever-table-cover
+[2025-04-15T02:00:09.589Z] - SKU: 100000014076
+[2025-04-15T02:00:09.589Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8278bcd23acad75619f73, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f846775955b8057aa08530, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:09.589Z] - Tags: Baby, Birthday, Child, Disney, Male, Mickey Mouse, Plastic cover, Table Cover, Toddler, Unisex, White
+[2025-04-15T02:00:09.590Z] - Images: 1
+[2025-04-15T02:00:09.590Z] - Price: 28
+[2025-04-15T02:00:09.590Z] - Sale Price: 0
+[2025-04-15T02:00:09.590Z] - Stock: 10
+[2025-04-15T02:00:09.590Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:09.590Z] --------------------------------------------
+[2025-04-15T02:00:10.823Z] ✅ Imported Product:
+[2025-04-15T02:00:10.823Z] - Title: Mickey Mouse Jumbo Letter Banner
+[2025-04-15T02:00:10.823Z] - Slug: mickey-mouse-jumbo-letter-banner
+[2025-04-15T02:00:10.823Z] - SKU: 100000013558
+[2025-04-15T02:00:10.823Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:10.824Z] - Tags: Add an age, Baby, Banners, Birthday, Birthdays, Child, Disney, Letter banner, Male, Mickey Mouse, Toddler, Unisex, White
+[2025-04-15T02:00:10.824Z] - Images: 1
+[2025-04-15T02:00:10.825Z] - Price: 34
+[2025-04-15T02:00:10.825Z] - Sale Price: 0
+[2025-04-15T02:00:10.825Z] - Stock: 5
+[2025-04-15T02:00:10.826Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:10.826Z] --------------------------------------------
+[2025-04-15T02:00:12.370Z] ✅ Imported Product:
+[2025-04-15T02:00:12.370Z] - Title: Mickey Mouse Lunch Napkins
+[2025-04-15T02:00:12.370Z] - Slug: mickey-mouse-lunch-napkins
+[2025-04-15T02:00:12.370Z] - SKU: 100000014066
+[2025-04-15T02:00:12.370Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f844b7f1275889ad3993b8, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f846705955b8057aa08515, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:12.371Z] - Tags: Baby, Birthday, Black, Boy, Child, Disney, Lunch napkins, Luncheon, Mickey Mouse, Multicolour, Napkins, Red, Tissues, Toddler, Unisex
+[2025-04-15T02:00:12.371Z] - Images: 1
+[2025-04-15T02:00:12.371Z] - Price: 21
+[2025-04-15T02:00:12.371Z] - Sale Price: 0
+[2025-04-15T02:00:12.371Z] - Stock: 10
+[2025-04-15T02:00:12.372Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:12.372Z] --------------------------------------------
+[2025-04-15T02:00:13.492Z] ✅ Imported Product:
+[2025-04-15T02:00:13.492Z] - Title: Mickey Mouse Party Game
+[2025-04-15T02:00:13.492Z] - Slug: mickey-mouse-party-game
+[2025-04-15T02:00:13.492Z] - SKU: 100000012173
+[2025-04-15T02:00:13.492Z] - Categories: 67f7d19cd107819e654548d9, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67fdb143fe7e95cf33758438, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:13.493Z] - Tags: Activity, Baby, Birthday, Boy, Child, Disney, Games, Mickey Mouse, Party games, Pin the nose, Toddler, Unisex
+[2025-04-15T02:00:13.493Z] - Images: 1
+[2025-04-15T02:00:13.493Z] - Price: 32
+[2025-04-15T02:00:13.494Z] - Sale Price: 0
+[2025-04-15T02:00:13.494Z] - Stock: 3
+[2025-04-15T02:00:13.494Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:13.494Z] --------------------------------------------
+[2025-04-15T02:00:14.618Z] ✅ Imported Product:
+[2025-04-15T02:00:14.618Z] - Title: Mickey Mouse Swirl Decoration
+[2025-04-15T02:00:14.619Z] - Slug: mickey-mouse-swirl-decoration
+[2025-04-15T02:00:14.619Z] - SKU: 100000012172
+[2025-04-15T02:00:14.619Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8465a5955b8057aa084a1, 67f844b7f1275889ad3993ba, 67f8278bcd23acad75619f6d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846ab5955b8057aa085f4, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:14.619Z] - Tags: Baby, Birthday, Boy, Child, Disney, Donald Duck, Goofy, Hanging Decoration, Mickey Mouse, Multicolour, Swirl, Swirl Decorations, Toddler, Unisex
+[2025-04-15T02:00:14.619Z] - Images: 1
+[2025-04-15T02:00:14.619Z] - Price: 18
+[2025-04-15T02:00:14.619Z] - Sale Price: 0
+[2025-04-15T02:00:14.619Z] - Stock: 13
+[2025-04-15T02:00:14.620Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:14.620Z] --------------------------------------------
+[2025-04-15T02:00:15.441Z] ✅ Imported Product:
+[2025-04-15T02:00:15.442Z] - Title: PJ Masks Flag Banner
+[2025-04-15T02:00:15.442Z] - Slug: pj-masks-flag-banner
+[2025-04-15T02:00:15.442Z] - SKU: 100000009646
+[2025-04-15T02:00:15.442Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8469a5955b8057aa085b0, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf84fe7e95cf337581e1, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:15.442Z] - Tags: Baby, Banner, Birthday, Catboy, Child, Flag Banner, Gekko, Hanging Decoration, Multicolour, Owlette, PJ Masks, Toddler, Unisex
+[2025-04-15T02:00:15.442Z] - Images: 1
+[2025-04-15T02:00:15.442Z] - Price: 17
+[2025-04-15T02:00:15.442Z] - Sale Price: 0
+[2025-04-15T02:00:15.442Z] - Stock: 23
+[2025-04-15T02:00:15.442Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:15.442Z] --------------------------------------------
+[2025-04-15T02:00:16.322Z] ✅ Imported Product:
+[2025-04-15T02:00:16.322Z] - Title: Baby Shark Airwalker Balloon
+[2025-04-15T02:00:16.322Z] - Slug: baby-shark-airwalker-balloon
+[2025-04-15T02:00:16.322Z] - SKU: 100000014285
+[2025-04-15T02:00:16.323Z] - Categories: 67f7c88f2a38a098e8934196, 67f7d19ad107819e6545488e, 67f7d19ad107819e6545489a, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548bb, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67f8465c5955b8057aa084b8, 67f8465c5955b8057aa084ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f75, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:16.323Z] - Tags: Airwalker, Baby, Baby Shark, Balloon, Birthday, Child, Coral, Daddy Shark, Mommy Shark, Multicolour, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:16.323Z] - Images: 1
+[2025-04-15T02:00:16.323Z] - Price: 95
+[2025-04-15T02:00:16.323Z] - Sale Price: 0
+[2025-04-15T02:00:16.323Z] - Stock: 7
+[2025-04-15T02:00:16.323Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:16.323Z] --------------------------------------------
+[2025-04-15T02:00:17.336Z] ✅ Imported Product:
+[2025-04-15T02:00:17.336Z] - Title: Baby Shark Beverage Napkins
+[2025-04-15T02:00:17.336Z] - Slug: baby-shark-beverage-napkins
+[2025-04-15T02:00:17.336Z] - SKU: 100000000721
+[2025-04-15T02:00:17.336Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:17.336Z] - Tags: Baby, Baby Shark, Beverage Napkins, Birthday, Child, Coral, Daddy Shark, Mommy Shark, Multicolour, Napkin, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:17.336Z] - Images: 1
+[2025-04-15T02:00:17.337Z] - Price: 20
+[2025-04-15T02:00:17.337Z] - Sale Price: 0
+[2025-04-15T02:00:17.337Z] - Stock: 2
+[2025-04-15T02:00:17.337Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:17.337Z] --------------------------------------------
+[2025-04-15T02:00:18.191Z] ✅ Imported Product:
+[2025-04-15T02:00:18.192Z] - Title: Heroes Unite Superman Lunch Napkins 16pcs
+[2025-04-15T02:00:18.192Z] - Slug: heroes-unite-superman-lunch-napkins-16pcs
+[2025-04-15T02:00:18.192Z] - SKU: 100000014065
+[2025-04-15T02:00:18.192Z] - Categories: 67f7d19ad107819e6545488e, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67fdb711fe7e95cf33758e08, 67f8278bcd23acad75619f6b, 67f846825955b8057aa08556, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f6f, 67f8278bcd23acad75619f73, 67fdb498fe7e95cf33758a61, 67f8468c5955b8057aa08580, 67f8278bcd23acad75619f77, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:18.192Z] - Tags: Birthday, Blue, Boy, Heroes Unite, Lunch, Lunch Tissue, Multicolour, Napkins, SuperHero, Superman, Theme
+[2025-04-15T02:00:18.193Z] - Images: 1
+[2025-04-15T02:00:18.193Z] - Price: 22
+[2025-04-15T02:00:18.193Z] - Sale Price: 0
+[2025-04-15T02:00:18.193Z] - Stock: 13
+[2025-04-15T02:00:18.193Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:18.193Z] --------------------------------------------
+[2025-04-15T02:00:21.801Z] ✅ Imported Product:
+[2025-04-15T02:00:21.801Z] - Title: Baby Shark Foil Balloon 18in
+[2025-04-15T02:00:21.802Z] - Slug: baby-shark-foil-balloon-18in
+[2025-04-15T02:00:21.802Z] - SKU: 00035369
+[2025-04-15T02:00:21.802Z] - Categories: 67f7c88f2a38a098e893418c, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548b4, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454931, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67f8465c5955b8057aa084b8, 67f8465c5955b8057aa084ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f75, 67f8465c5955b8057aa084c0, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:21.802Z] - Tags: Baby, Baby Shark, Balloon, Balloon Arch, Balloon Decoration, Birthday, Child, Coral, Daddy Shark, Foil Balloon, Hanging Decoration, Mommy Shark, Multicolour, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:21.802Z] - Images: 1
+[2025-04-15T02:00:21.802Z] - Price: 18
+[2025-04-15T02:00:21.802Z] - Sale Price: 0
+[2025-04-15T02:00:21.802Z] - Stock: 6
+[2025-04-15T02:00:21.802Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:21.802Z] --------------------------------------------
+[2025-04-15T02:00:23.061Z] ✅ Imported Product:
+[2025-04-15T02:00:23.061Z] - Title: Baby Shark Plates 7in
+[2025-04-15T02:00:23.061Z] - Slug: baby-shark-plates-7in
+[2025-04-15T02:00:23.061Z] - SKU: 100000013263
+[2025-04-15T02:00:23.061Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:23.061Z] - Tags: Baby, Baby Shark, Birthday, Child, Coral, Daddy Shark, Hanging Decoration, Mommy Shark, Multicolour, Plates, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:23.062Z] - Images: 1
+[2025-04-15T02:00:23.062Z] - Price: 20
+[2025-04-15T02:00:23.062Z] - Sale Price: 0
+[2025-04-15T02:00:23.062Z] - Stock: 17
+[2025-04-15T02:00:23.062Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:23.062Z] --------------------------------------------
+[2025-04-15T02:00:24.760Z] ✅ Imported Product:
+[2025-04-15T02:00:24.760Z] - Title: Baby Shark Plates 9in
+[2025-04-15T02:00:24.761Z] - Slug: baby-shark-plates-9in
+[2025-04-15T02:00:24.761Z] - SKU: 100000013262
+[2025-04-15T02:00:24.761Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:24.761Z] - Tags: Baby, Baby Shark, Birthday, Child, Coral, Daddy Shark, Hanging Decoration, Mommy Shark, Multicolour, Plates, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:24.761Z] - Images: 1
+[2025-04-15T02:00:24.761Z] - Price: 24
+[2025-04-15T02:00:24.761Z] - Sale Price: 0
+[2025-04-15T02:00:24.761Z] - Stock: 20
+[2025-04-15T02:00:24.761Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:24.761Z] --------------------------------------------
+[2025-04-15T02:00:25.820Z] ✅ Imported Product:
+[2025-04-15T02:00:25.820Z] - Title: Baby Shark Paper Cups 8pcs
+[2025-04-15T02:00:25.821Z] - Slug: baby-shark-paper-cups-8pcs
+[2025-04-15T02:00:25.821Z] - SKU: 100000013255
+[2025-04-15T02:00:25.821Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:25.821Z] - Tags: Baby, Baby Shark, Birthday, Child, Coral, Daddy Shark, Glass, Hanging Decoration, Mommy Shark, Multicolour, Paper Cups, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:25.821Z] - Images: 1
+[2025-04-15T02:00:25.822Z] - Price: 17
+[2025-04-15T02:00:25.822Z] - Sale Price: 0
+[2025-04-15T02:00:25.822Z] - Stock: 16
+[2025-04-15T02:00:25.822Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:25.822Z] --------------------------------------------
+[2025-04-15T02:00:27.233Z] ✅ Imported Product:
+[2025-04-15T02:00:27.233Z] - Title: Baby Shark Jumbo Add An Age Banner
+[2025-04-15T02:00:27.233Z] - Slug: baby-shark-jumbo-add-an-age-banner
+[2025-04-15T02:00:27.233Z] - SKU: 100000001013
+[2025-04-15T02:00:27.233Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:27.233Z] - Tags: Baby, Baby Shark, Banner, Birthday, Child, Coral, Daddy Shark, Hanging Decoration, Mommy Shark, Multicolour, Seaweed, Toddler, Unisex
+[2025-04-15T02:00:27.233Z] - Images: 1
+[2025-04-15T02:00:27.233Z] - Price: 36
+[2025-04-15T02:00:27.233Z] - Sale Price: 0
+[2025-04-15T02:00:27.233Z] - Stock: 4
+[2025-04-15T02:00:27.234Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:27.234Z] --------------------------------------------
+[2025-04-15T02:00:28.167Z] ✅ Imported Product:
+[2025-04-15T02:00:28.167Z] - Title: Baby Shark Lunch Napkins
+[2025-04-15T02:00:28.167Z] - Slug: baby-shark-lunch-napkins
+[2025-04-15T02:00:28.167Z] - SKU: 100000000706
+[2025-04-15T02:00:28.167Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:28.167Z] - Tags: Baby, Baby Shark, Birthday, Child, Coral, Daddy Shark, Hanging Decoration, Lunch, Mommy Shark, Multicolour, Napkins, Seaweed, Tissues, Toddler, Unisex
+[2025-04-15T02:00:28.168Z] - Images: 1
+[2025-04-15T02:00:28.168Z] - Price: 21
+[2025-04-15T02:00:28.168Z] - Sale Price: 0
+[2025-04-15T02:00:28.168Z] - Stock: 7
+[2025-04-15T02:00:28.168Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:28.168Z] --------------------------------------------
+[2025-04-15T02:00:29.374Z] ✅ Imported Product:
+[2025-04-15T02:00:29.374Z] - Title: Baby Shark Table Cover
+[2025-04-15T02:00:29.375Z] - Slug: baby-shark-table-cover
+[2025-04-15T02:00:29.375Z] - SKU: 100000013256
+[2025-04-15T02:00:29.375Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:29.375Z] - Tags: Baby, Baby Shark, Birthday, Child, Coral, Daddy Shark, Hanging Decoration, Mommy Shark, Multicolour, Seaweed, Table Cover, Toddler, Unisex
+[2025-04-15T02:00:29.375Z] - Images: 1
+[2025-04-15T02:00:29.375Z] - Price: 20
+[2025-04-15T02:00:29.375Z] - Sale Price: 0
+[2025-04-15T02:00:29.375Z] - Stock: 3
+[2025-04-15T02:00:29.375Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:29.375Z] --------------------------------------------
+[2025-04-15T02:00:30.738Z] ✅ Imported Product:
+[2025-04-15T02:00:30.738Z] - Title: Baby Shark Spiral Decorations
+[2025-04-15T02:00:30.738Z] - Slug: baby-shark-spiral-decorations
+[2025-04-15T02:00:30.738Z] - SKU: 100000000715
+[2025-04-15T02:00:30.739Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19dd107819e654548ea, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8465a5955b8057aa084a1, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846ab5955b8057aa085f4, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:30.739Z] - Tags: Baby, Baby Shark, Birthday, Child, Coral, Daddy Shark, Hanging Decoration, Mommy Shark, Multicolour, Seaweed, Spiral Decorations, Toddler, Unisex
+[2025-04-15T02:00:30.739Z] - Images: 1
+[2025-04-15T02:00:30.739Z] - Price: 31
+[2025-04-15T02:00:30.739Z] - Sale Price: 0
+[2025-04-15T02:00:30.739Z] - Stock: 10
+[2025-04-15T02:00:30.740Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:30.740Z] --------------------------------------------
+[2025-04-15T02:00:31.810Z] ✅ Imported Product:
+[2025-04-15T02:00:31.811Z] - Title: Paw Patrol Girl Beverage Napkins 16pcs
+[2025-04-15T02:00:31.811Z] - Slug: paw-patrol-girl-beverage-napkins-16pcs
+[2025-04-15T02:00:31.811Z] - SKU: 100000009922
+[2025-04-15T02:00:31.811Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:31.812Z] - Tags: Baby, Birthday, Chase, Child, Everest, Girl, Marshall, Multicolour, Napkins, Paw Patrol Girl, Rocky, Rubble, Skye, Toddler, Unisex, Zuma
+[2025-04-15T02:00:31.812Z] - Images: 1
+[2025-04-15T02:00:31.812Z] - Price: 19
+[2025-04-15T02:00:31.812Z] - Sale Price: 0
+[2025-04-15T02:00:31.812Z] - Stock: 14
+[2025-04-15T02:00:31.812Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:31.812Z] --------------------------------------------
+[2025-04-15T02:00:32.966Z] ✅ Imported Product:
+[2025-04-15T02:00:32.966Z] - Title: Paw Patrol Girl Square Plate 9in
+[2025-04-15T02:00:32.966Z] - Slug: paw-patrol-girl-square-plate-9in
+[2025-04-15T02:00:32.966Z] - SKU: 100000009919
+[2025-04-15T02:00:32.966Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:32.966Z] - Tags: Baby, Birthday, Chase, Child, Everest, Girl, Marshall, Multicolour, Paw Patrol Girl, Pink, Plates, Rocky, Rubble, Skye, Toddler, Unisex, Zuma
+[2025-04-15T02:00:32.966Z] - Images: 1
+[2025-04-15T02:00:32.967Z] - Price: 24
+[2025-04-15T02:00:32.967Z] - Sale Price: 0
+[2025-04-15T02:00:32.967Z] - Stock: -3
+[2025-04-15T02:00:32.967Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:32.968Z] --------------------------------------------
+[2025-04-15T02:00:34.282Z] ✅ Imported Product:
+[2025-04-15T02:00:34.282Z] - Title: Paw Patrol Girl Lunch Napkins 16pcs
+[2025-04-15T02:00:34.283Z] - Slug: paw-patrol-girl-lunch-napkins-16pcs
+[2025-04-15T02:00:34.283Z] - SKU: 100000009921
+[2025-04-15T02:00:34.283Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f8278bcd23acad75619f75, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:34.283Z] - Tags: Baby, Birthday, Chase, Child, Everest, Girl, Marshall, Multicolour, Napkins, Paw Patrol Girl, Pink, Rocky, Rubble, Skye, Toddler, Unisex, Zuma
+[2025-04-15T02:00:34.283Z] - Images: 1
+[2025-04-15T02:00:34.283Z] - Price: 21
+[2025-04-15T02:00:34.283Z] - Sale Price: 0
+[2025-04-15T02:00:34.284Z] - Stock: 22
+[2025-04-15T02:00:34.284Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:34.284Z] --------------------------------------------
+[2025-04-15T02:00:36.794Z] ✅ Imported Product:
+[2025-04-15T02:00:36.794Z] - Title: Paw Patrol Adventures Scene Setter With Props 17Pcs
+[2025-04-15T02:00:36.795Z] - Slug: paw-patrol-adventures-scene-setter-with-props-17pcs
+[2025-04-15T02:00:36.795Z] - SKU: 100000013907
+[2025-04-15T02:00:36.795Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67fdb165fe7e95cf3375845c, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:36.795Z] - Tags: Baby, Birthday, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Scene Setter, Toddler, Unisex
+[2025-04-15T02:00:36.795Z] - Images: 2
+[2025-04-15T02:00:36.795Z] - Price: 57
+[2025-04-15T02:00:36.795Z] - Sale Price: 0
+[2025-04-15T02:00:36.795Z] - Stock: 11
+[2025-04-15T02:00:36.795Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:36.796Z] --------------------------------------------
+[2025-04-15T02:00:38.226Z] ✅ Imported Product:
+[2025-04-15T02:00:38.226Z] - Title: Paw Patrol Adventures Beverage Napkins 16pcs
+[2025-04-15T02:00:38.226Z] - Slug: paw-patrol-adventures-beverage-napkins-16pcs
+[2025-04-15T02:00:38.226Z] - SKU: 100000013874
+[2025-04-15T02:00:38.227Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:38.227Z] - Tags: Baby, Birthday, Boy, Chase, Child, Marshall, Multicolour, Napkin, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:38.227Z] - Images: 1
+[2025-04-15T02:00:38.227Z] - Price: 19
+[2025-04-15T02:00:38.227Z] - Sale Price: 0
+[2025-04-15T02:00:38.227Z] - Stock: 15
+[2025-04-15T02:00:38.227Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:38.227Z] --------------------------------------------
+[2025-04-15T02:00:39.606Z] ✅ Imported Product:
+[2025-04-15T02:00:39.606Z] - Title: Paw Patrol Adventures Birthday Candle 45in
+[2025-04-15T02:00:39.606Z] - Slug: paw-patrol-adventures-birthday-candle-45in
+[2025-04-15T02:00:39.606Z] - SKU: 100000014099
+[2025-04-15T02:00:39.607Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8465b5955b8057aa084af, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:39.607Z] - Tags: Baby, Birthday, Boy, Candle, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Skye, Toddler, Unisex
+[2025-04-15T02:00:39.607Z] - Images: 1
+[2025-04-15T02:00:39.607Z] - Price: 22
+[2025-04-15T02:00:39.607Z] - Sale Price: 0
+[2025-04-15T02:00:39.607Z] - Stock: 17
+[2025-04-15T02:00:39.608Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:39.608Z] --------------------------------------------
+[2025-04-15T02:00:40.519Z] ✅ Imported Product:
+[2025-04-15T02:00:40.519Z] - Title: Paw Patrol Adventure Paper Plates 7in
+[2025-04-15T02:00:40.519Z] - Slug: paw-patrol-adventure-paper-plates-7in
+[2025-04-15T02:00:40.519Z] - SKU: 100000008949
+[2025-04-15T02:00:40.519Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:40.519Z] - Tags: Baby, Birthday, Blue, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Plates, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:40.519Z] - Images: 1
+[2025-04-15T02:00:40.519Z] - Price: 20
+[2025-04-15T02:00:40.519Z] - Sale Price: 0
+[2025-04-15T02:00:40.520Z] - Stock: 17
+[2025-04-15T02:00:40.520Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:40.520Z] --------------------------------------------
+[2025-04-15T02:00:41.625Z] ✅ Imported Product:
+[2025-04-15T02:00:41.626Z] - Title: Paw Patrol Adventures Photo Banner 12ft
+[2025-04-15T02:00:41.626Z] - Slug: paw-patrol-adventures-photo-banner-12ft
+[2025-04-15T02:00:41.626Z] - SKU: 100000014132
+[2025-04-15T02:00:41.626Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:41.626Z] - Tags: Baby, Banner, Birthday, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Photo Banner, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:41.626Z] - Images: 1
+[2025-04-15T02:00:41.627Z] - Price: 33
+[2025-04-15T02:00:41.627Z] - Sale Price: 0
+[2025-04-15T02:00:41.627Z] - Stock: 15
+[2025-04-15T02:00:41.627Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:41.627Z] --------------------------------------------
+[2025-04-15T02:00:42.687Z] ✅ Imported Product:
+[2025-04-15T02:00:42.687Z] - Title: Paw Patrol Adventures Paper Cups 9Oz 8pcs
+[2025-04-15T02:00:42.687Z] - Slug: paw-patrol-adventures-paper-cups-9oz-8pcs
+[2025-04-15T02:00:42.687Z] - SKU: 100000008952
+[2025-04-15T02:00:42.687Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:42.687Z] - Tags: Baby, Birthday, Boy, Chase, Child, Cups, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:42.687Z] - Images: 1
+[2025-04-15T02:00:42.688Z] - Price: 19
+[2025-04-15T02:00:42.688Z] - Sale Price: 0
+[2025-04-15T02:00:42.689Z] - Stock: 27
+[2025-04-15T02:00:42.689Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:42.689Z] --------------------------------------------
+[2025-04-15T02:00:43.723Z] ✅ Imported Product:
+[2025-04-15T02:00:43.723Z] - Title: Paw Patrol Adventures Lunch Napkins 16pcs
+[2025-04-15T02:00:43.723Z] - Slug: paw-patrol-adventures-lunch-napkins-16pcs
+[2025-04-15T02:00:43.724Z] - SKU: 100000008951
+[2025-04-15T02:00:43.724Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:43.725Z] - Tags: Baby, Birthday, Boy, Chase, Child, Marshall, Multicolour, Napkin, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:43.725Z] - Images: 1
+[2025-04-15T02:00:43.725Z] - Price: 22
+[2025-04-15T02:00:43.725Z] - Sale Price: 0
+[2025-04-15T02:00:43.725Z] - Stock: 12
+[2025-04-15T02:00:43.725Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:43.725Z] --------------------------------------------
+[2025-04-15T02:00:44.780Z] ✅ Imported Product:
+[2025-04-15T02:00:44.780Z] - Title: Paw Patrol Swirl Decorations 6Pcs
+[2025-04-15T02:00:44.780Z] - Slug: paw-patrol-swirl-decorations-6pcs
+[2025-04-15T02:00:44.780Z] - SKU: 100000009613
+[2025-04-15T02:00:44.780Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8465a5955b8057aa084a1, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f846ab5955b8057aa085f4, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:44.780Z] - Tags: Baby, Birthday, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Swirl Decorations, Toddler, Unisex
+[2025-04-15T02:00:44.780Z] - Images: 1
+[2025-04-15T02:00:44.780Z] - Price: 18
+[2025-04-15T02:00:44.781Z] - Sale Price: 0
+[2025-04-15T02:00:44.781Z] - Stock: -5
+[2025-04-15T02:00:44.781Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:44.781Z] --------------------------------------------
+[2025-04-15T02:00:45.757Z] ✅ Imported Product:
+[2025-04-15T02:00:45.757Z] - Title: Paw Patrol Girl Table Cover
+[2025-04-15T02:00:45.757Z] - Slug: paw-patrol-girl-table-cover
+[2025-04-15T02:00:45.757Z] - SKU: 100000009924
+[2025-04-15T02:00:45.757Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f846b15955b8057aa0860a, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67fdb054fe7e95cf337582e4
+[2025-04-15T02:00:45.758Z] - Tags: Baby, Birthday, Chase, Child, Everest, Girl, Marshall, Multicolour, Paw Patrol Girl, Rocky, Rubble, Skye, Table Cover, Toddler, Unisex, Zuma
+[2025-04-15T02:00:45.758Z] - Images: 1
+[2025-04-15T02:00:45.758Z] - Price: 33
+[2025-04-15T02:00:45.758Z] - Sale Price: 0
+[2025-04-15T02:00:45.758Z] - Stock: 14
+[2025-04-15T02:00:45.758Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:45.758Z] --------------------------------------------
+[2025-04-15T02:00:46.982Z] ✅ Imported Product:
+[2025-04-15T02:00:46.982Z] - Title: Paw Patrol Adventures Table Cover
+[2025-04-15T02:00:46.982Z] - Slug: paw-patrol-adventures-table-cover
+[2025-04-15T02:00:46.982Z] - SKU: 100000012171
+[2025-04-15T02:00:46.983Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:46.983Z] - Tags: Baby, Birthday, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Table Cover, Toddler, Unisex
+[2025-04-15T02:00:46.983Z] - Images: 1
+[2025-04-15T02:00:46.983Z] - Price: 25
+[2025-04-15T02:00:46.983Z] - Sale Price: 0
+[2025-04-15T02:00:46.983Z] - Stock: 12
+[2025-04-15T02:00:46.983Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:46.983Z] --------------------------------------------
+[2025-04-15T02:00:48.955Z] ✅ Imported Product:
+[2025-04-15T02:00:48.955Z] - Title: Paw Patrol Chase Airwalker
+[2025-04-15T02:00:48.956Z] - Slug: paw-patrol-chase-airwalker
+[2025-04-15T02:00:48.956Z] - SKU: 100000008958
+[2025-04-15T02:00:48.956Z] - Categories: 67f7c88f2a38a098e893419a, 67f7d19ad107819e6545488e, 67f7d19ad107819e6545489a, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548b4, 67f7d19bd107819e654548bb, 67f7d19bd107819e654548be, 67f7d19cd107819e654548c1, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f7d19fd107819e65454934, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f67, 67f8278bcd23acad75619f69, 67f8465c5955b8057aa084b8, 67f8465c5955b8057aa084ba, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f846705955b8057aa08513, 67f8278bcd23acad75619f77, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:48.956Z] - Tags: Airwalker, Baby, Balloon, Balloon Bouquet, Birthday, Boy, Chase, Child, Foil Balloon, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:48.956Z] - Images: 2
+[2025-04-15T02:00:48.956Z] - Price: 99.75
+[2025-04-15T02:00:48.956Z] - Sale Price: 0
+[2025-04-15T02:00:48.956Z] - Stock: 11
+[2025-04-15T02:00:48.956Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:48.956Z] --------------------------------------------
+[2025-04-15T02:00:49.872Z] ✅ Imported Product:
+[2025-04-15T02:00:49.872Z] - Title: Paw Patrol Foil Balloon Bouquet 5pcs
+[2025-04-15T02:00:49.873Z] - Slug: paw-patrol-foil-balloon-bouquet-5pcs
+[2025-04-15T02:00:49.873Z] - SKU: 00033284
+[2025-04-15T02:00:49.873Z] - Categories: 67f7c88f2a38a098e893418c, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548a5, 67f7d19bd107819e654548ab, 67f7d19bd107819e654548b4, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e6545490a, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f7d19ed107819e6545492e, 67f8278bcd23acad75619f65, 67f8465c5955b8057aa084b4, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8466b5955b8057aa084ff, 67f8465c5955b8057aa084b8, 67f8465c5955b8057aa084ba, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f846705955b8057aa08513, 67f8465c5955b8057aa084c0, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:49.873Z] - Tags: Baby, Balloon Bouquet, Balloons, Birthday, Boy, Chase, Child, Foil Balloon, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:49.873Z] - Images: 1
+[2025-04-15T02:00:49.873Z] - Price: 90
+[2025-04-15T02:00:49.873Z] - Sale Price: 0
+[2025-04-15T02:00:49.873Z] - Stock: 13
+[2025-04-15T02:00:49.873Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:49.873Z] --------------------------------------------
+[2025-04-15T02:00:50.924Z] ✅ Imported Product:
+[2025-04-15T02:00:50.924Z] - Title: Paw Patrol Paper Masks 8pcs
+[2025-04-15T02:00:50.924Z] - Slug: paw-patrol-paper-masks-8pcs
+[2025-04-15T02:00:50.924Z] - SKU: 100000008955
+[2025-04-15T02:00:50.924Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465a5955b8057aa084a8, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f8465a5955b8057aa084aa
+[2025-04-15T02:00:50.924Z] - Tags: Baby, Birthday, Boy, Chase, Child, Face Mask, Marshall, Mask, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:50.925Z] - Images: 1
+[2025-04-15T02:00:50.925Z] - Price: 24
+[2025-04-15T02:00:50.925Z] - Sale Price: 0
+[2025-04-15T02:00:50.925Z] - Stock: 1
+[2025-04-15T02:00:50.925Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:50.925Z] --------------------------------------------
+[2025-04-15T02:00:52.118Z] ✅ Imported Product:
+[2025-04-15T02:00:52.118Z] - Title: Paw Patrol Beverage Napkins 16pcs
+[2025-04-15T02:00:52.118Z] - Slug: paw-patrol-beverage-napkins-16pcs
+[2025-04-15T02:00:52.118Z] - SKU: 100000010840
+[2025-04-15T02:00:52.118Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:52.118Z] - Tags: Baby, Birthday, Boy, Chase, Child, Marshall, Multicolour, Napkin, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:52.118Z] - Images: 1
+[2025-04-15T02:00:52.118Z] - Price: 16
+[2025-04-15T02:00:52.119Z] - Sale Price: 0
+[2025-04-15T02:00:52.119Z] - Stock: 0
+[2025-04-15T02:00:52.119Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:52.119Z] --------------------------------------------
+[2025-04-15T02:00:53.315Z] ✅ Imported Product:
+[2025-04-15T02:00:53.316Z] - Title: Paw Patrol Happy Birthday Square Balloon 18in
+[2025-04-15T02:00:53.316Z] - Slug: paw-patrol-happy-birthday-square-balloon-18in
+[2025-04-15T02:00:53.316Z] - SKU: 100000008109
+[2025-04-15T02:00:53.316Z] - Categories: 67f7c88f2a38a098e893418c, 67f7d19ad107819e6545488e, 67f7d19bd107819e654548a0, 67f7d19bd107819e654548b4, 67f7d19bd107819e654548be, 67f7d19cd107819e654548c7, 67f7d19cd107819e654548e2, 67f7d19ed107819e65454922, 67f7d19ed107819e65454925, 67f7d19ed107819e65454928, 67f7d19ed107819e6545492b, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8465c5955b8057aa084b8, 67f8278bcd23acad75619f6b, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f6f, 67f846705955b8057aa08513, 67f8465c5955b8057aa084c0, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:53.316Z] - Tags: Baby, Balloon, Birthday, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:53.317Z] - Images: 1
+[2025-04-15T02:00:53.317Z] - Price: 18
+[2025-04-15T02:00:53.317Z] - Sale Price: 0
+[2025-04-15T02:00:53.317Z] - Stock: 6
+[2025-04-15T02:00:53.317Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:53.317Z] --------------------------------------------
+[2025-04-15T02:00:54.456Z] ✅ Imported Product:
+[2025-04-15T02:00:54.457Z] - Title: Paw Patrol Postcard Invitation Cards 8pcs
+[2025-04-15T02:00:54.457Z] - Slug: paw-patrol-postcard-invitation-cards-8pcs
+[2025-04-15T02:00:54.457Z] - SKU: 100000012178
+[2025-04-15T02:00:54.457Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278ecd23acad75619f88, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:54.457Z] - Tags: Birthday, Boy, Card, Chase, Child, Invitation Cards, Invites, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:54.457Z] - Images: 1
+[2025-04-15T02:00:54.457Z] - Price: 20
+[2025-04-15T02:00:54.457Z] - Sale Price: 0
+[2025-04-15T02:00:54.458Z] - Stock: 3
+[2025-04-15T02:00:54.458Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:54.458Z] --------------------------------------------
+[2025-04-15T02:00:55.232Z] ✅ Imported Product:
+[2025-04-15T02:00:55.233Z] - Title: Paw Patrol Table Cover
+[2025-04-15T02:00:55.233Z] - Slug: paw-patrol-table-cover
+[2025-04-15T02:00:55.233Z] - SKU: 100000008953
+[2025-04-15T02:00:55.233Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:55.233Z] - Tags: Baby, Birthday, Blue, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Table Cover, Toddler, Unisex
+[2025-04-15T02:00:55.233Z] - Images: 1
+[2025-04-15T02:00:55.233Z] - Price: 25
+[2025-04-15T02:00:55.233Z] - Sale Price: 0
+[2025-04-15T02:00:55.234Z] - Stock: 0
+[2025-04-15T02:00:55.234Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:55.234Z] --------------------------------------------
+[2025-04-15T02:00:56.522Z] ✅ Imported Product:
+[2025-04-15T02:00:56.522Z] - Title: Paw Patrol Paper Letter Banner
+[2025-04-15T02:00:56.523Z] - Slug: paw-patrol-paper-letter-banner
+[2025-04-15T02:00:56.523Z] - SKU: 100000013813
+[2025-04-15T02:00:56.523Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f844b7f1275889ad3993ba, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846705955b8057aa08513, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:00:56.523Z] - Tags: Baby, Banner, Birthday, Blue, Boy, Chase, Child, Marshall, Multicolour, Paw Patrol, Rocky, Rubble, Toddler, Unisex
+[2025-04-15T02:00:56.523Z] - Images: 1
+[2025-04-15T02:00:56.523Z] - Price: 22
+[2025-04-15T02:00:56.523Z] - Sale Price: 0
+[2025-04-15T02:00:56.523Z] - Stock: 4
+[2025-04-15T02:00:56.524Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:56.524Z] --------------------------------------------
+[2025-04-15T02:00:58.579Z] ✅ Imported Product:
+[2025-04-15T02:00:58.580Z] - Title: Be A Mermaid Beverage Napkins
+[2025-04-15T02:00:58.580Z] - Slug: be-a-mermaid-beverage-napkins
+[2025-04-15T02:00:58.580Z] - SKU: 100000010388
+[2025-04-15T02:00:58.580Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:00:58.580Z] - Tags: Be A Mermaid, Birthday, Child, Female, Mermaid, Napkin, Pink, Themed birthday, Toddler
+[2025-04-15T02:00:58.580Z] - Images: 1
+[2025-04-15T02:00:58.580Z] - Price: 18
+[2025-04-15T02:00:58.580Z] - Sale Price: 0
+[2025-04-15T02:00:58.580Z] - Stock: 15
+[2025-04-15T02:00:58.580Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:58.581Z] --------------------------------------------
+[2025-04-15T02:00:59.433Z] ✅ Imported Product:
+[2025-04-15T02:00:59.433Z] - Title: Be A Mermaid Letter Banner
+[2025-04-15T02:00:59.433Z] - Slug: be-a-mermaid-letter-banner
+[2025-04-15T02:00:59.433Z] - SKU: 100000010800
+[2025-04-15T02:00:59.433Z] - Categories: 67f7d19cd107819e654548e2, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f844b7f1275889ad3993bc
+[2025-04-15T02:00:59.433Z] - Tags: Banner, Be A Mermaid, Birthday, Child, Female, Mermaid, Multicolour, Themed birthday, Toddler
+[2025-04-15T02:00:59.434Z] - Images: 1
+[2025-04-15T02:00:59.434Z] - Price: 24
+[2025-04-15T02:00:59.434Z] - Sale Price: 0
+[2025-04-15T02:00:59.434Z] - Stock: 25
+[2025-04-15T02:00:59.434Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:00:59.434Z] --------------------------------------------
+[2025-04-15T02:01:00.385Z] ✅ Imported Product:
+[2025-04-15T02:01:00.385Z] - Title: Be A Mermaid Lunch Napkins
+[2025-04-15T02:01:00.385Z] - Slug: be-a-mermaid-lunch-napkins
+[2025-04-15T02:01:00.385Z] - SKU: 100000010389
+[2025-04-15T02:01:00.385Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8278ccd23acad75619f7c, 67f8278bcd23acad75619f73, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:01:00.385Z] - Tags: Be A Mermaid, Birthday, Blue, Child, Female, Mermaid, Napkin, Themed birthday, Toddler
+[2025-04-15T02:01:00.386Z] - Images: 1
+[2025-04-15T02:01:00.386Z] - Price: 20
+[2025-04-15T02:01:00.386Z] - Sale Price: 0
+[2025-04-15T02:01:00.386Z] - Stock: 19
+[2025-04-15T02:01:00.386Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:00.386Z] --------------------------------------------
+[2025-04-15T02:01:02.709Z] ✅ Imported Product:
+[2025-04-15T02:01:02.709Z] - Title: Be A Mermaid Loot Bags 8pcs
+[2025-04-15T02:01:02.710Z] - Slug: be-a-mermaid-loot-bags-8pcs
+[2025-04-15T02:01:02.710Z] - SKU: 100000010394
+[2025-04-15T02:01:02.710Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67f8278fcd23acad75619f8f, 67fdb054fe7e95cf337582e2, 67f8465c5955b8057aa084bc, 67f8278fcd23acad75619f91, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846775955b8057aa08530
+[2025-04-15T02:01:02.710Z] - Tags: Be A Mermaid, Birthday, Child, Female, Loot Bag, Mermaid, Multicolour, Themed birthday, Toddler, White
+[2025-04-15T02:01:02.710Z] - Images: 1
+[2025-04-15T02:01:02.711Z] - Price: 13
+[2025-04-15T02:01:02.711Z] - Sale Price: 0
+[2025-04-15T02:01:02.711Z] - Stock: 30
+[2025-04-15T02:01:02.711Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:02.711Z] --------------------------------------------
+[2025-04-15T02:01:03.524Z] ✅ Imported Product:
+[2025-04-15T02:01:03.524Z] - Title: Be A Mermaid Mini Candles 4pcs
+[2025-04-15T02:01:03.525Z] - Slug: be-a-mermaid-mini-candles-4pcs
+[2025-04-15T02:01:03.525Z] - SKU: 100000010392
+[2025-04-15T02:01:03.525Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8465b5955b8057aa084af, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67fdb883fe7e95cf33758ffb, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:01:03.525Z] - Tags: Be A Mermaid, Birthday, Candle, Child, Female, Mermaid, Multicolour, Themed birthday, Toddler
+[2025-04-15T02:01:03.525Z] - Images: 1
+[2025-04-15T02:01:03.526Z] - Price: 15
+[2025-04-15T02:01:03.526Z] - Sale Price: 0
+[2025-04-15T02:01:03.526Z] - Stock: 13
+[2025-04-15T02:01:03.526Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:03.526Z] --------------------------------------------
+[2025-04-15T02:01:04.325Z] ✅ Imported Product:
+[2025-04-15T02:01:04.325Z] - Title: Be A Mermaid Paper Cups 8pcs
+[2025-04-15T02:01:04.325Z] - Slug: be-a-mermaid-paper-cups-8pcs
+[2025-04-15T02:01:04.325Z] - SKU: 100000010387
+[2025-04-15T02:01:04.325Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846ac5955b8057aa085f9, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:01:04.325Z] - Tags: Be A Mermaid, Birthday, Child, Cups, Female, Mermaid, Pink, Themed birthday, Toddler
+[2025-04-15T02:01:04.325Z] - Images: 1
+[2025-04-15T02:01:04.326Z] - Price: 18
+[2025-04-15T02:01:04.326Z] - Sale Price: 0
+[2025-04-15T02:01:04.327Z] - Stock: 15
+[2025-04-15T02:01:04.327Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:04.327Z] --------------------------------------------
+[2025-04-15T02:01:05.423Z] ✅ Imported Product:
+[2025-04-15T02:01:05.424Z] - Title: Be A Mermaid Paper Plates 7in
+[2025-04-15T02:01:05.424Z] - Slug: be-a-mermaid-paper-plates-7in
+[2025-04-15T02:01:05.424Z] - SKU: 100000010386
+[2025-04-15T02:01:05.424Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8278bcd23acad75619f73, 67f8278bcd23acad75619f75, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:01:05.424Z] - Tags: Be A Mermaid, Birthday, Child, Female, Mermaid, Pink, Themed birthday, Toddler
+[2025-04-15T02:01:05.424Z] - Images: 1
+[2025-04-15T02:01:05.424Z] - Price: 19
+[2025-04-15T02:01:05.424Z] - Sale Price: 0
+[2025-04-15T02:01:05.425Z] - Stock: 20
+[2025-04-15T02:01:05.425Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:05.425Z] --------------------------------------------
+[2025-04-15T02:01:06.388Z] ✅ Imported Product:
+[2025-04-15T02:01:06.389Z] - Title: Be A Mermaid Paper Plate 9in
+[2025-04-15T02:01:06.389Z] - Slug: be-a-mermaid-paper-plate-9in
+[2025-04-15T02:01:06.389Z] - SKU: 100000010385
+[2025-04-15T02:01:06.389Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:01:06.389Z] - Tags: Be A Mermaid, Birthday, Blue, Child, Female, Mermaid, Themed birthday, Toddler
+[2025-04-15T02:01:06.390Z] - Images: 1
+[2025-04-15T02:01:06.390Z] - Price: 22
+[2025-04-15T02:01:06.390Z] - Sale Price: 0
+[2025-04-15T02:01:06.390Z] - Stock: 18
+[2025-04-15T02:01:06.391Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:06.391Z] --------------------------------------------
+[2025-04-15T02:01:07.316Z] ✅ Imported Product:
+[2025-04-15T02:01:07.316Z] - Title: Be A Mermaid Paper Table Cover
+[2025-04-15T02:01:07.317Z] - Slug: be-a-mermaid-paper-table-cover
+[2025-04-15T02:01:07.317Z] - SKU: 100000010390
+[2025-04-15T02:01:07.317Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846a95955b8057aa085ea, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2
+[2025-04-15T02:01:07.317Z] - Tags: Be A Mermaid, Birthday, Child, Female, Mermaid, Multicolour, Themed birthday, Toddler
+[2025-04-15T02:01:07.317Z] - Images: 1
+[2025-04-15T02:01:07.318Z] - Price: 33
+[2025-04-15T02:01:07.318Z] - Sale Price: 0
+[2025-04-15T02:01:07.318Z] - Stock: 14
+[2025-04-15T02:01:07.318Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:07.318Z] --------------------------------------------
+[2025-04-15T02:01:09.049Z] ✅ Imported Product:
+[2025-04-15T02:01:09.049Z] - Title: Be A Mermaid Party Cone Hats 8pcs
+[2025-04-15T02:01:09.049Z] - Slug: be-a-mermaid-party-cone-hats-8pcs
+[2025-04-15T02:01:09.050Z] - SKU: 100000010393
+[2025-04-15T02:01:09.050Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67fdb169fe7e95cf33758463, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f8465a5955b8057aa084aa
+[2025-04-15T02:01:09.050Z] - Tags: Be A Mermaid, Birthday, Child, Female, Mermaid, Multicolour, Themed birthday, Toddler
+[2025-04-15T02:01:09.050Z] - Images: 2
+[2025-04-15T02:01:09.050Z] - Price: 20
+[2025-04-15T02:01:09.050Z] - Sale Price: 0
+[2025-04-15T02:01:09.050Z] - Stock: 0
+[2025-04-15T02:01:09.051Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:09.051Z] --------------------------------------------
+[2025-04-15T02:01:10.371Z] ✅ Imported Product:
+[2025-04-15T02:01:10.372Z] - Title: Be A Mermaid Placements 8pcs
+[2025-04-15T02:01:10.372Z] - Slug: be-a-mermaid-placements-8pcs
+[2025-04-15T02:01:10.372Z] - SKU: 100000010391
+[2025-04-15T02:01:10.372Z] - Categories: 67f7d19cd107819e654548e2, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f8278bcd23acad75619f69, 67fdb054fe7e95cf337582e2, 67f8278bcd23acad75619f73, 67fdbc7ffe7e95cf337594a5, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846775955b8057aa08530
+[2025-04-15T02:01:10.372Z] - Tags: Be A Mermaid, Birthday, Child, Female, Mermaid, Themed birthday, Toddler, White
+[2025-04-15T02:01:10.373Z] - Images: 1
+[2025-04-15T02:01:10.373Z] - Price: 29
+[2025-04-15T02:01:10.373Z] - Sale Price: 0
+[2025-04-15T02:01:10.373Z] - Stock: 3
+[2025-04-15T02:01:10.374Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:10.374Z] --------------------------------------------
+[2025-04-15T02:01:11.378Z] ✅ Imported Product:
+[2025-04-15T02:01:11.378Z] - Title: Marvel Power Unite Paper Plate 7in
+[2025-04-15T02:01:11.378Z] - Slug: marvel-power-unite-paper-plate-7in
+[2025-04-15T02:01:11.378Z] - SKU: 100000008968
+[2025-04-15T02:01:11.379Z] - Categories: 67f7c88f2a38a098e89341a6, 67f7d19cd107819e654548df, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67fdb0f8fe7e95cf3375838e, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:01:11.379Z] - Tags: Avengers, Birthdays, Child, Male, Marvel, Multicolour, Powers unite, Themed Birthdays
+[2025-04-15T02:01:11.379Z] - Images: 1
+[2025-04-15T02:01:11.379Z] - Price: 20
+[2025-04-15T02:01:11.379Z] - Sale Price: 0
+[2025-04-15T02:01:11.379Z] - Stock: 16
+[2025-04-15T02:01:11.379Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:11.379Z] --------------------------------------------
+[2025-04-15T02:01:12.786Z] ✅ Imported Product:
+[2025-04-15T02:01:12.787Z] - Title: Marvel Power Unite Plates 9in
+[2025-04-15T02:01:12.787Z] - Slug: marvel-power-unite-plates-9in
+[2025-04-15T02:01:12.787Z] - SKU: 100000014266
+[2025-04-15T02:01:12.787Z] - Categories: 67f7c88f2a38a098e89341ac, 67f7d19cd107819e654548df, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67fdb0f8fe7e95cf3375838e, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:01:12.788Z] - Tags: Avengers, Birthday, Child, Male, Marvel, Multicolour, Powers unite, Themed birthday
+[2025-04-15T02:01:12.788Z] - Images: 1
+[2025-04-15T02:01:12.788Z] - Price: 22
+[2025-04-15T02:01:12.788Z] - Sale Price: 0
+[2025-04-15T02:01:12.788Z] - Stock: 11
+[2025-04-15T02:01:12.788Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:12.788Z] --------------------------------------------
+[2025-04-15T02:01:14.024Z] ✅ Imported Product:
+[2025-04-15T02:01:14.024Z] - Title: Marvel Power Unite Spiral Decorations
+[2025-04-15T02:01:14.025Z] - Slug: marvel-power-unite-spiral-decorations
+[2025-04-15T02:01:14.025Z] - SKU: 100000142643
+[2025-04-15T02:01:14.025Z] - Categories: 67f7d19cd107819e654548df, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f8465a5955b8057aa084a1, 67f844b7f1275889ad3993ba, 67fdb0f8fe7e95cf3375838e, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67fdb7d6fe7e95cf33758f4c, 67f846ab5955b8057aa085f4, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:01:14.025Z] - Tags: Avengers, Birthday, Captain America, Child, Hulk, Iron Man, Male, Marvel, Multicolour, Powers unite, Themed birthday
+[2025-04-15T02:01:14.025Z] - Images: 1
+[2025-04-15T02:01:14.025Z] - Price: 28
+[2025-04-15T02:01:14.025Z] - Sale Price: 0
+[2025-04-15T02:01:14.025Z] - Stock: 21
+[2025-04-15T02:01:14.025Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:14.025Z] --------------------------------------------
+[2025-04-15T02:01:16.841Z] ✅ Imported Product:
+[2025-04-15T02:01:16.841Z] - Title: Marvel Powers Unite Paper Masks 8pcs
+[2025-04-15T02:01:16.842Z] - Slug: marvel-powers-unite-paper-masks-8pcs
+[2025-04-15T02:01:16.842Z] - SKU: 00033090
+[2025-04-15T02:01:16.842Z] - Categories: 67f7d19cd107819e654548df, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67fdb0f8fe7e95cf3375838e, 67f8465a5955b8057aa084a8, 67f8465c5955b8057aa084bc, 67f8278dcd23acad75619f81, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db, 67f8465a5955b8057aa084aa
+[2025-04-15T02:01:16.842Z] - Tags: Avengers, Birthday, Black Panther, Boys Theme, Captain America, Child, Hulk, Iron Man, Male, Marvel, Marvel Powers Unite Paper Masks, Mask, Multicolour, Paper Masks, Powers unite, Themed birthday
+[2025-04-15T02:01:16.843Z] - Images: 1
+[2025-04-15T02:01:16.843Z] - Price: 20
+[2025-04-15T02:01:16.843Z] - Sale Price: 0
+[2025-04-15T02:01:16.843Z] - Stock: 0
+[2025-04-15T02:01:16.843Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:16.843Z] --------------------------------------------
+[2025-04-15T02:01:17.789Z] ✅ Imported Product:
+[2025-04-15T02:01:17.790Z] - Title: Marvel Power Unite Black Panther Plates 7in
+[2025-04-15T02:01:17.790Z] - Slug: marvel-power-unite-black-panther-plates-7in
+[2025-04-15T02:01:17.790Z] - SKU: 00035417
+[2025-04-15T02:01:17.790Z] - Categories: 67f7c88f2a38a098e89341a6, 67f8278bcd23acad75619f65, 67f846615955b8057aa084d7, 67f8274db3cbe403ed79e86d, 67f844b7f1275889ad3993ba, 67fdb0f8fe7e95cf3375838e, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f846855955b8057aa08563, 67f8468c5955b8057aa08580, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:01:17.790Z] - Tags: Avengers, Birthday, Black Panther, Child, Male, Marvel, Multicolour, Themed birthday
+[2025-04-15T02:01:17.790Z] - Images: 1
+[2025-04-15T02:01:17.790Z] - Price: 20
+[2025-04-15T02:01:17.790Z] - Sale Price: 0
+[2025-04-15T02:01:17.790Z] - Stock: 3
+[2025-04-15T02:01:17.791Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:17.791Z] --------------------------------------------
+[2025-04-15T02:01:18.570Z] ✅ Imported Product:
+[2025-04-15T02:01:18.570Z] - Title: Marvel Powers Unite Jumbo Banner Kit
+[2025-04-15T02:01:18.570Z] - Slug: marvel-powers-unite-jumbo-banner-kit
+[2025-04-15T02:01:18.571Z] - SKU: 100000142638
+[2025-04-15T02:01:18.571Z] - Categories: 67f7d19cd107819e654548df, 67f7d19fd107819e65454940, 67f8278bcd23acad75619f65, 67f8274db3cbe403ed79e86d, 67f846595955b8057aa0849d, 67f844b7f1275889ad3993ba, 67fdb0f8fe7e95cf3375838e, 67f8465c5955b8057aa084bc, 67f8278bcd23acad75619f73, 67f844b7f1275889ad3993bc, 67fdaf5bfe7e95cf337581a2, 67f846615955b8057aa084db
+[2025-04-15T02:01:18.571Z] - Tags: Add An Age Banner, Avengers, Banner, Birthday, Boys Theme, Child, Happy Birthday Banner, Jumbo Banner, Male, Marvel, Marvel Powers Unite Jumbo Banner Kit, Multicolour, Powers unite, Themed birthday
+[2025-04-15T02:01:18.571Z] - Images: 1
+[2025-04-15T02:01:18.572Z] - Price: 39
+[2025-04-15T02:01:18.572Z] - Sale Price: 0
+[2025-04-15T02:01:18.572Z] - Stock: 5
+[2025-04-15T02:01:18.572Z] - SEO: {"metaTitle":"","metaDescription":"","focusKeyword":""}
+[2025-04-15T02:01:18.572Z] --------------------------------------------
+[2025-04-15T02:01:18.572Z] 🎉 Import complete.
