@@ -96,7 +96,7 @@ export default function ProductPage() {
 
   return (
     <>
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-10">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-16">
         <div className="flex flex-col md:flex-row gap-10 items-start">
           <div className="w-full md:w-[45%] flex justify-center">
             <img
@@ -107,8 +107,8 @@ export default function ProductPage() {
           </div>
 
           <div className="w-full md:w-[55%] space-y-4">
-            <h1 className="text-2xl md:text-2xl font-thin text-[#46396F]">{product.title}</h1>
-            <div className="font-light text-[#334155]">
+            <h1 className="text-2xl md:text-2xl font-medium text-[#46396F]">{product.title}</h1>
+            <div className="font-medium text-[#334155]">
               {product.salePrice > 0 ? (
                 <>
                   <span className="line-through text-gray-500 mr-2">{product.price} AED</span>
@@ -148,7 +148,7 @@ export default function ProductPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <h2 className="text-xl font-thin text-[#46396F] mb-6">Description</h2>
+          <h2 className="text-xl font-medium text-[#46396F] mb-6">Description</h2>
           <div
             className="prose prose-sm md:prose-base text-gray-700 mx-auto text-left font-light"
             dangerouslySetInnerHTML={{ __html: product.description }}
@@ -161,7 +161,7 @@ export default function ProductPage() {
         {relatedProducts.length > 0 && (
   <div className="mt-16">
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-xl md:text-2xl font-light text-center mb-2 uppercase text-[#463970]">You Might Also Like</h2>
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">You Might Also Like</h2>
       <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
         {upsellProducts.map((productItem) => (
@@ -179,7 +179,7 @@ export default function ProductPage() {
 {relatedProducts.length > 0 && (
   <div className="mt-16">
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-xl md:text-2xl font-light text-center mb-2 uppercase text-[#463970]">Customers Also Purchased</h2>
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">Customers Also Purchased</h2>
       <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
         {relatedProducts.map((productItem) => (

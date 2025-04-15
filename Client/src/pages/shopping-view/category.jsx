@@ -146,13 +146,13 @@ export default function CategoryListingPage() {
           className="w-full h-[200px] md:h-[280px] bg-cover bg-center flex items-center justify-center"
           style={{ backgroundImage: `url("${bannerImage}")` }}
         >
-          <h1 className="text-[#46396F] text-3xl md:text-4xl font-medium text-center px-6 py-3 rounded-md">
+          <h1 className="text-[#46396F] text-3xl md:text-4xl font-normal text-center px-6 py-3 rounded-md">
             {slug.replace(/-/g, " ").toUpperCase()}
           </h1>
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6 p-4 md:p-6">
+      <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6 p-4 md:pt-12 md:p-6">
         <div className="md:block w-full md:w-auto">
           <div className="mb-4">
             <button
@@ -200,8 +200,8 @@ export default function CategoryListingPage() {
           </div>
 
           {!notFound && hasMore && (
-            <div className="text-center my-6">
-              <Button onClick={() => setSkipCount((prev) => prev + 25)}>
+                        <div className="text-center pt-8 pb-8">
+               <Button className="bg-[#463970] text-white rounded-3xl px-6 py-2" onClick={() => setSkipCount((prev) => prev + 25)}>
                 Load More
               </Button>
             </div>
