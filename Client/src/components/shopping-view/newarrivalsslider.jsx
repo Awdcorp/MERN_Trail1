@@ -15,7 +15,7 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
     async function fetchProducts() {
       try {
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/shop/products/get`, {
-          params: { category: categoryIds?.join(','), sortBy },
+          params: { category: categoryIds?.join(','), sortBy, limit: 10 },
         });
         setProducts(res.data.data || []);
       } catch (err) {

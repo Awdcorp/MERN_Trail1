@@ -1,29 +1,37 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Product = require("../models/Product");
 
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGO_URL;
 
-async function testQuery() {
-  await mongoose.connect(MONGO_URI);
-  console.log("✅ Connected to MongoDB");
+async function checkCartUserIdTypes() {
+  try {
+    await mongoose.connect(MONGO_URI);
+    console.log("✅ Connected to MongoDB");
 
-  const categoryIds = [
-    new mongoose.Types.ObjectId("67f7d19ad107819e6545488e"),
-    new mongoose.Types.ObjectId("67f7d19cd107819e654548e2")
-  ];
+    const Cart = mongoose.connection.collection("carts");
 
-  const products = await Product.find({
-    categories: { $in: categoryIds }
-  }).limit(5).lean();
+    const total = await Cart.estimatedDocumentCount();
+    const objectIdCount = await Cart.countDocuments({ userId: { $type: "objectId" } });
+    const stringCount = await Cart.countDocuments({ userId: { $type: "string" } });
 
-  console.log("🔍 Products found:", products.length);
-  products.forEach((p, i) => {
-    console.log(`\n#${i + 1}: ${p.title}`);
-    console.log("Categories:", p.categories);
-  });
+    console.log(`📦 Total Cart Documents: ${total}`);
+    console.log(`🧪 userId as ObjectId: ${objectIdCount}`);
+    console.log(`🔤 userId as String: ${stringCount}`);
 
-  process.exit(0);
+    const sampleObjId = await Cart.find({ userId: { $type: "objectId" } }).limit(5).toArray();
+    const sampleString = await Cart.find({ userId: { $type: "string" } }).limit(5).toArray();
+
+    console.log(`\n🧪 Sample ObjectId userId carts:`);
+    sampleObjId.forEach((doc) => console.log(` - _id: ${doc._id}, userId: ${doc.userId}`));
+
+    console.log(`\n🔤 Sample String userId carts:`);
+    sampleString.forEach((doc) => console.log(` - _id: ${doc._id}, userId: ${doc.userId}`));
+
+    process.exit(0);
+  } catch (err) {
+    console.error("❌ Error:", err);
+    process.exit(1);
+  }
 }
 
-testQuery();
+checkCartUserIdTypes();

@@ -46,9 +46,9 @@ const getFilteredProducts = async (req, res) => {
         break;
     }
     console.log("🔍 Filters applied:", filters);
-
-    const products = await Product.find(filters).sort(sort).populate("categories", "name slug");;
-
+    const limit = parseInt(req.query.limit) || 10;
+    const products = await Product.find(filters).sort(sort).limit(limit).populate("categories", "name slug");;
+    console.log("📦 Product fetch limit:", limit);
     res.status(200).json({
       success: true,
       data: products,
