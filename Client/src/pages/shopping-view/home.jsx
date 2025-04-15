@@ -24,7 +24,7 @@ import { PhoneCall } from "lucide-react";
  import { Autoplay } from "swiper/modules";
  import "swiper/css";
  import newArrivals from "@/components/shopping-view/newArrivals";
-
+ import newArrivals2 from "@/components/shopping-view/newArrivals2";
  const sliderProducts = newArrivals;
 function ShoppingHome() {
   const dispatch = useDispatch();
@@ -37,24 +37,8 @@ function ShoppingHome() {
 
   const [relatedSliderProducts, setRelatedSliderProducts] = useState([]);
 
-useEffect(() => {
-  async function fetchSliderProducts() {
-    try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/shop/products/get`, {
-        params: {
-          category: "67f844b7f1275889ad3993b8", // ✅ hardcoded category ID
-          sortBy: "price-lowtohigh",
-          limit: 10,
-        },
-      });
-      setRelatedSliderProducts(res.data.data || []);
-    } catch (err) {
-      console.error("❌ Failed to fetch related slider products:", err);
-    }
-  }
 
-  fetchSliderProducts();
-}, []);
+
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
@@ -100,7 +84,6 @@ useEffect(() => {
          <HomepageSlider />
        </div>
        
-       {relatedSliderProducts.length > 0 && (
   <div className="mt-16">
     <div className=" mx-auto px-4">
       <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
@@ -121,7 +104,7 @@ useEffect(() => {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[Autoplay]}
       >
-        {relatedSliderProducts.map((productItem) => (
+        {newArrivals.map((productItem) => (
           <SwiperSlide key={productItem._id} className="pb-2">
             <ShoppingProductTile
               product={productItem}
@@ -132,50 +115,42 @@ useEffect(() => {
       </Swiper>
     </div>
   </div>
-)}
 
-{sliderProducts.length > 0 && (
-  <div className="mt-16">
-    <div className=" mx-auto px-4">
-      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
-      NEW ARRIVALS
-      </h2>
-      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
-
-      <Swiper
-        spaceBetween={12}
-        slidesPerView={2}
-        breakpoints={{
-          480: { slidesPerView: 2 },
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 6 },
-          1280: { slidesPerView: 6 },
-        }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        modules={[Autoplay]}
-      >
-        {sliderProducts.map((productItem) => (
-          <SwiperSlide key={productItem._id} className="pb-2">
-            <ShoppingProductTile
-              product={productItem}
-              handleAddtoCart={() => {}}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  </div>
-)}
 <CategorySection groupName="Shop by Occasion" isSlider={true} />
 
        <ThemeCategorySection title="SHOP BY THEME" limit={4} />
 
-       <ProductSliderSection
-         title="BESTSELLERS"
-         categoryIds={["67f7c88f2a38a098e8934182", "67f8278bcd23acad75619f75"]}
-         sortBy="price-lowtohigh"
-       />
+       <div className="mt-16">
+    <div className=" mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+      NEW ARRIVALS
+      </h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+
+      <Swiper
+        spaceBetween={12}
+        slidesPerView={2}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+          1280: { slidesPerView: 6 },
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[Autoplay]}
+      >
+        {newArrivals2.map((productItem) => (
+          <SwiperSlide key={productItem._id} className="pb-2">
+            <ShoppingProductTile
+              product={productItem}
+              handleAddtoCart={() => {}}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </div>
        <CategorySection groupName="Plan Your Birthday" isSlider={true} />
  
        <div className="px-4 md:px-8 mt-10">
