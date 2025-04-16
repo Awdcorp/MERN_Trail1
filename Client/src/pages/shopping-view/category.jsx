@@ -1,3 +1,4 @@
+// 🧹 CLEANED VERSION
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -13,6 +14,7 @@ import { fetchProductDetails } from "@/store/shop/products-slice";
 import { useDispatch, useSelector } from "react-redux";
 
 import categoryBanners from "@/assets/categoryBanners";
+import { motion } from "framer-motion";
 
 export default function CategoryListingPage() {
   const { slug } = useParams();
@@ -24,11 +26,14 @@ export default function CategoryListingPage() {
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const [categoryProducts, setCategoryProducts] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
-  const [notFound, setNotFound] = useState(false);
   const [skipCount, setSkipCount] = useState(0);
   const [hasMore, setHasMore] = useState(true);
-
+  const [isContentReady, setIsContentReady] = useState(false);
   const { toast } = useToast();
+
+  const filteredProducts = getFilteredCategoryProducts();
+  const showEmptyState = isContentReady && filteredProducts.length === 0;
+
   const bannerImage =
     categoryBanners[slug] ||
     "https://res.cloudinary.com/dyiupjfwp/image/upload/v1744509081/partyworld/occasions/hhkw5aallqijfwycgj13.jpg";
@@ -71,14 +76,12 @@ export default function CategoryListingPage() {
       return;
     }
 
-    dispatch(addToCart({ userId: user?.id, productId, quantity: 1 })).then(
-      (data) => {
-        if (data?.payload?.success) {
-          dispatch(fetchCartItems(user?.id));
-          toast({ title: "Product is added to cart" });
-        }
+    dispatch(addToCart({ userId: user?.id, productId, quantity: 1 })).then((data) => {
+      if (data?.payload?.success) {
+        dispatch(fetchCartItems(user?.id));
+        toast({ title: "Product is added to cart" });
       }
-    );
+    });
   }
 
   function getFilteredCategoryProducts() {
@@ -86,42 +89,41 @@ export default function CategoryListingPage() {
 
     return categoryProducts.filter((product) => {
       const productCategoryNames = product.categories.map((cat) => cat.name);
-
       for (const [key, selectedValues] of Object.entries(filters)) {
         if (selectedValues.length === 0) continue;
-
         const hasMatch = selectedValues.some((val) =>
           productCategoryNames.includes(val)
         );
-
         if (!hasMatch) return false;
       }
-
       return true;
     });
   }
 
   const fetchProducts = () => {
     if (!slug) return;
+    setIsContentReady(false);
+    setCategoryProducts([]);
 
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/products/category/${slug}?limit=25&skip=${skipCount}`)
       .then((res) => {
-        if (!res.data.products || res.data.products.length === 0) {
-          setNotFound(true);
-        } else {
-          setNotFound(false);
+        if (res.data.products?.length > 0) {
           if (skipCount === 0) {
             setCategoryProducts(res.data.products);
           } else {
             setCategoryProducts((prev) => [...prev, ...res.data.products]);
           }
           if (res.data.products.length < 25) setHasMore(false);
+        } else {
+          setCategoryProducts([]);
         }
+        setIsContentReady(true);
       })
       .catch((err) => {
         console.error("❌ Failed to fetch products:", err);
-        setNotFound(true);
+        setCategoryProducts([]);
+        setIsContentReady(true);
       });
   };
 
@@ -160,9 +162,7 @@ export default function CategoryListingPage() {
               onClick={() => setShowFilters((prev) => !prev)}
             >
               <svg
-                className={`w-4 h-4 transition-transform duration-300 md:hidden ${
-                  showFilters ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform duration-300 md:hidden ${showFilters ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -181,27 +181,38 @@ export default function CategoryListingPage() {
 
         <div className="bg-background w-full rounded-lg shadow-sm">
           <div className="p-3">
-            {notFound ? (
+            {showEmptyState ? (
               <div className="text-center py-10 text-lg text-red-600 font-semibold">
                 🚫 No products found for this category.
               </div>
             ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3">
-                {getFilteredCategoryProducts().map((productItem) => (
-                  <ShoppingProductTile
-                    key={productItem._id}
-                    handleGetProductDetails={handleGetProductDetails}
-                    product={productItem}
-                    handleAddtoCart={handleAddtoCart}
-                  />
-                ))}
-              </div>
+              isContentReady && (
+                <motion.div
+                  key={slug + skipCount}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3"
+                >
+                  {filteredProducts.map((productItem) => (
+                    <ShoppingProductTile
+                      key={productItem._id}
+                      handleGetProductDetails={handleGetProductDetails}
+                      product={productItem}
+                      handleAddtoCart={handleAddtoCart}
+                    />
+                  ))}
+                </motion.div>
+              )
             )}
           </div>
 
-          {!notFound && hasMore && (
-                        <div className="text-center pt-8 pb-8">
-               <Button className="bg-[#463970] text-white rounded-3xl px-6 py-2" onClick={() => setSkipCount((prev) => prev + 25)}>
+          {isContentReady && filteredProducts.length > 0 && hasMore && (
+            <div className="text-center pt-8 pb-8">
+              <Button
+                className="bg-[#463970] text-white rounded-3xl px-6 py-2"
+                onClick={() => setSkipCount((prev) => prev + 25)}
+              >
                 Load More
               </Button>
             </div>

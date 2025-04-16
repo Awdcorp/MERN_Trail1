@@ -10,6 +10,8 @@ import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import { getReviews } from "@/store/shop/review-slice";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
+import { motion } from "framer-motion"; // ✅ Add this
+
 export default function ProductPage() {
   const { slug } = useParams();
   const dispatch = useDispatch();
@@ -32,44 +34,30 @@ export default function ProductPage() {
         console.log("🎯 Product fetched:", res.data);
         setProduct(res.data);
 
-        // ✅ Fetch upsell products
         if (res.data.upsellProductIds?.length > 0) {
-          console.log("🔗 Upsell IDs:", res.data.upsellProductIds);
           axios
             .get(`${import.meta.env.VITE_API_URL}/api/products/multiple`, {
-              params: { ids: res.data.upsellProductIds.join(","),
-              limit: 5, // 🎯 fetch only 5 
+              params: {
+                ids: res.data.upsellProductIds.join(","),
+                limit: 5,
               },
             })
             .then((res2) => {
-              console.log("📦 Upsell Products:", res2.data.products);
               setUpsellProducts(res2.data.products || []);
-            })
-            .catch((err2) => {
-              console.error("❌ Error fetching upsell products:", err2);
             });
-        } else {
-          console.warn("⚠️ No upsell_ids found for product");
         }
 
-        // ✅ Fetch related products
         if (res.data.relatedProductIds?.length > 0) {
-          console.log("🔁 Related IDs:", res.data.relatedProductIds);
           axios
             .get(`${import.meta.env.VITE_API_URL}/api/products/multiple`, {
-              params: { ids: res.data.relatedProductIds.join(","),
-              limit: 5, // 🎯 fetch only 5 
+              params: {
+                ids: res.data.relatedProductIds.join(","),
+                limit: 5,
               },
             })
             .then((res3) => {
-              console.log("🧩 Related Products:", res3.data.products);
               setRelatedProducts(res3.data.products || []);
-            })
-            .catch((err3) => {
-              console.error("❌ Error fetching related products:", err3);
             });
-        } else {
-          console.warn("⚠️ No related_ids found for product");
         }
 
         dispatch(getReviews(res.data._id));
@@ -157,43 +145,37 @@ export default function ProductPage() {
       </div>
 
       <div className="w-full py-10">
+        {relatedProducts.length > 0 && (
+          <div className="mt-16">
+            <div className="max-w-6xl mx-auto px-4">
+              <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+                You Might Also Like
+              </h2>
+              <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+                {upsellProducts.map((productItem) => (
+                  <ShoppingProductTile key={productItem._id} product={productItem} handleAddtoCart={() => {}} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {relatedProducts.length > 0 && (
-  <div className="mt-16">
-    <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">You Might Also Like</h2>
-      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-        {upsellProducts.map((productItem) => (
-          <ShoppingProductTile
-            key={productItem._id}
-            product={productItem}
-            handleAddtoCart={() => {}}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-)}
-
-{relatedProducts.length > 0 && (
-  <div className="mt-16">
-    <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">Customers Also Purchased</h2>
-      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-        {relatedProducts.map((productItem) => (
-          <ShoppingProductTile
-            key={productItem._id}
-            product={productItem}
-            handleAddtoCart={() => {}}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-)}
-
+          <div className="mt-16">
+            <div className="max-w-6xl mx-auto px-4">
+              <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+                Customers Also Purchased
+              </h2>
+              <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+                {relatedProducts.map((productItem) => (
+                  <ShoppingProductTile key={productItem._id} product={productItem} handleAddtoCart={() => {}} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
