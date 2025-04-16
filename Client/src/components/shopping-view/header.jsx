@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
+import { useEffect } from "react";             // ✅ Add this
+import { useLocation } from "react-router-dom"; // ✅ Add this
 
 const megaMenu = {
   "Party Supplies": {
@@ -43,6 +45,7 @@ const megaMenu = {
   },
 };
 
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
@@ -52,7 +55,13 @@ export default function Header() {
     "Party Rentals",
     "Customise Your Party",
   ]);
+  const location = useLocation();
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setActiveMenu(null);
+  }, [location.pathname]);
+  
   const formatSlug = (text) =>
     `/shop/category/${encodeURIComponent(
       text.toLowerCase().replace(/\s+/g, "-")

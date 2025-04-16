@@ -5,31 +5,22 @@ const Category = require("../models/Category");
 
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGO_URL;
 
-// 🏷️ Change this to the category slug you want to search for
-const CATEGORY_SLUG = "baby"; // example slug
+// 🎯 Replace these with WooCommerce product IDs
+const WOO_PRODUCT_IDS = [
+  1922, 1602, 1078, 1917, 1560,1518, 1053, 1608, 388, 1298
+];
 
-async function debugProductsByCategory() {
+async function debugProductsByWooIds() {
   try {
     await mongoose.connect(MONGO_URI);
     console.log("✅ Connected to MongoDB\n");
 
-    // 1. Find category by slug
-    const category = await Category.findOne({ slug: CATEGORY_SLUG }).lean();
-    if (!category) {
-      console.error(`❌ Category with slug "${CATEGORY_SLUG}" not found`);
-      return process.exit(1);
-    }
-
-    console.log(`🔎 Found Category: ${category.name} (slug: ${category.slug}, id: ${category._id})\n`);
-
-    // 2. Fetch products in that category
-    const products = await Product.find({ categories: category._id })
+    const products = await Product.find({ externalId: { $in: WOO_PRODUCT_IDS } })
       .populate("categories", "name slug")
-      .limit(15)
       .lean();
 
     if (products.length === 0) {
-      console.log("⚠️ No products found in this category.");
+      console.log("⚠️ No products found for these WooCommerce IDs.");
     }
 
     for (const product of products) {
@@ -58,4 +49,4 @@ async function debugProductsByCategory() {
   }
 }
 
-debugProductsByCategory();
+debugProductsByWooIds();
