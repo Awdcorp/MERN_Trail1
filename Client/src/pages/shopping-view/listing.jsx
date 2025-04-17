@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import categoryBanners from "@/assets/categoryBanners.js";
+import { getGuestId } from "@/lib/guest-id";
 
 function createSearchParamsHelper(filterParams) {
   const queryParams = [];
@@ -106,18 +107,23 @@ function ShoppingListing() {
       }
     }
 
+    const guestId = user?.id ? null : getGuestId();
+
     dispatch(
       addToCart({
-        userId: user?.id,
+        userId: user?.id || null,
+        guestId,
         productId: getCurrentProductId,
         quantity: 1,
       })
     ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
-        toast({ title: "Product is added to cart" });
+        dispatch(fetchCartItems(user?.id || guestId));
+        toast({
+          title: "Product is added to cart",
+        });
       }
-    });
+    });    
   }
 
   function getFilteredCategoryProducts() {
@@ -259,7 +265,7 @@ function ShoppingListing() {
                   key={productItem._id}
                   handleGetProductDetails={handleGetProductDetails}
                   product={productItem}
-                  handleAddtoCart={handleAddtoCart}
+                  handleAddtoCart={() => handleAddtoCart(productItem._id, productItem.totalStock || 9999)}
                 />
               ))}
           </div>

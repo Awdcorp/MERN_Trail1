@@ -3,70 +3,69 @@ import { Button } from "../ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCartItem, updateCartQuantity } from "@/store/shop/cart-slice";
 import { useToast } from "../ui/use-toast";
+import { getGuestId } from "@/lib/guest-id";
 
 function UserCartItemsContent({ cartItem }) {
   const { user } = useSelector((state) => state.auth);
-  const { cartItems } = useSelector((state) => state.shopCart);
-  const { productList } = useSelector((state) => state.shopProducts);
+  const cartItems = useSelector((state) => state.shopCart.cartItems || []);
+  const productList = useSelector((state) => state.shopProducts.productList || []);
   const dispatch = useDispatch();
   const { toast } = useToast();
 
-  function handleUpdateQuantity(getCartItem, typeOfAction) {
-    if (typeOfAction == "plus") {
-      let getCartItems = cartItems.items || [];
+  const resolvedProductId = cartItem?.productId;
 
-      if (getCartItems.length) {
-        const indexOfCurrentCartItem = getCartItems.findIndex(
-          (item) => item.productId === getCartItem?.productId
-        );
+  function handleUpdateQuantity(typeOfAction) {
+    const indexInCart = cartItems.findIndex(
+      (item) => item.productId === resolvedProductId
+    );
 
-        const getCurrentProductIndex = productList.findIndex(
-          (product) => product._id === getCartItem?.productId
-        );
-        const getTotalStock = productList[getCurrentProductIndex].totalStock;
+    const indexInProducts = productList.findIndex(
+      (product) => product._id === resolvedProductId
+    );
 
-        console.log(getCurrentProductIndex, getTotalStock, "getTotalStock");
+    const getTotalStock = productList[indexInProducts]?.totalStock || 9999;
+    const getQuantity = cartItems[indexInCart]?.quantity || 0;
 
-        if (indexOfCurrentCartItem > -1) {
-          const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
-          if (getQuantity + 1 > getTotalStock) {
-            toast({
-              title: `Only ${getQuantity} quantity can be added for this item`,
-              variant: "destructive",
-            });
-
-            return;
-          }
-        }
-      }
+    if (typeOfAction === "plus" && getQuantity + 1 > getTotalStock) {
+      toast({
+        title: `Only ${getTotalStock} in stock`,
+        variant: "destructive",
+      });
+      return;
     }
+
+    const guestId = user?.id ? null : getGuestId();
 
     dispatch(
       updateCartQuantity({
-        userId: user?.id,
-        productId: getCartItem?.productId,
-        quantity:
-          typeOfAction === "plus"
-            ? getCartItem?.quantity + 1
-            : getCartItem?.quantity - 1,
+        userId: user?.id || null,
+        guestId,
+        productId: resolvedProductId,
+        quantity: typeOfAction === "plus" ? getQuantity + 1 : getQuantity - 1,
       })
     ).then((data) => {
       if (data?.payload?.success) {
-        toast({
-          title: "Cart item is updated successfully",
-        });
+        toast({ title: "Cart item updated" });
+      } else {
+        toast({ title: "Update failed", variant: "destructive" });
       }
     });
   }
 
-  function handleCartItemDelete(getCartItem) {
+  function handleCartItemDelete() {
+    const guestId = user?.id ? null : getGuestId();
+
     dispatch(
-      deleteCartItem({ userId: user?.id, productId: getCartItem?.productId })
+      deleteCartItem({
+        userId: user?.id || null,
+        guestId,
+        productId: resolvedProductId,
+      })
     ).then((data) => {
       if (data?.payload?.success) {
-        toast({
-          title: "Cart item is deleted successfully",
-        });
+        toast({ title: "Cart item removed" });
+      } else {
+        toast({ title: "Error deleting item", variant: "destructive" });
       }
     });
   }
@@ -86,33 +85,31 @@ function UserCartItemsContent({ cartItem }) {
             className="h-8 w-8 rounded-full"
             size="icon"
             disabled={cartItem?.quantity === 1}
-            onClick={() => handleUpdateQuantity(cartItem, "minus")}
+            onClick={() => handleUpdateQuantity("minus")}
           >
             <Minus className="w-4 h-4" />
-            <span className="sr-only">Decrease</span>
           </Button>
           <span className="font-semibold">{cartItem?.quantity}</span>
           <Button
             variant="outline"
             className="h-8 w-8 rounded-full"
             size="icon"
-            onClick={() => handleUpdateQuantity(cartItem, "plus")}
+            onClick={() => handleUpdateQuantity("plus")}
           >
             <Plus className="w-4 h-4" />
-            <span className="sr-only">Decrease</span>
           </Button>
         </div>
       </div>
       <div className="flex flex-col items-end">
         <p className="font-semibold">
-          $
+          AED{" "}
           {(
             (cartItem?.salePrice > 0 ? cartItem?.salePrice : cartItem?.price) *
             cartItem?.quantity
           ).toFixed(2)}
         </p>
         <Trash
-          onClick={() => handleCartItemDelete(cartItem)}
+          onClick={handleCartItemDelete}
           className="cursor-pointer mt-1"
           size={20}
         />

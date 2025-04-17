@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import { getGuestId } from "@/lib/guest-id";
 
 function SearchProducts() {
   const [keyword, setKeyword] = useState("");
@@ -56,21 +57,23 @@ function SearchProducts() {
         }
       }
     }
+    const guestId = user?.id ? null : getGuestId();
 
     dispatch(
       addToCart({
-        userId: user?.id,
+        userId: user?.id || null,
+        guestId,
         productId: getCurrentProductId,
         quantity: 1,
       })
     ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
+        dispatch(fetchCartItems(user?.id || guestId));
         toast({
           title: "Product is added to cart",
         });
       }
-    });
+    });    
   }
 
   function handleGetProductDetails(getCurrentProductId) {
@@ -103,10 +106,10 @@ function SearchProducts() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {searchResults.map((item) => (
           <ShoppingProductTile
-            handleAddtoCart={handleAddtoCart}
-            product={item}
-            handleGetProductDetails={handleGetProductDetails}
-          />
+          handleAddtoCart={() => handleAddtoCart(item._id, item.totalStock || 9999)}
+          product={item}
+          handleGetProductDetails={handleGetProductDetails}
+        />
         ))}
       </div>
       <ProductDetailsDialog

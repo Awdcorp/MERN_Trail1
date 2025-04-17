@@ -25,6 +25,8 @@ import { PhoneCall } from "lucide-react";
  import "swiper/css";
  import newArrivals from "@/components/shopping-view/newArrivals";
  import newArrivals2 from "@/components/shopping-view/newArrivals2";
+ import { getGuestId } from "@/lib/guest-id";
+
  const sliderProducts = newArrivals;
 function ShoppingHome() {
   const dispatch = useDispatch();
@@ -52,13 +54,25 @@ function ShoppingHome() {
       toast({ title: `Only ${stock} items available`, variant: "destructive" });
       return;
     }
+    
+    const guestId = user?.id ? null : getGuestId();
 
-    dispatch(addToCart({ userId: user?.id, productId, quantity: 1 })).then((res) => {
-      if (res?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
-        toast({ title: "Added to cart!" });
+    dispatch(
+      addToCart({
+        userId: user?.id || null,
+        guestId,
+        productId,
+        quantity: 1,
+      })
+    ).then((data) => {
+      if (data?.payload?.success) {
+        dispatch(fetchCartItems(user?.id || guestId));
+        toast({
+          title: "Product is added to cart",
+        });
       }
     });
+    
   };
 
   const handleGetProductDetails = (id) => {
@@ -108,7 +122,7 @@ function ShoppingHome() {
           <SwiperSlide key={productItem._id} className="pb-2">
             <ShoppingProductTile
               product={productItem}
-              handleAddtoCart={() => {}}
+              handleAddtoCart={() => handleAddtoCart(productItem._id, productItem.totalStock || 9999)}
             />
           </SwiperSlide>
         ))}
@@ -144,7 +158,7 @@ function ShoppingHome() {
           <SwiperSlide key={productItem._id} className="pb-2">
             <ShoppingProductTile
               product={productItem}
-              handleAddtoCart={() => {}}
+              handleAddtoCart={() => handleAddtoCart(productItem._id, productItem.totalStock || 9999)}
             />
           </SwiperSlide>
         ))}

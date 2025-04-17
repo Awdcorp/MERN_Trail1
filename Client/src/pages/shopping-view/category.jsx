@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import categoryBanners from "@/assets/categoryBanners";
 import { motion } from "framer-motion";
+import { getGuestId } from "@/lib/guest-id";
 
 export default function CategoryListingPage() {
   const { slug } = useParams();
@@ -75,13 +76,24 @@ export default function CategoryListingPage() {
       });
       return;
     }
+    const guestId = user?.id ? null : getGuestId();
 
-    dispatch(addToCart({ userId: user?.id, productId, quantity: 1 })).then((data) => {
+    dispatch(
+      addToCart({
+        userId: user?.id || null,
+        guestId,
+        productId: productId,
+        quantity: 1,
+      })
+    ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
-        toast({ title: "Product is added to cart" });
+        dispatch(fetchCartItems(user?.id || guestId));
+        toast({
+          title: "Product is added to cart",
+        });
       }
     });
+    
   }
 
   function getFilteredCategoryProducts() {
@@ -199,7 +211,7 @@ export default function CategoryListingPage() {
                       key={productItem._id}
                       handleGetProductDetails={handleGetProductDetails}
                       product={productItem}
-                      handleAddtoCart={handleAddtoCart}
+                      handleAddtoCart={() => handleAddtoCart(productItem._id, productItem.totalStock || 9999)}
                     />
                   ))}
                 </motion.div>

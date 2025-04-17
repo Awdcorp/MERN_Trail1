@@ -12,6 +12,7 @@ import { Label } from "../ui/label";
 import StarRatingComponent from "../common/star-rating";
 import { useEffect, useState } from "react";
 import { addReview, getReviews } from "@/store/shop/review-slice";
+import { getGuestId } from "@/lib/guest-id";
 
 function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const [reviewMsg, setReviewMsg] = useState("");
@@ -48,20 +49,24 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         }
       }
     }
+    
+    const guestId = user?.id ? null : getGuestId();
     dispatch(
       addToCart({
-        userId: user?.id,
+        userId: user?.id || null,
+        guestId,
         productId: getCurrentProductId,
         quantity: 1,
       })
     ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id));
+        dispatch(fetchCartItems(user?.id || guestId));
         toast({
           title: "Product is added to cart",
         });
       }
     });
+
   }
 
   function handleDialogClose() {

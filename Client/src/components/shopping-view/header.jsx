@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -9,10 +9,19 @@ import {
   Heart,
   ChevronDown,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCartItems } from "@/store/shop/cart-slice";
+import { getGuestId } from "@/lib/guest-id";
+import UserCartWrapper from "./cart-wrapper";
 import logo from "@/assets/logo.jpg";
-import { useEffect } from "react";             // ✅ Add this
-import { useLocation } from "react-router-dom"; // ✅ Add this
+import { createSelector } from "@reduxjs/toolkit";
+import { Sheet } from "@/components/ui/sheet"; // Make sure this import exists
+// ✅ Memoized selector
+const selectCartItemCount = createSelector(
+  (state) => Array.isArray(state.shopCart.cartItems) ? state.shopCart.cartItems : [],
+  (items) => items.reduce((total, item) => total + item.quantity, 0)
+);
 
 const megaMenu = {
   "Party Supplies": {
@@ -45,27 +54,32 @@ const megaMenu = {
   },
 };
 
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [openCartSheet, setOpenCartSheet] = useState(false);
 
+  const dispatch = useDispatch();
+  const cartCount = useSelector(selectCartItemCount);
+  const { user } = useSelector((state) => state.auth);
+  const location = useLocation();
   const navLinks = Object.keys(megaMenu).concat([
     "Entertainment",
     "Party Rentals",
     "Customise Your Party",
   ]);
-  const location = useLocation();
-
   useEffect(() => {
     setMenuOpen(false);
     setActiveMenu(null);
   }, [location.pathname]);
-  
+
+  useEffect(() => {
+    const guestId = user?.id ? null : getGuestId();
+    dispatch(fetchCartItems(user?.id || guestId));
+  }, []);
+
   const formatSlug = (text) =>
-    `/shop/category/${encodeURIComponent(
-      text.toLowerCase().replace(/\s+/g, "-")
-    )}`;
+    `/shop/category/${encodeURIComponent(text.toLowerCase().replace(/\s+/g, "-"))}`;
 
   return (
     <header className="w-full">
@@ -88,7 +102,15 @@ export default function Header() {
               <img src={logo} alt="PartyWorld Logo" className="h-10" />
             </Link>
             <div className="flex items-center gap-4">
-              <ShoppingCart className="h-5 w-5 text-[#463970]" />
+            <button onClick={() => setOpenCartSheet(true)} className="relative">
+        <ShoppingCart className="h-5 w-5 text-[#463970]" />
+        {cartCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-[#EB6123] text-white text-[10px] font-semibold rounded-full w-5 h-5 flex items-center justify-center">
+            {cartCount}
+          </span>
+        )}
+      </button>
+
               <button onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? (
                   <X className="h-6 w-6 text-[#463970]" />
@@ -101,12 +123,9 @@ export default function Header() {
 
           {/* Desktop: Logo + Search + Icons */}
           <div className="hidden md:flex justify-between items-center gap-8 mb-1">
-            {/* Logo */}
             <Link to="/" className="flex-shrink-0">
               <img src={logo} alt="PartyWorld Logo" className="h-15 max-w-[250px] object-contain" />
             </Link>
-
-            {/* Search */}
             <div className="relative w-full max-w-[500px]">
               <input
                 type="text"
@@ -115,11 +134,16 @@ export default function Header() {
               />
               <Search className="absolute right-3 top-2.5 h-4 w-4 text-[#463970]" />
             </div>
-
-            {/* Icons */}
             <div className="flex gap-6 items-center">
               <User className="h-5 w-5 text-[#463970]" />
-              <ShoppingCart className="h-5 w-5 text-[#463970]" />
+              <button onClick={() => setOpenCartSheet(true)} className="relative">
+        <ShoppingCart className="h-5 w-5 text-[#463970]" />
+        {cartCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-[#EB6123] text-white text-[10px] font-semibold rounded-full w-5 h-5 flex items-center justify-center">
+            {cartCount}
+          </span>
+        )}
+      </button>
               <Heart className="h-5 w-5 text-[#463970]" />
               <MapPin className="h-5 w-5 text-[#463970]" />
             </div>
@@ -256,8 +280,13 @@ export default function Header() {
 )}
 
 
+<Sheet open={openCartSheet} onOpenChange={setOpenCartSheet}>
+  <UserCartWrapper setOpenCartSheet={setOpenCartSheet} />
+</Sheet>
+
 
       </div>
+  
     </header>
   );
 }
