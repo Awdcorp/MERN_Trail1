@@ -7,18 +7,47 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { MultiSelect } from "@/components/ui/multiselect";
+import ImageMultiUpload from "@/components/admin-view/image-multi-upload";
 
 export default function AdminProductEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(null);
+  const [allCategories, setAllCategories] = useState([]);
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
       .then(res => {
-        if (res.data.success) setFormData(res.data.data);
+        if (res.data.success) {
+          const product = res.data.data;
+          // Normalize category values to _id strings
+          const normalized = {
+            ...product,
+            categories: (product.categories || []).map(c =>
+              typeof c === "object" && c._id ? c._id : c
+            ),
+          };
+          setFormData(normalized);
+        }
       });
+
+    axios.get(`${import.meta.env.VITE_API_URL}/api/categories`).then((res) => {
+      const flatList = flattenCategories(res.data);
+      setAllCategories(flatList);
+    });
   }, [id]);
+
+  const flattenCategories = (tree) => {
+    let result = [];
+    for (const cat of tree) {
+      result.push({ label: cat.name, value: cat._id });
+      if (cat.children?.length) {
+        result = result.concat(flattenCategories(cat.children));
+      }
+    }
+    return result;
+  };
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -39,15 +68,12 @@ export default function AdminProductEdit() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* 🔲 Page Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold">Edit Product</h2>
         <Button onClick={handleSubmit}>Save</Button>
       </div>
 
-      {/* 🔲 Main Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Main Form */}
         <div className="lg:col-span-2 space-y-4">
           <Input
             placeholder="Title"
@@ -59,6 +85,11 @@ export default function AdminProductEdit() {
             value={formData.description || ""}
             onChange={e => handleChange("description", e.target.value)}
           />
+          <ImageMultiUpload
+  images={formData.images || []}
+  onChange={(imgs) => handleChange("images", imgs)}
+/>
+
           <Input
             placeholder="Slug"
             value={formData.slug || ""}
@@ -87,9 +118,14 @@ export default function AdminProductEdit() {
             value={formData.totalStock || ""}
             onChange={e => handleChange("totalStock", parseInt(e.target.value))}
           />
+          <MultiSelect
+            options={allCategories}
+            selected={formData.categories || []}
+            label="Categories"
+            onChange={(value) => handleChange("categories", value)}
+          />
         </div>
 
-        {/* Sidebar Form */}
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <Checkbox
