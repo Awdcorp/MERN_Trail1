@@ -20,6 +20,21 @@ const handleImageUpload = async (req, res) => {
   }
 };
 
+// ✅ NEW: get one product by ID
+const getProductById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id).populate("categories", "name");
+    if (!product) {
+      return res.status(404).json({ success: false, message: "Product not found" });
+    }
+    res.status(200).json({ success: true, data: product });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ success: false, message: "Error fetching product" });
+  }
+};
+
 //add a new product
 const addProduct = async (req, res) => {
   try {
@@ -168,4 +183,5 @@ module.exports = {
   fetchAllProducts,
   editProduct,
   deleteProduct,
+  getProductById,
 };

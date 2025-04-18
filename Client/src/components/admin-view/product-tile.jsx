@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import { Link } from "react-router-dom";
 
 function AdminProductRow({
   product,
@@ -43,20 +44,19 @@ function AdminProductRow({
 
       {/* ✅ Category with tooltip */}
       <td className="p-3 max-w-[280px]">
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <div className="truncate text-xs text-muted-foreground cursor-default">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div className="truncate text-xs text-muted-foreground cursor-default">
+                {(product?.categories || []).map((c) => c?.name).join(", ") || "—"}
+              </div>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-sm bg-white text-black border shadow-lg rounded p-2 text-xs">
               {(product?.categories || []).map((c) => c?.name).join(", ") || "—"}
-            </div>
-          </TooltipTrigger>
-          <TooltipContent className="max-w-sm bg-white text-black border shadow-lg rounded p-2 text-xs">
-            {(product?.categories || []).map((c) => c?.name).join(", ") || "—"}
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </td>
-
 
       {/* ✅ Brand */}
       <td className="p-3">{product?.brand || "—"}</td>
@@ -86,6 +86,9 @@ function AdminProductRow({
         >
           Quick Edit
         </Button>
+        <Link to={`/admin/products/edit/${product?._id}`}>
+          <Button variant="secondary" size="sm">Edit</Button>
+        </Link>
         <Button
           variant="destructive"
           size="sm"
