@@ -24,6 +24,12 @@ function AuthLogin() {
         toast({
           title: data?.payload?.message,
         });
+              // ✅ Check if user is admin
+      if (data.payload.user?.role === "admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/shop/home");
+      }
       } else {
         toast({
           title: data?.payload?.message,
