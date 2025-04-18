@@ -67,7 +67,13 @@ const addProduct = async (req, res) => {
 
 const fetchAllProducts = async (req, res) => {
   try {
-    const listOfProducts = await Product.find({});
+    const limit = parseInt(req.query.limit) || 25;
+    const listOfProducts = await Product.find({})
+    .populate("categories", "name") // ✅ just fetch category title
+    .limit(limit);  
+console.log("🧨 Admin Product Fetch Request");
+console.log("➡️ Query Limit:", req.query.limit);
+console.log("📦 Final Limit Applied:", limit);
     res.status(200).json({
       success: true,
       data: listOfProducts,

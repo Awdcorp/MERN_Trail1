@@ -5,7 +5,7 @@ import {
   ShoppingBasket,
 } from "lucide-react";
 import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // ✅ include location
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
 
 const adminSidebarMenuItems = [
@@ -31,22 +31,31 @@ const adminSidebarMenuItems = [
 
 function MenuItems({ setOpen }) {
   const navigate = useNavigate();
+  const location = useLocation(); // ✅ get current path
 
   return (
     <nav className="mt-8 flex-col flex gap-2">
-      {adminSidebarMenuItems.map((menuItem) => (
-        <div
-          key={menuItem.id}
-          onClick={() => {
-            navigate(menuItem.path);
-            setOpen ? setOpen(false) : null;
-          }}
-          className="flex cursor-pointer text-xl items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-        >
-          {menuItem.icon}
-          <span>{menuItem.label}</span>
-        </div>
-      ))}
+      {adminSidebarMenuItems.map((menuItem) => {
+        const isActive = location.pathname === menuItem.path; // ✅ check active
+
+        return (
+          <div
+            key={menuItem.id}
+            onClick={() => {
+              navigate(menuItem.path);
+              setOpen ? setOpen(false) : null;
+            }}
+            className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${
+              isActive
+                ? "bg-muted text-foreground font-semibold"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            {menuItem.icon}
+            <span>{menuItem.label}</span>
+          </div>
+        );
+      })}
     </nav>
   );
 }
@@ -56,6 +65,7 @@ function AdminSideBar({ open, setOpen }) {
 
   return (
     <Fragment>
+      {/* Mobile Sidebar */}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="left" className="w-64">
           <div className="flex flex-col h-full">
@@ -69,6 +79,8 @@ function AdminSideBar({ open, setOpen }) {
           </div>
         </SheetContent>
       </Sheet>
+
+      {/* Desktop Sidebar */}
       <aside className="hidden w-64 flex-col border-r bg-background p-6 lg:flex">
         <div
           onClick={() => navigate("/admin/dashboard")}

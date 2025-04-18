@@ -1,5 +1,5 @@
 import ProductImageUpload from "@/components/admin-view/image-upload";
-import AdminProductTile from "@/components/admin-view/product-tile";
+import AdminProductRow from "@/components/admin-view/product-tile"; // ✅ updated component
 import CommonForm from "@/components/common/form";
 import { Button } from "@/components/ui/button";
 import {
@@ -49,7 +49,7 @@ function AdminProducts() {
 
     const updatedFormData = {
       ...formData,
-      image: uploadedImageUrl || "", // Use uploaded image URL if available
+      image: uploadedImageUrl || "",
     };
 
     currentEditedId !== null
@@ -65,9 +65,7 @@ function AdminProducts() {
             toast({ title: "Product updated successfully" });
           }
         })
-      : dispatch(
-          addNewProduct(updatedFormData)
-        ).then((data) => {
+      : dispatch(addNewProduct(updatedFormData)).then((data) => {
           if (data?.payload?.success) {
             dispatch(fetchAllProducts());
             resetForm();
@@ -87,9 +85,8 @@ function AdminProducts() {
 
   function isFormValid() {
     return Object.keys(formData)
-      .filter((currentKey) => currentKey !== "averageReview")
-      .map((key) => formData[key] !== "")
-      .every((item) => item);
+      .filter((key) => key !== "averageReview")
+      .every((key) => formData[key] !== "");
   }
 
   function resetForm() {
@@ -112,35 +109,40 @@ function AdminProducts() {
           Add New Product
         </Button>
       </div>
-      <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {productList && productList.length > 0
-          ? productList.map((productItem) => (
-              <AdminProductTile
-                key={productItem.id}
-                setFormData={(data) => {
-                  setFormData({
-                    title: productItem.title,
-                    description: productItem.description,
-                    category: productItem.category,
-                    brand: productItem.brand,
-                    price: productItem.price,
-                    salePrice: productItem.salePrice,
-                    totalStock: productItem.totalStock,
-                    averageReview: productItem.averageReview,
-                    image: productItem.image,
-                  });
-                  setUploadedImageUrl(productItem.image); // Set the existing image URL
-                  //setCurrentEditedId(productItem.id);
-                  //setOpenCreateProductsDialog(true);
-                }}
+
+      {/* ✅ Shopify-Style Table */}
+      <div className="border rounded-md overflow-auto w-full bg-white">
+        <table className="min-w-full text-sm text-left">
+          <thead className="border-b bg-muted text-xs font-semibold text-muted-foreground">
+            <tr>
+              <th className="p-3">
+                <input type="checkbox" className="form-checkbox h-4 w-4" />
+              </th>
+              <th className="p-3">Product</th>
+              <th className="p-3">Status</th>
+              <th className="p-3">Stock</th>
+              <th className="p-3">Category</th>
+              <th className="p-3">Brand</th>
+              <th className="p-3">Price</th>
+              <th className="p-3 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productList?.map((productItem) => (
+              <AdminProductRow
+                key={productItem._id}
+                product={productItem}
+                setFormData={setFormData}
                 setOpenCreateProductsDialog={setOpenCreateProductsDialog}
                 setCurrentEditedId={setCurrentEditedId}
-                product={productItem}
                 handleDelete={handleDelete}
               />
-            ))
-          : null}
+            ))}
+          </tbody>
+        </table>
       </div>
+
+      {/* ✅ Right-side panel for Add/Edit */}
       <Sheet
         open={openCreateProductsDialog}
         onOpenChange={(isOpen) => {
@@ -157,7 +159,7 @@ function AdminProducts() {
             imageFile={imageFile}
             setImageFile={(file) => {
               setImageFile(file);
-              setUploadedImageUrl(""); // Clear old URL when new file is uploaded
+              setUploadedImageUrl("");
             }}
             uploadedImageUrl={uploadedImageUrl}
             setUploadedImageUrl={setUploadedImageUrl}
