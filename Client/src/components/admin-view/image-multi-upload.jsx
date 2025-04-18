@@ -1,6 +1,6 @@
 // File: src/components/admin-view/image-multi-upload.jsx
 
-import { UploadCloud, X } from "lucide-react";
+import { UploadCloud, X, GripVertical } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "../ui/button";
 import axios from "axios";
@@ -8,6 +8,8 @@ import axios from "axios";
 export default function ImageMultiUpload({ images = [], onChange }) {
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef();
+  const dragItem = useRef();
+  const dragOverItem = useRef();
 
   const handleUpload = async (file) => {
     setUploading(true);
@@ -37,6 +39,13 @@ export default function ImageMultiUpload({ images = [], onChange }) {
     onChange(images.filter((img) => img !== url));
   };
 
+  const handleSort = () => {
+    const items = [...images];
+    const draggedItem = items.splice(dragItem.current, 1)[0];
+    items.splice(dragOverItem.current, 0, draggedItem);
+    onChange(items);
+  };
+
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
@@ -60,8 +69,16 @@ export default function ImageMultiUpload({ images = [], onChange }) {
       </div>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-        {images.map((url) => (
-          <div key={url} className="relative group border rounded overflow-hidden">
+        {images.map((url, index) => (
+          <div
+            key={url}
+            draggable
+            onDragStart={() => (dragItem.current = index)}
+            onDragEnter={() => (dragOverItem.current = index)}
+            onDragEnd={handleSort}
+            onDragOver={(e) => e.preventDefault()}
+            className="relative group border rounded overflow-hidden cursor-move"
+          >
             <img src={url} alt="product" className="object-cover w-full h-24" />
             <button
               type="button"
@@ -70,6 +87,10 @@ export default function ImageMultiUpload({ images = [], onChange }) {
             >
               <X className="w-4 h-4 text-red-500" />
             </button>
+            <span className="absolute bottom-1 left-1 bg-white px-1 py-0.5 rounded text-xs shadow flex items-center gap-1">
+              <GripVertical className="w-3 h-3 text-muted-foreground" />
+              {index + 1}
+            </span>
           </div>
         ))}
       </div>

@@ -36,7 +36,7 @@ function MenuItems({ setOpen }) {
   return (
     <nav className="mt-8 flex-col flex gap-2">
       {adminSidebarMenuItems.map((menuItem) => {
-        const isActive = location.pathname === menuItem.path; // ✅ check active
+        const isActive = location.pathname.startsWith(menuItem.path);
 
         return (
           <div
