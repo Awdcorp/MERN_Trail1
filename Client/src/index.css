@@ -68,3 +68,24 @@
     font-family: 'Montserrat', sans-serif;
   }
 }
+
+/* ✅ Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #46396F;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2c234d;
+}
+
+/* Firefox Support */
+html {
+  scrollbar-width: light;
+  scrollbar-color: #46396F rgba(255, 255, 255, 0.15);
+}
