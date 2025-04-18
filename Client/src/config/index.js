@@ -1,3 +1,5 @@
+// File: config/index.js (updated)
+
 export const registerFormControls = [
   {
     name: "userName",
@@ -54,16 +56,10 @@ export const addProductFormElements = [
     placeholder: "Enter product description",
   },
   {
-    label: "Category",
-    name: "category",
-    componentType: "select",
-    options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
-    ],
+    label: "Categories",
+    name: "categories",
+    componentType: "categoryTags",
+    options: [], // ✅ will be replaced at runtime using `allCategories` from backend
   },
   {
     label: "Brand",

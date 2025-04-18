@@ -58,6 +58,8 @@ function ProductImageUpload({
 
     if (response?.data?.success) {
       setUploadedImageUrl(response.data.result.url);
+      console.log("📤 Uploaded image URL:", response.data.result.url);
+
     }
     setImageLoadingState(false);
   }

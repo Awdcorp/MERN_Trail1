@@ -95,13 +95,14 @@ const editProduct = async (req, res) => {
       image,
       title,
       description,
-      category,
+      categories,
       brand,
       price,
       salePrice,
       totalStock,
       averageReview,
     } = req.body;
+    console.log("🖼️ Image received in request:", image);
 
     let findProduct = await Product.findById(id);
     if (!findProduct)
@@ -112,22 +113,23 @@ const editProduct = async (req, res) => {
 
     findProduct.title = title || findProduct.title;
     findProduct.description = description || findProduct.description;
-    findProduct.category = category || findProduct.category;
+    findProduct.categories = categories;
     findProduct.brand = brand || findProduct.brand;
     findProduct.price = price === "" ? 0 : price || findProduct.price;
     findProduct.salePrice =
       salePrice === "" ? 0 : salePrice || findProduct.salePrice;
     findProduct.totalStock = totalStock || findProduct.totalStock;
-    findProduct.image = image || findProduct.image;
+    findProduct.images = image ? [image] : findProduct.images; // ✅ overwrite array with new image if available
     findProduct.averageReview = averageReview || findProduct.averageReview;
 
     await findProduct.save();
+    console.log("✅ Product updated:", findProduct);
     res.status(200).json({
       success: true,
       data: findProduct,
     });
   } catch (e) {
-    console.log(e);
+    console.log("❌ Error updating product:", e);
     res.status(500).json({
       success: false,
       message: "Error occured",

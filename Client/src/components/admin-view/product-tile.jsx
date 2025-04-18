@@ -84,7 +84,7 @@ function AdminProductRow({
             setFormData(product);
           }}
         >
-          Edit
+          Quick Edit
         </Button>
         <Button
           variant="destructive"

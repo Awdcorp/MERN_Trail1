@@ -1,3 +1,5 @@
+// File: src/pages/admin-view/products.jsx
+
 import ProductImageUpload from "@/components/admin-view/image-upload";
 import AdminProductRow from "@/components/admin-view/product-tile"; // ✅ updated component
 import CommonForm from "@/components/common/form";
@@ -23,13 +25,24 @@ const initialFormData = {
   image: "",
   title: "",
   description: "",
-  category: "",
+  categories: [], // ✅ replaced category string with array
   brand: "",
   price: "",
   salePrice: "",
   totalStock: "",
   averageReview: 0,
 };
+
+function flattenCategories(tree) {
+  let result = [];
+  for (const cat of tree) {
+    result.push({ _id: cat._id, name: cat.name });
+    if (cat.children?.length) {
+      result = result.concat(flattenCategories(cat.children));
+    }
+  }
+  return result;
+}
 
 function AdminProducts() {
   const [openCreateProductsDialog, setOpenCreateProductsDialog] =
@@ -39,6 +52,7 @@ function AdminProducts() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
   const [imageLoadingState, setImageLoadingState] = useState(false);
   const [currentEditedId, setCurrentEditedId] = useState(null);
+  const [allCategories, setAllCategories] = useState([]);
 
   const { productList } = useSelector((state) => state.adminProducts);
   const dispatch = useDispatch();
@@ -49,7 +63,7 @@ function AdminProducts() {
 
     const updatedFormData = {
       ...formData,
-      image: uploadedImageUrl || "",
+      image: uploadedImageUrl || formData.image || "",
     };
 
     currentEditedId !== null
@@ -85,7 +99,7 @@ function AdminProducts() {
 
   function isFormValid() {
     return Object.keys(formData)
-      .filter((key) => key !== "averageReview")
+      .filter((key) => key === "title") // ✅ Only "title" is required, all others are optional
       .every((key) => formData[key] !== "");
   }
 
@@ -100,6 +114,18 @@ function AdminProducts() {
 
   useEffect(() => {
     dispatch(fetchAllProducts());
+
+    async function fetchCategories() {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/categories`);
+        const data = await res.json();
+        setAllCategories(flattenCategories(data));
+      } catch (err) {
+        console.error("❌ Failed to fetch categories", err);
+      }
+    }
+
+    fetchCategories();
   }, [dispatch]);
 
   return (
@@ -152,7 +178,7 @@ function AdminProducts() {
         <SheetContent side="right" className="overflow-auto">
           <SheetHeader>
             <SheetTitle>
-              {currentEditedId !== null ? "Edit Product" : "Add New Product"}
+              {currentEditedId !== null ? "Quick Edit Product" : "Add New Product"}
             </SheetTitle>
           </SheetHeader>
           <ProductImageUpload
@@ -172,8 +198,12 @@ function AdminProducts() {
               onSubmit={onSubmit}
               formData={formData}
               setFormData={setFormData}
-              buttonText={currentEditedId !== null ? "Edit" : "Add"}
-              formControls={addProductFormElements}
+              buttonText={currentEditedId !== null ? "Save" : "Add"}
+              formControls={addProductFormElements.map((item) =>
+                item.name === "categories"
+                  ? { ...item, options: allCategories }
+                  : item
+              )}              
               isBtnDisabled={!isFormValid()}
             />
           </div>

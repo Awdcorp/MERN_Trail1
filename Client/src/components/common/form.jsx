@@ -1,3 +1,5 @@
+// File: src/components/common/form.jsx
+
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import {
@@ -39,8 +41,8 @@ function CommonForm({
             }
           />
         );
-
         break;
+
       case "select":
         element = (
           <Select
@@ -66,8 +68,8 @@ function CommonForm({
             </SelectContent>
           </Select>
         );
-
         break;
+
       case "textarea":
         element = (
           <Textarea
@@ -83,7 +85,56 @@ function CommonForm({
             }
           />
         );
+        break;
 
+      case "categoryTags":
+        element = (
+          <div>
+            <div className="flex flex-wrap gap-2 mb-2">
+              {formData.categories?.map((cat) => (
+                <div
+                  key={cat._id}
+                  className="bg-gray-200 text-sm rounded-full px-3 py-1 flex items-center"
+                >
+                  {cat.name}
+                  <button
+                    type="button"
+                    className="ml-2 text-red-600 hover:text-red-800"
+                    onClick={() =>
+                      setFormData({
+                        ...formData,
+                        categories: formData.categories.filter((c) => c._id !== cat._id),
+                      })
+                    }
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <select
+              value=""
+              onChange={(e) => {
+                const selected = getControlItem.options.find((cat) => cat._id === e.target.value);
+                if (selected && !formData.categories.find((c) => c._id === selected._id)) {
+                  setFormData({
+                    ...formData,
+                    categories: [...formData.categories, selected],
+                  });
+                }
+              }}
+              className="border rounded px-3 py-2 w-full"
+            >
+              <option value="">Select category</option>
+              {getControlItem.options.map((cat) => (
+                <option key={cat._id} value={cat._id}>
+                  {cat.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        );
         break;
 
       default:
