@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Product = require("../../models/Product");
 const Category = require("../../models/Category");
+const { searchProducts } = require("../../controllers/admin/products-controller");
+
 
 // ✅ TEMP DEBUG: GET populated products
 router.get("/test-populated-products", async (req, res) => {
@@ -104,5 +106,5 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
+router.get("/search", searchProducts);
 module.exports = router;

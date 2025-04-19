@@ -158,6 +158,36 @@ const getProductById = async (req, res) => {
   }
 };
 
+// 🔍 New async search controller for products
+const searchProducts = async (req, res) => {
+  try {
+    const query = req.query.query || "";
+    const limit = parseInt(req.query.limit) || 25;
+
+    console.log("🔍 Incoming product search query:", query);
+    console.log("📦 Applying limit:", limit);
+
+    const matchedProducts = await Product.find({
+      title: { $regex: query, $options: "i" },
+    })
+      .select("_id title price")
+      .limit(limit);
+
+    console.log("✅ Matched products:", matchedProducts.length);
+
+    return res.status(200).json({
+      success: true,
+      data: matchedProducts,
+    });
+  } catch (error) {
+    console.error("❌ searchProducts error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
+
 module.exports = {
   handleImageUpload,
   addProduct,
@@ -165,4 +195,5 @@ module.exports = {
   fetchAllProducts,
   deleteProduct,
   getProductById,
+  searchProducts,
 };

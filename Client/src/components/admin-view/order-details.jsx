@@ -41,17 +41,14 @@ const PAYMENT_METHOD_OPTIONS = [
   "Credit Card (via Paymennt)",
 ];
 
-const PAYMENT_STATUS_OPTIONS = [
-  "paid",
-  "pending",
-];
+const PAYMENT_STATUS_OPTIONS = ["paid", "pending"];
 
 function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const [formData, setFormData] = useState(initialFormData);
   const [formAddress, setFormAddress] = useState(initialAddressForm);
   const [formProducts, setFormProducts] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
-  const [newProductId, setNewProductId] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const [newProductQty, setNewProductQty] = useState(1);
   const dispatch = useDispatch();
   const { toast } = useToast();
@@ -71,10 +68,20 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
   }, [orderDetails]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/get`).then((res) => {
-      if (res.data?.success) setAllProducts(res.data.data);
-    });
-  }, []);
+    const delay = setTimeout(() => {
+      if (searchQuery.length > 1) {
+        console.log("🔍 Triggering product search for:", searchQuery);
+        axios
+          .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${searchQuery}`)
+          .then((res) => {
+            if (res.data?.success)console.log("🔁 Search results:", res.data.data); setSearchResults(res.data.data);
+          });
+      } else {
+        setSearchResults([]);
+      }
+    }, 300);
+    return () => clearTimeout(delay);
+  }, [searchQuery]);
 
   function handleUpdateStatus(event) {
     event.preventDefault();
@@ -114,22 +121,23 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
     setFormProducts((prev) => prev.filter((_, i) => i !== idx));
   }
 
-  function handleAddProduct() {
-    const selected = allProducts.find((p) => p._id === newProductId);
-    if (!selected) return;
-    if (formProducts.some((p) => p.productId === selected._id)) {
+  function handleAddProduct(product) {
+    if (formProducts.some((item) => item.productId === product._id)) {
       toast({ title: "Product already in list" });
       return;
     }
-    const newItem = {
-      productId: selected._id,
-      title: selected.title,
-      price: selected.price,
-      quantity: newProductQty,
-    };
-    setFormProducts((prev) => [...prev, newItem]);
-    setNewProductId("");
+    setFormProducts((prev) => [
+      ...prev,
+      {
+        productId: product._id,
+        title: product.title,
+        price: product.price,
+        quantity: newProductQty,
+      },
+    ]);
+    setSearchQuery("");
     setNewProductQty(1);
+    setSearchResults([]);
   }
 
   return (
@@ -275,34 +283,40 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Order Items</span>
 
-          <div className="flex items-center gap-2 mb-2">
-            <select
-              value={newProductId}
-              onChange={(e) => setNewProductId(e.target.value)}
-              className="border p-2 rounded text-sm flex-1 max-w-[300px] truncate"
-            >
-              <option value="">Select product</option>
-              {allProducts.map((p) => (
-                <option key={p._id} value={p._id}>
-                  {p.title} - AED {p.price}
-                </option>
-              ))}
-            </select>
-            <input
-              type="number"
-              min={1}
-              value={newProductQty}
-              onChange={(e) => setNewProductQty(parseInt(e.target.value))}
-              className="w-16 border px-2 py-1 rounded"
-            />
-            <button
-              type="button"
-              onClick={handleAddProduct}
-              className="bg-black text-white px-3 py-1 rounded"
-            >
-              Add
-            </button>
-          </div>
+<div className="relative w-full">
+  <div className="flex items-center gap-2 mb-2">
+    <input
+      type="text"
+      placeholder="Search product..."
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      className="border p-2 rounded w-full text-sm"
+    />
+    <input
+      type="number"
+      min={1}
+      value={newProductQty}
+      onChange={(e) => setNewProductQty(parseInt(e.target.value))}
+      className="w-16 border px-2 py-1 rounded text-sm"
+    />
+  </div>
+
+  {/* ⬇️ Floating Results Box */}
+  {searchResults.length > 0 && (
+    <ul className="absolute bottom-full mb-2 z-50 mt-1 left-0 w-full max-h-80 overflow-y-auto bg-white border rounded shadow-lg text-sm">
+      {searchResults.map((p) => (
+        <li
+          key={p._id}
+          className="px-3 py-2 hover:bg-muted cursor-pointer"
+          onClick={() => handleAddProduct(p)}
+        >
+          {p.title} – AED {p.price}
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
+
 
           <ul className="divide-y text-sm">
             {formProducts.length > 0 ? (
@@ -316,7 +330,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
                     type="number"
                     min={1}
                     value={item?.quantity}
-                    className="w-16 border px-2 py-1 rounded"
+                    className="w-16 border px-2 py-1 rounded text-sm"
                     onChange={(e) => handleQuantityChange(idx, e.target.value)}
                   />
                   <button

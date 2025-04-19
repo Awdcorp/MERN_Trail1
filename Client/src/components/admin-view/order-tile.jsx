@@ -33,7 +33,6 @@ const getPaymentStatusClasses = (status) => {
 };
 
 function AdminOrderRow({ order, onView }) {
-  console.log("🧾 AdminOrderRow order:", order); // ✅ Log incoming order
 
   return (
     <tr className="border-b hover:bg-muted/20 transition-colors">
@@ -76,9 +75,16 @@ function AdminOrderRow({ order, onView }) {
       </td>
 
       <td className="p-3 text-right">
-        <Button variant="outline" className="px-4 py-1 text-sm" onClick={onView}>
-          View
-        </Button>
+      <Button
+  variant="outline"
+  className="px-4 py-1 text-sm"
+  onClick={() => {
+    console.log("🧾 Viewing order:", order);
+    onView();
+  }}
+>
+  View
+</Button>
       </td>
     </tr>
   );
