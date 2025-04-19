@@ -1,8 +1,9 @@
+// imports
 import { useState } from "react";
 import CommonForm from "../common/form";
 import { DialogContent } from "../ui/dialog";
 import { Badge } from "../ui/badge";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   getAllOrdersForAdmin,
   updateOrderStatus,
@@ -10,6 +11,7 @@ import {
 } from "@/store/admin/order-slice";
 import { useToast } from "../ui/use-toast";
 
+// initial form state
 const initialFormData = {
   status: "",
   paymentStatus: "",
@@ -21,6 +23,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const dispatch = useDispatch();
   const { toast } = useToast();
 
+  // update logic
   function handleUpdateStatus(event) {
     event.preventDefault();
     const { status, paymentStatus, paymentMethod } = formData;
@@ -28,9 +31,9 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
     dispatch(
       updateOrderStatus({
         id: orderDetails?._id,
-        orderStatus: status,
-        paymentStatus,
-        paymentMethod,
+        orderStatus: status || orderDetails?.order_status,
+        paymentStatus: paymentStatus || orderDetails?.paymentStatus,
+        paymentMethod: paymentMethod || orderDetails?.paymentMethod,
       })
     ).then((data) => {
       if (data?.payload?.success) {
@@ -38,9 +41,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         dispatch(getAllOrdersForAdmin());
         setFormData(initialFormData);
         setOpen(false);
-        toast({
-          title: data?.payload?.message,
-        });
+        toast({ title: data?.payload?.message });
       }
     });
   }
@@ -57,15 +58,19 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
           <div className="flex justify-between">
             <span className="text-muted-foreground">Order Date</span>
             <span className="font-medium">
-              {typeof orderDetails?.order_date === "string" &&
-              orderDetails.order_date.includes("T")
-                ? orderDetails.order_date.split("T")[0]
+              {typeof orderDetails?.orderDate === "string" &&
+              orderDetails.orderDate.includes("T")
+                ? orderDetails.orderDate.split("T")[0]
                 : "—"}
             </span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Order Price</span>
-            <span className="font-medium">{orderDetails?.total_amount}</span>
+            <span className="font-medium">
+              {orderDetails?.totalAmount
+                ? `AED ${orderDetails.totalAmount}`
+                : "—"}
+            </span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Payment Method</span>
@@ -108,12 +113,12 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
           </div>
         </div>
 
-        {/* Order Items */}
+        {/* ✅ Order Items (Fixed) */}
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Order Items</span>
           <ul className="divide-y text-sm">
-            {orderDetails?.items && orderDetails?.items.length > 0 ? (
-              orderDetails.items.map((item, idx) => (
+            {orderDetails?.cartItems && orderDetails.cartItems.length > 0 ? (
+              orderDetails.cartItems.map((item, idx) => (
                 <li key={idx} className="py-2 flex justify-between">
                   <span>🛒 {item?.title || item?.product_name || "—"}</span>
                   <span>x{item?.quantity ?? 0}</span>

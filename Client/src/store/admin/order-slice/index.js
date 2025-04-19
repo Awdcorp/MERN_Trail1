@@ -28,16 +28,25 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
 
 export const updateOrderStatus = createAsyncThunk(
   "/order/updateOrderStatus",
-  async ({ id, orderStatus }) => {
-    console.log("🔄 Updating order status:", { id, orderStatus });
+  async ({ id, orderStatus, paymentStatus, paymentMethod }) => {
+    const payload = {
+      ...(orderStatus && { orderStatus }),
+      ...(paymentStatus && { paymentStatus }),
+      ...(paymentMethod && { paymentMethod }),
+    };
+
+    console.log("🔄 Sending order update payload:", { id, ...payload });
+
     const response = await axios.put(
       `${import.meta.env.VITE_API_URL}/api/admin/orders/update/${id}`,
-      { orderStatus }
+      payload
     );
+
     console.log("✅ Server responded:", response.data);
     return response.data;
   }
 );
+
 
 const adminOrderSlice = createSlice({
   name: "adminOrderSlice",

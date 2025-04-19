@@ -32,6 +32,10 @@ function AdminOrderRow({ order, onView }) {
 
         {order?.paymentMethod || "—"}
       </td>
+      <td className="p-3">
+
+{order?.paymentStatus || "—"}
+</td>
 
       <td className="p-3 text-sm text-foreground">
         

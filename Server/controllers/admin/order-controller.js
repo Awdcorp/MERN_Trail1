@@ -79,21 +79,17 @@ const updateOrderStatus = async (req, res) => {
     const { id } = req.params;
     const { orderStatus, paymentMethod, paymentStatus } = req.body;
 
-    console.log("🔄 Updating DB for order:", id, {
-      order_status: orderStatus,
-      paymentMethod,
-      paymentStatus,
-    });
+    // Build only the fields that are provided
+    const updateFields = {};
+    if (orderStatus) updateFields.order_status = orderStatus;
+    if (paymentMethod) updateFields.paymentMethod = paymentMethod;
+    if (paymentStatus) updateFields.paymentStatus = paymentStatus;
 
-    const updated = await Order.findByIdAndUpdate(
-      id,
-      {
-        order_status: orderStatus,
-        paymentMethod,
-        paymentStatus,
-      },
-      { new: true }
-    );
+    console.log("🔄 Updating DB for order:", id, updateFields);
+
+    const updated = await Order.findByIdAndUpdate(id, updateFields, {
+      new: true,
+    });
 
     console.log("✅ Updated Order:", updated);
 
@@ -106,10 +102,11 @@ const updateOrderStatus = async (req, res) => {
     console.log("❌ Error while updating order status:", e);
     res.status(500).json({
       success: false,
-      message: "Some error occured!",
+      message: "Some error occurred!",
     });
   }
 };
+
 
 module.exports = {
   getAllOrdersOfAllUsers,

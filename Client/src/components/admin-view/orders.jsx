@@ -38,8 +38,9 @@ function AdminOrdersView() {
         columns={[
           { label: "Order ID" },
           { label: "Customer" },
-          { label: "Status" },
-          { label: "Payment" },
+          { label: "Order Status" },
+          { label: "Payment Method" },
+          { label: "Payment Status" },
           { label: "Total" },
           { label: "Date" },
           { label: "Actions", align: "right" },
