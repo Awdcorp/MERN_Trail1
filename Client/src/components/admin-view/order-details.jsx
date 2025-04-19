@@ -1,5 +1,5 @@
 // imports
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CommonForm from "../common/form";
 import { DialogContent } from "../ui/dialog";
 import { Badge } from "../ui/badge";
@@ -18,22 +18,67 @@ const initialFormData = {
   paymentMethod: "",
 };
 
+const initialAddressForm = {
+  customer_name: "",
+  address: "",
+  city: "",
+  pincode: "",
+  phone: "",
+  notes: "",
+};
+
+const ORDER_STATUS_OPTIONS = [
+  "inShipping",
+  "cancelled",
+  "completed",
+  "delivered",
+  "pending",
+  "refunded",
+];
+
+const PAYMENT_METHOD_OPTIONS = [
+  "Cash on delivery (+AED12)",
+  "Card",
+  "PayPal",
+  "Credit Card (via Paymennt)",
+];
+
+const PAYMENT_STATUS_OPTIONS = [
+  "paid",
+  "pending",
+];
+
 function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const [formData, setFormData] = useState(initialFormData);
+  const [formAddress, setFormAddress] = useState(initialAddressForm);
   const dispatch = useDispatch();
   const { toast } = useToast();
+
+  useEffect(() => {
+    if (orderDetails?.addressInfo) {
+      setFormAddress({
+        customer_name: orderDetails.customer_name || "",
+        address: orderDetails.addressInfo.address || "",
+        city: orderDetails.addressInfo.city || "",
+        pincode: orderDetails.addressInfo.pincode || "",
+        phone: orderDetails.addressInfo.phone || "",
+        notes: orderDetails.addressInfo.notes || "",
+      });
+    }
+  }, [orderDetails]);
 
   // update logic
   function handleUpdateStatus(event) {
     event.preventDefault();
     const { status, paymentStatus, paymentMethod } = formData;
-
     dispatch(
       updateOrderStatus({
         id: orderDetails?._id,
         orderStatus: status || orderDetails?.order_status,
         paymentStatus: paymentStatus || orderDetails?.paymentStatus,
         paymentMethod: paymentMethod || orderDetails?.paymentMethod,
+        addressInfo: formAddress,
+        customer_name: formAddress.customer_name,
       })
     ).then((data) => {
       if (data?.payload?.success) {
@@ -44,6 +89,10 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         toast({ title: data?.payload?.message });
       }
     });
+  }
+
+  function highlightIfChanged(original, selected) {
+    return selected && selected !== original ? "border-yellow-400" : "";
   }
 
   return (
@@ -72,108 +121,147 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
                 : "—"}
             </span>
           </div>
-          <div className="flex justify-between">
+
+          {/* 🔄 Payment Method */}
+          <div className="flex justify-between items-start">
             <span className="text-muted-foreground">Payment Method</span>
-            <span className="font-medium">
-              {orderDetails?.paymentMethod || "—"}
-            </span>
+            <div className="flex flex-col w-1/2">
+              <span className="text-xs text-muted-foreground mb-1">
+                Current: {orderDetails?.paymentMethod || "—"}
+              </span>
+              <select
+                className={`border p-1 rounded ${highlightIfChanged(orderDetails?.paymentMethod, formData.paymentMethod)}`}
+                value={formData.paymentMethod !== "" ? formData.paymentMethod : orderDetails?.paymentMethod || ""}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, paymentMethod: e.target.value }))
+                }
+              >
+                <option value="">Select Method</option>
+                {PAYMENT_METHOD_OPTIONS.map((option, idx) => (
+                  <option key={idx} value={option}>{option}</option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className="flex justify-between">
+
+          {/* 🔄 Payment Status */}
+          <div className="flex justify-between items-start">
             <span className="text-muted-foreground">Payment Status</span>
-            <span className="font-medium">
-              {orderDetails?.paymentStatus || "—"}
-            </span>
+            <div className="flex flex-col w-1/2">
+              <span className="text-xs text-muted-foreground mb-1">
+                Current: {orderDetails?.paymentStatus || "—"}
+              </span>
+              <select
+                className={`border p-1 rounded ${highlightIfChanged(orderDetails?.paymentStatus, formData.paymentStatus)}`}
+                value={formData.paymentStatus !== "" ? formData.paymentStatus : orderDetails?.paymentStatus || ""}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, paymentStatus: e.target.value }))
+                }
+              >
+                <option value="">Select Status</option>
+                {PAYMENT_STATUS_OPTIONS.map((option, idx) => (
+                  <option key={idx} value={option}>{option}</option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className="flex justify-between items-center">
+
+          {/* 🔄 Order Status */}
+          <div className="flex justify-between items-start">
             <span className="text-muted-foreground">Order Status</span>
-            <Badge
-              className={`py-1 px-3 ${
-                orderDetails?.order_status === "confirmed"
-                  ? "bg-green-500"
-                  : orderDetails?.order_status === "rejected"
-                  ? "bg-red-600"
-                  : "bg-black"
-              }`}
-            >
-              {orderDetails?.order_status}
-            </Badge>
+            <div className="flex flex-col w-1/2">
+              <span className="text-xs text-muted-foreground mb-1">
+                Current: {orderDetails?.order_status || "—"}
+              </span>
+              <select
+                className={`border p-1 rounded ${highlightIfChanged(orderDetails?.order_status, formData.status)}`}
+                value={formData.status !== "" ? formData.status : orderDetails?.order_status || ""}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, status: e.target.value }))
+                }
+              >
+                <option value="">Select Status</option>
+                {ORDER_STATUS_OPTIONS.map((option, idx) => (
+                  <option key={idx} value={option}>{option}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
-        {/* Shipping Info */}
+        {/* Editable Shipping Info */}
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Shipping Info</span>
-          <div className="text-muted-foreground">
-            <div>{orderDetails?.customer_name || "—"}</div>
-            <div>{orderDetails?.addressInfo?.address || "—"}</div>
-            <div>{orderDetails?.addressInfo?.city || "—"}</div>
-            <div>{orderDetails?.addressInfo?.pincode || "—"}</div>
-            <div>{orderDetails?.addressInfo?.phone || "—"}</div>
-            <div>{orderDetails?.addressInfo?.notes || "—"}</div>
+          <div className="grid gap-2">
+            <input
+              placeholder="Customer Name"
+              className="border p-2 rounded"
+              value={formAddress.customer_name}
+              onChange={(e) =>
+                setFormAddress((prev) => ({ ...prev, customer_name: e.target.value }))
+              }
+            />
+            <input
+              placeholder="Address"
+              className="border p-2 rounded"
+              value={formAddress.address}
+              onChange={(e) => setFormAddress((prev) => ({ ...prev, address: e.target.value }))}
+            />
+            <input
+              placeholder="City"
+              className="border p-2 rounded"
+              value={formAddress.city}
+              onChange={(e) => setFormAddress((prev) => ({ ...prev, city: e.target.value }))}
+            />
+            <input
+              placeholder="Pincode"
+              className="border p-2 rounded"
+              value={formAddress.pincode}
+              onChange={(e) => setFormAddress((prev) => ({ ...prev, pincode: e.target.value }))}
+            />
+            <input
+              placeholder="Phone"
+              className="border p-2 rounded"
+              value={formAddress.phone}
+              onChange={(e) => setFormAddress((prev) => ({ ...prev, phone: e.target.value }))}
+            />
+            <textarea
+              placeholder="Notes"
+              className="border p-2 rounded"
+              value={formAddress.notes}
+              onChange={(e) => setFormAddress((prev) => ({ ...prev, notes: e.target.value }))}
+            />
           </div>
         </div>
 
-        {/* ✅ Order Items (Fixed) */}
+        {/* Order Items */}
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Order Items</span>
           <ul className="divide-y text-sm">
             {orderDetails?.cartItems && orderDetails.cartItems.length > 0 ? (
               orderDetails.cartItems.map((item, idx) => (
-                <li key={idx} className="py-2 flex justify-between">
-                  <span>🛒 {item?.title || item?.product_name || "—"}</span>
-                  <span>x{item?.quantity ?? 0}</span>
-                  <span>{item?.price ?? 0}</span>
+                <li key={idx} className="flex justify-between py-2">
+                  <span>{item?.productId?.title || item?.title}</span>
+                  <span className="text-muted-foreground">
+                    x{item?.quantity} – AED {item?.price}
+                  </span>
                 </li>
               ))
             ) : (
-              <li className="text-muted-foreground">No items</li>
+              <li className="py-2 text-muted-foreground">No items</li>
             )}
           </ul>
         </div>
 
-        {/* Editable Form */}
-        <div className="grid gap-2 p-4 border rounded-lg">
-          <CommonForm
-            formControls={[
-              {
-                label: "Order Status",
-                name: "status",
-                componentType: "select",
-                options: [
-                  { id: "pending", label: "Pending" },
-                  { id: "inProcess", label: "In Process" },
-                  { id: "inShipping", label: "In Shipping" },
-                  { id: "delivered", label: "Delivered" },
-                  { id: "rejected", label: "Rejected" },
-                ],
-              },
-              {
-                label: "Payment Status",
-                name: "paymentStatus",
-                componentType: "select",
-                options: [
-                  { id: "paid", label: "Paid" },
-                  { id: "pending", label: "Pending" },
-                  { id: "failed", label: "Failed" },
-                ],
-              },
-              {
-                label: "Payment Method",
-                name: "paymentMethod",
-                componentType: "select",
-                options: [
-                  { id: "Cash on Delivery", label: "Cash on Delivery" },
-                  { id: "PayPal", label: "PayPal" },
-                  { id: "Card", label: "Card" },
-                ],
-              },
-            ]}
-            formData={formData}
-            setFormData={setFormData}
-            buttonText={"Update Order Status"}
-            onSubmit={handleUpdateStatus}
-          />
-        </div>
+        {/* Submit Button */}
+        <form onSubmit={handleUpdateStatus} className="grid gap-4">
+          <button
+            type="submit"
+            className="mt-2 bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800"
+          >
+            Update Order Status
+          </button>
+        </form>
       </div>
     </DialogContent>
   );

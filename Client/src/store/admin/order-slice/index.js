@@ -28,11 +28,13 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
 
 export const updateOrderStatus = createAsyncThunk(
   "/order/updateOrderStatus",
-  async ({ id, orderStatus, paymentStatus, paymentMethod }) => {
+  async ({ id, orderStatus, paymentStatus, paymentMethod, addressInfo, customer_name }) => {
     const payload = {
       ...(orderStatus && { orderStatus }),
       ...(paymentStatus && { paymentStatus }),
       ...(paymentMethod && { paymentMethod }),
+      ...(addressInfo && Object.keys(addressInfo).length > 0 && { addressInfo }),
+      ...(customer_name && customer_name.trim() && { customer_name }),
     };
 
     console.log("🔄 Sending order update payload:", { id, ...payload });
@@ -46,6 +48,7 @@ export const updateOrderStatus = createAsyncThunk(
     return response.data;
   }
 );
+
 
 
 const adminOrderSlice = createSlice({

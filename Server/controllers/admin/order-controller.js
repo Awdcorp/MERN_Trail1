@@ -3,7 +3,6 @@ const Order = require("../../models/Order");
 const getAllOrdersOfAllUsers = async (req, res) => {
   try {
     const orders = await Order.find({});
-    console.log("📦 Admin getAllOrdersOfAllUsers fetched:", orders);
     if (!orders.length) {
       console.log("⚠️ No orders found in admin fetch");
       return res.status(404).json({
@@ -77,13 +76,22 @@ const getOrderDetailsForAdmin = async (req, res) => {
 const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
-    const { orderStatus, paymentMethod, paymentStatus } = req.body;
+    const {
+      orderStatus,
+      paymentMethod,
+      paymentStatus,
+      addressInfo,
+      cartItems,
+      customer_name
+    } = req.body;
 
-    // Build only the fields that are provided
     const updateFields = {};
     if (orderStatus) updateFields.order_status = orderStatus;
     if (paymentMethod) updateFields.paymentMethod = paymentMethod;
     if (paymentStatus) updateFields.paymentStatus = paymentStatus;
+    if (addressInfo && Object.keys(addressInfo).length > 0) updateFields.addressInfo = addressInfo;
+    if (typeof customer_name === 'string' && customer_name.trim()) updateFields.customer_name = customer_name;
+    if (cartItems) updateFields.cartItems = cartItems;
 
     console.log("🔄 Updating DB for order:", id, updateFields);
 
@@ -106,6 +114,7 @@ const updateOrderStatus = async (req, res) => {
     });
   }
 };
+
 
 
 module.exports = {
