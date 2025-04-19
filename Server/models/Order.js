@@ -20,7 +20,7 @@ const OrderSchema = new mongoose.Schema({
     phone: String,
     notes: String,
   },
-  orderStatus: String,
+  order_status: String, // ✅ Corrected here
   paymentMethod: String,
   paymentStatus: String,
   totalAmount: Number,

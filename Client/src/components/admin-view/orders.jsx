@@ -40,7 +40,7 @@ function AdminOrdersView() {
           { label: "Total" },
           { label: "Actions", align: "right" },
         ]}
-        actions={<Button disabled>Add Order</Button>} // placeholder action
+        actions={<Button disabled>Add Order</Button>}
       >
         {Array.isArray(orderList) && orderList.length > 0 ? (
           orderList.map((order) => (
@@ -61,7 +61,10 @@ function AdminOrdersView() {
 
       {openDetailsDialog && orderDetails && (
         <Dialog open={openDetailsDialog} onOpenChange={setOpenDetailsDialog}>
-          <AdminOrderDetailsView orderDetails={orderDetails} />
+          <AdminOrderDetailsView
+            orderDetails={orderDetails}
+            setOpen={setOpenDetailsDialog}
+          />
         </Dialog>
       )}
     </>

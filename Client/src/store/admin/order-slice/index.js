@@ -12,7 +12,6 @@ export const getAllOrdersForAdmin = createAsyncThunk(
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL}/api/admin/orders/get`
     );
-
     return response.data;
   }
 );
@@ -23,7 +22,6 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL}/api/admin/orders/details/${id}`
     );
-
     return response.data;
   }
 );
@@ -31,13 +29,12 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
 export const updateOrderStatus = createAsyncThunk(
   "/order/updateOrderStatus",
   async ({ id, orderStatus }) => {
+    console.log("🔄 Updating order status:", { id, orderStatus });
     const response = await axios.put(
       `${import.meta.env.VITE_API_URL}/api/admin/orders/update/${id}`,
-      {
-        orderStatus,
-      }
+      { orderStatus }
     );
-
+    console.log("✅ Server responded:", response.data);
     return response.data;
   }
 );
@@ -47,9 +44,10 @@ const adminOrderSlice = createSlice({
   initialState,
   reducers: {
     resetOrderDetails: (state) => {
-      console.log("resetOrderDetails");
-
       state.orderDetails = null;
+    },
+    orderDetailsUpdated: (state, action) => {
+      state.orderDetails = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -75,10 +73,13 @@ const adminOrderSlice = createSlice({
       .addCase(getOrderDetailsForAdmin.rejected, (state) => {
         state.isLoading = false;
         state.orderDetails = null;
+      })
+      .addCase(updateOrderStatus.fulfilled, (state, action) => {
+        console.log("🎯 Redux thunk fulfilled with:", action.payload);
       });
   },
 });
 
-export const { resetOrderDetails } = adminOrderSlice.actions;
+export const { resetOrderDetails, orderDetailsUpdated } = adminOrderSlice.actions;
 
 export default adminOrderSlice.reducer;

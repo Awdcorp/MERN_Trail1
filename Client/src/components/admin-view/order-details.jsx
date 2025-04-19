@@ -16,7 +16,7 @@ const initialFormData = {
   status: "",
 };
 
-function AdminOrderDetailsView({ orderDetails }) {
+function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const [formData, setFormData] = useState(initialFormData);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -25,20 +25,29 @@ function AdminOrderDetailsView({ orderDetails }) {
   function handleUpdateStatus(event) {
     event.preventDefault();
     const { status } = formData;
-
+  
     dispatch(
       updateOrderStatus({ id: orderDetails?._id, orderStatus: status })
     ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(getOrderDetailsForAdmin(orderDetails?._id));
+        const updated = { ...orderDetails, order_status: status };
+        dispatch({
+          type: "adminOrderSlice/orderDetailsUpdated",
+          payload: updated,
+        });
+  
         dispatch(getAllOrdersForAdmin());
         setFormData(initialFormData);
         toast({
           title: data?.payload?.message,
         });
+        setOpen(false); // ✅ now closes the dialog
+        dispatch({ type: "adminOrderSlice/resetOrderDetails" });
       }
     });
   }
+  
+  
 
   return (
     <DialogContent className="sm:max-w-[600px]">

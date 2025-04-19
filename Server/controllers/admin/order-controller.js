@@ -55,7 +55,7 @@ const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
     const { orderStatus } = req.body;
-
+    console.log("🔄 Updating DB for order:", id, "=>", orderStatus);
     const order = await Order.findById(id);
 
     if (!order) {
@@ -65,14 +65,21 @@ const updateOrderStatus = async (req, res) => {
       });
     }
 
-    await Order.findByIdAndUpdate(id, { orderStatus });
+    const updated = await Order.findByIdAndUpdate(
+      id,
+      { order_status: orderStatus },  // ✅ align with frontend and DB
+      { new: true }                   // ✅ return updated document
+    );
+    
 
+    console.log("✅ Updated Order:", updated);
     res.status(200).json({
       success: true,
       message: "Order status is updated successfully!",
+      data: updated,
     });
   } catch (e) {
-    console.log(e);
+    console.log("❌ Error while updating order status:", e);
     res.status(500).json({
       success: false,
       message: "Some error occured!",
