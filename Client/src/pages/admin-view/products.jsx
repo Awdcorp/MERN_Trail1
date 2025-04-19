@@ -1,7 +1,6 @@
-// File: src/pages/admin-view/products.jsx
-
 import ProductImageUpload from "@/components/admin-view/image-upload";
-import AdminProductRow from "@/components/admin-view/product-tile"; // ✅ updated component
+import AdminProductRow from "@/components/admin-view/product-tile";
+import AdminPanelTemplate from "@/components/admin-view/AdminPanelTemplate";
 import CommonForm from "@/components/common/form";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +24,7 @@ const initialFormData = {
   image: "",
   title: "",
   description: "",
-  categories: [], // ✅ replaced category string with array
+  categories: [],
   brand: "",
   price: "",
   salePrice: "",
@@ -45,8 +44,7 @@ function flattenCategories(tree) {
 }
 
 function AdminProducts() {
-  const [openCreateProductsDialog, setOpenCreateProductsDialog] =
-    useState(false);
+  const [openCreateProductsDialog, setOpenCreateProductsDialog] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [imageFile, setImageFile] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
@@ -60,7 +58,6 @@ function AdminProducts() {
 
   function onSubmit(event) {
     event.preventDefault();
-
     const updatedFormData = {
       ...formData,
       image: uploadedImageUrl || formData.image || "",
@@ -68,10 +65,7 @@ function AdminProducts() {
 
     currentEditedId !== null
       ? dispatch(
-          editProduct({
-            id: currentEditedId,
-            formData: updatedFormData,
-          })
+          editProduct({ id: currentEditedId, formData: updatedFormData })
         ).then((data) => {
           if (data?.payload?.success) {
             dispatch(fetchAllProducts());
@@ -99,7 +93,7 @@ function AdminProducts() {
 
   function isFormValid() {
     return Object.keys(formData)
-      .filter((key) => key === "title") // ✅ Only "title" is required, all others are optional
+      .filter((key) => key === "title")
       .every((key) => formData[key] !== "");
   }
 
@@ -130,45 +124,36 @@ function AdminProducts() {
 
   return (
     <Fragment>
-      <div className="mb-5 w-full flex justify-end">
-        <Button onClick={() => setOpenCreateProductsDialog(true)}>
-          Add New Product
-        </Button>
-      </div>
+      <AdminPanelTemplate
+        title="All Products"
+        columns={[
+          { label: "", align: "left" },
+          { label: "Product" },
+          { label: "Status" },
+          { label: "Stock" },
+          { label: "Category" },
+          { label: "Brand" },
+          { label: "Price" },
+          { label: "Actions", align: "right" },
+        ]}
+        actions={
+          <Button onClick={() => setOpenCreateProductsDialog(true)}>
+            Add New Product
+          </Button>
+        }
+      >
+        {productList?.map((productItem) => (
+          <AdminProductRow
+            key={productItem._id}
+            product={productItem}
+            setFormData={setFormData}
+            setOpenCreateProductsDialog={setOpenCreateProductsDialog}
+            setCurrentEditedId={setCurrentEditedId}
+            handleDelete={handleDelete}
+          />
+        ))}
+      </AdminPanelTemplate>
 
-      {/* ✅ Shopify-Style Table */}
-      <div className="border rounded-md overflow-auto w-full bg-white">
-        <table className="min-w-full text-sm text-left">
-          <thead className="border-b bg-muted text-xs font-semibold text-muted-foreground">
-            <tr>
-              <th className="p-3">
-                <input type="checkbox" className="form-checkbox h-4 w-4" />
-              </th>
-              <th className="p-3">Product</th>
-              <th className="p-3">Status</th>
-              <th className="p-3">Stock</th>
-              <th className="p-3">Category</th>
-              <th className="p-3">Brand</th>
-              <th className="p-3">Price</th>
-              <th className="p-3 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {productList?.map((productItem) => (
-              <AdminProductRow
-                key={productItem._id}
-                product={productItem}
-                setFormData={setFormData}
-                setOpenCreateProductsDialog={setOpenCreateProductsDialog}
-                setCurrentEditedId={setCurrentEditedId}
-                handleDelete={handleDelete}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* ✅ Right-side panel for Add/Edit */}
       <Sheet
         open={openCreateProductsDialog}
         onOpenChange={(isOpen) => {
@@ -203,7 +188,7 @@ function AdminProducts() {
                 item.name === "categories"
                   ? { ...item, options: allCategories }
                   : item
-              )}              
+              )}
               isBtnDisabled={!isFormValid()}
             />
           </div>

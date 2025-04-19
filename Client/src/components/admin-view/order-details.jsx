@@ -22,8 +22,6 @@ function AdminOrderDetailsView({ orderDetails }) {
   const dispatch = useDispatch();
   const { toast } = useToast();
 
-  console.log(orderDetails, "orderDetailsorderDetails");
-
   function handleUpdateStatus(event) {
     event.preventDefault();
     const { status } = formData;
@@ -45,76 +43,81 @@ function AdminOrderDetailsView({ orderDetails }) {
   return (
     <DialogContent className="sm:max-w-[600px]">
       <div className="grid gap-6">
-        <div className="grid gap-2">
-          <div className="flex mt-6 items-center justify-between">
-            <p className="font-medium">Order ID</p>
-            <Label>{orderDetails?._id}</Label>
+        {/* Order Info */}
+        <div className="grid gap-2 p-4 border rounded-lg">
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Order ID</span>
+            <span className="font-medium">{orderDetails?._id}</span>
           </div>
-          <div className="flex mt-2 items-center justify-between">
-            <p className="font-medium">Order Date</p>
-            <Label>{orderDetails?.orderDate.split("T")[0]}</Label>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Order Date</span>
+            <span className="font-medium">
+              {typeof orderDetails?.orderDate === "string" && orderDetails.orderDate.includes("T")
+                ? orderDetails.orderDate.split("T")[0]
+                : "—"}
+            </span>
           </div>
-          <div className="flex mt-2 items-center justify-between">
-            <p className="font-medium">Order Price</p>
-            <Label>${orderDetails?.totalAmount}</Label>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Order Price</span>
+            <span className="font-medium">${orderDetails?.totalAmount}</span>
           </div>
-          <div className="flex mt-2 items-center justify-between">
-            <p className="font-medium">Payment method</p>
-            <Label>{orderDetails?.paymentMethod}</Label>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Payment Method</span>
+            <span className="font-medium">{orderDetails?.paymentMethod}</span>
           </div>
-          <div className="flex mt-2 items-center justify-between">
-            <p className="font-medium">Payment Status</p>
-            <Label>{orderDetails?.paymentStatus}</Label>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Payment Status</span>
+            <span className="font-medium">{orderDetails?.paymentStatus}</span>
           </div>
-          <div className="flex mt-2 items-center justify-between">
-            <p className="font-medium">Order Status</p>
-            <Label>
-              <Badge
-                className={`py-1 px-3 ${
-                  orderDetails?.orderStatus === "confirmed"
-                    ? "bg-green-500"
-                    : orderDetails?.orderStatus === "rejected"
-                    ? "bg-red-600"
-                    : "bg-black"
-                }`}
-              >
-                {orderDetails?.orderStatus}
-              </Badge>
-            </Label>
-          </div>
-        </div>
-        <Separator />
-        <div className="grid gap-4">
-          <div className="grid gap-2">
-            <div className="font-medium">Order Details</div>
-            <ul className="grid gap-3">
-              {orderDetails?.cartItems && orderDetails?.cartItems.length > 0
-                ? orderDetails?.cartItems.map((item) => (
-                    <li className="flex items-center justify-between">
-                      <span>Title: {item.title}</span>
-                      <span>Quantity: {item.quantity}</span>
-                      <span>Price: ${item.price}</span>
-                    </li>
-                  ))
-                : null}
-            </ul>
-          </div>
-        </div>
-        <div className="grid gap-4">
-          <div className="grid gap-2">
-            <div className="font-medium">Shipping Info</div>
-            <div className="grid gap-0.5 text-muted-foreground">
-              <span>{user.userName}</span>
-              <span>{orderDetails?.addressInfo?.address}</span>
-              <span>{orderDetails?.addressInfo?.city}</span>
-              <span>{orderDetails?.addressInfo?.pincode}</span>
-              <span>{orderDetails?.addressInfo?.phone}</span>
-              <span>{orderDetails?.addressInfo?.notes}</span>
-            </div>
+          <div className="flex justify-between items-center">
+            <span className="text-muted-foreground">Order Status</span>
+            <Badge
+              className={`py-1 px-3 ${
+                orderDetails?.orderStatus === "confirmed"
+                  ? "bg-green-500"
+                  : orderDetails?.orderStatus === "rejected"
+                  ? "bg-red-600"
+                  : "bg-black"
+              }`}
+            >
+              {orderDetails?.orderStatus}
+            </Badge>
           </div>
         </div>
 
-        <div>
+        {/* Shipping Info */}
+        <div className="grid gap-2 p-4 border rounded-lg">
+          <span className="font-medium text-lg">Shipping Info</span>
+          <div className="text-muted-foreground">
+            <div>{user?.userName || "—"}</div>
+            <div>{orderDetails?.addressInfo?.address || "—"}</div>
+            <div>{orderDetails?.addressInfo?.city || "—"}</div>
+            <div>{orderDetails?.addressInfo?.pincode || "—"}</div>
+            <div>{orderDetails?.addressInfo?.phone || "—"}</div>
+            <div>{orderDetails?.addressInfo?.notes || "—"}</div>
+          </div>
+        </div>
+
+        {/* Order Items */}
+        <div className="grid gap-2 p-4 border rounded-lg">
+          <span className="font-medium text-lg">Order Items</span>
+          <ul className="divide-y text-sm">
+            {orderDetails?.cartItems && orderDetails?.cartItems.length > 0 ? (
+              orderDetails.cartItems.map((item, idx) => (
+                <li key={idx} className="py-2 flex justify-between">
+                  <span>🛒 {item?.title || "—"}</span>
+                  <span>x{item?.quantity ?? 0}</span>
+                  <span>${item?.price ?? 0}</span>
+                </li>
+              ))
+            ) : (
+              <li className="text-muted-foreground">No items</li>
+            )}
+          </ul>
+        </div>
+
+        {/* Status Update Form */}
+        <div className="grid gap-2 p-4 border rounded-lg">
           <CommonForm
             formControls={[
               {

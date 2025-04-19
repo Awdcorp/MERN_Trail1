@@ -1,23 +1,15 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Dialog } from "../ui/dialog";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "../ui/table";
-import AdminOrderDetailsView from "./order-details";
+import AdminPanelTemplate from "../admin-view/AdminPanelTemplate";
+import AdminOrderDetailsView from "../admin-view/order-details";
+import AdminOrderRow from "../admin-view/AdminOrderRow";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllOrdersForAdmin,
   getOrderDetailsForAdmin,
   resetOrderDetails,
 } from "@/store/admin/order-slice";
-import { Badge } from "../ui/badge";
 
 function AdminOrdersView() {
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
@@ -32,75 +24,46 @@ function AdminOrdersView() {
     dispatch(getAllOrdersForAdmin());
   }, [dispatch]);
 
-  console.log(orderDetails, "orderList");
-
   useEffect(() => {
     if (orderDetails !== null) setOpenDetailsDialog(true);
   }, [orderDetails]);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>All Orders</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Order ID</TableHead>
-              <TableHead>Order Date</TableHead>
-              <TableHead>Order Status</TableHead>
-              <TableHead>Order Price</TableHead>
-              <TableHead>
-                <span className="sr-only">Details</span>
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {orderList && orderList.length > 0
-              ? orderList.map((orderItem) => (
-                  <TableRow>
-                    <TableCell>{orderItem?._id}</TableCell>
-                    <TableCell>{orderItem?.orderDate.split("T")[0]}</TableCell>
-                    <TableCell>
-                      <Badge
-                        className={`py-1 px-3 ${
-                          orderItem?.orderStatus === "confirmed"
-                            ? "bg-green-500"
-                            : orderItem?.orderStatus === "rejected"
-                            ? "bg-red-600"
-                            : "bg-black"
-                        }`}
-                      >
-                        {orderItem?.orderStatus}
-                      </Badge>
-                    </TableCell>
-                    <TableCell>${orderItem?.totalAmount}</TableCell>
-                    <TableCell>
-                      <Dialog
-                        open={openDetailsDialog}
-                        onOpenChange={() => {
-                          setOpenDetailsDialog(false);
-                          dispatch(resetOrderDetails());
-                        }}
-                      >
-                        <Button
-                          onClick={() =>
-                            handleFetchOrderDetails(orderItem?._id)
-                          }
-                        >
-                          View Details
-                        </Button>
-                        <AdminOrderDetailsView orderDetails={orderDetails} />
-                      </Dialog>
-                    </TableCell>
-                  </TableRow>
-                ))
-              : null}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+    <>
+      <AdminPanelTemplate
+        title="All Orders"
+        columns={[
+          { label: "Order ID" },
+          { label: "Order Date" },
+          { label: "Status" },
+          { label: "Total" },
+          { label: "Actions", align: "right" },
+        ]}
+        actions={<Button disabled>Add Order</Button>} // placeholder action
+      >
+        {Array.isArray(orderList) && orderList.length > 0 ? (
+          orderList.map((order) => (
+            <AdminOrderRow
+              key={order._id}
+              order={order}
+              onView={() => handleFetchOrderDetails(order._id)}
+            />
+          ))
+        ) : (
+          <tr>
+            <td colSpan={5} className="text-center py-6 text-muted-foreground">
+              No orders found
+            </td>
+          </tr>
+        )}
+      </AdminPanelTemplate>
+
+      {openDetailsDialog && orderDetails && (
+        <Dialog open={openDetailsDialog} onOpenChange={setOpenDetailsDialog}>
+          <AdminOrderDetailsView orderDetails={orderDetails} />
+        </Dialog>
+      )}
+    </>
   );
 }
 
