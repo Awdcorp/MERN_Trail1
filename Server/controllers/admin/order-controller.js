@@ -3,8 +3,9 @@ const Order = require("../../models/Order");
 const getAllOrdersOfAllUsers = async (req, res) => {
   try {
     const orders = await Order.find({});
-
+    console.log("📦 Admin getAllOrdersOfAllUsers fetched:", orders);
     if (!orders.length) {
+      console.log("⚠️ No orders found in admin fetch");
       return res.status(404).json({
         success: false,
         message: "No orders found!",
@@ -16,7 +17,7 @@ const getAllOrdersOfAllUsers = async (req, res) => {
       data: orders,
     });
   } catch (e) {
-    console.log(e);
+    console.log("❌ Error in getAllOrdersOfAllUsers:", e);
     res.status(500).json({
       success: false,
       message: "Some error occured!",

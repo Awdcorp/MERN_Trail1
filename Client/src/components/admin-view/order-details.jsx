@@ -42,7 +42,7 @@ function AdminOrderDetailsView({ orderDetails }) {
 
   return (
     <DialogContent className="sm:max-w-[600px]">
-      <div className="grid gap-6">
+      <div className="grid gap-6 overflow-y-auto max-h-[90vh]">
         {/* Order Info */}
         <div className="grid gap-2 p-4 border rounded-lg">
           <div className="flex justify-between">
@@ -52,14 +52,14 @@ function AdminOrderDetailsView({ orderDetails }) {
           <div className="flex justify-between">
             <span className="text-muted-foreground">Order Date</span>
             <span className="font-medium">
-              {typeof orderDetails?.orderDate === "string" && orderDetails.orderDate.includes("T")
-                ? orderDetails.orderDate.split("T")[0]
+              {typeof orderDetails?.order_date === "string" && orderDetails.order_date.includes("T")
+                ? orderDetails.order_date.split("T")[0]
                 : "—"}
             </span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Order Price</span>
-            <span className="font-medium">${orderDetails?.totalAmount}</span>
+            <span className="font-medium">{orderDetails?.total_amount}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Payment Method</span>
@@ -73,14 +73,14 @@ function AdminOrderDetailsView({ orderDetails }) {
             <span className="text-muted-foreground">Order Status</span>
             <Badge
               className={`py-1 px-3 ${
-                orderDetails?.orderStatus === "confirmed"
+                orderDetails?.order_status === "confirmed"
                   ? "bg-green-500"
-                  : orderDetails?.orderStatus === "rejected"
+                  : orderDetails?.order_status === "rejected"
                   ? "bg-red-600"
                   : "bg-black"
               }`}
             >
-              {orderDetails?.orderStatus}
+              {orderDetails?.order_status}
             </Badge>
           </div>
         </div>
@@ -89,7 +89,7 @@ function AdminOrderDetailsView({ orderDetails }) {
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Shipping Info</span>
           <div className="text-muted-foreground">
-            <div>{user?.userName || "—"}</div>
+            <div>{orderDetails?.customer_name || "—"}</div>
             <div>{orderDetails?.addressInfo?.address || "—"}</div>
             <div>{orderDetails?.addressInfo?.city || "—"}</div>
             <div>{orderDetails?.addressInfo?.pincode || "—"}</div>
@@ -102,12 +102,12 @@ function AdminOrderDetailsView({ orderDetails }) {
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Order Items</span>
           <ul className="divide-y text-sm">
-            {orderDetails?.cartItems && orderDetails?.cartItems.length > 0 ? (
-              orderDetails.cartItems.map((item, idx) => (
+            {orderDetails?.items && orderDetails?.items.length > 0 ? (
+              orderDetails.items.map((item, idx) => (
                 <li key={idx} className="py-2 flex justify-between">
                   <span>🛒 {item?.title || "—"}</span>
                   <span>x{item?.quantity ?? 0}</span>
-                  <span>${item?.price ?? 0}</span>
+                  <span>{item?.price ?? 0}</span>
                 </li>
               ))
             ) : (

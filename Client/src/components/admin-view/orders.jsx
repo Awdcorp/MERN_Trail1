@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Dialog } from "../ui/dialog";
-import AdminPanelTemplate from "../admin-view/AdminPanelTemplate";
-import AdminOrderDetailsView from "../admin-view/order-details";
-import AdminOrderRow from "../admin-view/AdminOrderRow";
+import AdminPanelTemplate from "./AdminPanelTemplate";
+import AdminOrderDetailsView from "./order-details";
+import AdminOrderRow from "./order-tile";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllOrdersForAdmin,
@@ -21,6 +21,7 @@ function AdminOrdersView() {
   }
 
   useEffect(() => {
+    dispatch(resetOrderDetails());
     dispatch(getAllOrdersForAdmin());
   }, [dispatch]);
 
