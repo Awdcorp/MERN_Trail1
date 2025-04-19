@@ -26,7 +26,9 @@ function AdminOrdersView() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (orderDetails !== null) setOpenDetailsDialog(true);
+    if (orderDetails !== null && !openDetailsDialog) {
+      setOpenDetailsDialog(true);
+    }
   }, [orderDetails]);
 
   return (
@@ -35,9 +37,11 @@ function AdminOrdersView() {
         title="All Orders"
         columns={[
           { label: "Order ID" },
-          { label: "Order Date" },
+          { label: "Customer" },
           { label: "Status" },
+          { label: "Payment" },
           { label: "Total" },
+          { label: "Date" },
           { label: "Actions", align: "right" },
         ]}
         actions={<Button disabled>Add Order</Button>}
@@ -52,7 +56,7 @@ function AdminOrdersView() {
           ))
         ) : (
           <tr>
-            <td colSpan={5} className="text-center py-6 text-muted-foreground">
+            <td colSpan={6} className="text-center py-6 text-muted-foreground">
               No orders found
             </td>
           </tr>

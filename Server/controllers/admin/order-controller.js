@@ -12,9 +12,22 @@ const getAllOrdersOfAllUsers = async (req, res) => {
       });
     }
 
+    const formatted = orders.map((order) => ({
+      _id: order._id,
+      wc_order_id: order.wc_order_id,
+      customer_name: order.customer_name,
+      cartItems: order.cartItems,
+      addressInfo: order.addressInfo,
+      order_status: order.order_status,
+      paymentMethod: order.paymentMethod,
+      paymentStatus: order.paymentStatus,
+      totalAmount: order.totalAmount,
+      orderDate: order.orderDate,
+    }));
+
     res.status(200).json({
       success: true,
-      data: orders,
+      data: formatted,
     });
   } catch (e) {
     console.log("❌ Error in getAllOrdersOfAllUsers:", e);
@@ -28,7 +41,6 @@ const getAllOrdersOfAllUsers = async (req, res) => {
 const getOrderDetailsForAdmin = async (req, res) => {
   try {
     const { id } = req.params;
-
     const order = await Order.findById(id);
 
     if (!order) {
@@ -40,10 +52,21 @@ const getOrderDetailsForAdmin = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      data: order,
+      data: {
+        _id: order._id,
+        wc_order_id: order.wc_order_id,
+        customer_name: order.customer_name,
+        cartItems: order.cartItems,
+        addressInfo: order.addressInfo,
+        order_status: order.order_status,
+        paymentMethod: order.paymentMethod,
+        paymentStatus: order.paymentStatus,
+        totalAmount: order.totalAmount,
+        orderDate: order.orderDate,
+      },
     });
   } catch (e) {
-    console.log(e);
+    console.log("❌ Error in getOrderDetailsForAdmin:", e);
     res.status(500).json({
       success: false,
       message: "Some error occured!",
@@ -54,25 +77,26 @@ const getOrderDetailsForAdmin = async (req, res) => {
 const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
-    const { orderStatus } = req.body;
-    console.log("🔄 Updating DB for order:", id, "=>", orderStatus);
-    const order = await Order.findById(id);
+    const { orderStatus, paymentMethod, paymentStatus } = req.body;
 
-    if (!order) {
-      return res.status(404).json({
-        success: false,
-        message: "Order not found!",
-      });
-    }
+    console.log("🔄 Updating DB for order:", id, {
+      order_status: orderStatus,
+      paymentMethod,
+      paymentStatus,
+    });
 
     const updated = await Order.findByIdAndUpdate(
       id,
-      { order_status: orderStatus },  // ✅ align with frontend and DB
-      { new: true }                   // ✅ return updated document
+      {
+        order_status: orderStatus,
+        paymentMethod,
+        paymentStatus,
+      },
+      { new: true }
     );
-    
 
     console.log("✅ Updated Order:", updated);
+
     res.status(200).json({
       success: true,
       message: "Order status is updated successfully!",

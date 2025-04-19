@@ -1,53 +1,49 @@
 import { useState } from "react";
 import CommonForm from "../common/form";
 import { DialogContent } from "../ui/dialog";
-import { Label } from "../ui/label";
-import { Separator } from "../ui/separator";
 import { Badge } from "../ui/badge";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllOrdersForAdmin,
-  getOrderDetailsForAdmin,
   updateOrderStatus,
+  orderDetailsUpdated,
 } from "@/store/admin/order-slice";
 import { useToast } from "../ui/use-toast";
 
 const initialFormData = {
   status: "",
+  paymentStatus: "",
+  paymentMethod: "",
 };
 
 function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const [formData, setFormData] = useState(initialFormData);
-  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { toast } = useToast();
 
   function handleUpdateStatus(event) {
     event.preventDefault();
-    const { status } = formData;
-  
+    const { status, paymentStatus, paymentMethod } = formData;
+
     dispatch(
-      updateOrderStatus({ id: orderDetails?._id, orderStatus: status })
+      updateOrderStatus({
+        id: orderDetails?._id,
+        orderStatus: status,
+        paymentStatus,
+        paymentMethod,
+      })
     ).then((data) => {
       if (data?.payload?.success) {
-        const updated = { ...orderDetails, order_status: status };
-        dispatch({
-          type: "adminOrderSlice/orderDetailsUpdated",
-          payload: updated,
-        });
-  
+        dispatch(orderDetailsUpdated(data.payload.data));
         dispatch(getAllOrdersForAdmin());
         setFormData(initialFormData);
+        setOpen(false);
         toast({
           title: data?.payload?.message,
         });
-        setOpen(false); // ✅ now closes the dialog
-        dispatch({ type: "adminOrderSlice/resetOrderDetails" });
       }
     });
   }
-  
-  
 
   return (
     <DialogContent className="sm:max-w-[600px]">
@@ -61,7 +57,8 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
           <div className="flex justify-between">
             <span className="text-muted-foreground">Order Date</span>
             <span className="font-medium">
-              {typeof orderDetails?.order_date === "string" && orderDetails.order_date.includes("T")
+              {typeof orderDetails?.order_date === "string" &&
+              orderDetails.order_date.includes("T")
                 ? orderDetails.order_date.split("T")[0]
                 : "—"}
             </span>
@@ -72,11 +69,15 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Payment Method</span>
-            <span className="font-medium">{orderDetails?.paymentMethod}</span>
+            <span className="font-medium">
+              {orderDetails?.paymentMethod || "—"}
+            </span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Payment Status</span>
-            <span className="font-medium">{orderDetails?.paymentStatus}</span>
+            <span className="font-medium">
+              {orderDetails?.paymentStatus || "—"}
+            </span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-muted-foreground">Order Status</span>
@@ -114,7 +115,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
             {orderDetails?.items && orderDetails?.items.length > 0 ? (
               orderDetails.items.map((item, idx) => (
                 <li key={idx} className="py-2 flex justify-between">
-                  <span>🛒 {item?.title || "—"}</span>
+                  <span>🛒 {item?.title || item?.product_name || "—"}</span>
                   <span>x{item?.quantity ?? 0}</span>
                   <span>{item?.price ?? 0}</span>
                 </li>
@@ -125,7 +126,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
           </ul>
         </div>
 
-        {/* Status Update Form */}
+        {/* Editable Form */}
         <div className="grid gap-2 p-4 border rounded-lg">
           <CommonForm
             formControls={[
@@ -139,6 +140,26 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
                   { id: "inShipping", label: "In Shipping" },
                   { id: "delivered", label: "Delivered" },
                   { id: "rejected", label: "Rejected" },
+                ],
+              },
+              {
+                label: "Payment Status",
+                name: "paymentStatus",
+                componentType: "select",
+                options: [
+                  { id: "paid", label: "Paid" },
+                  { id: "pending", label: "Pending" },
+                  { id: "failed", label: "Failed" },
+                ],
+              },
+              {
+                label: "Payment Method",
+                name: "paymentMethod",
+                componentType: "select",
+                options: [
+                  { id: "Cash on Delivery", label: "Cash on Delivery" },
+                  { id: "PayPal", label: "PayPal" },
+                  { id: "Card", label: "Card" },
                 ],
               },
             ]}

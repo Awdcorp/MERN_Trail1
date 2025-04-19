@@ -7,19 +7,15 @@ function AdminOrderRow({ order, onView }) {
   return (
     <tr className="border-b hover:bg-muted/20 transition-colors">
       <td className="p-3 text-sm text-foreground font-medium truncate max-w-[260px]">
-        {order?._id || "—"}
+        {order?.wc_order_id ? `#${order.wc_order_id}` : order?._id || "—"}
       </td>
 
-      {/* ✅ Order Date Fix */}
       <td className="p-3 text-sm text-foreground">
-        {typeof order?.order_date === "string" && order.order_date.includes("T")
-          ? order.order_date.split("T")[0]
-          : "—"}
+        {order?.customer_name || "—"}
       </td>
 
-      {/* ✅ Order Status Fix */}
-      <td className="p-3">
-        <Badge
+      <td className="p-3 text-sm text-foreground">
+      <Badge
           className={`text-xs font-normal px-2 py-1 rounded-full  ${
             order?.order_status === "confirmed"
               ? "bg-green-200 text-green-800"
@@ -32,9 +28,21 @@ function AdminOrderRow({ order, onView }) {
         </Badge>
       </td>
 
-      {/* ✅ Total Amount Fix */}
       <td className="p-3">
-        {order?.total_amount || "$0"}
+
+        {order?.paymentMethod || "—"}
+      </td>
+
+      <td className="p-3 text-sm text-foreground">
+        
+        {order?.totalAmount ? `AED ${order.totalAmount}` : "—"}
+      </td>
+
+      <td className="p-3">
+
+        {typeof order?.orderDate === "string" && order.orderDate.includes("T")
+          ? order.orderDate.split("T")[0]
+          : "—"}
       </td>
 
       <td className="p-3 text-right">
