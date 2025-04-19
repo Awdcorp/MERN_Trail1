@@ -1,8 +1,6 @@
 // imports
 import { useState, useEffect } from "react";
-import CommonForm from "../common/form";
 import { DialogContent } from "../ui/dialog";
-import { Badge } from "../ui/badge";
 import { useDispatch } from "react-redux";
 import {
   getAllOrdersForAdmin,
@@ -10,8 +8,8 @@ import {
   orderDetailsUpdated,
 } from "@/store/admin/order-slice";
 import { useToast } from "../ui/use-toast";
+import axios from "axios";
 
-// initial form state
 const initialFormData = {
   status: "",
   paymentStatus: "",
@@ -51,23 +49,33 @@ const PAYMENT_STATUS_OPTIONS = [
 function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const [formData, setFormData] = useState(initialFormData);
   const [formAddress, setFormAddress] = useState(initialAddressForm);
+  const [formProducts, setFormProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [newProductId, setNewProductId] = useState("");
+  const [newProductQty, setNewProductQty] = useState(1);
   const dispatch = useDispatch();
   const { toast } = useToast();
 
   useEffect(() => {
-    if (orderDetails?.addressInfo) {
+    if (orderDetails) {
       setFormAddress({
         customer_name: orderDetails.customer_name || "",
-        address: orderDetails.addressInfo.address || "",
-        city: orderDetails.addressInfo.city || "",
-        pincode: orderDetails.addressInfo.pincode || "",
-        phone: orderDetails.addressInfo.phone || "",
-        notes: orderDetails.addressInfo.notes || "",
+        address: orderDetails.addressInfo?.address || "",
+        city: orderDetails.addressInfo?.city || "",
+        pincode: orderDetails.addressInfo?.pincode || "",
+        phone: orderDetails.addressInfo?.phone || "",
+        notes: orderDetails.addressInfo?.notes || "",
       });
+      setFormProducts(orderDetails.cartItems || []);
     }
   }, [orderDetails]);
 
-  // update logic
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/get`).then((res) => {
+      if (res.data?.success) setAllProducts(res.data.data);
+    });
+  }, []);
+
   function handleUpdateStatus(event) {
     event.preventDefault();
     const { status, paymentStatus, paymentMethod } = formData;
@@ -79,6 +87,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         paymentMethod: paymentMethod || orderDetails?.paymentMethod,
         addressInfo: formAddress,
         customer_name: formAddress.customer_name,
+        cartItems: formProducts,
       })
     ).then((data) => {
       if (data?.payload?.success) {
@@ -93,6 +102,34 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
 
   function highlightIfChanged(original, selected) {
     return selected && selected !== original ? "border-yellow-400" : "";
+  }
+
+  function handleQuantityChange(idx, newQty) {
+    setFormProducts((prev) =>
+      prev.map((item, i) => (i === idx ? { ...item, quantity: parseInt(newQty) || 1 } : item))
+    );
+  }
+
+  function handleRemoveItem(idx) {
+    setFormProducts((prev) => prev.filter((_, i) => i !== idx));
+  }
+
+  function handleAddProduct() {
+    const selected = allProducts.find((p) => p._id === newProductId);
+    if (!selected) return;
+    if (formProducts.some((p) => p.productId === selected._id)) {
+      toast({ title: "Product already in list" });
+      return;
+    }
+    const newItem = {
+      productId: selected._id,
+      title: selected.title,
+      price: selected.price,
+      quantity: newProductQty,
+    };
+    setFormProducts((prev) => [...prev, newItem]);
+    setNewProductId("");
+    setNewProductQty(1);
   }
 
   return (
@@ -234,21 +271,64 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
           </div>
         </div>
 
-        {/* Order Items */}
+        {/* Editable Order Items */}
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Order Items</span>
+
+          <div className="flex items-center gap-2 mb-2">
+            <select
+              value={newProductId}
+              onChange={(e) => setNewProductId(e.target.value)}
+              className="border p-2 rounded text-sm flex-1 max-w-[300px] truncate"
+            >
+              <option value="">Select product</option>
+              {allProducts.map((p) => (
+                <option key={p._id} value={p._id}>
+                  {p.title} - AED {p.price}
+                </option>
+              ))}
+            </select>
+            <input
+              type="number"
+              min={1}
+              value={newProductQty}
+              onChange={(e) => setNewProductQty(parseInt(e.target.value))}
+              className="w-16 border px-2 py-1 rounded"
+            />
+            <button
+              type="button"
+              onClick={handleAddProduct}
+              className="bg-black text-white px-3 py-1 rounded"
+            >
+              Add
+            </button>
+          </div>
+
           <ul className="divide-y text-sm">
-            {orderDetails?.cartItems && orderDetails.cartItems.length > 0 ? (
-              orderDetails.cartItems.map((item, idx) => (
-                <li key={idx} className="flex justify-between py-2">
-                  <span>{item?.productId?.title || item?.title}</span>
-                  <span className="text-muted-foreground">
-                    x{item?.quantity} – AED {item?.price}
-                  </span>
+            {formProducts.length > 0 ? (
+              formProducts.map((item, idx) => (
+                <li key={idx} className="flex justify-between items-center py-2 gap-2">
+                  <div className="flex-1">
+                    <span>{item?.productId?.title || item?.title}</span>
+                    <div className="text-xs text-muted-foreground">AED {item?.price}</div>
+                  </div>
+                  <input
+                    type="number"
+                    min={1}
+                    value={item?.quantity}
+                    className="w-16 border px-2 py-1 rounded"
+                    onChange={(e) => handleQuantityChange(idx, e.target.value)}
+                  />
+                  <button
+                    onClick={() => handleRemoveItem(idx)}
+                    className="text-red-500 text-xs ml-2"
+                  >
+                    Remove
+                  </button>
                 </li>
               ))
             ) : (
-              <li className="py-2 text-muted-foreground">No items</li>
+              <li className="text-muted-foreground">No items</li>
             )}
           </ul>
         </div>

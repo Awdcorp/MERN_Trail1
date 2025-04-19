@@ -28,13 +28,14 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
 
 export const updateOrderStatus = createAsyncThunk(
   "/order/updateOrderStatus",
-  async ({ id, orderStatus, paymentStatus, paymentMethod, addressInfo, customer_name }) => {
+  async ({ id, orderStatus, paymentStatus, paymentMethod, addressInfo, customer_name, cartItems }) => {
     const payload = {
       ...(orderStatus && { orderStatus }),
       ...(paymentStatus && { paymentStatus }),
       ...(paymentMethod && { paymentMethod }),
       ...(addressInfo && Object.keys(addressInfo).length > 0 && { addressInfo }),
       ...(customer_name && customer_name.trim() && { customer_name }),
+      ...(cartItems && cartItems.length > 0 && { cartItems }),
     };
 
     console.log("🔄 Sending order update payload:", { id, ...payload });

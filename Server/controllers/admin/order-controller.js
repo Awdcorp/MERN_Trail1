@@ -91,7 +91,14 @@ const updateOrderStatus = async (req, res) => {
     if (paymentStatus) updateFields.paymentStatus = paymentStatus;
     if (addressInfo && Object.keys(addressInfo).length > 0) updateFields.addressInfo = addressInfo;
     if (typeof customer_name === 'string' && customer_name.trim()) updateFields.customer_name = customer_name;
-    if (cartItems) updateFields.cartItems = cartItems;
+    if (cartItems) {
+      updateFields.cartItems = cartItems;
+      // 🧮 Auto-calculate totalAmount
+      const total = cartItems.reduce((sum, item) => {
+        return sum + parseFloat(item.price || 0) * parseInt(item.quantity || 1);
+      }, 0);
+      updateFields.totalAmount = parseFloat(total.toFixed(2));
+    }
 
     console.log("🔄 Updating DB for order:", id, updateFields);
 
