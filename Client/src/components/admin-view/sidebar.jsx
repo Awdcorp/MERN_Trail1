@@ -3,6 +3,7 @@ import {
   ChartNoAxesCombined,
   LayoutDashboard,
   ShoppingBasket,
+  Images,
 } from "lucide-react";
 import { Fragment } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // ✅ include location
@@ -26,6 +27,12 @@ const adminSidebarMenuItems = [
     label: "Orders",
     path: "/admin/orders",
     icon: <BadgeCheck />,
+  },
+  {
+    id: "media",
+    label: "Media",
+    path: "/admin/media",
+    icon: <Images />,
   },
 ];
 
