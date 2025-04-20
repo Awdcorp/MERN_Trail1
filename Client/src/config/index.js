@@ -53,7 +53,8 @@ export const addProductFormElements = [
     label: "Description",
     name: "description",
     componentType: "textarea",
-    placeholder: "Enter product description",
+    placeholder: "Enter short HTML or plain text description",
+    className: "min-h-[140px] text-sm", // tailwind for bigger textarea
   },
   {
     label: "Categories",

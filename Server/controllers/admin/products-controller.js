@@ -87,43 +87,53 @@ const fetchAllProducts = async (req, res) => {
 const editProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const {
-      image,
-      images,
-      title,
-      description,
-      categories,
-      brand,
-      price,
-      salePrice,
-      totalStock,
-      averageReview,
-    } = req.body;
-    console.log("🖼️ Image received in request:", image);
+    const data = req.body;
+
+    console.log("🖼️ Image received in request:", data.image);
+    console.log("📦 Full incoming update payload:", data);
 
     let findProduct = await Product.findById(id);
-    if (!findProduct)
+    if (!findProduct) {
       return res.status(404).json({
         success: false,
         message: "Product not found",
       });
+    }
 
-    findProduct.title = title || findProduct.title;
-    findProduct.description = description || findProduct.description;
-    findProduct.categories = categories;
-    findProduct.brand = brand || findProduct.brand;
-    findProduct.price = price === "" ? 0 : price || findProduct.price;
-    findProduct.salePrice = salePrice === "" ? 0 : salePrice || findProduct.salePrice;
-    findProduct.totalStock = totalStock || findProduct.totalStock;
-    findProduct.images = Array.isArray(images) && images.length ? images : findProduct.images;
-    findProduct.averageReview = averageReview || findProduct.averageReview;
+    findProduct.title = data.title || findProduct.title;
+    findProduct.slug = data.slug || findProduct.slug;
+    findProduct.description = data.description || findProduct.description;
+    findProduct.shortDescription = data.shortDescription || findProduct.shortDescription;
+    findProduct.categories = data.categories || findProduct.categories;
+    findProduct.brand = data.brand || findProduct.brand;
+    findProduct.price = data.price ?? findProduct.price;
+    findProduct.salePrice = data.salePrice ?? findProduct.salePrice;
+    findProduct.totalStock = data.totalStock ?? findProduct.totalStock;
+    findProduct.weight = data.weight ?? findProduct.weight;
+    findProduct.sku = data.sku || findProduct.sku;
+    findProduct.tags = data.tags || findProduct.tags;
+    findProduct.images = Array.isArray(data.images) ? data.images : findProduct.images;
+    findProduct.variants = data.variants || findProduct.variants;
+    findProduct.attributes = data.attributes || findProduct.attributes;
+    findProduct.relatedProductIds = data.relatedProductIds || findProduct.relatedProductIds;
+    findProduct.upsellProductIds = data.upsellProductIds || findProduct.upsellProductIds;
+    findProduct.isActive = data.isActive ?? findProduct.isActive;
+    findProduct.isFeatured = data.isFeatured ?? findProduct.isFeatured;
+    findProduct.externalId = data.externalId || findProduct.externalId;
+    findProduct.averageReview = data.averageReview || findProduct.averageReview;
+    findProduct.meta = data.meta || findProduct.meta;
+
+    if (data.seo) {
+      findProduct.seo = {
+        metaTitle: data.seo.metaTitle || findProduct.seo?.metaTitle,
+        metaDescription: data.seo.metaDescription || findProduct.seo?.metaDescription,
+        focusKeyword: data.seo.focusKeyword || findProduct.seo?.focusKeyword,
+      };
+    }
 
     await findProduct.save();
     console.log("✅ Product updated:", findProduct);
-    res.status(200).json({
-      success: true,
-      data: findProduct,
-    });
+    res.status(200).json({ success: true, data: findProduct });
   } catch (e) {
     console.log("❌ Error updating product:", e);
     res.status(500).json({

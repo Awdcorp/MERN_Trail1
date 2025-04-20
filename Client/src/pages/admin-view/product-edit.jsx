@@ -10,6 +10,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { MultiSelect } from "@/components/ui/multiselect";
 import ImageMultiUpload from "@/components/admin-view/image-multi-upload";
 import { useToast } from "@/components/ui/use-toast";
+import { Pencil } from "lucide-react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 export default function AdminProductEdit() {
   const { id } = useParams();
@@ -18,6 +21,7 @@ export default function AdminProductEdit() {
 
   const [formData, setFormData] = useState(null);
   const [allCategories, setAllCategories] = useState([]);
+  const [editSEO, setEditSEO] = useState(false);
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
@@ -73,6 +77,27 @@ export default function AdminProductEdit() {
 
   const handleSubmit = async () => {
     try {
+      console.log("📦 FULL PRODUCT UPDATE PAYLOAD:");
+      console.log("🧾 Title:", formData.title);
+      console.log("📝 Slug:", formData.slug);
+      console.log("💬 Description:", formData.description);
+      console.log("🧠 Short Description:", formData.shortDescription);
+      console.log("🛠️ SKU:", formData.sku);
+      console.log("🧮 Price:", formData.price);
+      console.log("🏷️ Sale Price:", formData.salePrice);
+      console.log("📦 Stock:", formData.totalStock);
+      console.log("⚖️ Weight:", formData.weight);
+      console.log("🏷️ Brand:", formData.brand);
+      console.log("🏷️ Tags:", formData.tags);
+      console.log("🖼️ Images:", formData.images);
+      console.log("📂 Categories:", formData.categories);
+      console.log("📌 RelatedProductIds:", formData.relatedProductIds);
+      console.log("🎯 UpsellProductIds:", formData.upsellProductIds);
+      console.log("🌐 SEO Meta Title:", formData.seo?.metaTitle);
+      console.log("🌐 SEO Meta Description:", formData.seo?.metaDescription);
+      console.log("🌐 SEO Focus Keyword:", formData.seo?.focusKeyword);
+      console.log("✅ Final Payload:", formData);
+
       const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`, formData);
       if (res.data.success) {
         toast({ title: "✅ Product updated successfully", variant: "success" });
@@ -103,7 +128,7 @@ export default function AdminProductEdit() {
           </div>
           <div>
             <FieldLabel>Description</FieldLabel>
-            <Textarea value={formData.description || ""} onChange={e => handleChange("description", e.target.value)} />
+            <ReactQuill theme="snow" value={formData.description || ""} onChange={(value) => handleChange("description", value)} className="bg-white" />
           </div>
           <div>
             <FieldLabel>Short Description</FieldLabel>
@@ -143,19 +168,46 @@ export default function AdminProductEdit() {
             <FieldLabel>Tags (comma separated)</FieldLabel>
             <Textarea value={formData.tags?.join(", ") || ""} onChange={e => handleChange("tags", e.target.value.split(",").map(tag => tag.trim()).filter(Boolean))} />
           </div>
-          
-          <div>
-            <FieldLabel>Meta Title</FieldLabel>
-            <Textarea value={formData.seo.metaTitle || ""} onChange={e => handleNestedChange("seo", "metaTitle", e.target.value)} />
+
+          {/* 🔍 SEO Section */}
+          <div className="space-y-2 border rounded-lg p-4 shadow-sm bg-white">
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold">Search engine listing</h3>
+              <button className="text-sm text-blue-600 hover:underline inline-flex items-center" onClick={() => setEditSEO(!editSEO)}>
+                <Pencil className="w-4 h-4 mr-1" /> Edit
+              </button>
+            </div>
+            <div className="text-sm text-muted-foreground">
+              Preview:
+            </div>
+            <div className="mt-1 text-sm">
+              <p className="text-blue-600 underline">https://yourdomain.com/products/{formData.slug}</p>
+              <p className="font-semibold">{formData.seo.metaTitle}</p>
+              <p>{formData.seo.metaDescription}</p>
+            </div>
+
+            {editSEO && (
+              <div className="space-y-3 mt-4">
+                <div>
+                  <FieldLabel>Page Title</FieldLabel>
+                  <Input value={formData.seo.metaTitle || ""} onChange={e => handleNestedChange("seo", "metaTitle", e.target.value)} />
+                </div>
+                <div>
+                  <FieldLabel>Meta Description</FieldLabel>
+                  <Textarea value={formData.seo.metaDescription || ""} onChange={e => handleNestedChange("seo", "metaDescription", e.target.value)} />
+                </div>
+                <div>
+                  <FieldLabel>Focus Keyword</FieldLabel>
+                  <Input value={formData.seo.focusKeyword || ""} onChange={e => handleNestedChange("seo", "focusKeyword", e.target.value)} />
+                </div>
+                <div>
+                  <FieldLabel>URL Handle</FieldLabel>
+                  <Input value={formData.slug || ""} onChange={e => handleChange("slug", e.target.value)} />
+                </div>
+              </div>
+            )}
           </div>
-          <div>
-            <FieldLabel>Meta Description</FieldLabel>
-            <Textarea value={formData.seo.metaDescription || ""} onChange={e => handleNestedChange("seo", "metaDescription", e.target.value)} />
-          </div>
-          <div>
-            <FieldLabel>Focus Keyword</FieldLabel>
-            <Input value={formData.seo.focusKeyword || ""} onChange={e => handleNestedChange("seo", "focusKeyword", e.target.value)} />
-          </div>
+
           <div>
             <FieldLabel>Related Product IDs</FieldLabel>
             <Textarea value={formData.relatedProductIds?.join(", ") || ""} onChange={e => handleChange("relatedProductIds", e.target.value.split(",").map(Number).filter(Boolean))} />
