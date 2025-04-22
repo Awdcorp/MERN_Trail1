@@ -15,6 +15,8 @@ function ShoppingAccount() {
   const { user } = useSelector((state) => state.auth);
 
   const [tabValue, setTabValue] = useState("orders");
+  const [showEditProfile, setShowEditProfile] = useState(false);
+  const [showChangePassword, setShowChangePassword] = useState(false);
 
   const handleLogout = () => {
     dispatch(logoutUser());
@@ -50,7 +52,7 @@ function ShoppingAccount() {
         email: user.email,
       });
     }
-  }, [user])
+  }, [user]);
 
   const handleProfileUpdate = async () => {
     try {
@@ -63,7 +65,7 @@ function ShoppingAccount() {
       if (response.data.success) {
         toast({ title: "✅ Profile updated successfully" });
         dispatch(setUser(response.data.user));
-        setTabValue("profile"); 
+        setShowEditProfile(false);
       } else {
         toast({ variant: "destructive", title: response.data.message });
       }
@@ -124,40 +126,57 @@ function ShoppingAccount() {
               <TabsTrigger value="orders">Orders</TabsTrigger>
               <TabsTrigger value="address">Address</TabsTrigger>
               <TabsTrigger value="profile">Profile</TabsTrigger>
-              <TabsTrigger value="edit-profile">Edit Profile</TabsTrigger>
-              <TabsTrigger value="password">Change Password</TabsTrigger>
             </TabsList>
 
             <TabsContent value="orders">
               <ShoppingOrders />
             </TabsContent>
+
             <TabsContent value="address">
               <Address />
             </TabsContent>
+
             <TabsContent value="profile">
-              <div className="text-sm space-y-2">
+              <div className="text-sm space-y-2 mb-6">
                 <p><strong>Name:</strong> {user?.userName}</p>
                 <p><strong>Email:</strong> {user?.email}</p>
                 <p><strong>Role:</strong> {user?.role}</p>
               </div>
-            </TabsContent>
-            <TabsContent value="edit-profile">
-              <Form
-                formControls={editProfileFields}
-                formData={editFormData}
-                setFormData={setEditFormData}
-                onSubmit={handleProfileUpdate}
-                buttonText="Update Profile"
-              />
-            </TabsContent>
-            <TabsContent value="password">
-              <Form
-                formControls={changePasswordFields}
-                formData={passwordFormData}
-                setFormData={setPasswordFormData}
-                onSubmit={handleChangePassword}
-                buttonText="Change Password"
-              />
+
+              <div className="flex gap-4 mb-6">
+                <Button onClick={() => setShowEditProfile(!showEditProfile)}>
+                  {showEditProfile ? "Cancel Edit" : "Edit Profile"}
+                </Button>
+                <Button onClick={() => setShowChangePassword(!showChangePassword)}>
+                  {showChangePassword ? "Cancel Password" : "Change Password"}
+                </Button>
+              </div>
+
+              {showEditProfile && (
+                <div className="border-t pt-6 mt-6">
+                  <h3 className="text-base font-medium mb-4">Edit Profile</h3>
+                  <Form
+                    formControls={editProfileFields}
+                    formData={editFormData}
+                    setFormData={setEditFormData}
+                    onSubmit={handleProfileUpdate}
+                    buttonText="Update Profile"
+                  />
+                </div>
+              )}
+
+              {showChangePassword && (
+                <div className="border-t pt-6 mt-6">
+                  <h3 className="text-base font-medium mb-4">Change Password</h3>
+                  <Form
+                    formControls={changePasswordFields}
+                    formData={passwordFormData}
+                    setFormData={setPasswordFormData}
+                    onSubmit={handleChangePassword}
+                    buttonText="Change Password"
+                  />
+                </div>
+              )}
             </TabsContent>
           </Tabs>
         </div>
