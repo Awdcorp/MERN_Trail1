@@ -65,6 +65,7 @@ function ShoppingAccount() {
       if (response.data.success) {
         toast({ title: "✅ Profile updated successfully" });
         dispatch(setUser(response.data.user));
+        localStorage.removeItem("guest_id"); // ✅ Clear old guest cart session after user update
         setShowEditProfile(false);
       } else {
         toast({ variant: "destructive", title: response.data.message });

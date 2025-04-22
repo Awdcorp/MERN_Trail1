@@ -16,6 +16,9 @@ export const registerUser = createAsyncThunk(
       formData,
       {
         withCredentials: true,
+        headers: {
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        }
       }
     );
 

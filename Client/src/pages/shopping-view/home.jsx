@@ -55,18 +55,19 @@ function ShoppingHome() {
       return;
     }
     
-    const guestId = user?.id ? null : getGuestId();
-
+    const isGuest = !user?.id;
+    const guestId = isGuest ? getGuestId() : null;
+    
     dispatch(
       addToCart({
-        userId: user?.id || null,
+        userId: !isGuest ? user.id : null,
         guestId,
         productId,
         quantity: 1,
       })
-    ).then((data) => {
-      if (data?.payload?.success) {
-        dispatch(fetchCartItems(user?.id || guestId));
+    ).then((res) => {
+      if (res?.payload?.success) {
+        dispatch(fetchCartItems(isGuest ? guestId : user.id));
         toast({
           title: "Product is added to cart",
         });

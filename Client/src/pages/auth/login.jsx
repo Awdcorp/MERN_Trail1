@@ -5,6 +5,9 @@ import { loginUser } from "@/store/auth-slice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getGuestId } from "@/lib/guest-id";
+import { migrateGuestCartToUser, fetchCartItems } from "@/store/shop/cart-slice";
 
 const initialState = {
   email: "",
@@ -15,21 +18,38 @@ function AuthLogin() {
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   function onSubmit(event) {
     event.preventDefault();
-
-    dispatch(loginUser(formData)).then((data) => {
+  
+    dispatch(loginUser(formData)).then(async (data) => {
       if (data?.payload?.success) {
-        toast({
-          title: data?.payload?.message,
-        });
-              // ✅ Check if user is admin
-      if (data.payload.user?.role === "admin") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/shop/home");
-      }
+        toast({ title: data.payload.message });
+  
+        const guestId = getGuestId();
+        const userId = data.payload.user?.id;
+        console.log("🧾 [Login] guestId from localStorage:", guestId);
+        console.log("👤 [Login] userId from login payload:", userId);
+
+        if (guestId && userId) {
+          try {
+            console.log("🧠 Attempting migration with", { guestId, userId });
+            await dispatch(migrateGuestCartToUser({ guestId, userId }));
+            localStorage.removeItem("guest_id");
+            toast({ title: "✅ Guest cart successfully merged!" });
+            await dispatch(fetchCartItems(userId));         
+          } catch (err) {
+            console.error("❌ Cart migration failed:", err);
+          }
+        }
+  
+        // ✅ Check if user is admin
+        if (data.payload.user?.role === "admin") {
+          navigate("/admin/dashboard");
+        } else {
+          navigate("/shop/home");
+        }
       } else {
         toast({
           title: data?.payload?.message,
@@ -38,6 +58,7 @@ function AuthLogin() {
       }
     });
   }
+  
 
   return (
     <div className="mx-auto w-full max-w-md space-y-6">

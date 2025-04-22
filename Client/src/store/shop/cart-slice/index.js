@@ -25,6 +25,8 @@ export const addToCart = createAsyncThunk(
 export const fetchCartItems = createAsyncThunk(
   "cart/fetchCartItems",
   async (id) => {
+    if (!id) throw new Error("🛑 Missing ID in fetchCartItems");
+    console.log("🛒 [Redux] fetchCartItems called with ID:", id);
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL}/api/shop/cart/get/${id}`
     );
@@ -59,6 +61,16 @@ export const updateCartQuantity = createAsyncThunk(
   }
 );
 
+export const migrateGuestCartToUser = createAsyncThunk(
+  "cart/migrateGuestCartToUser",
+  async ({ guestId, userId }) => {
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/shop/cart/migrate-to-user`,
+      { guestId, userId }
+    );
+    return response.data;
+  }
+);
 const shoppingCartSlice = createSlice({
   name: "shoppingCart",
   initialState,

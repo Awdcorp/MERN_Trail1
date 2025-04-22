@@ -25,6 +25,7 @@ import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from "./pages/shopping-view/search";
 import CategoryListingPage from "@/pages/shopping-view/category";
 import ProductPage from "@/pages/shopping-view/product";
+import { fetchCartItems } from "./store/shop/cart-slice";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -34,10 +35,19 @@ function App() {
   const location = useLocation(); // ✅ Get current route
 
   useEffect(() => {
-    if (!user) {
-      dispatch(checkAuth());
-    }
-  }, [dispatch, user]);  
+    dispatch(checkAuth()).then((res) => {
+      const userId = res?.payload?.user?.id;
+      const guestId = localStorage.getItem("guest_id");
+  
+      // 💡 Only fetch cart AFTER userId is known
+      const cartId = userId || guestId;
+      if (cartId) {
+        console.log("🛒 [App.jsx] Post-auth cart fetch using:", cartId);
+        dispatch(fetchCartItems(cartId));
+      }
+    });
+  }, []);
+  
 
   console.log(isLoading, user);
 

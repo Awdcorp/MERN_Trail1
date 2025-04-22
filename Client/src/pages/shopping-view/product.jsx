@@ -69,18 +69,19 @@ export default function ProductPage() {
   }, [slug]);
 
   function handleAddToCart(productId, stock) {
-    const guestId = user?.id ? null : getGuestId();
-
+    const isGuest = !user?.id;
+    const guestId = isGuest ? getGuestId() : null;
+    
     dispatch(
       addToCart({
-        userId: user?.id || null,
+        userId: !isGuest ? user.id : null,
         guestId,
         productId,
         quantity: 1,
       })
     ).then((res) => {
       if (res?.payload?.success) {
-        dispatch(fetchCartItems(user?.id || guestId));
+        dispatch(fetchCartItems(isGuest ? guestId : user.id));
         toast({
           title: "Added to Cart!",
           description: "The item was successfully added.",
