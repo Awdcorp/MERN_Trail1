@@ -1,14 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Menu,
-  X,
-  Search,
-  ShoppingCart,
-  User,
-  MapPin,
-  Heart,
-  ChevronDown,
-} from "lucide-react";
+import { Menu, X, Search, ShoppingCart, User, MapPin, Heart, ChevronDown, } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems } from "@/store/shop/cart-slice";
@@ -135,7 +126,15 @@ export default function Header() {
               <Search className="absolute right-3 top-2.5 h-4 w-4 text-[#463970]" />
             </div>
             <div className="flex gap-6 items-center">
-              <User className="h-5 w-5 text-[#463970]" />
+            {user ? (
+              <Link to={user.role === "admin" ? "/admin/dashboard" : "/shop/account"}>
+                <User className="h-5 w-5 text-[#463970]" />
+              </Link>
+            ) : (
+              <Link to="/auth/login">
+                <User className="h-5 w-5 text-[#463970]" />
+              </Link>
+            )}
               <button onClick={() => setOpenCartSheet(true)} className="relative">
         <ShoppingCart className="h-5 w-5 text-[#463970]" />
         {cartCount > 0 && (

@@ -160,7 +160,10 @@ function CommonForm({
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={(e) => {
+      e.preventDefault();       // ✅ prevent reload
+      onSubmit(e);               // ✅ call handler
+    }}>
       <div className="flex flex-col gap-3">
         {formControls.map((controlItem) => (
           <div className="grid w-full gap-1.5" key={controlItem.name}>

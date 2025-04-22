@@ -34,25 +34,10 @@ function App() {
   const location = useLocation(); // ✅ Get current route
 
   useEffect(() => {
-    const path = location.pathname;
-    const shouldCheck =
-      path.startsWith("/admin") || path.includes("/account") || path.includes("/checkout");
-    if (shouldCheck) {
+    if (!user) {
       dispatch(checkAuth());
     }
-  }, [dispatch, location.pathname]);
-
-  const path = location.pathname;
-  const shouldCheck =
-    path.startsWith("/admin") || path.includes("/account") || path.includes("/checkout");
-
-  if (isLoading && shouldCheck) {
-    return (
-      <div className="min-h-screen w-full flex items-center justify-center bg-white">
-        <div className="animate-pulse text-gray-500 text-lg">Loading...</div>
-      </div>
-    );
-  }
+  }, [dispatch, user]);  
 
   console.log(isLoading, user);
 
