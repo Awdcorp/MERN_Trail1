@@ -1,39 +1,44 @@
+// Order.js
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
-  wc_order_id: Number,                    // ✅ WooCommerce ID
-  customer_name: String,                  // ✅ billing.first_name + last_name
-  userId: String,                         // for local orders
-  cartId: String,                         // for local guest/user carts
+  wc_order_id: {
+    type: Number,
+    unique: true,
+    required: true,
+  },
+  customer_name: String,
+  userId: String,
+  cartId: String,
 
-  cartItems: [                            // ✅ from line_items
+  cartItems: [
     {
-      productId: String,                  // optional (can use Woo product_id)
+      productId: String,
       title: String,
-      image: String,                      // optional, from product.image.src
+      image: String,
       price: String,
       quantity: Number,
     },
   ],
 
   addressInfo: {
-    addressId: String,                    // only for internal users
-    address: String,                      // ✅ billing.address_1
-    city: String,                         // ✅ billing.city
-    pincode: String,                      // optional
-    phone: String,                        // ✅ billing.phone
-    notes: String,                        // ✅ customer_note
+    addressId: String,
+    address: String,
+    city: String,
+    pincode: String,
+    phone: String,
+    notes: String,
   },
 
-  order_status: String,                   // ✅ Woo status (pending, processing, completed...)
-  paymentMethod: String,                  // ✅ payment_method_title
-  paymentStatus: String,                  // ✅ derived from status ('paid', 'pending')
-  totalAmount: Number,                    // ✅ parseFloat(order.total)
+  order_status: String,
+  paymentMethod: String,
+  paymentStatus: String,
+  totalAmount: Number,
 
-  orderDate: Date,                        // ✅ new Date(order.date_created)
-  orderUpdateDate: Date,                  // optional (from date_modified)
-  paymentId: String,                      // optional
-  payerId: String,                        // optional
+  orderDate: Date,
+  orderUpdateDate: Date,
+  paymentId: String,
+  payerId: String,
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

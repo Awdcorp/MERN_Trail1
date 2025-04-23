@@ -11,6 +11,7 @@ import {
 } from "@/store/shop/address-slice";
 import AddressCard from "./address-card";
 import { useToast } from "../ui/use-toast";
+import { getGuestId } from "@/lib/guest-id";
 
 const initialAddressFormData = {
   address: "",
@@ -28,6 +29,10 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
   const { addressList } = useSelector((state) => state.shopAddress);
   const { toast } = useToast();
 
+  // Determine owner ID for both users and guests
+  const ownerId = user?.id || getGuestId();
+
+  // Add or edit address
   function handleManageAddress(event) {
     event.preventDefault();
 
@@ -37,94 +42,88 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
         title: "You can add max 3 addresses",
         variant: "destructive",
       });
-
       return;
     }
 
-    currentEditedId !== null
-      ? dispatch(
-          editaAddress({
-            userId: user?.id,
-            addressId: currentEditedId,
-            formData,
-          })
-        ).then((data) => {
-          if (data?.payload?.success) {
-            dispatch(fetchAllAddresses(user?.id));
-            setCurrentEditedId(null);
-            setFormData(initialAddressFormData);
-            toast({
-              title: "Address updated successfully",
-            });
-          }
+    if (currentEditedId !== null) {
+      dispatch(
+        editaAddress({
+          userId: ownerId,
+          addressId: currentEditedId,
+          formData,
         })
-      : dispatch(
-          addNewAddress({
-            ...formData,
-            userId: user?.id,
-          })
-        ).then((data) => {
-          if (data?.payload?.success) {
-            dispatch(fetchAllAddresses(user?.id));
-            setFormData(initialAddressFormData);
-            toast({
-              title: "Address added successfully",
-            });
-          }
-        });
+      ).then((data) => {
+        if (data?.payload?.success) {
+          dispatch(fetchAllAddresses(ownerId));
+          setCurrentEditedId(null);
+          setFormData(initialAddressFormData);
+          toast({ title: "Address updated successfully" });
+        }
+      });
+    } else {
+      dispatch(
+        addNewAddress({
+          ...formData,
+          userId: user?.id || null,
+          guestId: user?.id ? null : ownerId,
+        })
+      ).then((data) => {
+        if (data?.payload?.success) {
+          dispatch(fetchAllAddresses(ownerId));
+          setFormData(initialAddressFormData);
+          toast({ title: "Address added successfully" });
+        }
+      });
+    }
   }
 
-  function handleDeleteAddress(getCurrentAddress) {
+  // Delete address
+  function handleDeleteAddress(addressItem) {
     dispatch(
-      deleteAddress({ userId: user?.id, addressId: getCurrentAddress._id })
+      deleteAddress({ userId: ownerId, addressId: addressItem._id })
     ).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchAllAddresses(user?.id));
-        toast({
-          title: "Address deleted successfully",
-        });
+        dispatch(fetchAllAddresses(ownerId));
+        toast({ title: "Address deleted successfully" });
       }
     });
   }
 
-  function handleEditAddress(getCuurentAddress) {
-    setCurrentEditedId(getCuurentAddress?._id);
+  // Prefill form for editing
+  function handleEditAddress(addressItem) {
+    setCurrentEditedId(addressItem._id);
     setFormData({
-      ...formData,
-      address: getCuurentAddress?.address,
-      city: getCuurentAddress?.city,
-      phone: getCuurentAddress?.phone,
-      pincode: getCuurentAddress?.pincode,
-      notes: getCuurentAddress?.notes,
+      address: addressItem.address,
+      city: addressItem.city,
+      phone: addressItem.phone,
+      pincode: addressItem.pincode,
+      notes: addressItem.notes,
     });
   }
 
   function isFormValid() {
-    return Object.keys(formData)
-      .map((key) => formData[key].trim() !== "")
-      .every((item) => item);
+    return Object.values(formData).every((val) => val.trim() !== "");
   }
 
+  // Fetch addresses for owner on mount or when ownerId changes
   useEffect(() => {
-    dispatch(fetchAllAddresses(user?.id));
-  }, [dispatch]);
-
-  console.log(addressList, "addressList");
+    dispatch(fetchAllAddresses(ownerId));
+  }, [dispatch, ownerId]);
 
   return (
     <Card>
-      <div className="mb-5 p-3 grid grid-cols-1 sm:grid-cols-2  gap-2">
-        {addressList && addressList.length > 0
-          ? addressList.map((singleAddressItem) => (
-              <AddressCard
-                selectedId={selectedId}
-                handleDeleteAddress={handleDeleteAddress}
-                addressInfo={singleAddressItem}
-                handleEditAddress={handleEditAddress}
-                setCurrentSelectedAddress={setCurrentSelectedAddress}
-              />
-            ))
-          : null}
+      <div className="mb-5 p-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {addressList.length > 0 &&
+          addressList.map((singleAddressItem) => (
+            <AddressCard
+              key={singleAddressItem._id}
+              selectedId={selectedId}
+              handleDeleteAddress={handleDeleteAddress}
+              addressInfo={singleAddressItem}
+              handleEditAddress={handleEditAddress}
+              setCurrentSelectedAddress={setCurrentSelectedAddress}
+            />
+          ))}
       </div>
       <CardHeader>
         <CardTitle>

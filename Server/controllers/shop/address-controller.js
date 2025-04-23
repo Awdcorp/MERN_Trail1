@@ -1,136 +1,83 @@
+// controllers/shop/address-controller.js
 const Address = require("../../models/Address");
 
+// POST /api/shop/address/add
 const addAddress = async (req, res) => {
   try {
-    const { userId, address, city, pincode, phone, notes } = req.body;
-
-    if (!userId || !address || !city || !pincode || !phone || !notes) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid data provided!",
-      });
+    const { userId, guestId, address, city, pincode, phone, notes } = req.body;
+    if (!(userId || guestId) || !address || !city || !pincode || !phone || !notes) {
+      return res.status(400).json({ success: false, message: "Invalid data provided!" });
     }
-
-    const newlyCreatedAddress = new Address({
-      userId,
-      address,
-      city,
-      pincode,
-      notes,
-      phone,
-    });
-
+    const newlyCreatedAddress = new Address({ userId: userId || null, guestId: guestId || null, address, city, pincode, notes, phone });
     await newlyCreatedAddress.save();
-
-    res.status(201).json({
-      success: true,
-      data: newlyCreatedAddress,
-    });
+    return res.status(201).json({ success: true, data: newlyCreatedAddress });
   } catch (e) {
-    console.log(e);
-    res.status(500).json({
-      success: false,
-      message: "Error",
-    });
+    console.error("❌ addAddress error:", e);
+    return res.status(500).json({ success: false, message: "Error adding address" });
   }
 };
 
+// GET /api/shop/address/get/:userId (ownerId may be userId or guestId)
 const fetchAllAddress = async (req, res) => {
   try {
-    const { userId } = req.params;
-    if (!userId) {
-      return res.status(400).json({
-        success: false,
-        message: "User id is required!",
-      });
+    const ownerId = req.params.userId;
+    if (!ownerId) {
+      return res.status(400).json({ success: false, message: "Owner id is required!" });
     }
-
-    const addressList = await Address.find({ userId });
-
-    res.status(200).json({
-      success: true,
-      data: addressList,
-    });
+    const addressList = await Address.find({ $or: [{ userId: ownerId }, { guestId: ownerId }] });
+    return res.status(200).json({ success: true, data: addressList });
   } catch (e) {
-    console.log(e);
-    res.status(500).json({
-      success: false,
-      message: "Error",
-    });
+    console.error("❌ fetchAllAddress error:", e);
+    return res.status(500).json({ success: false, message: "Error fetching addresses" });
   }
 };
 
+// PUT /api/shop/address/update/:userId/:addressId
 const editAddress = async (req, res) => {
   try {
-    const { userId, addressId } = req.params;
+    const ownerId = req.params.userId;
+    const addressId = req.params.addressId;
     const formData = req.body;
-
-    if (!userId || !addressId) {
-      return res.status(400).json({
-        success: false,
-        message: "User and address id is required!",
-      });
+    if (!ownerId || !addressId) {
+      return res.status(400).json({ success: false, message: "Owner and address id are required!" });
     }
-
-    const address = await Address.findOneAndUpdate(
-      {
-        _id: addressId,
-        userId,
-      },
+    const updated = await Address.findOneAndUpdate(
+      { _id: addressId, $or: [{ userId: ownerId }, { guestId: ownerId }] },
       formData,
       { new: true }
     );
-
-    if (!address) {
-      return res.status(404).json({
-        success: false,
-        message: "Address not found",
-      });
+    if (!updated) {
+      return res.status(404).json({ success: false, message: "Address not found!" });
     }
-
-    res.status(200).json({
-      success: true,
-      data: address,
-    });
+    return res.status(200).json({ success: true, data: updated });
   } catch (e) {
-    console.log(e);
-    res.status(500).json({
-      success: false,
-      message: "Error",
-    });
+    console.error("❌ editAddress error:", e);
+    return res.status(500).json({ success: false, message: "Error editing address" });
   }
 };
 
+// DELETE /api/shop/address/delete/:userId/:addressId
 const deleteAddress = async (req, res) => {
   try {
-    const { userId, addressId } = req.params;
-    if (!userId || !addressId) {
-      return res.status(400).json({
-        success: false,
-        message: "User and address id is required!",
-      });
+    const ownerId = req.params.userId;
+    const addressId = req.params.addressId;
+    if (!ownerId || !addressId) {
+      return res.status(400).json({ success: false, message: "Owner and address id are required!" });
     }
-
-    const address = await Address.findOneAndDelete({ _id: addressId, userId });
-
-    if (!address) {
-      return res.status(404).json({
-        success: false,
-        message: "Address not found",
-      });
+    const deleted = await Address.findOneAndDelete({ _id: addressId, $or: [{ userId: ownerId }, { guestId: ownerId }] });
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Address not found!" });
     }
-
-    res.status(200).json({
-      success: true,
-      message: "Address deleted successfully",
-    });
+    return res.status(200).json({ success: true, message: "Address deleted!" });
   } catch (e) {
-    console.log(e);
-    res.status(500).json({
-      success: false,
-      message: "Error",
-    });
+    console.error("❌ deleteAddress error:", e);
+    return res.status(500).json({ success: false, message: "Error deleting address" });
   }
 };
 
-module.exports = { addAddress, editAddress, fetchAllAddress, deleteAddress };
+module.exports = {
+  addAddress,
+  fetchAllAddress,
+  editAddress,
+  deleteAddress,
+};

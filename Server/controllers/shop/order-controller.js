@@ -2,6 +2,7 @@ const paypal = require("../../helpers/paypal");
 const Order = require("../../models/Order");
 const Cart = require("../../models/Cart");
 const Product = require("../../models/Product");
+const getNextOrderId = require("../../helpers/getNextOrderId");
 
 const createOrder = async (req, res) => {
   try {
@@ -12,7 +13,6 @@ const createOrder = async (req, res) => {
       orderStatus,
       paymentMethod,
       paymentStatus,
-      totalAmount,
       orderDate,
       orderUpdateDate,
       paymentId,
@@ -20,14 +20,28 @@ const createOrder = async (req, res) => {
       cartId,
     } = req.body;
 
+    // ✅ Validate & calculate accurate total from cartItems
+    if (!Array.isArray(cartItems) || cartItems.length === 0) {
+      return res.status(400).json({ success: false, message: "Cart is empty" });
+    }
+
+    const calculatedTotal = cartItems.reduce((sum, item) => {
+      if (!item.price || !item.quantity || !item.title) {
+        throw new Error("Missing price/quantity/title in cartItems");
+      }
+      return sum + item.price * item.quantity;
+    }, 0).toFixed(2);
+
+    const wc_order_id = await getNextOrderId();
+
     const create_payment_json = {
       intent: "sale",
       payer: {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: '${process.env.CLIENT_BASE_URL}/shop/paypal-return',
-        cancel_url: '${process.env.CLIENT_BASE_URL}/shop/paypal-cancel',
+        return_url: `${process.env.CLIENT_BASE_URL}/shop/paypal-return`,
+        cancel_url: `${process.env.CLIENT_BASE_URL}/shop/paypal-cancel`,
       },
       transactions: [
         {
@@ -42,23 +56,27 @@ const createOrder = async (req, res) => {
           },
           amount: {
             currency: "USD",
-            total: totalAmount.toFixed(2),
+            total: calculatedTotal,
           },
-          description: "description",
+          description: "Purchase from PartyWorld",
         },
       ],
     };
 
+    console.log("🧾 PayPal Payload:", JSON.stringify(create_payment_json, null, 2));
+
     paypal.payment.create(create_payment_json, async (error, paymentInfo) => {
       if (error) {
-        console.log(error);
+        console.error("❌ PayPal Error:", error.response || error);
 
-        return res.status(500).json({
+        return res.status(400).json({
           success: false,
-          message: "Error while creating paypal payment",
+          message: "PayPal VALIDATION_ERROR",
+          details: error?.response?.details || [],
         });
       } else {
         const newlyCreatedOrder = new Order({
+          wc_order_id,
           userId,
           cartId,
           cartItems,
@@ -66,7 +84,7 @@ const createOrder = async (req, res) => {
           orderStatus,
           paymentMethod,
           paymentStatus,
-          totalAmount,
+          totalAmount: parseFloat(calculatedTotal),
           orderDate,
           orderUpdateDate,
           paymentId,
@@ -79,18 +97,19 @@ const createOrder = async (req, res) => {
           (link) => link.rel === "approval_url"
         ).href;
 
-        res.status(201).json({
+        return res.status(201).json({
           success: true,
           approvalURL,
           orderId: newlyCreatedOrder._id,
         });
       }
     });
+
   } catch (e) {
-    console.log(e);
-    res.status(500).json({
+    console.error("❌ createOrder internal error:", e);
+    return res.status(500).json({
       success: false,
-      message: "Some error occured!",
+      message: "Server error during order creation",
     });
   }
 };
@@ -99,50 +118,51 @@ const capturePayment = async (req, res) => {
   try {
     const { paymentId, payerId, orderId } = req.body;
 
-    let order = await Order.findById(orderId);
+    if (!paymentId || !payerId || !orderId) {
+      return res.status(400).json({ success: false, message: "Missing required fields" });
+    }
 
+    let order = await Order.findById(orderId);
     if (!order) {
-      return res.status(404).json({
-        success: false,
-        message: "Order can not be found",
+      return res.status(404).json({ success: false, message: "Order not found" });
+    }
+
+    if (order.paymentStatus === "paid") {
+      return res.status(200).json({
+        success: true,
+        message: "Payment already captured",
+        orderId: order._id,
       });
     }
 
-    order.paymentStatus = "paid";
-    order.orderStatus = "confirmed";
-    order.paymentId = paymentId;
-    order.payerId = payerId;
-
-    for (let item of order.cartItems) {
-      let product = await Product.findById(item.productId);
-
-      if (!product) {
-        return res.status(404).json({
+    paypal.payment.execute(paymentId, { payer_id: payerId }, async (error, paymentInfo) => {
+      if (error) {
+        console.error("❌ PayPal execute failed:", error.response || error);
+        return res.status(400).json({
           success: false,
-          message: `Not enough stock for this product ${product.title}`,
+          message: "Failed to capture PayPal payment",
+          details: error.response?.details || [],
         });
       }
 
-      product.totalStock -= item.quantity;
+      order.paymentStatus = "paid";
+      order.orderStatus = "confirmed";
+      order.paymentId = paymentId;
+      order.payerId = payerId;
 
-      await product.save();
-    }
+      await order.save();
 
-    const getCartId = order.cartId;
-    await Cart.findByIdAndDelete(getCartId);
-
-    await order.save();
-
-    res.status(200).json({
-      success: true,
-      message: "Order confirmed",
-      data: order,
+      return res.status(200).json({
+        success: true,
+        message: "Payment captured successfully",
+        orderId: order._id,
+      });
     });
-  } catch (e) {
-    console.log(e);
-    res.status(500).json({
+  } catch (err) {
+    console.error("❌ capturePayment server error:", err);
+    return res.status(500).json({
       success: false,
-      message: "Some error occured!",
+      message: "Internal server error",
     });
   }
 };

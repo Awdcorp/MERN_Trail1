@@ -14,13 +14,25 @@ function PaypalReturnPage() {
   useEffect(() => {
     if (paymentId && payerId) {
       const orderId = JSON.parse(sessionStorage.getItem("currentOrderId"));
-
-      dispatch(capturePayment({ paymentId, payerId, orderId })).then((data) => {
+      if (!orderId) {
+        alert("⚠️ Order session expired. Please try again.");
+        window.location.href = "/cart";
+      }
+      
+      dispatch(capturePayment({ paymentId, payerId, orderId }))
+      .then((data) => {
         if (data?.payload?.success) {
           sessionStorage.removeItem("currentOrderId");
           window.location.href = "/shop/payment-success";
+        } else {
+          alert("❌ Payment failed. Please try again.");
+          window.location.href = "/cart";
         }
-      });
+      })
+      .catch(() => {
+        alert("❌ Server error while capturing payment.");
+        window.location.href = "/cart";
+      });    
     }
   }, [paymentId, payerId, dispatch]);
 
