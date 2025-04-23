@@ -13,7 +13,7 @@ import {
 import ShoppingOrderDetailsView from "./order-details";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getAllOrdersByUserId,
+  getAllOrdersByUser,
   getOrderDetails,
   resetOrderDetails,
 } from "@/store/shop/order-slice";
@@ -30,7 +30,7 @@ function ShoppingOrders() {
   }
 
   useEffect(() => {
-    dispatch(getAllOrdersByUserId(user?.id));
+    dispatch(getAllOrdersByUser(user?.id));
   }, [dispatch]);
 
   useEffect(() => {

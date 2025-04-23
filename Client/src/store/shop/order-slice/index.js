@@ -37,13 +37,12 @@ export const capturePayment = createAsyncThunk(
   }
 );
 
-export const getAllOrdersByUserId = createAsyncThunk(
-  "/order/getAllOrdersByUserId",
+export const getAllOrdersByUser = createAsyncThunk(
+  "/order/getAllOrdersByUser",
   async (userId) => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/shop/order/list/${userId}`
+      `${import.meta.env.VITE_API_URL}/api/shop/order/getAllOrdersByUser/${userId}`
     );
-
     return response.data;
   }
 );
@@ -86,14 +85,14 @@ const shoppingOrderSlice = createSlice({
         state.approvalURL = null;
         state.orderId = null;
       })
-      .addCase(getAllOrdersByUserId.pending, (state) => {
+      .addCase(getAllOrdersByUser.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getAllOrdersByUserId.fulfilled, (state, action) => {
+      .addCase(getAllOrdersByUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.orderList = action.payload.data;
       })
-      .addCase(getAllOrdersByUserId.rejected, (state) => {
+      .addCase(getAllOrdersByUser.rejected, (state) => {
         state.isLoading = false;
         state.orderList = [];
       })
