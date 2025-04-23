@@ -9,6 +9,7 @@ const OrderSchema = new mongoose.Schema({
   },
   customer_name: String,
   userId: String,
+  guestId: String,
   cartId: String,
 
   cartItems: [

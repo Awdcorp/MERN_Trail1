@@ -48,14 +48,16 @@ function ShoppingCheckout() {
       return;
     }
 
+    const guestId = getGuestId();
+
     const orderData = {
-      userId: user?.id || getGuestId(),
+      userId: user?.id || guestId,
+      guestId, // ✅ Add this line
       cartItems: cartItems.map((item) => ({
         productId: item?.productId,
         title: item?.title,
         image: item?.image,
-        price:
-          item?.salePrice > 0 ? item?.salePrice : item?.price,
+        price: item?.salePrice > 0 ? item?.salePrice : item?.price,
         quantity: item?.quantity,
       })),
       addressInfo: {

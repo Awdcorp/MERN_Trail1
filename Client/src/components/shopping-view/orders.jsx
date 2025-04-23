@@ -18,20 +18,21 @@ import {
   resetOrderDetails,
 } from "@/store/shop/order-slice";
 import { Badge } from "../ui/badge";
+import { getGuestId } from "@/lib/guest-id";
 
-function ShoppingOrders() {
+function ShoppingOrders({ ownerId }) {
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { orderList, orderDetails } = useSelector((state) => state.shopOrder);
-
+  const resolvedOwnerId = ownerId || user?.id || getGuestId();
   function handleFetchOrderDetails(getId) {
     dispatch(getOrderDetails(getId));
   }
 
   useEffect(() => {
-    dispatch(getAllOrdersByUser(user?.id));
-  }, [dispatch]);
+    dispatch(getAllOrdersByUser(resolvedOwnerId));
+  }, [dispatch, resolvedOwnerId]);
 
   useEffect(() => {
     if (orderDetails !== null) setOpenDetailsDialog(true);

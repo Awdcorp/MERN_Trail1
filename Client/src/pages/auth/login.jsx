@@ -38,7 +38,29 @@ function AuthLogin() {
             await dispatch(migrateGuestCartToUser({ guestId, userId }));
             localStorage.removeItem("guest_id");
             toast({ title: "✅ Guest cart successfully merged!" });
-            await dispatch(fetchCartItems(userId));         
+            await dispatch(fetchCartItems(userId)); 
+
+            // 🆕 Migrate guest orders to user
+            await fetch(`${import.meta.env.VITE_API_URL}/api/shop/order/migrate-guest-orders`, {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              credentials: "include",
+              body: JSON.stringify({ guestId, userId }),
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                if (res.success) {
+                  toast({ title: "📦 Guest orders linked to your account!" });
+                } else {
+                  console.warn("⚠️ Order migration failed:", res.message);
+                }
+              })
+              .catch((err) => {
+                console.error("❌ Error migrating orders:", err);
+              });
+
           } catch (err) {
             console.error("❌ Cart migration failed:", err);
           }

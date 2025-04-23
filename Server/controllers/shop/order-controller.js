@@ -78,6 +78,7 @@ const createOrder = async (req, res) => {
         const newlyCreatedOrder = new Order({
           wc_order_id,
           userId,
+          guestId: req.body.guestId || null, // ✅ NEW LINE
           cartId,
           cartItems,
           addressInfo,
@@ -89,7 +90,7 @@ const createOrder = async (req, res) => {
           orderUpdateDate,
           paymentId,
           payerId,
-        });
+        });        
 
         await newlyCreatedOrder.save();
 
@@ -219,9 +220,52 @@ const getOrderDetails = async (req, res) => {
   }
 };
 
+const migrateGuestOrdersToUser = async (req, res) => {
+  try {
+    const { guestId, userId } = req.body;
+
+    console.log("🛠️ Received request to migrate orders:");
+    console.log("➡️ guestId:", guestId);
+    console.log("➡️ userId:", userId);
+
+    if (!guestId || !userId) {
+      console.warn("⚠️ Missing guestId or userId in request body.");
+      return res.status(400).json({
+        success: false,
+        message: "guestId and userId are required"
+      });
+    }
+
+    console.log("🔍 Finding orders with guestId:", guestId);
+    const ordersToUpdate = await Order.find({ guestId });
+    console.log(`📦 Found ${ordersToUpdate.length} guest orders to migrate.`);
+
+    const result = await Order.updateMany(
+      { guestId },
+      { $set: { userId }, $unset: { guestId: "" } }
+    );
+
+    console.log("✅ Migration complete.");
+    console.log("🧾 Mongo update result:", result);
+
+    res.status(200).json({
+      success: true,
+      modifiedCount: result.modifiedCount
+    });
+  } catch (err) {
+    console.error("❌ Error migrating guest orders:", err);
+    res.status(500).json({
+      success: false,
+      message: "Failed to migrate guest orders"
+    });
+  }
+};
+
+
 module.exports = {
   createOrder,
   capturePayment,
   getAllOrdersByUser,
   getOrderDetails,
+  migrateGuestOrdersToUser,
 };
