@@ -4,6 +4,7 @@ import {
   LayoutDashboard,
   ShoppingBasket,
   Images,
+  Users,
 } from "lucide-react";
 import { Fragment } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // ✅ include location
@@ -33,6 +34,12 @@ const adminSidebarMenuItems = [
     label: "Media",
     path: "/admin/media",
     icon: <Images />,
+  },
+  {
+    id: "users",
+    label: "User",
+    path: "/admin/users",
+    icon: <Users />,
   },
 ];
 
