@@ -10,6 +10,7 @@ import AdminOrders from "./pages/admin-view/orders";
 import AdminFeatures from "./pages/admin-view/features";
 import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
+import BannerControlPage from "./pages/admin-view/banner-control";
 import ShoppingLayout from "./components/shopping-view/layout";
 import NotFound from "./pages/not-found";
 import ShoppingHome from "./pages/shopping-view/home";
@@ -89,6 +90,7 @@ function App() {
           <Route path="media" element={<MediaDashboard />} />
           <Route path="features" element={<AdminFeatures />} />
           <Route path="users" element={<AdminUsers />} />
+          <Route path="banners" element={<BannerControlPage />} />
         </Route>
 
         {/* 🛍️ Shop Routes (Public + Protected) */}

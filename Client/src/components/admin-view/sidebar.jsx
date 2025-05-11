@@ -41,6 +41,12 @@ const adminSidebarMenuItems = [
     path: "/admin/users",
     icon: <Users />,
   },
+  {
+    id: "banners",
+    label: "Banners",
+    path: "/admin/banners",
+    icon: <Images />,
+  },
 ];
 
 function MenuItems({ setOpen }) {
