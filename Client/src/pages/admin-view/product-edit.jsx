@@ -1,5 +1,3 @@
-// File: src/pages/admin-view/product-edit.jsx
-
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -19,28 +17,53 @@ export default function AdminProductEdit() {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const isCreateMode = id === "new";
+
   const [formData, setFormData] = useState(null);
   const [allCategories, setAllCategories] = useState([]);
   const [editSEO, setEditSEO] = useState(false);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
-      .then(res => {
-        if (res.data.success) {
-          const product = res.data.data;
-          const normalized = {
-            ...product,
-            categories: (product.categories || []).map(c => typeof c === "object" ? c._id : c),
-            tags: product.tags || [],
-            seo: product.seo || { metaTitle: "", metaDescription: "", focusKeyword: "" },
-            variants: product.variants || [],
-            attributes: product.attributes || [],
-            upsellProductIds: product.upsellProductIds || [],
-            relatedProductIds: product.relatedProductIds || [],
-          };
-          setFormData(normalized);
-        }
+    if (isCreateMode) {
+      setFormData({
+        title: "",
+        slug: "",
+        description: "",
+        shortDescription: "",
+        sku: "",
+        price: 0,
+        salePrice: 0,
+        totalStock: 0,
+        weight: 0,
+        brand: "",
+        tags: [],
+        images: [],
+        categories: [],
+        relatedProductIds: [],
+        upsellProductIds: [],
+        seo: { metaTitle: "", metaDescription: "", focusKeyword: "" },
+        isActive: true,
+        isFeatured: false,
       });
+    } else {
+      axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
+        .then(res => {
+          if (res.data.success) {
+            const product = res.data.data;
+            const normalized = {
+              ...product,
+              categories: (product.categories || []).map(c => typeof c === "object" ? c._id : c),
+              tags: product.tags || [],
+              seo: product.seo || { metaTitle: "", metaDescription: "", focusKeyword: "" },
+              variants: product.variants || [],
+              attributes: product.attributes || [],
+              upsellProductIds: product.upsellProductIds || [],
+              relatedProductIds: product.relatedProductIds || [],
+            };
+            setFormData(normalized);
+          }
+        });
+    }
 
     axios.get(`${import.meta.env.VITE_API_URL}/api/categories`).then((res) => {
       const flatList = flattenCategories(res.data);
@@ -77,46 +100,32 @@ export default function AdminProductEdit() {
 
   const handleSubmit = async () => {
     try {
-      console.log("📦 FULL PRODUCT UPDATE PAYLOAD:");
-      console.log("🧾 Title:", formData.title);
-      console.log("📝 Slug:", formData.slug);
-      console.log("💬 Description:", formData.description);
-      console.log("🧠 Short Description:", formData.shortDescription);
-      console.log("🛠️ SKU:", formData.sku);
-      console.log("🧮 Price:", formData.price);
-      console.log("🏷️ Sale Price:", formData.salePrice);
-      console.log("📦 Stock:", formData.totalStock);
-      console.log("⚖️ Weight:", formData.weight);
-      console.log("🏷️ Brand:", formData.brand);
-      console.log("🏷️ Tags:", formData.tags);
-      console.log("🖼️ Images:", formData.images);
-      console.log("📂 Categories:", formData.categories);
-      console.log("📌 RelatedProductIds:", formData.relatedProductIds);
-      console.log("🎯 UpsellProductIds:", formData.upsellProductIds);
-      console.log("🌐 SEO Meta Title:", formData.seo?.metaTitle);
-      console.log("🌐 SEO Meta Description:", formData.seo?.metaDescription);
-      console.log("🌐 SEO Focus Keyword:", formData.seo?.focusKeyword);
+      const endpoint = isCreateMode
+      ? `${import.meta.env.VITE_API_URL}/api/admin/products/add`
+      : `${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`;    
+      const method = isCreateMode ? axios.post : axios.put;
+
       console.log("✅ Final Payload:", formData);
 
-      const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`, formData);
+      const res = await method(endpoint, formData);
       if (res.data.success) {
-        toast({ title: "✅ Product updated successfully", variant: "success" });
+        toast({ title: isCreateMode ? "✅ Product created successfully" : "✅ Product updated successfully", variant: "success" });
         navigate("/admin/products");
       }
     } catch (err) {
-      console.error("Update failed", err);
-      toast({ title: "❌ Failed to update product", variant: "destructive" });
+      console.error("❌ Failed", err);
+      toast({ title: `❌ Failed to ${isCreateMode ? "create" : "update"} product`, variant: "destructive" });
     }
   };
 
-  if (!formData?._id) {
-    return <div className="p-6 text-gray-500 animate-pulse">Loading product...</div>;
-  }
+  if (!formData) {
+    return <div className="p-6 text-gray-500 animate-pulse">Loading product form...</div>;
+  }  
 
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold">Edit Product</h2>
+        <h2 className="text-2xl font-bold">{isCreateMode ? "Create Product" : "Edit Product"}</h2>
         <Button onClick={handleSubmit}>Save</Button>
       </div>
 

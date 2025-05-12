@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "682249e2caeba90f1f341c77",
+    "title": "PROMATE VolTrip-UNI",
+    "slug": "promate-voltrip-uni",
+    "isActive": true,
+    "categories": [
+      {
+        "_id": "67f7c8902a38a098e89341ae",
+        "name": "Accessories",
+        "slug": "accessories"
+      },
+      {
+        "_id": "682249e19fa64fe9a841c5c2",
+        "name": "Promate Accessories",
+        "slug": "promate-accessories"
+      }
+    ],
+    "price": 43,
+    "salePrice": null,
+    "stock": 9999
+  }
+]

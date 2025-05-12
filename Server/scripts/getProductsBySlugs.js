@@ -4,55 +4,50 @@ const fs = require("fs");
 
 const MONGO_URI = process.env.MONGO_URL || "mongodb://localhost:27017/yourdbname";
 
-// 👇 Provide the list of slugs you want to fetch
-const slugsToFind = [
-    "magical-unicorn-foil-balloon-selfie-frame-66-x-68-cm-party-decoration-copy",
-    "enchanted-unicorn-supershape-foil-balloon-83x73cm-magical-party-decoration",
-    "time-to-be-a-unicorn-pink-foil-balloon-magical-birthday-party-balloon-for-girls",
-    "magical-unicorn-head-foil-balloon-enchanting-party-decor",
-    "3d-stand-alone-unicorn-foil-balloon-magical-party-decoration",
-    "despicable-me-party-balloon-bouquet-5pcs",
-    "blush-wedding-ring-super-shape-balloon",
-    "blush-wedding-foil-balloon",
-    "mermaid-wishes-and-kisses-foil-balloon-45cm",
-    "mermaid-wishes-clear-orbz-foil-balloon",
-    "transformers-animated-square-foil-balloon-18in",
-    "finding-dory-square-foil-balloon",
-    "pi-masks-airwalker-balloon",
-    "baby-shark-airwalker-balloon",
-    "paw-patrol-happy-birthday-square-balloon-18in"
-  ];
-  
-  
+// 👇 Provide the list of product slugs
+const slugsToFind = ["promate-voltrip-uni"];
 
-const productSchema = new mongoose.Schema({}, { strict: false });
+// ✅ Define Product and Category Schemas
+const productSchema = new mongoose.Schema({
+  categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }]
+}, { strict: false });
+
+const categorySchema = new mongoose.Schema({}, { strict: false });
+
 const Product = mongoose.model("Product", productSchema);
+const Category = mongoose.model("Category", categorySchema);
 
 async function getProducts() {
   try {
     await mongoose.connect(MONGO_URI);
     console.log("✅ Connected to MongoDB");
 
-    const products = await Product.find({ slug: { $in: slugsToFind } }).lean();
+    const products = await Product.find({ slug: { $in: slugsToFind } })
+      .populate("categories", "name slug") // ✅ populate full category info
+      .lean();
 
     const formatted = products.map((product) => ({
       _id: product._id.toString(),
       title: product.title || "",
-      images: product.images || [],
+      slug: product.slug || "",
+      isActive: product.isActive,
+      categories: (product.categories || []).map((cat) => ({
+        _id: cat._id?.toString?.(),
+        name: cat.name,
+        slug: cat.slug,
+      })),
       price: product.price || 0,
       salePrice: product.salePrice || null,
-      slug: product.slug || "",
-      totalStock: product.totalStock || 0,
+      stock: product.totalStock || 0,
     }));
 
-    // ✅ Print to console
+    // ✅ Log to console
     console.log("🔍 Retrieved Products:\n");
     console.log(JSON.stringify(formatted, null, 2));
 
     // Optional: Write to file
-    fs.writeFileSync("output-unicornProducts.json", JSON.stringify(formatted, null, 2));
-    console.log("\n💾 Saved to output-unicornProducts.json");
-
+    fs.writeFileSync("output-products-with-categories.json", JSON.stringify(formatted, null, 2));
+    console.log("\n💾 Saved to output-products-with-categories.json");
   } catch (err) {
     console.error("❌ Error:", err.message);
   } finally {

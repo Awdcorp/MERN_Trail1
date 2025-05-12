@@ -22,41 +22,39 @@ const handleImageUpload = async (req, res) => {
 
 const addProduct = async (req, res) => {
   try {
-    const {
-      image,
-      title,
-      description,
-      category,
-      brand,
-      price,
-      salePrice,
-      totalStock,
-      averageReview,
-    } = req.body;
+    const data = req.body;
 
-    const newlyCreatedProduct = new Product({
-      image,
-      title,
-      description,
-      category,
-      brand,
-      price,
-      salePrice,
-      totalStock,
-      averageReview,
+    const newProduct = new Product({
+      title: data.title,
+      slug: data.slug,
+      description: data.description,
+      shortDescription: data.shortDescription,
+      categories: data.categories,
+      brand: data.brand,
+      price: data.price,
+      salePrice: data.salePrice,
+      totalStock: data.totalStock,
+      weight: data.weight,
+      sku: data.sku,
+      tags: data.tags,
+      images: Array.isArray(data.images) ? data.images : [],
+      variants: data.variants || [],
+      attributes: data.attributes || [],
+      relatedProductIds: data.relatedProductIds || [],
+      upsellProductIds: data.upsellProductIds || [],
+      isActive: data.isActive,
+      isFeatured: data.isFeatured,
+      externalId: data.externalId,
+      averageReview: data.averageReview,
+      meta: data.meta,
+      seo: data.seo || { metaTitle: "", metaDescription: "", focusKeyword: "" },
     });
 
-    await newlyCreatedProduct.save();
-    res.status(201).json({
-      success: true,
-      data: newlyCreatedProduct,
-    });
+    await newProduct.save();
+    res.status(201).json({ success: true, data: newProduct });
   } catch (e) {
-    console.log(e);
-    res.status(500).json({
-      success: false,
-      message: "Error occurred",
-    });
+    console.log("❌ Error adding product:", e);
+    res.status(500).json({ success: false, message: "Error occurred" });
   }
 };
 

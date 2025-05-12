@@ -124,6 +124,11 @@ function AdminProducts() {
 
   return (
     <Fragment>
+            <div className="flex justify-end mb-4">
+        <Button asChild>
+          <a href="/admin/products/new">+ Create New Product</a>
+        </Button>
+      </div>
       <AdminPanelTemplate
         title="All Products"
         columns={[
