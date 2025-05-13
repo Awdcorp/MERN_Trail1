@@ -18,17 +18,25 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-async function fetchWooProducts(limit = 25) {
-  try {
+async function fetchAllWooProducts() {
+  const allProducts = [];
+  let page = 1;
+  const perPage = 100;
+
+  while (true) {
     const res = await axios.get(WOO_API_URL, {
       auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
-      params: { per_page: limit },
+      params: { per_page: perPage, page },
     });
-    return res.data;
-  } catch (err) {
-    console.error("❌ Failed to fetch WooCommerce products:", err.response?.data || err);
-    process.exit(1);
+
+    if (res.data.length === 0) break;
+
+    allProducts.push(...res.data);
+    console.log(`📦 Fetched page ${page} (${res.data.length} products)`);
+    page++;
   }
+
+  return allProducts;
 }
 
 async function uploadImageToCloudinary(originalUrl) {
@@ -87,7 +95,7 @@ async function importProducts() {
   await mongoose.connect(MONGO_URI);
   console.log("✅ Connected to MongoDB");
 
-  const wpProducts = await fetchWooProducts(100);
+  const wpProducts = await fetchAllWooProducts(); // ⬅️ Updated line
   const wpAllCategories = (await axios.get("https://partyworld.ae/wp-json/wc/v3/products/categories", {
     auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
   })).data;
@@ -149,7 +157,7 @@ async function importProducts() {
       { new: true, upsert: true }
     );
 
-    console.log(`✅ Updated or Inserted: ${updatedOrInserted.title}`);
+    console.log(`✅ Imported: ${updatedOrInserted.title}`);
   }
 
   console.log("🎉 Import complete.");

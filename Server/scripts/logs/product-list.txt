@@ -1,2154 +1,802 @@
 === Product List with Categories and Related Products ===
 
 🛒 Product: SAMSUNG S21 5G 128GB
-🔎 Mongo ID: 68230856caeba90f1f34662d
+🔎 Mongo ID: 68233027caeba90f1f3477ac
 🆔 External ID: 8044
 🔗 Slug: samsung-s21-5g-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: SAMSUNG S21 5G 256GB
-🔎 Mongo ID: 68230857caeba90f1f34662f
+🔎 Mongo ID: 68233029caeba90f1f3477ad
 🆔 External ID: 8028
 🔗 Slug: samsung-s21-5g-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: SAMSUNG S21 PLUS 5G 256GB
-🔎 Mongo ID: 68230859caeba90f1f346630
+🔎 Mongo ID: 6823302acaeba90f1f3477ae
 🆔 External ID: 8023
 🔗 Slug: samsung-s21-plus-5g-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: SAMSUNG S21 PLUS 5G 128GB
-🔎 Mongo ID: 6823085bcaeba90f1f346631
+🔎 Mongo ID: 6823302ccaeba90f1f3477af
 🆔 External ID: 8009
 🔗 Slug: samsung-s21-plus-5g-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraLight-1
-🔎 Mongo ID: 6823085ccaeba90f1f346632
+🔎 Mongo ID: 6823302dcaeba90f1f3477b0
 🆔 External ID: 7475
 🔗 Slug: promate-auralight-1
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), APPLE USB-C TO HEADPHONE JACK (extId: 4776), LIGHTNING CONNECTOR (extId: 4778), APPLE USB POWER ADAPTER (extId: 4790), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE LumiQi
-🔎 Mongo ID: 6823085ecaeba90f1f346633
+🔎 Mongo ID: 6823302fcaeba90f1f3477b2
 🆔 External ID: 7477
 🔗 Slug: promate-lumiqi
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), AIRPODS MAX (extId: 4786), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE VolTrip-UNI
-🔎 Mongo ID: 6823085fcaeba90f1f346634
+🔎 Mongo ID: 68233031caeba90f1f3477b3
 🆔 External ID: 7473
 🔗 Slug: promate-voltrip-uni
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE Scud-48
-🔎 Mongo ID: 68230861caeba90f1f346636
+🔎 Mongo ID: 68233032caeba90f1f3477b4
 🆔 External ID: 7471
 🔗 Slug: promate-scud-48
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), APPLE USB-C TO HEADPHONE JACK (extId: 4776), LIGHTNING CONNECTOR (extId: 4778), AIRPODS (extId: 4784), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE CenterPort-2PD75
-🔎 Mongo ID: 68230862caeba90f1f346637
+🔎 Mongo ID: 68233034caeba90f1f3477b5
 🆔 External ID: 7469
 🔗 Slug: promate-centerport-2pd75
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), AIRPODS PRO (extId: 4782), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE GaNPort3-65 pd
-🔎 Mongo ID: 68230864caeba90f1f346639
+🔎 Mongo ID: 68233036caeba90f1f3477b7
 🆔 External ID: 7467
 🔗 Slug: promate-ganport3-65-pd
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), AIRPODS MAX (extId: 4786), APPLE USB POWER ADAPTER (extId: 4790), USB-C TO LIGHTNING CABLE (extId: 4792)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE BaseLink-Pro
-🔎 Mongo ID: 68230865caeba90f1f34663b
+🔎 Mongo ID: 68233037caeba90f1f3477b8
 🆔 External ID: 7465
 🔗 Slug: promate-baselink-pro
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), APPLE USB POWER ADAPTER (extId: 4790), USB-C TO LIGHTNING CABLE (extId: 4792), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AlphaHub
-🔎 Mongo ID: 68230867caeba90f1f34663f
+🔎 Mongo ID: 68233038caeba90f1f3477b9
 🆔 External ID: 7463
 🔗 Slug: promate-alphahub
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), LIGHTNING CONNECTOR (extId: 4778), MAGSAFE CHARGER (extId: 4788), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE PowerGear
-🔎 Mongo ID: 68230868caeba90f1f346640
+🔎 Mongo ID: 6823303acaeba90f1f3477ba
 🆔 External ID: 7487
 🔗 Slug: promate-powergear
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE TimeBridge-Qi
-🔎 Mongo ID: 6823086acaeba90f1f346641
+🔎 Mongo ID: 6823303bcaeba90f1f3477bb
 🆔 External ID: 7479
 🔗 Slug: promate-timebridge-qi
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), LIGHTNING CONNECTOR (extId: 4778)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE TimePad-Qi
-🔎 Mongo ID: 6823086bcaeba90f1f346642
+🔎 Mongo ID: 6823303dcaeba90f1f3477bc
 🆔 External ID: 7481
 🔗 Slug: promate-timepad-qi
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB-C TO HEADPHONE JACK (extId: 4776), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE PowerState
-🔎 Mongo ID: 6823086dcaeba90f1f346644
+🔎 Mongo ID: 6823303ecaeba90f1f3477bd
 🆔 External ID: 7483
 🔗 Slug: promate-powerstate
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), AIRPODS (extId: 4784), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraTank-20
-🔎 Mongo ID: 6823086ecaeba90f1f346645
+🔎 Mongo ID: 68233040caeba90f1f3477be
 🆔 External ID: 7497
 🔗 Slug: promate-auratank-20
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), MAGSAFE CHARGER (extId: 4788), APPLE USB POWER ADAPTER (extId: 4790), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraPack-10
-🔎 Mongo ID: 68230874caeba90f1f346646
+🔎 Mongo ID: 68233041caeba90f1f3477bf
 🆔 External ID: 7495
 🔗 Slug: promate-aurapack-10
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB-C TO HEADPHONE JACK (extId: 4776), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraVolt-10+
-🔎 Mongo ID: 68230875caeba90f1f346647
+🔎 Mongo ID: 68233043caeba90f1f3477c0
 🆔 External ID: 7493
 🔗 Slug: promate-auravolt-10
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776), LIGHTNING CONNECTOR (extId: 4778), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: Promate Capital-30
-🔎 Mongo ID: 68230877caeba90f1f346648
+🔎 Mongo ID: 68233044caeba90f1f3477c3
 🆔 External ID: 7491
 🔗 Slug: promate-capital-30
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), AIRPODS (extId: 4784), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE  AuraWatch
-🔎 Mongo ID: 68230878caeba90f1f346649
+🔎 Mongo ID: 68233046caeba90f1f3477c4
 🆔 External ID: 7489
 🔗 Slug: promate-aurawatch
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), AIRPODS (extId: 4784), MAGSAFE CHARGER (extId: 4788), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE Titan-30
-🔎 Mongo ID: 6823087acaeba90f1f34664a
+🔎 Mongo ID: 68233048caeba90f1f3477c5
 🆔 External ID: 7485
 🔗 Slug: promate-titan-30
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), AIRPODS PRO (extId: 4782), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: POMATE POWER HUB
-🔎 Mongo ID: 6823087bcaeba90f1f34664b
+🔎 Mongo ID: 68233049caeba90f1f3477c6
 🆔 External ID: 7407
 🔗 Slug: pomate-power-hub
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: BELKIN WIRELESS CAR CHARGER
-🔎 Mongo ID: 6823087dcaeba90f1f34664c
+🔎 Mongo ID: 6823304bcaeba90f1f3477c7
 🆔 External ID: 7403
 🔗 Slug: belkin-wireless-car-charger
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), LIGHTNING CONNECTOR (extId: 4778), AIRPODS MAX (extId: 4786), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: REDMI 10,000 MAH POWERBANK. (2 USB,1 MICRO, 1 TYPE C PORT)
-🔎 Mongo ID: 6823087ecaeba90f1f34664d
+🔎 Mongo ID: 6823304ccaeba90f1f3477c8
 🆔 External ID: 7391
 🔗 Slug: redmi-10000-mah-powerbank-2-usb1-micro-1-type-c-port
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: MI BAND - 4
-🔎 Mongo ID: 68230880caeba90f1f34664e
+🔎 Mongo ID: 6823304ecaeba90f1f3477c9
 🆔 External ID: 7397
 🔗 Slug: mi-band-4
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), AIRPODS (extId: 4784), MAGSAFE CHARGER (extId: 4788), USB-C TO LIGHTNING CABLE (extId: 4792)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: MI BAND - 5
-🔎 Mongo ID: 68230881caeba90f1f34664f
+🔎 Mongo ID: 6823304fcaeba90f1f3477ca
 🆔 External ID: 7399
 🔗 Slug: mi-band-5
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: BELKIN WIRELESS CHAGING PADS
-🔎 Mongo ID: 68230883caeba90f1f346651
+🔎 Mongo ID: 68233050caeba90f1f3477cb
 🆔 External ID: 7401
 🔗 Slug: belkin-wireless-chaging-pads
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), LIGHTNING CONNECTOR (extId: 4778), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE MULTI CONNECTOR
-🔎 Mongo ID: 68230884caeba90f1f346653
+🔎 Mongo ID: 68233052caeba90f1f3477cd
 🆔 External ID: 7405
 🔗 Slug: promate-multi-connector
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Promate Accessories (6822ec2d489bf43bf7c2d0e6)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: MI EARBUDS
-🔎 Mongo ID: 68230886caeba90f1f346654
+🔎 Mongo ID: 68233053caeba90f1f3477ce
 🆔 External ID: 7395
 🔗 Slug: mi-earbuds
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Earphones (6822ec53489bf43bf7c2d105), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG GALAXY BUDS + (extId: 6396), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), AIRPODS (extId: 4784), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Earphones (68233051e415c225f88b2929), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: REDMI 20,000 MAH POWERBANK. (2 USB,1 MICRO, 1 TYPE C PORT)
-🔎 Mongo ID: 68230887caeba90f1f346655
+🔎 Mongo ID: 68233055caeba90f1f3477d2
 🆔 External ID: 7393
 🔗 Slug: redmi-20000-mah-powerbank-2-usb1-micro-1-type-c-port
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: D-LINK MOBILE ROUTER
-🔎 Mongo ID: 68230889caeba90f1f346656
+🔎 Mongo ID: 68233056caeba90f1f3477d3
 🆔 External ID: 7411
 🔗 Slug: d-link-mobile-router
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), AIRPODS MAX (extId: 4786), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: MOPHIE WIRELESS CHARGING PADS
-🔎 Mongo ID: 6823088acaeba90f1f346657
+🔎 Mongo ID: 68233058caeba90f1f3477d4
 🆔 External ID: 7409
 🔗 Slug: mophie-wireless-charging-pads
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Xiaomi Accessories (6822ec49489bf43bf7c2d0fd)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB-C TO HEADPHONE JACK (extId: 4776), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: SAMSUNG GALAXY  S20 PLUS 4G
-🔎 Mongo ID: 6823088ccaeba90f1f346658
+🔎 Mongo ID: 68233059caeba90f1f3477d6
 🆔 External ID: 7329
 🔗 Slug: samsung-galaxy-s20-plus-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
+🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWER EXTEND USB 4 STRIP
-🔎 Mongo ID: 6823088dcaeba90f1f346659
+🔎 Mongo ID: 6823305bcaeba90f1f3477d9
 🆔 External ID: 7289
 🔗 Slug: anker-power-extend-usb-4-strip
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB-C TO HEADPHONE JACK (extId: 4776), AIRPODS PRO (extId: 4782), APPLE USB POWER ADAPTER (extId: 4790)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER COMPACT SIZE ANKER POWERHOUSE 2 400
-🔎 Mongo ID: 6823088fcaeba90f1f34665a
+🔎 Mongo ID: 6823305ccaeba90f1f3477da
 🆔 External ID: 7282
 🔗 Slug: anker-compact-size-anker-powerhouse-2-400
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), APPLE USB-C TO HEADPHONE JACK (extId: 4776), AIRPODS PRO (extId: 4782), AIRPODS MAX (extId: 4786), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: Anker powercore slim 10000 (A1229H12)
-🔎 Mongo ID: 68230890caeba90f1f34665b
+🔎 Mongo ID: 6823305ecaeba90f1f3477db
 🆔 External ID: 7279
 🔗 Slug: anker-powercore-slim-10000-a1229h12
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), APPLE USB-C TO HEADPHONE JACK (extId: 4776), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER AUX WITH LIGHTNING CONNECTOR 1 METER
-🔎 Mongo ID: 68230891caeba90f1f34665c
+🔎 Mongo ID: 6823305fcaeba90f1f3477dc
 🆔 External ID: 7272
 🔗 Slug: anker-aux-with-lightning-connector-1-meter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 8A DUAL 32GB
-🔎 Mongo ID: 68230893caeba90f1f34665d
+🔎 Mongo ID: 68233061caeba90f1f3477dd
 🆔 External ID: 7087
 🔗 Slug: xiaomi-redmi-8a-dual-32gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI NOTE 9S 64GB
-🔎 Mongo ID: 68230894caeba90f1f34665e
+🔎 Mongo ID: 68233062caeba90f1f3477de
 🆔 External ID: 7080
 🔗 Slug: xiaomi-redmi-note-9s-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI NOTE 9S 128GB
-🔎 Mongo ID: 68230896caeba90f1f34665f
+🔎 Mongo ID: 68233064caeba90f1f3477e0
 🆔 External ID: 7064
 🔗 Slug: xiaomi-redmi-note-9s-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI K30 PRO ZOOM 128GB
-🔎 Mongo ID: 68230897caeba90f1f346660
+🔎 Mongo ID: 68233065caeba90f1f3477e1
 🆔 External ID: 7057
 🔗 Slug: xiaomi-redmi-k30-pro-zoom-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI K30 PRO ZOOM 256GB
-🔎 Mongo ID: 68230899caeba90f1f346661
+🔎 Mongo ID: 68233067caeba90f1f3477e2
 🆔 External ID: 7041
 🔗 Slug: xiaomi-redmi-k30-pro-zoom-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 LITE 5G 6GB
-🔎 Mongo ID: 6823089acaeba90f1f346663
+🔎 Mongo ID: 68233068caeba90f1f3477e3
 🆔 External ID: 7035
 🔗 Slug: xiaomi-mi-10-lite-5g-6gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 LITE 5G 8GB
-🔎 Mongo ID: 6823089ccaeba90f1f346664
+🔎 Mongo ID: 6823306acaeba90f1f3477e4
 🆔 External ID: 7029
 🔗 Slug: xiaomi-mi-10-lite-5g-8gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 12GB (extId: 5027), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 YOUTH 5G 64GB
-🔎 Mongo ID: 6823089dcaeba90f1f346665
+🔎 Mongo ID: 6823306bcaeba90f1f3477e5
 🆔 External ID: 7023
 🔗 Slug: xiaomi-mi-10-youth-5g-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 YOUTH 5G 128GB
-🔎 Mongo ID: 6823089fcaeba90f1f346666
+🔎 Mongo ID: 6823306dcaeba90f1f3477e6
 🆔 External ID: 7017
 🔗 Slug: xiaomi-mi-10-youth-5g-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 YOUTH 5G 256GB
-🔎 Mongo ID: 682308a0caeba90f1f346667
+🔎 Mongo ID: 6823306fcaeba90f1f3477e7
 🆔 External ID: 7002
 🔗 Slug: xiaomi-mi-10-youth-5g-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI NOTE 10 LITE 64GB
-🔎 Mongo ID: 682308a1caeba90f1f346668
+🔎 Mongo ID: 68233070caeba90f1f3477e8
 🆔 External ID: 6997
 🔗 Slug: xiaomi-mi-note-10-lite-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI NOTE 10 LITE 128GB
-🔎 Mongo ID: 682308a3caeba90f1f346669
+🔎 Mongo ID: 68233072caeba90f1f3477eb
 🆔 External ID: 6983
 🔗 Slug: xiaomi-mi-note-10-lite-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI POCO F2 PRO 128GB 5G
-🔎 Mongo ID: 682308a4caeba90f1f34666b
+🔎 Mongo ID: 68233074caeba90f1f3477ec
 🆔 External ID: 6976
 🔗 Slug: xiaomi-poco-f2-pro-128gb-5g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI POCO F2 PRO 256GB 5G
-🔎 Mongo ID: 682308a6caeba90f1f34666c
+🔎 Mongo ID: 68233075caeba90f1f3477ed
 🆔 External ID: 6960
 🔗 Slug: xiaomi-poco-f2-pro-256gb-5g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 256 GB (extId: 4471)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9 Dual SIM 32GB 4G LTE
-🔎 Mongo ID: 682308a7caeba90f1f34666d
+🔎 Mongo ID: 68233076caeba90f1f3477ee
 🆔 External ID: 6955
 🔗 Slug: xiaomi-redmi-9-dual-sim-32gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9 Dual SIM 64GB 4G LTE
-🔎 Mongo ID: 682308a8caeba90f1f34666e
+🔎 Mongo ID: 68233078caeba90f1f3477ef
 🆔 External ID: 6942
 🔗 Slug: xiaomi-redmi-9-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 128 GB (extId: 4479)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9C Dual SIM 32GB 4G LTE
-🔎 Mongo ID: 682308aacaeba90f1f34666f
+🔎 Mongo ID: 68233079caeba90f1f3477f0
 🆔 External ID: 6937
 🔗 Slug: xiaomi-redmi-9c-dual-sim-32gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9C Dual SIM 64GB 4G LTE
-🔎 Mongo ID: 682308accaeba90f1f346671
+🔎 Mongo ID: 6823307bcaeba90f1f3477f1
 🆔 External ID: 6923
 🔗 Slug: xiaomi-redmi-9c-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9 A Dual SIM 32GB
-🔎 Mongo ID: 682308adcaeba90f1f346672
+🔎 Mongo ID: 6823307ccaeba90f1f3477f2
 🆔 External ID: 6912
 🔗 Slug: xiaomi-redmi-9-a-dual-sim-32gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9 PRIME Dual Sim 64GB 4G LTE
-🔎 Mongo ID: 682308aecaeba90f1f346673
+🔎 Mongo ID: 6823307ecaeba90f1f3477f3
 🆔 External ID: 6905
 🔗 Slug: xiaomi-redmi-9-prime-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9 PRIME Dual Sim 128GB 4G LTE
-🔎 Mongo ID: 682308b0caeba90f1f346675
+🔎 Mongo ID: 6823307fcaeba90f1f3477f4
 🆔 External ID: 6888
 🔗 Slug: xiaomi-redmi-9-prime-dual-sim-128gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10T 5G 128GB
-🔎 Mongo ID: 682308b1caeba90f1f346677
+🔎 Mongo ID: 68233081caeba90f1f3477f8
 🆔 External ID: 6875
 🔗 Slug: xiaomi-mi-10t-5g-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI NOTE 9 64GB 4G LTE
-🔎 Mongo ID: 682308b3caeba90f1f346678
+🔎 Mongo ID: 68233082caeba90f1f3477f9
 🆔 External ID: 6868
 🔗 Slug: xiaomi-redmi-note-9-64gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI NOTE 9 128GB 4G LTE
-🔎 Mongo ID: 682308b4caeba90f1f346679
+🔎 Mongo ID: 68233084caeba90f1f3477fb
 🆔 External ID: 6849
 🔗 Slug: xiaomi-redmi-note-9-128gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 11 5G 128GB
-🔎 Mongo ID: 682308b6caeba90f1f34667a
+🔎 Mongo ID: 68233085caeba90f1f3477fc
 🆔 External ID: 6842
 🔗 Slug: xiaomi-mi-11-5g-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 11 5G 256GB
-🔎 Mongo ID: 682308b9caeba90f1f34667b
+🔎 Mongo ID: 68233087caeba90f1f3477fd
 🆔 External ID: 6824
 🔗 Slug: xiaomi-mi-11-5g-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9T Dual SIM 64GB 4G LTE
-🔎 Mongo ID: 682308bbcaeba90f1f34667c
+🔎 Mongo ID: 68233088caeba90f1f3477fe
 🆔 External ID: 6818
 🔗 Slug: xiaomi-redmi-9t-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9T Dual SIM 128GB 4G LTE
-🔎 Mongo ID: 682308bccaeba90f1f34667d
+🔎 Mongo ID: 6823308acaeba90f1f3477ff
 🆔 External ID: 6800
 🔗 Slug: xiaomi-redmi-9t-dual-sim-128gb-4g-lte
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Xiaomi (6822ec61489bf43bf7c2d112)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
+🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: OPPO A73
-🔎 Mongo ID: 682308becaeba90f1f34667e
+🔎 Mongo ID: 6823308bcaeba90f1f347800
 🆔 External ID: 6742
 🔗 Slug: oppo-a73
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 256 GB (extId: 4471)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: OPPO A15 3GB
-🔎 Mongo ID: 682308bfcaeba90f1f34667f
+🔎 Mongo ID: 6823308dcaeba90f1f347801
 🆔 External ID: 6737
 🔗 Slug: oppo-a15-3gb
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: OPPO A15 2GB
-🔎 Mongo ID: 682308c1caeba90f1f346680
+🔎 Mongo ID: 6823308fcaeba90f1f347802
 🆔 External ID: 6723
 🔗 Slug: oppo-a15-2gb
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: OPPO A73 5G
-🔎 Mongo ID: 682308c2caeba90f1f346681
+🔎 Mongo ID: 68233091caeba90f1f347803
 🆔 External ID: 6712
 🔗 Slug: oppo-a73-5g
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: OPPO RENO 5 5G
-🔎 Mongo ID: 682308c4caeba90f1f346683
+🔎 Mongo ID: 68233092caeba90f1f347804
 🆔 External ID: 6700
 🔗 Slug: oppo-reno-5-5g
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 128 GB (extId: 4479)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: OPPO A15 S
-🔎 Mongo ID: 682308c5caeba90f1f346684
+🔎 Mongo ID: 68233094caeba90f1f347805
 🆔 External ID: 6686
 🔗 Slug: oppo-a15-s
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: OPPO A93
-🔎 Mongo ID: 682308c7caeba90f1f346685
+🔎 Mongo ID: 68233095caeba90f1f347806
 🆔 External ID: 6674
 🔗 Slug: oppo-a93
-🏷️ Categories: Oppo (6822ec8c489bf43bf7c2d130), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
+🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER   24 W  2 PORT USB CHARGER
-🔎 Mongo ID: 682308c8caeba90f1f346686
+🔎 Mongo ID: 68233097caeba90f1f347807
 🆔 External ID: 6526
 🔗 Slug: anker-24-w-2-port-usb-charger
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER   POWERPORT PD 1
-🔎 Mongo ID: 682308cacaeba90f1f346688
+🔎 Mongo ID: 68233098caeba90f1f347809
 🆔 External ID: 6528
 🔗 Slug: anker-powerport-pd-1
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), AIRPODS MAX (extId: 4786), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER   POWERPORT SPEED 5 PORTS  63 W
-🔎 Mongo ID: 682308cbcaeba90f1f346689
+🔎 Mongo ID: 6823309acaeba90f1f34780a
 🆔 External ID: 6530
 🔗 Slug: anker-powerport-speed-5-ports-63-w
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB POWER ADAPTER (extId: 4790), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER   POWERPORT ATOM 3 SLIM (A2045)
-🔎 Mongo ID: 682308cdcaeba90f1f34668a
+🔎 Mongo ID: 6823309ccaeba90f1f34780b
 🆔 External ID: 6532
 🔗 Slug: anker-powerport-atom-3-slim-a2045
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB-C TO HEADPHONE JACK (extId: 4776), AIRPODS (extId: 4784), APPLE USB POWER ADAPTER (extId: 4790), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396)
 ------------------------------------------------------------
 
 🛒 Product: ANKER   POWERPORT 3 NANO (A2633)
-🔎 Mongo ID: 682308cecaeba90f1f34668b
+🔎 Mongo ID: 6823309dcaeba90f1f34780c
 🆔 External ID: 6534
 🔗 Slug: anker-powerport-3-nano-a2633
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), LIGHTNING CONNECTOR (extId: 4778), APPLE USB POWER ADAPTER (extId: 4790), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
 ------------------------------------------------------------
 
 🛒 Product: ANKER  POWERPORT + 1 WITH QUICK CHARGE 3.0
-🔎 Mongo ID: 682308cfcaeba90f1f34668c
+🔎 Mongo ID: 6823309ecaeba90f1f34780d
 🆔 External ID: 6536
 🔗 Slug: anker-powerport-1-with-quick-charge-30
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), AIRPODS PRO (extId: 4782), MAGSAFE CHARGER (extId: 4788), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER  POWERPORT 4 LITE (INTERCHANGEABLE EU AND UK PLUGS)
-🔎 Mongo ID: 682308d1caeba90f1f34668d
+🔎 Mongo ID: 682330a1caeba90f1f34780e
 🆔 External ID: 6538
 🔗 Slug: anker-powerport-4-lite-interchangeable-eu-and-uk-plugs
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), LIGHTNING CONNECTOR (extId: 4778), APPLE USB POWER ADAPTER (extId: 4790)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWER EXPAND 4-IN-1 USB ETHERNET HUB  (A8323)
-🔎 Mongo ID: 682308d2caeba90f1f34668e
+🔎 Mongo ID: 682330a2caeba90f1f34780f
 🆔 External ID: 6540
 🔗 Slug: anker-power-expand-4-in-1-usb-ethernet-hub-a8323
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
 ------------------------------------------------------------
 
 🛒 Product: ANKER UNIVERSAL TRAVEL ADAPTER WITH 4 USB PORTS
-🔎 Mongo ID: 682308d4caeba90f1f34668f
+🔎 Mongo ID: 682330a4caeba90f1f347810
 🆔 External ID: 6542
 🔗 Slug: anker-universal-travel-adapter-with-4-usb-ports
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERDRIVE PD+ 2
-🔎 Mongo ID: 682308d5caeba90f1f346690
+🔎 Mongo ID: 682330a5caeba90f1f347811
 🆔 External ID: 6544
 🔗 Slug: anker-powerdrive-pd-2
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), AIRPODS PRO (extId: 4782)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERDRIVE 2 ELITE WITH LIGHTNING CONNECTOR
-🔎 Mongo ID: 682308d6caeba90f1f346691
+🔎 Mongo ID: 682330a7caeba90f1f347812
 🆔 External ID: 6546
 🔗 Slug: anker-powerdrive-2-elite-with-lightning-connector
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), AIRPODS PRO (extId: 4782), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERWAVE 7.5 CAR MOUNT (B2551)
-🔎 Mongo ID: 682308d8caeba90f1f346692
+🔎 Mongo ID: 682330a9caeba90f1f347813
 🆔 External ID: 6548
 🔗 Slug: anker-powerwave-75-car-mount-b2551
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776), APPLE USB POWER ADAPTER (extId: 4790), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER AUXILIARY AUDIO CABLE
-🔎 Mongo ID: 682308d9caeba90f1f346693
+🔎 Mongo ID: 682330aacaeba90f1f347815
 🆔 External ID: 6550
 🔗 Slug: anker-auxiliary-audio-cable
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
 ------------------------------------------------------------
 
 🛒 Product: ANKER TYPE C   CABLE 1 METER
-🔎 Mongo ID: 682308dbcaeba90f1f346694
+🔎 Mongo ID: 682330accaeba90f1f347816
 🆔 External ID: 6496
 🔗 Slug: anker-type-c-cable-1-meter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), AIRPODS PRO (extId: 4782)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE 26800
-🔎 Mongo ID: 682308dccaeba90f1f346695
+🔎 Mongo ID: 682330aecaeba90f1f347817
 🆔 External ID: 6524
 🔗 Slug: anker-powercore-26800
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), LIGHTNING CONNECTOR (extId: 4778), MAGSAFE CHARGER (extId: 4788), USB-C TO LIGHTNING CABLE (extId: 4792), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG GALAXY BUDS LIVE (extId: 6377)
 ------------------------------------------------------------
 
 🛒 Product: ANKER MICRO CABLE  2 METER
-🔎 Mongo ID: 682308ddcaeba90f1f346697
+🔎 Mongo ID: 682330afcaeba90f1f347818
 🆔 External ID: 6498
 🔗 Slug: anker-micro-cable-2-meter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), AIRPODS (extId: 4784), APPLE USB POWER ADAPTER (extId: 4790), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796), HEADPHONE PLUG (extId: 4780)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER MICRO CABLE  3 METER
-🔎 Mongo ID: 682308dfcaeba90f1f346698
+🔎 Mongo ID: 682330b1caeba90f1f347819
 🆔 External ID: 6500
 🔗 Slug: anker-micro-cable-3-meter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), AIRPODS MAX (extId: 4786), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377)
 ------------------------------------------------------------
 
 🛒 Product: ANKER TYPE C   CABLE 2 METER
-🔎 Mongo ID: 682308e0caeba90f1f346699
+🔎 Mongo ID: 682330b2caeba90f1f34781a
 🆔 External ID: 6494
 🔗 Slug: anker-type-c-cable-2-meter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), LIGHTNING CONNECTOR (extId: 4778), AIRPODS (extId: 4784)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE LITE 10000
-🔎 Mongo ID: 682308e2caeba90f1f34669a
+🔎 Mongo ID: 682330b4caeba90f1f34781b
 🆔 External ID: 6506
 🔗 Slug: anker-powercore-lite-10000
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), LIGHTNING CONNECTOR (extId: 4778), AIRPODS (extId: 4784), APPLE USB POWER ADAPTER (extId: 4790)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
+🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE 3 SENSE 10K
-🔎 Mongo ID: 682308e3caeba90f1f34669b
+🔎 Mongo ID: 682330b5caeba90f1f34781c
 🆔 External ID: 6508
 🔗 Slug: anker-powercore-3-sense-10k
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE+ METRO 10000 WITH BUILT IN USB-C CABLE
-🔎 Mongo ID: 682308e5caeba90f1f34669c
+🔎 Mongo ID: 682330b7caeba90f1f34781d
 🆔 External ID: 6510
 🔗 Slug: anker-powercore-metro-10000-with-built-in-usb-c-cable
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), AIRPODS PRO (extId: 4782), USB-C TO LIGHTNING CABLE (extId: 4792)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: (none)
 ------------------------------------------------------------
 
 🛒 Product: ANKER WIRELESS PORTABLE CHARGER POWERCORE 10K WIRELESS (A1615H11)
-🔎 Mongo ID: 682308e6caeba90f1f34669e
+🔎 Mongo ID: 682330b9caeba90f1f34781e
 🆔 External ID: 6512
 🔗 Slug: anker-wireless-portable-charger-powercore-10k-wireless-a1615h11
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB POWER ADAPTER (extId: 4790), USB-C TO LIGHTNING CABLE (extId: 4792)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425)
 ------------------------------------------------------------
 
 🛒 Product: anker powercore powerbank (A1252H11)
-🔎 Mongo ID: 682308e8caeba90f1f34669f
+🔎 Mongo ID: 682330bacaeba90f1f34781f
 🆔 External ID: 6514
 🔗 Slug: anker-powercore-powerbank-a1252h11
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE USB-C TO HEADPHONE JACK (extId: 4776), LIGHTNING CONNECTOR (extId: 4778), MAGSAFE CHARGER (extId: 4788)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE 2   20,000
-🔎 Mongo ID: 682308e9caeba90f1f3466a0
+🔎 Mongo ID: 682330bccaeba90f1f347820
 🆔 External ID: 6516
 🔗 Slug: anker-powercore-2-20000
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), MAGSAFE CHARGER (extId: 4788), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG GALAXY BUDS LIVE (extId: 6377)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE ESSENTIAL 20000
-🔎 Mongo ID: 682308eacaeba90f1f3466a1
+🔎 Mongo ID: 682330bdcaeba90f1f347821
 🆔 External ID: 6518
 🔗 Slug: anker-powercore-essential-20000
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE METRO ESSENTIAL 20000 PD
-🔎 Mongo ID: 682308eccaeba90f1f3466a3
+🔎 Mongo ID: 682330bfcaeba90f1f347827
 🆔 External ID: 6520
 🔗 Slug: anker-powercore-metro-essential-20000-pd
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), LIGHTNING CONNECTOR (extId: 4778)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
+🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWERCORE SELECT 20000
-🔎 Mongo ID: 682308eecaeba90f1f3466a4
+🔎 Mongo ID: 682330c0caeba90f1f347828
 🆔 External ID: 6522
 🔗 Slug: anker-powercore-select-20000
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c), Powerbank (6822ec3f489bf43bf7c2d0f4)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
-------------------------------------------------------------
-
-🛒 Product: ANKER ASTRO E1 PORTABLE CHARGER
-🔎 Mongo ID: 682308f5caeba90f1f3466a5
-🆔 External ID: 6502
-🔗 Slug: anker-astro-e1-portable-charger
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Anker Accessories (6822ec5b489bf43bf7c2d10c)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), MAGSAFE CHARGER (extId: 4788), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG ADAPTIVE FAST CHARGING VEHICLE CHARGER
-🔎 Mongo ID: 682308f6caeba90f1f3466a6
-🆔 External ID: 6440
-🔗 Slug: samsung-adaptive-fast-charging-vehicle-charger
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), AIRPODS MAX (extId: 4786), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG WIRELESS CHARGING PAD
-🔎 Mongo ID: 682308f8caeba90f1f3466a7
-🆔 External ID: 6432
-🔗 Slug: samsung-wireless-charging-pad
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG BATTERY PACK 10,000 MAH
-🔎 Mongo ID: 682308f9caeba90f1f3466a8
-🆔 External ID: 6425
-🔗 Slug: samsung-battery-pack-10000-mah
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Powerbank (6822ec3f489bf43bf7c2d0f4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB-C TO HEADPHONE JACK (extId: 4776), APPLE USB POWER ADAPTER (extId: 4790), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG WIRELESS DUO CHARGER PAD
-🔎 Mongo ID: 682308fbcaeba90f1f3466a9
-🆔 External ID: 6413
-🔗 Slug: samsung-wireless-duo-charger-pad
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), AIRPODS (extId: 4784), MAGSAFE CHARGER (extId: 4788), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY BUDS +
-🔎 Mongo ID: 682308fccaeba90f1f3466aa
-🆔 External ID: 6396
-🔗 Slug: samsung-galaxy-buds
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Earphones (6822ec53489bf43bf7c2d105), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), LIGHTNING CONNECTOR (extId: 4778), AIRPODS PRO (extId: 4782), AIRPODS MAX (extId: 4786)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY BUDS LIVE
-🔎 Mongo ID: 682308fdcaeba90f1f3466ab
-🆔 External ID: 6377
-🔗 Slug: samsung-galaxy-buds-live
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Earphones (6822ec53489bf43bf7c2d105), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), MAGSAFE CHARGER (extId: 4788), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG STEREO IN EARHEADPHONES
-🔎 Mongo ID: 682308ffcaeba90f1f3466ac
-🆔 External ID: 6369
-🔗 Slug: samsung-stereo-in-earheadphones
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Earphones (6822ec53489bf43bf7c2d105), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG EARPHONE JACK IN TUNED BY AKG
-🔎 Mongo ID: 68230900caeba90f1f3466ad
-🆔 External ID: 6366
-🔗 Slug: samsung-earphone-jack-in-tuned-by-akg
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Earphones (6822ec53489bf43bf7c2d105), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: APPLE USB- C   20 W POWER ADAPTER (extId: 4770), AIRPODS (extId: 4784), APPLE USB POWER ADAPTER (extId: 4790), USB-C TO LIGHTNING CABLE (extId: 4792), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG EARPHONE TYPE C TUNED BY AKG
-🔎 Mongo ID: 68230902caeba90f1f3466ae
-🆔 External ID: 6353
-🔗 Slug: samsung-earphone-type-c-tuned-by-akg
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Earphones (6822ec53489bf43bf7c2d105), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), USB-C TO LIGHTNING CABLE (extId: 4792), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG USB TO TYPE-C CHARGING DATA CABLE
-🔎 Mongo ID: 68230903caeba90f1f3466af
-🆔 External ID: 6349
-🔗 Slug: samsung-usb-to-type-c-charging-data-cable
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), AIRPODS PRO (extId: 4782), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG USB TO MICRO CHARGING DATA CABLE
-🔎 Mongo ID: 68230905caeba90f1f3466b0
-🆔 External ID: 6341
-🔗 Slug: samsung-usb-to-micro-charging-data-cable
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG TRAVEL ADAPTER (15 W)
-🔎 Mongo ID: 68230908caeba90f1f3466b6
-🆔 External ID: 6332
-🔗 Slug: samsung-travel-adapter-15-w
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG WIRELESS CHARGING PAD (extId: 6432), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), APPLE USB POWER ADAPTER (extId: 4790), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG TRAVEL ADAPTER (25 W)
-🔎 Mongo ID: 68230909caeba90f1f3466b7
-🆔 External ID: 6319
-🔗 Slug: samsung-travel-adapter-25-w
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Samsung Accessories (6822ecc5489bf43bf7c2d159)
-🤝 Related Products: SAMSUNG WIRELESS CHARGING PAD (extId: 6432), SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
-------------------------------------------------------------
-
-🛒 Product: HUAWEI P SMART 2021
-🔎 Mongo ID: 6823090bcaeba90f1f3466b9
-🆔 External ID: 6304
-🔗 Slug: huawei-p-smart-2021
-🏷️ Categories: Huawei (6822ecdb489bf43bf7c2d169), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: HUAWEI Y9a
-🔎 Mongo ID: 6823090ccaeba90f1f3466ba
-🆔 External ID: 6288
-🔗 Slug: huawei-y9a
-🏷️ Categories: Huawei (6822ecdb489bf43bf7c2d169), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: HUAWEI Y7a
-🔎 Mongo ID: 6823090dcaeba90f1f3466bb
-🆔 External ID: 6273
-🔗 Slug: huawei-y7a
-🏷️ Categories: Huawei (6822ecdb489bf43bf7c2d169), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: HUAWEI NOVA 7 SE 5G YOUTH
-🔎 Mongo ID: 6823090fcaeba90f1f3466bc
-🆔 External ID: 6259
-🔗 Slug: huawei-nova-7-se-5g-youth
-🏷️ Categories: Huawei (6822ecdb489bf43bf7c2d169), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 5G 256GB (extId: 8028), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: HUAWEI MATE 40 PRO
-🔎 Mongo ID: 68230910caeba90f1f3466be
-🆔 External ID: 6247
-🔗 Slug: huawei-mate-40-pro
-🏷️ Categories: Huawei (6822ecdb489bf43bf7c2d169), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: HUAWEI P40 4G
-🔎 Mongo ID: 68230912caeba90f1f3466bf
-🆔 External ID: 6233
-🔗 Slug: huawei-p40-4g
-🏷️ Categories: Huawei (6822ecdb489bf43bf7c2d169), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE 2020 With Facetime 64GB
-🔎 Mongo ID: 68230913caeba90f1f3466c0
-🆔 External ID: 6227
-🔗 Slug: iphone-se-2020-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE 2020 With Facetime 128GB
-🔎 Mongo ID: 68230914caeba90f1f3466c1
-🆔 External ID: 6221
-🔗 Slug: iphone-se-2020-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE 2020 With Facetime 256GB
-🔎 Mongo ID: 68230916caeba90f1f3466c2
-🆔 External ID: 6215
-🔗 Slug: iphone-se-2020-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE With Facetime 32GB
-🔎 Mongo ID: 68230917caeba90f1f3466c3
-🆔 External ID: 6209
-🔗 Slug: iphone-se-with-facetime-32gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE With Facetime 64GB
-🔎 Mongo ID: 68230919caeba90f1f3466c4
-🆔 External ID: 6203
-🔗 Slug: iphone-se-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE With Facetime 128GB
-🔎 Mongo ID: 6823091acaeba90f1f3466c5
-🆔 External ID: 6197
-🔗 Slug: iphone-se-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE SE With Facetime 256GB
-🔎 Mongo ID: 6823091ccaeba90f1f3466c6
-🆔 External ID: 6182
-🔗 Slug: iphone-se-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 7 PLUS With FaceTime 32GB
-🔎 Mongo ID: 6823091dcaeba90f1f3466c7
-🆔 External ID: 6177
-🔗 Slug: iphone-7-plus-with-facetime-32gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 7 PLUS With FaceTime 128GB
-🔎 Mongo ID: 6823091fcaeba90f1f3466c8
-🆔 External ID: 6172
-🔗 Slug: iphone-7-plus-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 7 PLUS With FaceTime 256GB
-🔎 Mongo ID: 68230920caeba90f1f3466c9
-🆔 External ID: 6157
-🔗 Slug: iphone-7-plus-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 7 With FaceTime 32GB
-🔎 Mongo ID: 68230921caeba90f1f3466ca
-🆔 External ID: 6150
-🔗 Slug: iphone-7-with-facetime-32gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 7 With FaceTime 128GB
-🔎 Mongo ID: 68230923caeba90f1f3466cb
-🆔 External ID: 6144
-🔗 Slug: iphone-7-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 7 With FaceTime 256GB
-🔎 Mongo ID: 68230924caeba90f1f3466cc
-🆔 External ID: 6128
-🔗 Slug: iphone-7-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 12GB (extId: 5027), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 8 PLUS With FaceTime 64GB
-🔎 Mongo ID: 68230926caeba90f1f3466cd
-🆔 External ID: 6121
-🔗 Slug: iphone-8-plus-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 8 PLUS With FaceTime 256GB
-🔎 Mongo ID: 68230927caeba90f1f3466ce
-🆔 External ID: 6109
-🔗 Slug: iphone-8-plus-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 8 With FaceTime 64GB
-🔎 Mongo ID: 68230928caeba90f1f3466d0
-🆔 External ID: 6103
-🔗 Slug: iphone-8-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 8 With FaceTime 256GB
-🔎 Mongo ID: 6823092acaeba90f1f3466d1
-🆔 External ID: 6086
-🔗 Slug: iphone-8-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XS MAX With FaceTime 64GB
-🔎 Mongo ID: 6823092bcaeba90f1f3466d2
-🆔 External ID: 6080
-🔗 Slug: iphone-xs-max-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime 256 GB (extId: 4471)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XS MAX With FaceTime 256GB
-🔎 Mongo ID: 6823092dcaeba90f1f3466d3
-🆔 External ID: 6075
-🔗 Slug: iphone-xs-max-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XS MAX With FaceTime 512GB
-🔎 Mongo ID: 6823092ecaeba90f1f3466d4
-🆔 External ID: 6059
-🔗 Slug: iphone-xs-max-with-facetime-512gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE X with FaceTime 64GB
-🔎 Mongo ID: 68230930caeba90f1f3466d5
-🆔 External ID: 6054
-🔗 Slug: iphone-x-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE X with FaceTime 256GB
-🔎 Mongo ID: 68230931caeba90f1f3466d6
-🆔 External ID: 6036
-🔗 Slug: iphone-x-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 256 GB (extId: 4471)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XR Dual SIM with FaceTime 64GB
-🔎 Mongo ID: 68230933caeba90f1f3466d7
-🆔 External ID: 6029
-🔗 Slug: iphone-xr-dual-sim-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XR Dual SIM with FaceTime 128GB
-🔎 Mongo ID: 68230934caeba90f1f3466d8
-🆔 External ID: 6022
-🔗 Slug: iphone-xr-dual-sim-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 128 GB (extId: 4479)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XR Dual SIM with FaceTime 256GB
-🔎 Mongo ID: 68230935caeba90f1f3466d9
-🆔 External ID: 6015
-🔗 Slug: iphone-xr-dual-sim-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XR with FaceTime 64GB
-🔎 Mongo ID: 68230937caeba90f1f3466da
-🆔 External ID: 6006
-🔗 Slug: iphone-xr-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 5G 256GB (extId: 8028), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XR with FaceTime 128GB
-🔎 Mongo ID: 68230938caeba90f1f3466db
-🆔 External ID: 5999
-🔗 Slug: iphone-xr-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XR with FaceTime 256GB
-🔎 Mongo ID: 6823093acaeba90f1f3466dc
-🆔 External ID: 5982
-🔗 Slug: iphone-xr-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XS With Facetime 64GB
-🔎 Mongo ID: 6823093bcaeba90f1f3466dd
-🆔 External ID: 5975
-🔗 Slug: iphone-xs-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XS With Facetime 256GB
-🔎 Mongo ID: 6823093dcaeba90f1f3466de
-🆔 External ID: 5969
-🔗 Slug: iphone-xs-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime 256 GB (extId: 4471)
-------------------------------------------------------------
-
-🛒 Product: IPHONE XS With Facetime 512GB
-🔎 Mongo ID: 6823093ecaeba90f1f3466df
-🆔 External ID: 5951
-🔗 Slug: iphone-xs-with-facetime-512gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 with FaceTime 64GB
-🔎 Mongo ID: 68230940caeba90f1f3466e0
-🆔 External ID: 5942
-🔗 Slug: iphone-11-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 with FaceTime 128GB
-🔎 Mongo ID: 68230941caeba90f1f3466e1
-🆔 External ID: 5931
-🔗 Slug: iphone-11-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 with FaceTime 256GB
-🔎 Mongo ID: 68230942caeba90f1f3466e2
-🆔 External ID: 5909
-🔗 Slug: iphone-11-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 PRO with Facetime 64GB
-🔎 Mongo ID: 68230944caeba90f1f3466e3
-🆔 External ID: 5902
-🔗 Slug: iphone-11-pro-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 PRO with Facetime 256GB
-🔎 Mongo ID: 68230945caeba90f1f3466e4
-🆔 External ID: 5895
-🔗 Slug: iphone-11-pro-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 PRO with Facetime 512GB
-🔎 Mongo ID: 68230946caeba90f1f3466e5
-🆔 External ID: 5875
-🔗 Slug: iphone-11-pro-with-facetime-512gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 PRO MAX With Facetime 64GB
-🔎 Mongo ID: 68230948caeba90f1f3466e7
-🆔 External ID: 5865
-🔗 Slug: iphone-11-pro-max-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 PRO MAX With Facetime 256GB
-🔎 Mongo ID: 68230949caeba90f1f3466e8
-🆔 External ID: 5858
-🔗 Slug: iphone-11-pro-max-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 11 PRO MAX With Facetime 512GB
-🔎 Mongo ID: 6823094bcaeba90f1f3466e9
-🆔 External ID: 5822
-🔗 Slug: iphone-11-pro-max-with-facetime-512gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 MINI With Facetime 128GB
-🔎 Mongo ID: 6823094dcaeba90f1f3466ea
-🆔 External ID: 5812
-🔗 Slug: iphone-12-mini-with-facetime-128gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 MINI With Facetime 64GB
-🔎 Mongo ID: 6823094ecaeba90f1f3466eb
-🆔 External ID: 5806
-🔗 Slug: iphone-12-mini-with-facetime-64gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 MINI With Facetime 256GB
-🔎 Mongo ID: 68230950caeba90f1f3466ed
-🆔 External ID: 5786
-🔗 Slug: iphone-12-mini-with-facetime-256gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: GALAXY TAB A (10.5)
-🔎 Mongo ID: 68230951caeba90f1f3466ee
-🆔 External ID: 5766
-🔗 Slug: galaxy-tab-a-105
-🏷️ Categories: Samsung Tablets (6822ed29489bf43bf7c2d19e), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD AIR 64GB (2020) Facetime (extId: 5487), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: GALAXY TAB A (10.1) (2019)
-🔎 Mongo ID: 68230952caeba90f1f3466ef
-🆔 External ID: 5752
-🔗 Slug: galaxy-tab-a-101-2019
-🏷️ Categories: Samsung Tablets (6822ed29489bf43bf7c2d19e), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (12.9) 256GB (2018) Facetime (extId: 5674), IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: GALAXY TAB A (8.0) (2019)
-🔎 Mongo ID: 68230954caeba90f1f3466f0
-🆔 External ID: 5740
-🔗 Slug: galaxy-tab-a-80-2019
-🏷️ Categories: Samsung Tablets (6822ed29489bf43bf7c2d19e), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD PRO (11.0) 512GB (2020) Facetime (extId: 5571), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: GALAXY TAB A7 (10.4) (2020)
-🔎 Mongo ID: 68230955caeba90f1f3466f1
-🆔 External ID: 5728
-🔗 Slug: galaxy-tab-a7-104-2020
-🏷️ Categories: Samsung Tablets (6822ed29489bf43bf7c2d19e), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (11.0) 1TB (2018) Facetime (extId: 5682), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD (10.2) 128BG (2019) (extId: 5599), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: IPAD (9.7) 32GB (2018)
-🔎 Mongo ID: 68230957caeba90f1f3466f2
-🆔 External ID: 5724
-🔗 Slug: ipad-97-32gb-2018
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD PRO (11.0) 256GB (2020) Facetime (extId: 5575)
-------------------------------------------------------------
-
-🛒 Product: IPAD (9.7) 128GB (2018)
-🔎 Mongo ID: 68230959caeba90f1f3466f3
-🆔 External ID: 5711
-🔗 Slug: ipad-97-128gb-2018
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (12.9) 1TB (2020) Facetime (extId: 5525)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 64GB (2018) Facetime
-🔎 Mongo ID: 6823095acaeba90f1f3466f4
-🆔 External ID: 5707
-🔗 Slug: ipad-pro-110-64gb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (12.9) 256GB (2020) Facetime (extId: 5550), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 256GB (2018) Facetime
-🔎 Mongo ID: 6823095ccaeba90f1f3466f5
-🆔 External ID: 5703
-🔗 Slug: ipad-pro-110-256gb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD PRO (12.9) 128GB (2020) Facetime (extId: 5555), IPAD PRO (12.9) 256GB (2020) Facetime (extId: 5550), IPAD PRO (12.9) 1TB (2020) Facetime (extId: 5525)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 512GB (2018) Facetime
-🔎 Mongo ID: 6823095dcaeba90f1f3466f6
-🆔 External ID: 5691
-🔗 Slug: ipad-pro-110-512gb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 1TB (2018) Facetime (extId: 5682), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD PRO (11.0) 512GB (2020) Facetime (extId: 5571), IPAD PRO (11.0) 1TB (2020) Facetime (extId: 5559), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 1TB (2018) Facetime
-🔎 Mongo ID: 6823095fcaeba90f1f3466f7
-🆔 External ID: 5682
-🔗 Slug: ipad-pro-110-1tb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 1TB (2020) Facetime (extId: 5559), IPAD PRO (12.9) 256GB (2020) Facetime (extId: 5550), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD PRO (12.9) 1TB (2020) Facetime (extId: 5525), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 64GB (2018) Facetime
-🔎 Mongo ID: 68230960caeba90f1f3466f8
-🆔 External ID: 5678
-🔗 Slug: ipad-pro-129-64gb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (12.9) 256GB (2018) Facetime (extId: 5674), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 256GB (2018) Facetime
-🔎 Mongo ID: 68230962caeba90f1f3466f9
-🆔 External ID: 5674
-🔗 Slug: ipad-pro-129-256gb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD MINI (2019) 64GB Facetime (extId: 5654), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD (10.2) 128BG (2019) (extId: 5599), IPAD PRO (11.0) 256GB (2020) Facetime (extId: 5575)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 512GB (2018) Facetime
-🔎 Mongo ID: 68230963caeba90f1f3466fa
-🆔 External ID: 5670
-🔗 Slug: ipad-pro-129-512gb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD (10.2) 32GB (2020) Facetime (extId: 5515)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 1TB (2018) Facetime
-🔎 Mongo ID: 68230965caeba90f1f3466fb
-🆔 External ID: 5659
-🔗 Slug: ipad-pro-129-1tb-2018-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD (10.2) 128GB (2020) Facetime (extId: 5500), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: IPAD MINI (2019) 64GB Facetime
-🔎 Mongo ID: 68230966caeba90f1f3466fc
-🆔 External ID: 5654
-🔗 Slug: ipad-mini-2019-64gb-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (11.0) 1TB (2018) Facetime (extId: 5682), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD MINI (2019) 256GB Facetime
-🔎 Mongo ID: 68230968caeba90f1f3466fd
-🆔 External ID: 5640
-🔗 Slug: ipad-mini-2019-256gb-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (12.9) 256GB (2018) Facetime (extId: 5674), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD PRO (11.0) 512GB (2020) Facetime (extId: 5571), IPAD (10.2) 32GB (2020) Facetime (extId: 5515)
-------------------------------------------------------------
-
-🛒 Product: IPAD AIR (2019) 64GB Facetime
-🔎 Mongo ID: 68230969caeba90f1f3466fe
-🆔 External ID: 5635
-🔗 Slug: ipad-air-2019-64gb-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD (10.2) 32GB (2020) Facetime (extId: 5515)
-------------------------------------------------------------
-
-🛒 Product: IPAD AIR (2019) 256GB Facetime
-🔎 Mongo ID: 6823096acaeba90f1f3466ff
-🆔 External ID: 5620
-🔗 Slug: ipad-air-2019-256gb-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (11.0) 1TB (2018) Facetime (extId: 5682), IPAD PRO (12.9) 512GB (2018) Facetime (extId: 5670), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580)
-------------------------------------------------------------
-
-🛒 Product: IPAD (10.2) 32BG (2019)
-🔎 Mongo ID: 6823096ccaeba90f1f346700
-🆔 External ID: 5613
-🔗 Slug: ipad-102-32bg-2019
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580)
-------------------------------------------------------------
-
-🛒 Product: IPAD (10.2) 128BG (2019)
-🔎 Mongo ID: 6823096dcaeba90f1f346701
-🆔 External ID: 5599
-🔗 Slug: ipad-102-128bg-2019
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (11.0) 1TB (2020) Facetime (extId: 5559), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD AIR 64GB (2020) Facetime (extId: 5487), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 128GB (2020) Facetime
-🔎 Mongo ID: 6823096fcaeba90f1f346702
-🆔 External ID: 5580
-🔗 Slug: ipad-pro-110-128gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD PRO (12.9) 128GB (2020) Facetime (extId: 5555), IPAD PRO (12.9) 1TB (2020) Facetime (extId: 5525), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 256GB (2020) Facetime
-🔎 Mongo ID: 68230970caeba90f1f346704
-🆔 External ID: 5575
-🔗 Slug: ipad-pro-110-256gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (12.9) 512GB (2018) Facetime (extId: 5670), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (11.0) 512GB (2020) Facetime (extId: 5571)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 512GB (2020) Facetime
-🔎 Mongo ID: 68230972caeba90f1f346705
-🆔 External ID: 5571
-🔗 Slug: ipad-pro-110-512gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (12.9) 256GB (2018) Facetime (extId: 5674), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD AIR 256GB (2020) Facetime (extId: 5462)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (11.0) 1TB (2020) Facetime
-🔎 Mongo ID: 68230973caeba90f1f346706
-🆔 External ID: 5559
-🔗 Slug: ipad-pro-110-1tb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD MINI (2019) 64GB Facetime (extId: 5654), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD AIR (2019) 256GB Facetime (extId: 5620), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 128GB (2020) Facetime
-🔎 Mongo ID: 68230975caeba90f1f346707
-🆔 External ID: 5555
-🔗 Slug: ipad-pro-129-128gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (11.0) 256GB (2018) Facetime (extId: 5703), IPAD PRO (12.9) 512GB (2018) Facetime (extId: 5670), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580), IPAD PRO (12.9) 1TB (2020) Facetime (extId: 5525)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 256GB (2020) Facetime
-🔎 Mongo ID: 68230976caeba90f1f346709
-🆔 External ID: 5550
-🔗 Slug: ipad-pro-129-256gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (12.9) 512GB (2018) Facetime (extId: 5670), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD PRO (11.0) 256GB (2020) Facetime (extId: 5575), IPAD PRO (11.0) 1TB (2020) Facetime (extId: 5559), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 512GB (2020) Facetime
-🔎 Mongo ID: 68230978caeba90f1f34670a
-🆔 External ID: 5546
-🔗 Slug: ipad-pro-129-512gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 64GB (2018) Facetime (extId: 5707), IPAD PRO (11.0) 1TB (2018) Facetime (extId: 5682), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD AIR (2019) 64GB Facetime (extId: 5635), IPAD PRO (11.0) 512GB (2020) Facetime (extId: 5571)
-------------------------------------------------------------
-
-🛒 Product: IPAD PRO (12.9) 1TB (2020) Facetime
-🔎 Mongo ID: 68230979caeba90f1f34670b
-🆔 External ID: 5525
-🔗 Slug: ipad-pro-129-1tb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD (10.2) 32BG (2019) (extId: 5613), IPAD PRO (11.0) 128GB (2020) Facetime (extId: 5580), IPAD PRO (11.0) 1TB (2020) Facetime (extId: 5559), IPAD PRO (12.9) 128GB (2020) Facetime (extId: 5555), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD (10.2) 32GB (2020) Facetime
-🔎 Mongo ID: 6823097bcaeba90f1f34670c
-🆔 External ID: 5515
-🔗 Slug: ipad-102-32gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (12.9) 64GB (2018) Facetime (extId: 5678), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD MINI (2019) 256GB Facetime (extId: 5640), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD (10.2) 128GB (2020) Facetime
-🔎 Mongo ID: 6823097ccaeba90f1f34670d
-🆔 External ID: 5500
-🔗 Slug: ipad-102-128gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 512GB (2018) Facetime (extId: 5691), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD (10.2) 128BG (2019) (extId: 5599), IPAD PRO (11.0) 1TB (2020) Facetime (extId: 5559), IPAD PRO (12.9) 512GB (2020) Facetime (extId: 5546)
-------------------------------------------------------------
-
-🛒 Product: IPAD AIR 64GB (2020) Facetime
-🔎 Mongo ID: 6823097ecaeba90f1f34670e
-🆔 External ID: 5487
-🔗 Slug: ipad-air-64gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (12.9) 256GB (2018) Facetime (extId: 5674), IPAD MINI (2019) 64GB Facetime (extId: 5654), IPAD PRO (12.9) 1TB (2020) Facetime (extId: 5525), IPAD (10.2) 32GB (2020) Facetime (extId: 5515), IPAD (10.2) 128GB (2020) Facetime (extId: 5500)
-------------------------------------------------------------
-
-🛒 Product: IPAD AIR 256GB (2020) Facetime
-🔎 Mongo ID: 6823097fcaeba90f1f346710
-🆔 External ID: 5462
-🔗 Slug: ipad-air-256gb-2020-facetime
-🏷️ Categories: Iphone Tablets (6822ed2f489bf43bf7c2d1a6), Tablets (6822ed29489bf43bf7c2d1a0)
-🤝 Related Products: IPAD PRO (11.0) 1TB (2018) Facetime (extId: 5682), IPAD PRO (12.9) 256GB (2018) Facetime (extId: 5674), IPAD PRO (12.9) 1TB (2018) Facetime (extId: 5659), IPAD (10.2) 128BG (2019) (extId: 5599), IPAD PRO (11.0) 256GB (2020) Facetime (extId: 5575)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A32 4G
-🔎 Mongo ID: 68230981caeba90f1f346711
-🆔 External ID: 5447
-🔗 Slug: samsung-galaxy-a32-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A32 5G
-🔎 Mongo ID: 68230982caeba90f1f346713
-🆔 External ID: 5428
-🔗 Slug: samsung-galaxy-a32-5g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY NOTE 10 4G
-🔎 Mongo ID: 68230984caeba90f1f346714
-🆔 External ID: 5419
-🔗 Slug: samsung-galaxy-note-10-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY NOTE 10 PLUS 4G
-🔎 Mongo ID: 68230985caeba90f1f346715
-🆔 External ID: 5405
-🔗 Slug: samsung-galaxy-note-10-plus-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Facetime 128 GB (extId: 4479)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY FOLD 4G
-🔎 Mongo ID: 68230986caeba90f1f346716
-🆔 External ID: 5398
-🔗 Slug: samsung-galaxy-fold-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY S20 4G
-🔎 Mongo ID: 68230988caeba90f1f346717
-🆔 External ID: 5384
-🔗 Slug: samsung-galaxy-s20-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY S20 ULTRA 5G
-🔎 Mongo ID: 6823098acaeba90f1f346719
-🆔 External ID: 5355
-🔗 Slug: samsung-galaxy-s20-ultra-5g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY M31
-🔎 Mongo ID: 6823098bcaeba90f1f34671a
-🆔 External ID: 5339
-🔗 Slug: samsung-galaxy-m31
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A11
-🔎 Mongo ID: 6823098dcaeba90f1f34671b
-🆔 External ID: 5323
-🔗 Slug: samsung-galaxy-a11
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A31
-🔎 Mongo ID: 6823098ecaeba90f1f34671c
-🆔 External ID: 5299
-🔗 Slug: samsung-galaxy-a31
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A51 4G
-🔎 Mongo ID: 68230990caeba90f1f34671d
-🆔 External ID: 5281
-🔗 Slug: samsung-galaxy-a51-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A71
-🔎 Mongo ID: 68230992caeba90f1f34671e
-🆔 External ID: 5258
-🔗 Slug: samsung-galaxy-a71
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A21 S 64GB
-🔎 Mongo ID: 68230994caeba90f1f346720
-🆔 External ID: 5251
-🔗 Slug: samsung-galaxy-a21-s-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A21 S 128GB
-🔎 Mongo ID: 68230995caeba90f1f346721
-🆔 External ID: 5231
-🔗 Slug: samsung-galaxy-a21-s-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY M31 S
-🔎 Mongo ID: 68230997caeba90f1f346722
-🆔 External ID: 5220
-🔗 Slug: samsung-galaxy-m31-s
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY M51
-🔎 Mongo ID: 68230999caeba90f1f346724
-🆔 External ID: 5202
-🔗 Slug: samsung-galaxy-m51
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO With Facetime  512 GB (extId: 4464)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY S20 FE 4G
-🔎 Mongo ID: 6823099acaeba90f1f346725
-🆔 External ID: 5194
-🔗 Slug: samsung-galaxy-s20-fe-4g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY S20 FE 5G
-🔎 Mongo ID: 6823099ccaeba90f1f346726
-🆔 External ID: 5172
-🔗 Slug: samsung-galaxy-s20-fe-5g
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A02 S 32GB
-🔎 Mongo ID: 6823099ecaeba90f1f346727
-🆔 External ID: 5163
-🔗 Slug: samsung-galaxy-a02-s-32gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A02 S 64GB
-🔎 Mongo ID: 6823099fcaeba90f1f346728
-🆔 External ID: 5148
-🔗 Slug: samsung-galaxy-a02-s-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A02 32GB
-🔎 Mongo ID: 682309a1caeba90f1f346729
-🆔 External ID: 5141
-🔗 Slug: samsung-galaxy-a02-32gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A02 64GB
-🔎 Mongo ID: 682309a2caeba90f1f34672a
-🆔 External ID: 5121
-🔗 Slug: samsung-galaxy-a02-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A12 64GB
-🔎 Mongo ID: 682309a4caeba90f1f34672b
-🆔 External ID: 5113
-🔗 Slug: samsung-galaxy-a12-64gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY A12 128GB
-🔎 Mongo ID: 682309a5caeba90f1f34672c
-🆔 External ID: 5098
-🔗 Slug: samsung-galaxy-a12-128gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG NOTE 20 5G 8GB
-🔎 Mongo ID: 682309a7caeba90f1f34672e
-🆔 External ID: 5079
-🔗 Slug: samsung-note-20-5g-8gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG NOTE 20 ULTRA 5G 256GB
-🔎 Mongo ID: 682309a8caeba90f1f34672f
-🆔 External ID: 5064
-🔗 Slug: samsung-note-20-ultra-5g-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG NOTE 20 ULTRA 5G 512GB
-🔎 Mongo ID: 682309aacaeba90f1f346730
-🆔 External ID: 5047
-🔗 Slug: samsung-note-20-ultra-5g-512gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S20 PLUS 5G 8GB
-🔎 Mongo ID: 682309abcaeba90f1f346731
-🆔 External ID: 5042
-🔗 Slug: samsung-s20-plus-5g-8gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 64 GB (extId: 4544)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S20 PLUS 5G 12GB
-🔎 Mongo ID: 682309adcaeba90f1f346732
-🆔 External ID: 5027
-🔗 Slug: samsung-s20-plus-5g-12gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S21 ULTRA 5G 512GB
-🔎 Mongo ID: 682309aecaeba90f1f346734
-🆔 External ID: 5022
-🔗 Slug: samsung-s21-ultra-5g-512gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG NOTE 20 5G 8GB (extId: 5079), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S21 ULTRA 5G 256GB
-🔎 Mongo ID: 682309b0caeba90f1f346736
-🆔 External ID: 5001
-🔗 Slug: samsung-s21-ultra-5g-256gb
-🏷️ Categories: Phone (6822ec26489bf43bf7c2d0dc), Samsung Phones (6822ec26489bf43bf7c2d0de)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 128 GB (extId: 4479)
-------------------------------------------------------------
-
-🛒 Product: APPLE USB- C   20 W POWER ADAPTER
-🔎 Mongo ID: 682309b1caeba90f1f346738
-🆔 External ID: 4770
-🔗 Slug: apple-usb-c-20-w-power-adapter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776), MAGSAFE CHARGER (extId: 4788)
-------------------------------------------------------------
-
-🛒 Product: APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER
-🔎 Mongo ID: 682309b2caeba90f1f346739
-🆔 External ID: 4772
-🔗 Slug: apple-usb-c-to-digital-av-multiport-adapter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), AIRPODS MAX (extId: 4786), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
-------------------------------------------------------------
-
-🛒 Product: APPLE LIGHTNING TO HEADPHONE JACK
-🔎 Mongo ID: 682309b4caeba90f1f34673a
-🆔 External ID: 4774
-🔗 Slug: apple-lightning-to-headphone-jack
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), LIGHTNING CONNECTOR (extId: 4778), APPLE USB POWER ADAPTER (extId: 4790), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: APPLE USB-C TO HEADPHONE JACK
-🔎 Mongo ID: 682309b5caeba90f1f34673b
-🆔 External ID: 4776
-🔗 Slug: apple-usb-c-to-headphone-jack
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), LIGHTNING CONNECTOR (extId: 4778), USB-C  20 W POWER ADAPTER  (UK PIN) (extId: 4794)
-------------------------------------------------------------
-
-🛒 Product: LIGHTNING CONNECTOR
-🔎 Mongo ID: 682309b7caeba90f1f34673c
-🆔 External ID: 4778
-🔗 Slug: lightning-connector
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), AIRPODS (extId: 4784)
-------------------------------------------------------------
-
-🛒 Product: AIRPODS PRO
-🔎 Mongo ID: 682309b8caeba90f1f34673d
-🆔 External ID: 4782
-🔗 Slug: airpods-pro
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3), Earphones (6822ec53489bf43bf7c2d105)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
-------------------------------------------------------------
-
-🛒 Product: AIRPODS
-🔎 Mongo ID: 682309bacaeba90f1f34673e
-🆔 External ID: 4784
-🔗 Slug: airpods
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3), Earphones (6822ec53489bf43bf7c2d105)
-🤝 Related Products: SAMSUNG WIRELESS CHARGING PAD (extId: 6432), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), AIRPODS MAX (extId: 4786)
-------------------------------------------------------------
-
-🛒 Product: AIRPODS MAX
-🔎 Mongo ID: 682309bbcaeba90f1f34673f
-🆔 External ID: 4786
-🔗 Slug: airpods-max
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3), Earphones (6822ec53489bf43bf7c2d105)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), APPLE USB- C   20 W POWER ADAPTER (extId: 4770)
-------------------------------------------------------------
-
-🛒 Product: MAGSAFE CHARGER
-🔎 Mongo ID: 682309bdcaeba90f1f346740
-🆔 External ID: 4788
-🔗 Slug: magsafe-charger
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), LIGHTNING CONNECTOR (extId: 4778), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: APPLE USB POWER ADAPTER
-🔎 Mongo ID: 682309becaeba90f1f346741
-🆔 External ID: 4790
-🔗 Slug: apple-usb-power-adapter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), LIGHTNING CONNECTOR (extId: 4778), AIRPODS PRO (extId: 4782)
-------------------------------------------------------------
-
-🛒 Product: USB-C TO LIGHTNING CABLE
-🔎 Mongo ID: 682309c0caeba90f1f346742
-🆔 External ID: 4792
-🔗 Slug: usb-c-to-lightning-cable
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: APPLE USB-C TO HEADPHONE JACK (extId: 4776), LIGHTNING CONNECTOR (extId: 4778), MAGSAFE CHARGER (extId: 4788), APPLE USB POWER ADAPTER (extId: 4790)
-------------------------------------------------------------
-
-🛒 Product: USB-C  20 W POWER ADAPTER  (UK PIN)
-🔎 Mongo ID: 682309c1caeba90f1f346743
-🆔 External ID: 4794
-🔗 Slug: usb-c-20-w-power-adapter-uk-pin
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE USB-C TO HEADPHONE JACK (extId: 4776), AIRPODS PRO (extId: 4782), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH CHARGER PAD WITH CABLE 1 METER
-🔎 Mongo ID: 682309c4caeba90f1f346744
-🆔 External ID: 4796
-🔗 Slug: apple-watch-charger-pad-with-cable-1-meter
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), LIGHTNING CONNECTOR (extId: 4778), USB-C TO LIGHTNING CABLE (extId: 4792), HEADPHONE PLUG (extId: 4780)
-------------------------------------------------------------
-
-🛒 Product: HEADPHONE PLUG
-🔎 Mongo ID: 682309c5caeba90f1f346745
-🆔 External ID: 4780
-🔗 Slug: headphone-plug
-🏷️ Categories: Accessories (6822ec2d489bf43bf7c2d0e4), Apple Accessories (6822ed89489bf43bf7c2d1e3)
-🤝 Related Products: SAMSUNG WIRELESS CHARGING PAD (extId: 6432), SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY WATCH ACTIVE
-🔎 Mongo ID: 682309c7caeba90f1f346746
-🆔 External ID: 4744
-🔗 Slug: samsung-galaxy-watch-active
-🏷️ Categories: Samsung watches (6822ed9d489bf43bf7c2d1f3), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: APPLE WATCH SERIES 3 42 (extId: 4703), APPLE WATCH SERIES 3 38mm (extId: 4689), APPLE WATCH SERIES 5 44mm (extId: 4651), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY WATCH ACTIVE 2
-🔎 Mongo ID: 682309c8caeba90f1f346747
-🆔 External ID: 4728
-🔗 Slug: samsung-galaxy-watch-active-2
-🏷️ Categories: Samsung watches (6822ed9d489bf43bf7c2d1f3), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH ACTIVE (extId: 4744), SAMSUNG GALAXY WATCH 3 (extId: 4711), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH  SE 44mm (extId: 4580), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG GALAXY WATCH 3
-🔎 Mongo ID: 682309cacaeba90f1f346748
-🆔 External ID: 4711
-🔗 Slug: samsung-galaxy-watch-3
-🏷️ Categories: Samsung watches (6822ed9d489bf43bf7c2d1f3), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH ACTIVE (extId: 4744), APPLE WATCH SERIES 3 42 (extId: 4703), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH SERIES 6 40mm (extId: 4607), APPLE WATCH  SE 44mm (extId: 4580)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 3 42
-🔎 Mongo ID: 682309cbcaeba90f1f346749
-🆔 External ID: 4703
-🔗 Slug: apple-watch-series-3-42
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH ACTIVE (extId: 4744), SAMSUNG GALAXY WATCH 3 (extId: 4711), APPLE WATCH SERIES 5 44mm (extId: 4651), APPLE WATCH  SE 44mm (extId: 4580), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 3 38mm
-🔎 Mongo ID: 682309cdcaeba90f1f34674a
-🆔 External ID: 4689
-🔗 Slug: apple-watch-series-3-38mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: APPLE WATCH SERIES 3 42 (extId: 4703), APPLE WATCH SERIES 5 44mm (extId: 4651), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH SERIES 6 44mm (extId: 4626), APPLE WATCH SERIES 6 40mm (extId: 4607)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 4 44mm
-🔎 Mongo ID: 682309cecaeba90f1f34674b
-🆔 External ID: 4684
-🔗 Slug: apple-watch-series-4-44mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH 3 (extId: 4711), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH SERIES 6 44mm (extId: 4626), APPLE WATCH SERIES 6 40mm (extId: 4607), APPLE WATCH  SE 44mm (extId: 4580)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 4 40mm
-🔎 Mongo ID: 682309cfcaeba90f1f34674c
-🆔 External ID: 4676
-🔗 Slug: apple-watch-series-4-40mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: APPLE WATCH SERIES 3 38mm (extId: 4689), APPLE WATCH SERIES 5 44mm (extId: 4651), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH SERIES 6 40mm (extId: 4607), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 5 44mm
-🔎 Mongo ID: 682309d1caeba90f1f34674d
-🆔 External ID: 4651
-🔗 Slug: apple-watch-series-5-44mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH ACTIVE (extId: 4744), APPLE WATCH SERIES 3 38mm (extId: 4689), APPLE WATCH SERIES 6 40mm (extId: 4607), APPLE WATCH  SE 44mm (extId: 4580), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 5 40mm
-🔎 Mongo ID: 682309d2caeba90f1f34674e
-🆔 External ID: 4636
-🔗 Slug: apple-watch-series-5-40mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH ACTIVE 2 (extId: 4728), APPLE WATCH SERIES 3 38mm (extId: 4689), APPLE WATCH SERIES 4 44mm (extId: 4684), APPLE WATCH  SE 44mm (extId: 4580), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 6 44mm
-🔎 Mongo ID: 682309d3caeba90f1f34674f
-🆔 External ID: 4626
-🔗 Slug: apple-watch-series-6-44mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: APPLE WATCH SERIES 3 42 (extId: 4703), APPLE WATCH SERIES 4 44mm (extId: 4684), APPLE WATCH SERIES 5 40mm (extId: 4636), APPLE WATCH SERIES 6 40mm (extId: 4607), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH SERIES 6 40mm
-🔎 Mongo ID: 682309d5caeba90f1f346750
-🆔 External ID: 4607
-🔗 Slug: apple-watch-series-6-40mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH ACTIVE 2 (extId: 4728), APPLE WATCH SERIES 4 44mm (extId: 4684), APPLE WATCH SERIES 4 40mm (extId: 4676), APPLE WATCH SERIES 6 44mm (extId: 4626), APPLE WATCH  SE 44mm (extId: 4580)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH  SE 44mm
-🔎 Mongo ID: 682309d6caeba90f1f346751
-🆔 External ID: 4580
-🔗 Slug: apple-watch-se-44mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH 3 (extId: 4711), APPLE WATCH SERIES 3 38mm (extId: 4689), APPLE WATCH SERIES 6 44mm (extId: 4626), APPLE WATCH SERIES 6 40mm (extId: 4607), APPLE WATCH  SE 40mm (extId: 4558)
-------------------------------------------------------------
-
-🛒 Product: APPLE WATCH  SE 40mm
-🔎 Mongo ID: 682309d8caeba90f1f346753
-🆔 External ID: 4558
-🔗 Slug: apple-watch-se-40mm
-🏷️ Categories: Apple Watches (6822eda2489bf43bf7c2d1fa), Watches (6822ed9d489bf43bf7c2d1f5)
-🤝 Related Products: SAMSUNG GALAXY WATCH 3 (extId: 4711), APPLE WATCH SERIES 3 42 (extId: 4703), APPLE WATCH SERIES 3 38mm (extId: 4689), APPLE WATCH SERIES 4 40mm (extId: 4676), APPLE WATCH SERIES 6 44mm (extId: 4626)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 With Facetime 64 GB
-🔎 Mongo ID: 682309d9caeba90f1f346754
-🆔 External ID: 4544
-🔗 Slug: iphone-12-with-facetime-64-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 With Facetime 128 GB
-🔎 Mongo ID: 682309dbcaeba90f1f346755
-🆔 External ID: 4535
-🔗 Slug: iphone-12-with-facetime-128-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 With Facetime 256 GB
-🔎 Mongo ID: 682309dccaeba90f1f346756
-🆔 External ID: 4514
-🔗 Slug: iphone-12-with-facetime-256-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO With Dual Sim Facetime 128 GB
-🔎 Mongo ID: 682309decaeba90f1f346758
-🆔 External ID: 4505
-🔗 Slug: iphone-12-pro-with-dual-sim-facetime-128-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO With Dual Sim Facetime 256 GB
-🔎 Mongo ID: 682309dfcaeba90f1f346759
-🆔 External ID: 4496
-🔗 Slug: iphone-12-pro-with-dual-sim-facetime-256-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO With Dual Sim Facetime 512GB
-🔎 Mongo ID: 682309e0caeba90f1f34675a
-🆔 External ID: 4489
-🔗 Slug: iphone-12-pro-with-dual-sim-facetime-512gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO With Facetime 128 GB
-🔎 Mongo ID: 682309e2caeba90f1f34675b
-🆔 External ID: 4479
-🔗 Slug: iphone-12-pro-with-facetime-128-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO With Facetime 256 GB
-🔎 Mongo ID: 682309e4caeba90f1f34675c
-🆔 External ID: 4471
-🔗 Slug: iphone-12-pro-with-facetime-256-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO With Facetime  512 GB
-🔎 Mongo ID: 682309e5caeba90f1f34675d
-🆔 External ID: 4464
-🔗 Slug: iphone-12-pro-with-facetime-512-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB
-🔎 Mongo ID: 682309e7caeba90f1f34675e
-🆔 External ID: 4406
-🔗 Slug: iphone-12-pro-max-with-facetime-dual-sim-128-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG NOTE 20 5G 8GB (extId: 5079), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB
-🔎 Mongo ID: 682309e8caeba90f1f34675f
-🆔 External ID: 4397
-🔗 Slug: iphone-12-pro-max-with-facetime-dual-sim-256-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB
-🔎 Mongo ID: 682309eacaeba90f1f346760
-🆔 External ID: 4390
-🔗 Slug: iphone-12-pro-max-with-facetime-dual-sim-512-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO MAX With Facetime 128 GB
-🔎 Mongo ID: 682309ebcaeba90f1f346761
-🆔 External ID: 4380
-🔗 Slug: iphone-12-pro-max-with-facetime-128-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO MAX With Facetime 256 GB
-🔎 Mongo ID: 682309edcaeba90f1f346762
-🆔 External ID: 4375
-🔗 Slug: iphone-12-pro-max-with-facetime-256-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Facetime 256 GB (extId: 4471), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
-------------------------------------------------------------
-
-🛒 Product: IPHONE 12 PRO MAX With Facetime 512 GB
-🔎 Mongo ID: 682309eecaeba90f1f346763
-🆔 External ID: 4340
-🔗 Slug: iphone-12-pro-max-with-facetime-512-gb
-🏷️ Categories: Iphone (6822ece4489bf43bf7c2d171), Phone (6822ec26489bf43bf7c2d0dc)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 PLUS 5G 256GB (extId: 8023), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime 256 GB (extId: 4471)
-------------------------------------------------------------
-
-🛒 Product: Import placeholder for id:5176; id:46568; id:54531; id:54547; id:54548; id:54549; id:54550; id:54551; id:54552; id:54553; id:54554; id:54555; id:54556; id:54557; id:54558; id:54559; id:54560; id:54561; id:54562; id:54564; id:54565; id:54566; id:54567; id:54568; id:54569; id:54570; id:54571; id:54572; id:54573; id:54574; id:54575; id:54576; id:54641; id:54642; id:54643; id:54644; id:54645; id:54646; id:54647; id:54648; id:54649; id:54650
-🔎 Mongo ID: 68231fabcaeba90f1f34705b
-🆔 External ID: 55585
-🔗 Slug: import-placeholder-for-id5176-id46568-id54531-id54547-id54548-id54549-id54550-id54551-id54552-id54553-id54554-id54555-id54556-id54557-id54558-id54559-id54560-id54561-id54562-id54564-id54565-id54566-id54567-id54568-id54569-id54570-id54571-id54572-id54573-id54574-id54575-id54576-id54641-id54642-id54643-id54644-id54645-id54646-id54647-id54648-id54649-id54650
-🏷️ Categories: Birthday (68231faaa48883e98be857b6)
+🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
 🤝 Related Products: (none)
 ------------------------------------------------------------
 

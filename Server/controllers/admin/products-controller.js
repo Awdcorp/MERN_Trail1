@@ -60,18 +60,35 @@ const addProduct = async (req, res) => {
 
 const fetchAllProducts = async (req, res) => {
   try {
+    const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 25;
-    const listOfProducts = await Product.find({})
+    const search = req.query.search || "";
+    const sortBy = req.query.sortBy || "createdAt";
+    const sortOrder = req.query.sortOrder === "desc" ? -1 : 1;
+    const category = req.query.category || null;
+console.log("📂 CATEGORY FILTER RECEIVED:", category);
+
+    const query = {
+      ...(search && { title: { $regex: search, $options: "i" } }),
+      ...(category && { categories: { $in: [category] } })
+    };
+console.log("🔍 Incoming Query Params:", req.query);
+
+    const total = await Product.countDocuments(query);
+
+    const listOfProducts = await Product.find(query)
       .populate("categories", "name")
+      .sort({ [sortBy]: sortOrder })
+      .skip((page - 1) * limit)
       .limit(limit);
 
     console.log("🧨 Admin Product Fetch Request");
-    console.log("➡️ Query Limit:", req.query.limit);
-    console.log("📦 Final Limit Applied:", limit);
+    console.log("➡️ Page:", page, "Limit:", limit, "Search:", search, "Sort:", sortBy, sortOrder);
 
     res.status(200).json({
       success: true,
       data: listOfProducts,
+      total,
     });
   } catch (e) {
     console.log(e);
@@ -81,6 +98,7 @@ const fetchAllProducts = async (req, res) => {
     });
   }
 };
+
 
 const editProduct = async (req, res) => {
   try {

@@ -1,24 +1,20 @@
-import ProductImageUpload from "@/components/admin-view/image-upload";
-import AdminProductRow from "@/components/admin-view/product-tile";
-import AdminPanelTemplate from "@/components/admin-view/AdminPanelTemplate";
-import CommonForm from "@/components/common/form";
+import { Fragment, useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useToast } from "@/components/ui/use-toast";
 import { addProductFormElements } from "@/config";
+import CommonForm from "@/components/common/form";
+import ProductImageUpload from "@/components/admin-view/image-upload";
+import DataTable from "@/components/admin-view/data-table";
+import { productColumns } from "@/components/admin-view/columns";
 import {
   addNewProduct,
   deleteProduct,
   editProduct,
   fetchAllProducts,
 } from "@/store/admin/products-slice";
-import { Fragment, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 const initialFormData = {
   image: "",
@@ -51,8 +47,14 @@ function AdminProducts() {
   const [imageLoadingState, setImageLoadingState] = useState(false);
   const [currentEditedId, setCurrentEditedId] = useState(null);
   const [allCategories, setAllCategories] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [page, setPage] = useState(1);
+  const [sortBy, setSortBy] = useState("createdAt");
+  const [sortOrder, setSortOrder] = useState("desc");
+  const limit = 10;
 
-  const { productList } = useSelector((state) => state.adminProducts);
+  const { productList, total } = useSelector((state) => state.adminProducts);
   const dispatch = useDispatch();
   const { toast } = useToast();
 
@@ -64,18 +66,16 @@ function AdminProducts() {
     };
 
     currentEditedId !== null
-      ? dispatch(
-          editProduct({ id: currentEditedId, formData: updatedFormData })
-        ).then((data) => {
+      ? dispatch(editProduct({ id: currentEditedId, formData: updatedFormData })).then((data) => {
           if (data?.payload?.success) {
-            dispatch(fetchAllProducts());
+            dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
             resetForm();
             toast({ title: "Product updated successfully" });
           }
         })
       : dispatch(addNewProduct(updatedFormData)).then((data) => {
           if (data?.payload?.success) {
-            dispatch(fetchAllProducts());
+            dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
             resetForm();
             toast({ title: "Product added successfully" });
           }
@@ -85,7 +85,7 @@ function AdminProducts() {
   function handleDelete(getCurrentProductId) {
     dispatch(deleteProduct(getCurrentProductId)).then((data) => {
       if (data?.payload?.success) {
-        dispatch(fetchAllProducts());
+        dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
         toast({ title: "Product deleted successfully" });
       }
     });
@@ -107,7 +107,7 @@ function AdminProducts() {
   }
 
   useEffect(() => {
-    dispatch(fetchAllProducts());
+    dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
 
     async function fetchCategories() {
       try {
@@ -118,46 +118,73 @@ function AdminProducts() {
         console.error("❌ Failed to fetch categories", err);
       }
     }
-
     fetchCategories();
-  }, [dispatch]);
+  }, [dispatch, page, searchTerm, selectedCategory, sortBy, sortOrder]);
+
+  const filterUI = (
+    <div className="flex items-center gap-4">
+      <Input
+        placeholder="Search title..."
+        value={searchTerm}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+          setPage(1);
+        }}
+        className="max-w-sm"
+      />
+      <select
+        value={selectedCategory}
+        onChange={(e) => {
+          setSelectedCategory(e.target.value);
+          setPage(1);
+        }}
+        className="border rounded px-3 py-2 text-sm"
+      >
+        <option value="">All Categories</option>
+        {allCategories.map((cat) => (
+          <option key={cat._id} value={cat._id}>
+            {cat.name}
+          </option>
+        ))}
+      </select>
+          <Button asChild>
+      <a href="/admin/products/new">+ Create New Product</a>
+    </Button>
+    </div>
+  );
 
   return (
     <Fragment>
-            <div className="flex justify-end mb-4">
-        <Button asChild>
-          <a href="/admin/products/new">+ Create New Product</a>
-        </Button>
-      </div>
-      <AdminPanelTemplate
-        title="All Products"
-        columns={[
-          { label: "", align: "left" },
-          { label: "Product" },
-          { label: "Status" },
-          { label: "Stock" },
-          { label: "Category" },
-          { label: "Brand" },
-          { label: "Price" },
-          { label: "Actions", align: "right" },
-        ]}
-        actions={
-          <Button onClick={() => setOpenCreateProductsDialog(true)}>
-            Add New Product
-          </Button>
-        }
-      >
-        {productList?.map((productItem) => (
-          <AdminProductRow
-            key={productItem._id}
-            product={productItem}
-            setFormData={setFormData}
-            setOpenCreateProductsDialog={setOpenCreateProductsDialog}
-            setCurrentEditedId={setCurrentEditedId}
-            handleDelete={handleDelete}
-          />
-        ))}
-      </AdminPanelTemplate>
+
+
+      <DataTable
+        columns={productColumns.map((col) =>
+          typeof col.cell === "function"
+            ? {
+                ...col,
+                sortable: ["title", "totalStock", "price", "isActive"].includes(col.accessorKey),
+                cell: (row) =>
+                  col.cell({
+                    ...row,
+                    navigate: (path) => (window.location.href = path),
+                    setQuickEdit: setCurrentEditedId,
+                        setFormData,
+    setOpenCreateProductsDialog,
+                    onDelete: handleDelete,
+                  }),
+              }
+            : col
+        )}
+        data={productList}
+        filterUI={filterUI}
+        total={total}
+        page={page}
+        onPageChange={setPage}
+        onSortChange={({ sortBy, sortOrder }) => {
+          setSortBy(sortBy);
+          setSortOrder(sortOrder);
+        }}
+      />
 
       <Sheet
         open={openCreateProductsDialog}

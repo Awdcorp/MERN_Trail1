@@ -24,15 +24,19 @@ export const addNewProduct = createAsyncThunk(
 );
 
 export const fetchAllProducts = createAsyncThunk(
-  "/products/fetchAllProducts",
-  async () => {
-    const result = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/admin/products/get`
-    );
-
-    return result?.data;
+  "adminProducts/fetchAllProducts",
+  async ({ page = 1, limit = 10, search = "", category, sortBy, sortOrder }, thunkAPI) => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/get`, {
+        params: { page, limit, search, category, sortBy, sortOrder }, // ✅ make sure this is present
+      });
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
   }
 );
+
 
 export const editProduct = createAsyncThunk(
   "/products/editProduct",
@@ -64,20 +68,26 @@ export const deleteProduct = createAsyncThunk(
 
 const AdminProductsSlice = createSlice({
   name: "adminProducts",
-  initialState,
+  initialState: {
+    productList: [],
+    total: 0,
+    loading: false,
+    error: null,
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllProducts.pending, (state) => {
-        state.isLoading = true;
+        state.loading = true;
       })
       .addCase(fetchAllProducts.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.loading = false;
         state.productList = action.payload.data;
+        state.total = action.payload.total;
       })
       .addCase(fetchAllProducts.rejected, (state, action) => {
-        state.isLoading = false;
-        state.productList = [];
+        state.loading = false;
+        state.error = action.payload?.message || "Failed to fetch products";
       });
   },
 });

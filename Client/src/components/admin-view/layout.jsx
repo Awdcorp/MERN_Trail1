@@ -16,7 +16,7 @@ function AdminLayout() {
         <AdminHeader setOpen={setOpenSidebar} />
 
         {/* Scrollable Main Area */}
-        <main className="flex-1 overflow-y-auto bg-muted/40 p-4 md:p-6">
+        <main className="flex-1 overflow-y-auto bg-muted/40 pt-4 md:pt-0 pb-0">
           <Outlet />
         </main>
       </div>

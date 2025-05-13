@@ -1,26 +1,27 @@
+// File: scripts/delete-all-categories.js
+
+require("dotenv").config();
 const mongoose = require("mongoose");
 
-// === MongoDB connection string ===
-const MONGO_URI = "mongodb+srv://awdheshjha0922:n1qdFe2yDJEls7H7@cluster0.01ei4iy.mongodb.net/";
+// Import your Category model
+const Category = require("../models/Category");
 
-// === Product Schema ===
-const productSchema = new mongoose.Schema({}, { strict: false });
-const Product = mongoose.model("Product", productSchema);
+// MongoDB URI from .env or hardcoded
+const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017/your-database-name";
 
-// === Clear all products ===
-async function clearAllProducts() {
+async function deleteAllCategories() {
   try {
-    await mongoose.connect(MONGO_URI);
+    await mongoose.connect(MONGO_URL);
     console.log("✅ Connected to MongoDB");
 
-    const result = await Product.deleteMany({});
-    console.log(`🧹 Deleted ${result.deletedCount} products`);
+    const result = await Category.deleteMany({});
+    console.log(`🗑️ Deleted ${result.deletedCount} categories.`);
 
-    process.exit(0);
+    mongoose.disconnect();
   } catch (err) {
-    console.error("❌ Error clearing products:", err);
+    console.error("❌ Error deleting categories:", err);
     process.exit(1);
   }
 }
 
-clearAllProducts();
+deleteAllCategories();
