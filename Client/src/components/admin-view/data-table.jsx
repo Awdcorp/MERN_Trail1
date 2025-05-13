@@ -4,7 +4,7 @@ import {
   bulkDeleteProducts,
   fetchAllProducts
 } from "@/store/admin/products-slice";
-import { useToast } from "@/components/ui/use-toast";
+
 import {
   Table,
   TableBody,
@@ -20,14 +20,20 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { useToast } from "@/components/ui/use-toast";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
 
-export default function DataTable({ columns, data, total = 0, page = 1, onPageChange, filterUI, limit, search, category, sortBy, sortOrder }) {
-  const rowsPerPage = 10;
+export default function DataTable({ columns, data, total = 0, page = 1, onPageChange, filterUI, limit = 10, onLimitChange, search, category, sortBy, sortOrder, onSortChange, allCategories = [] }) {
+  const rowsPerPage = limit;
   const dispatch = useDispatch();
   const { toast } = useToast();
+
   const [selectedRows, setSelectedRows] = useState([]);
+  const [editedRows, setEditedRows] = useState({});
+  const [isBulkEditing, setIsBulkEditing] = useState(false);
+
   const allSelected = data.length > 0 && selectedRows.length === data.length;
 
   const toggleRow = (id) => {
@@ -44,19 +50,35 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
     }
   };
 
-  const sortedData = sortBy
-    ? [...data].sort((a, b) => {
-        const aVal = a[sortBy];
-        const bVal = b[sortBy];
-        if (typeof aVal === "string") {
-          return sortOrder === "asc"
-            ? aVal.localeCompare(bVal)
-            : bVal.localeCompare(aVal);
-        }
-        return sortOrder === "asc" ? aVal - bVal : bVal - aVal;
-      })
-    : data;
+  const handleFieldChange = (id, field, value) => {
+    setEditedRows((prev) => ({
+      ...prev,
+      [id]: {
+        ...prev[id],
+        [field]: value,
+      },
+    }));
+  };
 
+  const handleSaveAll = () => {
+    const updates = Object.entries(editedRows).map(([id, updates]) => ({ id, updates }));
+    dispatch(bulkUpdateProducts({ updates }))
+      .unwrap()
+      .then(() => {
+        toast({ title: "Changes saved successfully" });
+        dispatch(fetchAllProducts({ page, limit, search, category, sortBy, sortOrder }));
+        setEditedRows({});
+        setSelectedRows([]);
+        setIsBulkEditing(false);
+      });
+  };
+
+  const handleCancelEdit = () => {
+    setIsBulkEditing(false);
+    setEditedRows({});
+  };
+
+  const sortedData = data;
   const totalPages = Math.ceil(total / rowsPerPage);
 
   return (
@@ -66,36 +88,20 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
           <div className="flex items-center justify-between">
             <span>✓ {selectedRows.length} selected</span>
             <div className="flex gap-4">
-              <button
-                className="text-blue-600 hover:underline"
-                onClick={() => {
-                  dispatch(bulkUpdateProducts({ ids: selectedRows, updates: { isActive: true } }))
-                    .unwrap()
-                    .then(() => {
-                      dispatch(fetchAllProducts({ page, limit, search, category, sortBy, sortOrder }));
-                      setSelectedRows([]);
-                      toast({ title: "Products activated successfully" });
-                    });
-                }}
-              >
-                Activate
-              </button>
-
-              <button
-                className="text-gray-600 hover:underline"
-                onClick={() => {
-                  dispatch(bulkUpdateProducts({ ids: selectedRows, updates: { isActive: false } }))
-                    .unwrap()
-                    .then(() => {
-                      dispatch(fetchAllProducts({ page, limit, search, category, sortBy, sortOrder }));
-                      setSelectedRows([]);
-                      toast({ title: "Products deactivated successfully" });
-                    });
-                }}
-              >
-                Deactivate
-              </button>
-
+              {!isBulkEditing ? (
+                <button className="text-blue-600 hover:underline" onClick={() => setIsBulkEditing(true)}>
+                  Bulk Edit
+                </button>
+              ) : (
+                <>
+                  <button className="text-green-600 hover:underline" onClick={handleSaveAll}>
+                    Save Changes
+                  </button>
+                  <button className="text-gray-600 hover:underline" onClick={handleCancelEdit}>
+                    Cancel
+                  </button>
+                </>
+              )}
               <button
                 className="text-red-600 hover:underline"
                 onClick={() => {
@@ -127,11 +133,24 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
               <TableHead
                 key={col.accessorKey}
                 className={col.sortable ? "cursor-pointer select-none" : ""}
+                onClick={() => {
+                  if (!col.sortable) return;
+                  const newSort = sortBy === col.accessorKey && sortOrder === "asc" ? "desc" : "asc";
+                  onSortChange?.({ sortBy: col.accessorKey, sortOrder: newSort });
+                }}
               >
                 <div className="flex items-center gap-1">
-                  {col.header}
-                  {col.sortable && <ArrowUpDown className="w-4 h-4" />}
-                </div>
+  {col.header}
+  {col.sortable && (
+    <ArrowUpDown
+      className={`w-4 h-4 transition-transform duration-200 ${
+        sortBy === col.accessorKey ?
+          sortOrder === "asc" ? "rotate-180 text-blue-600" : "text-blue-600"
+          : "text-gray-400"
+      }`}
+    />
+  )}
+</div>
               </TableHead>
             ))}
           </TableRow>
@@ -146,19 +165,90 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                   onChange={() => toggleRow(row._id)}
                 />
               </TableCell>
-              {columns.map((col) => (
-                <TableCell key={col.accessorKey}>
-                  {col.cell ? col.cell(row) : row[col.accessorKey]}
-                </TableCell>
-              ))}
+              {columns.map((col) => {
+                const value = editedRows?.[row._id]?.[col.accessorKey] ?? row[col.accessorKey];
+
+                if (!(isBulkEditing && selectedRows.includes(row._id))) {
+                  return (
+                    <TableCell key={col.accessorKey}>
+                      {col.cell ? col.cell(row) : row[col.accessorKey]}
+                    </TableCell>
+                  );
+                }
+
+                let editableCell;
+
+                if (["price", "salePrice", "totalStock"].includes(col.accessorKey)) {
+                  editableCell = (
+                    <Input
+                      type="number"
+                      value={value ?? ""}
+                      onChange={(e) => handleFieldChange(row._id, col.accessorKey, parseFloat(e.target.value))}
+                    />
+                  );
+                } else if (col.accessorKey === "title") {
+                  editableCell = (
+                    <Input
+                      value={value ?? ""}
+                      onChange={(e) => handleFieldChange(row._id, col.accessorKey, e.target.value)}
+                    />
+                  );
+                } else if (col.accessorKey === "isActive") {
+                  editableCell = (
+                    <select
+                      className="text-sm border px-2 py-1 rounded"
+                      value={value === true ? "true" : value === false ? "false" : ""}
+                      onChange={(e) => handleFieldChange(row._id, col.accessorKey, e.target.value === "true")}
+                    >
+                      <option value="">--</option>
+                      <option value="true">Active</option>
+                      <option value="false">Inactive</option>
+                    </select>
+                  );
+                } else if (col.accessorKey === "categories") {
+                  editableCell = (
+                    <select
+                      className="text-sm border px-2 py-1 rounded"
+                      multiple
+                      value={Array.isArray(value) ? value : []}
+                      onChange={(e) =>
+                        handleFieldChange(
+                          row._id,
+                          col.accessorKey,
+                          Array.from(e.target.selectedOptions, (opt) => opt.value)
+                        )
+                      }
+                    >
+                      {allCategories.map((cat) => (
+                        <option key={cat._id} value={cat._id}>
+                          {cat.name}
+                        </option>
+                      ))}
+                    </select>
+                  );
+                } else {
+                  editableCell = col.cell ? col.cell(row) : value;
+                }
+
+                return <TableCell key={col.accessorKey}>{editableCell}</TableCell>;
+              })}
             </TableRow>
           ))}
         </TableBody>
       </Table>
 
       <div className="sticky bottom-0 z-10 bg-white border-t p-4 flex items-center justify-between">
-        <div className="text-sm text-muted-foreground">
-          Rows per page: {rowsPerPage}
+        <div className="text-sm text-muted-foreground flex gap-2 items-center">
+          <span>Rows per page:</span>
+          <select
+            value={rowsPerPage}
+            onChange={(e) => onLimitChange?.(parseInt(e.target.value))}
+            className="border text-sm px-2 py-1 rounded"
+          >
+            {[10, 25, 50, 100].map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
         </div>
         <Pagination>
           <PaginationContent>

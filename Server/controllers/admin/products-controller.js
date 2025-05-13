@@ -215,24 +215,25 @@ const searchProducts = async (req, res) => {
 };
 
 const bulkUpdateProducts = async (req, res) => {
-  const { ids, updates } = req.body;
   try {
-    const objectIds = ids.map((id) => new mongoose.Types.ObjectId(id));
-    console.log("🧪 Bulk updating IDs:", objectIds);
-    console.log("🧪 With updates:", updates);
+    const { updates } = req.body;
 
-    const result = await Product.updateMany(
-      { _id: { $in: objectIds } },
-      { $set: updates }
-    );
+    if (!Array.isArray(updates)) {
+      return res.status(400).json({ success: false, message: "Invalid updates format" });
+    }
 
-    console.log("✅ Mongo update result:", result);
-    res.json({ success: true });
+    for (const { id, updates: fields } of updates) {
+      await Product.findByIdAndUpdate(id, { $set: fields });
+    }
+
+    console.log("✅ Bulk updates applied:", updates.length);
+    res.status(200).json({ success: true, message: "Bulk updates completed" });
   } catch (error) {
     console.error("❌ Bulk update failed:", error);
     res.status(500).json({ success: false, message: "Bulk update failed" });
   }
 };
+
 
 
 const bulkDeleteProducts = async (req, res) => {

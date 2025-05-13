@@ -50,9 +50,9 @@ function AdminProducts() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
   const [sortBy, setSortBy] = useState("createdAt");
   const [sortOrder, setSortOrder] = useState("desc");
-  const limit = 10;
 
   const { productList, total } = useSelector((state) => state.adminProducts);
   const dispatch = useDispatch();
@@ -119,7 +119,7 @@ function AdminProducts() {
       }
     }
     fetchCategories();
-  }, [dispatch, page, searchTerm, selectedCategory, sortBy, sortOrder]);
+  }, [dispatch, page, limit, searchTerm, selectedCategory, sortBy, sortOrder]);
 
   const filterUI = (
     <div className="flex items-center gap-4">
@@ -155,8 +155,6 @@ function AdminProducts() {
 
   return (
     <Fragment>
-
-
       <DataTable
         columns={productColumns.map((col) =>
           typeof col.cell === "function"
@@ -180,10 +178,21 @@ function AdminProducts() {
         total={total}
         page={page}
         onPageChange={setPage}
-        onSortChange={({ sortBy, sortOrder }) => {
+        limit={limit}
+        onLimitChange={(val) => {
+          setLimit(val);
+          setPage(1);
+        }}
+        search={searchTerm}
+        category={selectedCategory}
+        sortBy={sortBy}
+        sortOrder={sortOrder}
+                onSortChange={({ sortBy, sortOrder }) => {
           setSortBy(sortBy);
           setSortOrder(sortOrder);
         }}
+
+        allCategories={allCategories}
       />
 
       <Sheet
