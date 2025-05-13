@@ -51,6 +51,10 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
   };
 
   const handleFieldChange = (id, field, value) => {
+    if (field === "categories" && Array.isArray(value)) {
+      value = value.map((v) => (typeof v === "object" && v._id ? v._id : v));
+    }
+
     setEditedRows((prev) => ({
       ...prev,
       [id]: {
@@ -58,6 +62,15 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
         [field]: value,
       },
     }));
+  };
+
+  const handleCategoryCheckbox = (id, categoryId) => {
+    const current = editedRows?.[id]?.categories ?? data.find((p) => p._id === id)?.categories?.map(c => c._id) ?? [];
+    const newCategories = current.includes(categoryId)
+      ? current.filter((cid) => cid !== categoryId)
+      : [...current, categoryId];
+
+    handleFieldChange(id, "categories", newCategories);
   };
 
   const handleSaveAll = () => {
@@ -140,17 +153,19 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                 }}
               >
                 <div className="flex items-center gap-1">
-  {col.header}
-  {col.sortable && (
-    <ArrowUpDown
-      className={`w-4 h-4 transition-transform duration-200 ${
-        sortBy === col.accessorKey ?
-          sortOrder === "asc" ? "rotate-180 text-blue-600" : "text-blue-600"
-          : "text-gray-400"
-      }`}
-    />
-  )}
-</div>
+                  {col.header}
+                  {col.sortable && (
+                    <ArrowUpDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        sortBy === col.accessorKey
+                          ? sortOrder === "asc"
+                            ? "rotate-180 text-blue-600"
+                            : "text-blue-600"
+                          : "text-gray-400"
+                      }`}
+                    />
+                  )}
+                </div>
               </TableHead>
             ))}
           </TableRow>
@@ -206,25 +221,20 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                     </select>
                   );
                 } else if (col.accessorKey === "categories") {
+                  const selectedIds = Array.isArray(value) ? value.map((c) => c._id || c) : [];
                   editableCell = (
-                    <select
-                      className="text-sm border px-2 py-1 rounded"
-                      multiple
-                      value={Array.isArray(value) ? value : []}
-                      onChange={(e) =>
-                        handleFieldChange(
-                          row._id,
-                          col.accessorKey,
-                          Array.from(e.target.selectedOptions, (opt) => opt.value)
-                        )
-                      }
-                    >
+                    <div className="flex flex-col gap-1 max-h-32 overflow-y-auto">
                       {allCategories.map((cat) => (
-                        <option key={cat._id} value={cat._id}>
+                        <label key={cat._id} className="inline-flex items-center gap-2 text-sm">
+                          <input
+                            type="checkbox"
+                            checked={selectedIds.includes(cat._id)}
+                            onChange={() => handleCategoryCheckbox(row._id, cat._id)}
+                          />
                           {cat.name}
-                        </option>
+                        </label>
                       ))}
-                    </select>
+                    </div>
                   );
                 } else {
                   editableCell = col.cell ? col.cell(row) : value;
