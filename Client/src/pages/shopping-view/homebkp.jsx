@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import bannerOne from "../../assets/banner-1.webp";
 import bannerTwo from "../../assets/banner-2.webp";
 import bannerThree from "../../assets/banner-3.webp";
-import TopOffersSlider from "@/components/shopping-view/topOffersSlider";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -99,13 +98,7 @@ function ShoppingHome() {
        <div className="-mx-8">
          <HomepageSlider />
        </div>
-<TopOffersSlider
-  title="Top Offers"
-  categoryIds={["6822ecc5489bf43bf7c2d159", "6822ed29489bf43bf7c2d19e"]}
-  viewAllUrl="samsung-phones"
-/>
-
-
+       
   <div className="mt-16">
     <div className=" mx-auto px-4">
       <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">

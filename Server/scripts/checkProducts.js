@@ -1,25 +1,26 @@
-require("dotenv").config();
 const mongoose = require("mongoose");
-const Product = require("../models/Product"); // Adjust path if needed
 
-async function viewAllProducts() {
+// === MongoDB connection string ===
+const MONGO_URI = "mongodb+srv://awdheshjha0922:n1qdFe2yDJEls7H7@cluster0.01ei4iy.mongodb.net/";
+
+// === Product Schema ===
+const productSchema = new mongoose.Schema({}, { strict: false });
+const Product = mongoose.model("Product", productSchema);
+
+// === Clear all products ===
+async function clearAllProducts() {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(MONGO_URI);
     console.log("✅ Connected to MongoDB");
 
-    const products = await Product.find().limit(10).lean();
+    const result = await Product.deleteMany({});
+    console.log(`🧹 Deleted ${result.deletedCount} products`);
 
-    products.forEach((p, i) => {
-      console.log(`\n🔹 Product #${i + 1} - ${p.title}`);
-      console.log("------------------------------------------------------------");
-      console.dir(p, { depth: null, colors: true });
-    });
-
-    console.log(`\n✅ Total products displayed: ${products.length}`);
-    mongoose.disconnect();
+    process.exit(0);
   } catch (err) {
-    console.error("❌ Error:", err);
+    console.error("❌ Error clearing products:", err);
+    process.exit(1);
   }
 }
 
-viewAllProducts();
+clearAllProducts();

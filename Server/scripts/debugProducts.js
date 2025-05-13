@@ -1,52 +1,68 @@
-require("dotenv").config();
 const mongoose = require("mongoose");
-const Product = require("../models/Product");
-const Category = require("../models/Category");
 
-const MONGO_URI = process.env.MONGO_URI || process.env.MONGO_URL;
+const MONGO_URI = "mongodb+srv://awdheshjha0922:n1qdFe2yDJEls7H7@cluster0.01ei4iy.mongodb.net/";
 
-// 🎯 Replace these with WooCommerce product IDs
-const WOO_PRODUCT_IDS = [
-  1922, 1602, 1078, 1917, 1560,1518, 1053, 1608, 388, 1298
-];
+const productSchema = new mongoose.Schema({}, { strict: false });
+const categorySchema = new mongoose.Schema({}, { strict: false });
 
-async function debugProductsByWooIds() {
-  try {
-    await mongoose.connect(MONGO_URI);
-    console.log("✅ Connected to MongoDB\n");
+const Product = mongoose.model("Product", productSchema);
+const Category = mongoose.model("Category", categorySchema);
 
-    const products = await Product.find({ externalId: { $in: WOO_PRODUCT_IDS } })
-      .populate("categories", "name slug")
-      .lean();
+const externalId = process.argv[2]; // Pass WooCommerce ID in CLI argument
 
-    if (products.length === 0) {
-      console.log("⚠️ No products found for these WooCommerce IDs.");
-    }
-
-    for (const product of products) {
-      console.log("🛍️  Product:", product.title);
-      console.log("🖼️  Image:", product.images || "—");
-      console.log("🔗 Slug:", product.slug);
-      console.log("🏷️  Brand:", product.brand || "—");
-      console.log("💰 Price:", product.price, "| Sale:", product.salePrice || "—");
-      console.log("📦 Stock:", product.totalStock ?? "N/A");
-      console.log("🏷️  Tags:", product.tags?.join(", ") || "None");
-
-      console.log("🗂️  Categories:");
-      product.categories.forEach((cat) => {
-        console.log(`   - ${cat.name} (${cat.slug})`);
-      });
-
-      console.log("🧲 Upsells:", product.upsellProductIds?.join(", ") || "None");
-      console.log("🧩 Related:", product.relatedProductIds?.join(", ") || "None");
-      console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
-    }
-
-    process.exit(0);
-  } catch (err) {
-    console.error("❌ Script error:", err);
-    process.exit(1);
-  }
+if (!externalId) {
+  console.error("❌ Please provide a product externalId as argument.");
+  process.exit(1);
 }
 
-debugProductsByWooIds();
+async function showProductDetails() {
+  await mongoose.connect(MONGO_URI);
+  console.log("✅ Connected to MongoDB");
+
+  const product = await Product.findOne({ externalId: Number(externalId) }).lean();
+  if (!product) {
+    console.log(`❌ No product found with externalId: ${externalId}`);
+    return;
+  }
+
+  console.log(`\n🛒 Product: ${product.title}`);
+  console.log(`🔎 Mongo ID: ${product._id}`);
+  console.log(`🆔 External ID: ${product.externalId}`);
+  console.log(`🔗 Slug: ${product.slug}`);
+  console.log(`🏷️ Tags: ${product.tags?.join(", ")}`);
+  console.log(`💰 Price: ${product.price} | Sale Price: ${product.salePrice}`);
+  console.log(`📦 Stock: ${product.totalStock}`);
+  console.log(`🛠️ Brand: ${product.brand}`);
+  console.log(`🖼️ Image: ${product.images?.[0] || "No image"}`);
+
+  // Categories
+  if (product.categories?.length) {
+    const categories = await Category.find({ _id: { $in: product.categories } }).lean();
+    console.log(`📚 Categories:`);
+    for (const cat of categories) {
+      console.log(`  - ${cat.name} (${cat._id}, slug: ${cat.slug})`);
+    }
+  }
+
+  // Related Products
+  if (product.relatedProductIds?.length) {
+    const related = await Product.find({ externalId: { $in: product.relatedProductIds } }).lean();
+    console.log(`\n🤝 Related Products:`);
+    for (const rel of related) {
+      console.log(`  - ${rel.title} (extId: ${rel.externalId}, slug: ${rel.slug})`);
+    }
+  }
+
+  // Upsell Products
+  if (product.upsellProductIds?.length) {
+    const upsell = await Product.find({ externalId: { $in: product.upsellProductIds } }).lean();
+    console.log(`\n⬆️ Upsell Products:`);
+    for (const up of upsell) {
+      console.log(`  - ${up.title} (extId: ${up.externalId}, slug: ${up.slug})`);
+    }
+  }
+
+  process.exit(0);
+}
+
+showProductDetails();

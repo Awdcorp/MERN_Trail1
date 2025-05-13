@@ -12,8 +12,6 @@ import { getReviews } from "@/store/shop/review-slice";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import { getGuestId } from "@/lib/guest-id";
 import { useToast } from "@/components/ui/use-toast";
-import PromateShowcaseSection from "@/components/shopping-view/YouMightAlsoLikeSection";
-
 
 export default function ProductPage() {
   const { slug } = useParams();
@@ -194,8 +192,6 @@ export default function ProductPage() {
                 </div>
               </div>
             )}
-
-            <PromateShowcaseSection />
           </div>
         </>
       )}

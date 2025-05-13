@@ -3,6 +3,7 @@ const router = express.Router();
 const Product = require("../../models/Product");
 const Category = require("../../models/Category");
 const { searchProducts } = require("../../controllers/admin/products-controller");
+const mongoose = require("mongoose");
 
 
 // ✅ TEMP DEBUG: GET populated products
@@ -93,6 +94,39 @@ router.get("/multiple", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
+// GET /api/products/by-ids?ids=<comma-separated-_ids>
+router.get("/by-ids", async (req, res) => {
+  const idsParam = req.query.ids;
+  const limit = parseInt(req.query.limit) || 0;
+
+  if (!idsParam) {
+    return res.status(400).json({ error: "Missing ids parameter" });
+  }
+
+  let idArray;
+  try {
+    idArray = idsParam.split(",").map((id) => new mongoose.Types.ObjectId(id.trim()));
+  } catch (err) {
+    console.error("❌ Invalid ObjectId format:", err);
+    return res.status(400).json({ error: "Invalid ID format" });
+  }
+
+  try {
+    console.log(`🔍 [BY-IDS] Fetching ${idArray.length} products by _id`);
+    let query = Product.find({ _id: { $in: idArray } }).populate("categories", "name slug");
+
+    if (limit > 0) query = query.limit(limit);
+
+    const products = await query.exec();
+    console.log(`✅ [BY-IDS] Fetched ${products.length} products`);
+    res.json({ products });
+  } catch (err) {
+    console.error("❌ Error fetching products by _id:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 
 // GET /api/products
 router.get("/", async (req, res) => {
