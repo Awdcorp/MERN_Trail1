@@ -86,7 +86,7 @@ function AdminProductRow({
         >
           Quick Edit
         </Button>
-        <Link to={`/admin/products/edit/${product?._id}`}>
+        <Link to={`/admin/products/${product?._id}`}>
           <Button variant="secondary" size="sm">Edit</Button>
         </Link>
         <Button

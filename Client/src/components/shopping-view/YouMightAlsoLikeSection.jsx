@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import DemoProductTile from "@/components/shopping-view/demoProductTile";
 const PROMATE_PRODUCT_IDS = [
-  "68230867caeba90f1f34663f",
-  "68230868caeba90f1f346640",
-  "6823086acaeba90f1f346641",
-  "6823086bcaeba90f1f346642",
-  "6823086dcaeba90f1f346644",
+  "68233059caeba90f1f3477d6",
+  "682330bdcaeba90f1f347821",
+  "682330bccaeba90f1f347820",
+  "682330b4caeba90f1f34781b",
+  "682330accaeba90f1f347816",
 ];
 
 export default function PromateShowcaseSection() {
