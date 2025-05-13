@@ -6,6 +6,31 @@ const initialState = {
   productList: [],
 };
 
+// 🔁 Bulk update multiple products
+export const bulkUpdateProducts = createAsyncThunk(
+  "adminProducts/bulkUpdate",
+  async ({ ids, updates }, thunkAPI) => {
+    try {
+      const res = await axios.patch(`${import.meta.env.VITE_API_URL}/api/admin/products/bulk-update`, { ids, updates });
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response?.data || { message: "Bulk update failed" });
+    }
+  }
+);
+
+// 🔁 Bulk delete multiple products
+export const bulkDeleteProducts = createAsyncThunk(
+  "adminProducts/bulkDelete",
+  async ({ ids }, thunkAPI) => {
+    try {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/products/bulk-delete`, { ids });
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response?.data || { message: "Bulk delete failed" });
+    }
+  }
+);
 export const addNewProduct = createAsyncThunk(
   "/products/addnewproduct",
   async (formData) => {

@@ -1,6 +1,6 @@
 const { imageUploadUtil } = require("../../helpers/cloudinary");
 const Product = require("../../models/Product");
-
+const mongoose = require("mongoose");
 const handleImageUpload = async (req, res) => {
   try {
     const b64 = Buffer.from(req.file.buffer).toString("base64");
@@ -214,6 +214,38 @@ const searchProducts = async (req, res) => {
   }
 };
 
+const bulkUpdateProducts = async (req, res) => {
+  const { ids, updates } = req.body;
+  try {
+    const objectIds = ids.map((id) => new mongoose.Types.ObjectId(id));
+    console.log("🧪 Bulk updating IDs:", objectIds);
+    console.log("🧪 With updates:", updates);
+
+    const result = await Product.updateMany(
+      { _id: { $in: objectIds } },
+      { $set: updates }
+    );
+
+    console.log("✅ Mongo update result:", result);
+    res.json({ success: true });
+  } catch (error) {
+    console.error("❌ Bulk update failed:", error);
+    res.status(500).json({ success: false, message: "Bulk update failed" });
+  }
+};
+
+
+const bulkDeleteProducts = async (req, res) => {
+  const { ids } = req.body;
+  try {
+    await Product.deleteMany({ _id: { $in: ids } });
+    res.json({ success: true });
+  } catch (error) {
+    console.error("❌ Bulk delete failed:", error);
+    res.status(500).json({ success: false, message: "Bulk delete failed" });
+  }
+};
+
 module.exports = {
   handleImageUpload,
   addProduct,
@@ -222,4 +254,6 @@ module.exports = {
   deleteProduct,
   getProductById,
   searchProducts,
+  bulkUpdateProducts,
+  bulkDeleteProducts,
 };

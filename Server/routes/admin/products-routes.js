@@ -7,6 +7,8 @@ const {
   fetchAllProducts,
   deleteProduct,
   getProductById,
+  bulkUpdateProducts,
+  bulkDeleteProducts,
 } = require("../../controllers/admin/products-controller");
 
 const { upload } = require("../../helpers/cloudinary");
@@ -19,5 +21,7 @@ router.put("/edit/:id", editProduct);
 router.delete("/delete/:id", deleteProduct);
 router.get("/get", fetchAllProducts);
 router.get("/:id", getProductById);
+router.patch("/bulk-update", bulkUpdateProducts);
+router.post("/bulk-delete", bulkDeleteProducts);
 
 module.exports = router;
