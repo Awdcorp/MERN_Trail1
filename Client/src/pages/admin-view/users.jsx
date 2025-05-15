@@ -50,6 +50,7 @@ function AdminUsersView() {
   };
 
   return (
+    <div className="px-4">
     <AdminPanelTemplate
       title="All Users"
       columns={[
@@ -77,6 +78,7 @@ function AdminUsersView() {
         </tr>
       )}
     </AdminPanelTemplate>
+    </div>
   );
 }
 

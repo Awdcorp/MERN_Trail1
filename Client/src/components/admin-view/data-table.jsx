@@ -26,15 +26,15 @@ import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
 
 export default function DataTable({ columns, data, total = 0, page = 1, onPageChange, filterUI, limit = 10, onLimitChange, search, category, sortBy, sortOrder, onSortChange, allCategories = [] }) {
-  const rowsPerPage = limit;
   const dispatch = useDispatch();
   const { toast } = useToast();
-
   const [selectedRows, setSelectedRows] = useState([]);
   const [editedRows, setEditedRows] = useState({});
   const [isBulkEditing, setIsBulkEditing] = useState(false);
 
   const allSelected = data.length > 0 && selectedRows.length === data.length;
+  const rowsPerPage = limit;
+  const totalPages = Math.ceil(total / rowsPerPage);
 
   const toggleRow = (id) => {
     setSelectedRows((prev) =>
@@ -43,11 +43,7 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
   };
 
   const toggleAll = () => {
-    if (allSelected) {
-      setSelectedRows([]);
-    } else {
-      setSelectedRows(data.map((row) => row._id));
-    }
+    setSelectedRows(allSelected ? [] : data.map((row) => row._id));
   };
 
   const handleFieldChange = (id, field, value) => {
@@ -65,7 +61,10 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
   };
 
   const handleCategoryCheckbox = (id, categoryId) => {
-    const current = editedRows?.[id]?.categories ?? data.find((p) => p._id === id)?.categories?.map(c => c._id) ?? [];
+    const current =
+      editedRows?.[id]?.categories ??
+      data.find((p) => p._id === id)?.categories?.map((c) => c._id) ??
+      [];
     const newCategories = current.includes(categoryId)
       ? current.filter((cid) => cid !== categoryId)
       : [...current, categoryId];
@@ -91,11 +90,10 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
     setEditedRows({});
   };
 
-  const sortedData = data;
-  const totalPages = Math.ceil(total / rowsPerPage);
-
   return (
-    <div className="border rounded-md">
+    <div className="flex flex-col h-full px-4 pt-6">
+
+      {/* Bulk Selection Bar */}
       {selectedRows.length > 0 && (
         <div className="z-20 bg-gray-100 border-t px-4 py-3 text-sm text-gray-800 shadow">
           <div className="flex items-center justify-between">
@@ -134,119 +132,130 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
         </div>
       )}
 
+      {/* Filters */}
       {filterUI && <div className="p-4 border-b bg-muted">{filterUI}</div>}
 
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>
-              <input type="checkbox" checked={allSelected} onChange={toggleAll} />
-            </TableHead>
-            {columns.map((col) => (
-              <TableHead
-                key={col.accessorKey}
-                className={col.sortable ? "cursor-pointer select-none" : ""}
-                onClick={() => {
-                  if (!col.sortable) return;
-                  const newSort = sortBy === col.accessorKey && sortOrder === "asc" ? "desc" : "asc";
-                  onSortChange?.({ sortBy: col.accessorKey, sortOrder: newSort });
-                }}
-              >
-                <div className="flex items-center gap-1">
-                  {col.header}
-                  {col.sortable && (
-                    <ArrowUpDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        sortBy === col.accessorKey
-                          ? sortOrder === "asc"
-                            ? "rotate-180 text-blue-600"
-                            : "text-blue-600"
-                          : "text-gray-400"
-                      }`}
-                    />
-                  )}
-                </div>
+      {/* Scrollable Table */}
+      <div className="flex-1 overflow-auto">
+        <Table>
+          <TableHeader className="bg-white">
+            <TableRow>
+              <TableHead>
+                <input type="checkbox" checked={allSelected} onChange={toggleAll} />
               </TableHead>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {sortedData.map((row, rowIndex) => (
-            <TableRow key={row._id || rowIndex}>
-              <TableCell>
-                <input
-                  type="checkbox"
-                  checked={selectedRows.includes(row._id)}
-                  onChange={() => toggleRow(row._id)}
-                />
-              </TableCell>
-              {columns.map((col) => {
-                const value = editedRows?.[row._id]?.[col.accessorKey] ?? row[col.accessorKey];
-
-                if (!(isBulkEditing && selectedRows.includes(row._id))) {
-                  return (
-                    <TableCell key={col.accessorKey}>
-                      {col.cell ? col.cell(row) : row[col.accessorKey]}
-                    </TableCell>
-                  );
-                }
-
-                let editableCell;
-
-                if (["price", "salePrice", "totalStock"].includes(col.accessorKey)) {
-                  editableCell = (
-                    <Input
-                      type="number"
-                      value={value ?? ""}
-                      onChange={(e) => handleFieldChange(row._id, col.accessorKey, parseFloat(e.target.value))}
-                    />
-                  );
-                } else if (col.accessorKey === "title") {
-                  editableCell = (
-                    <Input
-                      value={value ?? ""}
-                      onChange={(e) => handleFieldChange(row._id, col.accessorKey, e.target.value)}
-                    />
-                  );
-                } else if (col.accessorKey === "isActive") {
-                  editableCell = (
-                    <select
-                      className="text-sm border px-2 py-1 rounded"
-                      value={value === true ? "true" : value === false ? "false" : ""}
-                      onChange={(e) => handleFieldChange(row._id, col.accessorKey, e.target.value === "true")}
-                    >
-                      <option value="">--</option>
-                      <option value="true">Active</option>
-                      <option value="false">Inactive</option>
-                    </select>
-                  );
-                } else if (col.accessorKey === "categories") {
-                  const selectedIds = Array.isArray(value) ? value.map((c) => c._id || c) : [];
-                  editableCell = (
-                    <div className="flex flex-col gap-1 max-h-32 overflow-y-auto">
-                      {allCategories.map((cat) => (
-                        <label key={cat._id} className="inline-flex items-center gap-2 text-sm">
-                          <input
-                            type="checkbox"
-                            checked={selectedIds.includes(cat._id)}
-                            onChange={() => handleCategoryCheckbox(row._id, cat._id)}
-                          />
-                          {cat.name}
-                        </label>
-                      ))}
-                    </div>
-                  );
-                } else {
-                  editableCell = col.cell ? col.cell(row) : value;
-                }
-
-                return <TableCell key={col.accessorKey}>{editableCell}</TableCell>;
-              })}
+              {columns.map((col) => (
+                <TableHead
+                  key={col.accessorKey}
+                  className={col.sortable ? "cursor-pointer select-none" : ""}
+                  onClick={() => {
+                    if (!col.sortable) return;
+                    const newSort =
+                      sortBy === col.accessorKey && sortOrder === "asc" ? "desc" : "asc";
+                    onSortChange?.({ sortBy: col.accessorKey, sortOrder: newSort });
+                  }}
+                >
+                  <div className="flex items-center gap-1 bg-white">
+                    {col.header}
+                    {col.sortable && (
+                      <ArrowUpDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          sortBy === col.accessorKey
+                            ? sortOrder === "asc"
+                              ? "rotate-180 text-blue-600"
+                              : "text-blue-600"
+                            : "text-gray-400"
+                        }`}
+                      />
+                    )}
+                  </div>
+                </TableHead>
+              ))}
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
 
+          <TableBody className="bg-white">
+            {data.map((row, rowIndex) => (
+              <TableRow key={row._id || rowIndex}>
+                <TableCell>
+                  <input
+                    type="checkbox"
+                    checked={selectedRows.includes(row._id)}
+                    onChange={() => toggleRow(row._id)}
+                  />
+                </TableCell>
+                {columns.map((col) => {
+                  const value = editedRows?.[row._id]?.[col.accessorKey] ?? row[col.accessorKey];
+
+                  if (!(isBulkEditing && selectedRows.includes(row._id))) {
+                    return (
+                      <TableCell key={col.accessorKey}>
+                        {col.cell ? col.cell(row) : row[col.accessorKey]}
+                      </TableCell>
+                    );
+                  }
+
+                  let editableCell;
+
+                  if (["price", "salePrice", "totalStock"].includes(col.accessorKey)) {
+                    editableCell = (
+                      <Input
+                        type="number"
+                        value={value ?? ""}
+                        onChange={(e) =>
+                          handleFieldChange(row._id, col.accessorKey, parseFloat(e.target.value))
+                        }
+                      />
+                    );
+                  } else if (col.accessorKey === "title") {
+                    editableCell = (
+                      <Input
+                        value={value ?? ""}
+                        onChange={(e) => handleFieldChange(row._id, col.accessorKey, e.target.value)}
+                      />
+                    );
+                  } else if (col.accessorKey === "isActive") {
+                    editableCell = (
+                      <select
+                        className="text-sm border px-2 py-1 rounded"
+                        value={value === true ? "true" : value === false ? "false" : ""}
+                        onChange={(e) =>
+                          handleFieldChange(row._id, col.accessorKey, e.target.value === "true")
+                        }
+                      >
+                        <option value="">--</option>
+                        <option value="true">Active</option>
+                        <option value="false">Inactive</option>
+                      </select>
+                    );
+                  } else if (col.accessorKey === "categories") {
+                    const selectedIds = Array.isArray(value) ? value.map((c) => c._id || c) : [];
+                    editableCell = (
+                      <div className="flex flex-col gap-1 max-h-32 overflow-y-auto">
+                        {allCategories.map((cat) => (
+                          <label key={cat._id} className="inline-flex items-center gap-2 text-sm">
+                            <input
+                              type="checkbox"
+                              checked={selectedIds.includes(cat._id)}
+                              onChange={() => handleCategoryCheckbox(row._id, cat._id)}
+                            />
+                            {cat.name}
+                          </label>
+                        ))}
+                      </div>
+                    );
+                  } else {
+                    editableCell = col.cell ? col.cell(row) : value;
+                  }
+
+                  return <TableCell key={col.accessorKey}>{editableCell}</TableCell>;
+                })}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+
+      {/* Sticky Pagination Bar */}
       <div className="sticky bottom-0 z-10 bg-white border-t p-4 flex items-center justify-between">
         <div className="text-sm text-muted-foreground flex gap-2 items-center">
           <span>Rows per page:</span>
@@ -256,7 +265,9 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
             className="border text-sm px-2 py-1 rounded"
           >
             {[10, 25, 50, 100].map((n) => (
-              <option key={n} value={n}>{n}</option>
+              <option key={n} value={n}>
+                {n}
+              </option>
             ))}
           </select>
         </div>

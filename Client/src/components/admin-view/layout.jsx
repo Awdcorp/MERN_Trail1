@@ -13,10 +13,10 @@ function AdminLayout() {
 
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Fixed Header */}
-        <AdminHeader setOpen={setOpenSidebar} />
+
 
         {/* Scrollable Main Area */}
-        <main className="flex-1 overflow-y-auto bg-muted/40 pt-4 md:pt-0 pb-0">
+        <main className="flex-1 overflow-y-auto bg-muted pt-4 md:pt-0 pb-0">
           <Outlet />
         </main>
       </div>

@@ -5,9 +5,12 @@ import {
   ShoppingBasket,
   Images,
   Users,
+  LogOut, // ✅ NEW: Import logout icon
 } from "lucide-react";
-import { Fragment } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // ✅ include location
+import { Fragment,useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux"; // ✅ NEW: For logout action
+import { logoutUser } from "@/store/auth-slice"; // ✅ Adjust path to your logout action
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
 
 const adminSidebarMenuItems = [
@@ -20,8 +23,21 @@ const adminSidebarMenuItems = [
   {
     id: "products",
     label: "Products",
-    path: "/admin/products",
+    id: "products",
+    label: "Products",
     icon: <ShoppingBasket />,
+    children: [
+      {
+        id: "all-products",
+        label: "All Products",
+        path: "/admin/products",
+      },
+      {
+        id: "product-categories",
+        label: "Categories",
+        path: "/admin/products/categories",
+      },
+    ],
   },
   {
     id: "orders",
@@ -51,13 +67,71 @@ const adminSidebarMenuItems = [
 
 function MenuItems({ setOpen }) {
   const navigate = useNavigate();
-  const location = useLocation(); // ✅ get current path
+  const location = useLocation();
+  const [expandedMenu, setExpandedMenu] = useState(null);
+  
+  const toggleMenu = (id) => {
+    setExpandedMenu((prev) => (prev === id ? null : id));
+  };
 
   return (
-    <nav className="mt-8 flex-col flex gap-2">
-      {adminSidebarMenuItems.map((menuItem) => {
-        const isActive = location.pathname.startsWith(menuItem.path);
+ <nav className="mt-8 flex-col flex gap-2">
+            {adminSidebarMenuItems.map((menuItem) => {
+        const isParent = !!menuItem.children;
 
+        // ✅ ACTIVE logic — only one item stays active
+        let isActive = false;
+
+        if (isParent) {
+          isActive = menuItem.children?.some(
+            (child) => location.pathname === child.path
+          );
+        } else if (menuItem.path) {
+          isActive = location.pathname === menuItem.path;
+        }
+
+        // 🔽 Parent with submenu
+        if (isParent) {
+          return (
+            <div key={menuItem.id} className="flex flex-col">
+              <div
+                onClick={() => toggleMenu(menuItem.id)}
+                className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${
+                  isActive
+                    ? "bg-muted text-foreground font-semibold"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                }`}
+              >
+                {menuItem.icon}
+                <span>{menuItem.label}</span>
+              </div>
+
+              {/* Submenu: only visible if toggled open */}
+              {expandedMenu === menuItem.id &&
+                menuItem.children.map((child) => {
+                  const isChildActive = location.pathname === child.path;
+                  return (
+                    <div
+                      key={child.id}
+                      onClick={() => {
+                        navigate(child.path);
+                        setOpen ? setOpen(false) : null;
+                      }}
+                      className={`ml-6 cursor-pointer rounded-md px-3 py-2 text-sm ${
+                        isChildActive
+                          ? "bg-muted text-foreground font-semibold"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                    >
+                      {child.label}
+                    </div>
+                  );
+                })}
+            </div>
+          );
+        }
+
+        // 🔸 Single-level item
         return (
           <div
             key={menuItem.id}
@@ -82,6 +156,13 @@ function MenuItems({ setOpen }) {
 
 function AdminSideBar({ open, setOpen }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // ✅ NEW
+
+  // ✅ Logout logic
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
 
   return (
     <Fragment>
@@ -95,7 +176,20 @@ function AdminSideBar({ open, setOpen }) {
                 <h1 className="text-2xl font-extrabold">Admin Panel</h1>
               </SheetTitle>
             </SheetHeader>
+
+            {/* Menu Items */}
             <MenuItems setOpen={setOpen} />
+
+            {/* ✅ Logout Button - Mobile */}
+            <div className="mt-auto px-4 pb-4">
+              <button
+                onClick={handleLogout}
+                className="w-full flex items-center gap-2 rounded-md px-3 py-2 text-sm text-red-600 hover:bg-red-100"
+              >
+                <LogOut size={18} />
+                Logout
+              </button>
+            </div>
           </div>
         </SheetContent>
       </Sheet>
@@ -109,7 +203,20 @@ function AdminSideBar({ open, setOpen }) {
           <ChartNoAxesCombined size={30} />
           <h1 className="text-2xl font-extrabold">Admin Panel</h1>
         </div>
+
+        {/* Menu Items */}
         <MenuItems />
+
+        {/* ✅ Logout Button - Desktop */}
+        <div className="mt-auto pt-8">
+          <button
+            onClick={handleLogout}
+            className="w-full flex items-center gap-2 rounded-md px-3 py-2 text-sm text-red-600 hover:bg-red-100"
+          >
+            <LogOut size={18} />
+            Logout
+          </button>
+        </div>
       </aside>
     </Fragment>
   );

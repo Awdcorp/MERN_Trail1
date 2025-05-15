@@ -111,7 +111,7 @@ export default function AdminMedia() {
   };
 
   return (
-    <div className="flex flex-col h-full p-6 space-y-6">
+    <div className="flex flex-col h-full pl-4 pr-4 pt-6 space-y-6">
       {/* Controls */}
       <div className="flex flex-col sm:flex-row items-center gap-4 flex-wrap">
         <select
@@ -224,9 +224,9 @@ export default function AdminMedia() {
 </div>
 
 ) : (
-  <div className="space-y-2">
+  <div className="">
     {/* Header */}
-    <div className="hidden sm:grid grid-cols-[60px,100px,1fr,200px,120px,40px] text-xs font-semibold text-muted-foreground px-2 py-1 border-b">
+    <div className="hidden sm:grid bg-white grid-cols-[60px,100px,1fr,200px,120px,40px] text-xs font-semibold text-muted-foreground px-3 py-3 border-b">
       <input
         type="checkbox"
         checked={selectedItems.length === media.length}
@@ -242,7 +242,7 @@ export default function AdminMedia() {
 
     {/* Rows */}
     {media.map((img) => (
-      <div key={img.public_id} className="grid grid-cols-[60px,100px,1fr,200px,120px,40px] items-center border rounded px-3 py-1 text-sm">
+      <div key={img.public_id} className="grid grid-cols-[60px,100px,1fr,200px,120px,40px] items-center border-b bg-white rounded px-3 py-1 text-sm">
         <input
           type="checkbox"
           className="w-3 h-3"
