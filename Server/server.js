@@ -63,5 +63,6 @@ app.use("/api/admin/banners", bannerRoutes);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/admin", require("./routes/admin/dashboard-routes"));
 app.use("/api/admin", require("./routes/admin/media-routes"));
+app.use("/api/admin/categories", require("./routes/admin/category-routes"));
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));

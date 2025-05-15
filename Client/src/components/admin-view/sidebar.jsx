@@ -35,7 +35,7 @@ const adminSidebarMenuItems = [
       {
         id: "product-categories",
         label: "Categories",
-        path: "/admin/products/categories",
+        path: "/admin/category",
       },
     ],
   },

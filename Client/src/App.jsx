@@ -8,6 +8,7 @@ import AdminProducts from "./pages/admin-view/products";
 import AdminProductEdit from "./pages/admin-view/product-edit";
 import AdminOrders from "./pages/admin-view/orders";
 import AdminFeatures from "./pages/admin-view/features";
+import AdminCategories from "./pages/admin-view/category";
 import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
 import BannerControlPage from "./pages/admin-view/banner-control";
@@ -85,6 +86,7 @@ function App() {
         >
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="products" element={<AdminProducts />} />
+          <Route path="category" element={<AdminCategories />} />
           <Route path="products/:id" element={<AdminProductEdit />} />
           <Route path="orders" element={<AdminOrders />} />
           <Route path="media" element={<MediaDashboard />} />
