@@ -11,20 +11,32 @@ cloudinary.config({
 // GET /api/admin/media
 exports.getMediaFiles = async (req, res) => {
   try {
-    const result = await cloudinary.search
-      .expression("folder=partyworld/products")
+    const folder = req.query.folder || "uploads/products";
+    const max_results = parseInt(req.query.max_results) || 20;
+    const next_cursor = req.query.next_cursor;
+
+    const search = cloudinary.search
+      .expression(`folder:${folder}`)
       .sort_by("created_at", "desc")
-      .max_results(100)
-      .execute();
+      .max_results(max_results);
+
+    if (next_cursor) {
+      search.next_cursor(next_cursor);
+    }
+
+    const result = await search.execute();
 
     const files = result.resources.map(file => ({
       url: file.secure_url,
       public_id: file.public_id,
       format: file.format,
       created_at: file.created_at,
+      width: file.width,
+      height: file.height,
+      bytes: file.bytes,
     }));
 
-    res.json(files);
+    res.json({ files, next_cursor: result.next_cursor || null });
   } catch (err) {
     console.error("❌ Error fetching media:", err);
     res.status(500).json({ error: "Failed to fetch media files" });
