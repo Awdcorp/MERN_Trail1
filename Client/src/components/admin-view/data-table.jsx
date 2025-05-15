@@ -6,14 +6,6 @@ import {
 } from "@/store/admin/products-slice";
 
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   Pagination,
   PaginationContent,
   PaginationItem,
@@ -92,8 +84,6 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
 
   return (
     <div className="flex flex-col h-full px-4 pt-6">
-
-      {/* Bulk Selection Bar */}
       {selectedRows.length > 0 && (
         <div className="z-20 bg-gray-100 border-t px-4 py-3 text-sm text-gray-800 shadow">
           <div className="flex items-center justify-between">
@@ -132,21 +122,21 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
         </div>
       )}
 
-      {/* Filters */}
       {filterUI && <div className="p-4 border-b bg-muted">{filterUI}</div>}
 
-      {/* Scrollable Table */}
-      <div className="flex-1 overflow-auto">
-        <Table>
-          <TableHeader className="bg-white">
-            <TableRow>
-              <TableHead>
+      <div className="overflow-y-auto">
+        <table className="min-w-full text-sm">
+          <thead className="sticky top-0 bg-white z-10 border-b shadow-sm">
+            <tr className="text-muted-foreground">
+              <th className="px-4 py-3 text-left">
                 <input type="checkbox" checked={allSelected} onChange={toggleAll} />
-              </TableHead>
+              </th>
               {columns.map((col) => (
-                <TableHead
+                <th
                   key={col.accessorKey}
-                  className={col.sortable ? "cursor-pointer select-none" : ""}
+                  className={`px-4 py-2 text-left font-medium ${
+                    col.sortable ? "cursor-pointer select-none" : ""
+                  }`}
                   onClick={() => {
                     if (!col.sortable) return;
                     const newSort =
@@ -154,7 +144,7 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                     onSortChange?.({ sortBy: col.accessorKey, sortOrder: newSort });
                   }}
                 >
-                  <div className="flex items-center gap-1 bg-white">
+                  <div className="flex items-center gap-1 py-2">
                     {col.header}
                     {col.sortable && (
                       <ArrowUpDown
@@ -168,29 +158,29 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                       />
                     )}
                   </div>
-                </TableHead>
+                </th>
               ))}
-            </TableRow>
-          </TableHeader>
+            </tr>
+          </thead>
 
-          <TableBody className="bg-white">
+          <tbody className="bg-white">
             {data.map((row, rowIndex) => (
-              <TableRow key={row._id || rowIndex}>
-                <TableCell>
+              <tr key={row._id || rowIndex} className="border-b hover:bg-muted transition">
+                <td className="px-4 py-6">
                   <input
                     type="checkbox"
                     checked={selectedRows.includes(row._id)}
                     onChange={() => toggleRow(row._id)}
                   />
-                </TableCell>
+                </td>
                 {columns.map((col) => {
                   const value = editedRows?.[row._id]?.[col.accessorKey] ?? row[col.accessorKey];
 
                   if (!(isBulkEditing && selectedRows.includes(row._id))) {
                     return (
-                      <TableCell key={col.accessorKey}>
+                      <td key={col.accessorKey} className="px-4 py-2">
                         {col.cell ? col.cell(row) : row[col.accessorKey]}
-                      </TableCell>
+                      </td>
                     );
                   }
 
@@ -210,7 +200,9 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                     editableCell = (
                       <Input
                         value={value ?? ""}
-                        onChange={(e) => handleFieldChange(row._id, col.accessorKey, e.target.value)}
+                        onChange={(e) =>
+                          handleFieldChange(row._id, col.accessorKey, e.target.value)
+                        }
                       />
                     );
                   } else if (col.accessorKey === "isActive") {
@@ -228,7 +220,9 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                       </select>
                     );
                   } else if (col.accessorKey === "categories") {
-                    const selectedIds = Array.isArray(value) ? value.map((c) => c._id || c) : [];
+                    const selectedIds = Array.isArray(value)
+                      ? value.map((c) => c._id || c)
+                      : [];
                     editableCell = (
                       <div className="flex flex-col gap-1 max-h-32 overflow-y-auto">
                         {allCategories.map((cat) => (
@@ -247,15 +241,14 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
                     editableCell = col.cell ? col.cell(row) : value;
                   }
 
-                  return <TableCell key={col.accessorKey}>{editableCell}</TableCell>;
+                  return <td key={col.accessorKey} className="px-4 py-2">{editableCell}</td>;
                 })}
-              </TableRow>
+              </tr>
             ))}
-          </TableBody>
-        </Table>
+          </tbody>
+        </table>
       </div>
 
-      {/* Sticky Pagination Bar */}
       <div className="sticky bottom-0 z-10 bg-white border-t p-4 flex items-center justify-between">
         <div className="text-sm text-muted-foreground flex gap-2 items-center">
           <span>Rows per page:</span>
