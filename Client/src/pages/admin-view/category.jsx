@@ -35,12 +35,12 @@ export default function AdminCategories() {
   const [formData, setFormData] = useState({});
   const [editId, setEditId] = useState(null);
   const [page, setPage] = useState(1);
-  const limit = 20;
+const [limit, setLimit] = useState(10);
 
   useEffect(() => {
     dispatch(fetchAllCategories({ page, limit }));
     console.log("📡 dispatching fetchAllCategories...");
-  }, [dispatch, page]);
+  }, [dispatch, page, limit]);
 
   const handleFormSubmit = async (data) => {
     try {
@@ -112,6 +112,10 @@ const columns = useMemo(() => [
       total={total}
       page={page}
       limit={limit}
+        onLimitChange={(val) => {
+    setLimit(val);
+    setPage(1);
+  }}
       getRowId={(row) => row._id}
       onPageChange={setPage}
       onEdit={handleEdit}

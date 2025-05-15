@@ -7,8 +7,9 @@ const API_URL = `${import.meta.env.VITE_API_URL}/api/admin/categories`;
 // Fetch all categories with pagination
 export const fetchAllCategories = createAsyncThunk(
   "adminCategories/fetchAll",
-  async ({ page = 1, limit = 20 }, { rejectWithValue }) => {
+  async ({ page = 1, limit = 10 }, { rejectWithValue }) => {
     try {
+        console.log("📤 Fetching categories: page =", page, "limit =", limit);
       const res = await axios.get(API_URL, { params: { page, limit } });
       return res.data;
     } catch (err) {

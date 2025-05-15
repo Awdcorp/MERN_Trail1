@@ -4,7 +4,7 @@ const Category = require("../../models/Category");
 // GET /api/admin/categories
 exports.getAllCategories = async (req, res) => {
   try {
-    const { page = 1, limit = 20 } = req.query;
+    const { page = 1, limit = 10 } = req.query;
     const skip = (page - 1) * limit;
 
     const [categories, total] = await Promise.all([
