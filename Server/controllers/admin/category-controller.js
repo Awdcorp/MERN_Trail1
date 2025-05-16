@@ -1,6 +1,6 @@
 // File: Server/controllers/admin/category-controller.js
 const Category = require("../../models/Category");
-
+const mongoose = require("mongoose");
 // GET /api/admin/categories
 exports.getAllCategories = async (req, res) => {
   try {
@@ -31,9 +31,20 @@ exports.createCategory = async (req, res) => {
 // PUT /api/admin/categories/:id
 exports.updateCategory = async (req, res) => {
   try {
+        console.log("📥 Update Request ID:", req.params.id);        // ✅ Add
+    console.log("📦 Update Payload:", req.body);   
+        const updateData = { ...req.body };
+
+    // ✅ Ensure parent is an ObjectId or null
+    if (updateData.parent === "" || updateData.parent === null) {
+      updateData.parent = null;
+    } else {
+      updateData.parent = new mongoose.Types.ObjectId(updateData.parent);
+    }
     const updated = await Category.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(updated);
   } catch (err) {
+    console.error("❌ Update Error:", err);  
     res.status(400).json({ error: err.message });
   }
 };
@@ -56,5 +67,25 @@ exports.bulkDeleteCategories = async (req, res) => {
     res.json({ success: true });
   } catch (err) {
     res.status(400).json({ error: err.message });
+  }
+};
+
+exports.getAllCategories = async (req, res) => {
+  try {
+    const { page = 1, limit = 10 } = req.query;
+    const skip = (page - 1) * limit;
+
+    const [categories, total] = await Promise.all([
+      Category.find()
+        .skip(skip)
+        .limit(parseInt(limit))
+        .sort({ createdAt: -1 })
+        .populate("parent", "name"), // ✅ populate parent name only
+      Category.countDocuments(),
+    ]);
+
+    res.json({ categories, total });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch categories" });
   }
 };
