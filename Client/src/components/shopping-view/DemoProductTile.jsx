@@ -63,7 +63,7 @@ function DemoProductTile({ product, handleAddtoCart }) {
         ) : (
           <Button
             onClick={() => handleAddtoCart(product?._id, product?.totalStock)}
-            className="bg-[#a5b4fc] text-white w-full py-2 rounded-md font-medium hover:bg-[#8f9df7]"
+            className="bg-[#8f9df7] text-white w-full py-2 rounded-md font-medium"
           >
             Add to Cart
           </Button>

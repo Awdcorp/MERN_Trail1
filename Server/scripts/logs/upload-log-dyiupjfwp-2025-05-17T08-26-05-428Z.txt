@@ -1,0 +1,3 @@
+[2025-05-17T08:26:05.429Z] === Upload Started ===
+[2025-05-17T08:26:07.621Z] ✅ Uploaded: en_slider-01.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470368/partyworld/occasions/jzspftl9rlbcsgyc3u5v.png
+[2025-05-17T08:26:07.621Z] === Upload Completed ===

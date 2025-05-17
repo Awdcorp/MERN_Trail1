@@ -82,53 +82,60 @@ function ProductFilter({ filters, handleFilter }) {
   }, []);
 
   return (
-    <div className="bg-background rounded-lg shadow-sm max-h-[120vh] overflow-y-auto relative scrollbar-hide">
+    <div className="bg-background rounded-lg shadow-sm max-h-[120vh] overflow-y-auto relative scrollbar-hide border border-border">
       <div className="p-4 pb-6 border-b sticky top-0 bg-background z-10">
         <button
-          className="px-7 py-3 rounded-md bg-[#46396F] text-white text-sm font-semibold hover:bg-[#463970] transition-all"
+          className="px-6 py-2 rounded-md bg-[#a5b4fc] text-white text-sm font-semibold hover:bg-[#8f9df7] transition-all w-full"
           onClick={() => handleFilter("clear")}
         >
           Clear All Filters
         </button>
       </div>
-      <div className="pl-4 pr-0 space-y-2 pt-3 pb-6">
+
+      <div className="p-4 space-y-6">
         {filterGroups.map((group) => (
           <div key={group.id}>
-            <h3 className="text-base uppercase text-[13px] text-[#484848] mb-2">{group.label}</h3>
+            <h3 className="text-sm font-semibold uppercase text-[#46396F] mb-2 tracking-wide">
+              {group.label}
+            </h3>
+
             <div
               className={`${
-                group.id === "color" ? "grid grid-cols-2 gap-x-2" : "space-y-1"
-              } max-h-[200px] overflow-y-auto pr-2 scrollbar-hide`}
+                group.id === "color" ? "grid grid-cols-2 gap-x-3 gap-y-2" : "space-y-2"
+              } max-h-[180px] overflow-y-auto pr-1 scrollbar-hide`}
             >
               {group.options.map((option) => (
                 <Label
                   key={option}
-                  className={`flex items-center gap-2 cursor-pointer text-[#484848] ${
-                    group.id === "color" ? "mb-1" : ""
-                  }`}
+                  className={`flex items-center gap-2 cursor-pointer text-sm text-[#333]`}
                 >
-<Checkbox
-  checked={!!filters[group.id]?.includes(option)}
-  onCheckedChange={() => handleFilter(group.id, option)}
-  id={`${group.id}-${option}`}
-  className="w-4 h-4 border rounded"
-/>
-<span className="text-sm">
-  {group.id === "color" ? (
-    <div className="flex items-center gap-2">
-      <div
-        className="w-4 h-4 rounded-sm border"
-        style={{ backgroundColor: getColorValue(option.toLowerCase()) }}
-      />
-      {option}
-    </div>
-  ) : (
-    option
-  )}
-</span>
+                  <Checkbox
+                    checked={!!filters[group.id]?.includes(option)}
+                    onCheckedChange={() => handleFilter(group.id, option)}
+                    id={`${group.id}-${option}`}
+                    className="w-4 h-4 border border-gray-300 rounded"
+                  />
+
+                  {group.id === "color" ? (
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded-sm border border-gray-400"
+                        style={{
+                          background:
+                            option.toLowerCase() === "multicolour"
+                              ? "linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"
+                              : getColorValue(option.toLowerCase()),
+                        }}
+                      />
+                      <span className="capitalize">{option}</span>
+                    </div>
+                  ) : (
+                    <span className="capitalize">{option}</span>
+                  )}
                 </Label>
               ))}
             </div>
+
             <Separator className="my-4" />
           </div>
         ))}

@@ -1,0 +1,5 @@
+[2025-05-17T08:33:11.225Z] === Upload Started ===
+[2025-05-17T08:33:14.062Z] ✅ Uploaded: en_slider-01-1-1.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png
+[2025-05-17T08:33:15.109Z] ✅ Uploaded: en_slider-01-2.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470795/partyworld/occasions/kwfpbfxi7jlefcemyurv.png
+[2025-05-17T08:33:16.127Z] ✅ Uploaded: en_slider-04.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470796/partyworld/occasions/kes7xekdaweol98vdzkh.png
+[2025-05-17T08:33:16.127Z] === Upload Completed ===

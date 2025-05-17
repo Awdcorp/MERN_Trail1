@@ -179,7 +179,7 @@ export default function ProductPage() {
                   <Button
                     onClick={() => handleAddToCart(product._id, product.totalStock || 9999)}
                     disabled={product.totalStock === 0}
-                    className="bg-[#a5b4fc] text-white font-semibold tracking-wide px-8 py-3 rounded-md w-full sm:w-auto"
+                    className="bg-[#8f9df7] text-white font-semibold tracking-wide px-8 py-3 rounded-md w-full sm:w-auto"
                   >
                     ADD TO CART
                   </Button>

@@ -1,0 +1,10 @@
+[2025-05-17T07:52:03.395Z] === Upload Started ===
+[2025-05-17T07:52:06.107Z] ✅ Uploaded: en_mb-logo-01-1.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468326/partyworld/occasions/nkxpqdflnjenqrpdfkts.png
+[2025-05-17T07:52:06.914Z] ✅ Uploaded: en_mb-logo-01.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468327/partyworld/occasions/hrqkrzt59asz9rvdd6j8.png
+[2025-05-17T07:52:07.690Z] ✅ Uploaded: en_mb-logo-02.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468328/partyworld/occasions/xj4te4zfhpjxmvnnswg5.png
+[2025-05-17T07:52:08.521Z] ✅ Uploaded: en_mb-logo-03.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468329/partyworld/occasions/q6el9lzemkj1c4fhny5l.png
+[2025-05-17T07:52:09.329Z] ✅ Uploaded: en_mb-logo-04.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468329/partyworld/occasions/xiu2vui7qvf0qwcdvep8.png
+[2025-05-17T07:52:10.187Z] ✅ Uploaded: en_mb-logo-05.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468330/partyworld/occasions/onjfkljznmp0dk8oeq5b.png
+[2025-05-17T07:52:10.957Z] ✅ Uploaded: en_mb-logo-12.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468331/partyworld/occasions/renfxlxm0w4wyalouacq.png
+[2025-05-17T07:52:11.836Z] ✅ Uploaded: en_mb-logo-13.png | ➡️ https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468332/partyworld/occasions/f7khnpekm3grmdznlehd.png
+[2025-05-17T07:52:11.836Z] === Upload Completed ===
