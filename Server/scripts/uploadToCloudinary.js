@@ -40,7 +40,7 @@ cloudinary.config({
 
     try {
       const result = await cloudinary.uploader.upload(cleanUrl, {
-        folder: "partyworld/occasions",
+        folder: "banners",
       });
 
 

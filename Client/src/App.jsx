@@ -24,6 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { checkAuth } from "./store/auth-slice";
 import PaypalReturnPage from "./pages/shopping-view/paypal-return";
+import PayPalCancelPage from "./pages/shopping-view/paypal-cancel";
 import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from "./pages/shopping-view/search";
 import CategoryListingPage from "@/pages/shopping-view/category";
@@ -106,7 +107,7 @@ function App() {
           <Route path="checkout" element={<ShoppingCheckout />} />
           <Route path="paypal-return" element={<PaypalReturnPage />} />
           <Route path="payment-success" element={<PaymentSuccessPage />} />
-
+<Route path="paypal-cancel" element={<PayPalCancelPage />} />
           {/* 🔐 Authenticated route */}
           <Route
             path="account"

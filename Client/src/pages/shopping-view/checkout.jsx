@@ -94,10 +94,10 @@ function ShoppingCheckout() {
   return (
     <div className="flex flex-col">
       <div className="relative h-[300px] w-full overflow-hidden">
-        <img src={img} className="h-full w-full object-cover object-center" />
+        <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470944/partyworld/occasions/vifgyalvepowqaw1rtwy.png" className="h-full w-full object-cover object-center" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 p-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 py-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 xl:py-28 ">
         {/* Address Selection */}
         <Address
           selectedId={currentSelectedAddress}
@@ -105,7 +105,7 @@ function ShoppingCheckout() {
         />
 
         {/* Right Section: Products + Payment */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 lg:pl-12">
           {/* 🛒 Scrollable Cart Items */}
           <div className="flex flex-col gap-4 max-h-[60vh] overflow-y-auto pr-2">
             {cartItems && cartItems.length > 0 ? (
@@ -128,10 +128,10 @@ function ShoppingCheckout() {
           </div>
 
           {/* 💳 Checkout */}
-          <div className="mt-2 w-full">
+          <div className="mt-2 w-full flex justify-end">
             <Button
               onClick={handleInitiatePaypalPayment}
-              className="w-full"
+              className="w-auto"
               disabled={isPaymentStart}
             >
               {isPaymentStart

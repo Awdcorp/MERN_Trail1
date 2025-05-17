@@ -108,10 +108,10 @@ function ShoppingAccount() {
   return (
     <div className="flex flex-col">
       <div className="relative h-[300px] w-full overflow-hidden">
-        <img src={accImg} className="h-full w-full object-cover object-center" />
+        <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747472347/partyworld/occasions/smrlhjhwj3ytf7pa3zj3.png" className="h-full w-full object-cover object-center" />
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 gap-8 py-8">
+      <div className="container mx-auto grid grid-cols-1 gap-8 py-8 lg:py-20">
         <div className="flex flex-col rounded-lg border bg-background p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-[#463970]">My Account</h2>

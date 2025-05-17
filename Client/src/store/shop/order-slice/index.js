@@ -40,10 +40,22 @@ export const capturePayment = createAsyncThunk(
 export const getAllOrdersByUser = createAsyncThunk(
   "/order/getAllOrdersByUser",
   async (userId) => {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/shop/order/getAllOrdersByUser/${userId}`
-    );
-    return response.data;
+    try {
+      console.log("📤 [Thunk] Fetching orders for userId:", userId);
+
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/shop/order/getAllOrdersByUser/${userId}`
+      );
+
+      console.log("✅ [Thunk] Response received:");
+      console.dir(response.data, { depth: null });
+
+      return response.data;
+    } catch (err) {
+      console.error("❌ [Thunk] Failed to fetch user orders:");
+      console.error(err.response?.data || err.message);
+      throw err;
+    }
   }
 );
 

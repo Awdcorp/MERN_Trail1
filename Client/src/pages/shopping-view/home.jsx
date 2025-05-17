@@ -115,50 +115,61 @@ function ShoppingHome() {
             </section>
 
       {/* ✅ Shop by Categories with same responsive padding */}
-      <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-10 bg-white">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-          <h2 className="text-xl md:text-2xl font-semibold text-[#111] mb-4 md:mb-0">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 pt-10 bg-white">
+        {/* Horizontal Flex Container */}
+        <div className="flex flex-col items-center justify-between gap-6 mb-6">
+          {/* Title on Left */}
+          <h2 className="text-xl md:text-2xl pb-8 font-semibold text-[#111] whitespace-nowrap">
             Shop By Categories
           </h2>
-        </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-4 text-center">
-          {[
-            {
-              title: "Mobiles",
-              image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466437/partyworld/occasions/euxs9dgtqo5gfidweevm.png",
-              link: "/shop/category/phone",
-            },
-            {
-              title: "Tablets",
-              image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466438/partyworld/occasions/mls5ztu8moaf84krlrxp.png",
-              link: "/shop/category/tablets",
-            },
-            {
-              title: "Wearables",
-              image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466440/partyworld/occasions/sftp7fglxei4exjkfbhg.png",
-              link: "/shop/category/watches",
-            },
-            {
-              title: "Accessories",
-              image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466441/partyworld/occasions/cymedpbta6mb5koe3svq.png",
-              link: "/shop/category/accessories",
-            },
-          ].map((cat) => (
-            <a
-              href={cat.link}
-              key={cat.title}
-              className="flex flex-col items-center group transition-transform hover:scale-[1.03]"
-            >
-              <img
-                src={cat.image}
-                alt={cat.title}
-                className="w-full h-[150px] object-contain rounded-md mb-2"
-              />
-            </a>
-          ))}
+          {/* Category Icons on Right */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            {[
+              {
+                title: "Mobiles",
+                image:
+                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466437/partyworld/occasions/euxs9dgtqo5gfidweevm.png",
+                link: "/shop/category/phone",
+              },
+              {
+                title: "Tablets",
+                image:
+                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466438/partyworld/occasions/mls5ztu8moaf84krlrxp.png",
+                link: "/shop/category/tablets",
+              },
+              {
+                title: "Wearables",
+                image:
+                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466440/partyworld/occasions/sftp7fglxei4exjkfbhg.png",
+                link: "/shop/category/watches",
+              },
+              {
+                title: "Accessories",
+                image:
+                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466441/partyworld/occasions/cymedpbta6mb5koe3svq.png",
+                link: "/shop/category/accessories",
+              },
+            ].map((cat) => (
+              <a
+                href={cat.link}
+                key={cat.title}
+                className="flex flex-col items-center group transition-transform hover:scale-[1.03]"
+              >
+                <div className="w-[200px] h-[200px] flex items-center justify-center mb-2">
+                  <img
+                    src={cat.image}
+                    alt={cat.title}
+                    className="w-[100%] h-[100%] object-contain"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
+
+
       {/* ✅ Top Offers with responsive horizontal padding */}
       <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <TopOffersSlider
@@ -169,7 +180,7 @@ function ShoppingHome() {
       </div>
 
       
-      <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-10 bg-white">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 pb-10 bg-white">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
           <h2 className="text-xl md:text-2xl font-semibold text-[#111] mb-4 md:mb-0">Shop by Brand</h2>
         </div>

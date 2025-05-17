@@ -23,7 +23,7 @@ export default function ProductPage() {
   const [upsellProducts, setUpsellProducts] = useState([]);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const { toast } = useToast();
-  const [activeTab, setActiveTab] = useState("description");
+  const [activeTab, setActiveTab] = useState("shipping");
 
   useEffect(() => {
     setProduct(null);
@@ -104,7 +104,7 @@ export default function ProductPage() {
         <div className="p-10 text-center text-gray-500">Loading product...</div>
       ) : (
         <>
-          <div className="w-full max-w-6xl mx-auto px-4 md:px-8 py-16">
+          <div className="w-full max-w-6xl mx-auto px-4 md:px-8 pt-16 pb-10">
             <div className="flex flex-col md:flex-row gap-10 items-start">
               {/* 📷 Vertical Thumbnails + Main Image */}
               <div className="w-full md:w-[45%] flex flex-row gap-4">
@@ -204,14 +204,24 @@ export default function ProductPage() {
                   >
                     ADD TO CART
                   </Button>
+                  
                 </div>
+                  <div className="text-sm text-gray uppercase font-semibold tracking-wide">Description
+                  </div>
+
+{product.description && (
+  <div
+    className="pt-4 text-sm text-gray-700 leading-relaxed border-t mt-6"
+    dangerouslySetInnerHTML={{ __html: product.description }}
+  />
+)}
               </div>
             </div>
 
             {/* 🗂️ Description / Reviews / Shipping */}
             <div className="mt-12 max-w-4xl mx-auto">
               <div className="flex justify-center gap-6 border-b pb-2 mb-6">
-                {["description", "reviews", "shipping"].map((tab) => (
+                {["reviews", "shipping"].map((tab) => (
                   <button
                     key={tab}
                     className={`text-sm font-semibold pb-2 border-b-2 uppercase ${
@@ -230,12 +240,6 @@ export default function ProductPage() {
                 ))}
               </div>
 
-              {activeTab === "description" && (
-                <div
-                  className="prose prose-sm md:prose-base text-gray-700 text-left font-light"
-                  dangerouslySetInnerHTML={{ __html: product.description }}
-                />
-              )}
               {activeTab === "reviews" && (
                 <div className="text-gray-600 text-sm">
                   This product has no reviews yet. Be the first to review it!
@@ -252,16 +256,15 @@ export default function ProductPage() {
           </div>
 
           {/* 💡 Related + Upsell */}
-          <div className="w-full py-10">
+          <div className="w-full pb-16">
             {relatedProducts.length > 0 && (
-              <div className="mt-16 max-w-6xl mx-auto px-4">
-                <h2 className="text-xl md:text-2xl font-semibold text-center mb-2 uppercase text-[#1f2937]">
-                  You Might Also Like
+              <div className="mt-5 max-w-6xl mx-auto px-4">
+                <h2 className="text-xl pb-5 md:text-2xl font-semibold text-start mb-2 uppercase text-[#1f2937]">
+                  Best Sellers
                 </h2>
-                <div className="w-[100px] h-[2px] bg-gray-200 mx-auto mb-6" />
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-                  {upsellProducts.map((productItem) => (
-                    <ShoppingProductTile
+                  {relatedProducts.map((productItem) => (
+                    <DemoProductTile
                       key={productItem._id}
                       product={productItem}
                       handleAddtoCart={() =>
@@ -273,14 +276,13 @@ export default function ProductPage() {
               </div>
             )}
 
-            {relatedProducts.length > 0 && (
+            {upsellProducts.length > 0 && (
               <div className="mt-16 max-w-6xl mx-auto px-4">
-                <h2 className="text-xl md:text-2xl font-semibold text-center mb-2 uppercase text-[#1f2937]">
+                <h2 className="text-xl pb-5 md:text-2xl font-semibold text-center mb-2 uppercase text-[#1f2937]">
                   Customers Also Purchased
                 </h2>
-                <div className="w-[100px] h-[2px] bg-gray-200 mx-auto mb-6" />
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-                  {relatedProducts.map((productItem) => (
+                  {upsellProducts.map((productItem) => (
                     <DemoProductTile
                       key={productItem._id}
                       product={productItem}
