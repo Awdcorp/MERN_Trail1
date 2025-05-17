@@ -1,22 +1,22 @@
 [
   {
-    "_id": "682249e2caeba90f1f341c77",
-    "title": "PROMATE VolTrip-UNI",
-    "slug": "promate-voltrip-uni",
+    "_id": "68233059caeba90f1f3477d6",
+    "title": "SAMSUNG GALAXY  S20 PLUS 4G",
+    "slug": "samsung-galaxy-s20-plus-4g",
     "isActive": true,
     "categories": [
       {
-        "_id": "67f7c8902a38a098e89341ae",
-        "name": "Accessories",
-        "slug": "accessories"
+        "_id": "68233023e415c225f88b2900",
+        "name": "Phone",
+        "slug": "phone"
       },
       {
-        "_id": "682249e19fa64fe9a841c5c2",
-        "name": "Promate Accessories",
-        "slug": "promate-accessories"
+        "_id": "68233023e415c225f88b2902",
+        "name": "Samsung Phones",
+        "slug": "samsung-phones"
       }
     ],
-    "price": 43,
+    "price": 0,
     "salePrice": null,
     "stock": 9999
   }

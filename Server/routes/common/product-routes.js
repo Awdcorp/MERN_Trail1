@@ -67,31 +67,37 @@ router.get("/category/:slug", async (req, res) => {
   }
 });
 
-// GET /api/products/multiple?ids=31612,31613,31626&limit=5
-router.get("/multiple", async (req, res) => {
+// GET /api/products/by-external-ids?ids=5027,4380,5001
+router.get("/by-external-ids", async (req, res) => {
   const idsParam = req.query.ids;
-  const limit = parseInt(req.query.limit) || 0;
+  const limit = parseInt(req.query.limit) || 10;
 
   if (!idsParam) {
+    console.warn("⚠️ Missing ids parameter");
     return res.status(400).json({ error: "Missing ids parameter" });
   }
 
-  const idArray = idsParam.split(",").map((id) => id.trim());
+  const rawIds = idsParam.split(",").map((id) => id.trim());
+  console.log("🔍 [BY-EXTERNAL-IDS] Raw IDs:", rawIds);
 
   try {
-    console.log(`🔍 [MULTIPLE] Fetching ${idArray.length} products by externalId, limit=${limit}`);
-    let query = Product.find({ externalId: { $in: idArray } }).populate("categories", "name slug");
+    const products = await Product.find({ externalId: { $in: rawIds } })
+      .populate("categories", "name slug")
+      .limit(limit);
 
-    if (limit > 0) {
-      query = query.limit(limit);
+    const foundIds = products.map((p) => p.externalId);
+    const notFound = rawIds.filter((id) => !foundIds.includes(id));
+
+    console.log(`✅ [BY-EXTERNAL-IDS] Found ${products.length} products`);
+    console.log("📦 External IDs found:", foundIds);
+    if (notFound.length > 0) {
+      console.warn("⚠️ External IDs not found:", notFound);
     }
 
-    const products = await query.exec();
-    console.log(`✅ [MULTIPLE] Fetched ${products.length} products`);
-    res.json({ products });
+    res.json({ success: true, products });
   } catch (err) {
-    console.error("❌ Error fetching multiple products by externalId:", err);
-    res.status(500).json({ error: "Server error" });
+    console.error("❌ Error in /by-external-ids:", err);
+    res.status(500).json({ success: false, error: "Server error" });
   }
 });
 
@@ -126,6 +132,7 @@ router.get("/by-ids", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
 
 
 // GET /api/products

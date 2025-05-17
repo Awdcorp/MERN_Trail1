@@ -1,3 +1,5 @@
+// ✅ CLEANED AND PATCHED PRODUCT PAGE WITH CORRECT UPSALE/RELATED FETCH
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import { getReviews } from "@/store/shop/review-slice";
-import ShoppingProductTile from "@/components/shopping-view/product-tile";
+import DemoProductTile from "@/components/shopping-view/DemoProductTile";
 import { getGuestId } from "@/lib/guest-id";
 import { useToast } from "@/components/ui/use-toast";
 import PromateShowcaseSection from "@/components/shopping-view/YouMightAlsoLikeSection";
@@ -33,21 +35,43 @@ export default function ProductPage() {
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/products/slug/${slug}`)
       .then((res) => {
+        console.log("✅ Loaded product:", res.data);
         setProduct(res.data);
+
         if (res.data.upsellProductIds?.length > 0) {
+          console.log("🔁 Fetching upsell products:", res.data.upsellProductIds);
           axios
-            .get(`${import.meta.env.VITE_API_URL}/api/products/multiple`, {
+            .get(`${import.meta.env.VITE_API_URL}/api/products/by-external-ids`, {
               params: { ids: res.data.upsellProductIds.join(","), limit: 5 },
             })
-            .then((res2) => setUpsellProducts(res2.data.products || []));
+            .then((res2) => {
+              console.log("📦 Upsell products fetched:", res2.data.products);
+              setUpsellProducts(res2.data.products || []);
+            })
+            .catch((err) => {
+              console.error("❌ Failed to fetch upsell products:", err);
+            });
+        } else {
+          console.log("ℹ️ No upsellProductIds found");
         }
+
         if (res.data.relatedProductIds?.length > 0) {
+          console.log("🔗 Fetching related products:", res.data.relatedProductIds);
           axios
-            .get(`${import.meta.env.VITE_API_URL}/api/products/multiple`, {
+            .get(`${import.meta.env.VITE_API_URL}/api/products/by-external-ids`, {
               params: { ids: res.data.relatedProductIds.join(","), limit: 5 },
             })
-            .then((res3) => setRelatedProducts(res3.data.products || []));
+            .then((res3) => {
+              console.log("📦 Related products fetched:", res3.data.products);
+              setRelatedProducts(res3.data.products || []);
+            })
+            .catch((err) => {
+              console.error("❌ Failed to fetch related products:", err);
+            });
+        } else {
+          console.log("ℹ️ No relatedProductIds found");
         }
+
         dispatch(getReviews(res.data._id));
       })
       .catch((err) => {
@@ -69,10 +93,7 @@ export default function ProductPage() {
     ).then((res) => {
       if (res?.payload?.success) {
         dispatch(fetchCartItems(isGuest ? guestId : user.id));
-        toast({
-          title: "Added to Cart!",
-          description: "The item was successfully added.",
-        });
+        toast({ title: "Added to Cart!", description: "The item was successfully added." });
       }
     });
   }
@@ -260,7 +281,7 @@ export default function ProductPage() {
                 <div className="w-[100px] h-[2px] bg-gray-200 mx-auto mb-6" />
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                   {relatedProducts.map((productItem) => (
-                    <ShoppingProductTile
+                    <DemoProductTile
                       key={productItem._id}
                       product={productItem}
                       handleAddtoCart={() =>
@@ -271,7 +292,6 @@ export default function ProductPage() {
                 </div>
               </div>
             )}
-            <PromateShowcaseSection />
           </div>
         </>
       )}

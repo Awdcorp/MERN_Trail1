@@ -1,0 +1,155 @@
+[
+  {
+    "_id": "68233059caeba90f1f3477d6",
+    "__v": 0,
+    "attributes": [
+      {
+        "name": "GALAXY S20 PLUS 4G Color",
+        "options": [
+          "Cloud Blue",
+          "Cosmic Black",
+          "Cosmic Grey"
+        ]
+      }
+    ],
+    "brand": null,
+    "categories": [
+      {
+        "_id": "68233023e415c225f88b2900",
+        "name": "Phone",
+        "slug": "phone"
+      },
+      {
+        "_id": "68233023e415c225f88b2902",
+        "name": "Samsung Phones",
+        "slug": "samsung-phones"
+      }
+    ],
+    "description": "<p>Battery Size  - 4000 mAh<br />\nMain Camera  - 64.0MP + 12.0MP<br />\nProcessor - Exynos 990<br />\nInternal Memory  - 128 GB<br />\nRAM Size  - 8 GB<br />\nOperating System - Android<br />\nScreen Size  - 6.2 inch</p>\n",
+    "externalId": 7329,
+    "images": [
+      "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747452361/partyworld/products/xopoo9gbbu0qlrjy9xip.jpg",
+      "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747452363/partyworld/products/a16sydqajmqnl1tege1s.jpg",
+      "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747452364/partyworld/products/f4sldjemdrqjpepqqe3b.jpg",
+      "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747452366/partyworld/products/w3dh1hrfxwbwhhps94tv.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "meta": [
+      {
+        "id": 35454,
+        "key": "ocean_sidebar",
+        "value": "0"
+      },
+      {
+        "id": 35455,
+        "key": "ocean_second_sidebar",
+        "value": "0"
+      },
+      {
+        "id": 35456,
+        "key": "ocean_disable_margins",
+        "value": "enable"
+      },
+      {
+        "id": 35457,
+        "key": "ocean_display_top_bar",
+        "value": "default"
+      },
+      {
+        "id": 35458,
+        "key": "ocean_display_header",
+        "value": "default"
+      },
+      {
+        "id": 35459,
+        "key": "ocean_center_header_left_menu",
+        "value": "0"
+      },
+      {
+        "id": 35460,
+        "key": "ocean_custom_header_template",
+        "value": "0"
+      },
+      {
+        "id": 35461,
+        "key": "ocean_header_custom_menu",
+        "value": "0"
+      },
+      {
+        "id": 35462,
+        "key": "ocean_menu_typo_font_family",
+        "value": "0"
+      },
+      {
+        "id": 35463,
+        "key": "ocean_disable_title",
+        "value": "default"
+      },
+      {
+        "id": 35464,
+        "key": "ocean_disable_heading",
+        "value": "default"
+      },
+      {
+        "id": 35465,
+        "key": "ocean_disable_breadcrumbs",
+        "value": "default"
+      },
+      {
+        "id": 35466,
+        "key": "ocean_display_footer_widgets",
+        "value": "default"
+      },
+      {
+        "id": 35467,
+        "key": "ocean_display_footer_bottom",
+        "value": "default"
+      },
+      {
+        "id": 35468,
+        "key": "ocean_custom_footer_template",
+        "value": "0"
+      },
+      {
+        "id": 35469,
+        "key": "ocean_post_layout",
+        "value": "full-width"
+      },
+      {
+        "id": 35470,
+        "key": "_wp_page_template",
+        "value": "default"
+      },
+      {
+        "id": 35471,
+        "key": "_saleflash_text",
+        "value": ""
+      },
+      {
+        "id": 41736,
+        "key": "woolentor_views_count_product",
+        "value": "603"
+      }
+    ],
+    "price": 0,
+    "relatedProductIds": [
+      4397,
+      4489,
+      5022,
+      4544,
+      4535
+    ],
+    "salePrice": 0,
+    "shortDescription": "<p><a class=\"go gb\" href=\"http://www.alrahmaniamobile.com/product/samsung-galaxy-s20-plus-4g/\">128 GB</a></p>\n",
+    "sku": null,
+    "slug": "samsung-galaxy-s20-plus-4g",
+    "tags": [],
+    "title": "SAMSUNG GALAXY  S20 PLUS 4G",
+    "totalStock": 9999,
+    "upsellProductIds": [],
+    "variants": [],
+    "weight": null,
+    "updatedAt": "2025-05-17T12:01:09.436Z"
+  }
+]

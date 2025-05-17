@@ -111,7 +111,12 @@ async function importProducts() {
       chain.forEach((cat) => categoryIds.add(cat._id.toString()));
     }
 
-    const image = wp.images?.[0]?.src ? await uploadImageToCloudinary(wp.images[0].src) : null;
+const uploadedImages = [];
+for (const img of wp.images || []) {
+  const url = await uploadImageToCloudinary(img.src);
+  if (url) uploadedImages.push(url);
+}
+
 
     const metaMap = Object.fromEntries(wp.meta_data.map((m) => [m.key, m.value]));
 
@@ -135,7 +140,8 @@ async function importProducts() {
       salePrice: parseFloat(wp.sale_price || "0"),
       totalStock: wp.manage_stock ? wp.stock_quantity || 0 : 9999,
 
-      images: image ? [image] : [],
+images: uploadedImages,
+
       variants: [],
 
       attributes: wp.attributes?.map(attr => ({ name: attr.name, options: attr.options })) || [],

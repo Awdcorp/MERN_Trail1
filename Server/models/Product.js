@@ -54,7 +54,7 @@ const ProductSchema = new mongoose.Schema(
 
     meta: Array, // <-- NEW
 
-    externalId: String,
+    externalId: Number,
   },
   { timestamps: true }
 );
