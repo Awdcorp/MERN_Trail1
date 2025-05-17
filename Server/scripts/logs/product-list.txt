@@ -1,131 +1,11 @@
 === Product List with Categories and Related Products ===
 
-🛒 Product: SAMSUNG S21 5G 128GB
-🔎 Mongo ID: 68233027caeba90f1f3477ac
-🆔 External ID: 8044
-🔗 Slug: samsung-s21-5g-128gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S21 5G 256GB
-🔎 Mongo ID: 68233029caeba90f1f3477ad
-🆔 External ID: 8028
-🔗 Slug: samsung-s21-5g-256gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S21 PLUS 5G 256GB
-🔎 Mongo ID: 6823302acaeba90f1f3477ae
-🆔 External ID: 8023
-🔗 Slug: samsung-s21-plus-5g-256gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
-------------------------------------------------------------
-
-🛒 Product: SAMSUNG S21 PLUS 5G 128GB
-🔎 Mongo ID: 6823302ccaeba90f1f3477af
-🆔 External ID: 8009
-🔗 Slug: samsung-s21-plus-5g-128gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
-------------------------------------------------------------
-
-🛒 Product: PROMATE AuraLight-1
-🔎 Mongo ID: 6823302dcaeba90f1f3477b0
-🆔 External ID: 7475
-🔗 Slug: promate-auralight-1
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE LumiQi
-🔎 Mongo ID: 6823302fcaeba90f1f3477b2
-🆔 External ID: 7477
-🔗 Slug: promate-lumiqi
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE VolTrip-UNI
-🔎 Mongo ID: 68233031caeba90f1f3477b3
-🆔 External ID: 7473
-🔗 Slug: promate-voltrip-uni
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE Scud-48
-🔎 Mongo ID: 68233032caeba90f1f3477b4
-🆔 External ID: 7471
-🔗 Slug: promate-scud-48
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE CenterPort-2PD75
-🔎 Mongo ID: 68233034caeba90f1f3477b5
-🆔 External ID: 7469
-🔗 Slug: promate-centerport-2pd75
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE GaNPort3-65 pd
-🔎 Mongo ID: 68233036caeba90f1f3477b7
-🆔 External ID: 7467
-🔗 Slug: promate-ganport3-65-pd
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE BaseLink-Pro
-🔎 Mongo ID: 68233037caeba90f1f3477b8
-🆔 External ID: 7465
-🔗 Slug: promate-baselink-pro
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE AlphaHub
-🔎 Mongo ID: 68233038caeba90f1f3477b9
-🆔 External ID: 7463
-🔗 Slug: promate-alphahub
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE PowerGear
-🔎 Mongo ID: 6823303acaeba90f1f3477ba
-🆔 External ID: 7487
-🔗 Slug: promate-powergear
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE TimeBridge-Qi
-🔎 Mongo ID: 6823303bcaeba90f1f3477bb
-🆔 External ID: 7479
-🔗 Slug: promate-timebridge-qi
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
 🛒 Product: PROMATE TimePad-Qi
 🔎 Mongo ID: 6823303dcaeba90f1f3477bc
 🆔 External ID: 7481
 🔗 Slug: promate-timepad-qi
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE PowerState
-🔎 Mongo ID: 6823303ecaeba90f1f3477bd
-🆔 External ID: 7483
-🔗 Slug: promate-powerstate
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), APPLE WATCH CHARGER PAD WITH CABLE 1 METER (extId: 4796)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraTank-20
@@ -133,7 +13,7 @@
 🆔 External ID: 7497
 🔗 Slug: promate-auratank-20
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB POWER ADAPTER (extId: 4790), USB-C TO LIGHTNING CABLE (extId: 4792)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraPack-10
@@ -141,23 +21,7 @@
 🆔 External ID: 7495
 🔗 Slug: promate-aurapack-10
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE AuraVolt-10+
-🔎 Mongo ID: 68233043caeba90f1f3477c0
-🆔 External ID: 7493
-🔗 Slug: promate-auravolt-10
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: Promate Capital-30
-🔎 Mongo ID: 68233044caeba90f1f3477c3
-🆔 External ID: 7491
-🔗 Slug: promate-capital-30
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), AIRPODS PRO (extId: 4782), USB-C TO LIGHTNING CABLE (extId: 4792)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE  AuraWatch
@@ -165,15 +29,7 @@
 🆔 External ID: 7489
 🔗 Slug: promate-aurawatch
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE Titan-30
-🔎 Mongo ID: 68233048caeba90f1f3477c5
-🆔 External ID: 7485
-🔗 Slug: promate-titan-30
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), APPLE USB-C TO HEADPHONE JACK (extId: 4776)
 ------------------------------------------------------------
 
 🛒 Product: POMATE POWER HUB
@@ -181,15 +37,7 @@
 🆔 External ID: 7407
 🔗 Slug: pomate-power-hub
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: BELKIN WIRELESS CAR CHARGER
-🔎 Mongo ID: 6823304bcaeba90f1f3477c7
-🆔 External ID: 7403
-🔗 Slug: belkin-wireless-car-charger
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER (extId: 4772), HEADPHONE PLUG (extId: 4780)
 ------------------------------------------------------------
 
 🛒 Product: REDMI 10,000 MAH POWERBANK. (2 USB,1 MICRO, 1 TYPE C PORT)
@@ -197,7 +45,7 @@
 🆔 External ID: 7391
 🔗 Slug: redmi-10000-mah-powerbank-2-usb1-micro-1-type-c-port
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), AIRPODS MAX (extId: 4786), HEADPHONE PLUG (extId: 4780)
 ------------------------------------------------------------
 
 🛒 Product: MI BAND - 4
@@ -205,15 +53,7 @@
 🆔 External ID: 7397
 🔗 Slug: mi-band-4
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: MI BAND - 5
-🔎 Mongo ID: 6823304fcaeba90f1f3477ca
-🆔 External ID: 7399
-🔗 Slug: mi-band-5
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG EARPHONE JACK IN TUNED BY AKG (extId: 6366), SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), LIGHTNING CONNECTOR (extId: 4778), AIRPODS (extId: 4784)
 ------------------------------------------------------------
 
 🛒 Product: BELKIN WIRELESS CHAGING PADS
@@ -221,15 +61,7 @@
 🆔 External ID: 7401
 🔗 Slug: belkin-wireless-chaging-pads
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: PROMATE MULTI CONNECTOR
-🔎 Mongo ID: 68233052caeba90f1f3477cd
-🆔 External ID: 7405
-🔗 Slug: promate-multi-connector
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG USB TO TYPE-C CHARGING DATA CABLE (extId: 6349), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE USB-C TO HEADPHONE JACK (extId: 4776), AIRPODS (extId: 4784), APPLE USB POWER ADAPTER (extId: 4790)
 ------------------------------------------------------------
 
 🛒 Product: MI EARBUDS
@@ -237,15 +69,7 @@
 🆔 External ID: 7395
 🔗 Slug: mi-earbuds
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Earphones (68233051e415c225f88b2929), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: REDMI 20,000 MAH POWERBANK. (2 USB,1 MICRO, 1 TYPE C PORT)
-🔎 Mongo ID: 68233055caeba90f1f3477d2
-🆔 External ID: 7393
-🔗 Slug: redmi-20000-mah-powerbank-2-usb1-micro-1-type-c-port
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377), SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE USB-C TO HEADPHONE JACK (extId: 4776), APPLE USB POWER ADAPTER (extId: 4790)
 ------------------------------------------------------------
 
 🛒 Product: D-LINK MOBILE ROUTER
@@ -253,7 +77,7 @@
 🆔 External ID: 7411
 🔗 Slug: d-link-mobile-router
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), APPLE USB- C   20 W POWER ADAPTER (extId: 4770), AIRPODS PRO (extId: 4782), HEADPHONE PLUG (extId: 4780)
 ------------------------------------------------------------
 
 🛒 Product: MOPHIE WIRELESS CHARGING PADS
@@ -261,7 +85,7 @@
 🆔 External ID: 7409
 🔗 Slug: mophie-wireless-charging-pads
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), AIRPODS PRO (extId: 4782), AIRPODS (extId: 4784), USB-C TO LIGHTNING CABLE (extId: 4792)
 ------------------------------------------------------------
 
 🛒 Product: SAMSUNG GALAXY  S20 PLUS 4G
@@ -269,7 +93,7 @@
 🆔 External ID: 7329
 🔗 Slug: samsung-galaxy-s20-plus-4g
 🏷️ Categories: Phone (68233023e415c225f88b2900), Samsung Phones (68233023e415c225f88b2902)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
+🤝 Related Products: SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397)
 ------------------------------------------------------------
 
 🛒 Product: ANKER POWER EXTEND USB 4 STRIP
@@ -277,7 +101,7 @@
 🆔 External ID: 7289
 🔗 Slug: anker-power-extend-usb-4-strip
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG STEREO IN EARHEADPHONES (extId: 6369), LIGHTNING CONNECTOR (extId: 4778), AIRPODS (extId: 4784), MAGSAFE CHARGER (extId: 4788), HEADPHONE PLUG (extId: 4780)
 ------------------------------------------------------------
 
 🛒 Product: ANKER COMPACT SIZE ANKER POWERHOUSE 2 400
@@ -285,7 +109,7 @@
 🆔 External ID: 7282
 🔗 Slug: anker-compact-size-anker-powerhouse-2-400
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: (none)
+🤝 Related Products: AIRPODS PRO (extId: 4782), AIRPODS (extId: 4784), AIRPODS MAX (extId: 4786), USB-C TO LIGHTNING CABLE (extId: 4792)
 ------------------------------------------------------------
 
 🛒 Product: Anker powercore slim 10000 (A1229H12)
@@ -293,7 +117,7 @@
 🆔 External ID: 7279
 🔗 Slug: anker-powercore-slim-10000-a1229h12
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: (none)
+🤝 Related Products: APPLE USB- C   20 W POWER ADAPTER (extId: 4770), APPLE USB-C TO HEADPHONE JACK (extId: 4776), LIGHTNING CONNECTOR (extId: 4778), AIRPODS (extId: 4784)
 ------------------------------------------------------------
 
 🛒 Product: ANKER AUX WITH LIGHTNING CONNECTOR 1 METER
@@ -301,7 +125,7 @@
 🆔 External ID: 7272
 🔗 Slug: anker-aux-with-lightning-connector-1-meter
 🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG EARPHONE TYPE C TUNED BY AKG (extId: 6353), SAMSUNG TRAVEL ADAPTER (15 W) (extId: 6332), SAMSUNG TRAVEL ADAPTER (25 W) (extId: 6319), APPLE LIGHTNING TO HEADPHONE JACK (extId: 4774), LIGHTNING CONNECTOR (extId: 4778)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 8A DUAL 32GB
@@ -309,7 +133,7 @@
 🆔 External ID: 7087
 🔗 Slug: xiaomi-redmi-8a-dual-32gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Dual Sim Facetime 256 GB (extId: 4496)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI NOTE 9S 64GB
@@ -317,7 +141,7 @@
 🆔 External ID: 7080
 🔗 Slug: xiaomi-redmi-note-9s-64gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI NOTE 9S 128GB
@@ -325,7 +149,7 @@
 🆔 External ID: 7064
 🔗 Slug: xiaomi-redmi-note-9s-128gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), SAMSUNG S21 5G 128GB (extId: 8044)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI K30 PRO ZOOM 128GB
@@ -333,7 +157,7 @@
 🆔 External ID: 7057
 🔗 Slug: xiaomi-redmi-k30-pro-zoom-128gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340), SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI K30 PRO ZOOM 256GB
@@ -341,7 +165,7 @@
 🆔 External ID: 7041
 🔗 Slug: xiaomi-redmi-k30-pro-zoom-256gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
+🤝 Related Products: SAMSUNG GALAXY A12 128GB (extId: 5098), IPHONE 12 With Facetime 128 GB (extId: 4535), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 LITE 5G 6GB
@@ -349,7 +173,7 @@
 🆔 External ID: 7035
 🔗 Slug: xiaomi-mi-10-lite-5g-6gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
+🤝 Related Products: SAMSUNG S20 PLUS 5G 12GB (extId: 5027), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 LITE 5G 8GB
@@ -357,7 +181,7 @@
 🆔 External ID: 7029
 🔗 Slug: xiaomi-mi-10-lite-5g-8gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S20 PLUS 5G 12GB (extId: 5027), SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 PRO With Dual Sim Facetime 512GB (extId: 4489), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 YOUTH 5G 64GB
@@ -365,7 +189,7 @@
 🆔 External ID: 7023
 🔗 Slug: xiaomi-mi-10-youth-5g-64gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
+🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), SAMSUNG S21 5G 256GB (extId: 8028), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 YOUTH 5G 128GB
@@ -373,7 +197,7 @@
 🆔 External ID: 7017
 🔗 Slug: xiaomi-mi-10-youth-5g-128gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 512GB (extId: 5047), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 256 GB (extId: 4375)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI 10 YOUTH 5G 256GB
@@ -381,7 +205,7 @@
 🆔 External ID: 7002
 🔗 Slug: xiaomi-mi-10-youth-5g-256gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S21 ULTRA 5G 512GB (extId: 5022), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 With Facetime 256 GB (extId: 4514), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI NOTE 10 LITE 64GB
@@ -389,7 +213,7 @@
 🆔 External ID: 6997
 🔗 Slug: xiaomi-mi-note-10-lite-64gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
+🤝 Related Products: SAMSUNG NOTE 20 ULTRA 5G 256GB (extId: 5064), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI MI NOTE 10 LITE 128GB
@@ -397,7 +221,7 @@
 🆔 External ID: 6983
 🔗 Slug: xiaomi-mi-note-10-lite-128gb
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), SAMSUNG S21 5G 256GB (extId: 8028)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI POCO F2 PRO 128GB 5G
@@ -405,7 +229,7 @@
 🆔 External ID: 6976
 🔗 Slug: xiaomi-poco-f2-pro-128gb-5g
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB (extId: 4397), IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB (extId: 4390), IPHONE 12 PRO MAX With Facetime 128 GB (extId: 4380), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI POCO F2 PRO 256GB 5G
@@ -413,7 +237,7 @@
 🆔 External ID: 6960
 🔗 Slug: xiaomi-poco-f2-pro-256gb-5g
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S20 PLUS 5G 8GB (extId: 5042), SAMSUNG S20 PLUS 5G 12GB (extId: 5027), IPHONE 12 With Facetime 64 GB (extId: 4544), IPHONE 12 PRO With Dual Sim Facetime 128 GB (extId: 4505), IPHONE 12 PRO MAX With Facetime 512 GB (extId: 4340)
 ------------------------------------------------------------
 
 🛒 Product: XIAOMI REDMI 9 Dual SIM 32GB 4G LTE
@@ -421,382 +245,6 @@
 🆔 External ID: 6955
 🔗 Slug: xiaomi-redmi-9-dual-sim-32gb-4g-lte
 🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9 Dual SIM 64GB 4G LTE
-🔎 Mongo ID: 68233078caeba90f1f3477ef
-🆔 External ID: 6942
-🔗 Slug: xiaomi-redmi-9-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9C Dual SIM 32GB 4G LTE
-🔎 Mongo ID: 68233079caeba90f1f3477f0
-🆔 External ID: 6937
-🔗 Slug: xiaomi-redmi-9c-dual-sim-32gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9C Dual SIM 64GB 4G LTE
-🔎 Mongo ID: 6823307bcaeba90f1f3477f1
-🆔 External ID: 6923
-🔗 Slug: xiaomi-redmi-9c-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9 A Dual SIM 32GB
-🔎 Mongo ID: 6823307ccaeba90f1f3477f2
-🆔 External ID: 6912
-🔗 Slug: xiaomi-redmi-9-a-dual-sim-32gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9 PRIME Dual Sim 64GB 4G LTE
-🔎 Mongo ID: 6823307ecaeba90f1f3477f3
-🆔 External ID: 6905
-🔗 Slug: xiaomi-redmi-9-prime-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9 PRIME Dual Sim 128GB 4G LTE
-🔎 Mongo ID: 6823307fcaeba90f1f3477f4
-🆔 External ID: 6888
-🔗 Slug: xiaomi-redmi-9-prime-dual-sim-128gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI MI 10T 5G 128GB
-🔎 Mongo ID: 68233081caeba90f1f3477f8
-🆔 External ID: 6875
-🔗 Slug: xiaomi-mi-10t-5g-128gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI NOTE 9 64GB 4G LTE
-🔎 Mongo ID: 68233082caeba90f1f3477f9
-🆔 External ID: 6868
-🔗 Slug: xiaomi-redmi-note-9-64gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI NOTE 9 128GB 4G LTE
-🔎 Mongo ID: 68233084caeba90f1f3477fb
-🆔 External ID: 6849
-🔗 Slug: xiaomi-redmi-note-9-128gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI MI 11 5G 128GB
-🔎 Mongo ID: 68233085caeba90f1f3477fc
-🆔 External ID: 6842
-🔗 Slug: xiaomi-mi-11-5g-128gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI MI 11 5G 256GB
-🔎 Mongo ID: 68233087caeba90f1f3477fd
-🆔 External ID: 6824
-🔗 Slug: xiaomi-mi-11-5g-256gb
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9T Dual SIM 64GB 4G LTE
-🔎 Mongo ID: 68233088caeba90f1f3477fe
-🆔 External ID: 6818
-🔗 Slug: xiaomi-redmi-9t-dual-sim-64gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: SAMSUNG S21 5G 128GB (extId: 8044)
-------------------------------------------------------------
-
-🛒 Product: XIAOMI REDMI 9T Dual SIM 128GB 4G LTE
-🔎 Mongo ID: 6823308acaeba90f1f3477ff
-🆔 External ID: 6800
-🔗 Slug: xiaomi-redmi-9t-dual-sim-128gb-4g-lte
-🏷️ Categories: Phone (68233023e415c225f88b2900), Xiaomi (6823305fe415c225f88b2936)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: OPPO A73
-🔎 Mongo ID: 6823308bcaeba90f1f347800
-🆔 External ID: 6742
-🔗 Slug: oppo-a73
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: OPPO A15 3GB
-🔎 Mongo ID: 6823308dcaeba90f1f347801
-🆔 External ID: 6737
-🔗 Slug: oppo-a15-3gb
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: OPPO A15 2GB
-🔎 Mongo ID: 6823308fcaeba90f1f347802
-🆔 External ID: 6723
-🔗 Slug: oppo-a15-2gb
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
-------------------------------------------------------------
-
-🛒 Product: OPPO A73 5G
-🔎 Mongo ID: 68233091caeba90f1f347803
-🆔 External ID: 6712
-🔗 Slug: oppo-a73-5g
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: SAMSUNG S21 5G 256GB (extId: 8028)
-------------------------------------------------------------
-
-🛒 Product: OPPO RENO 5 5G
-🔎 Mongo ID: 68233092caeba90f1f347804
-🆔 External ID: 6700
-🔗 Slug: oppo-reno-5-5g
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: OPPO A15 S
-🔎 Mongo ID: 68233094caeba90f1f347805
-🆔 External ID: 6686
-🔗 Slug: oppo-a15-s
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: OPPO A93
-🔎 Mongo ID: 68233095caeba90f1f347806
-🆔 External ID: 6674
-🔗 Slug: oppo-a93
-🏷️ Categories: Oppo (68233089e415c225f88b2954), Phone (68233023e415c225f88b2900)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER   24 W  2 PORT USB CHARGER
-🔎 Mongo ID: 68233097caeba90f1f347807
-🆔 External ID: 6526
-🔗 Slug: anker-24-w-2-port-usb-charger
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER   POWERPORT PD 1
-🔎 Mongo ID: 68233098caeba90f1f347809
-🆔 External ID: 6528
-🔗 Slug: anker-powerport-pd-1
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER   POWERPORT SPEED 5 PORTS  63 W
-🔎 Mongo ID: 6823309acaeba90f1f34780a
-🆔 External ID: 6530
-🔗 Slug: anker-powerport-speed-5-ports-63-w
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER   POWERPORT ATOM 3 SLIM (A2045)
-🔎 Mongo ID: 6823309ccaeba90f1f34780b
-🆔 External ID: 6532
-🔗 Slug: anker-powerport-atom-3-slim-a2045
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396)
-------------------------------------------------------------
-
-🛒 Product: ANKER   POWERPORT 3 NANO (A2633)
-🔎 Mongo ID: 6823309dcaeba90f1f34780c
-🆔 External ID: 6534
-🔗 Slug: anker-powerport-3-nano-a2633
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
-------------------------------------------------------------
-
-🛒 Product: ANKER  POWERPORT + 1 WITH QUICK CHARGE 3.0
-🔎 Mongo ID: 6823309ecaeba90f1f34780d
-🆔 External ID: 6536
-🔗 Slug: anker-powerport-1-with-quick-charge-30
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER  POWERPORT 4 LITE (INTERCHANGEABLE EU AND UK PLUGS)
-🔎 Mongo ID: 682330a1caeba90f1f34780e
-🆔 External ID: 6538
-🔗 Slug: anker-powerport-4-lite-interchangeable-eu-and-uk-plugs
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWER EXPAND 4-IN-1 USB ETHERNET HUB  (A8323)
-🔎 Mongo ID: 682330a2caeba90f1f34780f
-🆔 External ID: 6540
-🔗 Slug: anker-power-expand-4-in-1-usb-ethernet-hub-a8323
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
-------------------------------------------------------------
-
-🛒 Product: ANKER UNIVERSAL TRAVEL ADAPTER WITH 4 USB PORTS
-🔎 Mongo ID: 682330a4caeba90f1f347810
-🆔 External ID: 6542
-🔗 Slug: anker-universal-travel-adapter-with-4-usb-ports
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERDRIVE PD+ 2
-🔎 Mongo ID: 682330a5caeba90f1f347811
-🆔 External ID: 6544
-🔗 Slug: anker-powerdrive-pd-2
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERDRIVE 2 ELITE WITH LIGHTNING CONNECTOR
-🔎 Mongo ID: 682330a7caeba90f1f347812
-🆔 External ID: 6546
-🔗 Slug: anker-powerdrive-2-elite-with-lightning-connector
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERWAVE 7.5 CAR MOUNT (B2551)
-🔎 Mongo ID: 682330a9caeba90f1f347813
-🆔 External ID: 6548
-🔗 Slug: anker-powerwave-75-car-mount-b2551
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER AUXILIARY AUDIO CABLE
-🔎 Mongo ID: 682330aacaeba90f1f347815
-🆔 External ID: 6550
-🔗 Slug: anker-auxiliary-audio-cable
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425), SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
-------------------------------------------------------------
-
-🛒 Product: ANKER TYPE C   CABLE 1 METER
-🔎 Mongo ID: 682330accaeba90f1f347816
-🆔 External ID: 6496
-🔗 Slug: anker-type-c-cable-1-meter
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE 26800
-🔎 Mongo ID: 682330aecaeba90f1f347817
-🆔 External ID: 6524
-🔗 Slug: anker-powercore-26800
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG GALAXY BUDS LIVE (extId: 6377)
-------------------------------------------------------------
-
-🛒 Product: ANKER MICRO CABLE  2 METER
-🔎 Mongo ID: 682330afcaeba90f1f347818
-🆔 External ID: 6498
-🔗 Slug: anker-micro-cable-2-meter
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER MICRO CABLE  3 METER
-🔎 Mongo ID: 682330b1caeba90f1f347819
-🆔 External ID: 6500
-🔗 Slug: anker-micro-cable-3-meter
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377)
-------------------------------------------------------------
-
-🛒 Product: ANKER TYPE C   CABLE 2 METER
-🔎 Mongo ID: 682330b2caeba90f1f34781a
-🆔 External ID: 6494
-🔗 Slug: anker-type-c-cable-2-meter
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE LITE 10000
-🔎 Mongo ID: 682330b4caeba90f1f34781b
-🆔 External ID: 6506
-🔗 Slug: anker-powercore-lite-10000
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE 3 SENSE 10K
-🔎 Mongo ID: 682330b5caeba90f1f34781c
-🆔 External ID: 6508
-🔗 Slug: anker-powercore-3-sense-10k
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE+ METRO 10000 WITH BUILT IN USB-C CABLE
-🔎 Mongo ID: 682330b7caeba90f1f34781d
-🆔 External ID: 6510
-🔗 Slug: anker-powercore-metro-10000-with-built-in-usb-c-cable
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: (none)
-------------------------------------------------------------
-
-🛒 Product: ANKER WIRELESS PORTABLE CHARGER POWERCORE 10K WIRELESS (A1615H11)
-🔎 Mongo ID: 682330b9caeba90f1f34781e
-🆔 External ID: 6512
-🔗 Slug: anker-wireless-portable-charger-powercore-10k-wireless-a1615h11
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: SAMSUNG BATTERY PACK 10,000 MAH (extId: 6425)
-------------------------------------------------------------
-
-🛒 Product: anker powercore powerbank (A1252H11)
-🔎 Mongo ID: 682330bacaeba90f1f34781f
-🆔 External ID: 6514
-🔗 Slug: anker-powercore-powerbank-a1252h11
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE 2   20,000
-🔎 Mongo ID: 682330bccaeba90f1f347820
-🆔 External ID: 6516
-🔗 Slug: anker-powercore-2-20000
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: SAMSUNG GALAXY BUDS + (extId: 6396), SAMSUNG GALAXY BUDS LIVE (extId: 6377)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE ESSENTIAL 20000
-🔎 Mongo ID: 682330bdcaeba90f1f347821
-🆔 External ID: 6518
-🔗 Slug: anker-powercore-essential-20000
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: SAMSUNG WIRELESS DUO CHARGER PAD (extId: 6413), SAMSUNG GALAXY BUDS + (extId: 6396)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE METRO ESSENTIAL 20000 PD
-🔎 Mongo ID: 682330bfcaeba90f1f347827
-🆔 External ID: 6520
-🔗 Slug: anker-powercore-metro-essential-20000-pd
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: SAMSUNG GALAXY BUDS LIVE (extId: 6377)
-------------------------------------------------------------
-
-🛒 Product: ANKER POWERCORE SELECT 20000
-🔎 Mongo ID: 682330c0caeba90f1f347828
-🆔 External ID: 6522
-🔗 Slug: anker-powercore-select-20000
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Anker Accessories (68233059e415c225f88b2930), Powerbank (6823303ee415c225f88b2918)
-🤝 Related Products: (none)
+🤝 Related Products: SAMSUNG S21 ULTRA 5G 256GB (extId: 5001), IPHONE 12 PRO With Facetime 128 GB (extId: 4479), IPHONE 12 PRO With Facetime  512 GB (extId: 4464), IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB (extId: 4406), SAMSUNG S21 PLUS 5G 256GB (extId: 8023)
 ------------------------------------------------------------
 

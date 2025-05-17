@@ -196,7 +196,7 @@ const searchProducts = async (req, res) => {
     const matchedProducts = await Product.find({
       title: { $regex: query, $options: "i" },
     })
-      .select("_id title price")
+      .select("_id title price slug")
       .limit(limit);
 
     console.log("✅ Matched products:", matchedProducts.length);

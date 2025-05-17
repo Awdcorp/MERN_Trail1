@@ -9,6 +9,7 @@ import logo from "@/assets/logo.png";
 import { createSelector } from "@reduxjs/toolkit";
 import { Sheet } from "@/components/ui/sheet"; // Make sure this import exists
 import { HEADER_MENU } from "@/config/headerMenu";
+import axios from "axios";
 // ✅ Memoized selector
 const selectCartItemCount = createSelector(
   (state) => Array.isArray(state.shopCart.cartItems) ? state.shopCart.cartItems : [],
@@ -20,11 +21,32 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [openCartSheet, setOpenCartSheet] = useState(false);
+const [searchQuery, setSearchQuery] = useState("");
+const [searchResults, setSearchResults] = useState([]);
 
   const dispatch = useDispatch();
   const cartCount = useSelector(selectCartItemCount);
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
+
+useEffect(() => {
+  const delay = setTimeout(() => {
+    if (searchQuery.trim().length > 1) {
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${searchQuery}`)
+        .then((res) => {
+          if (res.data?.success) {
+            setSearchResults(res.data.data || []);
+          }
+        })
+        .catch(() => setSearchResults([]));
+    } else {
+      setSearchResults([]);
+    }
+  }, 300);
+
+  return () => clearTimeout(delay);
+}, [searchQuery]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -79,9 +101,29 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full border border-gray-300 rounded-sm pl-4 pr-10 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#00B0BA] shadow-sm"
               />
               <Search className="absolute right-3 top-3 h-4 w-4 text-[#463970]" />
+              {searchResults.length > 0 && (
+                <ul className="absolute z-50 top-full left-0 w-full bg-white border rounded shadow text-sm mt-1 max-h-64 overflow-y-auto">
+                  {searchResults.map((product) => (
+                    <li key={product._id}>
+                      <Link
+                        to={`/shop/product/${product.slug || product._id}`}
+                        className="block px-4 py-2 hover:bg-gray-100 text-black"
+                        onClick={() => {
+                          setSearchQuery("");
+                          setSearchResults([]);
+                        }}
+                      >
+                        {product.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <div className="flex gap-6 items-center">
@@ -110,9 +152,29 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full border border-gray-300 rounded-full pl-4 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00B0BA]"
             />
             <Search className="absolute right-3 top-2.5 h-4 w-4 text-[#463970]" />
+            {searchResults.length > 0 && (
+              <ul className="absolute z-50 top-full left-0 w-full bg-white border rounded shadow text-sm mt-1 max-h-64 overflow-y-auto">
+                {searchResults.map((product) => (
+                  <li key={product._id}>
+                    <Link
+                      to={`/shop/product/${product.slug || product._id}`}
+                      className="block px-4 py-2 hover:bg-gray-100 text-black"
+                      onClick={() => {
+                        setSearchQuery("");
+                        setSearchResults([]);
+                      }}
+                    >
+                      {product.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
