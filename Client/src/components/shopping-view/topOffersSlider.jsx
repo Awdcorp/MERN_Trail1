@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
-import DemoProductTile from "@/components/shopping-view/demoProductTile";
+import DemoProductTile from "@/components/shopping-view/DemoProductTile";
 
 export default function TopOffersSlider({ title, categoryIds = [], viewAllUrl = "#" }) {
   const [products, setProducts] = useState([]);
