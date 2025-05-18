@@ -174,7 +174,7 @@ function ShoppingHome() {
       <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <TopOffersSlider
           title="Top Offers"
-          categoryIds={["68233023e415c225f88b2902", "68233134e415c225f88b29ca"]}
+          categoryIds={["68290e5ac9666ae87ae5d930", "6829108ac9666ae87ae5d9c3"]}
           viewAllUrl="samsung-phones"
         />
       </div>
@@ -266,7 +266,7 @@ function ShoppingHome() {
       <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <TopOffersSlider
           title="Top Picks On Mobile"
-          categoryIds={["68233023e415c225f88b2902", "6823305fe415c225f88b2936","682330dde415c225f88b298d", "68233134e415c225f88b29ca"]}
+          categoryIds={["68290e5ac9666ae87ae5d930", "68290f0fc9666ae87ae5d964","6829106dc9666ae87ae5d9bb", "6829108ac9666ae87ae5d9c3"]}
           viewAllUrl="samsung-phones"
         />
       </div>
@@ -287,8 +287,8 @@ function ShoppingHome() {
       <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <TopOffersSlider
           title="Top Picks On Watches"
-          categoryIds={["682331aee415c225f88b2a19"]}
-          viewAllUrl="samsung-phones"
+          categoryIds={["68291281c9666ae87ae5da47"]}
+          viewAllUrl="watches"
         />
       </div>
             {/* ✅ Two-Banner Full Width Slider (No Arrows, No Text) */}
@@ -319,7 +319,7 @@ function ShoppingHome() {
       <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <TopOffersSlider
           title="Top Picks On Tablets"
-          categoryIds={["6823312de415c225f88b29c4"]}
+          categoryIds={["68291152c9666ae87ae5d9f2"]}
           viewAllUrl="samsung-phones"
         />
       </div>
@@ -340,7 +340,7 @@ function ShoppingHome() {
       <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <TopOffersSlider
           title="Top Picks On Accessories"
-          categoryIds={["6823302be415c225f88b2908"]}
+          categoryIds={["68290e6fc9666ae87ae5d936"]}
           viewAllUrl="samsung-phones"
         />
       </div>

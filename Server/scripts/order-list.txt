@@ -1,0 +1,1927 @@
+=== ORDER LIST ===
+
+✅ Connected to MongoDB
+
+📦 Total Orders: 183
+
+🧾 Order ID: 682905a5cb81b7890205c4ef
+   WC Order ID: 79
+   Customer: Melinda Evans
+   Status: N/A
+   Total: 284 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a1cb81b7890205c4a2
+   WC Order ID: 320
+   Customer: Robert Kennedy
+   Status: N/A
+   Total: 527 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a2cb81b7890205c4ae
+   WC Order ID: 7
+   Customer: Jessica Fowler
+   Status: N/A
+   Total: 1028 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a2cb81b7890205c4b5
+   WC Order ID: 465
+   Customer: Aisha Al Suwaidi
+   Status: N/A
+   Total: 259 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a3cb81b7890205c4bd
+   WC Order ID: 695
+   Customer: Cody Holmes
+   Status: N/A
+   Total: 194 AED
+   Payment: paid
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a3cb81b7890205c4c5
+   WC Order ID: 721
+   Customer: Joshua Vance
+   Status: N/A
+   Total: 285 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a3cb81b7890205c4cb
+   WC Order ID: 590
+   Customer: Julian Wood
+   Status: N/A
+   Total: 392 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a4cb81b7890205c4d2
+   WC Order ID: 865
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 719 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a4cb81b7890205c4d9
+   WC Order ID: 649
+   Customer: Vincent Reynolds
+   Status: N/A
+   Total: 795 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a4cb81b7890205c4de
+   WC Order ID: 150
+   Customer: Travis Stone
+   Status: N/A
+   Total: 650 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a5cb81b7890205c4e3
+   WC Order ID: 779
+   Customer: Mariam Al Qassimi
+   Status: N/A
+   Total: 738 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a5cb81b7890205c4e9
+   WC Order ID: 816
+   Customer: Scott Miller
+   Status: N/A
+   Total: 377 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a1cb81b7890205c49c
+   WC Order ID: 62
+   Customer: Amy Parsons
+   Status: N/A
+   Total: 529 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a5cb81b7890205c4f6
+   WC Order ID: 488
+   Customer: Khalid Al Dhaheri
+   Status: N/A
+   Total: 495 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a6cb81b7890205c4fa
+   WC Order ID: 177
+   Customer: Anthony Dougherty
+   Status: N/A
+   Total: 720 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a6cb81b7890205c501
+   WC Order ID: 613
+   Customer: Mr. Alexander Landry MD
+   Status: N/A
+   Total: 165 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a6cb81b7890205c505
+   WC Order ID: 291
+   Customer: Ali Al Nuaimi
+   Status: N/A
+   Total: 210 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a7cb81b7890205c50f
+   WC Order ID: 811
+   Customer: Nicole Gonzalez
+   Status: N/A
+   Total: 465 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a7cb81b7890205c513
+   WC Order ID: 19
+   Customer: Aisha Al Suwaidi
+   Status: N/A
+   Total: 362 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a7cb81b7890205c519
+   WC Order ID: 790
+   Customer: Kim Erickson
+   Status: N/A
+   Total: 310 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a8cb81b7890205c51d
+   WC Order ID: 386
+   Customer: Rachel Parsons
+   Status: N/A
+   Total: 408 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a8cb81b7890205c522
+   WC Order ID: 244
+   Customer: Noora Al Marri
+   Status: N/A
+   Total: 345 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a8cb81b7890205c527
+   WC Order ID: 970
+   Customer: Christian Vaughn
+   Status: N/A
+   Total: 291 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059ecb81b7890205c458
+   WC Order ID: 102
+   Customer: Jessica Cox
+   Status: N/A
+   Total: 837 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059bcb81b7890205c415
+   WC Order ID: 580
+   Customer: Mr. Donald Fischer
+   Status: N/A
+   Total: 243 AED
+   Payment: failed
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059bcb81b7890205c41a
+   WC Order ID: 147
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 1103 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059bcb81b7890205c421
+   WC Order ID: 602
+   Customer: Joseph Hall
+   Status: N/A
+   Total: 426 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059ccb81b7890205c427
+   WC Order ID: 368
+   Customer: Jared Burch
+   Status: N/A
+   Total: 310 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 6829059ccb81b7890205c42b
+   WC Order ID: 886
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 1185 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059ccb81b7890205c434
+   WC Order ID: 35
+   Customer: Victoria Morris
+   Status: N/A
+   Total: 330 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 6829059dcb81b7890205c438
+   WC Order ID: 136
+   Customer: Khalid Al Dhaheri
+   Status: N/A
+   Total: 704 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 6829059dcb81b7890205c43e
+   WC Order ID: 145
+   Customer: Vanessa Davis
+   Status: N/A
+   Total: 211 AED
+   Payment: failed
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059dcb81b7890205c444
+   WC Order ID: 767
+   Customer: Sara Haas
+   Status: N/A
+   Total: 934 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059dcb81b7890205c44b
+   WC Order ID: 227
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 408 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059ecb81b7890205c451
+   WC Order ID: 100
+   Customer: Felicia Aguilar
+   Status: N/A
+   Total: 1090 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a8cb81b7890205c52d
+   WC Order ID: 54
+   Customer: Julia Patel
+   Status: N/A
+   Total: 465 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059ecb81b7890205c45f
+   WC Order ID: 377
+   Customer: Khalid Al Dhaheri
+   Status: N/A
+   Total: 905 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059fcb81b7890205c466
+   WC Order ID: 806
+   Customer: Nathan Montes
+   Status: N/A
+   Total: 642 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059fcb81b7890205c46b
+   WC Order ID: 793
+   Customer: Jennifer Martin
+   Status: N/A
+   Total: 360 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 6829059fcb81b7890205c471
+   WC Order ID: 367
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 660 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059fcb81b7890205c476
+   WC Order ID: 764
+   Customer: Jonathan Young
+   Status: N/A
+   Total: 158 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a0cb81b7890205c47c
+   WC Order ID: 803
+   Customer: Susan Smith
+   Status: N/A
+   Total: 209 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a0cb81b7890205c482
+   WC Order ID: 503
+   Customer: Latifa Al Kaabi
+   Status: N/A
+   Total: 559 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a0cb81b7890205c488
+   WC Order ID: 333
+   Customer: Alexis Robertson
+   Status: N/A
+   Total: 273 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a1cb81b7890205c48e
+   WC Order ID: 899
+   Customer: Angela Villegas
+   Status: N/A
+   Total: 256 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905a1cb81b7890205c495
+   WC Order ID: 321
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 595 AED
+   Payment: failed
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b3cb81b7890205c600
+   WC Order ID: 316
+   Customer: Justin Russell
+   Status: N/A
+   Total: 1182 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b0cb81b7890205c5b8
+   WC Order ID: 158
+   Customer: James Whitaker
+   Status: N/A
+   Total: 211 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b0cb81b7890205c5c2
+   WC Order ID: 75
+   Customer: Jesus Brown
+   Status: N/A
+   Total: 921 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b0cb81b7890205c5c9
+   WC Order ID: 999
+   Customer: Susan Rodriguez
+   Status: N/A
+   Total: 165 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b1cb81b7890205c5cd
+   WC Order ID: 461
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 458 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b1cb81b7890205c5d3
+   WC Order ID: 195
+   Customer: John Walsh
+   Status: N/A
+   Total: 224 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b1cb81b7890205c5da
+   WC Order ID: 362
+   Customer: Lacey Nelson
+   Status: N/A
+   Total: 899 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b2cb81b7890205c5e1
+   WC Order ID: 745
+   Customer: Aisha Al Suwaidi
+   Status: N/A
+   Total: 32 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b2cb81b7890205c5e5
+   WC Order ID: 372
+   Customer: Melissa Miller
+   Status: N/A
+   Total: 120 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b2cb81b7890205c5ec
+   WC Order ID: 383
+   Customer: Donald Riddle
+   Status: N/A
+   Total: 306 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b2cb81b7890205c5f2
+   WC Order ID: 141
+   Customer: Latifa Al Kaabi
+   Status: N/A
+   Total: 1170 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b3cb81b7890205c5f9
+   WC Order ID: 863
+   Customer: Nancy Stewart
+   Status: N/A
+   Total: 1388 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 682905afcb81b7890205c5b4
+   WC Order ID: 641
+   Customer: Jacqueline Gutierrez
+   Status: N/A
+   Total: 45 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b3cb81b7890205c607
+   WC Order ID: 645
+   Customer: Latifa Al Kaabi
+   Status: N/A
+   Total: 302 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b4cb81b7890205c60c
+   WC Order ID: 322
+   Customer: Arthur Hamilton MD
+   Status: N/A
+   Total: 126 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b4cb81b7890205c611
+   WC Order ID: 532
+   Customer: Travis Cook
+   Status: N/A
+   Total: 786 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b4cb81b7890205c618
+   WC Order ID: 698
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 1155 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b4cb81b7890205c61f
+   WC Order ID: 501
+   Customer: Zachary White
+   Status: N/A
+   Total: 240 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b5cb81b7890205c625
+   WC Order ID: 298
+   Customer: Rebecca Ortiz
+   Status: N/A
+   Total: 623 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b5cb81b7890205c62b
+   WC Order ID: 956
+   Customer: Khalid Al Dhaheri
+   Status: N/A
+   Total: 45 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 682905b5cb81b7890205c62f
+   WC Order ID: 52
+   Customer: Meredith Burnett
+   Status: N/A
+   Total: 113 AED
+   Payment: failed
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 682905b6cb81b7890205c636
+   WC Order ID: 293
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 200 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+--------------------------------------------------
+🧾 Order ID: 682905b6cb81b7890205c63b
+   WC Order ID: 957
+   Customer: Todd Thomas
+   Status: N/A
+   Total: 359 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905accb81b7890205c572
+   WC Order ID: 435
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 573 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a9cb81b7890205c531
+   WC Order ID: 782
+   Customer: Mohammed Al Mazrouei
+   Status: N/A
+   Total: 362 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 682905a9cb81b7890205c536
+   WC Order ID: 55
+   Customer: Dwayne Klein
+   Status: N/A
+   Total: 197 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 682905a9cb81b7890205c53b
+   WC Order ID: 860
+   Customer: Cynthia Williams
+   Status: N/A
+   Total: 495 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 682905aacb81b7890205c540
+   WC Order ID: 460
+   Customer: Mariam Al Qassimi
+   Status: N/A
+   Total: 255 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 682905aacb81b7890205c549
+   WC Order ID: 612
+   Customer: Jennifer Simpson DVM
+   Status: N/A
+   Total: 485 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 682905aacb81b7890205c54e
+   WC Order ID: 247
+   Customer: Mariam Al Qassimi
+   Status: N/A
+   Total: 237 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 682905abcb81b7890205c554
+   WC Order ID: 45
+   Customer: Laura Todd
+   Status: N/A
+   Total: 485 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 682905abcb81b7890205c55a
+   WC Order ID: 775
+   Customer: David Molina
+   Status: N/A
+   Total: 495 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 682905abcb81b7890205c560
+   WC Order ID: 831
+   Customer: Mohammed Al Mazrouei
+   Status: N/A
+   Total: 165 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 682905abcb81b7890205c564
+   WC Order ID: 324
+   Customer: Michael Durham
+   Status: N/A
+   Total: 797 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 682905accb81b7890205c56b
+   WC Order ID: 819
+   Customer: Ronald Leach
+   Status: N/A
+   Total: 1199 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059acb81b7890205c40f
+   WC Order ID: 711
+   Customer: Glen Wood
+   Status: N/A
+   Total: 460 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905accb81b7890205c578
+   WC Order ID: 735
+   Customer: Miranda Foster
+   Status: N/A
+   Total: 372 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 682905adcb81b7890205c57e
+   WC Order ID: 77
+   Customer: Taylor Jones DVM
+   Status: N/A
+   Total: 249 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 682905adcb81b7890205c584
+   WC Order ID: 36
+   Customer: Mohammed Al Mazrouei
+   Status: N/A
+   Total: 738 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 682905adcb81b7890205c58a
+   WC Order ID: 455
+   Customer: Nathan Coleman
+   Status: N/A
+   Total: 94 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 682905aecb81b7890205c595
+   WC Order ID: 727
+   Customer: Shawn Odom
+   Status: N/A
+   Total: 1095 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 682905aecb81b7890205c59b
+   WC Order ID: 230
+   Customer: Amber Cooper
+   Status: N/A
+   Total: 527 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 682905aecb81b7890205c5a0
+   WC Order ID: 823
+   Customer: Khalid Al Dhaheri
+   Status: N/A
+   Total: 330 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 682905afcb81b7890205c5a4
+   WC Order ID: 788
+   Customer: Anna Hardy
+   Status: N/A
+   Total: 593 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 682905afcb81b7890205c5a9
+   WC Order ID: 353
+   Customer: Megan Robinson
+   Status: N/A
+   Total: 345 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 682905afcb81b7890205c5ae
+   WC Order ID: 312
+   Customer: Mohammed Al Mazrouei
+   Status: N/A
+   Total: 623 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 68290589cb81b7890205c2c8
+   WC Order ID: 620
+   Customer: Lisa Davis
+   Status: N/A
+   Total: 960 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 68290586cb81b7890205c291
+   WC Order ID: 197
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 475 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 68290586cb81b7890205c298
+   WC Order ID: 857
+   Customer: John Whitehead
+   Status: N/A
+   Total: 96 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290586cb81b7890205c29d
+   WC Order ID: 389
+   Customer: Deborah Figueroa
+   Status: N/A
+   Total: 1150 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 68290587cb81b7890205c2a4
+   WC Order ID: 223
+   Customer: Ahmed Al Mansoori
+   Status: N/A
+   Total: 310 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 68290587cb81b7890205c2a8
+   WC Order ID: 489
+   Customer: Stacey Russell
+   Status: N/A
+   Total: 15 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 68290587cb81b7890205c2ac
+   WC Order ID: 70
+   Customer: Danielle Moore
+   Status: N/A
+   Total: 15 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 68290588cb81b7890205c2b0
+   WC Order ID: 635
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 795 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 68290588cb81b7890205c2b6
+   WC Order ID: 688
+   Customer: Victor Baker
+   Status: N/A
+   Total: 160 AED
+   Payment: paid
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 68290588cb81b7890205c2bc
+   WC Order ID: 519
+   Customer: Timothy Ryan
+   Status: N/A
+   Total: 330 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 68290588cb81b7890205c2c0
+   WC Order ID: 854
+   Customer: Khalid Al Dhaheri
+   Status: N/A
+   Total: 465 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 68290589cb81b7890205c2c4
+   WC Order ID: 962
+   Customer: Dustin Jordan
+   Status: N/A
+   Total: 465 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 68290585cb81b7890205c28d
+   WC Order ID: 421
+   Customer: Jaclyn Moore
+   Status: N/A
+   Total: 98 AED
+   Payment: paid
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290589cb81b7890205c2cd
+   WC Order ID: 95
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 165 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058acb81b7890205c2d1
+   WC Order ID: 453
+   Customer: Sylvia Martinez
+   Status: N/A
+   Total: 49 AED
+   Payment: paid
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058acb81b7890205c2d5
+   WC Order ID: 855
+   Customer: Karen Green
+   Status: N/A
+   Total: 130 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058acb81b7890205c2da
+   WC Order ID: 216
+   Customer: Omar Al Mehairi
+   Status: N/A
+   Total: 240 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058acb81b7890205c2e0
+   WC Order ID: 26
+   Customer: Jennifer Clark
+   Status: N/A
+   Total: 1388 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058bcb81b7890205c2e7
+   WC Order ID: 205
+   Customer: Kimberly Morrison
+   Status: N/A
+   Total: 642 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058bcb81b7890205c2ed
+   WC Order ID: 991
+   Customer: Ali Al Nuaimi
+   Status: N/A
+   Total: 1223 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 6829058bcb81b7890205c2f4
+   WC Order ID: 611
+   Customer: David Murphy
+   Status: N/A
+   Total: 323 AED
+   Payment: failed
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058ccb81b7890205c2fe
+   WC Order ID: 520
+   Customer: Ali Al Nuaimi
+   Status: N/A
+   Total: 965 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058ccb81b7890205c305
+   WC Order ID: 309
+   Customer: Miguel Jones
+   Status: N/A
+   Total: 306 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 68290582cb81b7890205c25d
+   WC Order ID: 391
+   Customer: Mariam Al Qassimi
+   Status: N/A
+   Total: 465 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 6829057fcb81b7890205c226
+   WC Order ID: 433
+   Customer: Kimberly Garza
+   Status: N/A
+   Total: 510 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 6829057fcb81b7890205c22b
+   WC Order ID: 666
+   Customer: Connie Lawrence
+   Status: N/A
+   Total: 261 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 68290580cb81b7890205c230
+   WC Order ID: 349
+   Customer: Ali Al Nuaimi
+   Status: N/A
+   Total: 98 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290580cb81b7890205c234
+   WC Order ID: 619
+   Customer: Calvin Nielsen
+   Status: N/A
+   Total: 32 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290580cb81b7890205c238
+   WC Order ID: 634
+   Customer: Jamie Chavez
+   Status: N/A
+   Total: 302 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290581cb81b7890205c23d
+   WC Order ID: 876
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 591 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 68290581cb81b7890205c243
+   WC Order ID: 719
+   Customer: Tommy Walter
+   Status: N/A
+   Total: 210 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 68290581cb81b7890205c248
+   WC Order ID: 948
+   Customer: Kimberly Burgess
+   Status: N/A
+   Total: 359 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290581cb81b7890205c24d
+   WC Order ID: 275
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 406 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290582cb81b7890205c252
+   WC Order ID: 143
+   Customer: Jesse Mckay
+   Status: N/A
+   Total: 625 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290582cb81b7890205c258
+   WC Order ID: 506
+   Customer: Troy Nielsen
+   Status: N/A
+   Total: 465 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058dcb81b7890205c30d
+   WC Order ID: 839
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 214 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290583cb81b7890205c261
+   WC Order ID: 769
+   Customer: Melissa Marquez
+   Status: N/A
+   Total: 330 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 68290583cb81b7890205c265
+   WC Order ID: 977
+   Customer: Mark Perez
+   Status: N/A
+   Total: 325 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 68290583cb81b7890205c26a
+   WC Order ID: 157
+   Customer: Aisha Al Suwaidi
+   Status: N/A
+   Total: 30 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 68290583cb81b7890205c26e
+   WC Order ID: 952
+   Customer: James Morgan
+   Status: N/A
+   Total: 495 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 68290584cb81b7890205c272
+   WC Order ID: 498
+   Customer: Angela Morton
+   Status: N/A
+   Total: 591 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290584cb81b7890205c277
+   WC Order ID: 894
+   Customer: Mariam Al Qassimi
+   Status: N/A
+   Total: 406 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290584cb81b7890205c27c
+   WC Order ID: 463
+   Customer: Kristi Higgins MD
+   Status: N/A
+   Total: 165 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 68290585cb81b7890205c280
+   WC Order ID: 603
+   Customer: Kim Brown
+   Status: N/A
+   Total: 165 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 68290585cb81b7890205c284
+   WC Order ID: 527
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 480 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 68290585cb81b7890205c289
+   WC Order ID: 804
+   Customer: Emily Baker
+   Status: N/A
+   Total: 147 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290597cb81b7890205c3c8
+   WC Order ID: 419
+   Customer: Tiffany Holloway
+   Status: N/A
+   Total: 640 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 68290594cb81b7890205c391
+   WC Order ID: 47
+   Customer: Jeffrey Sanchez
+   Status: N/A
+   Total: 359 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290594cb81b7890205c396
+   WC Order ID: 491
+   Customer: Joel King
+   Status: N/A
+   Total: 330 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+--------------------------------------------------
+🧾 Order ID: 68290594cb81b7890205c39a
+   WC Order ID: 504
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 660 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 68290595cb81b7890205c39f
+   WC Order ID: 783
+   Customer: Laura Haney
+   Status: N/A
+   Total: 94 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290595cb81b7890205c3a4
+   WC Order ID: 313
+   Customer: Tanner Mitchell DDS
+   Status: N/A
+   Total: 495 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 68290595cb81b7890205c3a8
+   WC Order ID: 84
+   Customer: Mohammed Al Mazrouei
+   Status: N/A
+   Total: 165 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 68290596cb81b7890205c3ac
+   WC Order ID: 609
+   Customer: Sherri Diaz
+   Status: N/A
+   Total: 990 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 68290596cb81b7890205c3b1
+   WC Order ID: 240
+   Customer: James Baker
+   Status: N/A
+   Total: 47 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 68290596cb81b7890205c3b6
+   WC Order ID: 74
+   Customer: Ahmed Al Mansoori
+   Status: N/A
+   Total: 623 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 68290596cb81b7890205c3bc
+   WC Order ID: 553
+   Customer: Johnathan Davis
+   Status: N/A
+   Total: 96 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290597cb81b7890205c3c0
+   WC Order ID: 27
+   Customer: John Russell
+   Status: N/A
+   Total: 310 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+--------------------------------------------------
+🧾 Order ID: 68290594cb81b7890205c38c
+   WC Order ID: 290
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 330 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+--------------------------------------------------
+🧾 Order ID: 68290597cb81b7890205c3cd
+   WC Order ID: 834
+   Customer: Christine Gallegos
+   Status: N/A
+   Total: 541 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 68290598cb81b7890205c3d4
+   WC Order ID: 56
+   Customer: Sara Al Shamsi
+   Status: N/A
+   Total: 1184 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 68290598cb81b7890205c3db
+   WC Order ID: 125
+   Customer: Anthony Harmon
+   Status: N/A
+   Total: 650 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+--------------------------------------------------
+🧾 Order ID: 68290598cb81b7890205c3e4
+   WC Order ID: 522
+   Customer: Latifa Al Kaabi
+   Status: N/A
+   Total: 422 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 68290599cb81b7890205c3eb
+   WC Order ID: 792
+   Customer: Jonathan Jordan
+   Status: N/A
+   Total: 453 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 68290599cb81b7890205c3f1
+   WC Order ID: 552
+   Customer: Jeffery Ortega
+   Status: N/A
+   Total: 1086 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290599cb81b7890205c3f8
+   WC Order ID: 763
+   Customer: Noora Al Marri
+   Status: N/A
+   Total: 527 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER POWERPORT PD 1 (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059acb81b7890205c3fd
+   WC Order ID: 896
+   Customer: Maurice Christensen
+   Status: N/A
+   Total: 730 AED
+   Payment: failed
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 6829059acb81b7890205c404
+   WC Order ID: 710
+   Customer: Phillip Andrews
+   Status: N/A
+   Total: 994 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER TYPE C CABLE 1 METER (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 6829059acb81b7890205c40a
+   WC Order ID: 633
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 187 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290590cb81b7890205c34f
+   WC Order ID: 637
+   Customer: Mohammed Al Mazrouei
+   Status: N/A
+   Total: 15 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058dcb81b7890205c312
+   WC Order ID: 467
+   Customer: Mary Rogers
+   Status: N/A
+   Total: 529 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058dcb81b7890205c317
+   WC Order ID: 672
+   Customer: Angela Cortez
+   Status: N/A
+   Total: 677 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER TYPE C CABLE 1 METER (x1)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058ecb81b7890205c31e
+   WC Order ID: 821
+   Customer: Noora Al Marri
+   Status: N/A
+   Total: 657 AED
+   Payment: failed
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER TYPE C CABLE 1 METER (x3)
+--------------------------------------------------
+🧾 Order ID: 6829058ecb81b7890205c324
+   WC Order ID: 883
+   Customer: Heather Chavez
+   Status: N/A
+   Total: 340 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+--------------------------------------------------
+🧾 Order ID: 6829058ecb81b7890205c329
+   WC Order ID: 80
+   Customer: Veronica Wall
+   Status: N/A
+   Total: 510 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x1)
+     - ANKER POWERPORT PD 1 (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058fcb81b7890205c331
+   WC Order ID: 878
+   Customer: Dawn Hensley
+   Status: N/A
+   Total: 989 AED
+   Payment: paid
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 6829058fcb81b7890205c338
+   WC Order ID: 500
+   Customer: Angela Wright
+   Status: N/A
+   Total: 1058 AED
+   Payment: failed
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+--------------------------------------------------
+🧾 Order ID: 6829058fcb81b7890205c33f
+   WC Order ID: 547
+   Customer: Ahmed Al Mansoori
+   Status: N/A
+   Total: 147 AED
+   Payment: pending
+   Items:
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290590cb81b7890205c343
+   WC Order ID: 187
+   Customer: Juan Moore
+   Status: N/A
+   Total: 724 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290590cb81b7890205c349
+   WC Order ID: 482
+   Customer: Rachel Weber
+   Status: N/A
+   Total: 691 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x1)
+--------------------------------------------------
+🧾 Order ID: 6829057fcb81b7890205c221
+   WC Order ID: 655
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 320 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+--------------------------------------------------
+🧾 Order ID: 68290590cb81b7890205c353
+   WC Order ID: 786
+   Customer: Jeffrey Morris
+   Status: N/A
+   Total: 330 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT PD 1 (x2)
+--------------------------------------------------
+🧾 Order ID: 68290591cb81b7890205c359
+   WC Order ID: 825
+   Customer: Fatima Al Falasi
+   Status: N/A
+   Total: 487 AED
+   Payment: pending
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290591cb81b7890205c35f
+   WC Order ID: 843
+   Customer: April Booth
+   Status: N/A
+   Total: 497 AED
+   Payment: pending
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+     - ANKER TYPE C CABLE 1 METER (x1)
+--------------------------------------------------
+🧾 Order ID: 68290591cb81b7890205c365
+   WC Order ID: 631
+   Customer: Michael Martinez
+   Status: N/A
+   Total: 389 AED
+   Payment: pending
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x3)
+     - ANKER AUXILIARY AUDIO CABLE (x2)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x1)
+     - ANKER 24 W 2 PORT USB CHARGER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290592cb81b7890205c36c
+   WC Order ID: 584
+   Customer: Mariam Al Qassimi
+   Status: N/A
+   Total: 64 AED
+   Payment: paid
+   Items:
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+🧾 Order ID: 68290592cb81b7890205c370
+   WC Order ID: 364
+   Customer: Thomas Romero
+   Status: N/A
+   Total: 687 AED
+   Payment: paid
+   Items:
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x3)
+     - ANKER 24 W 2 PORT USB CHARGER (x3)
+--------------------------------------------------
+🧾 Order ID: 68290592cb81b7890205c376
+   WC Order ID: 738
+   Customer: Lauren Keller
+   Status: N/A
+   Total: 775 AED
+   Payment: paid
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x2)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+--------------------------------------------------
+🧾 Order ID: 68290593cb81b7890205c37b
+   WC Order ID: 96
+   Customer: Ali Al Nuaimi
+   Status: N/A
+   Total: 840 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x3)
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER AUXILIARY AUDIO CABLE (x3)
+--------------------------------------------------
+🧾 Order ID: 68290593cb81b7890205c381
+   WC Order ID: 564
+   Customer: Joyce Bowen
+   Status: N/A
+   Total: 650 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT SPEED 5 PORTS 63 W (x2)
+     - ANKER POWERPORT PD 1 (x1)
+     - ANKER POWERPORT ATOM 3 SLIM (A2045) (x1)
+--------------------------------------------------
+🧾 Order ID: 68290593cb81b7890205c387
+   WC Order ID: 549
+   Customer: Kimberly Finley
+   Status: N/A
+   Total: 559 AED
+   Payment: failed
+   Items:
+     - ANKER POWERPORT PD 1 (x3)
+     - ANKER TYPE C CABLE 1 METER (x2)
+--------------------------------------------------
+✅ Disconnected from MongoDB

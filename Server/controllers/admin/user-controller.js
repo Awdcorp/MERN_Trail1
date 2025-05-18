@@ -1,5 +1,32 @@
 // [Line 1] Setup
 const User = require("../../models/User");
+const bcrypt = require("bcrypt");
+
+// ✅ POST /api/admin/users → Add new user
+const createUser = async (req, res) => {
+  const { userName, email, password, role } = req.body;
+
+  if (!userName || !email || !password) {
+    return res.status(400).json({ success: false, message: "Missing required fields" });
+  }
+
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = await User.create({
+      userName,
+      email,
+      password: hashedPassword,
+      role: role || "user",
+    });
+
+    console.log("✅ [CREATE USER] Created:", newUser);
+    res.status(201).json({ success: true, data: newUser });
+  } catch (err) {
+    console.error("❌ [CREATE USER] Error:", err);
+    res.status(500).json({ success: false, message: "Failed to create user" });
+  }
+};
 
 // [Line 4] GET /api/admin/users
 const getAllUsers = async (req, res) => {
@@ -42,16 +69,26 @@ const deactivateUser = async (req, res) => {
 // [Line 55] PUT /api/admin/users/:id → Update role or reactivate
 const updateUser = async (req, res) => {
   const userId = req.params.id;
-  const { role, isActive } = req.body;
+  const { userName, email, password, role, isActive } = req.body;
 
-  console.log("🔄 [UPDATE USER] ID:", userId, "| Role:", role, "| isActive:", isActive);
+  console.log("🔄 [UPDATE USER] ID:", userId, "| Fields:", req.body);
 
   try {
-    const updatedUser = await User.findByIdAndUpdate(
-      userId,
-      { ...(role && { role }), ...(isActive !== undefined && { isActive }) },
-      { new: true, fields: "userName email role isActive" }
-    );
+    const updateData = {
+      ...(userName && { userName }),
+      ...(email && { email }),
+      ...(role && { role }),
+      ...(isActive !== undefined && { isActive }),
+    };
+
+    if (password) {
+      updateData.password = await bcrypt.hash(password, 10);
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(userId, updateData, {
+      new: true,
+      fields: "userName email role isActive"
+    });
 
     if (!updatedUser) {
       console.warn("⚠️ [UPDATE USER] User not found:", userId);
@@ -66,8 +103,10 @@ const updateUser = async (req, res) => {
   }
 };
 
+
 module.exports = {
   getAllUsers,
+  createUser,
   deactivateUser,
   updateUser,
 };

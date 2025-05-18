@@ -1,7 +1,8 @@
+// ✅ AdminUserRow.jsx with Edit button added without UI changes
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 
-function AdminUserRow({ user, onToggleRole, onDeactivate, onReactivate }) {
+function AdminUserRow({ user, onToggleRole, onDeactivate, onReactivate, onEdit }) {
   const isInactive = user.isActive === false;
 
   return (
@@ -12,6 +13,10 @@ function AdminUserRow({ user, onToggleRole, onDeactivate, onReactivate }) {
         <Badge>{user.role}</Badge>
       </td>
       <td className="px-3 py-2 text-right space-x-2">
+        <Button size="sm" variant="outline" onClick={() => onEdit(user)}>
+          Edit
+        </Button>
+
         <Button
           size="sm"
           onClick={() => onToggleRole(user._id, user.role)}

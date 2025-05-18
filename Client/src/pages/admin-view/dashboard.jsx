@@ -55,7 +55,7 @@ function AdminDashboard() {
       {/* Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard title="Total Orders" value={stats.totalOrders} Icon={ShoppingCart} />
-        <StatCard title="Total Sales" value={`₹${stats.sales?.toLocaleString?.() || "0"}`} Icon={DollarSign} />
+        <StatCard title="Total Sales" value={`${stats.sales?.toLocaleString?.() || "0"} د.إ`} Icon={DollarSign} />
         <StatCard title="Total Products" value={stats.products} Icon={Boxes} />
         <StatCard title="Total Users" value={stats.users} Icon={UsersIcon} />
       </div>
@@ -69,12 +69,32 @@ function AdminDashboard() {
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={Array.isArray(salesData) ? salesData : []}>
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="amount" fill="#4f46e5" />
-              </BarChart>
+              <BarChart
+  data={Array.isArray(salesData) ? salesData : []}
+  margin={{ top: 10, right: 30, left: 0, bottom: 10 }}
+  barSize={30}
+>
+  <XAxis
+    dataKey="month"
+    stroke="#888"
+    fontSize={12}
+    tickLine={false}
+    axisLine={false}
+  />
+  <YAxis
+    stroke="#888"
+    fontSize={12}
+    tickFormatter={(value) => `د.إ ${value}`}
+    tickLine={false}
+    axisLine={false}
+  />
+  <Tooltip
+    formatter={(value) => [`د.إ ${value.toLocaleString?.()}`, "Sales"]}
+    contentStyle={{ fontSize: "12px" }}
+  />
+  <Bar dataKey="amount" fill="#4f46e5" radius={[6, 6, 0, 0]} />
+</BarChart>
+
             </ResponsiveContainer>
           </CardContent>
         </Card>
@@ -95,28 +115,42 @@ function AdminDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {Array.isArray(recentOrders) &&
-                  recentOrders.map(order => (
-                    <tr key={order._id} className="border-b hover:bg-gray-50">
-                      <td>{order._id.slice(-6)}</td>
-                      <td>{order.customerName || "Guest"}</td>
-                      <td>₹{order.total}</td>
-                      <td>
-                        <span
-                          className={`inline-block px-2 py-1 text-xs rounded-full font-medium ${
-                            order.status === "completed"
-                              ? "bg-green-100 text-green-800"
-                              : order.status === "cancelled"
-                              ? "bg-red-100 text-red-800"
-                              : "bg-gray-100 text-gray-800"
-                          }`}
-                        >
-                          {order.status || "-"}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
+  {Array.isArray(recentOrders) &&
+    recentOrders.map(order => (
+      <tr
+        key={order._id}
+        className="border-b hover:shadow-sm transition duration-150 hover:bg-gray-50"
+      >
+        <td className="py-2 text-gray-700 font-mono">{order._id.slice(-6)}</td>
+        <td className="py-2 flex items-center gap-2 font-medium text-gray-800">
+          <div className="w-6 h-6 rounded-full bg-gray-200 text-xs font-semibold flex items-center justify-center">
+            {(order.customerName || "G")[0]}
+          </div>
+          {order.customerName || "Guest"}
+        </td>
+        <td className="py-2 text-left text-gray-900 font-semibold tracking-wide">
+          د.إ {order.total?.toLocaleString?.()}
+        </td>
+        <td className="py-2">
+          <span
+            className={`px-2 py-1 text-xs rounded-full font-semibold ${
+              order.status === "completed"
+                ? "bg-green-100 text-green-700"
+                : order.status === "pending"
+                ? "bg-yellow-100 text-yellow-800"
+                : order.status === "failed"
+                ? "bg-red-100 text-red-700"
+                : "bg-gray-100 text-gray-700"
+            }`}
+          >
+            {order.status || "-"}
+          </span>
+        </td>
+      </tr>
+    ))}
+</tbody>
+
+
             </table>
           </CardContent>
         </Card>

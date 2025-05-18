@@ -64,7 +64,7 @@ useEffect(() => {
   return (
     <header className="w-full">
       {/* Middle Section */}
-      <div className="bg-[#54E060] py-2 border-b border-[#C7C7C7] md:border-none">
+      <div className="bg-[#54E060] py-5 border-b border-[#C7C7C7] md:border-none">
         <div className="px-4 md:px-0 max-w-screen-xl mx-auto">
           {/* Mobile: Logo + Cart + Burger */}
           <div className="flex items-center justify-between md:hidden mb-3">
@@ -93,7 +93,7 @@ useEffect(() => {
           {/* Desktop: Logo + Search + Icons */}
           <div className="hidden md:flex justify-between items-center gap-8 mb-1">
             <Link to="/" className="flex-shrink-0">
-              <img src={logo} alt="PartyWorld Logo" className="h-15 max-w-[250px] object-contain" />
+              <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747518552/banners/iiaieras9cbw4t2ho8cz.png" alt="PartyWorld Logo" className="h-15 max-w-[250px] object-contain" />
             </Link>
 
             {/* ✅ Updated Search Bar: WIDER, centered */}

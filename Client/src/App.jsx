@@ -30,6 +30,8 @@ import SearchProducts from "./pages/shopping-view/search";
 import CategoryListingPage from "@/pages/shopping-view/category";
 import ProductPage from "@/pages/shopping-view/product";
 import { fetchCartItems } from "./store/shop/cart-slice";
+import ContactUs from "@/pages/shopping-view/ContactUs";
+import TermsAndConditions from "@/pages/shopping-view/TermsAndConditions";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -105,6 +107,8 @@ function App() {
           <Route path="listing" element={<ShoppingListing />} />
           <Route path="search" element={<SearchProducts />} />
           <Route path="checkout" element={<ShoppingCheckout />} />
+          <Route path="contact" element={<ContactUs />} />
+<Route path="terms" element={<TermsAndConditions />} />
           <Route path="paypal-return" element={<PaypalReturnPage />} />
           <Route path="payment-success" element={<PaymentSuccessPage />} />
 <Route path="paypal-cancel" element={<PayPalCancelPage />} />

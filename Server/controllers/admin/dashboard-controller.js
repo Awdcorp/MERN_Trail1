@@ -7,7 +7,7 @@ const User = require("../../models/User");
 // GET /api/admin/dashboard-stats
 exports.getDashboardStats = async (req, res) => {
   try {
-    const totalOrders = await Order.countDocuments({ paymentStatus: "paid" });
+    const totalOrders = await Order.countDocuments();
     console.log("📊 Total Paid Orders:", totalOrders);
 
     const totalSalesAgg = await Order.aggregate([
@@ -54,7 +54,7 @@ exports.getSalesChartData = async (req, res) => {
     ]);
 
     const formatted = months.map((m) => ({
-      month: new Date(currentYear, m - 1).toLocaleString("default", { month: "short" }),
+      month: new Date(currentYear, m - 1).toLocaleString("en-US", { month: "short" }),
       amount: salesData.find((s) => s._id === m)?.amount || 0,
     }));
 
@@ -70,23 +70,26 @@ exports.getSalesChartData = async (req, res) => {
 exports.getRecentOrders = async (req, res) => {
   try {
     const limit = parseInt(req.query.limit) || 5;
+
     const orders = await Order.find()
       .sort({ createdAt: -1 })
       .limit(limit)
-      .select("_id total status createdAt")
-      .populate("userId", "name email");
+      .select("_id customer_name totalAmount paymentStatus createdAt");
 
     const formatted = orders.map((o) => ({
       _id: o._id,
-      total: o.total,
-      status: o.status,
-      customerName: o.userId?.name || null,
+      total: o.totalAmount,
+      status: o.paymentStatus,
+      customerName: o.customer_name || "Guest",
     }));
 
-    console.log("📦 Recent Orders:", formatted);
+    console.log("📦 Raw Orders Fetched:", orders.length);
+    console.log("✅ Mapped Recent Orders:", formatted);
+
     res.json(formatted);
   } catch (err) {
-    console.error("/recent-orders error:", err);
+    console.error("❌ /recent-orders error:", err);
     res.status(500).json({ error: "Failed to fetch recent orders" });
   }
 };
+

@@ -52,41 +52,16 @@ import {
        {/* Main Footer Content */}
        <div className="bg-white">
          <div className="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 text-sm text-[#2D2D2D]">
-           {/* CATEGORY */}
+            {/* PHONES & TABLETS */}
             <div>
-              <h4 className="font-semibold text-[#46396F] mb-2">CATEGORY</h4>
+              <h4 className="font-semibold text-[#1f2937] mb-2">PHONES & TABLETS</h4>
               <ul className="space-y-1">
-                <li><Link to="/shop/category/phone">Phone</Link></li>
+                <li><Link to="/shop/category/phone">Phones</Link></li>
+                <li><Link to="/shop/category/samsung-phones">Samsung Phones</Link></li>
+                <li><Link to="/shop/category/xiaomi">Xiaomi Phones</Link></li>
+                <li><Link to="/shop/category/oppo">Oppo Phones</Link></li>
                 <li><Link to="/shop/category/tablets">Tablets</Link></li>
-                <li><Link to="/shop/category/gaming">Gaming</Link></li>
-                <li><Link to="/shop/category/wearables">Wearables</Link></li>
-                <li><Link to="/shop/category/accessories">Accessories</Link></li>
-                <li><Link to="/shop/category/headphones">Head Phones</Link></li>
-              </ul>
-            </div>
-
-            {/* BRANDS */}
-            <div>
-              <h4 className="font-semibold text-[#46396F] mb-2">BRANDS</h4>
-              <ul className="space-y-1">
-                <li>Apple</li>
-                <li>Samsung</li>
-                <li>Huawei</li>
-                <li>Xiaomi</li>
-                <li>Honor</li>
-                <li>Oppo</li>
-              </ul>
-            </div>
-            {/* TABLETS */}
-            <div>
-              <h4 className="font-semibold text-[#46396F] mb-2">TABLETS</h4>
-              <ul className="space-y-1">
-                <li>Apple</li>
-                <li>Samsung</li>
-                <li>Huawei</li>
-                <li>Xiaomi</li>
-                <li>Honor</li>
-                <li>Oppo</li>
+                <li><Link to="/shop/category/samsung-tablets">Samsung Tablets</Link></li>
               </ul>
             </div>
 
@@ -94,12 +69,32 @@ import {
             <div>
               <h4 className="font-semibold text-[#1f2937] mb-2">ACCESSORIES</h4>
               <ul className="space-y-1">
-                <li>Apple</li>
-                <li>Samsung</li>
-                <li>Huawei</li>
-                <li>Xiaomi</li>
-                <li>Anker</li>
-                <li>JBL</li>
+                <li><Link to="/shop/category/accessories">All Accessories</Link></li>
+                <li><Link to="/shop/category/apple-accessories">Apple</Link></li>
+                <li><Link to="/shop/category/samsung-accessories">Samsung</Link></li>
+                <li><Link to="/shop/category/xiaomi-accessories">Xiaomi</Link></li>
+                <li><Link to="/shop/category/anker-accessories">Anker</Link></li>
+                <li><Link to="/shop/category/promate-accessories">Promate</Link></li>
+              </ul>
+            </div>
+
+            {/* AUDIO & POWER */}
+            <div>
+              <h4 className="font-semibold text-[#1f2937] mb-2">AUDIO & POWER</h4>
+              <ul className="space-y-1">
+                <li><Link to="/shop/category/earphones">Earphones</Link></li>
+                <li><Link to="/shop/category/powerbank">Powerbanks</Link></li>
+                <li><Link to="/shop/category/samsung-accessories">Cables & Chargers</Link></li>
+              </ul>
+            </div>
+
+            {/* WATCHES */}
+            <div>
+              <h4 className="font-semibold text-[#1f2937] mb-2">WATCHES</h4>
+              <ul className="space-y-1">
+                <li><Link to="/shop/category/watches">All Watches</Link></li>
+                <li><Link to="/shop/category/samsung-watches">Samsung Watches</Link></li>
+                <li><Link to="/shop/category/apple-watches">Apple Watches</Link></li>
               </ul>
             </div>
 
@@ -107,10 +102,10 @@ import {
             <div>
               <h4 className="font-semibold text-[#1f2937] mb-2">QUICK LINKS</h4>
               <ul className="space-y-1">
-                <li><Link to="/contact">Contact Us</Link></li>
+                <li><Link to="/shop/contact">Contact Us</Link></li>
                 <li><Link to="/account">My Account</Link></li>
                 <li><Link to="/returns">Shipping & Returns</Link></li>
-                <li><Link to="/terms">Subscription Terms</Link></li>
+                <li><Link to="terms">Subscription Terms</Link></li>
                 <li><Link to="/privacy">Privacy Policy</Link></li>
                 <li><Link to="/faq">FAQs</Link></li>
               </ul>
@@ -118,7 +113,7 @@ import {
            {/* Logo & Social */}
                       {/* CATEGORY */}
             <div>
-              <h4 className="font-semibold text-[#46396F] mb-2">CONNECT WITH US</h4>
+              <h4 className="font-semibold text-[#1f2937] mb-2">CONNECT WITH US</h4>
                   <div className="flex gap-6 items-center">
                 {/* Email Icon + Link */}
                 <a

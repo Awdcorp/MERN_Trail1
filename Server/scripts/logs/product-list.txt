@@ -4,71 +4,2687 @@
 🔎 Mongo ID: 6823303dcaeba90f1f3477bc
 🆔 External ID: 7481
 🔗 Slug: promate-timepad-qi
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraTank-20
 🔎 Mongo ID: 68233040caeba90f1f3477be
 🆔 External ID: 7497
 🔗 Slug: promate-auratank-20
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+💰 Price: AED 145
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE AuraPack-10
 🔎 Mongo ID: 68233041caeba90f1f3477bf
 🆔 External ID: 7495
 🔗 Slug: promate-aurapack-10
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: PROMATE  AuraWatch
 🔎 Mongo ID: 68233046caeba90f1f3477c4
 🆔 External ID: 7489
 🔗 Slug: promate-aurawatch
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+💰 Price: AED 145
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: POMATE POWER HUB
 🔎 Mongo ID: 68233049caeba90f1f3477c6
 🆔 External ID: 7407
 🔗 Slug: pomate-power-hub
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Promate Accessories (6823302be415c225f88b290a)
-🤝 Related Products: (none)
+💰 Price: AED 72
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: REDMI 10,000 MAH POWERBANK. (2 USB,1 MICRO, 1 TYPE C PORT)
 🔎 Mongo ID: 6823304ccaeba90f1f3477c8
 🆔 External ID: 7391
 🔗 Slug: redmi-10000-mah-powerbank-2-usb1-micro-1-type-c-port
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Powerbank (6823303ee415c225f88b2918), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+💰 Price: AED 46
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: MI BAND - 4
 🔎 Mongo ID: 6823304ecaeba90f1f3477c9
 🆔 External ID: 7397
 🔗 Slug: mi-band-4
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+💰 Price: AED 95
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: BELKIN WIRELESS CHAGING PADS
 🔎 Mongo ID: 68233050caeba90f1f3477cb
 🆔 External ID: 7401
 🔗 Slug: belkin-wireless-chaging-pads
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
 🛒 Product: MI EARBUDS
 🔎 Mongo ID: 68233053caeba90f1f3477ce
 🆔 External ID: 7395
 🔗 Slug: mi-earbuds
-🏷️ Categories: Accessories (6823302be415c225f88b2908), Earphones (68233051e415c225f88b2929), Xiaomi Accessories (68233049e415c225f88b2921)
-🤝 Related Products: (none)
+💰 Price: AED 65
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: D-LINK MOBILE ROUTER
+🔎 Mongo ID: 68233056caeba90f1f3477d3
+🆔 External ID: 7411
+🔗 Slug: d-link-mobile-router
+💰 Price: AED 148
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: MOPHIE WIRELESS CHARGING PADS
+🔎 Mongo ID: 68233058caeba90f1f3477d4
+🆔 External ID: 7409
+🔗 Slug: mophie-wireless-charging-pads
+💰 Price: AED 82
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY  S20 PLUS 4G
+🔎 Mongo ID: 68233059caeba90f1f3477d6
+🆔 External ID: 7329
+🔗 Slug: samsung-galaxy-s20-plus-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWER EXTEND USB 4 STRIP
+🔎 Mongo ID: 6823305bcaeba90f1f3477d9
+🆔 External ID: 7289
+🔗 Slug: anker-power-extend-usb-4-strip
+💰 Price: AED 92
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER COMPACT SIZE ANKER POWERHOUSE 2 400
+🔎 Mongo ID: 6823305ccaeba90f1f3477da
+🆔 External ID: 7282
+🔗 Slug: anker-compact-size-anker-powerhouse-2-400
+💰 Price: AED 1695
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Anker powercore slim 10000 (A1229H12)
+🔎 Mongo ID: 6823305ecaeba90f1f3477db
+🆔 External ID: 7279
+🔗 Slug: anker-powercore-slim-10000-a1229h12
+💰 Price: AED 95
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER AUX WITH LIGHTNING CONNECTOR 1 METER
+🔎 Mongo ID: 6823305fcaeba90f1f3477dc
+🆔 External ID: 7272
+🔗 Slug: anker-aux-with-lightning-connector-1-meter
+💰 Price: AED 45
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 8A DUAL 32GB
+🔎 Mongo ID: 68233061caeba90f1f3477dd
+🆔 External ID: 7087
+🔗 Slug: xiaomi-redmi-8a-dual-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI NOTE 9S 64GB
+🔎 Mongo ID: 68233062caeba90f1f3477de
+🆔 External ID: 7080
+🔗 Slug: xiaomi-redmi-note-9s-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI NOTE 9S 128GB
+🔎 Mongo ID: 68233064caeba90f1f3477e0
+🆔 External ID: 7064
+🔗 Slug: xiaomi-redmi-note-9s-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI K30 PRO ZOOM 128GB
+🔎 Mongo ID: 68233065caeba90f1f3477e1
+🆔 External ID: 7057
+🔗 Slug: xiaomi-redmi-k30-pro-zoom-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI K30 PRO ZOOM 256GB
+🔎 Mongo ID: 68233067caeba90f1f3477e2
+🆔 External ID: 7041
+🔗 Slug: xiaomi-redmi-k30-pro-zoom-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 10 LITE 5G 6GB
+🔎 Mongo ID: 68233068caeba90f1f3477e3
+🆔 External ID: 7035
+🔗 Slug: xiaomi-mi-10-lite-5g-6gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 10 LITE 5G 8GB
+🔎 Mongo ID: 6823306acaeba90f1f3477e4
+🆔 External ID: 7029
+🔗 Slug: xiaomi-mi-10-lite-5g-8gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 10 YOUTH 5G 64GB
+🔎 Mongo ID: 6823306bcaeba90f1f3477e5
+🆔 External ID: 7023
+🔗 Slug: xiaomi-mi-10-youth-5g-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 10 YOUTH 5G 128GB
+🔎 Mongo ID: 6823306dcaeba90f1f3477e6
+🆔 External ID: 7017
+🔗 Slug: xiaomi-mi-10-youth-5g-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 10 YOUTH 5G 256GB
+🔎 Mongo ID: 6823306fcaeba90f1f3477e7
+🆔 External ID: 7002
+🔗 Slug: xiaomi-mi-10-youth-5g-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI NOTE 10 LITE 64GB
+🔎 Mongo ID: 68233070caeba90f1f3477e8
+🆔 External ID: 6997
+🔗 Slug: xiaomi-mi-note-10-lite-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI NOTE 10 LITE 128GB
+🔎 Mongo ID: 68233072caeba90f1f3477eb
+🆔 External ID: 6983
+🔗 Slug: xiaomi-mi-note-10-lite-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI POCO F2 PRO 128GB 5G
+🔎 Mongo ID: 68233074caeba90f1f3477ec
+🆔 External ID: 6976
+🔗 Slug: xiaomi-poco-f2-pro-128gb-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI POCO F2 PRO 256GB 5G
+🔎 Mongo ID: 68233075caeba90f1f3477ed
+🆔 External ID: 6960
+🔗 Slug: xiaomi-poco-f2-pro-256gb-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9 Dual SIM 32GB 4G LTE
+🔎 Mongo ID: 68233076caeba90f1f3477ee
+🆔 External ID: 6955
+🔗 Slug: xiaomi-redmi-9-dual-sim-32gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9 Dual SIM 64GB 4G LTE
+🔎 Mongo ID: 68233078caeba90f1f3477ef
+🆔 External ID: 6942
+🔗 Slug: xiaomi-redmi-9-dual-sim-64gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9C Dual SIM 32GB 4G LTE
+🔎 Mongo ID: 68233079caeba90f1f3477f0
+🆔 External ID: 6937
+🔗 Slug: xiaomi-redmi-9c-dual-sim-32gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9C Dual SIM 64GB 4G LTE
+🔎 Mongo ID: 6823307bcaeba90f1f3477f1
+🆔 External ID: 6923
+🔗 Slug: xiaomi-redmi-9c-dual-sim-64gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9 A Dual SIM 32GB
+🔎 Mongo ID: 6823307ccaeba90f1f3477f2
+🆔 External ID: 6912
+🔗 Slug: xiaomi-redmi-9-a-dual-sim-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9 PRIME Dual Sim 64GB 4G LTE
+🔎 Mongo ID: 6823307ecaeba90f1f3477f3
+🆔 External ID: 6905
+🔗 Slug: xiaomi-redmi-9-prime-dual-sim-64gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9 PRIME Dual Sim 128GB 4G LTE
+🔎 Mongo ID: 6823307fcaeba90f1f3477f4
+🆔 External ID: 6888
+🔗 Slug: xiaomi-redmi-9-prime-dual-sim-128gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 10T 5G 128GB
+🔎 Mongo ID: 68233081caeba90f1f3477f8
+🆔 External ID: 6875
+🔗 Slug: xiaomi-mi-10t-5g-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI NOTE 9 64GB 4G LTE
+🔎 Mongo ID: 68233082caeba90f1f3477f9
+🆔 External ID: 6868
+🔗 Slug: xiaomi-redmi-note-9-64gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI NOTE 9 128GB 4G LTE
+🔎 Mongo ID: 68233084caeba90f1f3477fb
+🆔 External ID: 6849
+🔗 Slug: xiaomi-redmi-note-9-128gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 11 5G 128GB
+🔎 Mongo ID: 68233085caeba90f1f3477fc
+🆔 External ID: 6842
+🔗 Slug: xiaomi-mi-11-5g-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI MI 11 5G 256GB
+🔎 Mongo ID: 68233087caeba90f1f3477fd
+🆔 External ID: 6824
+🔗 Slug: xiaomi-mi-11-5g-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9T Dual SIM 64GB 4G LTE
+🔎 Mongo ID: 68233088caeba90f1f3477fe
+🆔 External ID: 6818
+🔗 Slug: xiaomi-redmi-9t-dual-sim-64gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: XIAOMI REDMI 9T Dual SIM 128GB 4G LTE
+🔎 Mongo ID: 6823308acaeba90f1f3477ff
+🆔 External ID: 6800
+🔗 Slug: xiaomi-redmi-9t-dual-sim-128gb-4g-lte
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO A73
+🔎 Mongo ID: 6823308bcaeba90f1f347800
+🆔 External ID: 6742
+🔗 Slug: oppo-a73
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO A15 3GB
+🔎 Mongo ID: 6823308dcaeba90f1f347801
+🆔 External ID: 6737
+🔗 Slug: oppo-a15-3gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO A15 2GB
+🔎 Mongo ID: 6823308fcaeba90f1f347802
+🆔 External ID: 6723
+🔗 Slug: oppo-a15-2gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO A73 5G
+🔎 Mongo ID: 68233091caeba90f1f347803
+🆔 External ID: 6712
+🔗 Slug: oppo-a73-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO RENO 5 5G
+🔎 Mongo ID: 68233092caeba90f1f347804
+🆔 External ID: 6700
+🔗 Slug: oppo-reno-5-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO A15 S
+🔎 Mongo ID: 68233094caeba90f1f347805
+🆔 External ID: 6686
+🔗 Slug: oppo-a15-s
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: OPPO A93
+🔎 Mongo ID: 68233095caeba90f1f347806
+🆔 External ID: 6674
+🔗 Slug: oppo-a93
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER   24 W  2 PORT USB CHARGER
+🔎 Mongo ID: 68233097caeba90f1f347807
+🆔 External ID: 6526
+🔗 Slug: anker-24-w-2-port-usb-charger
+💰 Price: AED 49
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER   POWERPORT PD 1
+🔎 Mongo ID: 68233098caeba90f1f347809
+🆔 External ID: 6528
+🔗 Slug: anker-powerport-pd-1
+💰 Price: AED 165
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER   POWERPORT SPEED 5 PORTS  63 W
+🔎 Mongo ID: 6823309acaeba90f1f34780a
+🆔 External ID: 6530
+🔗 Slug: anker-powerport-speed-5-ports-63-w
+💰 Price: AED 165
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER   POWERPORT ATOM 3 SLIM (A2045)
+🔎 Mongo ID: 6823309ccaeba90f1f34780b
+🆔 External ID: 6532
+🔗 Slug: anker-powerport-atom-3-slim-a2045
+💰 Price: AED 155
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER   POWERPORT 3 NANO (A2633)
+🔎 Mongo ID: 6823309dcaeba90f1f34780c
+🆔 External ID: 6534
+🔗 Slug: anker-powerport-3-nano-a2633
+💰 Price: AED 69
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER  POWERPORT + 1 WITH QUICK CHARGE 3.0
+🔎 Mongo ID: 6823309ecaeba90f1f34780d
+🆔 External ID: 6536
+🔗 Slug: anker-powerport-1-with-quick-charge-30
+💰 Price: AED 49
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER  POWERPORT 4 LITE (INTERCHANGEABLE EU AND UK PLUGS)
+🔎 Mongo ID: 682330a1caeba90f1f34780e
+🆔 External ID: 6538
+🔗 Slug: anker-powerport-4-lite-interchangeable-eu-and-uk-plugs
+💰 Price: AED 65
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWER EXPAND 4-IN-1 USB ETHERNET HUB  (A8323)
+🔎 Mongo ID: 682330a2caeba90f1f34780f
+🆔 External ID: 6540
+🔗 Slug: anker-power-expand-4-in-1-usb-ethernet-hub-a8323
+💰 Price: AED 95
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER UNIVERSAL TRAVEL ADAPTER WITH 4 USB PORTS
+🔎 Mongo ID: 682330a4caeba90f1f347810
+🆔 External ID: 6542
+🔗 Slug: anker-universal-travel-adapter-with-4-usb-ports
+💰 Price: AED 95
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERDRIVE PD+ 2
+🔎 Mongo ID: 682330a5caeba90f1f347811
+🆔 External ID: 6544
+🔗 Slug: anker-powerdrive-pd-2
+💰 Price: AED 68
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERDRIVE 2 ELITE WITH LIGHTNING CONNECTOR
+🔎 Mongo ID: 682330a7caeba90f1f347812
+🆔 External ID: 6546
+🔗 Slug: anker-powerdrive-2-elite-with-lightning-connector
+💰 Price: AED 69
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERWAVE 7.5 CAR MOUNT (B2551)
+🔎 Mongo ID: 682330a9caeba90f1f347813
+🆔 External ID: 6548
+🔗 Slug: anker-powerwave-75-car-mount-b2551
+💰 Price: AED 147
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER AUXILIARY AUDIO CABLE
+🔎 Mongo ID: 682330aacaeba90f1f347815
+🆔 External ID: 6550
+🔗 Slug: anker-auxiliary-audio-cable
+💰 Price: AED 15
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER TYPE C   CABLE 1 METER
+🔎 Mongo ID: 682330accaeba90f1f347816
+🆔 External ID: 6496
+🔗 Slug: anker-type-c-cable-1-meter
+💰 Price: AED 32
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE 26800
+🔎 Mongo ID: 682330aecaeba90f1f347817
+🆔 External ID: 6524
+🔗 Slug: anker-powercore-26800
+💰 Price: AED 195
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER MICRO CABLE  2 METER
+🔎 Mongo ID: 682330afcaeba90f1f347818
+🆔 External ID: 6498
+🔗 Slug: anker-micro-cable-2-meter
+💰 Price: AED 25
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER MICRO CABLE  3 METER
+🔎 Mongo ID: 682330b1caeba90f1f347819
+🆔 External ID: 6500
+🔗 Slug: anker-micro-cable-3-meter
+💰 Price: AED 35
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER TYPE C   CABLE 2 METER
+🔎 Mongo ID: 682330b2caeba90f1f34781a
+🆔 External ID: 6494
+🔗 Slug: anker-type-c-cable-2-meter
+💰 Price: AED 33
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE LITE 10000
+🔎 Mongo ID: 682330b4caeba90f1f34781b
+🆔 External ID: 6506
+🔗 Slug: anker-powercore-lite-10000
+💰 Price: AED 90
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE 3 SENSE 10K
+🔎 Mongo ID: 682330b5caeba90f1f34781c
+🆔 External ID: 6508
+🔗 Slug: anker-powercore-3-sense-10k
+💰 Price: AED 149
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE+ METRO 10000 WITH BUILT IN USB-C CABLE
+🔎 Mongo ID: 682330b7caeba90f1f34781d
+🆔 External ID: 6510
+🔗 Slug: anker-powercore-metro-10000-with-built-in-usb-c-cable
+💰 Price: AED 112
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER WIRELESS PORTABLE CHARGER POWERCORE 10K WIRELESS (A1615H11)
+🔎 Mongo ID: 682330b9caeba90f1f34781e
+🆔 External ID: 6512
+🔗 Slug: anker-wireless-portable-charger-powercore-10k-wireless-a1615h11
+💰 Price: AED 125
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: anker powercore powerbank (A1252H11)
+🔎 Mongo ID: 682330bacaeba90f1f34781f
+🆔 External ID: 6514
+🔗 Slug: anker-powercore-powerbank-a1252h11
+💰 Price: AED 125
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE 2   20,000
+🔎 Mongo ID: 682330bccaeba90f1f347820
+🆔 External ID: 6516
+🔗 Slug: anker-powercore-2-20000
+💰 Price: AED 142
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE ESSENTIAL 20000
+🔎 Mongo ID: 682330bdcaeba90f1f347821
+🆔 External ID: 6518
+🔗 Slug: anker-powercore-essential-20000
+💰 Price: AED 145
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE METRO ESSENTIAL 20000 PD
+🔎 Mongo ID: 682330bfcaeba90f1f347827
+🆔 External ID: 6520
+🔗 Slug: anker-powercore-metro-essential-20000-pd
+💰 Price: AED 199
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER POWERCORE SELECT 20000
+🔎 Mongo ID: 682330c0caeba90f1f347828
+🆔 External ID: 6522
+🔗 Slug: anker-powercore-select-20000
+💰 Price: AED 99
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: ANKER ASTRO E1 PORTABLE CHARGER
+🔎 Mongo ID: 682330c8caeba90f1f34782b
+🆔 External ID: 6502
+🔗 Slug: anker-astro-e1-portable-charger
+💰 Price: AED 79
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG ADAPTIVE FAST CHARGING VEHICLE CHARGER
+🔎 Mongo ID: 682330c9caeba90f1f34782c
+🆔 External ID: 6440
+🔗 Slug: samsung-adaptive-fast-charging-vehicle-charger
+💰 Price: AED 35
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG WIRELESS CHARGING PAD
+🔎 Mongo ID: 682330cbcaeba90f1f34782d
+🆔 External ID: 6432
+🔗 Slug: samsung-wireless-charging-pad
+💰 Price: AED 106
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG BATTERY PACK 10,000 MAH
+🔎 Mongo ID: 682330cccaeba90f1f34782e
+🆔 External ID: 6425
+🔗 Slug: samsung-battery-pack-10000-mah
+💰 Price: AED 52
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG WIRELESS DUO CHARGER PAD
+🔎 Mongo ID: 682330cecaeba90f1f34782f
+🆔 External ID: 6413
+🔗 Slug: samsung-wireless-duo-charger-pad
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY BUDS +
+🔎 Mongo ID: 682330cfcaeba90f1f347830
+🆔 External ID: 6396
+🔗 Slug: samsung-galaxy-buds
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY BUDS LIVE
+🔎 Mongo ID: 682330d1caeba90f1f347831
+🆔 External ID: 6377
+🔗 Slug: samsung-galaxy-buds-live
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG STEREO IN EARHEADPHONES
+🔎 Mongo ID: 682330d2caeba90f1f347832
+🆔 External ID: 6369
+🔗 Slug: samsung-stereo-in-earheadphones
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG EARPHONE JACK IN TUNED BY AKG
+🔎 Mongo ID: 682330d4caeba90f1f347833
+🆔 External ID: 6366
+🔗 Slug: samsung-earphone-jack-in-tuned-by-akg
+💰 Price: AED 72
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG EARPHONE TYPE C TUNED BY AKG
+🔎 Mongo ID: 682330d6caeba90f1f347834
+🆔 External ID: 6353
+🔗 Slug: samsung-earphone-type-c-tuned-by-akg
+💰 Price: AED 72
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG USB TO TYPE-C CHARGING DATA CABLE
+🔎 Mongo ID: 682330d7caeba90f1f347836
+🆔 External ID: 6349
+🔗 Slug: samsung-usb-to-type-c-charging-data-cable
+💰 Price: AED 31.95
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG USB TO MICRO CHARGING DATA CABLE
+🔎 Mongo ID: 682330d9caeba90f1f347837
+🆔 External ID: 6341
+🔗 Slug: samsung-usb-to-micro-charging-data-cable
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG TRAVEL ADAPTER (15 W)
+🔎 Mongo ID: 682330dccaeba90f1f347838
+🆔 External ID: 6332
+🔗 Slug: samsung-travel-adapter-15-w
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG TRAVEL ADAPTER (25 W)
+🔎 Mongo ID: 682330ddcaeba90f1f347839
+🆔 External ID: 6319
+🔗 Slug: samsung-travel-adapter-25-w
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HUAWEI P SMART 2021
+🔎 Mongo ID: 682330dfcaeba90f1f34783a
+🆔 External ID: 6304
+🔗 Slug: huawei-p-smart-2021
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HUAWEI Y9a
+🔎 Mongo ID: 682330e1caeba90f1f34783b
+🆔 External ID: 6288
+🔗 Slug: huawei-y9a
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HUAWEI Y7a
+🔎 Mongo ID: 682330e2caeba90f1f34783c
+🆔 External ID: 6273
+🔗 Slug: huawei-y7a
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HUAWEI NOVA 7 SE 5G YOUTH
+🔎 Mongo ID: 682330e4caeba90f1f34783d
+🆔 External ID: 6259
+🔗 Slug: huawei-nova-7-se-5g-youth
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HUAWEI MATE 40 PRO
+🔎 Mongo ID: 682330e5caeba90f1f34783e
+🆔 External ID: 6247
+🔗 Slug: huawei-mate-40-pro
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HUAWEI P40 4G
+🔎 Mongo ID: 682330e7caeba90f1f34783f
+🆔 External ID: 6233
+🔗 Slug: huawei-p40-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE 2020 With Facetime 64GB
+🔎 Mongo ID: 682330e9caeba90f1f347841
+🆔 External ID: 6227
+🔗 Slug: iphone-se-2020-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE 2020 With Facetime 128GB
+🔎 Mongo ID: 682330eacaeba90f1f347842
+🆔 External ID: 6221
+🔗 Slug: iphone-se-2020-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE 2020 With Facetime 256GB
+🔎 Mongo ID: 682330eccaeba90f1f347844
+🆔 External ID: 6215
+🔗 Slug: iphone-se-2020-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE With Facetime 32GB
+🔎 Mongo ID: 682330edcaeba90f1f347845
+🆔 External ID: 6209
+🔗 Slug: iphone-se-with-facetime-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE With Facetime 64GB
+🔎 Mongo ID: 682330efcaeba90f1f347846
+🆔 External ID: 6203
+🔗 Slug: iphone-se-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE With Facetime 128GB
+🔎 Mongo ID: 682330f1caeba90f1f347847
+🆔 External ID: 6197
+🔗 Slug: iphone-se-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE SE With Facetime 256GB
+🔎 Mongo ID: 682330f3caeba90f1f347848
+🆔 External ID: 6182
+🔗 Slug: iphone-se-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 7 PLUS With FaceTime 32GB
+🔎 Mongo ID: 682330f4caeba90f1f347849
+🆔 External ID: 6177
+🔗 Slug: iphone-7-plus-with-facetime-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 7 PLUS With FaceTime 128GB
+🔎 Mongo ID: 682330f6caeba90f1f34784a
+🆔 External ID: 6172
+🔗 Slug: iphone-7-plus-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 7 PLUS With FaceTime 256GB
+🔎 Mongo ID: 682330f7caeba90f1f34784b
+🆔 External ID: 6157
+🔗 Slug: iphone-7-plus-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 7 With FaceTime 32GB
+🔎 Mongo ID: 682330f9caeba90f1f34784c
+🆔 External ID: 6150
+🔗 Slug: iphone-7-with-facetime-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 7 With FaceTime 128GB
+🔎 Mongo ID: 682330fbcaeba90f1f34784d
+🆔 External ID: 6144
+🔗 Slug: iphone-7-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 7 With FaceTime 256GB
+🔎 Mongo ID: 682330fdcaeba90f1f34784e
+🆔 External ID: 6128
+🔗 Slug: iphone-7-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 8 PLUS With FaceTime 64GB
+🔎 Mongo ID: 68233100caeba90f1f34784f
+🆔 External ID: 6121
+🔗 Slug: iphone-8-plus-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 8 PLUS With FaceTime 256GB
+🔎 Mongo ID: 68233101caeba90f1f347851
+🆔 External ID: 6109
+🔗 Slug: iphone-8-plus-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 8 With FaceTime 64GB
+🔎 Mongo ID: 68233103caeba90f1f347852
+🆔 External ID: 6103
+🔗 Slug: iphone-8-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 8 With FaceTime 256GB
+🔎 Mongo ID: 68233105caeba90f1f347853
+🆔 External ID: 6086
+🔗 Slug: iphone-8-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XS MAX With FaceTime 64GB
+🔎 Mongo ID: 68233107caeba90f1f347854
+🆔 External ID: 6080
+🔗 Slug: iphone-xs-max-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XS MAX With FaceTime 256GB
+🔎 Mongo ID: 68233108caeba90f1f347855
+🆔 External ID: 6075
+🔗 Slug: iphone-xs-max-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XS MAX With FaceTime 512GB
+🔎 Mongo ID: 6823310acaeba90f1f347856
+🆔 External ID: 6059
+🔗 Slug: iphone-xs-max-with-facetime-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE X with FaceTime 64GB
+🔎 Mongo ID: 6823310ccaeba90f1f347858
+🆔 External ID: 6054
+🔗 Slug: iphone-x-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE X with FaceTime 256GB
+🔎 Mongo ID: 6823310dcaeba90f1f347859
+🆔 External ID: 6036
+🔗 Slug: iphone-x-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XR Dual SIM with FaceTime 64GB
+🔎 Mongo ID: 6823310fcaeba90f1f34785a
+🆔 External ID: 6029
+🔗 Slug: iphone-xr-dual-sim-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XR Dual SIM with FaceTime 128GB
+🔎 Mongo ID: 68233110caeba90f1f34785b
+🆔 External ID: 6022
+🔗 Slug: iphone-xr-dual-sim-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XR Dual SIM with FaceTime 256GB
+🔎 Mongo ID: 68233112caeba90f1f34785c
+🆔 External ID: 6015
+🔗 Slug: iphone-xr-dual-sim-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XR with FaceTime 64GB
+🔎 Mongo ID: 68233113caeba90f1f34785d
+🆔 External ID: 6006
+🔗 Slug: iphone-xr-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XR with FaceTime 128GB
+🔎 Mongo ID: 68233115caeba90f1f34785e
+🆔 External ID: 5999
+🔗 Slug: iphone-xr-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XR with FaceTime 256GB
+🔎 Mongo ID: 68233116caeba90f1f34785f
+🆔 External ID: 5982
+🔗 Slug: iphone-xr-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XS With Facetime 64GB
+🔎 Mongo ID: 68233118caeba90f1f347861
+🆔 External ID: 5975
+🔗 Slug: iphone-xs-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XS With Facetime 256GB
+🔎 Mongo ID: 6823311acaeba90f1f347862
+🆔 External ID: 5969
+🔗 Slug: iphone-xs-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE XS With Facetime 512GB
+🔎 Mongo ID: 6823311ccaeba90f1f347863
+🆔 External ID: 5951
+🔗 Slug: iphone-xs-with-facetime-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 with FaceTime 64GB
+🔎 Mongo ID: 6823311dcaeba90f1f347864
+🆔 External ID: 5942
+🔗 Slug: iphone-11-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 with FaceTime 128GB
+🔎 Mongo ID: 6823311fcaeba90f1f347865
+🆔 External ID: 5931
+🔗 Slug: iphone-11-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 with FaceTime 256GB
+🔎 Mongo ID: 68233120caeba90f1f347866
+🆔 External ID: 5909
+🔗 Slug: iphone-11-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 PRO with Facetime 64GB
+🔎 Mongo ID: 68233122caeba90f1f347867
+🆔 External ID: 5902
+🔗 Slug: iphone-11-pro-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 PRO with Facetime 256GB
+🔎 Mongo ID: 68233123caeba90f1f347868
+🆔 External ID: 5895
+🔗 Slug: iphone-11-pro-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 PRO with Facetime 512GB
+🔎 Mongo ID: 68233125caeba90f1f34786b
+🆔 External ID: 5875
+🔗 Slug: iphone-11-pro-with-facetime-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 PRO MAX With Facetime 64GB
+🔎 Mongo ID: 68233126caeba90f1f34786d
+🆔 External ID: 5865
+🔗 Slug: iphone-11-pro-max-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 PRO MAX With Facetime 256GB
+🔎 Mongo ID: 68233128caeba90f1f34786f
+🆔 External ID: 5858
+🔗 Slug: iphone-11-pro-max-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 11 PRO MAX With Facetime 512GB
+🔎 Mongo ID: 68233129caeba90f1f347870
+🆔 External ID: 5822
+🔗 Slug: iphone-11-pro-max-with-facetime-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 MINI With Facetime 128GB
+🔎 Mongo ID: 6823312bcaeba90f1f347871
+🆔 External ID: 5812
+🔗 Slug: iphone-12-mini-with-facetime-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 MINI With Facetime 64GB
+🔎 Mongo ID: 6823312ccaeba90f1f347872
+🆔 External ID: 5806
+🔗 Slug: iphone-12-mini-with-facetime-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 MINI With Facetime 256GB
+🔎 Mongo ID: 6823312dcaeba90f1f347873
+🆔 External ID: 5786
+🔗 Slug: iphone-12-mini-with-facetime-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: GALAXY TAB A (10.5)
+🔎 Mongo ID: 6823312fcaeba90f1f347874
+🆔 External ID: 5766
+🔗 Slug: galaxy-tab-a-105
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: GALAXY TAB A (10.1) (2019)
+🔎 Mongo ID: 68233131caeba90f1f347875
+🆔 External ID: 5752
+🔗 Slug: galaxy-tab-a-101-2019
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: GALAXY TAB A (8.0) (2019)
+🔎 Mongo ID: 68233133caeba90f1f347876
+🆔 External ID: 5740
+🔗 Slug: galaxy-tab-a-80-2019
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: GALAXY TAB A7 (10.4) (2020)
+🔎 Mongo ID: 68233134caeba90f1f347878
+🆔 External ID: 5728
+🔗 Slug: galaxy-tab-a7-104-2020
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD (9.7) 32GB (2018)
+🔎 Mongo ID: 68233136caeba90f1f347879
+🆔 External ID: 5724
+🔗 Slug: ipad-97-32gb-2018
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD (9.7) 128GB (2018)
+🔎 Mongo ID: 68233137caeba90f1f34787a
+🆔 External ID: 5711
+🔗 Slug: ipad-97-128gb-2018
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 64GB (2018) Facetime
+🔎 Mongo ID: 68233139caeba90f1f34787b
+🆔 External ID: 5707
+🔗 Slug: ipad-pro-110-64gb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 256GB (2018) Facetime
+🔎 Mongo ID: 6823313acaeba90f1f34787d
+🆔 External ID: 5703
+🔗 Slug: ipad-pro-110-256gb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 512GB (2018) Facetime
+🔎 Mongo ID: 6823313ccaeba90f1f34787e
+🆔 External ID: 5691
+🔗 Slug: ipad-pro-110-512gb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 1TB (2018) Facetime
+🔎 Mongo ID: 6823313ecaeba90f1f34787f
+🆔 External ID: 5682
+🔗 Slug: ipad-pro-110-1tb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 64GB (2018) Facetime
+🔎 Mongo ID: 6823313fcaeba90f1f347880
+🆔 External ID: 5678
+🔗 Slug: ipad-pro-129-64gb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 256GB (2018) Facetime
+🔎 Mongo ID: 68233141caeba90f1f347881
+🆔 External ID: 5674
+🔗 Slug: ipad-pro-129-256gb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 512GB (2018) Facetime
+🔎 Mongo ID: 68233142caeba90f1f347882
+🆔 External ID: 5670
+🔗 Slug: ipad-pro-129-512gb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 1TB (2018) Facetime
+🔎 Mongo ID: 68233144caeba90f1f347883
+🆔 External ID: 5659
+🔗 Slug: ipad-pro-129-1tb-2018-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD MINI (2019) 64GB Facetime
+🔎 Mongo ID: 68233145caeba90f1f347884
+🆔 External ID: 5654
+🔗 Slug: ipad-mini-2019-64gb-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD MINI (2019) 256GB Facetime
+🔎 Mongo ID: 68233147caeba90f1f347885
+🆔 External ID: 5640
+🔗 Slug: ipad-mini-2019-256gb-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD AIR (2019) 64GB Facetime
+🔎 Mongo ID: 68233149caeba90f1f347887
+🆔 External ID: 5635
+🔗 Slug: ipad-air-2019-64gb-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD AIR (2019) 256GB Facetime
+🔎 Mongo ID: 6823314acaeba90f1f347889
+🆔 External ID: 5620
+🔗 Slug: ipad-air-2019-256gb-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD (10.2) 32BG (2019)
+🔎 Mongo ID: 6823314ccaeba90f1f34788a
+🆔 External ID: 5613
+🔗 Slug: ipad-102-32bg-2019
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD (10.2) 128BG (2019)
+🔎 Mongo ID: 6823314dcaeba90f1f34788b
+🆔 External ID: 5599
+🔗 Slug: ipad-102-128bg-2019
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 128GB (2020) Facetime
+🔎 Mongo ID: 6823314fcaeba90f1f34788c
+🆔 External ID: 5580
+🔗 Slug: ipad-pro-110-128gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 256GB (2020) Facetime
+🔎 Mongo ID: 68233150caeba90f1f34788d
+🆔 External ID: 5575
+🔗 Slug: ipad-pro-110-256gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 512GB (2020) Facetime
+🔎 Mongo ID: 68233152caeba90f1f34788e
+🆔 External ID: 5571
+🔗 Slug: ipad-pro-110-512gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (11.0) 1TB (2020) Facetime
+🔎 Mongo ID: 68233153caeba90f1f34788f
+🆔 External ID: 5559
+🔗 Slug: ipad-pro-110-1tb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 128GB (2020) Facetime
+🔎 Mongo ID: 68233155caeba90f1f347890
+🆔 External ID: 5555
+🔗 Slug: ipad-pro-129-128gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 256GB (2020) Facetime
+🔎 Mongo ID: 68233157caeba90f1f347891
+🆔 External ID: 5550
+🔗 Slug: ipad-pro-129-256gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 512GB (2020) Facetime
+🔎 Mongo ID: 68233158caeba90f1f347892
+🆔 External ID: 5546
+🔗 Slug: ipad-pro-129-512gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD PRO (12.9) 1TB (2020) Facetime
+🔎 Mongo ID: 6823315acaeba90f1f347893
+🆔 External ID: 5525
+🔗 Slug: ipad-pro-129-1tb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD (10.2) 32GB (2020) Facetime
+🔎 Mongo ID: 6823315bcaeba90f1f347896
+🆔 External ID: 5515
+🔗 Slug: ipad-102-32gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD (10.2) 128GB (2020) Facetime
+🔎 Mongo ID: 6823315ccaeba90f1f347897
+🆔 External ID: 5500
+🔗 Slug: ipad-102-128gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD AIR 64GB (2020) Facetime
+🔎 Mongo ID: 68233161caeba90f1f347899
+🆔 External ID: 5487
+🔗 Slug: ipad-air-64gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPAD AIR 256GB (2020) Facetime
+🔎 Mongo ID: 68233163caeba90f1f34789a
+🆔 External ID: 5462
+🔗 Slug: ipad-air-256gb-2020-facetime
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A32 4G
+🔎 Mongo ID: 68233164caeba90f1f34789b
+🆔 External ID: 5447
+🔗 Slug: samsung-galaxy-a32-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A32 5G
+🔎 Mongo ID: 68233166caeba90f1f34789c
+🆔 External ID: 5428
+🔗 Slug: samsung-galaxy-a32-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY NOTE 10 4G
+🔎 Mongo ID: 68233167caeba90f1f34789d
+🆔 External ID: 5419
+🔗 Slug: samsung-galaxy-note-10-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY NOTE 10 PLUS 4G
+🔎 Mongo ID: 68233169caeba90f1f34789e
+🆔 External ID: 5405
+🔗 Slug: samsung-galaxy-note-10-plus-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY FOLD 4G
+🔎 Mongo ID: 6823316acaeba90f1f34789f
+🆔 External ID: 5398
+🔗 Slug: samsung-galaxy-fold-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY S20 4G
+🔎 Mongo ID: 6823316ccaeba90f1f3478a0
+🆔 External ID: 5384
+🔗 Slug: samsung-galaxy-s20-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY S20 ULTRA 5G
+🔎 Mongo ID: 6823316dcaeba90f1f3478a1
+🆔 External ID: 5355
+🔗 Slug: samsung-galaxy-s20-ultra-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY M31
+🔎 Mongo ID: 6823316fcaeba90f1f3478a2
+🆔 External ID: 5339
+🔗 Slug: samsung-galaxy-m31
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A11
+🔎 Mongo ID: 68233171caeba90f1f3478a4
+🆔 External ID: 5323
+🔗 Slug: samsung-galaxy-a11
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A31
+🔎 Mongo ID: 68233172caeba90f1f3478a5
+🆔 External ID: 5299
+🔗 Slug: samsung-galaxy-a31
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A51 4G
+🔎 Mongo ID: 68233174caeba90f1f3478a7
+🆔 External ID: 5281
+🔗 Slug: samsung-galaxy-a51-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A71
+🔎 Mongo ID: 68233176caeba90f1f3478a8
+🆔 External ID: 5258
+🔗 Slug: samsung-galaxy-a71
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A21 S 64GB
+🔎 Mongo ID: 68233177caeba90f1f3478a9
+🆔 External ID: 5251
+🔗 Slug: samsung-galaxy-a21-s-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A21 S 128GB
+🔎 Mongo ID: 68233179caeba90f1f3478aa
+🆔 External ID: 5231
+🔗 Slug: samsung-galaxy-a21-s-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY M31 S
+🔎 Mongo ID: 6823317acaeba90f1f3478ab
+🆔 External ID: 5220
+🔗 Slug: samsung-galaxy-m31-s
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY M51
+🔎 Mongo ID: 6823317ccaeba90f1f3478ac
+🆔 External ID: 5202
+🔗 Slug: samsung-galaxy-m51
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY S20 FE 4G
+🔎 Mongo ID: 6823317ecaeba90f1f3478ae
+🆔 External ID: 5194
+🔗 Slug: samsung-galaxy-s20-fe-4g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY S20 FE 5G
+🔎 Mongo ID: 6823317fcaeba90f1f3478af
+🆔 External ID: 5172
+🔗 Slug: samsung-galaxy-s20-fe-5g
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A02 S 32GB
+🔎 Mongo ID: 68233181caeba90f1f3478b0
+🆔 External ID: 5163
+🔗 Slug: samsung-galaxy-a02-s-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A02 S 64GB
+🔎 Mongo ID: 68233183caeba90f1f3478b1
+🆔 External ID: 5148
+🔗 Slug: samsung-galaxy-a02-s-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A02 32GB
+🔎 Mongo ID: 68233184caeba90f1f3478b2
+🆔 External ID: 5141
+🔗 Slug: samsung-galaxy-a02-32gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A02 64GB
+🔎 Mongo ID: 68233186caeba90f1f3478b3
+🆔 External ID: 5121
+🔗 Slug: samsung-galaxy-a02-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A12 64GB
+🔎 Mongo ID: 68233189caeba90f1f3478b8
+🆔 External ID: 5113
+🔗 Slug: samsung-galaxy-a12-64gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY A12 128GB
+🔎 Mongo ID: 6823318bcaeba90f1f3478b9
+🆔 External ID: 5098
+🔗 Slug: samsung-galaxy-a12-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG NOTE 20 5G 8GB
+🔎 Mongo ID: 6823318ccaeba90f1f3478ba
+🆔 External ID: 5079
+🔗 Slug: samsung-note-20-5g-8gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG NOTE 20 ULTRA 5G 256GB
+🔎 Mongo ID: 6823318ecaeba90f1f3478bb
+🆔 External ID: 5064
+🔗 Slug: samsung-note-20-ultra-5g-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG NOTE 20 ULTRA 5G 512GB
+🔎 Mongo ID: 6823318fcaeba90f1f3478bc
+🆔 External ID: 5047
+🔗 Slug: samsung-note-20-ultra-5g-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S20 PLUS 5G 8GB
+🔎 Mongo ID: 68233191caeba90f1f3478bd
+🆔 External ID: 5042
+🔗 Slug: samsung-s20-plus-5g-8gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S20 PLUS 5G 12GB
+🔎 Mongo ID: 68233192caeba90f1f3478be
+🆔 External ID: 5027
+🔗 Slug: samsung-s20-plus-5g-12gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S21 ULTRA 5G 512GB
+🔎 Mongo ID: 68233194caeba90f1f3478bf
+🆔 External ID: 5022
+🔗 Slug: samsung-s21-ultra-5g-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S21 ULTRA 5G 256GB
+🔎 Mongo ID: 68233195caeba90f1f3478c0
+🆔 External ID: 5001
+🔗 Slug: samsung-s21-ultra-5g-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE USB- C   20 W POWER ADAPTER
+🔎 Mongo ID: 68233197caeba90f1f3478c2
+🆔 External ID: 4770
+🔗 Slug: apple-usb-c-20-w-power-adapter
+💰 Price: AED 74
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE USB-C TO DIGITAL AV MULTIPORT ADAPTER
+🔎 Mongo ID: 68233199caeba90f1f3478c3
+🆔 External ID: 4772
+🔗 Slug: apple-usb-c-to-digital-av-multiport-adapter
+💰 Price: AED 195
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE LIGHTNING TO HEADPHONE JACK
+🔎 Mongo ID: 6823319bcaeba90f1f3478c4
+🆔 External ID: 4774
+🔗 Slug: apple-lightning-to-headphone-jack
+💰 Price: AED 35
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE USB-C TO HEADPHONE JACK
+🔎 Mongo ID: 6823319dcaeba90f1f3478c5
+🆔 External ID: 4776
+🔗 Slug: apple-usb-c-to-headphone-jack
+💰 Price: AED 39
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: LIGHTNING CONNECTOR
+🔎 Mongo ID: 6823319ecaeba90f1f3478c6
+🆔 External ID: 4778
+🔗 Slug: lightning-connector
+💰 Price: AED 75
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: AIRPODS PRO
+🔎 Mongo ID: 682331a0caeba90f1f3478c7
+🆔 External ID: 4782
+🔗 Slug: airpods-pro
+💰 Price: AED 765
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: AIRPODS
+🔎 Mongo ID: 682331a2caeba90f1f3478c8
+🆔 External ID: 4784
+🔗 Slug: airpods
+💰 Price: AED 495
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: AIRPODS MAX
+🔎 Mongo ID: 682331a4caeba90f1f3478c9
+🆔 External ID: 4786
+🔗 Slug: airpods-max
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: MAGSAFE CHARGER
+🔎 Mongo ID: 682331a6caeba90f1f3478ca
+🆔 External ID: 4788
+🔗 Slug: magsafe-charger
+💰 Price: AED 129
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE USB POWER ADAPTER
+🔎 Mongo ID: 682331a8caeba90f1f3478cb
+🆔 External ID: 4790
+🔗 Slug: apple-usb-power-adapter
+💰 Price: AED 69
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: USB-C TO LIGHTNING CABLE
+🔎 Mongo ID: 682331aacaeba90f1f3478cd
+🆔 External ID: 4792
+🔗 Slug: usb-c-to-lightning-cable
+💰 Price: AED 73
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: USB-C  20 W POWER ADAPTER  (UK PIN)
+🔎 Mongo ID: 682331abcaeba90f1f3478ce
+🆔 External ID: 4794
+🔗 Slug: usb-c-20-w-power-adapter-uk-pin
+💰 Price: AED 71
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH CHARGER PAD WITH CABLE 1 METER
+🔎 Mongo ID: 682331adcaeba90f1f3478cf
+🆔 External ID: 4796
+🔗 Slug: apple-watch-charger-pad-with-cable-1-meter
+💰 Price: AED 112
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: HEADPHONE PLUG
+🔎 Mongo ID: 682331aecaeba90f1f3478d0
+🆔 External ID: 4780
+🔗 Slug: headphone-plug
+💰 Price: AED 68
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY WATCH ACTIVE
+🔎 Mongo ID: 682331b0caeba90f1f3478d2
+🆔 External ID: 4744
+🔗 Slug: samsung-galaxy-watch-active
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY WATCH ACTIVE 2
+🔎 Mongo ID: 682331b2caeba90f1f3478d3
+🆔 External ID: 4728
+🔗 Slug: samsung-galaxy-watch-active-2
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG GALAXY WATCH 3
+🔎 Mongo ID: 682331b3caeba90f1f3478d4
+🆔 External ID: 4711
+🔗 Slug: samsung-galaxy-watch-3
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 3 42
+🔎 Mongo ID: 682331b5caeba90f1f3478d5
+🆔 External ID: 4703
+🔗 Slug: apple-watch-series-3-42
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 3 38mm
+🔎 Mongo ID: 682331b6caeba90f1f3478d6
+🆔 External ID: 4689
+🔗 Slug: apple-watch-series-3-38mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 4 44mm
+🔎 Mongo ID: 682331b8caeba90f1f3478d7
+🆔 External ID: 4684
+🔗 Slug: apple-watch-series-4-44mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 4 40mm
+🔎 Mongo ID: 682331bacaeba90f1f3478d8
+🆔 External ID: 4676
+🔗 Slug: apple-watch-series-4-40mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 5 44mm
+🔎 Mongo ID: 682331bbcaeba90f1f3478d9
+🆔 External ID: 4651
+🔗 Slug: apple-watch-series-5-44mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 5 40mm
+🔎 Mongo ID: 682331bdcaeba90f1f3478da
+🆔 External ID: 4636
+🔗 Slug: apple-watch-series-5-40mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 6 44mm
+🔎 Mongo ID: 682331becaeba90f1f3478db
+🆔 External ID: 4626
+🔗 Slug: apple-watch-series-6-44mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH SERIES 6 40mm
+🔎 Mongo ID: 682331c0caeba90f1f3478dc
+🆔 External ID: 4607
+🔗 Slug: apple-watch-series-6-40mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH  SE 44mm
+🔎 Mongo ID: 682331c2caeba90f1f3478dd
+🆔 External ID: 4580
+🔗 Slug: apple-watch-se-44mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: APPLE WATCH  SE 40mm
+🔎 Mongo ID: 682331c3caeba90f1f3478de
+🆔 External ID: 4558
+🔗 Slug: apple-watch-se-40mm
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 With Facetime 64 GB
+🔎 Mongo ID: 682331c5caeba90f1f3478df
+🆔 External ID: 4544
+🔗 Slug: iphone-12-with-facetime-64-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 With Facetime 128 GB
+🔎 Mongo ID: 682331c7caeba90f1f3478e0
+🆔 External ID: 4535
+🔗 Slug: iphone-12-with-facetime-128-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 With Facetime 256 GB
+🔎 Mongo ID: 682331c8caeba90f1f3478e1
+🆔 External ID: 4514
+🔗 Slug: iphone-12-with-facetime-256-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO With Dual Sim Facetime 128 GB
+🔎 Mongo ID: 682331cbcaeba90f1f3478e2
+🆔 External ID: 4505
+🔗 Slug: iphone-12-pro-with-dual-sim-facetime-128-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO With Dual Sim Facetime 256 GB
+🔎 Mongo ID: 682331cccaeba90f1f3478e3
+🆔 External ID: 4496
+🔗 Slug: iphone-12-pro-with-dual-sim-facetime-256-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO With Dual Sim Facetime 512GB
+🔎 Mongo ID: 682331cecaeba90f1f3478e4
+🆔 External ID: 4489
+🔗 Slug: iphone-12-pro-with-dual-sim-facetime-512gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO With Facetime 128 GB
+🔎 Mongo ID: 682331cfcaeba90f1f3478e5
+🆔 External ID: 4479
+🔗 Slug: iphone-12-pro-with-facetime-128-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO With Facetime 256 GB
+🔎 Mongo ID: 682331d1caeba90f1f3478e6
+🆔 External ID: 4471
+🔗 Slug: iphone-12-pro-with-facetime-256-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO With Facetime  512 GB
+🔎 Mongo ID: 682331d3caeba90f1f3478e7
+🆔 External ID: 4464
+🔗 Slug: iphone-12-pro-with-facetime-512-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO MAX With Facetime Dual Sim 128 GB
+🔎 Mongo ID: 682331d4caeba90f1f3478e8
+🆔 External ID: 4406
+🔗 Slug: iphone-12-pro-max-with-facetime-dual-sim-128-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO MAX With Facetime Dual Sim 256 GB
+🔎 Mongo ID: 682331d6caeba90f1f3478e9
+🆔 External ID: 4397
+🔗 Slug: iphone-12-pro-max-with-facetime-dual-sim-256-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO MAX With Facetime Dual Sim 512 GB
+🔎 Mongo ID: 682331d8caeba90f1f3478ea
+🆔 External ID: 4390
+🔗 Slug: iphone-12-pro-max-with-facetime-dual-sim-512-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO MAX With Facetime 128 GB
+🔎 Mongo ID: 682331d9caeba90f1f3478eb
+🆔 External ID: 4380
+🔗 Slug: iphone-12-pro-max-with-facetime-128-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO MAX With Facetime 256 GB
+🔎 Mongo ID: 682331dbcaeba90f1f3478ec
+🆔 External ID: 4375
+🔗 Slug: iphone-12-pro-max-with-facetime-256-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: IPHONE 12 PRO MAX With Facetime 512 GB
+🔎 Mongo ID: 682331dccaeba90f1f3478ed
+🆔 External ID: 4340
+🔗 Slug: iphone-12-pro-max-with-facetime-512-gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S21 5G 128GB
+🔎 Mongo ID: 682801295d79f20541eeaf49
+🆔 External ID: 8044
+🔗 Slug: samsung-s21-5g-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S21 5G 256GB
+🔎 Mongo ID: 6828012f5d79f20541eeaf4a
+🆔 External ID: 8028
+🔗 Slug: samsung-s21-5g-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S21 PLUS 5G 256GB
+🔎 Mongo ID: 682801345d79f20541eeaf4c
+🆔 External ID: 8023
+🔗 Slug: samsung-s21-plus-5g-256gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SAMSUNG S21 PLUS 5G 128GB
+🔎 Mongo ID: 682801385d79f20541eeaf4d
+🆔 External ID: 8009
+🔗 Slug: samsung-s21-plus-5g-128gb
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE AuraLight-1
+🔎 Mongo ID: 6828013e5d79f20541eeaf4e
+🆔 External ID: 7475
+🔗 Slug: promate-auralight-1
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE LumiQi
+🔎 Mongo ID: 682801435d79f20541eeaf7c
+🆔 External ID: 7477
+🔗 Slug: promate-lumiqi
+💰 Price: AED 85
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE VolTrip-UNI
+🔎 Mongo ID: 682801485d79f20541eeb02d
+🆔 External ID: 7473
+🔗 Slug: promate-voltrip-uni
+💰 Price: AED 43
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE Scud-48
+🔎 Mongo ID: 6828014d5d79f20541eeb02e
+🆔 External ID: 7471
+🔗 Slug: promate-scud-48
+💰 Price: AED 65
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE CenterPort-2PD75
+🔎 Mongo ID: 682801535d79f20541eeb02f
+🆔 External ID: 7469
+🔗 Slug: promate-centerport-2pd75
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE GaNPort3-65 pd
+🔎 Mongo ID: 682801575d79f20541eeb030
+🆔 External ID: 7467
+🔗 Slug: promate-ganport3-65-pd
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE BaseLink-Pro
+🔎 Mongo ID: 6828015c5d79f20541eeb0df
+🆔 External ID: 7465
+🔗 Slug: promate-baselink-pro
+💰 Price: AED 395
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE AlphaHub
+🔎 Mongo ID: 682801635d79f20541eeb0e5
+🆔 External ID: 7463
+🔗 Slug: promate-alphahub
+💰 Price: AED 369
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE PowerGear
+🔎 Mongo ID: 682801685d79f20541eeb0e8
+🆔 External ID: 7487
+🔗 Slug: promate-powergear
+💰 Price: AED 235
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE TimeBridge-Qi
+🔎 Mongo ID: 6828016d5d79f20541eeb0e9
+🆔 External ID: 7479
+🔗 Slug: promate-timebridge-qi
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE PowerState
+🔎 Mongo ID: 682801775d79f20541eeb0ea
+🆔 External ID: 7483
+🔗 Slug: promate-powerstate
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE AuraVolt-10+
+🔎 Mongo ID: 682801865d79f20541eeb0eb
+🆔 External ID: 7493
+🔗 Slug: promate-auravolt-10
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Promate Capital-30
+🔎 Mongo ID: 6828018c5d79f20541eeb0ec
+🆔 External ID: 7491
+🔗 Slug: promate-capital-30
+💰 Price: AED 245
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE Titan-30
+🔎 Mongo ID: 682801965d79f20541eeb0ed
+🆔 External ID: 7485
+🔗 Slug: promate-titan-30
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: BELKIN WIRELESS CAR CHARGER
+🔎 Mongo ID: 6828019e5d79f20541eeb0ef
+🆔 External ID: 7403
+🔗 Slug: belkin-wireless-car-charger
+💰 Price: AED 117
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: MI BAND - 5
+🔎 Mongo ID: 682801ad5d79f20541eeb0f0
+🆔 External ID: 7399
+🔗 Slug: mi-band-5
+💰 Price: AED 118
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: PROMATE MULTI CONNECTOR
+🔎 Mongo ID: 682801b65d79f20541eeb0f1
+🆔 External ID: 7405
+🔗 Slug: promate-multi-connector
+💰 Price: AED 35
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: REDMI 20,000 MAH POWERBANK. (2 USB,1 MICRO, 1 TYPE C PORT)
+🔎 Mongo ID: 682801c05d79f20541eeb0f3
+🆔 External ID: 7393
+🔗 Slug: redmi-20000-mah-powerbank-2-usb1-micro-1-type-c-port
+💰 Price: AED 69
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Import placeholder for id:5176; id:46568; id:54531; id:54547; id:54548; id:54549; id:54550; id:54551; id:54552; id:54553; id:54554; id:54555; id:54556; id:54557; id:54558; id:54559; id:54560; id:54561; id:54562; id:54564; id:54565; id:54566; id:54567; id:54568; id:54569; id:54570; id:54571; id:54572; id:54573; id:54574; id:54575; id:54576; id:54641; id:54642; id:54643; id:54644; id:54645; id:54646; id:54647; id:54648; id:54649; id:54650
+🔎 Mongo ID: 682888a85d79f20541efd15c
+🆔 External ID: 55551
+🔗 Slug: import-placeholder-for-id5176-id46568-id54531-id54547-id54548-id54549-id54550-id54551-id54552-id54553-id54554-id54555-id54556-id54557-id54558-id54559-id54560-id54561-id54562-id54564-id54565-id54566-id54567-id54568-id54569-id54570-id54571-id54572-id54573-id54574-id54575-id54576-id54641-id54642-id54643-id54644-id54645-id54646-id54647-id54648-id54649-id54650
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: White and Silver Polka Dot Party Cone Hat
+🔎 Mongo ID: 682888c05d79f20541efd15f
+🆔 External ID: 55300
+🔗 Slug: white-and-silver-polka-dot-party-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: White and Gold Polka Dot Birthday Cone Hat
+🔎 Mongo ID: 682888c25d79f20541efd160
+🆔 External ID: 55298
+🔗 Slug: white-and-gold-polka-dot-birthday-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Silver Chevron Pattern Party Cone Hat
+🔎 Mongo ID: 682888c35d79f20541efd161
+🆔 External ID: 55296
+🔗 Slug: silver-chevron-pattern-party-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Gold Chevron Pattern Party Cone Hat
+🔎 Mongo ID: 682888c45d79f20541efd162
+🆔 External ID: 55294
+🔗 Slug: gold-chevron-pattern-party-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Silver Metallic Striped Birthday Cone Hat
+🔎 Mongo ID: 682888c75d79f20541efd163
+🆔 External ID: 55292
+🔗 Slug: silver-metallic-striped-birthday-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Rose Gold and Pink Striped Cone Party Hat
+🔎 Mongo ID: 682888c85d79f20541efd164
+🆔 External ID: 55290
+🔗 Slug: rose-gold-and-pink-striped-cone-party-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pink and Gold Polka Dot Birthday Cone Hat
+🔎 Mongo ID: 682888c95d79f20541efd165
+🆔 External ID: 55288
+🔗 Slug: pink-and-gold-polka-dot-birthday-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Happy Birthday Pink Cone Hat with Pom-Poms
+🔎 Mongo ID: 682888ca5d79f20541efd166
+🆔 External ID: 55286
+🔗 Slug: happy-birthday-pink-cone-hat-with-pom-poms
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Gold and White Metallic Striped Birthday Cap
+🔎 Mongo ID: 682888cb5d79f20541efd167
+🆔 External ID: 55284
+🔗 Slug: gold-and-white-metallic-striped-birthday-cap
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pink and Gold Striped Cone Party Hat
+🔎 Mongo ID: 682888cc5d79f20541efd168
+🆔 External ID: 55282
+🔗 Slug: pink-and-gold-striped-cone-party-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Green and Red Leaf Print Birthday Cone Hat
+🔎 Mongo ID: 682888cf5d79f20541efd169
+🆔 External ID: 55280
+🔗 Slug: green-and-red-leaf-print-birthday-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Colorful Diamond Pattern Metallic Cone Hat
+🔎 Mongo ID: 682888d05d79f20541efd16a
+🆔 External ID: 55278
+🔗 Slug: colorful-diamond-pattern-metallic-cone-hat
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Birthday Boy Blue Cone Hat with Pom-Poms
+🔎 Mongo ID: 682888d25d79f20541efd16b
+🆔 External ID: 55276
+🔗 Slug: birthday-boy-blue-cone-hat-with-pom-poms
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Flip Flops Foil Balloon 25x33in
+🔎 Mongo ID: 682888d45d79f20541efd16c
+🆔 External ID: 55247
+🔗 Slug: flip-flops-foil-balloon-25x33in
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Watermelon Foil Balloon 32x16in
+🔎 Mongo ID: 682888d55d79f20541efd16d
+🆔 External ID: 55244
+🔗 Slug: watermelon-foil-balloon-32x16in
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Tropical Pineapple Foil Balloon 30x48cm
+🔎 Mongo ID: 682888d65d79f20541efd16e
+🆔 External ID: 55242
+🔗 Slug: tropical-pineapple-foil-balloon-30x48cm
+💰 Price: AED 28
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Tropical Cooler Balloon 21in
+🔎 Mongo ID: 682888d85d79f20541efd170
+🆔 External ID: 55240
+🔗 Slug: tropical-cooler-balloon-21in
+💰 Price: AED 42
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Taco Party Foil Balloon 83x48cm
+🔎 Mongo ID: 682888d95d79f20541efd171
+🆔 External ID: 55238
+🔗 Slug: taco-party-foil-balloon-83x48cm
+💰 Price: AED 42
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Surfboard Foil Balloon 18x39in
+🔎 Mongo ID: 682888db5d79f20541efd172
+🆔 External ID: 55236
+🔗 Slug: surfboard-foil-balloon-18x39in
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Iridescent Pineapple Foil Balloon 43x78cm
+🔎 Mongo ID: 682888dc5d79f20541efd174
+🆔 External ID: 55234
+🔗 Slug: iridescent-pineapple-foil-balloon-43x78cm
+💰 Price: AED 45
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Palm Frond Foil Balloon 55x76cm
+🔎 Mongo ID: 682888dd5d79f20541efd176
+🆔 External ID: 55232
+🔗 Slug: palm-frond-foil-balloon-55x76cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Popsicle Foil Balloon 45x76cm
+🔎 Mongo ID: 682888de5d79f20541efd177
+🆔 External ID: 55230
+🔗 Slug: popsicle-foil-balloon-45x76cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Ice Cream Sundae Balloon 38x58cm
+🔎 Mongo ID: 682888df5d79f20541efd178
+🆔 External ID: 55228
+🔗 Slug: ice-cream-sundae-balloon-38x58cm
+💰 Price: AED 30
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Ice Cream Cone Foil Balloon 45x104cm
+🔎 Mongo ID: 682888e05d79f20541efd179
+🆔 External ID: 55226
+🔗 Slug: ice-cream-cone-foil-balloon-45x104cm
+💰 Price: AED 45
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Hot Dog Foil Balloon 83x38cm
+🔎 Mongo ID: 682888e25d79f20541efd17b
+🆔 External ID: 55224
+🔗 Slug: hot-dog-foil-balloon-83x38cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Ice Cream Bar Foil Balloon 43x88cm
+🔎 Mongo ID: 682888e35d79f20541efd17c
+🆔 External ID: 55222
+🔗 Slug: ice-cream-bar-foil-balloon-43x88cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pineapple with Sunglasses Balloon 30x66cm
+🔎 Mongo ID: 682888e45d79f20541efd17d
+🆔 External ID: 55220
+🔗 Slug: pineapple-with-sunglasses-balloon-30x66cm
+💰 Price: AED 28
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Fun in the Sun Orbz Balloon 38x40cm
+🔎 Mongo ID: 682888e55d79f20541efd17e
+🆔 External ID: 55218
+🔗 Slug: fun-in-the-sun-orbz-balloon-38x40cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pizza Slice Foil Balloon 114x55cm
+🔎 Mongo ID: 682888e65d79f20541efd17f
+🆔 External ID: 55216
+🔗 Slug: pizza-slice-foil-balloon-114x55cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pink Donut Foil Balloon 68cm
+🔎 Mongo ID: 682888e75d79f20541efd181
+🆔 External ID: 55214
+🔗 Slug: pink-donut-foil-balloon-68cm
+💰 Price: AED 42
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Coconut Drink Foil Balloon 76x71cm
+🔎 Mongo ID: 682888e85d79f20541efd182
+🆔 External ID: 55212
+🔗 Slug: coconut-drink-foil-balloon-76x71cm
+💰 Price: AED 18
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Cactus Foil Balloon 63x78cm
+🔎 Mongo ID: 682888e95d79f20541efd185
+🆔 External ID: 55210
+🔗 Slug: cactus-foil-balloon-63x78cm
+💰 Price: AED 40
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Beach Ball Foil Balloon 18in
+🔎 Mongo ID: 682888ea5d79f20541efd186
+🆔 External ID: 55208
+🔗 Slug: beach-ball-foil-balloon-18in
+💰 Price: AED 18
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Summer Stories Beverage Tissues 20pcs
+🔎 Mongo ID: 682888eb5d79f20541efd187
+🆔 External ID: 55150
+🔗 Slug: summer-stories-beverage-tissues-20pcs
+💰 Price: AED 16
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Summer Splash Lunch Tissues 36pcs
+🔎 Mongo ID: 682888ed5d79f20541efd188
+🆔 External ID: 55148
+🔗 Slug: summer-splash-lunch-tissues-36pcs
+💰 Price: AED 34
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Summer Splash Cups 9oz, 18pcs
+🔎 Mongo ID: 682888ee5d79f20541efd189
+🆔 External ID: 55146
+🔗 Slug: summer-splash-cups-9oz-18pcs
+💰 Price: AED 26
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Summer Splash Beverage Tissues 36pcs
+🔎 Mongo ID: 682888ef5d79f20541efd18a
+🆔 External ID: 55144
+🔗 Slug: summer-splash-beverage-tissues-36pcs
+💰 Price: AED 26
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pineapple Vibes Letter Banner 90cm
+🔎 Mongo ID: 682888f05d79f20541efd18b
+🆔 External ID: 55142
+🔗 Slug: pineapple-vibes-letter-banner-90cm
+💰 Price: AED 16
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Fruit Ribbon Glitter Paper Letter Banner 12ft
+🔎 Mongo ID: 682888f15d79f20541efd18c
+🆔 External ID: 55140
+🔗 Slug: fruit-ribbon-glitter-paper-letter-banner-12ft
+💰 Price: AED 30
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Hello Summer Beverage Tissues 16pcs
+🔎 Mongo ID: 682888f25d79f20541efd18d
+🆔 External ID: 55138
+🔗 Slug: hello-summer-beverage-tissues-16pcs
+💰 Price: AED 16
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Hello Summer Plastic Table Cover 137 x 259 cm
+🔎 Mongo ID: 682888f45d79f20541efd18e
+🆔 External ID: 55136
+🔗 Slug: hello-summer-plastic-table-cover-137-x-259-cm
+💰 Price: AED 28
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pineapple Vibes Formshaped Paper Plates 7in, 6pcs
+🔎 Mongo ID: 682888f55d79f20541efd18f
+🆔 External ID: 55134
+🔗 Slug: pineapple-vibes-formshaped-paper-plates-7in-6pcs
+💰 Price: AED 20
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pineapples Vibes Paper Plates 9in, 8pcs
+🔎 Mongo ID: 682888f65d79f20541efd190
+🆔 External ID: 55132
+🔗 Slug: pineapples-vibes-paper-plates-9in-8pcs
+💰 Price: AED 20
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Summer Stories Pennant Banner 4m
+🔎 Mongo ID: 682888f75d79f20541efd191
+🆔 External ID: 55130
+🔗 Slug: summer-stories-pennant-banner-4m
+💰 Price: AED 20
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Summer Stories Paper Plates 9in, 8pcs
+🔎 Mongo ID: 682888f85d79f20541efd192
+🆔 External ID: 55128
+🔗 Slug: summer-stories-paper-plates-9in-8pcs
+💰 Price: AED 20
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pineapple Vibes Lunch Tissues 20pcs
+🔎 Mongo ID: 682888f95d79f20541efd193
+🆔 External ID: 55123
+🔗 Slug: pineapple-vibes-lunch-tissues-20pcs
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Whale Bubble Wands – 3 Pack Multicolor Bubble Tubes for Kids
+🔎 Mongo ID: 682888fa5d79f20541efd196
+🆔 External ID: 54952
+🔗 Slug: whale-bubble-wands-3-pack-multicolor-bubble-tubes-for-kids
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Unicorn Bubble Wands – 3 Pack Colorful Party Bubble Tubes for Kids
+🔎 Mongo ID: 682888fc5d79f20541efd197
+🆔 External ID: 54951
+🔗 Slug: unicorn-bubble-wands-3-pack-colorful-party-bubble-tubes-for-kids
+💰 Price: AED 10.5
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Panda Bubble Wands – 3 Pack Cute Black & White Bubble Tubes for Kids
+🔎 Mongo ID: 682888fd5d79f20541efd198
+🆔 External ID: 54950
+🔗 Slug: panda-bubble-wands-3-pack-cute-black-and-white-bubble-tubes-for-kids
+💰 Price: AED 10.5
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Monkey Bubble Wands – 3 Pack Colorful Bubble Tubes for Kids
+🔎 Mongo ID: 682888fe5d79f20541efd199
+🆔 External ID: 54949
+🔗 Slug: monkey-bubble-wands-3-pack-colorful-bubble-tubes-for-kids
+💰 Price: AED 10.5
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Mermaid Bubble Wands – 3 Pack Magical Bubble Tubes for Kids
+🔎 Mongo ID: 682888ff5d79f20541efd19a
+🆔 External ID: 54948
+🔗 Slug: mermaid-bubble-wands-3-pack-magical-bubble-tubes-for-kids
+💰 Price: AED 10.5
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Duck Bubble Wands – 3 Pack Yellow Bubble Tubes for Kids
+🔎 Mongo ID: 682889005d79f20541efd19b
+🆔 External ID: 54947
+🔗 Slug: duck-bubble-wands-3-pack-yellow-bubble-tubes-for-kids
+💰 Price: AED 10.5
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Green Frog Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 682889015d79f20541efd19c
+🆔 External ID: 54946
+🔗 Slug: green-frog-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Yellow Tiger Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 682889045d79f20541efd19e
+🆔 External ID: 54945
+🔗 Slug: yellow-tiger-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Pink Pig Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 682889055d79f20541efd19f
+🆔 External ID: 54944
+🔗 Slug: pink-pig-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Yellow Fish Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 682889065d79f20541efd1a0
+🆔 External ID: 54943
+🔗 Slug: yellow-fish-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Orange Fish Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 682889075d79f20541efd1a2
+🆔 External ID: 54942
+🔗 Slug: orange-fish-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Blue Dolphin Bubble Gun Toy with Bubble Solution – Finger Activated
+🔎 Mongo ID: 682889085d79f20541efd1a3
+🆔 External ID: 54941
+🔗 Slug: blue-dolphin-bubble-gun-toy-with-bubble-solution-finger-activated
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Avengers Captain America Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 6828890a5d79f20541efd1a4
+🆔 External ID: 54940
+🔗 Slug: avengers-captain-america-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Avengers Batman Style Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 6828890a5d79f20541efd1a5
+🆔 External ID: 54939
+🔗 Slug: avengers-batman-style-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Yellow Dinosaur Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 6828890c5d79f20541efd1a6
+🆔 External ID: 54938
+🔗 Slug: yellow-dinosaur-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Green Dinosaur Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 6828890d5d79f20541efd1a7
+🆔 External ID: 54937
+🔗 Slug: green-dinosaur-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: Blue Dinosaur Bubble Gun Toy with Bubble Solution
+🔎 Mongo ID: 6828890e5d79f20541efd1a8
+🆔 External ID: 54936
+🔗 Slug: blue-dinosaur-bubble-gun-toy-with-bubble-solution
+💰 Price: AED 12.6
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SpongeBob Add-An-Age Birthday Banner – 10ft (Copy)
+🔎 Mongo ID: 6828890e5d79f20541efd1a9
+🆔 External ID: 54932
+🔗 Slug: spongebob-add-an-age-birthday-banner-10ft-copy
+💰 Price: AED (no price)
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SpongeBob Add-An-Age Birthday Banner – 10ft
+🔎 Mongo ID: 682889105d79f20541efd1aa
+🆔 External ID: 54923
+🔗 Slug: spongebob-add-an-age-birthday-banner-10ft
+💰 Price: AED 34
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SpongeBob Party Cone Hats – 8pcs
+🔎 Mongo ID: 682889115d79f20541efd1ab
+🆔 External ID: 54922
+🔗 Slug: spongebob-party-cone-hats-8pcs
+💰 Price: AED 18
+🖼️ Image URL: (no image)
+------------------------------------------------------------
+
+🛒 Product: SpongeBob Square Dessert Plates 7in – 8pcs
+🔎 Mongo ID: 682889135d79f20541efd1ac
+🆔 External ID: 54921
+🔗 Slug: spongebob-square-dessert-plates-7in-8pcs
+💰 Price: AED 16
+🖼️ Image URL: (no image)
 ------------------------------------------------------------
 
