@@ -1,7 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import TopOffersSlider from "@/components/shopping-view/topOffersSlider";
+import bannerOne from "../../assets/banner-1.webp";
+import bannerTwo from "../../assets/banner-2.webp";
+import bannerThree from "../../assets/banner-3.webp";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -11,22 +13,21 @@ import { fetchAllFilteredProducts, fetchProductDetails } from "@/store/shop/prod
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
 import OccasionCategorySection from "@/components/shopping-view/occasioncategorysection";
-import CategorySection from "@/components/shopping-view/occasioncategorysection";
+import CategorySection  from "@/components/shopping-view/occasioncategorysection";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
-import axios from "axios";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import newArrivals from "@/components/shopping-view/newArrivals";
-import newArrivals2 from "@/components/shopping-view/newArrivals2";
-import { getGuestId } from "@/lib/guest-id";
+ import { FaWhatsapp } from "react-icons/fa"; // <-- install this if not already
+ import axios from "axios";
+ import { Swiper, SwiperSlide } from "swiper/react";
+ import { Autoplay } from "swiper/modules";
+ import "swiper/css";
+ import newArrivals from "@/components/shopping-view/newArrivals";
+ import newArrivals2 from "@/components/shopping-view/newArrivals2";
+ import { getGuestId } from "@/lib/guest-id";
 
-const sliderProducts = newArrivals;
-
+ const sliderProducts = newArrivals;
 function ShoppingHome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,7 +36,11 @@ function ShoppingHome() {
   const { user } = useSelector((state) => state.auth);
   const { toast } = useToast();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
+
   const [relatedSliderProducts, setRelatedSliderProducts] = useState([]);
+
+
+
 
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
@@ -49,10 +54,10 @@ function ShoppingHome() {
       toast({ title: `Only ${stock} items available`, variant: "destructive" });
       return;
     }
-
+    
     const isGuest = !user?.id;
     const guestId = isGuest ? getGuestId() : null;
-
+    
     dispatch(
       addToCart({
         userId: !isGuest ? user.id : null,
@@ -63,9 +68,12 @@ function ShoppingHome() {
     ).then((res) => {
       if (res?.payload?.success) {
         dispatch(fetchCartItems(isGuest ? guestId : user.id));
-        toast({ title: "Product is added to cart" });
+        toast({
+          title: "Product is added to cart",
+        });
       }
     });
+    
   };
 
   const handleGetProductDetails = (id) => {
@@ -81,270 +89,266 @@ function ShoppingHome() {
     { name: "Engagement", image: "/placeholders/engagement.jpg", slug: "engagement" },
     { name: "Gender Reveal", image: "/placeholders/gender-reveal.jpg", slug: "gender-reveal" },
   ];
-
   const costumeCategoryIds = useMemo(() => ["67f844b7f1275889ad3993b8"], []);
 
   return (
-    <div className="pt-0 pb-6 md:pb-10 space-y-6 md:space-y-10">
-      {/* 🖼️ Responsive Full-Width Occasion Banner Slider */}
-            {/* ✅ Two-Banner Full Width Slider (No Arrows, No Text) */}
-            <section className="w-full">
-              <Swiper
-                spaceBetween={0}
-                slidesPerView={1}
-                loop={true}
-                autoplay={{ delay: 3000 }}
-                modules={[Autoplay]}
-                className="w-full"
-              >
-                {[
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470795/partyworld/occasions/kwfpbfxi7jlefcemyurv.png",
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747471919/partyworld/occasions/jcmc5fs4q34brff5tvg8.gif",
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470796/partyworld/occasions/kes7xekdaweol98vdzkh.png"
-                ].map((src, idx) => (
-                  <SwiperSlide key={idx}>
-                    <img
-                      src={src}
-                      alt={`Promo Banner ${idx + 1}`}
-                      className="w-full object-cover"
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </section>
+    <div className="pt-0 pb-6 md:pb-10 px-4 md:px-6 space-y-6 md:space-y-10">
+   
+       {/* 🖼️ Responsive Full-Width Occasion Banner Slider */}
+       <div className="-mx-8">
+         <HomepageSlider />
+       </div>
+       
+  <div className="mt-16">
+    <div className=" mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+      NEW ARRIVALS
+      </h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
 
-      {/* ✅ Shop by Categories with same responsive padding */}
-      <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 pt-10 bg-white">
-        {/* Horizontal Flex Container */}
-        <div className="flex flex-col items-center justify-between gap-6 mb-6">
-          {/* Title on Left */}
-          <h2 className="text-xl md:text-2xl pb-8 font-semibold text-[#111] whitespace-nowrap">
-            Shop By Categories
-          </h2>
-
-          {/* Category Icons on Right */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-            {[
-              {
-                title: "Mobiles",
-                image:
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466437/partyworld/occasions/euxs9dgtqo5gfidweevm.png",
-                link: "/shop/category/phone",
-              },
-              {
-                title: "Tablets",
-                image:
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466438/partyworld/occasions/mls5ztu8moaf84krlrxp.png",
-                link: "/shop/category/tablets",
-              },
-              {
-                title: "Wearables",
-                image:
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466440/partyworld/occasions/sftp7fglxei4exjkfbhg.png",
-                link: "/shop/category/watches",
-              },
-              {
-                title: "Accessories",
-                image:
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747466441/partyworld/occasions/cymedpbta6mb5koe3svq.png",
-                link: "/shop/category/accessories",
-              },
-            ].map((cat) => (
-              <a
-                href={cat.link}
-                key={cat.title}
-                className="flex flex-col items-center group transition-transform hover:scale-[1.03]"
-              >
-                <div className="w-[200px] h-[200px] flex items-center justify-center mb-2">
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    className="w-[100%] h-[100%] object-contain"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* ✅ Top Offers with responsive horizontal padding */}
-      <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
-        <TopOffersSlider
-          title="Top Offers"
-          categoryIds={["68290e5ac9666ae87ae5d930", "6829108ac9666ae87ae5d9c3"]}
-          viewAllUrl="samsung-phones"
-        />
-      </div>
-
-      
-      <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 pb-10 bg-white">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-          <h2 className="text-xl md:text-2xl font-semibold text-[#111] mb-4 md:mb-0">Shop by Brand</h2>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:justify-between">
-          {[
-            { name: "Apple", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468326/partyworld/occasions/nkxpqdflnjenqrpdfkts.png" },
-            { name: "Samsung", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468327/partyworld/occasions/hrqkrzt59asz9rvdd6j8.png" },
-            { name: "Xiaomi", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468328/partyworld/occasions/xj4te4zfhpjxmvnnswg5.png" },
-            { name: "Huawei", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468329/partyworld/occasions/q6el9lzemkj1c4fhny5l.png" },
-            { name: "HP", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468329/partyworld/occasions/xiu2vui7qvf0qwcdvep8.png" },
-            { name: "Sony", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468330/partyworld/occasions/onjfkljznmp0dk8oeq5b.png" },
-            { name: "Anker", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468330/partyworld/occasions/onjfkljznmp0dk8oeq5b.png" },
-            { name: "Lenovo", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468331/partyworld/occasions/renfxlxm0w4wyalouacq.png" },
-            { name: "Promate", image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747468332/partyworld/occasions/f7khnpekm3grmdznlehd.png" },
-          ].map((brand) => (
-            <div
-              key={brand.name}
-              className="w-full sm:w-[120px] h-[60px] flex items-center justify-center bg-[#f5f5f5] rounded-lg shadow-sm transition-transform hover:scale-105"
-            >
-              <img
-                src={brand.image}
-                alt={brand.name}
-                className="max-h-[30px] max-w-[70px] object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-
-      </section>
-
-
-          <section className="w-full bg-[#fef1f1] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              {/* Left Big Box */}
-              <div className=" rounded-2xl p-2 flex flex-col md:flex-row items-center justify-between">
-                <div className="mb-4 md:mb-0 md:mr-6 max-w-[250px]">
-                  </div>
-                    <img
-                      src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747469226/partyworld/occasions/nsu1watighfifkgvx11o.png"
-                      alt="Mobiles"
-                    />
-                  </div>
-
-                    {/* Right Grid of 4 */}
-                    <div className="grid grid-cols-2 gap-2">
-                      {[
-                                    {
-                                      title: "Power banks",
-                                      image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747469230/partyworld/occasions/gt56r61jlcf9on6agnvu.png",
-                                    },
-                                    {
-                                      title: "Headphones & earphones",
-                                      image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747469227/partyworld/occasions/w91w2wocppw3xgonzxie.png",
-                                    },
-                                    {
-                                      title: "Wearables",
-                                      image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747469228/partyworld/occasions/dr973hewlruanbhqe3hs.png",
-                                    },
-                                    {
-                                      title: "Accessories",
-                                      image: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747469229/partyworld/occasions/cq5o8s1b8n0ea6uejj36.png",
-                                    },
-                                  ].map((item) => (
-                                    <div
-                                key={item.title}
-                                className="rounded-2xl pt-4 flex flex-col items-center transition"
-                              >
-                                <img
-                                  src={item.image}
-                                  alt={item.title}
-                                  className="w-[280px]"
-                                />
-                        </div>
-                      ))}
-              </div>
-            </div>
-          </section>
-
-                {/* ✅ Top Offers with responsive horizontal padding */}
-      <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
-        <TopOffersSlider
-          title="Top Picks On Mobile"
-          categoryIds={["68290e5ac9666ae87ae5d930", "68290f0fc9666ae87ae5d964","6829106dc9666ae87ae5d9bb", "6829108ac9666ae87ae5d9c3"]}
-          viewAllUrl="samsung-phones"
-        />
-      </div>
-            {/* ✅ Full Width Banner Section */}
-            <section className="w-full bg-black text-white">
-              <div className="flex flex-col md:flex-row items-center justify-between  max-w-[1600px] mx-auto">
-                {/* Image Section */}
-
-                  <img
-                    src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470368/partyworld/occasions/jzspftl9rlbcsgyc3u5v.png"
-                    alt="Apple Watch"
-                    className="w-full object-contain"
-                  />
-
-              </div>
-            </section>
-                  {/* ✅ Top Offers with responsive horizontal padding */}
-      <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
-        <TopOffersSlider
-          title="Top Picks On Watches"
-          categoryIds={["68291281c9666ae87ae5da47"]}
-          viewAllUrl="watches"
-        />
-      </div>
-            {/* ✅ Two-Banner Full Width Slider (No Arrows, No Text) */}
-            <section className="w-full">
-              <Swiper
-                spaceBetween={0}
-                slidesPerView={1}
-                loop={true}
-                autoplay={{ delay: 3000 }}
-                modules={[Autoplay]}
-                className="w-full"
-              >
-                {[
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470795/partyworld/occasions/kwfpbfxi7jlefcemyurv.png",
-                  "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470796/partyworld/occasions/kes7xekdaweol98vdzkh.png"
-                ].map((src, idx) => (
-                  <SwiperSlide key={idx}>
-                    <img
-                      src={src}
-                      alt={`Promo Banner ${idx + 1}`}
-                      className="w-full object-cover"
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </section>
-      {/* ✅ Top Offers with responsive horizontal padding */}
-      <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
-        <TopOffersSlider
-          title="Top Picks On Tablets"
-          categoryIds={["68291152c9666ae87ae5d9f2"]}
-          viewAllUrl="samsung-phones"
-        />
-      </div>
-            {/* ✅ Full Width Banner Section */}
-            <section className="w-full bg-black text-white">
-              <div className="flex flex-col md:flex-row items-center justify-between max-w-[1600px] mx-auto">
-                {/* Image Section */}
-
-                  <img
-                    src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470944/partyworld/occasions/vifgyalvepowqaw1rtwy.png"
-                    alt="Apple Watch"
-                    className="w-full object-contain"
-                  />
-
-              </div>
-            </section>
-                  {/* ✅ Top Offers with responsive horizontal padding */}
-      <div className="px-1 sm:px-6 md:px-12 lg:px-20 xl:px-28">
-        <TopOffersSlider
-          title="Top Picks On Accessories"
-          categoryIds={["68290e6fc9666ae87ae5d936"]}
-          viewAllUrl="samsung-phones"
-        />
-      </div>
+      <Swiper
+        spaceBetween={12}
+        slidesPerView={2}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+          1280: { slidesPerView: 6 },
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[Autoplay]}
+      >
+        {newArrivals.map((productItem) => (
+          <SwiperSlide key={productItem._id} className="pb-2">
+            <ShoppingProductTile
+              product={productItem}
+              handleAddtoCart={() => handleAddtoCart(productItem._id, productItem.totalStock || 9999)}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
+  </div>
+
+<CategorySection groupName="Shop by Occasion" isSlider={true} />
+
+       <ThemeCategorySection title="SHOP BY THEME" limit={4} />
+
+       <div className="mt-16">
+    <div className=" mx-auto px-4">
+      <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+      NEW ARRIVALS
+      </h2>
+      <div className="w-[100px] h-[2px] bg-[#A3A3A399] mx-auto mb-6" />
+
+      <Swiper
+        spaceBetween={12}
+        slidesPerView={2}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+          1280: { slidesPerView: 6 },
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[Autoplay]}
+      >
+        {newArrivals2.map((productItem) => (
+          <SwiperSlide key={productItem._id} className="pb-2">
+            <ShoppingProductTile
+              product={productItem}
+              handleAddtoCart={() => handleAddtoCart(productItem._id, productItem.totalStock || 9999)}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </div>
+       <CategorySection groupName="Plan Your Birthday" isSlider={true} />
+ 
+       <div className="px-4 md:px-8 mt-10">
+   <h2 className="text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
+   Party PACKAGES
+   </h2>
+   <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
+ 
+   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+   {[
+   {
+     name: "The Value Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/children-celebrating-birthday-party-scaled-1.jpg",
+     link: "the-value-package-2",
+   },
+   {
+     name: "The Value Plus Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/children-with-party-horns-celebrating-birthday-scaled-1.jpg",
+     link: "the-value-plus-package-2",
+   },
+   {
+     name: "The Premium Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/group-happy-kids-with-colorful-candies-having-fun-birthday-party-isolated-white-scaled-1.jpg",
+     link: "the-premium-package",
+   },
+   {
+     name: "The Entertainment Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/children-smiling-happiness-friendship-togetherness-celebration-studio-portrait-scaled-1.jpg",
+     link: "the-entertainment-package",
+   },
+   {
+     name: "The Superior Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/children-holding-colorful-balloons-blowing-party-horn-during-birthday-scaled-1.jpg",
+     link: "the-superior-package",
+   },
+   {
+     name: "The Deluxe Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/madness-birthday-party-scaled-1.jpg",
+     link: "the-deluxe-package",
+   },
+   {
+     name: "The Ultimate Package",
+     image: "https://partyworld.ae/wp-content/uploads/2025/03/portrait-happy-friends-wearing-party-hat-standing-together-scaled-1.jpg",
+     link: "the-ultimate-package",
+   },
+ ].map((item, idx) => (
+   <a
+     key={idx}
+     href={`/shop/product/${item.link}`}
+     className="flex flex-col items-center justify-center"
+   >
+     <img
+       src={item.image}
+       alt={item.name}
+       className="w-full h-48 object-cover rounded-md mb-4"
+     />
+     <span
+       className="text-sm text-center"
+       style={{
+         color: "#463970",
+         fontSize: "15px",
+         fontWeight: 400,
+       }}
+     >
+       {item.name}
+     </span>
+   </a>
+ ))}
+ 
+   </div>
+ </div>
+ 
+ 
+   <div className="px-4 md:px-8 mt-10">
+   <h2 className="text-2xl font-medium text-center mb-2 pt-5 uppercase text-[#463970]">
+     Visit Our Stores
+   </h2>
+   <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
+ 
+   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+   {[
+   {
+    name: "AL BARSHA",
+    address: "Iridium building, Umm Suqeim Road, Barsha, Dubai",
+    color: "from-[#B7117A]",
+    buttonColor: "#B7117A",
+    mapSrc: "https://www.google.com/maps/embed?...",
+  },
+  {
+    name: "THE SPRINGS SOUK",
+    address: "The Springs Souk, Ground floor, Dubai",
+    color: "from-[#00B0BA]",
+    buttonColor: "#00B0BA",
+    mapSrc: "https://www.google.com/maps/embed?...",
+  },
+  {
+    name: "MOTORCITY",
+    address: "Foxhill 9 building, Ground floor, Motor City, Dubai",
+    color: "from-[#F18074]",
+    buttonColor: "#F18074",
+    mapSrc: "https://www.google.com/maps/embed?...",
+  },
+  {
+    name: "ARABIAN RANCHES",
+    address: "Arabian Ranches III Souk, Dubai",
+    color: "from-[#B7117A]",
+    buttonColor: "#B7117A",
+    mapSrc: "https://www.google.com/maps/embed?...",
+  },
+].map((store, idx) => (
+  <div
+  key={idx}
+  className="relative overflow-hidden rounded-xl shadow-md text-center text-[#2D2D2D]"
+  >
+     {/* Gradient bottom */}
+     <div
+       className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t ${store.color} to-transparent z-0`}
+     />
+       <div className="relative z-10 p-4 flex flex-col items-center">
+       {/* 🟣 Matching Color Tag */}
+       <div
+   className="text-white text-xs font-semibold tracking-widest uppercase h-10 w-44 flex items-center justify-center rounded-md mx-auto"
+   style={{ backgroundColor: store.buttonColor }}
+ >
+   {store.name}
+ </div>
+ 
+ 
+       <h3 className="text-center text-[14px] font-medium leading-snug mb-1 pt-5 max-w-[80%] mx-auto px-2">
+       {store.address}
+ </h3>
+       <div className="w-[100%] h-[1px] bg-black my-3" />
+ 
+       <iframe
+         src={store.mapSrc}
+         width="100%"
+         height="230"
+         style={{ border: 0 }}
+         allowFullScreen=""
+         loading="lazy"
+         referrerPolicy="no-referrer-when-downgrade"
+         title={store.name}
+         className="rounded-md"
+       ></iframe>
+     </div>
+   </div>
+ ))}
+ 
+   </div>
+ </div>
+ 
+ 
+     <div className="px-4 pt-10 md:px-8 py-10 bg-white text-center">
+       {/* Contact Info Row */}
+       <div className="flex flex-col pt-10 md:flex-row justify-center items-center gap-10 md:gap-20 mb-10">
+         {/* Phone */}
+         <div className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+           <PhoneCall size={28} className="text-[#463970]" />
+           <span>600572789</span>
+         </div>
+ 
+         {/* WhatsApp 1 */}
+         <div className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+           <FaWhatsapp size={28} className="text-[#25D366]" />
+           <span>0503735574</span>
+         </div>
+ 
+         {/* WhatsApp 2 */}
+         <div className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+           <FaWhatsapp size={28} className="bg-[#463970] text-white p-1 rounded" />
+           <span>0565577610</span>
+         </div>
+       </div>
+ 
+       {/* Contact Us Button */}
+       <button className="bg-[#463970] text-white px-6 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
+         Contact Us
+       </button>
+     </div>
+ 
+ 
+ </div>
+ 
   );
 }
 

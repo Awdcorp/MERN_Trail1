@@ -1,16 +1,18 @@
-// File: src/pages/shopping-view/CategoryListingPage.jsx
-
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import DemoProductTile from "@/components/shopping-view/DemoProductTile";
+import ProductFilter from "@/components/shopping-view/filter";
+import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { fetchProductDetails } from "@/store/shop/products-slice";
 import { useDispatch, useSelector } from "react-redux";
+
+import categoryBanners from "@/assets/categoryBanners";
 import { motion } from "framer-motion";
 import { getGuestId } from "@/lib/guest-id";
 
@@ -20,46 +22,44 @@ export default function CategoryListingPage() {
   const { productDetails } = useSelector((state) => state.shopProducts);
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
-  const { toast } = useToast();
-
+  const [filters, setFilters] = useState({});
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const [categoryProducts, setCategoryProducts] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
   const [skipCount, setSkipCount] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [isContentReady, setIsContentReady] = useState(false);
-
   const [sortBy, setSortBy] = useState("default");
+  const { toast } = useToast();
 
-  const categoryDescriptions = {
-    birthday: "Shop fun, colorful birthday decorations for all ages and themes.",
-    anniversary: "Celebrate milestones with elegant anniversary party supplies.",
-    wedding: "Explore premium wedding decor, accessories, and themes.",
-    "promate-accessories": "Promate tech accessories for mobile, laptop, and daily needs."
-  };
+  const filteredProducts = getFilteredCategoryProducts();
+  const showEmptyState = isContentReady && filteredProducts.length === 0;
 
-const categoryBanners = {
-  "samsung-phones": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "accessories": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747472347/partyworld/occasions/smrlhjhwj3ytf7pa3zj3.png",
-  "promate-accessories": "",
-  "powerbank": "",
-  "xiaomi-accessories": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "earphones": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "anker-accessories": "",
-  "xiaomi": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "oppo": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "samsung-accessories": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "huawei": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747471917/partyworld/occasions/lbyxpc356trmn12kv7wi.png",
-  "iphone": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470795/partyworld/occasions/kwfpbfxi7jlefcemyurv.png",
-  "samsung-tablets": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470794/partyworld/occasions/koeyo9d8hb85r9pfjpyg.png",
-  "tablets": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470795/partyworld/occasions/kwfpbfxi7jlefcemyurv.png",
-  "iphone-tablets": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470795/partyworld/occasions/kwfpbfxi7jlefcemyurv.png",
-  "apple-accessories": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470368/partyworld/occasions/jzspftl9rlbcsgyc3u5v.png ",
-  "samsung-watches": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470944/partyworld/occasions/vifgyalvepowqaw1rtwy.png",
-  "watches": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470944/partyworld/occasions/vifgyalvepowqaw1rtwy.png",
-  "apple-watches": "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470368/partyworld/occasions/jzspftl9rlbcsgyc3u5v.png",
-  default: "https://res.cloudinary.com/dyiupjfwp/image/upload/v1747472347/partyworld/occasions/smrlhjhwj3ytf7pa3zj3.png"
-};
+  const bannerImage =
+    categoryBanners[slug] ||
+    "https://res.cloudinary.com/dyiupjfwp/image/upload/v1744509081/partyworld/occasions/hhkw5aallqijfwycgj13.jpg";
 
+  function handleFilter(sectionId, option) {
+    if (sectionId === "clear") {
+      setFilters({});
+      sessionStorage.setItem("filters", JSON.stringify({}));
+      return;
+    }
+
+    let cpyFilters = { ...filters };
+    if (!cpyFilters[sectionId]) {
+      cpyFilters[sectionId] = [option];
+    } else {
+      const index = cpyFilters[sectionId].indexOf(option);
+      if (index === -1) cpyFilters[sectionId].push(option);
+      else cpyFilters[sectionId].splice(index, 1);
+    }
+
+    setFilters((prev) => {
+      sessionStorage.setItem("filters", JSON.stringify(cpyFilters));
+      return { ...cpyFilters };
+    });
+  }
 
   function handleGetProductDetails(productId) {
     dispatch(fetchProductDetails(productId));
@@ -72,24 +72,42 @@ const categoryBanners = {
     if (index > -1 && existing[index].quantity + 1 > totalStock) {
       toast({
         title: `Only ${existing[index].quantity} quantity can be added for this item`,
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
-
     const guestId = user?.id ? null : getGuestId();
+
     dispatch(
       addToCart({
         userId: user?.id || null,
         guestId,
         productId: productId,
-        quantity: 1
+        quantity: 1,
       })
     ).then((data) => {
       if (data?.payload?.success) {
         dispatch(fetchCartItems(user?.id || guestId));
-        toast({ title: "Product is added to cart" });
+        toast({
+          title: "Product is added to cart",
+        });
       }
+    });
+  }
+
+  function getFilteredCategoryProducts() {
+    if (Object.keys(filters).length === 0) return categoryProducts;
+
+    return categoryProducts.filter((product) => {
+      const productCategoryNames = product.categories.map((cat) => cat.name);
+      for (const [key, selectedValues] of Object.entries(filters)) {
+        if (selectedValues.length === 0) continue;
+        const hasMatch = selectedValues.some((val) =>
+          productCategoryNames.includes(val)
+        );
+        if (!hasMatch) return false;
+      }
+      return true;
     });
   }
 
@@ -121,6 +139,7 @@ const categoryBanners = {
   };
 
   useEffect(() => {
+    setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
     setSkipCount(0);
     setHasMore(true);
   }, [slug]);
@@ -133,104 +152,94 @@ const categoryBanners = {
     if (productDetails !== null) setOpenDetailsDialog(true);
   }, [productDetails]);
 
-  const showEmptyState = isContentReady && categoryProducts.length === 0;
-
-  const getDisplayPrice = (product) => {
-    const meta = product.meta || [];
-
-    const saleMeta = meta.find((m) => m.key?.toLowerCase() === "saleprice");
-    const priceMeta = meta.find((m) => m.key?.toLowerCase() === "price");
-
-    const raw = saleMeta?.value ?? priceMeta?.value ?? 0;
-
-    if (typeof raw === "string") {
-      const cleaned = raw.replace(/[^\d.]/g, "");
-      const final = parseFloat(cleaned) || 0;
-      return final;
-    }
-
-    return typeof raw === "number" ? raw : 0;
-  };
-
   return (
     <>
-      <div
-        className="w-full h-[200px] md:h-[280px] bg-cover bg-center mb-4"
-        style={{
-          backgroundImage: `url('${categoryBanners[slug] || categoryBanners.default}')`
-        }}
-      ></div>
+      {slug && (
+        <div className="w-full h-[200px] md:h-[280px] bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url("${bannerImage}")` }}>
+          <div className="flex flex-col items-center text-center">
+            <nav className="flex items-center space-x-1 text-sm text-muted-foreground">
+              <a href="/" className="text-[#46396F] hover:underline">Shop</a>
+              <span>/</span>
+              {(() => {
+                const parentMap = {
+                  "promate-accessories": "accessories",
+                  "apple-accessories": "accessories",
+                  "anker-accessories": "accessories",
+                  "samsung-accessories": "accessories",
+                  "xiaomi-accessories": "accessories",
+                  "powerbank": "accessories",
+                  "earphones": "accessories",
+                  "samsung-phones": "phone",
+                  "iphone": "phone",
+                  "xiaomi": "phone",
+                  "oppo": "phone",
+                  "samsung-tablets": "tablets",
+                  "iphone-tablets": "tablets",
+                  "tablets": "tablets",
+                  "watches": "watches",
+                  "apple-watches": "watches",
+                  "samsung-watches": "watches",
+                };
+                const parent = parentMap[slug];
+                return parent ? (
+                  <>
+                    <a href={`/shop/category/${parent}`} className="text-[#46396F] capitalize hover:underline">
+                      {parent.replace(/-/g, " ")}
+                    </a>
+                    <span>/</span>
+                  </>
+                ) : null;
+              })()}
+              <span className="text-[#46396F] capitalize font-medium">
+                {slug?.replace(/-/g, " ")}
+              </span>
+            </nav>
 
-      <div className="px-4 sm:px-6 md:px-10 lg:px-16 py-8">
-        <h1 className="text-2xl md:text-3xl font-semibold text-gray-700 capitalize mb-4">
-          {slug?.replace(/-/g, " ")}
-        </h1>
+            <h1 className="text-[#46396F] text-3xl md:text-4xl font-normal mt-2">
+              {slug.replace(/-/g, " ").toUpperCase()}
+            </h1>
+          </div>
+        </div>
+      )}
 
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
-          {/* ✅ Improved breadcrumb with parent category support */}
-          <nav className="flex items-center space-x-1 text-sm text-muted-foreground">
-            <Link to="/" className="text-gray-500 hover:underline">Shop</Link>
-            <span>/</span>
-
-            {/* Mapping child slugs to parent */}
-            {(() => {
-              const parentMap = {
-                "promate-accessories": "accessories",
-                "apple-accessories": "accessories",
-                "anker-accessories": "accessories",
-                "samsung-accessories": "accessories",
-                "xiaomi-accessories": "accessories",
-                "powerbank": "accessories",
-                "earphones": "accessories",
-
-                "samsung-phones": "phone",
-                "iphone": "phone",
-                "xiaomi": "phone",
-                "oppo": "phone",
-
-                "samsung-tablets": "tablets",
-                "iphone-tablets": "tablets",
-                "tablets": "tablets",
-
-                "watches": "watches",
-                "apple-watches": "watches",
-                "samsung-watches": "watches"
-              };
-
-              const parent = parentMap[slug];
-
-              return parent ? (
-                <>
-                  <Link
-                    to={`/shop/category/${parent}`}
-                    className="text-gray-500 capitalize hover:underline"
-                  >
-                    {parent.replace(/-/g, " ")}
-                  </Link>
-                  <span>/</span>
-                </>
-              ) : null;
-            })()}
-
-            <span className="text-[#54E060] capitalize font-medium">
-              {slug?.replace(/-/g, " ")}
-            </span>
-          </nav>
-
-
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className="border border-[#54E060] rounded-md px-3 py-1 text-sm text-gray-700 w-fit"
-          >
-            <option value="default">Sort By</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">Name: A–Z</option>
-          </select>
+      <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6 p-4 md:pt-12 md:p-6">
+        <div className="md:block w-full md:w-auto">
+          <div className="mb-4">
+            <button
+              className="px-4 py-2 bg-[#EB6123] text-white rounded font-semibold uppercase w-full md:pointer-events-none flex items-center justify-start gap-2"
+              onClick={() => setShowFilters((prev) => !prev)}
+            >
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 md:hidden ${showFilters ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+              <span>{showFilters ? "Hide Filters" : "Filters"}</span>
+            </button>
+          </div>
+          <div className={`${showFilters ? "block" : "hidden"} md:block`}>
+            <ProductFilter filters={filters} handleFilter={handleFilter} />
+          </div>
         </div>
 
-        <div className="w-full bg-background rounded-lg shadow-sm">
+        <div className="bg-background w-full rounded-lg shadow-sm">
+                    <div className="flex justify-end">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="border border-[#46396F] rounded-md px-3 py-1 text-sm text-gray-700 w-fit"
+            >
+              <option value="default">Sort By</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A–Z</option>
+            </select>
+          </div>
           <div className="p-3">
             {showEmptyState ? (
               <div className="text-center py-10 text-lg text-red-600 font-semibold">
@@ -245,20 +254,20 @@ const categoryBanners = {
                   transition={{ duration: 0.3 }}
                   className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3"
                 >
-                  {[...categoryProducts]
+                  {[...filteredProducts]
                     .sort((a, b) => {
-                      const priceA = getDisplayPrice(a);
-                      const priceB = getDisplayPrice(b);
+                      const priceA = a.salePrice > 0 ? a.salePrice : a.price;
+                      const priceB = b.salePrice > 0 ? b.salePrice : b.price;
                       if (sortBy === "price-asc") return priceA - priceB;
                       if (sortBy === "price-desc") return priceB - priceA;
                       if (sortBy === "name-asc") return a.title.localeCompare(b.title);
                       return 0;
                     })
                     .map((productItem) => (
-                      <DemoProductTile
+                      <ShoppingProductTile
                         key={productItem._id}
-                        product={productItem}
                         handleGetProductDetails={handleGetProductDetails}
+                        product={productItem}
                         handleAddtoCart={() =>
                           handleAddtoCart(productItem._id, productItem.totalStock || 9999)
                         }
@@ -269,10 +278,10 @@ const categoryBanners = {
             )}
           </div>
 
-          {isContentReady && categoryProducts.length > 0 && hasMore && (
+          {isContentReady && filteredProducts.length > 0 && hasMore && (
             <div className="text-center pt-8 pb-8">
               <Button
-                className="bg-[#54E060] text-white rounded-3xl px-6 py-2"
+                className="bg-[#463970] text-white rounded-3xl px-6 py-2"
                 onClick={() => setSkipCount((prev) => prev + 25)}
               >
                 Load More
@@ -286,7 +295,6 @@ const categoryBanners = {
           setOpen={setOpenDetailsDialog}
           productDetails={productDetails}
         />
-        <div className="px-4 py-8"></div>
       </div>
     </>
   );

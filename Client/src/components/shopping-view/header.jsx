@@ -1,52 +1,69 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, ShoppingCart, User, MapPin, Heart, ChevronDown, } from "lucide-react";
+import { Menu, X, Search, ShoppingCart, User, MapPin, Heart, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems } from "@/store/shop/cart-slice";
 import { getGuestId } from "@/lib/guest-id";
 import UserCartWrapper from "./cart-wrapper";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpg";
 import { createSelector } from "@reduxjs/toolkit";
-import { Sheet } from "@/components/ui/sheet"; // Make sure this import exists
-import { HEADER_MENU } from "@/config/headerMenu";
-import axios from "axios";
+import { Sheet } from "@/components/ui/sheet";
+import axios from "axios"; // ✅ Added for search
+
 // ✅ Memoized selector
 const selectCartItemCount = createSelector(
   (state) => Array.isArray(state.shopCart.cartItems) ? state.shopCart.cartItems : [],
   (items) => items.reduce((total, item) => total + item.quantity, 0)
 );
 
+const megaMenu = {
+  "Party Supplies": {
+    "Tableware": ["Cups", "Plates", "Napkins", "Cutlery", "Serveware", "Drinkware", "Food Picks", "Tablecovers"],
+    "Decorations": ["Banners", "Confetti", "Garlands", "Centrepieces", "Scene Setters", "Door Decorations", "Hanging Decorations"],
+    "Party Essentials": ["Wearables", "Cake / Cupcake Toppers", "Tattoos", "Yard Signs", "Horns And Blowers", "Pinatas", "Confetti Poppers", "Invitation Cards", "Candles"],
+    "Party Packages": ["The Value Package", "The Value Plus Package", "The Entertainment Package", "The Premium Package", "The Superior Package", "The Deluxe Package", "The Ultimate Package", "SEE ALL"],
+    "Party Favors And Gifts": ["Gifts", "Favor Bags", "Party Favors"],
+    "Art & Craft Stationary & Games": ["Arts & Crafts", "Stationary", "Games & Toys"],
+    "By Theme": ["All Themes"],
+    "By Occasions": ["All Occasions"],
+    "Age": ["Toddler", "Baby", "Child", "Teen", "Adult"],
+  },
+  Balloons: {
+    "Birthdays": ["1st Birthday Balloons", "Adult Birthday Balloons", "Kids Birthday Balloons", "Teens Birthday Balloons", "Father's Birthday Balloons", "Mom's Birthday Balloons", "All Birthdays"],
+    "Occasions": ["Birthday", "Anniversary", "Baby Shower", "Gender Reveal", "Bridal/Wedding", "Mother's Day", "Graduation", "Valentine's Day", "Ramadan/Eid", "UAE National Day", "Halloween", "New Year's", "Seasonal"],
+    "Balloon Bouquets": ["Age Foil Balloon Bouquets", "Birthday Foil Balloon Bouquets", "Custom Age Balloon Bouquets", "Latex Balloon Bouquets", "Chrome Balloon Bouquets", "Printed Balloon Bouquets", "Foil Balloon Bouquets", "All Balloon Bouquets"],
+    "Custom Text Balloons": ["Bubble Balloons With Mini", "Balloon Filling", "Bubble Balloons With Confetti Filling", "Colour Balloons With Custom Text", "All Balloons"],
+    "Balloon Types": ["Balloon Banners", "Number Balloons", "Letter Balloons", "Latex Balloons", "Plain Foil Balloons", "Chrome Latex Balloons", "Metallic Latex Balloons", "Printed Latex Balloons", "Foil Balloons", "Air Balloons", "Latex Balloon Packets", "All Types"],
+    Accessories: ["Balloon Tassels", "Weights", "Confettis", "Inflation Pumps", "Balloon Ribbons", "Balloon Stickers", "Balloon Cup & Sticks", "Double-Sided Stickers"],
+    "Balloon Decorations": ["Balloon Arches", "Personalised Backdrops", "Balloon Pillars", "Hollow Letters", "Bedroom Decorations", "Welcome Board Balloons", "Balloons Sculptures", "Balloons Garlands", "Customised Decorations", "All Decorations"],
+    "Shape & Size": ["Standard", "Supershape", "Jumbo", "Airwalker", "Orbz", "18 Inch", "24 Inch", "32 Inch", "38 Inch", "All Sizes"],
+  },
+  Costumes: {
+    "Costume By Category": ["Animals", "Professions", "Cartoons Characters", "Superheroes", "Historical", "Sports", "TV And Movies", "Book Characters", "Warriors", "Princes & Princesses", "Retro", "All Categories"],
+    "Costume Accessories": ["Armors & Weapons", "Bandanas", "Glasses/Eye Accessories", "Face Masks", "Fake Items", "Helmets", "Jewellery", "Nose & Ear Accessories", "Nails", "Tattoos", "Beards & Moustaches", "Wings", "All Accessories"],
+    Halloween: ["Devils", "Ghosts", "Skeletons", "Vampires", "Zombies", "Witches & Wizards", "Pumpkins", "All Halloween"],
+    "Costume By Age": ["Baby", "Toddler", "Child", "Adult", "All Ages"],
+    "Costume By Gender": ["Male", "Female", "Unisex", "All Gender"],
+  },
+};
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [openCartSheet, setOpenCartSheet] = useState(false);
-const [searchQuery, setSearchQuery] = useState("");
-const [searchResults, setSearchResults] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // ✅
+  const [searchResults, setSearchResults] = useState([]); // ✅
 
   const dispatch = useDispatch();
   const cartCount = useSelector(selectCartItemCount);
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
 
-useEffect(() => {
-  const delay = setTimeout(() => {
-    if (searchQuery.trim().length > 1) {
-      axios
-        .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${searchQuery}`)
-        .then((res) => {
-          if (res.data?.success) {
-            setSearchResults(res.data.data || []);
-          }
-        })
-        .catch(() => setSearchResults([]));
-    } else {
-      setSearchResults([]);
-    }
-  }, 300);
-
-  return () => clearTimeout(delay);
-}, [searchQuery]);
+  const navLinks = Object.keys(megaMenu).concat([
+    "Entertainment",
+    "Party Rentals",
+    "Customise Your Party",
+  ]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -58,18 +75,43 @@ useEffect(() => {
     dispatch(fetchCartItems(user?.id || guestId));
   }, []);
 
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      if (searchQuery.trim().length > 1) {
+        axios
+          .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${searchQuery}`)
+          .then((res) => {
+            if (res.data?.success) {
+              setSearchResults(res.data.data || []);
+            }
+          })
+          .catch(() => setSearchResults([]));
+      } else {
+        setSearchResults([]);
+      }
+    }, 300);
+    return () => clearTimeout(delay);
+  }, [searchQuery]);
+
   const formatSlug = (text) =>
     `/shop/category/${encodeURIComponent(text.toLowerCase().replace(/\s+/g, "-"))}`;
 
   return (
     <header className="w-full">
-      {/* Middle Section */}
-      <div className="bg-[#54E060] py-5 border-b border-[#C7C7C7] md:border-none">
+      <div className="bg-[#00B0BA] text-white text-xs md:text-sm py-3 text-center">
+        <div className="max-w-screen-xl mx-auto px-4 md:px-0">
+          <div className="flex flex-col md:flex-row font-normal md:justify-between items-center gap-2">
+            <span>10% OFF FIRST ORDER: USE CODE HELLOPW</span>
+            <span>FREE DELIVERIES IN UAE ON ORDERS OVER AED 200</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white py-4 border-b border-[#C7C7C7] md:border-none">
         <div className="px-4 md:px-0 max-w-screen-xl mx-auto">
-          {/* Mobile: Logo + Cart + Burger */}
           <div className="flex items-center justify-between md:hidden mb-3">
             <Link to="/" className="flex justify-center">
-              <img src={logo} alt="Alrahamania Logo" className="h-10" />
+              <img src={logo} alt="PartyWorld Logo" className="h-10" />
             </Link>
             <div className="flex items-center gap-4">
               <button onClick={() => setOpenCartSheet(true)} className="relative">
@@ -90,22 +132,19 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Desktop: Logo + Search + Icons */}
           <div className="hidden md:flex justify-between items-center gap-8 mb-1">
             <Link to="/" className="flex-shrink-0">
-              <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747518552/banners/iiaieras9cbw4t2ho8cz.png" alt="Alrahamania Logo" className="h-15 max-w-[250px] object-contain" />
+              <img src={logo} alt="PartyWorld Logo" className="h-15 max-w-[250px] object-contain" />
             </Link>
-
-            {/* ✅ Updated Search Bar: WIDER, centered */}
-            <div className="relative w-full max-w-3xl mx-auto">
+            <div className="relative w-full max-w-[500px]">
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full border border-gray-300 rounded-sm pl-4 pr-10 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#00B0BA] shadow-sm"
+                className="w-full border border-gray-300 rounded-full pl-4 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00B0BA]"
               />
-              <Search className="absolute right-3 top-3 h-4 w-4 text-[#463970]" />
+              <Search className="absolute right-3 top-2.5 h-4 w-4 text-[#463970]" />
               {searchResults.length > 0 && (
                 <ul className="absolute z-50 top-full left-0 w-full bg-white border rounded shadow text-sm mt-1 max-h-64 overflow-y-auto">
                   {searchResults.map((product) => (
@@ -125,7 +164,6 @@ useEffect(() => {
                 </ul>
               )}
             </div>
-
             <div className="flex gap-6 items-center">
               {user ? (
                 <Link to={user.role === "admin" ? "/admin/dashboard" : "/shop/account"}>
@@ -144,10 +182,11 @@ useEffect(() => {
                   </span>
                 )}
               </button>
+              <Heart className="h-5 w-5 text-[#463970]" />
+              <MapPin className="h-5 w-5 text-[#463970]" />
             </div>
           </div>
 
-          {/* Mobile: Search below */}
           <div className="relative w-full max-w-[600px] mx-auto md:hidden">
             <input
               type="text"
@@ -180,43 +219,58 @@ useEffect(() => {
       </div>
 
       {/* Bottom Navigation */}
-      {/* Bottom Navigation */}
-      <div className={`bg-[#EFF7F9] ${menuOpen ? 'block' : 'hidden'} md:block`}>
-        <div className="relative w-full text-black">
-          <div className="py-3">
+      <div className={`bg-[#00B0BA] ${menuOpen ? 'block' : 'hidden'} md:block`}>
+        <div className="relative w-full text-white"> {/* <-- FULL SCREEN WRAPPER */}
+          <div className="py-5">
+            {/* Desktop Nav */}
             <div className="hidden md:flex justify-center relative">
-              <nav className="flex justify-center gap-6 text-[13px] uppercase font-medium tracking-[0.08em] font-sans text-[#111827]">
-                {HEADER_MENU.map(({ label, children }) => (
+              <nav className="flex justify-center gap-6 font-medium text-[14px] tracking-wide uppercase w-full">
+                {navLinks.map((name) => (
                   <div
-                    key={label}
-                    className="relative"
-                    onMouseEnter={() => setActiveMenu(label)}
+                    key={name}
+                    className=""
+                    onMouseEnter={() => setActiveMenu(name)}
                     onMouseLeave={() => setActiveMenu(null)}
                   >
-                    {/* Menu Heading */}
-                    <Link
-                      to={children.length ? `/shop/category/${children[0].slug}` : "/shop/account"}
-                      className="hover:text-[#00B0BA] transition duration-150 flex items-center gap-1 uppercase tracking-wider"
-                    >
-                      {label}
-                      {children.length > 0 && <ChevronDown size={14} />}
-                    </Link>
+                    <div> {/* <-- Important: this wraps the nav item */}
+                      <Link
+                        to={formatSlug(name)}
+                        className="hover:text-white/80 transition duration-150 flex items-center gap-1"
+                      >
+                        {name}
+                        {megaMenu[name] && <ChevronDown size={14} />}
+                      </Link>
+                    </div>
+                    {/* Mega Menu */}
+                    {activeMenu === name && megaMenu[name] && (
+                      <div className="absolute left-0 right-0 top-full z-50">
+                        {/* 👇 Invisible buffer zone */}
+                        <div className="h-4 w-full" />
 
-                    {/* Submenu (with hover buffer zone) */}
-                    {activeMenu === label && children.length > 0 && (
-                      <div className="absolute top-full left-0 w-56 mt-2 z-50">
-                        {/* 👇 Invisible bridge into the margin area */}
-                        <div className="absolute -top-2 left-0 w-full h-2 bg-transparent" />
+                        <div className="bg-white shadow-xl max-w-screen-2xl mx-auto px-12 py-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+                          {/* Mega Menu Items */}
 
-                        <div className="bg-white shadow-md rounded-md py-2">
-                          {children.map(({ title, slug }) => (
-                            <Link
-                              key={slug}
-                              to={`/shop/category/${slug}`}
-                              className="block px-4 py-2 text-[13px] font-normal text-[#1f2937] hover:bg-[#f1f5f9] hover:text-[#00B0BA] transition whitespace-nowrap"
-                            >
-                              {title}
-                            </Link>
+                          {Object.entries(megaMenu[name]).map(([category, items]) => (
+                            <div key={category}>
+                              <Link
+                                to={`/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                                className="block text-[13px] font-bold text-[#463970] uppercase mb-2 tracking-wide hover:text-[#00B0BA] transition"
+                              >
+                                {category}
+                              </Link>
+                              <ul className="space-y-1 text-sm text-[#463970] normal-case">
+                                {items.map((item) => (
+                                  <li key={item}>
+                                    <Link
+                                      to={formatSlug(item)}
+                                      className="hover:text-[#00B0BA] transition"
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           ))}
                         </div>
                       </div>
@@ -225,41 +279,54 @@ useEffect(() => {
                   </div>
                 ))}
               </nav>
-
-
             </div>
           </div>
         </div>
-
-        {/* Mobile Nav */}
+        {/* Mobile Nav Dropdown */}
         {menuOpen && (
           <div className="md:hidden fixed top-[115px] left-0 w-full bg-white z-40 px-4 py-4 shadow-lg border-t border-white/40 overflow-y-auto max-h-[90vh]">
-            {HEADER_MENU.map(({ label, children }) => (
-              <div key={label} className="mb-2 border-b border-gray-200">
+            {navLinks.map((name) => (
+              <div key={name} className="mb-2 border-b border-gray-200">
                 <button
-                  onClick={() => setActiveMenu(activeMenu === label ? null : label)}
+                  onClick={() => setActiveMenu(activeMenu === name ? null : name)}
                   className="w-full text-sm text-left text-[#463970] font-medium uppercase tracking-wide px-4 py-3 bg-white hover:bg-gray-100 flex justify-between items-center"
                 >
-                  {label}
-                  {children.length > 0 && (
+                  {name}
+                  {megaMenu[name] && (
                     <ChevronDown
                       size={16}
-                      className={`transition-transform ${activeMenu === label ? "rotate-180" : ""}`}
+                      className={`transition-transform ${activeMenu === name ? "rotate-180" : ""
+                        }`}
                     />
                   )}
                 </button>
 
-                {activeMenu === label && children.length > 0 && (
+                {/* Submenu */}
+                {activeMenu === name && megaMenu[name] && (
                   <div className="bg-white px-4 py-3">
-                    {children.map(({ title, slug }) => (
-                      <Link
-                        key={slug}
-                        to={`/shop/category/${slug}`}
-                        className="block text-sm text-[#1f2937] mb-1 hover:text-[#00B0BA]"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {title}
-                      </Link>
+                    {Object.entries(megaMenu[name]).map(([category, items]) => (
+                      <div key={category} className="mb-3">
+                        <Link
+                          to={`/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                          className="block text-[13px] font-medium uppercase text-[#463970] mb-1 tracking-wide"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {category}
+                        </Link>
+                        <ul className="space-y-1 text-sm text-[#463970] ml-2">
+                          {items.map((item) => (
+                            <li key={item}>
+                              <Link
+                                to={formatSlug(item)}
+                                className="block font-normal hover:text-[#00B0BA] transition"
+                                onClick={() => setMenuOpen(false)}
+                              >
+                                {item}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
                   </div>
                 )}
@@ -267,7 +334,6 @@ useEffect(() => {
             ))}
           </div>
         )}
-
         <Sheet open={openCartSheet} onOpenChange={setOpenCartSheet}>
           <UserCartWrapper setOpenCartSheet={setOpenCartSheet} />
         </Sheet>
