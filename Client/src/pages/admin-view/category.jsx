@@ -41,8 +41,11 @@ export default function AdminCategories() {
     event.preventDefault();
     console.log("📝 Submitted Form Data:", formData);
     console.log("✏️ Current Edit ID:", editId);
+const data = {
+  ...formData,
+  parent: formData.parent === "" ? null : formData.parent, // ✅ Fix for ObjectId cast error
+};
 
-    const data = formData;
 
     if (editId) {
       dispatch(updateCategory({ id: editId, data }))

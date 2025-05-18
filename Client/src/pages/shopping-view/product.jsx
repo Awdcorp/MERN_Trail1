@@ -160,12 +160,12 @@ export default function ProductPage() {
                   {product.salePrice > 0 ? (
                     <>
                       <span className="line-through text-gray-400 mr-2">
-                        {product.price} AED
+                        د.إ {product.price} د.إ 
                       </span>
-                      <span className="text-[#a5b4fc]">{product.salePrice} AED</span>
+                      <span className="text-[#a5b4fc]">{product.salePrice} د.إ </span>
                     </>
                   ) : (
-                    <>{product.price}.00 AED</>
+                    <>{product.price}.00 د.إ </>
                   )}
                 </div>
 
@@ -247,7 +247,7 @@ export default function ProductPage() {
               )}
               {activeTab === "shipping" && (
                 <div className="text-gray-600 text-sm space-y-2">
-                  <p>✅ Free shipping on orders above 100 AED</p>
+                  <p>✅ Free shipping on orders above 100 د.إ </p>
                   <p>🚚 Delivery in 2–4 business days</p>
                   <p>🔁 Easy 7-day returns</p>
                 </div>

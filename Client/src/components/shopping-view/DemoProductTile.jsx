@@ -41,7 +41,7 @@ function DemoProductTile({ product, handleAddtoCart }) {
               product?.salePrice > 0 ? "line-through" : ""
             }`}
           >
-            {product?.price}.00 AED
+            {product?.price}.00 د.إ 
           </span>
           {product?.salePrice > 0 && (
             <span className="text-md font-semibold text-[#a5b4fc]">
@@ -63,7 +63,7 @@ function DemoProductTile({ product, handleAddtoCart }) {
         ) : (
           <Button
             onClick={() => handleAddtoCart(product?._id, product?.totalStock)}
-            className="bg-[#8f9df7] text-white w-full py-2 rounded-md font-medium"
+            className="bg-[#8f9df7] text-white w-full py-2 rounded-md font-mediums"
           >
             Add to Cart
           </Button>

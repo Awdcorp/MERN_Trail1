@@ -38,7 +38,7 @@ function ShoppingProductTile({ product, handleAddtoCart }) {
         ${product?.price}.00 AED
       </span>
       {product?.salePrice > 0 && (
-        <span className="text-lg font-semibold text-primary mt-1">${product?.salePrice}.00 AED</span>
+        <span className="text-lg font-semibold text-primary mt-1">${product?.salePrice}.00 د.إ </span>
       )}
     </div>
   </CardContent>

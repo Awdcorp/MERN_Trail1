@@ -57,12 +57,6 @@ const adminSidebarMenuItems = [
     path: "/admin/users",
     icon: <Users />,
   },
-  {
-    id: "banners",
-    label: "Banners",
-    path: "/admin/banners",
-    icon: <Images />,
-  },
 ];
 
 function MenuItems({ setOpen }) {
@@ -161,7 +155,7 @@ function AdminSideBar({ open, setOpen }) {
   // ✅ Logout logic
   const handleLogout = () => {
     dispatch(logoutUser());
-    navigate("/login");
+    navigate("/auth/login");
   };
 
   return (
