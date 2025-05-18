@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DemoProductTile from "@/components/shopping-view/demoProductTile";
+import DemoProductTile from "@/components/shopping-view/DemoProductTile";
 
 const PROMATE_PRODUCT_IDS = [
   "68233059caeba90f1f3477d6",
