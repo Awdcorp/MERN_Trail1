@@ -69,7 +69,7 @@ useEffect(() => {
           {/* Mobile: Logo + Cart + Burger */}
           <div className="flex items-center justify-between md:hidden mb-3">
             <Link to="/" className="flex justify-center">
-              <img src={logo} alt="PartyWorld Logo" className="h-10" />
+              <img src={logo} alt="Alrahamania Logo" className="h-10" />
             </Link>
             <div className="flex items-center gap-4">
               <button onClick={() => setOpenCartSheet(true)} className="relative">
@@ -93,7 +93,7 @@ useEffect(() => {
           {/* Desktop: Logo + Search + Icons */}
           <div className="hidden md:flex justify-between items-center gap-8 mb-1">
             <Link to="/" className="flex-shrink-0">
-              <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747518552/banners/iiaieras9cbw4t2ho8cz.png" alt="PartyWorld Logo" className="h-15 max-w-[250px] object-contain" />
+              <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747518552/banners/iiaieras9cbw4t2ho8cz.png" alt="Alrahamania Logo" className="h-15 max-w-[250px] object-contain" />
             </Link>
 
             {/* ✅ Updated Search Bar: WIDER, centered */}
