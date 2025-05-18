@@ -40,7 +40,7 @@ function writeLog(message) {
 
     try {
       const result = await cloudinary.uploader.upload(filePath, {
-        folder: "banners",
+        folder: "partyworld/products",
       });
 
       const logEntry = `✅ Uploaded: ${file} | ➡️ ${result.secure_url}`;

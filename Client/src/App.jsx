@@ -11,6 +11,7 @@ import AdminFeatures from "./pages/admin-view/features";
 import AdminCategories from "./pages/admin-view/category";
 import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
+import AdminSEOSettingsPage from "./pages/admin-view/settings";
 import BannerControlPage from "./pages/admin-view/banner-control";
 import ShoppingLayout from "./components/shopping-view/layout";
 import NotFound from "./pages/not-found";
@@ -95,6 +96,7 @@ function App() {
           <Route path="media" element={<MediaDashboard />} />
           <Route path="features" element={<AdminFeatures />} />
           <Route path="users" element={<AdminUsers />} />
+          <Route path="settings" element={<AdminSEOSettingsPage />} />
           <Route path="banners" element={<BannerControlPage />} />
         </Route>
 
