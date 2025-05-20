@@ -5,6 +5,7 @@ import {
   ShoppingBasket,
   Images,
   Users,
+  Home,
   Settings,
   LogOut, // ✅ NEW: Import logout icon
 } from "lucide-react";
@@ -63,6 +64,12 @@ const adminSidebarMenuItems = [
     label: "User",
     path: "/admin/users",
     icon: <Users />,
+  },
+  {
+    id: "homepage",
+    label: "Homepage",
+    path: "/admin/homepage",
+    icon: <Home />,
   },
 ];
 

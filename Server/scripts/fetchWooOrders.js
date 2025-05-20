@@ -15,21 +15,35 @@ if (!WOO_API_KEY || !WOO_API_SECRET || !MONGO_URL) {
 }
 
 async function fetchWooOrders() {
-  try {
-    const res = await axios.get(WOO_API_BASE, {
-      auth: {
-        username: WOO_API_KEY,
-        password: WOO_API_SECRET,
-      },
-      params: {
-        per_page: 50,
-        orderby: "date",
-        order: "desc",
-      },
-    });
+  const allOrders = [];
+  let page = 1;
+  let totalPages = 1;
 
-    console.log("📦 Sample Woo Order:", res.data[0]);
-    return res.data;
+  try {
+    do {
+      const res = await axios.get(WOO_API_BASE, {
+        auth: {
+          username: WOO_API_KEY,
+          password: WOO_API_SECRET,
+        },
+        params: {
+          per_page: 100,
+          page,
+          orderby: "date",
+          order: "desc",
+        },
+      });
+
+      if (res.headers["x-wp-totalpages"]) {
+        totalPages = parseInt(res.headers["x-wp-totalpages"], 10);
+      }
+
+      console.log(`📦 Page ${page}/${totalPages} — Orders fetched: ${res.data.length}`);
+      allOrders.push(...res.data);
+      page++;
+    } while (page <= totalPages);
+
+    return allOrders;
   } catch (err) {
     console.error("❌ Failed to fetch WooCommerce orders:");
     console.error(err.response?.data || err.message);
@@ -45,39 +59,48 @@ async function importWooOrders() {
     const wooOrders = await fetchWooOrders();
 
     for (const woo of wooOrders) {
-      const exists = await Order.findOne({ wc_order_id: woo.id });
-      if (exists) {
-        console.log(`🔁 Skipping existing order: ${woo.id}`);
-        continue;
-      }
+      const existingOrder = await Order.findOne({ wc_order_id: woo.id });
 
-      const newOrder = new Order({
-        wc_order_id: woo.id,
+      const orderData = {
         customer_name: `${woo.billing.first_name} ${woo.billing.last_name}`.trim(),
+        userId: null,
+        guestId: null,
+        cartId: null,
+        cartItems: woo.line_items.map((item) => ({
+          productId: item.product_id?.toString(),
+          title: item.name,
+          image: item.image?.src || "",
+          price: item.total,
+          quantity: item.quantity,
+        })),
+        addressInfo: {
+          addressId: null,
+          address: woo.billing.address_1,
+          city: woo.billing.city,
+          pincode: woo.billing.postcode,
+          phone: woo.billing.phone,
+          notes: woo.customer_note,
+        },
         order_status: woo.status,
         paymentMethod: woo.payment_method_title,
         paymentStatus: woo.status === "completed" ? "paid" : "pending",
         totalAmount: parseFloat(woo.total),
         orderDate: new Date(woo.date_created),
-        addressInfo: {
-          address: woo.billing.address_1,
-          city: woo.billing.city,
-          phone: woo.billing.phone,
-          notes: woo.customer_note,
-        },
-        cartItems: woo.line_items.map((item) => ({
-          productId: item.product_id.toString(),
-          title: item.name,
-          price: item.total,
-          quantity: item.quantity,
-        })),
-      });
+        orderUpdateDate: new Date(woo.date_modified),
+        paymentId: woo.payment_id || null,
+        payerId: woo.payer_id || null,
+      };
 
-      await newOrder.save();
-      console.log(`✅ Imported order #${woo.id} (${newOrder.customer_name})`);
+      if (existingOrder) {
+        await Order.updateOne({ wc_order_id: woo.id }, orderData);
+        console.log(`🔄 Updated existing order: ${woo.id}`);
+      } else {
+        await new Order({ wc_order_id: woo.id, ...orderData }).save();
+        console.log(`✅ Imported new order: ${woo.id}`);
+      }
     }
 
-    console.log("🎉 All new WooCommerce orders imported successfully!");
+    console.log("🎉 All WooCommerce orders processed successfully!");
     process.exit(0);
   } catch (err) {
     console.error("❌ Error in importWooOrders():", err);

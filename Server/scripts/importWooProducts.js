@@ -39,6 +39,18 @@ async function fetchAllWooProducts() {
   return allProducts;
 }
 
+async function fetchVariations(productId) {
+  try {
+    const res = await axios.get(`${WOO_API_URL}/${productId}/variations`, {
+      auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
+    });
+    return res.data;
+  } catch (err) {
+    console.warn(`⚠️ Failed to fetch variations for product ${productId}`);
+    return [];
+  }
+}
+
 async function uploadImageToCloudinary(originalUrl) {
   try {
     const url = originalUrl.includes("i0.wp.com")
@@ -95,7 +107,7 @@ async function importProducts() {
   await mongoose.connect(MONGO_URI);
   console.log("✅ Connected to MongoDB");
 
-  const wpProducts = await fetchAllWooProducts(); // ⬅️ Updated line
+  const wpProducts = await fetchAllWooProducts();
   const wpAllCategories = (await axios.get("https://partyworld.ae/wp-json/wc/v3/products/categories", {
     auth: { username: WOO_API_KEY, password: WOO_API_SECRET },
   })).data;
@@ -111,14 +123,30 @@ async function importProducts() {
       chain.forEach((cat) => categoryIds.add(cat._id.toString()));
     }
 
-const uploadedImages = [];
-for (const img of wp.images || []) {
-  const url = await uploadImageToCloudinary(img.src);
-  if (url) uploadedImages.push(url);
-}
-
+    const uploadedImages = [];
+    for (const img of wp.images || []) {
+      const url = await uploadImageToCloudinary(img.src);
+      if (url) uploadedImages.push(url);
+    }
 
     const metaMap = Object.fromEntries(wp.meta_data.map((m) => [m.key, m.value]));
+
+    // 🔄 Fetch and map product variants (if variable)
+    let variants = [];
+    if (wp.type === "variable") {
+      const wooVariations = await fetchVariations(wp.id);
+      for (const v of wooVariations) {
+        const label = v.attributes.map(attr =>
+          `${attr.name}: ${attr.option}`
+        ).join(", ");
+
+        variants.push({
+          label,
+          price: parseFloat(v.sale_price || v.regular_price || "0"),
+          stock: v.manage_stock ? v.stock_quantity || 0 : 9999,
+        });
+      }
+    }
 
     const productData = {
       externalId: wp.id,
@@ -140,9 +168,8 @@ for (const img of wp.images || []) {
       salePrice: parseFloat(wp.sale_price || "0"),
       totalStock: wp.manage_stock ? wp.stock_quantity || 0 : 9999,
 
-images: uploadedImages,
-
-      variants: [],
+      images: uploadedImages,
+      variants,
 
       attributes: wp.attributes?.map(attr => ({ name: attr.name, options: attr.options })) || [],
       upsellProductIds: wp.upsell_ids || [],
@@ -166,7 +193,7 @@ images: uploadedImages,
     console.log(`✅ Imported: ${updatedOrInserted.title}`);
   }
 
-  console.log("🎉 Import complete.");
+  console.log("🎉 Product import complete.");
   process.exit(0);
 }
 

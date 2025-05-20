@@ -23,6 +23,19 @@ export default function AdminProductEdit() {
   const [allCategories, setAllCategories] = useState([]);
   const [editSEO, setEditSEO] = useState(false);
 
+  // 🧠 Build full label: "Parent > Child > Subchild"
+  const buildCategoryPath = (cat, categoryMap) => {
+    const names = [cat.name];
+    let current = cat;
+    while (current.parent) {
+      const parent = categoryMap[current.parent];
+      if (!parent) break;
+      names.unshift(parent.name);
+      current = parent;
+    }
+    return names.join(" > ");
+  };
+
   useEffect(() => {
     if (isCreateMode) {
       setFormData({
@@ -66,21 +79,17 @@ export default function AdminProductEdit() {
     }
 
     axios.get(`${import.meta.env.VITE_API_URL}/api/categories`).then((res) => {
-      const flatList = flattenCategories(res.data);
-      setAllCategories(flatList);
+      const flat = res.data;
+      const categoryMap = Object.fromEntries(flat.map(c => [c._id, c]));
+
+      const listWithPathLabels = flat.map(cat => ({
+        label: buildCategoryPath(cat, categoryMap),
+        value: cat._id,
+      }));
+
+      setAllCategories(listWithPathLabels);
     });
   }, [id]);
-
-  const flattenCategories = (tree) => {
-    let result = [];
-    for (const cat of tree) {
-      result.push({ label: cat.name, value: cat._id });
-      if (cat.children?.length) {
-        result = result.concat(flattenCategories(cat.children));
-      }
-    }
-    return result;
-  };
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -96,31 +105,36 @@ export default function AdminProductEdit() {
     }));
   };
 
-  const FieldLabel = ({ children }) => <label className="block text-sm font-medium text-gray-700 mb-1">{children}</label>;
+  const FieldLabel = ({ children }) => (
+    <label className="block text-sm font-medium text-gray-700 mb-1">{children}</label>
+  );
 
   const handleSubmit = async () => {
     try {
       const endpoint = isCreateMode
-      ? `${import.meta.env.VITE_API_URL}/api/admin/products/add`
-      : `${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`;    
+        ? `${import.meta.env.VITE_API_URL}/api/admin/products/add`
+        : `${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`;
       const method = isCreateMode ? axios.post : axios.put;
-
-      console.log("✅ Final Payload:", formData);
 
       const res = await method(endpoint, formData);
       if (res.data.success) {
-        toast({ title: isCreateMode ? "✅ Product created successfully" : "✅ Product updated successfully", variant: "success" });
+        toast({
+          title: isCreateMode ? "✅ Product created successfully" : "✅ Product updated successfully",
+          variant: "success",
+        });
         navigate("/admin/products");
       }
     } catch (err) {
-      console.error("❌ Failed", err);
-      toast({ title: `❌ Failed to ${isCreateMode ? "create" : "update"} product`, variant: "destructive" });
+      toast({
+        title: `❌ Failed to ${isCreateMode ? "create" : "update"} product`,
+        variant: "destructive",
+      });
     }
   };
 
   if (!formData) {
     return <div className="p-6 text-gray-500 animate-pulse">Loading product form...</div>;
-  }  
+  }
 
   return (
     <div className="p-6 space-y-6">
@@ -137,7 +151,7 @@ export default function AdminProductEdit() {
           </div>
           <div>
             <FieldLabel>Description</FieldLabel>
-            <ReactQuill theme="snow" value={formData.description || ""} onChange={(value) => handleChange("description", value)} className="bg-white" />
+            <ReactQuill theme="snow" value={formData.description || ""} onChange={value => handleChange("description", value)} className="bg-white" />
           </div>
           <div>
             <FieldLabel>Short Description</FieldLabel>
@@ -172,10 +186,21 @@ export default function AdminProductEdit() {
             <FieldLabel>Brand</FieldLabel>
             <Input value={formData.brand || ""} onChange={e => handleChange("brand", e.target.value)} />
           </div>
-          <MultiSelect options={allCategories} selected={formData.categories || []} label="Categories" onChange={(value) => handleChange("categories", value)} />
+
+          {/* ✅ Now shows full path like "OCCASION > Birthday" */}
+          <MultiSelect
+            options={allCategories}
+            selected={formData.categories || []}
+            label="Categories"
+            onChange={(value) => handleChange("categories", value)}
+          />
+
           <div>
             <FieldLabel>Tags (comma separated)</FieldLabel>
-            <Textarea value={formData.tags?.join(", ") || ""} onChange={e => handleChange("tags", e.target.value.split(",").map(tag => tag.trim()).filter(Boolean))} />
+            <Textarea
+              value={formData.tags?.join(", ") || ""}
+              onChange={e => handleChange("tags", e.target.value.split(",").map(tag => tag.trim()).filter(Boolean))}
+            />
           </div>
 
           {/* 🔍 SEO Section */}
@@ -186,9 +211,7 @@ export default function AdminProductEdit() {
                 <Pencil className="w-4 h-4 mr-1" /> Edit
               </button>
             </div>
-            <div className="text-sm text-muted-foreground">
-              Preview:
-            </div>
+            <div className="text-sm text-muted-foreground">Preview:</div>
             <div className="mt-1 text-sm">
               <p className="text-blue-600 underline">https://yourdomain.com/products/{formData.slug}</p>
               <p className="font-semibold">{formData.seo.metaTitle}</p>
