@@ -2,42 +2,59 @@ import { useState, useRef, useEffect } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import axios from "axios";
-import { GripVertical } from 'lucide-react';
+import { GripVertical } from "lucide-react";
+
+import LiveSectionRenderer from "@/components/admin-view/LiveSectionRenderer";
+import AddSectionTile from "@/components/admin-view/add-section-tile";
+import SectionSettingsPanel from "@/components/admin-view/SectionSettingsPanel";
 
 const ItemTypes = { BLOCK: "BLOCK" };
-const paletteBlocks = [
-  { id: "hero", label: "Hero Banner", type: "slider" },
-  { id: "features", label: "Features Grid", type: "category-grid" },
-  { id: "testimonial", label: "Testimonials", type: "testimonial" },
-  { id: "cta", label: "Call to Action", type: "cta" },
+
+const paletteTypes = [
+  "slider",
+  "product-slider",
+  "category-grid",
+  "theme-grid",
+  "party-packages",
+  "store-locations",
+  "contact-info",
 ];
 
-const BlockPreview = ({ label }) => (
-  <div className="border border-gray-300 bg-white rounded p-4 text-center shadow-sm text-sm">
-    {label}
-  </div>
-);
+const defaultDataMap = {
+  "slider": {},
+  "product-slider": { title: "New Arrivals", limit: 8 },
+  "category-grid": { title: "Shop by Category", categories: [] },
+  "theme-grid": { title: "Themes", themes: [] },
+  "party-packages": { packages: [] },
+  "store-locations": { stores: [] },
+  "contact-info": {
+    phones: [],
+    whatsapp: [],
+    buttonText: "",
+    buttonLink: ""
+  }
+};
 
 const DraggablePaletteItem = ({ block }) => {
   const [{ isDragging }, dragRef] = useDrag(() => ({
     type: ItemTypes.BLOCK,
-    item: () => ({ ...block, fromPalette: true }),  // [FIX] Always return a fresh item clone so block.fromPalette isn't mutated
+    item: () => ({ ...block, fromPalette: true }),
     collect: (monitor) => ({ isDragging: monitor.isDragging() }),
   }));
 
   return (
     <div
       ref={dragRef}
-      className={`cursor-grab transition hover:bg-indigo-50 bg-white border border-gray-200 p-2 rounded shadow-sm text-xs text-center flex items-center justify-center ${
+      className={`cursor-grab bg-white border p-3 rounded shadow text-xs text-center ${
         isDragging ? "opacity-50" : "opacity-100"
       }`}
     >
-      <span className="select-none text-indigo-700 font-medium">{block.label}</span>
+      <AddSectionTile type={block.type} />
     </div>
   );
 };
 
-const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt }) => {
+const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt, onEdit }) => {
   const ref = useRef(null);
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: ItemTypes.BLOCK,
@@ -55,8 +72,11 @@ const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt })
       const hoverMiddleY = (bottom - top) / 2;
       const { y } = monitor.getClientOffset() || {};
       const hoverClientY = y - top;
-      if ((dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
-          (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)) return;
+      if (
+        (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
+        (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
+      )
+        return;
       moveBlock(dragIndex, hoverIndex);
       item.index = hoverIndex;
     },
@@ -68,6 +88,9 @@ const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt })
     collect: (monitor) => ({ isDragging: monitor.isDragging() }),
   });
   drag(drop(ref));
+
+  console.log("Rendering block:", block);
+
   return (
     <div
       ref={ref}
@@ -78,18 +101,20 @@ const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt })
       <GripVertical className="w-5 h-5 mr-3 text-gray-400" />
       <div className="flex-1">
         <div className="flex justify-between items-center mb-2">
-          <span className="font-semibold text-sm select-none text-gray-800">{block.label}</span>
-          <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">
-            🗑️
-          </button>
+          <span className="font-semibold text-sm select-none text-gray-800">{block.type}</span>
+          <div className="space-x-2">
+            <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
+            <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
+          </div>
         </div>
-        <BlockPreview label={block.label} />
+        <LiveSectionRenderer type={block.type} data={block.data} />
       </div>
     </div>
   );
 };
 
-const DropZone = ({ canvasBlocks, onDropAt, onDelete, moveBlock }) => {
+
+const DropZone = ({ canvasBlocks, onDropAt, onDelete, moveBlock, onEdit }) => {
   const ref = useRef(null);
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: ItemTypes.BLOCK,
@@ -120,7 +145,7 @@ const DropZone = ({ canvasBlocks, onDropAt, onDelete, moveBlock }) => {
       className={`relative z-10 flex-1 p-6 space-y-4 overflow-auto border-2 border-dashed rounded transition-colors ${
         isOver && canDrop ? "border-indigo-600 bg-indigo-50" : "border-gray-300 bg-gray-100"
       }`}
-      style={{ minHeight: '80vh' }}
+      style={{ minHeight: "80vh" }}
     >
       {canvasBlocks.length === 0 ? (
         <p className="text-gray-500 text-sm text-center py-12 select-none">
@@ -135,6 +160,7 @@ const DropZone = ({ canvasBlocks, onDropAt, onDelete, moveBlock }) => {
             moveBlock={moveBlock}
             onDelete={onDelete}
             onDropAt={onDropAt}
+            onEdit={onEdit}
           />
         ))
       )}
@@ -145,9 +171,15 @@ const DropZone = ({ canvasBlocks, onDropAt, onDelete, moveBlock }) => {
 export default function EditorPlayground() {
   const [canvasBlocks, setCanvasBlocks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [editingBlock, setEditingBlock] = useState(null);
 
   const handleDropAt = (block, atIndex) => {
-    const newBlock = { ...block, key: Date.now() + Math.random(), data: block.data || {}, fromPalette: false };
+    const newBlock = {
+      ...block,
+      key: Date.now() + Math.random(),
+      data: defaultDataMap[block.type] || {},
+      fromPalette: false
+    };
     setCanvasBlocks((prev) => {
       const updated = [...prev];
       updated.splice(atIndex, 0, newBlock);
@@ -155,26 +187,39 @@ export default function EditorPlayground() {
     });
   };
 
+  const handleEditBlock = (blockKey) => {
+    const target = canvasBlocks.find((b) => b.key === blockKey);
+    if (target) setEditingBlock(target);
+  };
+
+  const handleSaveBlock = (blockKey, newData) => {
+    setCanvasBlocks((prev) =>
+      prev.map((b) => (b.key === blockKey ? { ...b, data: newData } : b))
+    );
+    setEditingBlock(null);
+  };
+
   const handleDelete = (keyToRemove) => setCanvasBlocks((prev) => prev.filter((b) => b.key !== keyToRemove));
 
-  const moveBlock = (from, to) => setCanvasBlocks((prev) => {
-    const updated = [...prev];
-    const [moved] = updated.splice(from, 1);
-    updated.splice(to, 0, moved);
-    return updated;
-  });
+  const moveBlock = (from, to) =>
+    setCanvasBlocks((prev) => {
+      const updated = [...prev];
+      const [moved] = updated.splice(from, 1);
+      updated.splice(to, 0, moved);
+      return updated;
+    });
 
   const fetchLayout = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/homepage-layout`);
-      const loaded = res.data?.map((section, idx) => ({
-        id: `${section.type}-${idx}`,
-        label: paletteBlocks.find((p) => p.type === section.type)?.label || section.type,
-        type: section.type,
-        data: section.data || {},
-        key: Date.now() + idx,
-        fromPalette: false,
-      })) || [];
+      const loaded =
+        res.data?.map((section, idx) => ({
+          id: `${section.type}-${idx}`,
+          type: section.type,
+          data: section.data || {},
+          key: Date.now() + idx,
+          fromPalette: false,
+        })) || [];
       setCanvasBlocks(loaded);
     } catch (err) {
       console.error(err);
@@ -186,7 +231,7 @@ export default function EditorPlayground() {
   const saveLayout = async () => {
     const payload = canvasBlocks.map((b) => ({ type: b.type, data: b.data || {} }));
     await axios.put(`${import.meta.env.VITE_API_URL}/api/admin/homepage-layout`, { sections: payload });
-    alert("Layout saved! 足");
+    alert("Layout saved! ✅");
   };
 
   useEffect(fetchLayout, []);
@@ -194,20 +239,29 @@ export default function EditorPlayground() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="flex min-h-screen">
-        <aside className="w-72 border-r bg-white p-4 flex flex-col sticky top-0 h-screen overflow-auto">
-          <div className="space-y-4">
-            <h2 className="font-semibold text-sm text-gray-700">Blocks</h2>
-            {paletteBlocks.map((block) => (
-              <DraggablePaletteItem key={block.id} block={block} />
-            ))}
-          </div>
-          <button
-            onClick={saveLayout}
-            className="mt-auto bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition"
-          >
-            Save Layout
-          </button>
-        </aside>
+        <aside className="w-72 h-screen bg-white flex flex-col border-r sticky top-0">
+  {/* Scrollable block list */}
+  <div className="flex-1 overflow-y-auto p-4">
+    <h2 className="font-semibold text-sm text-gray-700 mb-4">Blocks</h2>
+    <div className="space-y-4">
+      {paletteTypes.map((type) => (
+        <DraggablePaletteItem key={type} block={{ type }} />
+      ))}
+    </div>
+  </div>
+
+  {/* Sticky footer */}
+  <div className="p-4 border-t bg-white">
+    <button
+      onClick={saveLayout}
+      className="w-full bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition"
+    >
+      Save Layout
+    </button>
+  </div>
+</aside>
+
+
         <main className="flex-1 overflow-auto bg-gray-50">
           {loading ? (
             <p className="text-gray-500 text-sm text-center py-12">Loading...</p>
@@ -217,9 +271,16 @@ export default function EditorPlayground() {
               onDropAt={handleDropAt}
               onDelete={handleDelete}
               moveBlock={moveBlock}
+              onEdit={handleEditBlock}
             />
           )}
         </main>
+
+        <SectionSettingsPanel
+          block={editingBlock}
+          onSave={handleSaveBlock}
+          onCancel={() => setEditingBlock(null)}
+        />
       </div>
     </DndProvider>
   );
