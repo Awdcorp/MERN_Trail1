@@ -1,5 +1,3 @@
-// File: src/components/ui/multiselect.jsx
-
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
@@ -59,7 +57,8 @@ export function MultiSelect({ label = "", options = [], selected = [], onChange 
                 checked={internalSelected.includes(opt.value)}
                 onChange={() => toggleOption(opt.value)}
               />
-              {opt.label}
+              {/* ✅ preserves indentation from "— —" */}
+              <span style={{ whiteSpace: "pre" }}>{opt.label}</span>
             </label>
           ))}
         </div>

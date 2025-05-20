@@ -24,72 +24,91 @@ export default function AdminProductEdit() {
   const [editSEO, setEditSEO] = useState(false);
 
   // 🧠 Build full label: "Parent > Child > Subchild"
-  const buildCategoryPath = (cat, categoryMap) => {
-    const names = [cat.name];
-    let current = cat;
-    while (current.parent) {
-      const parent = categoryMap[current.parent];
-      if (!parent) break;
-      names.unshift(parent.name);
-      current = parent;
-    }
-    return names.join(" > ");
-  };
+const buildCategoryPath = (cat, categoryMap) => {
+  const names = [cat.name];
+  let current = cat;
+  while (current.parent) {
+    const parent = categoryMap[String(current.parent)];
+    if (!parent) break;
+    names.unshift(parent.name);
+    current = parent;
+  }
+  return "— ".repeat(names.length - 1) + names[names.length - 1];
 
-  useEffect(() => {
-    if (isCreateMode) {
-      setFormData({
-        title: "",
-        slug: "",
-        description: "",
-        shortDescription: "",
-        sku: "",
-        price: 0,
-        salePrice: 0,
-        totalStock: 0,
-        weight: 0,
-        brand: "",
-        tags: [],
-        images: [],
-        categories: [],
-        relatedProductIds: [],
-        upsellProductIds: [],
-        seo: { metaTitle: "", metaDescription: "", focusKeyword: "" },
-        isActive: true,
-        isFeatured: false,
-      });
-    } else {
-      axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
-        .then(res => {
-          if (res.data.success) {
-            const product = res.data.data;
-            const normalized = {
-              ...product,
-              categories: (product.categories || []).map(c => typeof c === "object" ? c._id : c),
-              tags: product.tags || [],
-              seo: product.seo || { metaTitle: "", metaDescription: "", focusKeyword: "" },
-              variants: product.variants || [],
-              attributes: product.attributes || [],
-              upsellProductIds: product.upsellProductIds || [],
-              relatedProductIds: product.relatedProductIds || [],
-            };
-            setFormData(normalized);
-          }
-        });
-    }
+};
 
-    axios.get(`${import.meta.env.VITE_API_URL}/api/categories`).then((res) => {
-      const flat = res.data;
-      const categoryMap = Object.fromEntries(flat.map(c => [c._id, c]));
-
-      const listWithPathLabels = flat.map(cat => ({
-        label: buildCategoryPath(cat, categoryMap),
-        value: cat._id,
-      }));
-
-      setAllCategories(listWithPathLabels);
+useEffect(() => {
+  if (isCreateMode) {
+    setFormData({
+      title: "",
+      slug: "",
+      description: "",
+      shortDescription: "",
+      sku: "",
+      price: 0,
+      salePrice: 0,
+      totalStock: 0,
+      weight: 0,
+      brand: "",
+      tags: [],
+      images: [],
+      categories: [],
+      relatedProductIds: [],
+      upsellProductIds: [],
+      seo: { metaTitle: "", metaDescription: "", focusKeyword: "" },
+      isActive: true,
+      isFeatured: false,
     });
-  }, [id]);
+  } else {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
+      .then(res => {
+        if (res.data.success) {
+          const product = res.data.data;
+          const normalized = {
+            ...product,
+            categories: (product.categories || []).map(c => typeof c === "object" ? c._id : c),
+            tags: product.tags || [],
+            seo: product.seo || { metaTitle: "", metaDescription: "", focusKeyword: "" },
+            variants: product.variants || [],
+            attributes: product.attributes || [],
+            upsellProductIds: product.upsellProductIds || [],
+            relatedProductIds: product.relatedProductIds || [],
+          };
+          setFormData(normalized);
+        }
+      });
+  }
+
+  // ✅ Build full category label paths
+  axios.get(`${import.meta.env.VITE_API_URL}/api/categories`).then((res) => {
+    const flat = res.data;
+
+    const categoryMap = Object.fromEntries(
+      flat.map(c => [String(c._id), c])
+    );
+
+    console.log("🗺 categoryMap keys:", Object.keys(categoryMap));
+
+    const listWithPathLabels = flat.map(cat => {
+      const fullLabel = buildCategoryPath(cat, categoryMap);
+
+      if (fullLabel === cat.name) {
+        console.warn("⚠️ No parent found for:", cat.name, "→", cat);
+      }
+
+      console.log(`🧭 ${cat.name} → ${fullLabel}`);
+      return {
+        label: fullLabel,
+        value: cat._id,
+      };
+    });
+
+    console.log("✅ Final Category Options for MultiSelect:", listWithPathLabels.slice(0, 10));
+    setAllCategories(listWithPathLabels);
+  });
+}, [id]);
+
+  
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -194,6 +213,9 @@ export default function AdminProductEdit() {
             label="Categories"
             onChange={(value) => handleChange("categories", value)}
           />
+<pre className="text-xs text-gray-400 bg-gray-100 p-2 mt-2 rounded max-h-64 overflow-y-auto">
+  {JSON.stringify(allCategories.slice(0, 5), null, 2)}
+</pre>
 
           <div>
             <FieldLabel>Tags (comma separated)</FieldLabel>

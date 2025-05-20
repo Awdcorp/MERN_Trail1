@@ -34,6 +34,8 @@ import ProductPage from "@/pages/shopping-view/product";
 import { fetchCartItems } from "./store/shop/cart-slice";
 import ContactUs from "@/pages/shopping-view/ContactUs";
 import TermsAndConditions from "@/pages/shopping-view/TermsAndConditions";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -60,6 +62,7 @@ function App() {
   console.log(isLoading, user);
 
   return (
+    <DndProvider backend={HTML5Backend}>
     <div className="flex flex-col overflow-hidden bg-white">
       <Routes>
         {/* ✅ Public Homepage */}
@@ -132,6 +135,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
+    </DndProvider>
   );
 }
 

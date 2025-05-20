@@ -1,7 +1,3 @@
-// scripts/importWooCategories.js
-console.log("📁 Current script path:", __dirname);
-console.log("📁 Resolved model path:", require.resolve("../models/Category"));
-
 require("dotenv").config();
 const axios = require("axios");
 const mongoose = require("mongoose");
@@ -18,25 +14,25 @@ if (!WOO_API_KEY || !WOO_API_SECRET || !MONGO_URL) {
 }
 
 async function fetchWooCategories() {
-    try {
-      const res = await axios.get(WOO_API_BASE, {
-        auth: {
-          username: WOO_API_KEY,
-          password: WOO_API_SECRET,
-        },
-        params: {
-          per_page: 100,
-        },
-      });
-  
-      console.log("🔎 Sample Woo item:", res.data[0]); // <-- ADD THIS
-      return res.data;
-    } catch (err) {
-      console.error("❌ Failed to fetch from WooCommerce API:");
-      console.error(err.response?.data || err.message);
-      process.exit(1);
-    }
+  try {
+    const res = await axios.get(WOO_API_BASE, {
+      auth: {
+        username: WOO_API_KEY,
+        password: WOO_API_SECRET,
+      },
+      params: {
+        per_page: 100,
+      },
+    });
+
+    console.log("📦 Fetched", res.data.length, "categories from WooCommerce");
+    return res.data;
+  } catch (err) {
+    console.error("❌ Failed to fetch from WooCommerce API:");
+    console.error(err.response?.data || err.message);
+    process.exit(1);
   }
+}
 
 async function importCategories() {
   try {
@@ -44,58 +40,69 @@ async function importCategories() {
     console.log("✅ Connected to MongoDB");
 
     const wooCategories = await fetchWooCategories();
-    console.log(`📦 Fetched ${wooCategories.length} categories from WooCommerce`);
-
     const wcIdToMongoId = {};
 
+    // Step 1: Create or update categories WITHOUT parents
     for (const wcCat of wooCategories) {
-      console.log(`➡ Importing: ${wcCat.name}`);
-      console.log("📦 Category type:", typeof Category);
-      console.log("📦 Category object preview:", Category);
-      // Check if this category already exists by name
-let existing = await Category.findOne({ name: wcCat.name });
+      let category = await Category.findOne({ wooId: wcCat.id }) || await Category.findOne({ slug: wcCat.slug });
 
-if (!existing) {
-  const category = new Category({
-    name: wcCat.name,
-    slug: wcCat.slug,
-    description: wcCat.description || "",
-    image: wcCat.image?.src || "",
-  });
+      if (!category) {
+        try {
+          category = new Category({
+            name: wcCat.name,
+            slug: wcCat.slug,
+            wooId: wcCat.id,
+            description: wcCat.description || "",
+            image: wcCat.image?.src || "",
+          });
+          await category.save();
+          console.log(`✅ Created: ${category.name}`);
+        } catch (err) {
+          if (err.code === 11000) {
+            console.warn(`⚠️ Duplicate slug: ${wcCat.slug}. Skipping...`);
+            const existing = await Category.findOne({ slug: wcCat.slug });
+            if (existing) category = existing;
+          } else {
+            throw err;
+          }
+        }
+      } else {
+        // Update existing values
+        category.name = wcCat.name;
+        category.slug = wcCat.slug;
+        category.description = wcCat.description || "";
+        category.image = wcCat.image?.src || "";
+        category.wooId = wcCat.id;
+        await category.save();
+        console.log(`♻️ Updated: ${category.name}`);
+      }
 
-  await category.save();
-  wcIdToMongoId[wcCat.id] = category._id;
-  console.log(`✅ Saved new category: ${wcCat.name}`);
-} else {
-  wcIdToMongoId[wcCat.id] = existing._id;
-  console.log(`🔁 Skipped duplicate: ${wcCat.name}`);
-}
-
+      wcIdToMongoId[wcCat.id] = category._id;
     }
 
+    // Step 2: Link parents now that all categories exist
     for (const wcCat of wooCategories) {
-        if (wcCat.parent !== 0) {
-          const category = await Category.findOne({ slug: wcCat.slug });
-      
-          if (!category) {
-            console.warn(`⚠️ Category not found by slug: ${wcCat.slug}`);
-            continue;
-          }
-      
-          const parentId = wcIdToMongoId[wcCat.parent];
-          if (!parentId) {
-            console.warn(`⚠️ Parent ID not mapped for Woo ID: ${wcCat.parent}`);
-            continue;
-          }
-      
-          category.parent = parentId;
-          await category.save();
-          console.log(`🔗 Linked "${category.name}" → parent`);
-        }
-      }
-      
+      if (wcCat.parent !== 0) {
+        const category = await Category.findOne({ wooId: wcCat.id });
+        const parentMongoId = wcIdToMongoId[wcCat.parent];
 
-    console.log("🎉 All WooCommerce categories imported successfully!");
+        if (!category) {
+          console.warn(`⚠️ Category not found (wooId=${wcCat.id}): ${wcCat.name}`);
+          continue;
+        }
+        if (!parentMongoId) {
+          console.warn(`⚠️ Parent not found for: ${wcCat.name} (Woo parent ID: ${wcCat.parent})`);
+          continue;
+        }
+
+        category.parent = parentMongoId;
+        await category.save();
+        console.log(`🔗 Linked ${category.name} → parent`);
+      }
+    }
+
+    const count = await Category.countDocuments();
+    console.log(`🎉 Done. Total categories in DB: ${count}`);
     process.exit(0);
   } catch (err) {
     console.error("❌ Error in importCategories():", err);
