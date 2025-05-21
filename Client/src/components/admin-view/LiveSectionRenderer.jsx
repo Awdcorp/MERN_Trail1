@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const PreviewWrapper = ({ children }) => (
   <div className="relative w-full max-w-full px-2">
-    <div className="max-w-[750px] w-full mx-auto overflow-hidden rounded-xl shadow-md bg-white">
+    <div className="max-w-[1024px] w-full mx-auto overflow-hidden rounded-xl shadow-md bg-white">
       <div className="scale-[0.95] origin-top">
         {children}
       </div>

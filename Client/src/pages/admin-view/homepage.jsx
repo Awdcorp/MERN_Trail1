@@ -94,21 +94,19 @@ const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt, o
   return (
     <div
       ref={ref}
-      className={`relative flex items-start transition-shadow bg-white border border-gray-200 rounded p-4 shadow-sm ${
-        isDragging ? "opacity-50 shadow-lg" : "hover:shadow-md"
-      } ${isOver && canDrop ? "border-2 border-indigo-600 bg-indigo-100" : ""}`}
+      className={`relative bg-white border border-gray-200 rounded p-4 shadow-sm transition-shadow
+        ${isDragging ? "opacity-50 shadow-lg" : "hover:shadow-md"}
+        ${isOver && canDrop ? "border-2 border-indigo-600 bg-indigo-100" : ""}
+      `}
     >
-      <GripVertical className="w-5 h-5 mr-3 text-gray-400" />
-      <div className="flex-1">
-        <div className="flex justify-between items-center mb-2">
-          <span className="font-semibold text-sm select-none text-gray-800">{block.type}</span>
-          <div className="space-x-2">
-            <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
-            <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
-          </div>
+      <div className="flex justify-between items-center mb-2">
+        <span className="font-semibold text-sm select-none text-gray-800">{block.type}</span>
+        <div className="space-x-2">
+          <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
+          <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
         </div>
-        <LiveSectionRenderer type={block.type} data={block.data} />
       </div>
+      <LiveSectionRenderer type={block.type} data={block.data} />
     </div>
   );
 };
