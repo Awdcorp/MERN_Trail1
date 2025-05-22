@@ -1,8 +1,10 @@
+// Client/src/components/admin-view/SectionSettingsPanel.jsx
+
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export default function SectionSettingsPanel({ block, onSave, onCancel }) {
+export default function SectionSettingsPanel({ block, onChange, onCancel }) {
   const [formData, setFormData] = useState({});
 
   useEffect(() => {
@@ -59,14 +61,14 @@ export default function SectionSettingsPanel({ block, onSave, onCancel }) {
   };
 
   return (
-    <aside className={`transition-all duration-300 w-[320px] bg-white shadow-xl border-l p-4 fixed top-0 right-0 h-full z-40 ${block ? 'translate-x-0' : 'translate-x-full'}`}>
+    <aside className={`transition-all duration-300 w-[320px] bg-white shadow-xl border-l p-4 fixed top-0 right-0 h-full z-40`}>
       <h2 className="text-lg font-semibold mb-4">Edit: {block.type}</h2>
       <div className="space-y-4 overflow-auto max-h-[80vh]">
         {renderFields()}
       </div>
       <div className="flex justify-end gap-2 mt-6">
         <Button variant="outline" onClick={onCancel}>Cancel</Button>
-        <Button onClick={() => onSave(block.key, formData)}>Save</Button>
+        <Button onClick={() => onChange(formData)}>Save</Button> {/* ✅ FIXED HERE */}
       </div>
     </aside>
   );

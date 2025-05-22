@@ -1,3 +1,5 @@
+// Client/src/components/admin-view/LiveSectionRenderer.jsx
+
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import CategorySection from "@/components/shopping-view/occasioncategorysection";
@@ -15,23 +17,16 @@ const PreviewWrapper = ({ children }) => (
   </div>
 );
 
-
-
 export default function LiveSectionRenderer({ type, data = {} }) {
   switch (type) {
     case "slider":
-      return (
-        <PreviewWrapper>
-          <HomepageSlider {...data} />
-        </PreviewWrapper>
-      );
+      return <PreviewWrapper><HomepageSlider {...data} /></PreviewWrapper>;
 
     case "product-slider":
-      return (
-        <PreviewWrapper>
-          <ProductSliderSection {...data} />
-        </PreviewWrapper>
-      );
+      if (!data?.title || !data?.limit) {
+        return <PreviewWrapper><div className="text-red-500 text-sm">❗ Missing title or limit</div></PreviewWrapper>;
+      }
+      return <PreviewWrapper><ProductSliderSection {...data} /></PreviewWrapper>;
 
     case "category-grid":
       return <CategorySection {...data} />;

@@ -8,7 +8,7 @@ const adminProductsRouter = require("./routes/admin/products-routes");
 const adminOrderRouter = require("./routes/admin/order-routes");
 const settingsRoutes = require("./routes/admin/settings-routes");
 const homepageLayoutRoutes = require("./routes/admin/homepage-layout-routes");
-
+const pageRoutes = require("./routes/admin/page-routes");
 const shopProductsRouter = require("./routes/shop/products-routes");
 const shopCartRouter = require("./routes/shop/cart-routes");
 const shopAddressRouter = require("./routes/shop/address-routes");
@@ -19,7 +19,7 @@ const adminUserRouter = require("./routes/admin/user-routes");
 const commonFeatureRouter = require("./routes/common/feature-routes");
 const categoryRoutes = require("./routes/common/category-routes");
 const bannerRoutes = require("./routes/admin/banner-routes");
-
+const shopPageRoutes = require("./routes/shop/page-routes");
 //create a database connection -> u can also
 //create a separate file for this and then import/use that file here
 
@@ -53,6 +53,7 @@ app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/admin/orders", adminOrderRouter);
 app.use("/api/admin/settings", settingsRoutes);
 app.use("/api/admin/homepage-layout", homepageLayoutRoutes);
+app.use("/api/admin/pages", pageRoutes);
 
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
@@ -68,5 +69,5 @@ app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/admin", require("./routes/admin/dashboard-routes"));
 app.use("/api/admin", require("./routes/admin/media-routes"));
 app.use("/api/admin/categories", require("./routes/admin/category-routes"));
-
+app.use("/api/pages", shopPageRoutes);
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));

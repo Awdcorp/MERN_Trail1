@@ -12,6 +12,8 @@ import AdminHomepage from "./pages/admin-view/homepage";
 import AdminCategories from "./pages/admin-view/category";
 import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
+import AdminPages from "./pages/admin-view/pages";
+import PageBuilder from "@/pages/admin-view/page-builder";
 import AdminSEOSettingsPage from "./pages/admin-view/settings";
 import BannerControlPage from "./pages/admin-view/banner-control";
 import ShoppingLayout from "./components/shopping-view/layout";
@@ -22,6 +24,7 @@ import ShoppingCheckout from "./pages/shopping-view/checkout";
 import ShoppingAccount from "./pages/shopping-view/account";
 import CheckAuth from "./components/common/check-auth";
 import UnauthPage from "./pages/unauth-page";
+import DynamicPage from "./pages/shopping-view/dynamic-page";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { checkAuth } from "./store/auth-slice";
@@ -100,6 +103,8 @@ function App() {
           <Route path="media" element={<MediaDashboard />} />
           <Route path="features" element={<AdminFeatures />} />
           <Route path="users" element={<AdminUsers />} />
+          <Route path="pages" element={<AdminPages />} />
+          <Route path="pages/:id/builder" element={<PageBuilder />} />
           <Route path="settings" element={<AdminSEOSettingsPage />} />
           <Route path="homepage" element={<AdminHomepage />} />
           <Route path="banners" element={<BannerControlPage />} />
@@ -132,6 +137,7 @@ function App() {
 
         {/* 🚫 Unauthorized + Not Found */}
         <Route path="/unauth-page" element={<UnauthPage />} />
+        <Route path="/pages/:slug" element={<DynamicPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
