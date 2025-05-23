@@ -6,6 +6,7 @@ import CategorySection from "@/components/shopping-view/occasioncategorysection"
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { useDrop } from "react-dnd";
 
 const PreviewWrapper = ({ children }) => (
   <div className="relative w-full max-w-full px-2">
@@ -17,7 +18,42 @@ const PreviewWrapper = ({ children }) => (
   </div>
 );
 
-export default function LiveSectionRenderer({ type, data = {} }) {
+function InnerElementRenderer({ type, data }) {
+  switch (type) {
+    case "text":
+      return <div className="text-base text-gray-700" dangerouslySetInnerHTML={{ __html: data.html || "" }} />;
+    default:
+      return <div className="text-red-400 text-sm">Unsupported element</div>;
+  }
+}
+
+function ColumnDropZone({ blockKey, columnIndex, elements, onDropElement }) {
+  const [{ isOver }, dropRef] = useDrop(() => ({
+    accept: "BLOCK",
+    drop: (item) => {
+      if (item.type === "text") {
+        onDropElement(blockKey, columnIndex, { type: "text", data: { html: "<p>New Text</p>" } });
+      }
+    },
+    collect: (monitor) => ({ isOver: monitor.isOver() })
+  }), [blockKey, columnIndex]);
+
+  return (
+    <div
+      ref={dropRef}
+      className={`min-h-[120px] border rounded p-4 text-sm text-gray-600 space-y-4 transition-colors ${
+        isOver ? "bg-indigo-50 border-indigo-500" : "border-dashed border-gray-300"
+      }`}
+    >
+      {elements.map((el, i) => (
+        <InnerElementRenderer key={i} type={el.type} data={el.data} />
+      ))}
+      <div className="text-center text-gray-400">+ Drop Text Element Here</div>
+    </div>
+  );
+}
+
+export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropElement }) {
   switch (type) {
     case "slider":
       return <PreviewWrapper><HomepageSlider {...data} /></PreviewWrapper>;
@@ -63,6 +99,30 @@ export default function LiveSectionRenderer({ type, data = {} }) {
               </button>
             </a>
           )}
+        </div>
+      );
+
+    case "layout-section":
+      const cols = data.layout === "3-column" ? 3 : data.layout === "2-column" ? 2 : 1;
+      return (
+        <div className="bg-white border rounded-md p-4">
+          <div className={`grid gap-4 ${cols === 1 ? "grid-cols-1" : cols === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
+            {Array(cols).fill(0).map((_, colIndex) => (
+              <ColumnDropZone
+                key={colIndex}
+                blockKey={blockKey}
+                columnIndex={colIndex}
+                elements={data.elements?.[colIndex] || []}
+                onDropElement={onDropElement}
+              />
+            ))}
+          </div>
+        </div>
+      );
+          case "text":
+      return (
+        <div className="bg-white p-4 border rounded shadow-sm text-sm text-gray-700">
+          <div dangerouslySetInnerHTML={{ __html: data.html || "<p>Text block</p>" }} />
         </div>
       );
 

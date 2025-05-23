@@ -1,4 +1,4 @@
-// Client/src/pages/admin-view/page-builder.jsx
+// Full updated page-builder.jsx with working dropTextIntoColumn integration
 
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
@@ -14,6 +14,8 @@ import SectionSettingsPanel from "@/components/admin-view/SectionSettingsPanel";
 const ItemTypes = { BLOCK: "BLOCK" };
 
 const paletteTypes = [
+  "layout-section",
+  "text",
   "slider",
   "product-slider",
   "category-grid",
@@ -22,6 +24,13 @@ const paletteTypes = [
 ];
 
 const defaultDataMap = {
+  "layout-section": {
+    layout: "2-column",
+    elements: [[], []]
+  },
+  text: {
+    html: "<p>Edit me</p>"
+  },
   slider: {},
   "product-slider": { title: "New Arrivals", limit: 8 },
   "category-grid": { title: "Shop by Category", categories: [] },
@@ -34,140 +43,26 @@ const defaultDataMap = {
   }
 };
 
-const DraggablePaletteItem = ({ block }) => {
-  const [{ isDragging }, dragRef] = useDrag(() => ({
-    type: ItemTypes.BLOCK,
-    item: () => ({ ...block, fromPalette: true }),
-    collect: (monitor) => ({ isDragging: monitor.isDragging() }),
-  }));
-
-  return (
-    <div
-      ref={dragRef}
-      className={`cursor-grab bg-white border p-3 rounded shadow text-xs text-center ${
-        isDragging ? "opacity-50" : "opacity-100"
-      }`}
-    >
-      <AddSectionTile type={block.type} />
-    </div>
-  );
-};
-
-const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt, onEdit }) => {
-  const ref = useRef(null);
-  const [{ isOver, canDrop }, drop] = useDrop({
-    accept: ItemTypes.BLOCK,
-    canDrop: (item) => item.fromPalette,
-    drop: (item) => {
-      onDropAt(item, index);
-      item.fromPalette = false;
-    },
-    hover: (item, monitor) => {
-      if (!ref.current || item.fromPalette) return;
-      const dragIndex = item.index;
-      const hoverIndex = index;
-      if (dragIndex === hoverIndex) return;
-      const { top, bottom } = ref.current.getBoundingClientRect();
-      const hoverMiddleY = (bottom - top) / 2;
-      const { y } = monitor.getClientOffset() || {};
-      const hoverClientY = y - top;
-      if (
-        (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
-        (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
-      )
-        return;
-      moveBlock(dragIndex, hoverIndex);
-      item.index = hoverIndex;
-    },
-    collect: (monitor) => ({ isOver: monitor.isOver({ shallow: true }), canDrop: monitor.canDrop() }),
-  });
-  const [{ isDragging }, drag] = useDrag({
-    type: ItemTypes.BLOCK,
-    item: { ...block, index, fromPalette: false },
-    collect: (monitor) => ({ isDragging: monitor.isDragging() }),
-  });
-  drag(drop(ref));
-
-  return (
-    <div
-      ref={ref}
-      className={`relative bg-white border border-gray-200 rounded p-4 shadow-sm transition-shadow
-        ${isDragging ? "opacity-50 shadow-lg" : "hover:shadow-md"}
-        ${isOver && canDrop ? "border-2 border-indigo-600 bg-indigo-100" : ""}
-      `}
-    >
-      <div className="flex justify-between items-center mb-2">
-        <span className="font-semibold text-sm select-none text-gray-800">{block.type}</span>
-        <div className="space-x-2">
-          <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
-          <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
-        </div>
-      </div>
-      <LiveSectionRenderer type={block.type} data={block.data} />
-    </div>
-  );
-};
-
-const DropZone = ({ canvasBlocks, onDropAt, onDelete, moveBlock, onEdit }) => {
-  const ref = useRef(null);
-  const [{ isOver, canDrop }, drop] = useDrop({
-    accept: ItemTypes.BLOCK,
-    canDrop: (item) => item.fromPalette,
-    drop: (item, monitor) => {
-      if (!monitor.didDrop()) {
-        onDropAt(item, canvasBlocks.length);
-        item.fromPalette = false;
-      }
-    },
-    hover: (_, monitor) => {
-      const node = ref.current;
-      if (node && monitor.isOver({ shallow: true })) {
-        const { top, bottom } = node.getBoundingClientRect();
-        const { y } = monitor.getClientOffset() || {};
-        const scrollZone = 80;
-        const scrollSpeed = 15;
-        if (y < top + scrollZone) node.scrollBy({ top: -scrollSpeed });
-        if (y > bottom - scrollZone) node.scrollBy({ top: scrollSpeed });
-      }
-    },
-    collect: (monitor) => ({ isOver: monitor.isOver({ shallow: true }), canDrop: monitor.canDrop() }),
-  });
-  drop(ref);
-  return (
-    <div
-      ref={ref}
-      className={`relative z-10 flex-1 p-6 space-y-4 overflow-auto border-2 border-dashed rounded transition-colors ${
-        isOver && canDrop ? "border-indigo-600 bg-indigo-50" : "border-gray-300 bg-gray-100"
-      }`}
-      style={{ minHeight: "80vh" }}
-    >
-      {canvasBlocks.length === 0 ? (
-        <p className="text-gray-500 text-sm text-center py-12 select-none">
-          Drag blocks here to build your layout
-        </p>
-      ) : (
-        canvasBlocks.map((block, index) => (
-          <ReorderableCanvasBlock
-            key={block.key}
-            block={block}
-            index={index}
-            moveBlock={moveBlock}
-            onDelete={onDelete}
-            onDropAt={onDropAt}
-            onEdit={onEdit}
-          />
-        ))
-      )}
-    </div>
-  );
-};
-
 export default function PageBuilder() {
   const { id } = useParams();
   const [canvasBlocks, setCanvasBlocks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editingBlock, setEditingBlock] = useState(null);
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const dropTextIntoColumn = (sectionKey, columnIndex, textElement) => {
+    setCanvasBlocks((prevBlocks) =>
+      prevBlocks.map((section) => {
+        if (section.key !== sectionKey) return section;
+        const newElements = [...(section.data.elements || [])];
+        newElements[columnIndex] = [...(newElements[columnIndex] || []), textElement];
+        return {
+          ...section,
+          data: { ...section.data, elements: newElements }
+        };
+      })
+    );
+  };
 
   const handleDropAt = (block, atIndex) => {
     const newBlock = {
@@ -239,6 +134,85 @@ export default function PageBuilder() {
     fetchPageBlocks();
   }, []);
 
+  const DraggablePaletteItem = ({ block }) => {
+    const [{ isDragging }, dragRef] = useDrag(() => ({
+      type: ItemTypes.BLOCK,
+      item: () => ({ type: block.type, fromPalette: true }),
+      collect: (monitor) => ({ isDragging: monitor.isDragging() })
+    }));
+
+    return (
+      <div
+        ref={dragRef}
+        className={`cursor-grab bg-white border p-3 rounded shadow text-xs text-center ${
+          isDragging ? "opacity-50" : "opacity-100"
+        }`}
+      >
+        {block.type === "text" ? <span className="text-gray-700">📝 Text Block</span> : <AddSectionTile type={block.type} />}
+      </div>
+    );
+  };
+
+  const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt, onEdit }) => {
+    const ref = useRef(null);
+    const [{ isOver, canDrop }, drop] = useDrop({
+      accept: ItemTypes.BLOCK,
+      canDrop: (item) => item.fromPalette,
+      drop: (item, monitor) => {
+        if (monitor.didDrop()) return; // ✅ Prevent duplicate drop
+        onDropAt(item, index);
+        item.fromPalette = false;
+      },
+      hover: (item, monitor) => {
+        if (!ref.current || item.fromPalette) return;
+        const dragIndex = item.index;
+        const hoverIndex = index;
+        if (dragIndex === hoverIndex) return;
+        const { top, bottom } = ref.current.getBoundingClientRect();
+        const hoverMiddleY = (bottom - top) / 2;
+        const { y } = monitor.getClientOffset() || {};
+        const hoverClientY = y - top;
+        if (
+          (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
+          (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
+        )
+          return;
+        moveBlock(dragIndex, hoverIndex);
+        item.index = hoverIndex;
+      },
+      collect: (monitor) => ({ isOver: monitor.isOver({ shallow: true }), canDrop: monitor.canDrop() })
+    });
+    const [{ isDragging }, drag] = useDrag({
+      type: ItemTypes.BLOCK,
+      item: { ...block, index, fromPalette: false },
+      collect: (monitor) => ({ isDragging: monitor.isDragging() })
+    });
+    drag(drop(ref));
+
+    return (
+      <div
+        ref={ref}
+        className={`relative bg-white border border-gray-200 rounded p-4 shadow-sm transition-shadow ${
+          isDragging ? "opacity-50 shadow-lg" : "hover:shadow-md"
+        } ${isOver && canDrop ? "border-2 border-indigo-600 bg-indigo-100" : ""}`}
+      >
+        <div className="flex justify-between items-center mb-2">
+          <span className="font-semibold text-sm select-none text-gray-800">{block.type}</span>
+          <div className="space-x-2">
+            <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
+            <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
+          </div>
+        </div>
+        <LiveSectionRenderer
+          type={block.type}
+          data={block.data}
+          blockKey={block.key}
+          onDropElement={dropTextIntoColumn}
+        />
+      </div>
+    );
+  };
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="flex min-h-screen relative">
@@ -274,13 +248,17 @@ export default function PageBuilder() {
           {loading ? (
             <p className="text-gray-500 text-sm text-center py-12">Loading...</p>
           ) : (
-            <DropZone
-              canvasBlocks={canvasBlocks}
-              onDropAt={handleDropAt}
-              onDelete={handleDelete}
-              moveBlock={moveBlock}
-              onEdit={handleEditBlock}
-            />
+            canvasBlocks.map((block, index) => (
+              <ReorderableCanvasBlock
+                key={block.key}
+                block={block}
+                index={index}
+                moveBlock={moveBlock}
+                onDelete={handleDelete}
+                onDropAt={handleDropAt}
+                onEdit={handleEditBlock}
+              />
+            ))
           )}
         </main>
 
