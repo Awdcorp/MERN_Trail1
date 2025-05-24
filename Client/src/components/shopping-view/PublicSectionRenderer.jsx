@@ -2,7 +2,7 @@
 
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ProductSliderSection from "@/components/shopping-view/ProductSliderSection";
-import CategorySection from "@/components/shopping-view/occasioncategorysection";
+import CategorySection from "@/components/shopping-view/CategorySection";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -117,17 +117,14 @@ export default function PublicSectionRenderer({ type, data = {} }) {
 ;
 
     case "category-grid":
-  return (
-    <CategorySection
-      title={data.title}
-      groupName={data.groupName}
-      isSlider={data.isSlider}
-    />
-  );
-
-
-    case "theme-grid":
-      return <ThemeCategorySection {...data} />;
+case "theme-grid":
+  return <CategorySection
+  title={data.title}
+  groupName={data.groupName}
+  limit={data.limit || 6}
+  isSlider={data.isSlider !== false}
+/>
+;
 
     case "contact-info": {
   const {

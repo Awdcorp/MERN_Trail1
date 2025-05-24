@@ -61,6 +61,15 @@ export default function SectionSettingsPanel({ block, onSave, onCancel, onLiveUp
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
+      <label className="text-sm font-medium">Limit</label>
+<Input
+  type="number"
+  min={1}
+  value={formData.limit || 6}
+  onChange={(e) => handleChange("limit", parseInt(e.target.value))}
+  className="mb-4"
+/>
+
     </>
   );
 
