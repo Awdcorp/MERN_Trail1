@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-
+import MediaPicker from "@/components/admin-view/MediaPicker";
 export default function SectionSettingsPanel({ block, onSave, onCancel, onLiveUpdate }) {
   const [formData, setFormData] = useState({});
 
@@ -29,18 +29,247 @@ export default function SectionSettingsPanel({ block, onSave, onCancel, onLiveUp
 
   const renderFields = () => {
     switch (block.type) {
+      case "contact-info":
+  return (
+    <>
+      <label className="text-sm font-medium">Title</label>
+      <Input
+        value={formData.title || ""}
+        onChange={(e) => handleChange("title", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Subtitle</label>
+      <Input
+        value={formData.subtitle || ""}
+        onChange={(e) => handleChange("subtitle", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Phone (comma separated)</label>
+      <Input
+        value={(formData.phones || []).join(", ")}
+        onChange={(e) => handleChange("phones", e.target.value.split(",").map(v => v.trim()))}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">WhatsApp (comma separated)</label>
+      <Input
+        value={(formData.whatsapp || []).join(", ")}
+        onChange={(e) => handleChange("whatsapp", e.target.value.split(",").map(v => v.trim()))}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Button Text</label>
+      <Input
+        value={formData.buttonText || ""}
+        onChange={(e) => handleChange("buttonText", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Button Link</label>
+      <Input
+        value={formData.buttonLink || ""}
+        onChange={(e) => handleChange("buttonLink", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Text Align</label>
+      <select
+        value={formData.textAlign || ""}
+        onChange={(e) => handleChange("textAlign", e.target.value)}
+        className="w-full border rounded p-2 mb-4"
+      >
+        <option value="">Default</option>
+        <option value="left">Left</option>
+        <option value="center">Center</option>
+        <option value="right">Right</option>
+      </select>
+
+      <label className="text-sm font-medium">Font Color</label>
+      <Input
+        value={formData.fontColor || ""}
+        onChange={(e) => handleChange("fontColor", e.target.value)}
+        placeholder="e.g. #222 or gray"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Background Color</label>
+      <Input
+        value={formData.backgroundColor || ""}
+        onChange={(e) => handleChange("backgroundColor", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Custom Class</label>
+      <Input
+        value={formData.customClass || ""}
+        onChange={(e) => handleChange("customClass", e.target.value)}
+        className="mb-4"
+      />
+    </>
+  );
+
       case "text":
-        return (
-          <>
-            <label className="text-sm font-medium">HTML Content</label>
-            <Textarea
-              value={formData.html || ""}
-              onChange={(e) => handleChange("html", e.target.value)}
-              rows={6}
-              className="mb-4"
-            />
-          </>
-        );
+  return (
+    <>
+      <label className="text-sm font-medium">HTML Content</label>
+      <Textarea
+        value={formData.html || ""}
+        onChange={(e) => handleChange("html", e.target.value)}
+        rows={6}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Text Align</label>
+      <select
+        value={formData.textAlign || ""}
+        onChange={(e) => handleChange("textAlign", e.target.value)}
+        className="w-full border rounded p-2 mb-4"
+      >
+        <option value="">Default</option>
+        <option value="left">Left</option>
+        <option value="center">Center</option>
+        <option value="right">Right</option>
+      </select>
+
+      <label className="text-sm font-medium">Text Color</label>
+      <Input
+        value={formData.color || ""}
+        onChange={(e) => handleChange("color", e.target.value)}
+        placeholder="e.g. #333 or red"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Font Size</label>
+      <Input
+        value={formData.fontSize || ""}
+        onChange={(e) => handleChange("fontSize", e.target.value)}
+        placeholder="e.g. 16px or 1.25rem"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Font Weight</label>
+      <select
+        value={formData.fontWeight || ""}
+        onChange={(e) => handleChange("fontWeight", e.target.value)}
+        className="w-full border rounded p-2 mb-4"
+      >
+        <option value="">Default</option>
+        <option value="300">Light</option>
+        <option value="400">Normal</option>
+        <option value="500">Medium</option>
+        <option value="600">Semi-bold</option>
+        <option value="700">Bold</option>
+      </select>
+
+      <label className="text-sm font-medium">Margin</label>
+      <Input
+        value={formData.margin || ""}
+        onChange={(e) => handleChange("margin", e.target.value)}
+        placeholder="e.g. 10px 0"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Padding</label>
+      <Input
+        value={formData.padding || ""}
+        onChange={(e) => handleChange("padding", e.target.value)}
+        placeholder="e.g. 1rem"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Background Color</label>
+      <Input
+        value={formData.backgroundColor || ""}
+        onChange={(e) => handleChange("backgroundColor", e.target.value)}
+        placeholder="e.g. #f5f5f5"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Custom Class</label>
+      <Input
+        value={formData.customClass || ""}
+        onChange={(e) => handleChange("customClass", e.target.value)}
+        placeholder="Tailwind or CSS class"
+        className="mb-4"
+      />
+    </>
+  );
+case "slider":
+  const [mediaPickerOpen, setMediaPickerOpen] = useState({ index: null, type: "" });
+
+  return (
+    <>
+      {(formData.images || []).map((img, i) => (
+        <div key={i} className="border p-3 rounded mb-4 space-y-2 bg-gray-50">
+          <div className="text-xs font-semibold">Slide #{i + 1}</div>
+
+          {/* Desktop Image */}
+          {img.desktopImage && <img src={img.desktopImage} alt="desktop" className="w-full h-28 object-cover rounded" />}
+          <Button size="sm" variant="outline" onClick={() => setMediaPickerOpen({ index: i, type: "desktopImage" })}>
+            Select Desktop Image
+          </Button>
+
+          {/* Mobile Image */}
+          {img.mobileImage && <img src={img.mobileImage} alt="mobile" className="w-full h-28 object-cover rounded" />}
+          <Button size="sm" variant="outline" onClick={() => setMediaPickerOpen({ index: i, type: "mobileImage" })}>
+            Select Mobile Image
+          </Button>
+
+          <Button
+            size="sm"
+            variant="destructive"
+            onClick={() => {
+              const updated = [...formData.images];
+              updated.splice(i, 1);
+              handleChange("images", updated);
+            }}
+          >
+            Remove Slide
+          </Button>
+        </div>
+      ))}
+
+      <Button
+        onClick={() => {
+          const updated = [...(formData.images || [])];
+          updated.push({ desktopImage: "", mobileImage: "" });
+          handleChange("images", updated);
+        }}
+        className="mt-2"
+      >
+        ➕ Add Slide
+      </Button>
+
+      {/* Autoplay Toggle */}
+      <hr className="my-4" />
+      <label className="text-sm font-medium">Autoplay</label>
+      <select
+        value={formData.autoplay ? "true" : "false"}
+        onChange={(e) => handleChange("autoplay", e.target.value === "true")}
+        className="w-full border rounded p-2 mt-2"
+      >
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+
+      {/* Media Picker Modal */}
+      <MediaPicker
+        open={mediaPickerOpen.index !== null}
+        onClose={() => setMediaPickerOpen({ index: null, type: "" })}
+        onSelect={(url) => {
+          const updated = [...(formData.images || [])];
+          if (mediaPickerOpen.index !== null && mediaPickerOpen.type) {
+            updated[mediaPickerOpen.index][mediaPickerOpen.type] = url;
+            handleChange("images", updated);
+          }
+        }}
+      />
+    </>
+  );
+
+
 
       case "layout-section":
         return (

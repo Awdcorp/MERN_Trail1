@@ -1,5 +1,12 @@
 // File: Client/src/components/admin-view/PublicSectionRenderer.jsx
 
+import HomepageSlider from "@/components/shopping-view/homepageslider";
+import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import CategorySection from "@/components/shopping-view/occasioncategorysection";
+import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
+import { PhoneCall } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 export default function PublicSectionRenderer({ type, data = {} }) {
   switch (type) {
     case "layout-section": {
@@ -7,21 +14,21 @@ export default function PublicSectionRenderer({ type, data = {} }) {
       const elements = data.elements || [];
       const columnStyles = data.columnStyles || [];
 
-      // Section-level styles
-      const padding = data.padding || "1rem";
-      const gap = data.gap || "1rem";
-      const backgroundColor = data.backgroundColor || "#fff";
-      const customClass = data.customClass || "";
-      const margin = data.margin || "";
-      const borderWidth = data.borderWidth || "";
-      const borderColor = data.borderColor || "";
-      const borderStyle = data.borderStyle || "";
-      const borderRadius = data.borderRadius || "";
-      const boxShadow = data.boxShadow || "";
-      const backgroundImage = data.backgroundImage || "";
-      const visibility = data.visibility || "all";
+      const {
+        padding = "1rem",
+        gap = "1rem",
+        backgroundColor = "#fff",
+        customClass = "",
+        margin = "",
+        borderWidth = "",
+        borderColor = "",
+        borderStyle = "",
+        borderRadius = "",
+        boxShadow = "",
+        backgroundImage = "",
+        visibility = "all"
+      } = data;
 
-      // ✅ Phase 3: visibility logic
       if (
         (visibility === "desktop" && typeof window !== "undefined" && window.innerWidth < 768) ||
         (visibility === "mobile" && typeof window !== "undefined" && window.innerWidth >= 768)
@@ -49,12 +56,12 @@ export default function PublicSectionRenderer({ type, data = {} }) {
               key={i}
               style={{
                 width: `${widths[i] || 100 / elements.length}%`,
-                backgroundColor: columnStyles[i]?.backgroundColor || undefined,
-                padding: columnStyles[i]?.padding || undefined,
-                textAlign: columnStyles[i]?.textAlign || undefined,
+                backgroundColor: columnStyles[i]?.backgroundColor,
+                padding: columnStyles[i]?.padding,
+                textAlign: columnStyles[i]?.textAlign,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: columnStyles[i]?.alignItems || undefined,
+                alignItems: columnStyles[i]?.alignItems,
               }}
             >
               {(col || []).map((el, j) => {
@@ -74,6 +81,96 @@ export default function PublicSectionRenderer({ type, data = {} }) {
         </div>
       );
     }
+    case "text":
+  return (
+    <div
+      className={`text-base text-gray-800 leading-relaxed ${data.customClass || ""}`}
+      style={{
+        textAlign: data.textAlign || undefined,
+        color: data.color || undefined,
+        fontSize: data.fontSize || undefined,
+        fontWeight: data.fontWeight || undefined,
+        margin: data.margin || undefined,
+        padding: data.padding || undefined,
+        backgroundColor: data.backgroundColor || undefined,
+      }}
+    >
+      <div dangerouslySetInnerHTML={{ __html: data.html || "" }} />
+    </div>
+  );
+
+
+    case "slider":
+  return (
+    <div className="-mx-4 md:-mx-8">
+      <HomepageSlider images={data.images} autoplay={data.autoplay} />
+    </div>
+  );
+
+    case "product-slider":
+      return <ProductSliderSection {...data} />;
+
+    case "category-grid":
+      return <CategorySection {...data} />;
+
+    case "theme-grid":
+      return <ThemeCategorySection {...data} />;
+
+    case "contact-info": {
+  const {
+    phones = [],
+    whatsapp = [],
+    buttonText,
+    buttonLink,
+    title,
+    subtitle,
+    textAlign = "center",
+    fontColor,
+    backgroundColor,
+    customClass
+  } = data;
+
+  return (
+    <div
+      className={`px-4 pt-10 md:px-8 py-10 ${customClass || ""}`}
+      style={{
+        backgroundColor: backgroundColor || "#fff",
+        color: fontColor || undefined,
+        textAlign,
+      }}
+    >
+      {title && <h2 className="text-2xl font-semibold mb-2">{title}</h2>}
+      {subtitle && <p className="text-gray-500 mb-6">{subtitle}</p>}
+
+      <div className="flex flex-col pt-10 md:flex-row justify-center items-center gap-10 md:gap-20 mb-10">
+        {phones.map((phone, i) => (
+          <div key={`phone-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+            <PhoneCall size={28} className="text-[#463970]" />
+            <span>{phone}</span>
+          </div>
+        ))}
+
+        {whatsapp.map((wa, i) => (
+          <div key={`wh-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+            <FaWhatsapp
+              size={28}
+              className={`text-white p-1 rounded ${i % 2 === 0 ? 'bg-[#25D366]' : 'bg-[#463970]'}`}
+            />
+            <span>{wa}</span>
+          </div>
+        ))}
+      </div>
+
+      {buttonText && buttonLink && (
+        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
+          <button className="bg-[#463970] text-white px-6 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
+            {buttonText}
+          </button>
+        </a>
+      )}
+    </div>
+  );
+}
 
     default:
       return <div className="text-red-400 text-sm">Unsupported block type: {type}</div>;

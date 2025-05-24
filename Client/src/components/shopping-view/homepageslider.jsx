@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { Swiper as SwiperCore } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./homepageslider.css";
 import axios from "axios";
 
-export default function OccasionImageSlider() {
+export default function HomepageSlider({ images: propImages, autoplay = true }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [banners, setBanners] = useState([]);
 
@@ -18,36 +17,40 @@ export default function OccasionImageSlider() {
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/api/admin/banners`)
-      .then((res) => {
-        if (Array.isArray(res.data)) setBanners(res.data);
-        else setBanners([]);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch banners:", err);
-        setBanners([]);
-      });
-  }, []);
+    if (!propImages || propImages.length === 0) {
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/api/admin/banners`)
+        .then((res) => {
+          if (Array.isArray(res.data)) setBanners(res.data);
+          else setBanners([]);
+        })
+        .catch((err) => {
+          console.error("Failed to fetch banners:", err);
+          setBanners([]);
+        });
+    }
+  }, [propImages]);
 
-  const images = banners
-    .filter((b) => b.isActive && (b.desktopImage || b.mobileImage))
-    .map((b) => (isMobile ? b.mobileImage : b.desktopImage));
+  const dynamicImages = propImages && propImages.length > 0
+  ? propImages.map((b) => isMobile ? b.mobileImage : b.desktopImage)
+  : banners
+      .filter((b) => b.isActive && (b.desktopImage || b.mobileImage))
+      .map((b) => isMobile ? b.mobileImage : b.desktopImage);
 
   return (
     <div className="relative w-full">
       <Swiper
         modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={autoplay ? { delay: 3000, disableOnInteraction: false } : false}
         navigation
-        loop={images.length > 1} // Loop only if more than 1 slide
+        loop={dynamicImages.length > 1}
         className="w-full"
       >
-        {images.map((url, i) => (
+        {dynamicImages.map((url, i) => (
           <SwiperSlide key={i}>
             <img
               src={url}
-              alt={`Occasion ${i}`}
+              alt={`Slide ${i}`}
               className="w-full h-[400px] md:h-auto object-cover"
             />
           </SwiperSlide>

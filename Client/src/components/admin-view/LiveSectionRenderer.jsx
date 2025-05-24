@@ -55,8 +55,32 @@ function ColumnDropZone({ blockKey, columnIndex, elements, onDropElement }) {
 
 export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropElement, onResizeColumn }) {
   switch (type) {
+    
+      case "text":
+  return (
+    <div
+      className={`text-base text-gray-800 leading-relaxed ${data.customClass || ""}`}
+      style={{
+        textAlign: data.textAlign || undefined,
+        color: data.color || undefined,
+        fontSize: data.fontSize || undefined,
+        fontWeight: data.fontWeight || undefined,
+        margin: data.margin || undefined,
+        padding: data.padding || undefined,
+        backgroundColor: data.backgroundColor || undefined,
+      }}
+    >
+      <div dangerouslySetInnerHTML={{ __html: data.html || "" }} />
+    </div>
+  );
+
+
     case "slider":
-      return <PreviewWrapper><HomepageSlider {...data} /></PreviewWrapper>;
+  return (
+    <div className="-mx-4 md:-mx-8">
+      <HomepageSlider images={data.images} autoplay={data.autoplay} />
+    </div>
+  );
 
     case "product-slider":
       if (!data?.title || !data?.limit) {
@@ -70,25 +94,62 @@ export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropE
     case "theme-grid":
       return <ThemeCategorySection {...data} />;
 
-    case "contact-info":
-      return (
-        <div className="px-4 pt-10 md:px-8 py-10 bg-white text-center">
-          <div className="flex flex-col pt-10 md:flex-row justify-center items-center gap-10 md:gap-20 mb-10">
-            {(data.phones || []).map((phone, i) => (
-              <div key={`phone-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
-                <PhoneCall size={28} className="text-[#46396F]" />
-                {phone}
-              </div>
-            ))}
-            {(data.whatsapp || []).map((wh, i) => (
-              <div key={`wh-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
-                <FaWhatsapp size={28} className="text-green-500" />
-                {wh}
-              </div>
-            ))}
+    case "contact-info": {
+  const {
+    phones = [],
+    whatsapp = [],
+    buttonText,
+    buttonLink,
+    title,
+    subtitle,
+    textAlign = "center",
+    fontColor,
+    backgroundColor,
+    customClass
+  } = data;
+
+  return (
+    <div
+      className={`px-4 pt-10 md:px-8 py-10 ${customClass || ""}`}
+      style={{
+        backgroundColor: backgroundColor || "#fff",
+        color: fontColor || undefined,
+        textAlign,
+      }}
+    >
+      {title && <h2 className="text-2xl font-semibold mb-2">{title}</h2>}
+      {subtitle && <p className="text-gray-500 mb-6">{subtitle}</p>}
+
+      <div className="flex flex-col pt-10 md:flex-row justify-center items-center gap-10 md:gap-20 mb-10">
+        {phones.map((phone, i) => (
+          <div key={`phone-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+            <PhoneCall size={28} className="text-[#463970]" />
+            <span>{phone}</span>
           </div>
-        </div>
-      );
+        ))}
+
+        {whatsapp.map((wa, i) => (
+          <div key={`wh-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+            <FaWhatsapp
+              size={28}
+              className={`text-white p-1 rounded ${i % 2 === 0 ? 'bg-[#25D366]' : 'bg-[#463970]'}`}
+            />
+            <span>{wa}</span>
+          </div>
+        ))}
+      </div>
+
+      {buttonText && buttonLink && (
+        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
+          <button className="bg-[#463970] text-white px-6 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
+            {buttonText}
+          </button>
+        </a>
+      )}
+    </div>
+  );
+}
+
 
     case "layout-section": {
       const widths = data.columnWidths && data.columnWidths.length === (data.elements?.length || 0)
