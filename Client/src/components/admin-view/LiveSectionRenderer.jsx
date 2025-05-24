@@ -98,18 +98,50 @@ export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropE
       const gap = data.gap || "0.25rem";
       const bgColor = data.backgroundColor || "white";
       const customClass = data.customClass || "";
+      const margin = data.margin || "";
+const borderWidth = data.borderWidth || "";
+const borderColor = data.borderColor || "";
+const borderStyle = data.borderStyle || "";
+const borderRadius = data.borderRadius || "";
+const boxShadow = data.boxShadow || "";
+const backgroundImage = data.backgroundImage || "";
+const columnStyles = data.columnStyles || [];
+
 
       return (
         <div
           className={`flex w-full rounded overflow-hidden border border-gray-300 ${customClass}`}
-          style={{ backgroundColor: bgColor, padding, gap }}
+          style={{
+  backgroundColor: bgColor,
+  backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+  backgroundSize: backgroundImage ? "cover" : undefined,
+  padding,
+  gap,
+  margin,
+  borderWidth,
+  borderColor,
+  borderStyle,
+  borderRadius,
+  boxShadow,
+}}
+
         >
           {elements.map((col, i) => (
             <div
-              key={i}
-              className="relative"
-              style={{ width: `${widths[i]}%`, minWidth: 40 }}
-            >
+  key={i}
+  className="relative"
+  style={{
+    width: `${widths[i]}%`,
+    minWidth: 40,
+    backgroundColor: columnStyles[i]?.backgroundColor || undefined,
+    padding: columnStyles[i]?.padding || undefined,
+    textAlign: columnStyles[i]?.textAlign || undefined,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: columnStyles[i]?.alignItems || undefined,
+  }}
+>
+
               <ColumnDropZone
                 blockKey={blockKey}
                 columnIndex={i}
