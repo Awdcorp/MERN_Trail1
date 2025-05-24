@@ -11,7 +11,7 @@ import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
 import OccasionCategorySection from "@/components/shopping-view/occasioncategorysection";
 import CategorySection from "@/components/shopping-view/occasioncategorysection";
-import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import ProductSliderSection from "@/components/shopping-view/ProductSliderSection";
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";

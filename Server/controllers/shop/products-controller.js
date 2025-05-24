@@ -3,7 +3,13 @@ const mongoose = require("mongoose");
 
 const getFilteredProducts = async (req, res) => {
   try {
-    const { category = [], brand = [], sortBy = "price-lowtohigh", limit = 0 } = req.query;
+    const {
+      category = [],
+      brand = [],
+      sortBy = "price-lowtohigh",
+      limit = 0,
+      tag // ✅ new: accept tag from query
+    } = req.query;
 
     let filters = {};
 
@@ -18,6 +24,10 @@ const getFilteredProducts = async (req, res) => {
 
     if (brand.length) {
       filters.brand = { $in: brand.split(",") };
+    }
+
+    if (tag) {
+      filters.tags = { $in: [tag] }; // ✅ added support for tag-based filtering
     }
 
     let sort = {};
@@ -63,7 +73,7 @@ const getFilteredProducts = async (req, res) => {
     console.error("❌ [FILTERED PRODUCTS] Error:", e);
     res.status(500).json({
       success: false,
-      message: "Some error occured",
+      message: "Some error occurred",
     });
   }
 };
@@ -91,7 +101,7 @@ const getProductDetails = async (req, res) => {
     console.error("❌ [PRODUCT DETAILS] Error:", e);
     res.status(500).json({
       success: false,
-      message: "Some error occured",
+      message: "Some error occurred",
     });
   }
 };

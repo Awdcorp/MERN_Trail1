@@ -269,6 +269,33 @@ case "slider":
     </>
   );
 
+case "product-slider":
+  return (
+    <>
+      <label className="text-sm font-medium">Title</label>
+      <Input
+        value={formData.title || ""}
+        onChange={(e) => handleChange("title", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Product Tag / Category</label>
+      <Input
+        value={formData.tag || ""}
+        onChange={(e) => handleChange("tag", e.target.value)}
+        placeholder="e.g. new, featured, cake-toppers"
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Limit</label>
+      <Input
+        type="number"
+        value={formData.limit || 8}
+        onChange={(e) => handleChange("limit", parseInt(e.target.value))}
+        className="mb-4"
+      />
+    </>
+  );
 
 
       case "layout-section":

@@ -1,7 +1,7 @@
 // File: Client/src/components/admin-view/PublicSectionRenderer.jsx
 
 import HomepageSlider from "@/components/shopping-view/homepageslider";
-import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import ProductSliderSection from "@/components/shopping-view/ProductSliderSection";
 import CategorySection from "@/components/shopping-view/occasioncategorysection";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";
@@ -108,7 +108,13 @@ export default function PublicSectionRenderer({ type, data = {} }) {
   );
 
     case "product-slider":
-      return <ProductSliderSection {...data} />;
+      return <ProductSliderSection
+  title={data.title}
+  categoryIds={data.categoryIds || []}
+  sortBy={data.sortBy || "date-newest"}
+  limit={data.limit || 10}
+/>
+;
 
     case "category-grid":
       return <CategorySection {...data} />;

@@ -5,7 +5,14 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 
-export default function ProductSliderSection({ title, categoryIds = [], sortBy = "date-newest", customProducts }) {
+export default function ProductSliderSection({
+  title,
+  categoryIds = [],
+  sortBy = "date-newest",
+  tag,
+  limit,
+  customProducts,
+}) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -17,14 +24,17 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
     async function fetchProducts() {
       try {
         const params = {
-          category: categoryIds?.join(','),
+          category: categoryIds?.join(","),
+          tag,
           sortBy,
-          limit: 10,
+          limit: Number(limit) || 8,
         };
 
         console.log(`📦 [SLIDER] Fetching "${title}" products with:`, params);
 
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/shop/products/get`, { params });
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/shop/products/get`, {
+          params,
+        });
         setProducts(res.data.data || []);
         console.log(`✅ [SLIDER] "${title}" fetched ${res.data.data?.length || 0} products`);
       } catch (err) {
@@ -33,8 +43,10 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
     }
 
     fetchProducts();
-  }, [customProducts, JSON.stringify(categoryIds), sortBy]); // ✅ deep comparison
-  
+  }, [customProducts, JSON.stringify(categoryIds), tag, limit, sortBy]);
+
+  const dynamicSlides = Math.min(products.length, 6);
+
   return (
     <div className="px-4 md:px-6 py-8">
       <h2 className="text-xl md:text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
@@ -44,13 +56,13 @@ export default function ProductSliderSection({ title, categoryIds = [], sortBy =
 
       <Swiper
         spaceBetween={12}
-        slidesPerView={2}
+        slidesPerView={dynamicSlides}
         breakpoints={{
-          480: { slidesPerView: 2 },
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 6 },
+          480: { slidesPerView: Math.min(products.length, 2) },
+          640: { slidesPerView: Math.min(products.length, 2) },
+          768: { slidesPerView: Math.min(products.length, 3) },
+          1024: { slidesPerView: Math.min(products.length, 4) },
+          1280: { slidesPerView: Math.min(products.length, 6) },
         }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[Autoplay]}

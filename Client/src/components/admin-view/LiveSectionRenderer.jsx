@@ -1,7 +1,7 @@
 // File: Client/src/components/admin-view/LiveSectionRenderer.jsx
 
 import HomepageSlider from "@/components/shopping-view/homepageslider";
-import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import ProductSliderSection from "@/components/shopping-view/ProductSliderSection";
 import CategorySection from "@/components/shopping-view/occasioncategorysection";
 import ThemeCategorySection from "@/components/shopping-view/themecategorysection";
 import { PhoneCall } from "lucide-react";
@@ -83,10 +83,17 @@ export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropE
   );
 
     case "product-slider":
-      if (!data?.title || !data?.limit) {
-        return <PreviewWrapper><div className="text-red-500 text-sm">❗ Missing title or limit</div></PreviewWrapper>;
-      }
-      return <PreviewWrapper><ProductSliderSection {...data} /></PreviewWrapper>;
+  if (!data?.title || !data?.limit) {
+    return <PreviewWrapper><div className="text-red-500 text-sm">❗ Missing title or limit</div></PreviewWrapper>;
+  }
+  return (
+    <ProductSliderSection
+      title={data.title}
+      tag={data.tag || ""}
+      limit={data.limit || 10}
+    />
+  );
+
 
     case "category-grid":
       return <CategorySection {...data} />;

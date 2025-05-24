@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
+import ProductSliderSection from "@/components/shopping-view/ProductSliderSection";
 import { getReviews } from "@/store/shop/review-slice";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import { getGuestId } from "@/lib/guest-id";
