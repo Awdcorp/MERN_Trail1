@@ -72,6 +72,24 @@ export default function SectionPreview({ type }) {
         </div>
       );
 
+    case "layout-section":
+      return (
+        <div className="bg-white border rounded-md p-2 w-60 h-32 overflow-hidden text-xs text-gray-700">
+          <div className="font-medium">Layout Section</div>
+          <div className="mt-3 flex gap-2">
+            <div className="flex-1 h-12 bg-indigo-100 rounded" />
+            <div className="flex-1 h-12 bg-indigo-100 rounded" />
+          </div>
+        </div>
+      );
+
+    case "text":
+      return (
+        <div className="bg-white border rounded-md p-2 w-60 h-24 overflow-hidden text-xs text-gray-700 flex items-center justify-center">
+          Text Block
+        </div>
+      );
+
     default:
       return <div className="w-60 h-32 bg-gray-100 text-center text-sm flex items-center justify-center">Unknown section</div>;
   }

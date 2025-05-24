@@ -1,5 +1,3 @@
-// Client/src/components/admin-view/LiveSectionRenderer.jsx
-
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import CategorySection from "@/components/shopping-view/occasioncategorysection";
@@ -53,7 +51,7 @@ function ColumnDropZone({ blockKey, columnIndex, elements, onDropElement }) {
   );
 }
 
-export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropElement }) {
+export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropElement, onResizeColumn }) {
   switch (type) {
     case "slider":
       return <PreviewWrapper><HomepageSlider {...data} /></PreviewWrapper>;
@@ -76,57 +74,93 @@ export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropE
           <div className="flex flex-col pt-10 md:flex-row justify-center items-center gap-10 md:gap-20 mb-10">
             {(data.phones || []).map((phone, i) => (
               <div key={`phone-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
-                <PhoneCall size={28} className="text-[#463970]" />
-                <span>{phone}</span>
+                <PhoneCall size={28} className="text-[#46396F]" />
+                {phone}
               </div>
             ))}
-
-            {(data.whatsapp || []).map((wa, i) => (
-              <div key={`wa-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
-                <FaWhatsapp
-                  size={28}
-                  className={i === 1 ? "bg-[#463970] text-white p-1 rounded" : "text-[#25D366]"}
-                />
-                <span>{wa}</span>
+            {(data.whatsapp || []).map((wh, i) => (
+              <div key={`wh-${i}`} className="flex items-center gap-3 text-xl text-[#2D2D2D]">
+                <FaWhatsapp size={28} className="text-green-500" />
+                {wh}
               </div>
             ))}
           </div>
-
-          {data.buttonText && (
-            <a href={data.buttonLink || "#"}>
-              <button className="bg-[#463970] text-white px-6 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
-                {data.buttonText}
-              </button>
-            </a>
-          )}
         </div>
       );
 
-    case "layout-section":
-      const cols = data.layout === "3-column" ? 3 : data.layout === "2-column" ? 2 : 1;
+        case "layout-section": {
+      const widths = data.columnWidths && data.columnWidths.length === (data.elements?.length || 0)
+        ? data.columnWidths
+        : Array(data.elements?.length || 2).fill(100 / (data.elements?.length || 2));
+      const elements = data.elements || [];
+
+      const padding = data.padding || "1rem";
+      const gap = data.gap || "0.25rem";
+      const bgColor = data.backgroundColor || "white";
+      const customClass = data.customClass || "";
+
       return (
-        <div className="bg-white border rounded-md p-4">
-          <div className={`grid gap-4 ${cols === 1 ? "grid-cols-1" : cols === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
-            {Array(cols).fill(0).map((_, colIndex) => (
+        <div
+          className={`flex w-full rounded overflow-hidden border border-gray-300 ${customClass}`}
+          style={{ backgroundColor: bgColor, padding, gap }}
+        >
+          {elements.map((col, i) => (
+            <div
+              key={i}
+              className="relative"
+              style={{ width: `${widths[i]}%`, minWidth: 40 }}
+            >
               <ColumnDropZone
-                key={colIndex}
                 blockKey={blockKey}
-                columnIndex={colIndex}
-                elements={data.elements?.[colIndex] || []}
+                columnIndex={i}
+                elements={col}
                 onDropElement={onDropElement}
               />
-            ))}
-          </div>
+              {i < elements.length - 1 && (
+                <div
+                  className="absolute top-0 right-0 w-2 h-full cursor-col-resize z-10"
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    const startX = e.clientX;
+                    const initialWidths = [...widths];
+                    const container = e.currentTarget.parentElement.parentElement;
+                    const containerWidth = container.offsetWidth;
+
+                    const onMouseMove = (moveEvent) => {
+                      const deltaX = moveEvent.clientX - startX;
+                      let deltaPercent = (deltaX / containerWidth) * 100;
+
+                      const minWidth = 10;
+                      let newWidths = [...initialWidths];
+                      newWidths[i] = Math.max(minWidth, initialWidths[i] + deltaPercent);
+                      newWidths[i + 1] = Math.max(minWidth, initialWidths[i + 1] - deltaPercent);
+
+                      const total = newWidths.reduce((a, b) => a + b, 0);
+                      newWidths = newWidths.map(w => (w / total) * 100);
+
+                      if (onResizeColumn) {
+                        onResizeColumn(blockKey, newWidths);
+                      }
+                    };
+
+                    const onMouseUp = () => {
+                      window.removeEventListener("mousemove", onMouseMove);
+                      window.removeEventListener("mouseup", onMouseUp);
+                    };
+
+                    window.addEventListener("mousemove", onMouseMove);
+                    window.addEventListener("mouseup", onMouseUp);
+                  }}
+                />
+              )}
+            </div>
+          ))}
         </div>
       );
-          case "text":
-      return (
-        <div className="bg-white p-4 border rounded shadow-sm text-sm text-gray-700">
-          <div dangerouslySetInnerHTML={{ __html: data.html || "<p>Text block</p>" }} />
-        </div>
-      );
+    }
+
 
     default:
-      return <div className="text-red-500 text-sm">❌ No renderer for "{type || 'undefined'}"</div>;
+      return <PreviewWrapper><div className="text-red-500 text-sm">❗ Unsupported block type: {type}</div></PreviewWrapper>;
   }
 }

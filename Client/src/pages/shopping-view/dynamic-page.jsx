@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import LiveSectionRenderer from "@/components/admin-view/LiveSectionRenderer";
+import PublicSectionRenderer from "@/components/shopping-view/PublicSectionRenderer";
+
 import { Settings } from "lucide-react";
 
 export default function DynamicPage() {
@@ -22,13 +23,6 @@ export default function DynamicPage() {
 
   return (
     <div className="relative min-h-screen bg-white">
-      {/* Toggle Button */}
-      <button
-        className="fixed top-4 right-4 z-40 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700"
-        onClick={() => setShowSidebar((prev) => !prev)}
-      >
-        <Settings size={18} />
-      </button>
 
       {/* Page Content */}
       <div className={`transition-all ${showSidebar ? "mr-[320px]" : ""}`}>
@@ -38,7 +32,7 @@ export default function DynamicPage() {
           {Array.isArray(page.blocks) && page.blocks.length > 0 ? (
             page.blocks.map((block, idx) => (
               <div key={idx}>
-                <LiveSectionRenderer type={block.type} data={block.data} />
+                <PublicSectionRenderer type={block.type} data={block.data} />
               </div>
             ))
           ) : (
@@ -47,19 +41,6 @@ export default function DynamicPage() {
         </div>
       </div>
 
-      {/* Fixed Sidebar */}
-      <aside
-        className={`fixed top-0 right-0 h-full w-[320px] border-l bg-white p-6 shadow-lg transition-transform duration-300 z-30 ${
-          showSidebar ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <h2 className="text-lg font-semibold mb-4">Page Settings</h2>
-        <div className="text-sm text-gray-600">
-          <p>Slug: <strong>{page.slug}</strong></p>
-          <p>Status: <strong>{page.status}</strong></p>
-          <p className="mt-4 text-gray-400 italic">Sidebar ready for future SEO/meta settings.</p>
-        </div>
-      </aside>
     </div>
   );
 }

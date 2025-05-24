@@ -1,0 +1,43 @@
+export default function PublicSectionRenderer({ type, data = {} }) {
+  switch (type) {
+    case "layout-section": {
+      const widths = data.columnWidths || [];
+      const elements = data.elements || [];
+      const padding = data.padding || "1rem";
+      const gap = data.gap || "1rem";
+      const bgColor = data.backgroundColor || "#fff";
+      const customClass = data.customClass || "";
+
+      return (
+        <div
+          className={`flex w-full mb-6 ${customClass}`}
+          style={{ backgroundColor: bgColor, padding, gap }}
+        >
+          {elements.map((col, i) => (
+            <div
+              key={i}
+              style={{ width: `${widths[i] || 100 / elements.length}%` }}
+              className="px-2"
+            >
+              {(col || []).map((el, j) => {
+                if (el.type === "text") {
+                  return (
+                    <div
+                      key={j}
+                      className="text-base text-gray-800 leading-relaxed mb-2"
+                      dangerouslySetInnerHTML={{ __html: el.data?.html || "" }}
+                    />
+                  );
+                }
+                return null;
+              })}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    default:
+      return <div className="text-red-400 text-sm">Unsupported block type: {type}</div>;
+  }
+}
