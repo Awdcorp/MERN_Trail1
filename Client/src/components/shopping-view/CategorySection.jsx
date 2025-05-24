@@ -4,11 +4,13 @@ import { Autoplay } from "swiper/modules";
 import { categoryGroups } from "@/components/shopping-view/categoryslliderimages";
 import "swiper/css";
 
-export default function CategorySection({ title, groupName, isSlider = true, limit = 6 }) {
+export default function CategorySection({ title, groupName, isSlider = true, limit = 7 }) {
   const categories = categoryGroups[groupName] || [];
   const visible = categories.slice(0, limit);
 
-  const isThemeGrid = groupName?.toLowerCase().includes("theme");
+  const normalized = groupName?.toLowerCase() || "";
+  const isThemeGrid = normalized.includes("theme");
+  const isPartyPackage = normalized === "party packages";
 
   return (
     <div className="px-4 md:px-8 mt-10">
@@ -17,7 +19,27 @@ export default function CategorySection({ title, groupName, isSlider = true, lim
       </h2>
       <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
 
-      {isThemeGrid ? (
+      {isPartyPackage ? (
+        // 7-column party package grid
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+          {visible.map((item, idx) => (
+            <a
+              key={idx}
+              href={`/shop/product/${item.link}`}
+              className="flex flex-col items-center justify-center"
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-48 object-cover rounded-md mb-4"
+              />
+              <span className="text-sm text-center text-[#463970]" style={{ fontSize: "15px", fontWeight: 400 }}>
+                {item.name}
+              </span>
+            </a>
+          ))}
+        </div>
+      ) : isThemeGrid ? (
         // Fixed 4-column theme block
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {visible.map((category, index) => (
@@ -25,6 +47,7 @@ export default function CategorySection({ title, groupName, isSlider = true, lim
           ))}
         </div>
       ) : isSlider ? (
+        // Default slider layout
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -45,6 +68,7 @@ export default function CategorySection({ title, groupName, isSlider = true, lim
           ))}
         </Swiper>
       ) : (
+        // Default grid fallback
         <div
           className="grid gap-6"
           style={{
@@ -60,7 +84,7 @@ export default function CategorySection({ title, groupName, isSlider = true, lim
   );
 }
 
-// Slider/Grid card
+// Grid/Slider cards
 function GridCard({ category }) {
   return (
     <Link
@@ -82,7 +106,7 @@ function GridCard({ category }) {
   );
 }
 
-// Theme-specific block
+// Theme grid card
 function ThemeCard({ category }) {
   return (
     <Link

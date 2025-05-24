@@ -57,12 +57,19 @@ export default function SectionPreview({ type }) {
       );
 
     case "store-locations":
-      return (
-        <div className="bg-white border rounded-md p-2 w-60 h-32 overflow-hidden">
-          <div className="text-xs font-medium text-gray-600">Store Locations</div>
-          <div className="mt-2 text-[10px] text-gray-400">Google map iframe preview</div>
-        </div>
-      );
+  return (
+    <div className="bg-white border rounded-md p-2 w-60 h-32 overflow-hidden text-xs text-gray-600">
+      <div className="font-medium">Store Locations</div>
+      <div className="grid grid-cols-2 gap-1 mt-2">
+        {[1, 2].map((i) => (
+          <div key={i} className="h-12 bg-gradient-to-t from-pink-300 to-transparent rounded-sm" />
+        ))}
+      </div>
+      <div className="mt-1 text-[10px] text-gray-400 text-center">Map + Address Blocks</div>
+    </div>
+  );
+
+
 
     case "contact-info":
       return (

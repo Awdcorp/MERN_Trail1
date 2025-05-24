@@ -20,6 +20,7 @@ const paletteTypes = [
   "product-slider",
   "category-grid",
   "theme-grid",
+  "store-locations",
   "contact-info"
 ];
 

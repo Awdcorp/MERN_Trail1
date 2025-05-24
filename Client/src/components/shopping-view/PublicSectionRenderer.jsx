@@ -117,7 +117,6 @@ export default function PublicSectionRenderer({ type, data = {} }) {
 ;
 
     case "category-grid":
-case "theme-grid":
   return <CategorySection
   title={data.title}
   groupName={data.groupName}
@@ -125,6 +124,86 @@ case "theme-grid":
   isSlider={data.isSlider !== false}
 />
 ;
+case "store-locations": {
+  const defaultStores = [
+    {
+      name: "AL BARSHA",
+      address: "Iridium building, Umm Suqeim Road, Barsha, Dubai",
+      color: "from-[#B7117A]",
+      buttonColor: "#B7117A",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+    {
+      name: "THE SPRINGS SOUK",
+      address: "The Springs Souk, Ground floor, Dubai",
+      color: "from-[#00B0BA]",
+      buttonColor: "#00B0BA",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+    {
+      name: "MOTORCITY",
+      address: "Foxhill 9 building, Ground floor, Motor City, Dubai",
+      color: "from-[#F18074]",
+      buttonColor: "#F18074",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+    {
+      name: "ARABIAN RANCHES",
+      address: "Arabian Ranches III Souk, Dubai",
+      color: "from-[#B7117A]",
+      buttonColor: "#B7117A",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+  ];
+
+  const stores = (data.stores && data.stores.length > 0) ? data.stores : defaultStores;
+
+  return (
+    <div className="px-4 md:px-8 mt-10">
+      <h2 className="text-2xl font-medium text-center mb-2 pt-5 uppercase text-[#463970]">
+        Visit Our Stores
+      </h2>
+      <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {stores.map((store, idx) => (
+          <div
+            key={idx}
+            className="relative overflow-hidden rounded-xl shadow-md text-center text-[#2D2D2D]"
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t ${store.color} to-transparent z-0`}
+            />
+            <div className="relative z-10 p-4 flex flex-col items-center">
+              <div
+                className="text-white text-xs font-semibold tracking-widest uppercase h-10 w-44 flex items-center justify-center rounded-md mx-auto"
+                style={{ backgroundColor: store.buttonColor }}
+              >
+                {store.name}
+              </div>
+              <h3 className="text-center text-[14px] font-medium leading-snug mb-1 pt-5 max-w-[80%] mx-auto px-2">
+                {store.address}
+              </h3>
+              <div className="w-[100%] h-[1px] bg-black my-3" />
+              <iframe
+                src={store.mapSrc}
+                width="100%"
+                height="230"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={store.name}
+                className="rounded-md"
+              ></iframe>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 
     case "contact-info": {
   const {

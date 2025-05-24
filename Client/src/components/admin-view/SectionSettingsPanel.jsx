@@ -72,6 +72,131 @@ export default function SectionSettingsPanel({ block, onSave, onCancel, onLiveUp
 
     </>
   );
+case "store-locations":
+  const defaultStores = [
+    {
+      name: "AL BARSHA",
+      address: "Iridium building, Umm Suqeim Road, Barsha, Dubai",
+      color: "from-[#B7117A]",
+      buttonColor: "#B7117A",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+    {
+      name: "THE SPRINGS SOUK",
+      address: "The Springs Souk, Ground floor, Dubai",
+      color: "from-[#00B0BA]",
+      buttonColor: "#00B0BA",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+    {
+      name: "MOTORCITY",
+      address: "Foxhill 9 building, Ground floor, Motor City, Dubai",
+      color: "from-[#F18074]",
+      buttonColor: "#F18074",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+    {
+      name: "ARABIAN RANCHES",
+      address: "Arabian Ranches III Souk, Dubai",
+      color: "from-[#B7117A]",
+      buttonColor: "#B7117A",
+      mapSrc: "https://www.google.com/maps/embed?...",
+    },
+  ];
+
+  const stores = (formData.stores?.length > 0 ? formData.stores : defaultStores);
+
+  return (
+    <>
+      <label className="text-sm font-medium">Section Title</label>
+      <Input
+        value={formData.title || "Visit Our Stores"}
+        onChange={(e) => handleChange("title", e.target.value)}
+        className="mb-4"
+      />
+
+      <Button
+        variant="outline"
+        onClick={() => {
+          const updated = [...stores, {
+            name: "",
+            address: "",
+            color: "from-[#B7117A]",
+            buttonColor: "#B7117A",
+            mapSrc: "",
+          }];
+          handleChange("stores", updated);
+        }}
+        className="mb-4"
+      >
+        ➕ Add Store
+      </Button>
+
+      {(stores || []).map((store, idx) => (
+        <div key={idx} className="border rounded p-3 mb-4 space-y-2 bg-gray-50">
+          <label className="text-xs font-semibold text-gray-600 block">Store #{idx + 1}</label>
+
+          <Input
+            placeholder="Store Name"
+            value={store.name}
+            onChange={(e) => {
+              const updated = [...stores];
+              updated[idx].name = e.target.value;
+              handleChange("stores", updated);
+            }}
+          />
+          <Input
+            placeholder="Store Address"
+            value={store.address}
+            onChange={(e) => {
+              const updated = [...stores];
+              updated[idx].address = e.target.value;
+              handleChange("stores", updated);
+            }}
+          />
+          <Input
+            placeholder="Gradient Tailwind Class (e.g. from-[#B7117A])"
+            value={store.color}
+            onChange={(e) => {
+              const updated = [...stores];
+              updated[idx].color = e.target.value;
+              handleChange("stores", updated);
+            }}
+          />
+          <Input
+            placeholder="Button Color (e.g. #B7117A)"
+            value={store.buttonColor}
+            onChange={(e) => {
+              const updated = [...stores];
+              updated[idx].buttonColor = e.target.value;
+              handleChange("stores", updated);
+            }}
+          />
+          <Input
+            placeholder="Google Maps Embed URL"
+            value={store.mapSrc}
+            onChange={(e) => {
+              const updated = [...stores];
+              updated[idx].mapSrc = e.target.value;
+              handleChange("stores", updated);
+            }}
+          />
+
+          <Button
+            variant="destructive"
+            size="sm"
+            onClick={() => {
+              const updated = [...stores];
+              updated.splice(idx, 1);
+              handleChange("stores", updated);
+            }}
+          >
+            🗑️ Remove
+          </Button>
+        </div>
+      ))}
+    </>
+  );
 
       case "contact-info":
   return (
