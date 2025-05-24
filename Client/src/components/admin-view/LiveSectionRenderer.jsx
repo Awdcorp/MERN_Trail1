@@ -96,7 +96,14 @@ export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropE
 
 
     case "category-grid":
-      return <CategorySection {...data} />;
+  return (
+    <CategorySection
+      title={data.title}
+      groupName={data.groupName}
+      isSlider={data.isSlider}
+    />
+  );
+
 
     case "theme-grid":
       return <ThemeCategorySection {...data} />;

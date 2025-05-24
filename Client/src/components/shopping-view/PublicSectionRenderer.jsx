@@ -117,7 +117,14 @@ export default function PublicSectionRenderer({ type, data = {} }) {
 ;
 
     case "category-grid":
-      return <CategorySection {...data} />;
+  return (
+    <CategorySection
+      title={data.title}
+      groupName={data.groupName}
+      isSlider={data.isSlider}
+    />
+  );
+
 
     case "theme-grid":
       return <ThemeCategorySection {...data} />;

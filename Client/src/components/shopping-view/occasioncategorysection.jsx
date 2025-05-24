@@ -6,12 +6,12 @@ import { Autoplay } from "swiper/modules";
 import { categoryGroups } from "@/components/shopping-view/categoryslliderimages";
 import "swiper/css";
 
-export default function CategorySection({ groupName, isSlider = true }) {
+export default function CategorySection({ title, groupName, isSlider = true }) {
   const categories = categoryGroups[groupName] || [];
   return (
     <div className="px-4 md:px-8 mt-10">
       <h2 className="text-2xl font-medium text-center mb-2 uppercase text-[#463970]">
-      {groupName}
+      {title || groupName}
       </h2>
       <div className="w-[140px] h-[1.9px] bg-[#A3A3A399] mx-auto mb-10" />
  

@@ -29,6 +29,41 @@ export default function SectionSettingsPanel({ block, onSave, onCancel, onLiveUp
 
   const renderFields = () => {
     switch (block.type) {
+      case "category-grid":
+  return (
+    <>
+      <label className="text-sm font-medium">Title</label>
+      <Input
+        value={formData.title || ""}
+        onChange={(e) => handleChange("title", e.target.value)}
+        className="mb-4"
+      />
+
+      <label className="text-sm font-medium">Category Group</label>
+      <select
+        value={formData.groupName || ""}
+        onChange={(e) => handleChange("groupName", e.target.value)}
+        className="w-full border rounded p-2 mb-4"
+      >
+        <option value="">Select Group</option>
+        <option value="Shop by Occasion">Shop by Occasion</option>
+        <option value="Plan Your Birthday">Plan Your Birthday</option>
+        <option value="SHOP BY THEME">SHOP BY THEME</option>
+        <option value="PARTY PACKAGES">PARTY PACKAGES</option>
+      </select>
+
+      <label className="text-sm font-medium">Display as Slider?</label>
+      <select
+        value={formData.isSlider ? "true" : "false"}
+        onChange={(e) => handleChange("isSlider", e.target.value === "true")}
+        className="w-full border rounded p-2 mb-4"
+      >
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </>
+  );
+
       case "contact-info":
   return (
     <>
