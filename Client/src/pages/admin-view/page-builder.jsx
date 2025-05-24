@@ -1,4 +1,4 @@
-// Full updated page-builder.jsx with working dropTextIntoColumn integration
+// File: Client/src/pages/admin-view/page-builder.jsx
 
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
@@ -31,7 +31,18 @@ const defaultDataMap = {
     padding: "1rem",
     gap: "0.5rem",
     backgroundColor: "#ffffff",
-    customClass: ""
+    customClass: "",
+    columnStyles: [],
+    margin: "",
+    borderWidth: "",
+    borderColor: "",
+    borderStyle: "",
+    borderRadius: "",
+    boxShadow: "",
+    backgroundImage: "",
+    label: "",
+    collapsed: false,
+    visibility: "all"
   },
   text: {
     html: "<p>Edit me</p>"
@@ -54,43 +65,35 @@ export default function PageBuilder() {
   const [loading, setLoading] = useState(true);
   const [editingBlock, setEditingBlock] = useState(null);
   const [showSidebar, setShowSidebar] = useState(false);
-const [page, setPage] = useState(null); // ⬅️ Add this
+  const [page, setPage] = useState(null);
 
   const handleLiveUpdate = (blockKey, newData) => {
-  setCanvasBlocks((prev) =>
-    prev.map((b) => (b.key === blockKey ? { ...b, data: newData } : b))
-  );
+    setCanvasBlocks((prev) =>
+      prev.map((b) => (b.key === blockKey ? { ...b, data: newData } : b))
+    );
+    if (editingBlock?.key === blockKey) {
+      setEditingBlock((prev) => ({ ...prev, data: newData }));
+    }
+  };
 
-  if (editingBlock?.key === blockKey) {
-    setEditingBlock((prev) => ({ ...prev, data: newData }));
-  }
-};
-  // Resizes columns in a layout-section block
   const resizeColumns = (sectionKey, newWidths) => {
-  setCanvasBlocks((prevBlocks) =>
-    prevBlocks.map((section) =>
-      section.key === sectionKey
-        ? { ...section, data: { ...section.data, columnWidths: newWidths } }
-        : section
-    )
-  );
-
-  // ✅ Sync settings panel immediately if this block is being edited
-  if (editingBlock?.key === sectionKey) {
-    setEditingBlock((prev) => ({ ...prev, data: { ...prev.data, columnWidths: newWidths } }));
-  }
-};
+    setCanvasBlocks((prev) =>
+      prev.map((b) =>
+        b.key === sectionKey ? { ...b, data: { ...b.data, columnWidths: newWidths } } : b
+      )
+    );
+    if (editingBlock?.key === sectionKey) {
+      setEditingBlock((prev) => ({ ...prev, data: { ...prev.data, columnWidths: newWidths } }));
+    }
+  };
 
   const dropTextIntoColumn = (sectionKey, columnIndex, textElement) => {
-    setCanvasBlocks((prevBlocks) =>
-      prevBlocks.map((section) => {
-        if (section.key !== sectionKey) return section;
-        const newElements = [...(section.data.elements || [])];
+    setCanvasBlocks((prev) =>
+      prev.map((b) => {
+        if (b.key !== sectionKey) return b;
+        const newElements = [...(b.data.elements || [])];
         newElements[columnIndex] = [...(newElements[columnIndex] || []), textElement];
-        return {
-          ...section,
-          data: { ...section.data, elements: newElements }
-        };
+        return { ...b, data: { ...b.data, elements: newElements } };
       })
     );
   };
@@ -109,11 +112,18 @@ const [page, setPage] = useState(null); // ⬅️ Add this
     });
   };
 
-  const handleEditBlock = (blockKey) => {
+  const handleEditBlock = (blockKey, override = {}) => {
     const target = canvasBlocks.find((b) => b.key === blockKey);
     if (target) {
-      setEditingBlock(target);
+      const updated = { ...target, data: { ...target.data, ...override } };
+      setEditingBlock(updated);
       setShowSidebar(true);
+
+      if (override.collapsed !== undefined) {
+        setCanvasBlocks((prev) =>
+          prev.map((b) => (b.key === blockKey ? updated : b))
+        );
+      }
     }
   };
 
@@ -128,37 +138,34 @@ const [page, setPage] = useState(null); // ⬅️ Add this
   const handleDelete = (keyToRemove) =>
     setCanvasBlocks((prev) => prev.filter((b) => b.key !== keyToRemove));
 
-  const moveBlock = (from, to) =>
+  const moveBlock = (from, to) => {
     setCanvasBlocks((prev) => {
       const updated = [...prev];
       const [moved] = updated.splice(from, 1);
       updated.splice(to, 0, moved);
       return updated;
     });
+  };
 
   const fetchPageBlocks = async () => {
-  try {
-    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/pages/${id}`);
-    const pageData = res.data;
-
-    const loaded =
-      pageData?.blocks?.map((section, idx) => ({
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/pages/${id}`);
+      const pageData = res.data;
+      const loaded = pageData?.blocks?.map((section, idx) => ({
         id: `${section.type}-${idx}`,
         type: section.type,
         data: section.data || {},
         key: Date.now() + idx,
         fromPalette: false,
       })) || [];
-
-    setCanvasBlocks(loaded);
-    setPage(pageData); // ✅ Correctly store page object with slug
-  } catch (err) {
-    console.error("Failed to load page blocks:", err);
-  } finally {
-    setLoading(false);
-  }
-};
-
+      setCanvasBlocks(loaded);
+      setPage(pageData);
+    } catch (err) {
+      console.error("Failed to load page blocks:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const savePageBlocks = async () => {
     const payload = canvasBlocks.map((b) => ({ type: b.type, data: b.data || {} }));
@@ -176,7 +183,6 @@ const [page, setPage] = useState(null); // ⬅️ Add this
       item: () => ({ type: block.type, fromPalette: true }),
       collect: (monitor) => ({ isDragging: monitor.isDragging() })
     }));
-
     return (
       <div
         ref={dragRef}
@@ -184,7 +190,7 @@ const [page, setPage] = useState(null); // ⬅️ Add this
           isDragging ? "opacity-50" : "opacity-100"
         }`}
       >
-        {block.type === "text" ? <span className="text-gray-700">📝 Text Block</span> : <AddSectionTile type={block.type} />}
+        {block.type === "text" ? "📝 Text Block" : <AddSectionTile type={block.type} />}
       </div>
     );
   };
@@ -195,7 +201,7 @@ const [page, setPage] = useState(null); // ⬅️ Add this
       accept: ItemTypes.BLOCK,
       canDrop: (item) => item.fromPalette,
       drop: (item, monitor) => {
-        if (monitor.didDrop()) return; // ✅ Prevent duplicate drop
+        if (monitor.didDrop()) return;
         onDropAt(item, index);
         item.fromPalette = false;
       },
@@ -211,18 +217,22 @@ const [page, setPage] = useState(null); // ⬅️ Add this
         if (
           (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
           (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
-        )
-          return;
+        ) return;
         moveBlock(dragIndex, hoverIndex);
         item.index = hoverIndex;
       },
-      collect: (monitor) => ({ isOver: monitor.isOver({ shallow: true }), canDrop: monitor.canDrop() })
+      collect: (monitor) => ({
+        isOver: monitor.isOver({ shallow: true }),
+        canDrop: monitor.canDrop()
+      })
     });
+
     const [{ isDragging }, drag] = useDrag({
       type: ItemTypes.BLOCK,
       item: { ...block, index, fromPalette: false },
       collect: (monitor) => ({ isDragging: monitor.isDragging() })
     });
+
     drag(drop(ref));
 
     return (
@@ -233,47 +243,39 @@ const [page, setPage] = useState(null); // ⬅️ Add this
         } ${isOver && canDrop ? "border-2 border-indigo-600 bg-indigo-100" : ""}`}
       >
         <div className="flex justify-between items-center mb-2">
-          <span className="font-semibold text-sm select-none text-gray-800">{block.type}</span>
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-sm text-gray-800">
+              {block.data?.label || block.type}
+            </span>
+            {block.type === "layout-section" && (
+              <button
+                className="text-xs text-blue-600 hover:underline"
+                onClick={() => onEdit(block.key, { collapsed: !block.data?.collapsed })}
+              >
+                {block.data?.collapsed ? "Expand" : "Collapse"}
+              </button>
+            )}
+          </div>
           <div className="space-x-2">
             <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
             <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
           </div>
         </div>
-        <LiveSectionRenderer
-          type={block.type}
-          data={block.data}
-          blockKey={block.key}
-          onDropElement={dropTextIntoColumn}
-          onResizeColumn={resizeColumns}
-        />
+
+        {block.data?.collapsed ? (
+          <div className="text-xs italic text-gray-400 px-2 py-1">[Collapsed]</div>
+        ) : (
+          <LiveSectionRenderer
+            type={block.type}
+            data={block.data}
+            blockKey={block.key}
+            onDropElement={dropTextIntoColumn}
+            onResizeColumn={resizeColumns}
+          />
+        )}
       </div>
     );
   };
-
-  function EmptyCanvasDropZone({ onDropAt }) {
-    const [{ isOver }, drop] = useDrop({
-      accept: "BLOCK",
-      drop: (item) => {
-        onDropAt(item, 0);
-      },
-      collect: (monitor) => ({
-        isOver: monitor.isOver(),
-      }),
-    });
-
-    return (
-      <div
-        ref={drop}
-        className={`flex flex-col items-center justify-center h-96 border-2 border-dashed rounded-lg m-8 transition-colors ${
-          isOver ? "border-indigo-500 bg-indigo-50" : "border-gray-300 bg-white"
-        }`}
-      >
-        <span className="text-gray-400 text-lg mb-2">
-          Drag a block here to start building your page
-        </span>
-      </div>
-    );
-  }
 
   return (
     <DndProvider backend={HTML5Backend}>
@@ -303,19 +305,16 @@ const [page, setPage] = useState(null); // ⬅️ Add this
             >
               Save Page Layout
             </button>
-{page?.slug && (
-  <a
-    href={`/pages/${page.slug}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-2 block text-center text-indigo-600 hover:underline text-sm"
-  >
-    🔍 Preview in New Tab
-  </a>
-)}
-
-
-
+            {page?.slug && (
+              <a
+                href={`/pages/${page.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 block text-center text-indigo-600 hover:underline text-sm"
+              >
+                🔍 Preview in New Tab
+              </a>
+            )}
           </div>
         </aside>
 
@@ -323,7 +322,9 @@ const [page, setPage] = useState(null); // ⬅️ Add this
           {loading ? (
             <p className="text-gray-500 text-sm text-center py-12">Loading...</p>
           ) : canvasBlocks.length === 0 ? (
-            <EmptyCanvasDropZone onDropAt={handleDropAt} />
+            <div className="flex items-center justify-center h-96 border-2 border-dashed rounded-lg m-8 text-gray-400">
+              Drag a block here to start building your page
+            </div>
           ) : (
             canvasBlocks.map((block, index) => (
               <ReorderableCanvasBlock
@@ -357,15 +358,15 @@ const [page, setPage] = useState(null); // ⬅️ Add this
           {editingBlock ? (
             <>
               <h2 className="text-lg font-semibold mb-4">Edit Block: {editingBlock.type}</h2>
-<SectionSettingsPanel
-  block={editingBlock}
-  onSave={(data) => handleSaveBlock(editingBlock.key, data)}
-  onLiveUpdate={(data) => handleLiveUpdate(editingBlock.key, data)}
-  onCancel={() => {
-    setEditingBlock(null);
-    setShowSidebar(false);
-  }}
-/>
+              <SectionSettingsPanel
+                block={editingBlock}
+                onSave={(data) => handleSaveBlock(editingBlock.key, data)}
+                onLiveUpdate={(data) => handleLiveUpdate(editingBlock.key, data)}
+                onCancel={() => {
+                  setEditingBlock(null);
+                  setShowSidebar(false);
+                }}
+              />
             </>
           ) : (
             <p className="text-sm text-gray-500 mt-20">No block selected.</p>

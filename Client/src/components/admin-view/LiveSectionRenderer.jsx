@@ -1,3 +1,5 @@
+// File: Client/src/components/admin-view/LiveSectionRenderer.jsx
+
 import HomepageSlider from "@/components/shopping-view/homepageslider";
 import ProductSliderSection from "@/components/shopping-view/newarrivalsslider";
 import CategorySection from "@/components/shopping-view/occasioncategorysection";
@@ -88,66 +90,75 @@ export default function LiveSectionRenderer({ type, data = {}, blockKey, onDropE
         </div>
       );
 
-        case "layout-section": {
+    case "layout-section": {
       const widths = data.columnWidths && data.columnWidths.length === (data.elements?.length || 0)
         ? data.columnWidths
         : Array(data.elements?.length || 2).fill(100 / (data.elements?.length || 2));
       const elements = data.elements || [];
 
-      const padding = data.padding || "1rem";
-      const gap = data.gap || "0.25rem";
-      const bgColor = data.backgroundColor || "white";
-      const customClass = data.customClass || "";
-      const margin = data.margin || "";
-const borderWidth = data.borderWidth || "";
-const borderColor = data.borderColor || "";
-const borderStyle = data.borderStyle || "";
-const borderRadius = data.borderRadius || "";
-const boxShadow = data.boxShadow || "";
-const backgroundImage = data.backgroundImage || "";
-const columnStyles = data.columnStyles || [];
+      const columnStyles = data.columnStyles || [];
 
+      // Section styles
+      const {
+        padding = "1rem",
+        gap = "0.25rem",
+        backgroundColor = "white",
+        customClass = "",
+        margin = "",
+        borderWidth = "",
+        borderColor = "",
+        borderStyle = "",
+        borderRadius = "",
+        boxShadow = "",
+        backgroundImage = "",
+        visibility = "all"
+      } = data;
+
+      // Visibility logic
+      if (
+        (visibility === "desktop" && window.innerWidth < 768) ||
+        (visibility === "mobile" && window.innerWidth >= 768)
+      ) return null;
 
       return (
         <div
-          className={`flex w-full rounded overflow-hidden border border-gray-300 ${customClass}`}
+          className={`flex w-full rounded overflow-hidden border ${customClass}`}
           style={{
-  backgroundColor: bgColor,
-  backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-  backgroundSize: backgroundImage ? "cover" : undefined,
-  padding,
-  gap,
-  margin,
-  borderWidth,
-  borderColor,
-  borderStyle,
-  borderRadius,
-  boxShadow,
-}}
-
+            backgroundColor,
+            backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+            backgroundSize: backgroundImage ? "cover" : undefined,
+            padding,
+            gap,
+            margin,
+            borderWidth,
+            borderColor,
+            borderStyle,
+            borderRadius,
+            boxShadow
+          }}
         >
           {elements.map((col, i) => (
             <div
-  key={i}
-  className="relative"
-  style={{
-    width: `${widths[i]}%`,
-    minWidth: 40,
-    backgroundColor: columnStyles[i]?.backgroundColor || undefined,
-    padding: columnStyles[i]?.padding || undefined,
-    textAlign: columnStyles[i]?.textAlign || undefined,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: columnStyles[i]?.alignItems || undefined,
-  }}
->
-
+              key={i}
+              className="relative"
+              style={{
+                width: `${widths[i]}%`,
+                minWidth: 40,
+                backgroundColor: columnStyles[i]?.backgroundColor || undefined,
+                padding: columnStyles[i]?.padding || undefined,
+                textAlign: columnStyles[i]?.textAlign || undefined,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: columnStyles[i]?.alignItems || undefined,
+              }}
+            >
               <ColumnDropZone
                 blockKey={blockKey}
                 columnIndex={i}
                 elements={col}
                 onDropElement={onDropElement}
               />
+
               {i < elements.length - 1 && (
                 <div
                   className="absolute top-0 right-0 w-2 h-full cursor-col-resize z-10"
@@ -190,7 +201,6 @@ const columnStyles = data.columnStyles || [];
         </div>
       );
     }
-
 
     default:
       return <PreviewWrapper><div className="text-red-500 text-sm">❗ Unsupported block type: {type}</div></PreviewWrapper>;
