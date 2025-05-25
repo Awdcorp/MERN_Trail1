@@ -258,31 +258,53 @@ const exportProductsToCSV = async (req, res) => {
   try {
     console.log("🟢 [EXPORT] Starting product export...");
 
-    const products = await Product.find({})
-      .populate("categories", "name")
-      .lean();
+    const selectedFields = Array.isArray(req.query.fields)
+      ? req.query.fields
+      : typeof req.query.fields === "string"
+        ? [req.query.fields]
+        : [];
 
-    console.log(`🧾 [EXPORT] Fetched ${products.length} products.`);
+    console.log("📤 [EXPORT] Fields requested:", selectedFields);
 
-    const formatted = products.map((p, index) => {
-      console.log(`📦 [EXPORT] Processing product ${index + 1}:`, p.title);
-      return {
-        title: p.title,
-        slug: p.slug,
-        price: p.price,
-        salePrice: p.salePrice,
-        totalStock: p.totalStock,
-        brand: p.brand,
-        categories: Array.isArray(p.categories)
-          ? p.categories.map((c) => c.name).join(", ")
-          : "",
-        isActive: p.isActive,
-        isFeatured: p.isFeatured,
-      };
+    let products;
+
+    if (req.query.ids) {
+      const ids = req.query.ids.split(",");
+      console.log("🔍 [EXPORT] Filtering by IDs:", ids);
+      products = await Product.find({ _id: { $in: ids } })
+        .populate("categories", "name")
+        .lean();
+    } else {
+      products = await Product.find({})
+        .populate("categories", "name")
+        .lean();
+    }
+
+    console.log(`🧾 [EXPORT] Exporting ${products.length} products.`);
+
+    const formatted = products.map((p) => {
+      const row = {};
+      for (const field of selectedFields) {
+        if (field === "categories") {
+          row.categories = Array.isArray(p.categories)
+            ? p.categories.map((c) => c.name).join(", ")
+            : "";
+        } else if (field === "seo") {
+          row.seo = p.seo
+            ? `${p.seo.metaTitle || ""} | ${p.seo.metaDescription || ""} | ${p.seo.focusKeyword || ""}`
+            : "";
+        } else if (field === "meta") {
+          row.meta = JSON.stringify(p.meta || {});
+        } else if (field in p) {
+          row[field] = typeof p[field] === "object" ? JSON.stringify(p[field]) : p[field];
+        } else {
+          row[field] = "";
+        }
+      }
+      return row;
     });
 
-    console.log("📁 [EXPORT] Mapping complete. Converting to CSV...");
-    const parser = new Parser();
+    const parser = new Parser({ fields: selectedFields });
     const csv = parser.parse(formatted);
 
     res.setHeader("Content-Type", "text/csv");
@@ -295,6 +317,8 @@ const exportProductsToCSV = async (req, res) => {
     res.status(500).json({ success: false, message: "Error fetching product" });
   }
 };
+
+
 
 
 // IMPORT PRODUCTS FROM CSV

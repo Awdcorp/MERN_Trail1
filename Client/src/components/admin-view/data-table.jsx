@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
 
-export default function DataTable({ columns, data, total = 0, page = 1, onPageChange, filterUI, limit = 10, onLimitChange, search, category, sortBy, sortOrder, onSortChange, allCategories = [] }) {
+export default function DataTable({ columns, data, total = 0, page = 1, onPageChange, filterUI, limit = 10, onLimitChange, search, category, sortBy, sortOrder, onSortChange, allCategories = [], onRowSelectionChange }) {
   const dispatch = useDispatch();
   const { toast } = useToast();
   const [selectedRows, setSelectedRows] = useState([]);
@@ -29,13 +29,17 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
   const totalPages = Math.ceil(total / rowsPerPage);
 
   const toggleRow = (id) => {
-    setSelectedRows((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
+    setSelectedRows((prev) => {
+      const updated = prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id];
+      onRowSelectionChange?.(updated);
+      return updated;
+    });
   };
 
   const toggleAll = () => {
-    setSelectedRows(allSelected ? [] : data.map((row) => row._id));
+    const updated = allSelected ? [] : data.map((row) => row._id);
+    setSelectedRows(updated);
+    onRowSelectionChange?.(updated);
   };
 
   const handleFieldChange = (id, field, value) => {

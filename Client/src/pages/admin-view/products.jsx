@@ -66,7 +66,7 @@ function AdminProducts() {
   const [limit, setLimit] = useState(10);
   const [sortBy, setSortBy] = useState("createdAt");
   const [sortOrder, setSortOrder] = useState("desc");
-
+  const [selectedProductIds, setSelectedProductIds] = useState([]);
   const [showExportDialog, setShowExportDialog] = useState(false);
   const [selectedFields, setSelectedFields] = useState(allExportableFields);
 
@@ -99,8 +99,9 @@ function AdminProducts() {
   }
 
   async function handleExportProducts() {
-    const query = selectedFields.map((f) => `fields=${f}`).join("&");
-    const url = `${import.meta.env.VITE_API_URL}/api/admin/products/export?${query}`;
+    const queryFields = selectedFields.map((f) => `fields=${f}`).join("&");
+    const queryIds = selectedProductIds.length > 0 ? `&ids=${selectedProductIds.join(",")}` : "";
+    const url = `${import.meta.env.VITE_API_URL}/api/admin/products/export?${queryFields}${queryIds}`;
 
     try {
       const res = await fetch(url);
@@ -239,6 +240,7 @@ function AdminProducts() {
           setSortOrder(sortOrder);
         }}
         allCategories={allCategories}
+        onRowSelectionChange={(ids) => setSelectedProductIds(ids)}
       />
 
       <Sheet open={openCreateProductsDialog} onOpenChange={(isOpen) => { if (!isOpen) resetForm(); }}>
