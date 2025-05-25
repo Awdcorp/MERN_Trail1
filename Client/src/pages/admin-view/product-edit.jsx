@@ -185,7 +185,13 @@ export default function AdminProductEdit() {
             className="flex items-center bg-gray-200 text-sm rounded-full px-3 py-1"
           >
             <span className="mr-2">
-              {subGroupKey !== "__flat__" ? `${group} > ${subGroupKey} > ${item.displayLabel}` : `${group} > ${item.displayLabel}`}
+              {(group !== item.displayLabel && subGroupKey !== "__flat__") ? `${
+        (group !== item.displayLabel &&
+         subGroupKey !== '__flat__' &&
+         subGroupKey !== item.displayLabel)
+         ? `${group} > ${subGroupKey} > ${item.displayLabel}`
+         : (group !== item.displayLabel ? `${group} > ${item.displayLabel}` : item.displayLabel)
+      }` : item.displayLabel}
             </span>
             <button
               onClick={() => {
