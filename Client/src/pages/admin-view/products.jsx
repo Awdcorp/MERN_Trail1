@@ -229,7 +229,7 @@ function AdminProducts() {
             isEditMode={currentEditedId !== null}
           />
           <div className="py-6 space-y-4">
-            <CategorySelector
+            <CategorySelector compact={true}
               selected={formData.categories}
               onChange={(val) => setFormData({ ...formData, categories: val })}
             />
