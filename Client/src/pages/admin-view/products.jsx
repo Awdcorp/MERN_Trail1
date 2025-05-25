@@ -1,6 +1,6 @@
 // File: src/pages/admin-view/AdminProducts.jsx
 
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -32,6 +32,15 @@ const initialFormData = {
   averageReview: 0,
 };
 
+const allExportableFields = [
+  "title", "slug", "description", "shortDescription",
+  "categories", "brand", "price", "salePrice", "totalStock", "weight", "sku", "tags",
+  "images", "variants", "attributes",
+  "relatedProductIds", "upsellProductIds",
+  "isActive", "isFeatured", "externalId",
+  "averageReview", "meta", "seo"
+];
+
 function flattenCategories(tree) {
   let result = [];
   for (const cat of tree) {
@@ -57,6 +66,9 @@ function AdminProducts() {
   const [limit, setLimit] = useState(10);
   const [sortBy, setSortBy] = useState("createdAt");
   const [sortOrder, setSortOrder] = useState("desc");
+
+  const [showExportDialog, setShowExportDialog] = useState(false);
+  const [selectedFields, setSelectedFields] = useState(allExportableFields);
 
   const { productList, total } = useSelector((state) => state.adminProducts);
   const dispatch = useDispatch();
@@ -87,80 +99,47 @@ function AdminProducts() {
   }
 
   async function handleExportProducts() {
-  console.log("📤 [EXPORT] Initiating export request...");
+    const query = selectedFields.map((f) => `fields=${f}`).join("&");
+    const url = `${import.meta.env.VITE_API_URL}/api/admin/products/export?${query}`;
 
-  try {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/export`);
-
-    console.log("📤 [EXPORT] Response status:", res.status);
-    if (!res.ok) {
-      console.error("❌ [EXPORT] Server responded with error status");
+    try {
+      const res = await fetch(url);
+      const blob = await res.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = "products_export.csv";
+      link.click();
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (err) {
+      console.error("❌ [EXPORT] Failed:", err);
       toast({ title: "Export failed", variant: "destructive" });
-      return;
     }
-
-    const blob = await res.blob();
-    const url = window.URL.createObjectURL(blob);
-
-    console.log("📥 [EXPORT] Blob URL created:", url);
-
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "products_export.csv";
-    link.click();
-
-    window.URL.revokeObjectURL(url);
-    console.log("✅ [EXPORT] CSV download triggered");
-  } catch (err) {
-    console.error("❌ [EXPORT] Export failed:", err);
-    toast({ title: "Export failed", variant: "destructive" });
-  }
-}
-
-
-async function handleImportProducts(event) {
-  const file = event.target.files?.[0];
-  if (!file) {
-    console.warn("⚠️ [IMPORT] No file selected");
-    return;
   }
 
-  console.log("📁 [IMPORT] File selected:", file.name);
+  async function handleImportProducts(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("file", file);
 
-  const formData = new FormData();
-  formData.append("file", file);
-
-  try {
-    console.log("📤 [IMPORT] Sending file to backend...");
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/import`, {
-      method: "POST",
-      body: formData,
-    });
-
-    const result = await res.json();
-    console.log("📬 [IMPORT] Server response:", result);
-
-    if (result.success) {
-      toast({ title: "Products imported successfully" });
-      dispatch(fetchAllProducts({
-        page,
-        limit,
-        search: searchTerm,
-        category: selectedCategory,
-        sortBy,
-        sortOrder
-      }));
-      console.log("✅ [IMPORT] Product list refreshed");
-    } else {
-      console.error("❌ [IMPORT] Import failed:", result.message);
-      toast({ title: result.message || "Import failed", variant: "destructive" });
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/import`, {
+        method: "POST",
+        body: formData,
+      });
+      const result = await res.json();
+      if (result.success) {
+        toast({ title: "Products imported successfully" });
+        dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
+      } else {
+        toast({ title: result.message || "Import failed", variant: "destructive" });
+      }
+    } catch (err) {
+      console.error("❌ [IMPORT] Import failed:", err);
+      toast({ title: "Import failed", variant: "destructive" });
     }
-  } catch (err) {
-    console.error("❌ [IMPORT] Import failed:", err);
-    toast({ title: "Import failed", variant: "destructive" });
   }
-}
-
 
   function handleDelete(getCurrentProductId) {
     dispatch(deleteProduct(getCurrentProductId)).then((data) => {
@@ -172,9 +151,7 @@ async function handleImportProducts(event) {
   }
 
   function isFormValid() {
-    return Object.keys(formData)
-      .filter((key) => key === "title")
-      .every((key) => formData[key] !== "");
+    return Object.keys(formData).filter((key) => key === "title").every((key) => formData[key] !== "");
   }
 
   function resetForm() {
@@ -188,7 +165,6 @@ async function handleImportProducts(event) {
 
   useEffect(() => {
     dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
-
     async function fetchCategories() {
       try {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/api/categories`);
@@ -202,52 +178,21 @@ async function handleImportProducts(event) {
   }, [dispatch, page, limit, searchTerm, selectedCategory, sortBy, sortOrder]);
 
   const filterUI = (
-  <div className="flex items-center gap-4 flex-wrap">
-    <Input
-      placeholder="Search title..."
-      value={searchTerm}
-      onChange={(e) => {
-        setSearchTerm(e.target.value);
-        setPage(1);
-      }}
-      className="max-w-sm"
-    />
-    <select
-      value={selectedCategory}
-      onChange={(e) => {
-        setSelectedCategory(e.target.value);
-        setPage(1);
-      }}
-      className="border rounded px-3 py-2 text-sm"
-    >
-      <option value="">All Categories</option>
-      {allCategories.map((cat) => (
-        <option key={cat._id} value={cat._id}>
-          {cat.name}
-        </option>
-      ))}
-    </select>
-    <Button asChild>
-      <a href="/admin/products/new">+ Create New Product</a>
-    </Button>
-    <Button variant="outline" onClick={handleExportProducts}>
-      Export CSV
-    </Button>
-    <Button asChild variant="outline">
-  <label className="cursor-pointer m-0 p-0">
-    Import CSV
-    <input
-      type="file"
-      accept=".csv"
-      onChange={handleImportProducts}
-      className="hidden"
-    />
-  </label>
-</Button>
-
-  </div>
-);
-
+    <div className="flex items-center gap-4 flex-wrap">
+      <Input placeholder="Search title..." value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setPage(1); }} className="max-w-sm" />
+      <select value={selectedCategory} onChange={(e) => { setSelectedCategory(e.target.value); setPage(1); }} className="border rounded px-3 py-2 text-sm">
+        <option value="">All Categories</option>
+        {allCategories.map((cat) => (
+          <option key={cat._id} value={cat._id}>{cat.name}</option>
+        ))}
+      </select>
+      <Button asChild><a href="/admin/products/new">+ Create New Product</a></Button>
+      <Button variant="outline" onClick={() => setShowExportDialog(true)}>Export Settings</Button>
+      <Button asChild variant="outline">
+        <label className="cursor-pointer m-0 p-0">Import CSV<input type="file" accept=".csv" onChange={handleImportProducts} className="hidden" /></label>
+      </Button>
+    </div>
+  );
 
   return (
     <Fragment>
@@ -296,24 +241,14 @@ async function handleImportProducts(event) {
         allCategories={allCategories}
       />
 
-      <Sheet
-        open={openCreateProductsDialog}
-        onOpenChange={(isOpen) => {
-          if (!isOpen) resetForm();
-        }}
-      >
+      <Sheet open={openCreateProductsDialog} onOpenChange={(isOpen) => { if (!isOpen) resetForm(); }}>
         <SheetContent side="right" className="overflow-auto">
           <SheetHeader>
-            <SheetTitle>
-              {currentEditedId !== null ? "Quick Edit Product" : "Add New Product"}
-            </SheetTitle>
+            <SheetTitle>{currentEditedId !== null ? "Quick Edit Product" : "Add New Product"}</SheetTitle>
           </SheetHeader>
           <ProductImageUpload
             imageFile={imageFile}
-            setImageFile={(file) => {
-              setImageFile(file);
-              setUploadedImageUrl("");
-            }}
+            setImageFile={(file) => { setImageFile(file); setUploadedImageUrl(""); }}
             uploadedImageUrl={uploadedImageUrl}
             setUploadedImageUrl={setUploadedImageUrl}
             setImageLoadingState={setImageLoadingState}
@@ -321,10 +256,7 @@ async function handleImportProducts(event) {
             isEditMode={currentEditedId !== null}
           />
           <div className="py-6 space-y-4">
-            <CategorySelector compact={true}
-              selected={formData.categories}
-              onChange={(val) => setFormData({ ...formData, categories: val })}
-            />
+            <CategorySelector compact={true} selected={formData.categories} onChange={(val) => setFormData({ ...formData, categories: val })} />
             <CommonForm
               onSubmit={onSubmit}
               formData={formData}
@@ -336,6 +268,29 @@ async function handleImportProducts(event) {
           </div>
         </SheetContent>
       </Sheet>
+
+      {showExportDialog && (
+        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg w-[500px] max-h-[80vh] overflow-y-auto">
+            <h2 className="text-lg font-semibold mb-4">Select Fields to Export</h2>
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              {allExportableFields.map((field) => (
+                <label key={field} className="flex items-center space-x-2">
+                  <input type="checkbox" checked={selectedFields.includes(field)} onChange={(e) => {
+                    if (e.target.checked) setSelectedFields([...selectedFields, field]);
+                    else setSelectedFields(selectedFields.filter((f) => f !== field));
+                  }} />
+                  <span className="capitalize">{field}</span>
+                </label>
+              ))}
+            </div>
+            <div className="flex justify-end gap-2">
+              <Button variant="ghost" onClick={() => setShowExportDialog(false)}>Cancel</Button>
+              <Button onClick={() => { setShowExportDialog(false); handleExportProducts(); }}>Export</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </Fragment>
   );
 }
