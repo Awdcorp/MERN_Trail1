@@ -65,28 +65,25 @@ export default function AdminProductEdit() {
 
     axios.get(`${import.meta.env.VITE_API_URL}/api/categories/flat-with-path`).then((res) => {
       const flat = res.data;
-      const grouped = {};
+      const tree = {};
 
       flat.forEach(cat => {
         const parts = cat.label.split(" > ");
-        const top = parts[0];
-        const rest = parts.slice(1).join(" > ");
+        const [level0, level1, ...rest] = parts;
+        const displayLabel = rest.length ? rest.join(" > ") : (level1 || level0);
 
-        if (!grouped[top]) grouped[top] = [];
+        if (!tree[level0]) tree[level0] = {};
 
-        grouped[top].push({
-          ...cat,
-          displayLabel: parts.length > 1 ? rest : top,
-        });
+        if (level1) {
+          if (!tree[level0][level1]) tree[level0][level1] = [];
+          tree[level0][level1].push({ ...cat, displayLabel });
+        } else {
+          if (!tree[level0]["__flat__"]) tree[level0]["__flat__"] = [];
+          tree[level0]["__flat__"].push({ ...cat, displayLabel });
+        }
       });
 
-      for (const group in grouped) {
-        if (grouped[group].length === 1 && grouped[group][0].displayLabel === group) {
-          grouped[group][0].displayLabel = group;
-        }
-      }
-
-      setAllCategories(grouped);
+      setAllCategories(tree);
     });
   }, [id]);
 
@@ -178,63 +175,89 @@ export default function AdminProductEdit() {
 
           <FieldLabel>Categories</FieldLabel>
 
-          {formData.categories?.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {Object.entries(allCategories).flatMap(([group, items]) =>
-                items.filter(item => formData.categories.includes(item.value)).map(item => (
-                  <div
-                    key={item.value}
-                    className="flex items-center bg-gray-200 text-sm rounded-full px-3 py-1"
-                  >
-                    <span className="mr-2">
-                      {group !== item.displayLabel ? `${group} > ${item.displayLabel}` : group}
-                    </span>
-                    <button
-                      onClick={() => {
-                        const next = formData.categories.filter(val => val !== item.value);
-                        handleChange("categories", next);
-                      }}
-                      className="text-red-500 hover:text-red-700 font-bold"
-                    >
-                      ×
-                    </button>
-                  </div>
-                ))
-              )}
-            </div>
-          )}
+{formData.categories?.length > 0 && (
+  <div className="flex flex-wrap gap-2 mb-4">
+    {Object.entries(allCategories).flatMap(([group, subGroups]) =>
+      Object.entries(subGroups).flatMap(([subGroupKey, items]) =>
+        (Array.isArray(items) ? items : []).filter(item => formData.categories.includes(item.value)).map(item => (
+          <div
+            key={item.value}
+            className="flex items-center bg-gray-200 text-sm rounded-full px-3 py-1"
+          >
+            <span className="mr-2">
+              {subGroupKey !== "__flat__" ? `${group} > ${subGroupKey} > ${item.displayLabel}` : `${group} > ${item.displayLabel}`}
+            </span>
+            <button
+              onClick={() => {
+                const next = formData.categories.filter(val => val !== item.value);
+                handleChange("categories", next);
+              }}
+              className="text-red-500 hover:text-red-700 font-bold"
+            >
+              ×
+            </button>
+          </div>
+        ))
+      )
+    )}
+  </div>
+)}
 
-          <div className="space-y-4 border p-4 bg-white rounded max-h-96 overflow-y-auto">
-            {Object.entries(allCategories).map(([group, items]) => {
-              const isFlat = items.length === 1 && items[0].displayLabel === group;
-              return (
-                <div key={group}>
-                  {!isFlat && (
-                    <div className="font-semibold text-sm mb-1 text-gray-600 uppercase">{group}:</div>
-                  )}
-                  <div className={isFlat ? "space-y-1" : "ml-4 space-y-1"}>
-                    {items.map(item => (
-                      <label key={item.value} className="flex items-center space-x-2 text-sm">
-                        <input
-                          type="checkbox"
-                          checked={formData.categories.includes(item.value)}
-                          onChange={(e) => {
-                            const value = item.value;
-                            const checked = e.target.checked;
-                            const current = formData.categories || [];
-                            const next = checked
-                              ? [...current, value]
-                              : current.filter(v => v !== value);
-                            handleChange("categories", next);
-                          }}
-                        />
-                        <span>{item.displayLabel}</span>
-                      </label>
-                    ))}
+<div className="space-y-4 border p-4 bg-white rounded max-h-96 overflow-y-auto">
+            {Object.entries(allCategories).map(([level0, subGroups]) => (
+              <div key={level0}>
+                
+
+                {(subGroups["__flat__"] || []).map(item => (
+                  <div key={item.value} className="ml-4">
+                    <label className="flex items-center space-x-2 text-sm">
+                      <input
+                        type="checkbox"
+                        checked={formData.categories.includes(item.value)}
+                        onChange={(e) => {
+                          const value = item.value;
+                          const checked = e.target.checked;
+                          const current = formData.categories || [];
+                          const next = checked
+                            ? [...current, value]
+                            : current.filter(v => v !== value);
+                          handleChange("categories", next);
+                        }}
+                      />
+                      <span>{item.displayLabel}</span>
+                    </label>
                   </div>
-                </div>
-              );
-            })}
+                ))}
+
+                {Object.entries(subGroups).filter(([k]) => k !== "__flat__").map(([level1, items]) => (
+                  <div key={level1} className="ml-4">
+                    {(items.length > 1 || items[0]?.displayLabel !== level1) && (
+  <div className="text-sm font-medium text-gray-500 mb-1">{level1}:</div>
+)}
+                    <div className="ml-4 space-y-1">
+                      {items.map(item => (
+                        <label key={item.value} className="flex items-center space-x-2 text-sm">
+                          <input
+                            type="checkbox"
+                            checked={formData.categories.includes(item.value)}
+                            onChange={(e) => {
+                              const value = item.value;
+                              const checked = e.target.checked;
+                              const current = formData.categories || [];
+                              const next = checked
+                                ? [...current, value]
+                                : current.filter(v => v !== value);
+                              handleChange("categories", next);
+                            }}
+                          />
+                          <span>{item.displayLabel}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
 
           <FieldLabel>Tags (comma separated)</FieldLabel>
