@@ -1,3 +1,5 @@
+// File: src/pages/admin-view/AdminProducts.jsx
+
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
@@ -9,6 +11,8 @@ import CommonForm from "@/components/common/form";
 import ProductImageUpload from "@/components/admin-view/image-upload";
 import DataTable from "@/components/admin-view/data-table";
 import { productColumns } from "@/components/admin-view/columns";
+import CategorySelector from "@/components/admin-view/CategorySelector";
+
 import {
   addNewProduct,
   deleteProduct,
@@ -147,9 +151,9 @@ function AdminProducts() {
           </option>
         ))}
       </select>
-          <Button asChild>
-      <a href="/admin/products/new">+ Create New Product</a>
-    </Button>
+      <Button asChild>
+        <a href="/admin/products/new">+ Create New Product</a>
+      </Button>
     </div>
   );
 
@@ -166,8 +170,14 @@ function AdminProducts() {
                     ...row,
                     navigate: (path) => (window.location.href = path),
                     setQuickEdit: setCurrentEditedId,
-                        setFormData,
-    setOpenCreateProductsDialog,
+                    setFormData: (rowData) =>
+                      setFormData({
+                        ...rowData,
+                        categories: (rowData.categories || []).map((c) =>
+                          typeof c === "object" ? c._id : c
+                        ),
+                      }),
+                    setOpenCreateProductsDialog,
                     onDelete: handleDelete,
                   }),
               }
@@ -187,11 +197,10 @@ function AdminProducts() {
         category={selectedCategory}
         sortBy={sortBy}
         sortOrder={sortOrder}
-                onSortChange={({ sortBy, sortOrder }) => {
+        onSortChange={({ sortBy, sortOrder }) => {
           setSortBy(sortBy);
           setSortOrder(sortOrder);
         }}
-
         allCategories={allCategories}
       />
 
@@ -219,17 +228,17 @@ function AdminProducts() {
             imageLoadingState={imageLoadingState}
             isEditMode={currentEditedId !== null}
           />
-          <div className="py-6">
+          <div className="py-6 space-y-4">
+            <CategorySelector
+              selected={formData.categories}
+              onChange={(val) => setFormData({ ...formData, categories: val })}
+            />
             <CommonForm
               onSubmit={onSubmit}
               formData={formData}
               setFormData={setFormData}
               buttonText={currentEditedId !== null ? "Save" : "Add"}
-              formControls={addProductFormElements.map((item) =>
-                item.name === "categories"
-                  ? { ...item, options: allCategories }
-                  : item
-              )}
+              formControls={addProductFormElements.filter((item) => item.name !== "categories")}
               isBtnDisabled={!isFormValid()}
             />
           </div>

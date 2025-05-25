@@ -260,7 +260,7 @@ export default function AdminProductEdit() {
           )}
           <span>{level1}</span>
         </div>
-        <div className="ml-6 space-y-1">
+        <div className="ml-6 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
           {childItems.map(item => (
             <label key={item.value} className="flex items-center space-x-2 text-sm">
               <input
