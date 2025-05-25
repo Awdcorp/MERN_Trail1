@@ -229,33 +229,54 @@ export default function AdminProductEdit() {
                   </div>
                 ))}
 
-                {Object.entries(subGroups).filter(([k]) => k !== "__flat__").map(([level1, items]) => (
-                  <div key={level1} className="ml-4">
-                    {(items.length > 1 || items[0]?.displayLabel !== level1) && (
-  <div className="text-sm font-medium text-gray-500 mb-1">{level1}:</div>
-)}
-                    <div className="ml-4 space-y-1">
-                      {items.map(item => (
-                        <label key={item.value} className="flex items-center space-x-2 text-sm">
-                          <input
-                            type="checkbox"
-                            checked={formData.categories.includes(item.value)}
-                            onChange={(e) => {
-                              const value = item.value;
-                              const checked = e.target.checked;
-                              const current = formData.categories || [];
-                              const next = checked
-                                ? [...current, value]
-                                : current.filter(v => v !== value);
-                              handleChange("categories", next);
-                            }}
-                          />
-                          <span>{item.displayLabel}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                {Object.entries(subGroups)
+  .filter(([k]) => k !== "__flat__")
+  .map(([level1, items]) => {
+    const headingItem = items.find(i => i.displayLabel === level1);
+    const childItems = items.filter(i => i.displayLabel !== level1);
+    return (
+      <div key={level1} className="ml-6 mt-3">
+        <div className="flex items-center space-x-2 text-sm font-medium text-gray-500 mb-1">
+          {headingItem && (
+            <input
+              type="checkbox"
+              checked={formData.categories.includes(headingItem.value)}
+              onChange={(e) => {
+                const value = headingItem.value;
+                const checked = e.target.checked;
+                const current = formData.categories || [];
+                const next = checked
+                  ? [...current, value]
+                  : current.filter(v => v !== value);
+                handleChange("categories", next);
+              }}
+            />
+          )}
+          <span>{level1}</span>
+        </div>
+        <div className="ml-6 space-y-1">
+          {childItems.map(item => (
+            <label key={item.value} className="flex items-center space-x-2 text-sm">
+              <input
+                type="checkbox"
+                checked={formData.categories.includes(item.value)}
+                onChange={(e) => {
+                  const value = item.value;
+                  const checked = e.target.checked;
+                  const current = formData.categories || [];
+                  const next = checked
+                    ? [...current, value]
+                    : current.filter(v => v !== value);
+                  handleChange("categories", next);
+                }}
+              />
+              <span>{item.displayLabel}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    );
+  })}
               </div>
             ))}
           </div>
