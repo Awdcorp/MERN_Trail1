@@ -347,9 +347,15 @@ function isFormValid() {
                 </ul>
               </div>
             )}
-            <div className="text-right mt-4">
-              <Button onClick={() => setImportSummary(null)}>Close</Button>
-            </div>
+            <div className="flex justify-between items-center mt-4">
+  <Button variant="ghost" onClick={() => setImportSummary(null)}>Close</Button>
+  <Button asChild>
+    <a href="/admin/AdminImportHistory" target="_blank" rel="noopener noreferrer">
+      View Import History
+    </a>
+  </Button>
+</div>
+
           </div>
         </div>
       )}
