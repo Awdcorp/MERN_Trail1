@@ -10,8 +10,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Pencil } from "lucide-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
-import CategorySelector from "@/components/admin-view/CategorySelector"; // ✅ imported
+import CategorySelector from "@/components/admin-view/CategorySelector";
 
 export default function AdminProductEdit() {
   const { id } = useParams();
@@ -42,7 +41,7 @@ export default function AdminProductEdit() {
         relatedProductIds: [],
         upsellProductIds: [],
         seo: { metaTitle: "", metaDescription: "", focusKeyword: "" },
-        isActive: true,
+        status: "draft", // ✅ default
         isFeatured: false,
       });
     } else {
@@ -64,6 +63,7 @@ export default function AdminProductEdit() {
             attributes: product.attributes || [],
             upsellProductIds: product.upsellProductIds || [],
             relatedProductIds: product.relatedProductIds || [],
+            status: product.status || "draft", // ✅ fallback for old data
           };
           setFormData(normalized);
         }
@@ -188,7 +188,6 @@ export default function AdminProductEdit() {
           <FieldLabel>Brand</FieldLabel>
           <Input value={formData.brand || ""} onChange={(e) => handleChange("brand", e.target.value)} />
 
-          {/* ✅ REPLACED full category section with reusable */}
           <CategorySelector
             selected={formData.categories}
             onChange={(val) => handleChange("categories", val)}
@@ -278,14 +277,20 @@ export default function AdminProductEdit() {
           />
         </div>
 
-        <div className="space-y-4">
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              checked={formData.isActive || false}
-              onCheckedChange={(val) => handleChange("isActive", val)}
-            />
-            <label>Active</label>
+        <div className="space-y-4 sticky top-20">
+          <div className="space-y-2 p-4 bg-white border rounded shadow-sm">
+            <FieldLabel>Status</FieldLabel>
+            <select
+              value={formData.status || "draft"}
+              onChange={(e) => handleChange("status", e.target.value)}
+              className="w-full p-2 border rounded"
+            >
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="archived">Archived</option>
+            </select>
           </div>
+
           <div className="flex items-center space-x-2">
             <Checkbox
               checked={formData.isFeatured || false}

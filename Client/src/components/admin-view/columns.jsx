@@ -18,18 +18,26 @@ export const productColumns = [
     ),
   },
   {
-    accessorKey: "isActive",
-    header: "Status",
-    cell: (row) => (
+  accessorKey: "status",
+  header: "Status",
+  cell: (row) => {
+    const status = row.status || "draft";
+    const statusStyles = {
+      published: "bg-green-200 text-green-800",
+      draft: "bg-yellow-200 text-yellow-800",
+      archived: "bg-gray-200 text-gray-700",
+    };
+
+    return (
       <span
-        className={`text-xs px-2 py-1 rounded-full font-medium ${
-          row.isActive ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"
-        }`}
+        className={`text-xs px-2 py-1 rounded-full font-medium ${statusStyles[status]}`}
       >
-        {row.isActive ? "Active" : "Inactive"}
+        {status.charAt(0).toUpperCase() + status.slice(1)}
       </span>
-    ),
+    );
   },
+},
+
   {
     accessorKey: "totalStock",
     header: "Stock",

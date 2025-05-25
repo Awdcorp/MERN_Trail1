@@ -249,7 +249,7 @@ export default function DataTable({ columns, data, total = 0, page = 1, onPageCh
         </table>
       </div>
 
-      <div className="sticky bottom-0 z-10 bg-white border-t p-4 flex items-center justify-between">
+      <div className="sticky bottom-0 z-5 bg-white border-t p-4 flex items-center justify-between">
         <div className="text-sm text-muted-foreground flex gap-2 items-center">
           <span>Rows per page:</span>
           <select

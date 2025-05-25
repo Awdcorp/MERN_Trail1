@@ -26,7 +26,12 @@ const ProductSchema = new mongoose.Schema(
 
     sku: { type: String },
     weight: { type: Number },
-    isActive: { type: Boolean, default: true },
+    status: {
+      type: String,
+      enum: ["draft", "published", "archived"],
+      default: "published",
+    },
+    isFeatured: { type: Boolean, default: false },
     isFeatured: { type: Boolean, default: false },
 
     categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],

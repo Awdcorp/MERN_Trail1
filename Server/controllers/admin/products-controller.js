@@ -133,6 +133,7 @@ const editProduct = async (req, res) => {
     findProduct.attributes = data.attributes || findProduct.attributes;
     findProduct.relatedProductIds = data.relatedProductIds || findProduct.relatedProductIds;
     findProduct.upsellProductIds = data.upsellProductIds || findProduct.upsellProductIds;
+    findProduct.status = data.status || findProduct.status;
     findProduct.isActive = data.isActive ?? findProduct.isActive;
     findProduct.isFeatured = data.isFeatured ?? findProduct.isFeatured;
     findProduct.externalId = data.externalId || findProduct.externalId;
