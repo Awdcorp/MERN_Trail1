@@ -36,4 +36,58 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET /api/categories/flat-with-path
+router.get("/flat-with-path", async (req, res) => {
+  try {
+    console.log("📦 [Category API] Fetching all categories...");
+    const categories = await Category.find().lean();
+
+    console.log(`📊 Total categories fetched: ${categories.length}`);
+
+    const categoryMap = {};
+    categories.forEach(cat => {
+      categoryMap[String(cat._id)] = cat;
+    });
+
+    console.log("🧭 Category map constructed.");
+
+    const buildPath = (cat) => {
+      const names = [cat.name];
+      let current = cat;
+      let depth = 0;
+
+      while (current.parent) {
+        const parent = categoryMap[String(current.parent)];
+        if (!parent) {
+          console.warn(`⚠️ Missing parent for category: ${current.name} (${current._id})`);
+          break;
+        }
+        names.unshift(parent.name);
+        current = parent;
+        depth++;
+      }
+
+      const path = names.join(" > ");
+      console.log(`🔗 Path built: ${path}`);
+      return path;
+    };
+
+    const result = categories.map(cat => {
+      const label = buildPath(cat);
+      return {
+        value: cat._id,
+        label,
+      };
+    });
+
+    console.log("✅ Final flat category list with path built.");
+    res.json(result);
+  } catch (err) {
+    console.error("❌ Error in flat-with-path category fetch:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+
 module.exports = router;

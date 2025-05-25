@@ -1,6 +1,6 @@
 // File: Client/src/pages/admin-view/page-builder.jsx
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -258,8 +258,20 @@ export default function PageBuilder() {
             )}
           </div>
           <div className="space-x-2">
-            <button onClick={() => onEdit(block.key)} className="text-indigo-600 hover:text-indigo-800 text-sm">✏️ Edit</button>
-            <button onClick={() => onDelete(block.key)} className="text-red-500 hover:text-red-700 text-sm">🗑️</button>
+            <button
+              type="button"
+              onClick={() => onEdit(block.key)}
+              className="text-indigo-600 hover:text-indigo-800 text-sm"
+            >
+              ✏️ Edit
+            </button>
+            <button
+              type="button"
+              onClick={() => onDelete(block.key)}
+              className="text-red-500 hover:text-red-700 text-sm"
+            >
+              🗑️
+            </button>
           </div>
         </div>
 

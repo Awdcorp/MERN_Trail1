@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { MultiSelect } from "@/components/ui/multiselect";
 import ImageMultiUpload from "@/components/admin-view/image-multi-upload";
 import { useToast } from "@/components/ui/use-toast";
 import { Pencil } from "lucide-react";
@@ -20,48 +19,33 @@ export default function AdminProductEdit() {
   const isCreateMode = id === "new";
 
   const [formData, setFormData] = useState(null);
-  const [allCategories, setAllCategories] = useState([]);
+  const [allCategories, setAllCategories] = useState({});
   const [editSEO, setEditSEO] = useState(false);
 
-  // 🧠 Build full label: "Parent > Child > Subchild"
-const buildCategoryPath = (cat, categoryMap) => {
-  const names = [cat.name];
-  let current = cat;
-  while (current.parent) {
-    const parent = categoryMap[String(current.parent)];
-    if (!parent) break;
-    names.unshift(parent.name);
-    current = parent;
-  }
-  return "— ".repeat(names.length - 1) + names[names.length - 1];
-
-};
-
-useEffect(() => {
-  if (isCreateMode) {
-    setFormData({
-      title: "",
-      slug: "",
-      description: "",
-      shortDescription: "",
-      sku: "",
-      price: 0,
-      salePrice: 0,
-      totalStock: 0,
-      weight: 0,
-      brand: "",
-      tags: [],
-      images: [],
-      categories: [],
-      relatedProductIds: [],
-      upsellProductIds: [],
-      seo: { metaTitle: "", metaDescription: "", focusKeyword: "" },
-      isActive: true,
-      isFeatured: false,
-    });
-  } else {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`)
-      .then(res => {
+  useEffect(() => {
+    if (isCreateMode) {
+      setFormData({
+        title: "",
+        slug: "",
+        description: "",
+        shortDescription: "",
+        sku: "",
+        price: 0,
+        salePrice: 0,
+        totalStock: 0,
+        weight: 0,
+        brand: "",
+        tags: [],
+        images: [],
+        categories: [],
+        relatedProductIds: [],
+        upsellProductIds: [],
+        seo: { metaTitle: "", metaDescription: "", focusKeyword: "" },
+        isActive: true,
+        isFeatured: false,
+      });
+    } else {
+      axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/${id}`).then(res => {
         if (res.data.success) {
           const product = res.data.data;
           const normalized = {
@@ -77,38 +61,34 @@ useEffect(() => {
           setFormData(normalized);
         }
       });
-  }
+    }
 
-  // ✅ Build full category label paths
-  axios.get(`${import.meta.env.VITE_API_URL}/api/categories`).then((res) => {
-    const flat = res.data;
+    axios.get(`${import.meta.env.VITE_API_URL}/api/categories/flat-with-path`).then((res) => {
+      const flat = res.data;
+      const grouped = {};
 
-    const categoryMap = Object.fromEntries(
-      flat.map(c => [String(c._id), c])
-    );
+      flat.forEach(cat => {
+        const parts = cat.label.split(" > ");
+        const top = parts[0];
+        const rest = parts.slice(1).join(" > ");
 
-    console.log("🗺 categoryMap keys:", Object.keys(categoryMap));
+        if (!grouped[top]) grouped[top] = [];
 
-    const listWithPathLabels = flat.map(cat => {
-      const fullLabel = buildCategoryPath(cat, categoryMap);
+        grouped[top].push({
+          ...cat,
+          displayLabel: parts.length > 1 ? rest : top,
+        });
+      });
 
-      if (fullLabel === cat.name) {
-        console.warn("⚠️ No parent found for:", cat.name, "→", cat);
+      for (const group in grouped) {
+        if (grouped[group].length === 1 && grouped[group][0].displayLabel === group) {
+          grouped[group][0].displayLabel = group;
+        }
       }
 
-      console.log(`🧭 ${cat.name} → ${fullLabel}`);
-      return {
-        label: fullLabel,
-        value: cat._id,
-      };
+      setAllCategories(grouped);
     });
-
-    console.log("✅ Final Category Options for MultiSelect:", listWithPathLabels.slice(0, 10));
-    setAllCategories(listWithPathLabels);
-  });
-}, [id]);
-
-  
+  }, [id]);
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -164,78 +144,120 @@ useEffect(() => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-4">
-          <div>
-            <FieldLabel>Title</FieldLabel>
-            <Input value={formData.title || ""} onChange={e => handleChange("title", e.target.value)} />
-          </div>
-          <div>
-            <FieldLabel>Description</FieldLabel>
-            <ReactQuill theme="snow" value={formData.description || ""} onChange={value => handleChange("description", value)} className="bg-white" />
-          </div>
-          <div>
-            <FieldLabel>Short Description</FieldLabel>
-            <Textarea value={formData.shortDescription || ""} onChange={e => handleChange("shortDescription", e.target.value)} />
-          </div>
+          <FieldLabel>Title</FieldLabel>
+          <Input value={formData.title || ""} onChange={e => handleChange("title", e.target.value)} />
+
+          <FieldLabel>Description</FieldLabel>
+          <ReactQuill theme="snow" value={formData.description || ""} onChange={value => handleChange("description", value)} className="bg-white" />
+
+          <FieldLabel>Short Description</FieldLabel>
+          <Textarea value={formData.shortDescription || ""} onChange={e => handleChange("shortDescription", e.target.value)} />
+
           <ImageMultiUpload images={formData.images || []} onChange={(imgs) => handleChange("images", imgs)} />
-          <div>
-            <FieldLabel>Slug</FieldLabel>
-            <Input value={formData.slug || ""} onChange={e => handleChange("slug", e.target.value)} />
-          </div>
-          <div>
-            <FieldLabel>SKU</FieldLabel>
-            <Input value={formData.sku || ""} onChange={e => handleChange("sku", e.target.value)} />
-          </div>
-          <div>
-            <FieldLabel>Price</FieldLabel>
-            <Input type="number" value={formData.price || ""} onChange={e => handleChange("price", parseFloat(e.target.value))} />
-          </div>
-          <div>
-            <FieldLabel>Sale Price</FieldLabel>
-            <Input type="number" value={formData.salePrice || ""} onChange={e => handleChange("salePrice", parseFloat(e.target.value))} />
-          </div>
-          <div>
-            <FieldLabel>Stock</FieldLabel>
-            <Input type="number" value={formData.totalStock || ""} onChange={e => handleChange("totalStock", parseInt(e.target.value))} />
-          </div>
-          <div>
-            <FieldLabel>Weight (grams)</FieldLabel>
-            <Input type="number" value={formData.weight || ""} onChange={e => handleChange("weight", parseInt(e.target.value))} />
-          </div>
-          <div>
-            <FieldLabel>Brand</FieldLabel>
-            <Input value={formData.brand || ""} onChange={e => handleChange("brand", e.target.value)} />
+
+          <FieldLabel>Slug</FieldLabel>
+          <Input value={formData.slug || ""} onChange={e => handleChange("slug", e.target.value)} />
+
+          <FieldLabel>SKU</FieldLabel>
+          <Input value={formData.sku || ""} onChange={e => handleChange("sku", e.target.value)} />
+
+          <FieldLabel>Price</FieldLabel>
+          <Input type="number" value={formData.price || ""} onChange={e => handleChange("price", parseFloat(e.target.value))} />
+
+          <FieldLabel>Sale Price</FieldLabel>
+          <Input type="number" value={formData.salePrice || ""} onChange={e => handleChange("salePrice", parseFloat(e.target.value))} />
+
+          <FieldLabel>Stock</FieldLabel>
+          <Input type="number" value={formData.totalStock || ""} onChange={e => handleChange("totalStock", parseInt(e.target.value))} />
+
+          <FieldLabel>Weight (grams)</FieldLabel>
+          <Input type="number" value={formData.weight || ""} onChange={e => handleChange("weight", parseInt(e.target.value))} />
+
+          <FieldLabel>Brand</FieldLabel>
+          <Input value={formData.brand || ""} onChange={e => handleChange("brand", e.target.value)} />
+
+          <FieldLabel>Categories</FieldLabel>
+
+          {formData.categories?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {Object.entries(allCategories).flatMap(([group, items]) =>
+                items.filter(item => formData.categories.includes(item.value)).map(item => (
+                  <div
+                    key={item.value}
+                    className="flex items-center bg-gray-200 text-sm rounded-full px-3 py-1"
+                  >
+                    <span className="mr-2">
+                      {group !== item.displayLabel ? `${group} > ${item.displayLabel}` : group}
+                    </span>
+                    <button
+                      onClick={() => {
+                        const next = formData.categories.filter(val => val !== item.value);
+                        handleChange("categories", next);
+                      }}
+                      className="text-red-500 hover:text-red-700 font-bold"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))
+              )}
+            </div>
+          )}
+
+          <div className="space-y-4 border p-4 bg-white rounded max-h-96 overflow-y-auto">
+            {Object.entries(allCategories).map(([group, items]) => {
+              const isFlat = items.length === 1 && items[0].displayLabel === group;
+              return (
+                <div key={group}>
+                  {!isFlat && (
+                    <div className="font-semibold text-sm mb-1 text-gray-600 uppercase">{group}:</div>
+                  )}
+                  <div className={isFlat ? "space-y-1" : "ml-4 space-y-1"}>
+                    {items.map(item => (
+                      <label key={item.value} className="flex items-center space-x-2 text-sm">
+                        <input
+                          type="checkbox"
+                          checked={formData.categories.includes(item.value)}
+                          onChange={(e) => {
+                            const value = item.value;
+                            const checked = e.target.checked;
+                            const current = formData.categories || [];
+                            const next = checked
+                              ? [...current, value]
+                              : current.filter(v => v !== value);
+                            handleChange("categories", next);
+                          }}
+                        />
+                        <span>{item.displayLabel}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* ✅ Now shows full path like "OCCASION > Birthday" */}
-          <MultiSelect
-            options={allCategories}
-            selected={formData.categories || []}
-            label="Categories"
-            onChange={(value) => handleChange("categories", value)}
+          <FieldLabel>Tags (comma separated)</FieldLabel>
+          <Textarea
+            value={formData.tags?.join(", ") || ""}
+            onChange={e => handleChange("tags", e.target.value.split(",").map(tag => tag.trim()).filter(Boolean))}
           />
-<pre className="text-xs text-gray-400 bg-gray-100 p-2 mt-2 rounded max-h-64 overflow-y-auto">
-  {JSON.stringify(allCategories.slice(0, 5), null, 2)}
-</pre>
 
-          <div>
-            <FieldLabel>Tags (comma separated)</FieldLabel>
-            <Textarea
-              value={formData.tags?.join(", ") || ""}
-              onChange={e => handleChange("tags", e.target.value.split(",").map(tag => tag.trim()).filter(Boolean))}
-            />
-          </div>
-
-          {/* 🔍 SEO Section */}
           <div className="space-y-2 border rounded-lg p-4 shadow-sm bg-white">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold">Search engine listing</h3>
-              <button className="text-sm text-blue-600 hover:underline inline-flex items-center" onClick={() => setEditSEO(!editSEO)}>
+              <button
+                className="text-sm text-blue-600 hover:underline inline-flex items-center"
+                onClick={() => setEditSEO(!editSEO)}
+              >
                 <Pencil className="w-4 h-4 mr-1" /> Edit
               </button>
             </div>
             <div className="text-sm text-muted-foreground">Preview:</div>
             <div className="mt-1 text-sm">
-              <p className="text-blue-600 underline">https://yourdomain.com/products/{formData.slug}</p>
+              <p className="text-blue-600 underline">
+                https://yourdomain.com/products/{formData.slug}
+              </p>
               <p className="font-semibold">{formData.seo.metaTitle}</p>
               <p>{formData.seo.metaDescription}</p>
             </div>
@@ -262,14 +284,11 @@ useEffect(() => {
             )}
           </div>
 
-          <div>
-            <FieldLabel>Related Product IDs</FieldLabel>
-            <Textarea value={formData.relatedProductIds?.join(", ") || ""} onChange={e => handleChange("relatedProductIds", e.target.value.split(",").map(Number).filter(Boolean))} />
-          </div>
-          <div>
-            <FieldLabel>Upsell Product IDs</FieldLabel>
-            <Textarea value={formData.upsellProductIds?.join(", ") || ""} onChange={e => handleChange("upsellProductIds", e.target.value.split(",").map(Number).filter(Boolean))} />
-          </div>
+          <FieldLabel>Related Product IDs</FieldLabel>
+          <Textarea value={formData.relatedProductIds?.join(", ") || ""} onChange={e => handleChange("relatedProductIds", e.target.value.split(",").map(Number).filter(Boolean))} />
+
+          <FieldLabel>Upsell Product IDs</FieldLabel>
+          <Textarea value={formData.upsellProductIds?.join(", ") || ""} onChange={e => handleChange("upsellProductIds", e.target.value.split(",").map(Number).filter(Boolean))} />
         </div>
 
         <div className="space-y-4">
