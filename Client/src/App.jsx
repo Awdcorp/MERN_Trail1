@@ -14,6 +14,7 @@ import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
 import AdminPages from "./pages/admin-view/pages";
 import PageBuilder from "@/pages/admin-view/page-builder";
+import AdminImportHistory from "@/pages/admin-view/AdminImportExportHistory";
 import AdminSEOSettingsPage from "./pages/admin-view/settings";
 import BannerControlPage from "./pages/admin-view/banner-control";
 import ShoppingLayout from "./components/shopping-view/layout";
@@ -108,6 +109,7 @@ function App() {
           <Route path="settings" element={<AdminSEOSettingsPage />} />
           <Route path="homepage" element={<AdminHomepage />} />
           <Route path="banners" element={<BannerControlPage />} />
+          <Route path="AdminImportHistory" element={<AdminImportHistory />} />
         </Route>
 
         {/* 🛍️ Shop Routes (Public + Protected) */}

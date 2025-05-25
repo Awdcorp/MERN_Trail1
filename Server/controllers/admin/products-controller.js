@@ -5,7 +5,8 @@ const fs = require("fs");
 const path = require("path");
 const { Parser } = require("json2csv");
 const csvParser = require("csv-parser");
-
+const ProductImportLog = require("../../models/ProductImportLog");
+const ProductExportLog = require("../../models/ProductExportLog");
 const handleImageUpload = async (req, res) => {
   try {
     const b64 = Buffer.from(req.file.buffer).toString("base64");
@@ -267,11 +268,11 @@ const exportProductsToCSV = async (req, res) => {
     console.log("📤 [EXPORT] Fields requested:", selectedFields);
 
     let products;
+    const exportIds = req.query.ids?.split(",") || null;
 
-    if (req.query.ids) {
-      const ids = req.query.ids.split(",");
-      console.log("🔍 [EXPORT] Filtering by IDs:", ids);
-      products = await Product.find({ _id: { $in: ids } })
+    if (exportIds?.length) {
+      console.log("🔍 [EXPORT] Filtering by IDs:", exportIds);
+      products = await Product.find({ _id: { $in: exportIds } })
         .populate("categories", "name")
         .lean();
     } else {
@@ -307,14 +308,21 @@ const exportProductsToCSV = async (req, res) => {
     const parser = new Parser({ fields: selectedFields });
     const csv = parser.parse(formatted);
 
+    // ✅ Save export log
+    await ProductExportLog.create({
+      fileName: "products_export.csv",
+      selectedFields,
+      count: products.length,
+    });
+
     res.setHeader("Content-Type", "text/csv");
     res.setHeader("Content-Disposition", "attachment; filename=products_export.csv");
     res.status(200).send(csv);
 
-    console.log("✅ [EXPORT] CSV sent successfully.");
+    console.log("✅ [EXPORT] CSV sent and logged successfully.");
   } catch (err) {
     console.error("❌ [EXPORT] Error exporting products:", err);
-    res.status(500).json({ success: false, message: "Error fetching product" });
+    res.status(500).json({ success: false, message: "Error exporting products" });
   }
 };
 
@@ -332,27 +340,33 @@ const importProductsFromCSV = async (req, res) => {
     }
 
     const filePath = req.file.path;
+    const fileName = req.file.originalname;
     const importedProducts = [];
+
+    const createdProductIds = [];
+    const skippedRows = [];
+    let skippedCount = 0;
+    let importedCount = 0;
 
     fs.createReadStream(filePath)
       .pipe(csvParser())
       .on("data", (row) => {
-        console.log("📥 [IMPORT] Row received:", row);
         importedProducts.push(row);
       })
       .on("end", async () => {
-        console.log(`📦 [IMPORT] Processing ${importedProducts.length} rows...`);
-        let importedCount = 0;
-
         for (const row of importedProducts) {
+          const label = row.title || row.slug || "Unnamed Row";
+
           if (!row.title || !row.price) {
-            console.warn("⚠️ [IMPORT] Skipping invalid row:", row);
+            skippedRows.push(`❌ Missing fields in: ${label}`);
+            skippedCount++;
             continue;
           }
 
           const existing = await Product.findOne({ slug: row.slug });
           if (existing) {
-            console.log("🔁 [IMPORT] Skipping duplicate slug:", row.slug);
+            skippedRows.push(`🔁 Duplicate slug: ${row.slug}`);
+            skippedCount++;
             continue;
           }
 
@@ -369,13 +383,29 @@ const importProductsFromCSV = async (req, res) => {
           });
 
           await newProduct.save();
-          console.log("✅ [IMPORT] Product saved:", newProduct.title);
+          createdProductIds.push(newProduct._id);
           importedCount++;
         }
 
         fs.unlinkSync(filePath);
-        console.log("✅ [IMPORT] Import complete:", importedCount, "products added");
-        res.status(200).json({ success: true, message: `${importedCount} products imported` });
+
+        // ✅ Save log for history + revert
+        const importLog = new ProductImportLog({
+          fileName,
+          importedCount,
+          skippedCount,
+          createdProductIds,
+        });
+
+        await importLog.save();
+
+        res.status(200).json({
+          success: true,
+          message: `${importedCount} products imported, ${skippedCount} skipped`,
+          importedCount,
+          skippedCount,
+          skippedRows,
+        });
       });
   } catch (err) {
     console.error("❌ [IMPORT] Error importing products:", err);
@@ -383,6 +413,92 @@ const importProductsFromCSV = async (req, res) => {
   }
 };
 
+const getImportLogs = async (req, res) => {
+  try {
+    const logs = await ProductImportLog.find().sort({ timestamp: -1 }).limit(100);
+    res.status(200).json({ success: true, data: logs });
+  } catch (err) {
+    console.error("❌ [IMPORT LOGS] Failed:", err);
+    res.status(500).json({ success: false, message: "Failed to fetch logs" });
+  }
+};
+
+const getExportLogs = async (req, res) => {
+  try {
+    const logs = await ProductExportLog.find().sort({ timestamp: -1 }).limit(100);
+    res.status(200).json({ success: true, data: logs });
+  } catch (err) {
+    console.error("❌ [EXPORT LOGS] Failed:", err);
+    res.status(500).json({ success: false, message: "Failed to fetch logs" });
+  }
+};
+
+const revertImportByLogId = async (req, res) => {
+  try {
+    const { logId } = req.body;
+    if (!logId) return res.status(400).json({ success: false, message: "Missing logId" });
+
+    const log = await ProductImportLog.findById(logId);
+    if (!log) return res.status(404).json({ success: false, message: "Import log not found" });
+
+    if (log.reverted) {
+      return res.status(400).json({ success: false, message: "Import already reverted" });
+    }
+
+    const result = await Product.deleteMany({ _id: { $in: log.createdProductIds } });
+
+    log.reverted = true;
+    log.revertedAt = new Date();
+    await log.save();
+
+    console.log("🗑️ Reverted import, deleted products:", result.deletedCount);
+    return res.status(200).json({ success: true, message: `${result.deletedCount} products deleted` });
+  } catch (err) {
+    console.error("❌ Failed to revert import:", err);
+    return res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+const previewCSVHeaders = async (req, res) => {
+  try {
+    console.log("📥 [PREVIEW] Preview CSV request received");
+
+    if (!req.file?.path) {
+      console.error("❌ [PREVIEW] No file uploaded");
+      return res.status(400).json({ success: false, message: "No file uploaded" });
+    }
+
+    const filePath = req.file.path;
+    const headers = [];
+    const sample = [];
+    let rowCount = 0;
+
+    fs.createReadStream(filePath)
+      .pipe(csvParser())
+      .on("headers", (parsedHeaders) => {
+        parsedHeaders.forEach((h) => headers.push(h));
+        console.log("📋 [PREVIEW] Detected headers:", headers);
+      })
+      .on("data", (row) => {
+        if (rowCount < 5) {
+          sample.push(Object.values(row));
+          rowCount++;
+        }
+      })
+      .on("end", () => {
+        fs.unlinkSync(filePath);
+        console.log(`✅ [PREVIEW] Sampled ${sample.length} rows`);
+        return res.status(200).json({
+          success: true,
+          headers,
+          sample,
+        });
+      });
+  } catch (err) {
+    console.error("❌ [PREVIEW] Error parsing preview CSV:", err);
+    return res.status(500).json({ success: false, message: "Preview failed" });
+  }
+};
 
 module.exports = {
   handleImageUpload,
@@ -395,5 +511,9 @@ module.exports = {
   bulkUpdateProducts,
   bulkDeleteProducts,
   exportProductsToCSV,     // ✅ new
-  importProductsFromCSV,   // ✅ new
+  importProductsFromCSV,
+  getImportLogs,
+  revertImportByLogId,
+  previewCSVHeaders,
+  getExportLogs,   // ✅ new
 };

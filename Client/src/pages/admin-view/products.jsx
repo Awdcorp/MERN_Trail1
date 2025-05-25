@@ -1,5 +1,3 @@
-// File: src/pages/admin-view/AdminProducts.jsx
-
 import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
@@ -12,7 +10,7 @@ import ProductImageUpload from "@/components/admin-view/image-upload";
 import DataTable from "@/components/admin-view/data-table";
 import { productColumns } from "@/components/admin-view/columns";
 import CategorySelector from "@/components/admin-view/CategorySelector";
-
+import CSVPreviewModal from "@/components/admin-view/CSVPreviewModal";
 import {
   addNewProduct,
   deleteProduct,
@@ -53,6 +51,10 @@ function flattenCategories(tree) {
 }
 
 function AdminProducts() {
+  const dispatch = useDispatch();
+  const { productList, total } = useSelector((state) => state.adminProducts);
+  const { toast } = useToast();
+
   const [openCreateProductsDialog, setOpenCreateProductsDialog] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [imageFile, setImageFile] = useState(null);
@@ -69,10 +71,9 @@ function AdminProducts() {
   const [selectedProductIds, setSelectedProductIds] = useState([]);
   const [showExportDialog, setShowExportDialog] = useState(false);
   const [selectedFields, setSelectedFields] = useState(allExportableFields);
-
-  const { productList, total } = useSelector((state) => state.adminProducts);
-  const dispatch = useDispatch();
-  const { toast } = useToast();
+  const [importSummary, setImportSummary] = useState(null);
+  const [previewData, setPreviewData] = useState(null);
+  const [pendingCSVFile, setPendingCSVFile] = useState(null);
 
   function onSubmit(event) {
     event.preventDefault();
@@ -81,21 +82,17 @@ function AdminProducts() {
       image: uploadedImageUrl || formData.image || "",
     };
 
-    currentEditedId !== null
-      ? dispatch(editProduct({ id: currentEditedId, formData: updatedFormData })).then((data) => {
-          if (data?.payload?.success) {
-            dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
-            resetForm();
-            toast({ title: "Product updated successfully" });
-          }
-        })
-      : dispatch(addNewProduct(updatedFormData)).then((data) => {
-          if (data?.payload?.success) {
-            dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
-            resetForm();
-            toast({ title: "Product added successfully" });
-          }
-        });
+    const action = currentEditedId !== null
+      ? editProduct({ id: currentEditedId, formData: updatedFormData })
+      : addNewProduct(updatedFormData);
+
+    dispatch(action).then((data) => {
+      if (data?.payload?.success) {
+        dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
+        resetForm();
+        toast({ title: `Product ${currentEditedId ? "updated" : "added"} successfully` });
+      }
+    });
   }
 
   async function handleExportProducts() {
@@ -118,11 +115,36 @@ function AdminProducts() {
     }
   }
 
-  async function handleImportProducts(event) {
+  const handleCSVPreview = async (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
+    setPendingCSVFile(file);
+
     const formData = new FormData();
     formData.append("file", file);
+
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/preview-csv`, {
+        method: "POST",
+        body: formData,
+      });
+      const result = await res.json();
+      if (result.success) {
+        setPreviewData(result);
+      } else {
+        toast({ title: "Invalid CSV file", variant: "destructive" });
+      }
+    } catch (err) {
+      console.error("CSV preview failed", err);
+      toast({ title: "CSV preview failed", variant: "destructive" });
+    }
+  };
+
+  const handlePreviewConfirm = async (mapping) => {
+    if (!pendingCSVFile) return;
+    const formData = new FormData();
+    formData.append("file", pendingCSVFile);
+    formData.append("mapping", JSON.stringify(mapping));
 
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/import`, {
@@ -131,29 +153,26 @@ function AdminProducts() {
       });
       const result = await res.json();
       if (result.success) {
-        toast({ title: "Products imported successfully" });
+        setImportSummary({
+          imported: result.importedCount,
+          skipped: result.skippedCount,
+          skippedRows: result.skippedRows || [],
+        });
         dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
       } else {
         toast({ title: result.message || "Import failed", variant: "destructive" });
       }
     } catch (err) {
-      console.error("❌ [IMPORT] Import failed:", err);
-      toast({ title: "Import failed", variant: "destructive" });
+      console.error("CSV import failed", err);
+      toast({ title: "CSV import failed", variant: "destructive" });
+    } finally {
+      setPreviewData(null);
+      setPendingCSVFile(null);
     }
-  }
-
-  function handleDelete(getCurrentProductId) {
-    dispatch(deleteProduct(getCurrentProductId)).then((data) => {
-      if (data?.payload?.success) {
-        dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
-        toast({ title: "Product deleted successfully" });
-      }
-    });
-  }
-
-  function isFormValid() {
-    return Object.keys(formData).filter((key) => key === "title").every((key) => formData[key] !== "");
-  }
+  };
+function isFormValid() {
+  return formData.title?.trim() !== "";
+}
 
   function resetForm() {
     setFormData(initialFormData);
@@ -189,9 +208,16 @@ function AdminProducts() {
       </select>
       <Button asChild><a href="/admin/products/new">+ Create New Product</a></Button>
       <Button variant="outline" onClick={() => setShowExportDialog(true)}>Export Settings</Button>
-      <Button asChild variant="outline">
-        <label className="cursor-pointer m-0 p-0">Import CSV<input type="file" accept=".csv" onChange={handleImportProducts} className="hidden" /></label>
-      </Button>
+      <div className="relative overflow-hidden">
+  <Button variant="outline">Import CSV</Button>
+  <input
+    type="file"
+    accept=".csv"
+    onChange={handleCSVPreview}
+    className="absolute inset-0 opacity-0 cursor-pointer"
+  />
+</div>
+
     </div>
   );
 
@@ -216,7 +242,10 @@ function AdminProducts() {
                         ),
                       }),
                     setOpenCreateProductsDialog,
-                    onDelete: handleDelete,
+                    onDelete: (id) => dispatch(deleteProduct(id)).then(() => {
+                      toast({ title: "Product deleted" });
+                      dispatch(fetchAllProducts({ page, limit, search: searchTerm, category: selectedCategory, sortBy, sortOrder }));
+                    }),
                   }),
               }
             : col
@@ -289,6 +318,37 @@ function AdminProducts() {
             <div className="flex justify-end gap-2">
               <Button variant="ghost" onClick={() => setShowExportDialog(false)}>Cancel</Button>
               <Button onClick={() => { setShowExportDialog(false); handleExportProducts(); }}>Export</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {previewData && (
+        <CSVPreviewModal
+          previewData={previewData}
+          onClose={() => setPreviewData(null)}
+          onConfirm={handlePreviewConfirm}
+        />
+      )}
+
+      {importSummary && (
+        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg w-[400px]">
+            <h2 className="text-xl font-semibold mb-3">Import Summary</h2>
+            <p className="mb-1">✅ Imported: {importSummary.imported}</p>
+            <p className="mb-2">⚠️ Skipped: {importSummary.skipped}</p>
+            {importSummary.skippedRows.length > 0 && (
+              <div className="text-sm text-muted-foreground">
+                <strong>Skipped Rows:</strong>
+                <ul className="list-disc pl-5">
+                  {importSummary.skippedRows.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <div className="text-right mt-4">
+              <Button onClick={() => setImportSummary(null)}>Close</Button>
             </div>
           </div>
         </div>
