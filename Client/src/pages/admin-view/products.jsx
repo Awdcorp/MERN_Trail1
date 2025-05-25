@@ -86,6 +86,82 @@ function AdminProducts() {
         });
   }
 
+  async function handleExportProducts() {
+  console.log("📤 [EXPORT] Initiating export request...");
+
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/export`);
+
+    console.log("📤 [EXPORT] Response status:", res.status);
+    if (!res.ok) {
+      console.error("❌ [EXPORT] Server responded with error status");
+      toast({ title: "Export failed", variant: "destructive" });
+      return;
+    }
+
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    console.log("📥 [EXPORT] Blob URL created:", url);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "products_export.csv";
+    link.click();
+
+    window.URL.revokeObjectURL(url);
+    console.log("✅ [EXPORT] CSV download triggered");
+  } catch (err) {
+    console.error("❌ [EXPORT] Export failed:", err);
+    toast({ title: "Export failed", variant: "destructive" });
+  }
+}
+
+
+async function handleImportProducts(event) {
+  const file = event.target.files?.[0];
+  if (!file) {
+    console.warn("⚠️ [IMPORT] No file selected");
+    return;
+  }
+
+  console.log("📁 [IMPORT] File selected:", file.name);
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    console.log("📤 [IMPORT] Sending file to backend...");
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/import`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await res.json();
+    console.log("📬 [IMPORT] Server response:", result);
+
+    if (result.success) {
+      toast({ title: "Products imported successfully" });
+      dispatch(fetchAllProducts({
+        page,
+        limit,
+        search: searchTerm,
+        category: selectedCategory,
+        sortBy,
+        sortOrder
+      }));
+      console.log("✅ [IMPORT] Product list refreshed");
+    } else {
+      console.error("❌ [IMPORT] Import failed:", result.message);
+      toast({ title: result.message || "Import failed", variant: "destructive" });
+    }
+  } catch (err) {
+    console.error("❌ [IMPORT] Import failed:", err);
+    toast({ title: "Import failed", variant: "destructive" });
+  }
+}
+
+
   function handleDelete(getCurrentProductId) {
     dispatch(deleteProduct(getCurrentProductId)).then((data) => {
       if (data?.payload?.success) {
@@ -126,36 +202,52 @@ function AdminProducts() {
   }, [dispatch, page, limit, searchTerm, selectedCategory, sortBy, sortOrder]);
 
   const filterUI = (
-    <div className="flex items-center gap-4">
-      <Input
-        placeholder="Search title..."
-        value={searchTerm}
-        onChange={(e) => {
-          setSearchTerm(e.target.value);
-          setPage(1);
-        }}
-        className="max-w-sm"
-      />
-      <select
-        value={selectedCategory}
-        onChange={(e) => {
-          setSelectedCategory(e.target.value);
-          setPage(1);
-        }}
-        className="border rounded px-3 py-2 text-sm"
-      >
-        <option value="">All Categories</option>
-        {allCategories.map((cat) => (
-          <option key={cat._id} value={cat._id}>
-            {cat.name}
-          </option>
-        ))}
-      </select>
-      <Button asChild>
-        <a href="/admin/products/new">+ Create New Product</a>
-      </Button>
-    </div>
-  );
+  <div className="flex items-center gap-4 flex-wrap">
+    <Input
+      placeholder="Search title..."
+      value={searchTerm}
+      onChange={(e) => {
+        setSearchTerm(e.target.value);
+        setPage(1);
+      }}
+      className="max-w-sm"
+    />
+    <select
+      value={selectedCategory}
+      onChange={(e) => {
+        setSelectedCategory(e.target.value);
+        setPage(1);
+      }}
+      className="border rounded px-3 py-2 text-sm"
+    >
+      <option value="">All Categories</option>
+      {allCategories.map((cat) => (
+        <option key={cat._id} value={cat._id}>
+          {cat.name}
+        </option>
+      ))}
+    </select>
+    <Button asChild>
+      <a href="/admin/products/new">+ Create New Product</a>
+    </Button>
+    <Button variant="outline" onClick={handleExportProducts}>
+      Export CSV
+    </Button>
+    <Button asChild variant="outline">
+  <label className="cursor-pointer m-0 p-0">
+    Import CSV
+    <input
+      type="file"
+      accept=".csv"
+      onChange={handleImportProducts}
+      className="hidden"
+    />
+  </label>
+</Button>
+
+  </div>
+);
+
 
   return (
     <Fragment>

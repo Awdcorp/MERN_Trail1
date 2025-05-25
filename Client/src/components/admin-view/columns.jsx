@@ -61,11 +61,6 @@ export const productColumns = [
     ),
   },
   {
-    accessorKey: "brand",
-    header: "Brand",
-    cell: (row) => <span className="text-sm text-muted-foreground">{row.brand || "—"}</span>,
-  },
-  {
     accessorKey: "price",
     header: "Price",
     cell: (row) => (

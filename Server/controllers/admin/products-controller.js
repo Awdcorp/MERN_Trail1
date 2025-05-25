@@ -1,6 +1,11 @@
 const { imageUploadUtil } = require("../../helpers/cloudinary");
 const Product = require("../../models/Product");
 const mongoose = require("mongoose");
+const fs = require("fs");
+const path = require("path");
+const { Parser } = require("json2csv");
+const csvParser = require("csv-parser");
+
 const handleImageUpload = async (req, res) => {
   try {
     const b64 = Buffer.from(req.file.buffer).toString("base64");
@@ -248,6 +253,113 @@ const bulkDeleteProducts = async (req, res) => {
   }
 };
 
+// EXPORT PRODUCTS TO CSV
+const exportProductsToCSV = async (req, res) => {
+  try {
+    console.log("🟢 [EXPORT] Starting product export...");
+
+    const products = await Product.find({})
+      .populate("categories", "name")
+      .lean();
+
+    console.log(`🧾 [EXPORT] Fetched ${products.length} products.`);
+
+    const formatted = products.map((p, index) => {
+      console.log(`📦 [EXPORT] Processing product ${index + 1}:`, p.title);
+      return {
+        title: p.title,
+        slug: p.slug,
+        price: p.price,
+        salePrice: p.salePrice,
+        totalStock: p.totalStock,
+        brand: p.brand,
+        categories: Array.isArray(p.categories)
+          ? p.categories.map((c) => c.name).join(", ")
+          : "",
+        isActive: p.isActive,
+        isFeatured: p.isFeatured,
+      };
+    });
+
+    console.log("📁 [EXPORT] Mapping complete. Converting to CSV...");
+    const parser = new Parser();
+    const csv = parser.parse(formatted);
+
+    res.setHeader("Content-Type", "text/csv");
+    res.setHeader("Content-Disposition", "attachment; filename=products_export.csv");
+    res.status(200).send(csv);
+
+    console.log("✅ [EXPORT] CSV sent successfully.");
+  } catch (err) {
+    console.error("❌ [EXPORT] Error exporting products:", err);
+    res.status(500).json({ success: false, message: "Error fetching product" });
+  }
+};
+
+
+// IMPORT PRODUCTS FROM CSV
+const importProductsFromCSV = async (req, res) => {
+  try {
+    console.log("🟢 [IMPORT] Import request received");
+
+    if (!req.file?.path) {
+      console.error("❌ [IMPORT] No file uploaded");
+      return res.status(400).json({ success: false, message: "No file uploaded" });
+    }
+
+    const filePath = req.file.path;
+    const importedProducts = [];
+
+    fs.createReadStream(filePath)
+      .pipe(csvParser())
+      .on("data", (row) => {
+        console.log("📥 [IMPORT] Row received:", row);
+        importedProducts.push(row);
+      })
+      .on("end", async () => {
+        console.log(`📦 [IMPORT] Processing ${importedProducts.length} rows...`);
+        let importedCount = 0;
+
+        for (const row of importedProducts) {
+          if (!row.title || !row.price) {
+            console.warn("⚠️ [IMPORT] Skipping invalid row:", row);
+            continue;
+          }
+
+          const existing = await Product.findOne({ slug: row.slug });
+          if (existing) {
+            console.log("🔁 [IMPORT] Skipping duplicate slug:", row.slug);
+            continue;
+          }
+
+          const newProduct = new Product({
+            title: row.title,
+            slug: row.slug,
+            price: parseFloat(row.price),
+            salePrice: parseFloat(row.salePrice) || null,
+            totalStock: parseInt(row.totalStock) || 0,
+            brand: row.brand || "",
+            isActive: row.isActive === "true",
+            isFeatured: row.isFeatured === "true",
+            categories: [],
+          });
+
+          await newProduct.save();
+          console.log("✅ [IMPORT] Product saved:", newProduct.title);
+          importedCount++;
+        }
+
+        fs.unlinkSync(filePath);
+        console.log("✅ [IMPORT] Import complete:", importedCount, "products added");
+        res.status(200).json({ success: true, message: `${importedCount} products imported` });
+      });
+  } catch (err) {
+    console.error("❌ [IMPORT] Error importing products:", err);
+    res.status(500).json({ success: false, message: "Import failed" });
+  }
+};
+
+
 module.exports = {
   handleImageUpload,
   addProduct,
@@ -258,4 +370,6 @@ module.exports = {
   searchProducts,
   bulkUpdateProducts,
   bulkDeleteProducts,
+  exportProductsToCSV,     // ✅ new
+  importProductsFromCSV,   // ✅ new
 };

@@ -58,9 +58,6 @@ function AdminProductRow({
         </TooltipProvider>
       </td>
 
-      {/* ✅ Brand */}
-      <td className="p-3">{product?.brand || "—"}</td>
-
       {/* ✅ Price / Sale */}
       <td className="p-3">
         <span className={product?.salePrice > 0 ? "line-through" : ""}>
