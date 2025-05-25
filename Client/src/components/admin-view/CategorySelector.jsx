@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Input } from "@/components/ui/input";
 
 export default function CategorySelector({
   selected = [],
@@ -8,6 +9,7 @@ export default function CategorySelector({
   compact = false,
 }) {
   const [allCategories, setAllCategories] = useState({});
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/categories/flat-with-path`).then((res) => {
@@ -41,9 +43,42 @@ export default function CategorySelector({
     onChange(next);
   };
 
+  const matchesSearch = (label) =>
+    label.toLowerCase().includes(search.toLowerCase());
+
+  const filteredCategories = Object.entries(allCategories).reduce(
+    (acc, [level0, subGroups]) => {
+      const newGroup = {};
+
+      // Flat items
+      if (subGroups["__flat__"]) {
+        const flatFiltered = subGroups["__flat__"].filter((item) => matchesSearch(item.displayLabel));
+        if (flatFiltered.length) newGroup["__flat__"] = flatFiltered;
+      }
+
+      // Nested
+      Object.entries(subGroups).forEach(([level1, items]) => {
+        if (level1 === "__flat__") return;
+        const matches = items.filter((item) => matchesSearch(item.displayLabel));
+        if (matches.length) newGroup[level1] = matches;
+      });
+
+      if (Object.keys(newGroup).length > 0) acc[level0] = newGroup;
+      return acc;
+    },
+    {}
+  );
+
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">{title}</label>
+
+      <Input
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search categories..."
+        className="mb-2"
+      />
 
       {selected.length > 0 && (
         <div className={compact ? "flex flex-wrap gap-1 mb-2" : "flex flex-wrap gap-2 mb-4"}>
@@ -83,7 +118,7 @@ export default function CategorySelector({
           compact ? "max-h-72" : "max-h-96"
         }`}
       >
-        {Object.entries(allCategories).map(([level0, subGroups]) => (
+        {Object.entries(filteredCategories).map(([level0, subGroups]) => (
           <div key={level0}>
             {(subGroups["__flat__"] || []).length > 0 && (
               <div
@@ -116,9 +151,7 @@ export default function CategorySelector({
                         <input
                           type="checkbox"
                           checked={selected.includes(headingItem.value)}
-                          onChange={(e) =>
-                            handleToggle(headingItem.value, e.target.checked)
-                          }
+                          onChange={(e) => handleToggle(headingItem.value, e.target.checked)}
                         />
                       )}
                       <span>{level1}</span>
@@ -136,9 +169,7 @@ export default function CategorySelector({
                           <input
                             type="checkbox"
                             checked={selected.includes(item.value)}
-                            onChange={(e) =>
-                              handleToggle(item.value, e.target.checked)
-                            }
+                            onChange={(e) => handleToggle(item.value, e.target.checked)}
                           />
                           <span>{item.displayLabel}</span>
                         </label>
