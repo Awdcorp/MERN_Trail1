@@ -33,7 +33,7 @@ export default function Header() {
   useEffect(() => {
   const fetchMenu = async () => {
     try {
-      const { data: setting } = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/active-header-name`);
+      const { data: setting } = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/active-header`);
       const menuName = setting?.name || 'header';
       const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`);
       console.log("🔥 Menu response:", data);
@@ -45,6 +45,7 @@ export default function Header() {
   };
   fetchMenu();
 }, []);
+
 
 
 

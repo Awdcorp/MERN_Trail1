@@ -1,7 +1,7 @@
 // File: Server/controllers/admin/menu-controller.js
 
 const Menu = require("../../models/Menu");
-
+const Settings = require("../../models/Settings");
 // GET: /api/admin/menus/:name (e.g., header or footer)
 exports.getMenu = async (req, res) => {
   try {
@@ -45,9 +45,10 @@ exports.getActiveHeaderMenuName = async (req, res) => {
   try {
     const doc = await Settings.findOne();
     const menuName = doc?.activeHeaderMenu || "header";
+    console.log("🔍 [GET ACTIVE MENU] Fetched from Settings:", menuName);
     res.json({ name: menuName });
   } catch (err) {
-    console.error("❌ Failed to fetch activeHeaderMenu:", err);
+    console.error("❌ [GET ACTIVE MENU] Failed to fetch activeHeaderMenu:", err);
     res.status(500).json({ error: "Failed to get active header menu" });
   }
 };
@@ -55,10 +56,17 @@ exports.getActiveHeaderMenuName = async (req, res) => {
 exports.setActiveHeaderMenuName = async (req, res) => {
   const { name } = req.body;
   try {
-    const doc = await Settings.findOneAndUpdate({}, { activeHeaderMenu: name }, { new: true, upsert: true });
+    console.log("📤 [SET ACTIVE MENU] Requested to set activeHeaderMenu to:", name);
+    const doc = await Settings.findOneAndUpdate(
+      {},
+      { activeHeaderMenu: name },
+      { new: true, upsert: true }
+    );
+    console.log("✅ [SET ACTIVE MENU] Successfully updated. Now activeHeaderMenu is:", doc.activeHeaderMenu);
     res.json({ success: true, name: doc.activeHeaderMenu });
   } catch (err) {
-    console.error("❌ Failed to set activeHeaderMenu:", err);
+    console.error("❌ [SET ACTIVE MENU] Failed to update activeHeaderMenu:", err);
     res.status(500).json({ error: "Failed to update menu setting" });
   }
 };
+
