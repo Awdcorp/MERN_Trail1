@@ -8,7 +8,7 @@ const menuItemSchema = new mongoose.Schema({
 });
 
 const menuSchema = new mongoose.Schema({
-  name: { type: String, enum: ["header", "footer"], required: true, unique: true },
+  name: { type: String, required: true, unique: true },
   items: [menuItemSchema],
 }, { timestamps: true });
 

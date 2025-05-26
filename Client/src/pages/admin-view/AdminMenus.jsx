@@ -12,6 +12,7 @@ import SortableItem from "@/components/admin-view/sortable-item";
 
 export default function AdminMenus() {
   const { toast } = useToast();
+  const [menuName, setMenuName] = useState("header");
   const [headerItems, setHeaderItems] = useState([]);
   const [collapsed, setCollapsed] = useState({});
 
@@ -32,23 +33,15 @@ export default function AdminMenus() {
   };
 
   const expandAll = () => {
-    setCollapsed((prev) => {
-      const updated = { ...prev };
-      Object.keys(updated).forEach((k) => (updated[k] = false));
-      return updated;
-    });
+    setCollapsed((prev) => Object.fromEntries(Object.keys(prev).map(k => [k, false])));
   };
 
   const collapseAll = () => {
-    setCollapsed((prev) => {
-      const updated = { ...prev };
-      Object.keys(updated).forEach((k) => (updated[k] = true));
-      return updated;
-    });
+    setCollapsed((prev) => Object.fromEntries(Object.keys(prev).map(k => [k, true])));
   };
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/header`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`).then((res) => {
       const items = (res.data.items || []).map(item => ({
         ...item,
         id: item.id || crypto.randomUUID(),
@@ -64,7 +57,7 @@ export default function AdminMenus() {
       setHeaderItems(items);
       setCollapsed(collectAllIds(items));
     });
-  }, []);
+  }, [menuName]);
 
   const handleDragEnd = (event, list, updateFn) => {
     const { active, over } = event;
@@ -99,11 +92,15 @@ export default function AdminMenus() {
   };
 
   const saveMenu = async () => {
+    if (headerItems.some(i => !i.label || !i.link)) {
+      toast({ title: "All menu items must have a label and link", variant: "destructive" });
+      return;
+    }
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/menus/header`, { items: headerItems });
-      toast({ title: "Header menu saved" });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`, { items: headerItems });
+      toast({ title: `${menuName} saved successfully` });
     } catch (err) {
-      toast({ title: "Failed to save header menu", variant: "destructive" });
+      toast({ title: `Failed to save ${menuName}`, variant: "destructive" });
     }
   };
 
@@ -177,7 +174,17 @@ export default function AdminMenus() {
     <div className="p-6 space-y-4">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold">Header Menu</h2>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
+          <select
+            value={menuName}
+            onChange={(e) => setMenuName(e.target.value)}
+            className="border rounded px-2 py-1"
+          >
+            <option value="header">Header</option>
+            <option value="menu1">Menu 1</option>
+            <option value="menu2">Menu 2</option>
+            <option value="menu3">Menu 3</option>
+          </select>
           <Button size="sm" variant="outline" onClick={expandAll}>Expand All</Button>
           <Button size="sm" variant="outline" onClick={collapseAll}>Collapse All</Button>
         </div>
@@ -225,7 +232,7 @@ export default function AdminMenus() {
 
       <div className="flex gap-3">
         <Button variant="outline" onClick={() => addItem(headerItems, setHeaderItems)}>+ Add Top Level</Button>
-        <Button onClick={saveMenu}>Save Header</Button>
+        <Button onClick={saveMenu}>Save {menuName}</Button>
       </div>
     </div>
   );
