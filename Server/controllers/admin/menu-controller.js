@@ -40,3 +40,25 @@ exports.saveMenu = async (req, res) => {
     res.status(500).json({ error: "Failed to save menu" });
   }
 };
+
+exports.getActiveHeaderMenuName = async (req, res) => {
+  try {
+    const doc = await Settings.findOne();
+    const menuName = doc?.activeHeaderMenu || "header";
+    res.json({ name: menuName });
+  } catch (err) {
+    console.error("❌ Failed to fetch activeHeaderMenu:", err);
+    res.status(500).json({ error: "Failed to get active header menu" });
+  }
+};
+
+exports.setActiveHeaderMenuName = async (req, res) => {
+  const { name } = req.body;
+  try {
+    const doc = await Settings.findOneAndUpdate({}, { activeHeaderMenu: name }, { new: true, upsert: true });
+    res.json({ success: true, name: doc.activeHeaderMenu });
+  } catch (err) {
+    console.error("❌ Failed to set activeHeaderMenu:", err);
+    res.status(500).json({ error: "Failed to update menu setting" });
+  }
+};

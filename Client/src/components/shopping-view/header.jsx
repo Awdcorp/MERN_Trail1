@@ -31,18 +31,22 @@ export default function Header() {
   const location = useLocation();
 
   useEffect(() => {
-    const url = `${import.meta.env.VITE_API_URL}/api/admin/menus/header`;
-    console.log("📡 Fetching menu from:", url);
-    axios.get(url)
-      .then((res) => {
-        console.log("🔥 Menu response:", res.data);
-        const items = res.data?.items || [];
-        setDynamicMenu(items);
-      })
-      .catch((err) => {
-        console.error("❌ Failed to fetch menu:", err);
-      });
-  }, []);
+  const fetchMenu = async () => {
+    try {
+      const { data: setting } = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/active-header-name`);
+      const menuName = setting?.name || 'header';
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`);
+      console.log("🔥 Menu response:", data);
+      const items = Array.isArray(data?.items) ? data.items : [];
+      setDynamicMenu(items);
+    } catch (err) {
+      console.error("❌ Failed to fetch menu:", err);
+    }
+  };
+  fetchMenu();
+}, []);
+
+
 
   useEffect(() => {
     const links = [];

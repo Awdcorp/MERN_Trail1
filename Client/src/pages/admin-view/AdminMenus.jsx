@@ -19,6 +19,14 @@ export default function AdminMenus() {
   const toggleCollapse = (id) => {
     setCollapsed((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+const sanitizeItems = (items) => {
+  const walk = (arr) =>
+    arr.map(({ id, ...rest }) => ({
+      ...rest,
+      children: rest.children ? walk(rest.children) : []
+    }));
+  return walk(items);
+};
 
   const collectAllIds = (items) => {
     const ids = {};
@@ -39,6 +47,19 @@ export default function AdminMenus() {
   const collapseAll = () => {
     setCollapsed((prev) => Object.fromEntries(Object.keys(prev).map(k => [k, true])));
   };
+
+  const updateActiveMenuSetting = async (value) => {
+  try {
+    console.log("📤 Setting activeHeaderMenu in Settings:", value);
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/menus/active-header`, { name: value });
+    toast({ title: `Live menu set to ${value}` });
+  } catch (err) {
+    console.error("❌ Failed to update activeHeaderMenu", err);
+    toast({ title: "Failed to set active menu", variant: "destructive" });
+  }
+};
+
+
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`).then((res) => {
@@ -92,17 +113,23 @@ export default function AdminMenus() {
   };
 
   const saveMenu = async () => {
-    if (headerItems.some(i => !i.label || !i.link)) {
-      toast({ title: "All menu items must have a label and link", variant: "destructive" });
-      return;
-    }
-    try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`, { items: headerItems });
-      toast({ title: `${menuName} saved successfully` });
-    } catch (err) {
-      toast({ title: `Failed to save ${menuName}`, variant: "destructive" });
-    }
-  };
+  console.log("💾 Saving menu:", menuName); // ADD THIS LINE TO LOG IT
+
+  if (headerItems.some(i => !i.label || !i.link)) {
+    toast({ title: "All menu items must have a label and link", variant: "destructive" });
+    return;
+  }
+  try {
+    const sanitized = sanitizeItems(headerItems);
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/menus/${menuName}`, {
+      items: sanitized,
+    });
+    toast({ title: `${menuName} saved successfully` });
+  } catch (err) {
+    toast({ title: `Failed to save ${menuName}`, variant: "destructive" });
+  }
+};
+
 
   const renderChildren = (children, setChildren, level = 1) => (
     <div className={`ml-${level * 4} mt-3 space-y-3 border-l border-muted pl-4`}>
@@ -185,6 +212,7 @@ export default function AdminMenus() {
             <option value="menu2">Menu 2</option>
             <option value="menu3">Menu 3</option>
           </select>
+          <Button size="sm" variant="outline" onClick={() => updateActiveMenuSetting(menuName)}>Set as Active</Button>
           <Button size="sm" variant="outline" onClick={expandAll}>Expand All</Button>
           <Button size="sm" variant="outline" onClick={collapseAll}>Collapse All</Button>
         </div>

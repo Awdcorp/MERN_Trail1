@@ -15,8 +15,8 @@ const settingsSchema = new mongoose.Schema({
     name: { type: String, default: "" },
     url: { type: String, default: "" },
     logo: { type: String, default: "" },
-  }
-
+  },
+activeHeaderMenu: { type: String, default: "header" }
 }, { timestamps: true });
 
 
