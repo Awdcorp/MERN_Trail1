@@ -29,7 +29,7 @@ export default function Header() {
   const cartCount = useSelector(selectCartItemCount);
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
-
+const [announcement, setAnnouncement] = useState(null);
   useEffect(() => {
   const fetchMenu = async () => {
     try {
@@ -46,7 +46,12 @@ export default function Header() {
   fetchMenu();
 }, []);
 
-
+useEffect(() => {
+  axios
+    .get(`${import.meta.env.VITE_API_URL}/api/admin/announcement/active`)
+    .then((res) => setAnnouncement(res.data))
+    .catch(() => setAnnouncement(null));
+}, []);
 
 
   useEffect(() => {
@@ -97,14 +102,21 @@ export default function Header() {
 
   return (
     <header className="w-full">
-      <div className="bg-[#00B0BA] text-white text-xs md:text-sm py-3 text-center">
-        <div className="max-w-screen-xl mx-auto px-4 md:px-0">
-          <div className="flex flex-col md:flex-row font-normal md:justify-between items-center gap-2">
-            <span>10% OFF FIRST ORDER: USE CODE HELLOPW</span>
-            <span>FREE DELIVERIES IN UAE ON ORDERS OVER AED 200</span>
-          </div>
-        </div>
+      {announcement?.isActive && (
+  <div
+    className="text-xs md:text-sm py-3"
+    style={{ backgroundColor: announcement.backgroundColor, color: announcement.textColor }}
+  >
+    <div className="max-w-screen-xl mx-auto px-4 md:px-0">
+      <div className="flex flex-col md:flex-row font-normal md:justify-between items-center gap-2 text-center md:text-left">
+        <span>{announcement.leftText}</span>
+        <span>{announcement.rightText}</span>
       </div>
+    </div>
+  </div>
+)}
+
+
 
       <div className="bg-white py-4 border-b border-[#C7C7C7] md:border-none">
         <div className="px-4 md:px-0 max-w-screen-xl mx-auto">

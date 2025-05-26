@@ -14,6 +14,7 @@ import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
 import AdminPages from "./pages/admin-view/pages";
 import AdminMenus from "./pages/admin-view/AdminMenus";
+import AdminAnnouncement from "./pages/admin-view/AdminAnnouncement";
 import PageBuilder from "@/pages/admin-view/page-builder";
 import AdminImportHistory from "@/pages/admin-view/AdminImportExportHistory";
 import AdminSEOSettingsPage from "./pages/admin-view/settings";
@@ -111,6 +112,7 @@ function App() {
           <Route path="homepage" element={<AdminHomepage />} />
           <Route path="banners" element={<BannerControlPage />} />
           <Route path="AdminImportHistory" element={<AdminImportHistory />} />
+          <Route path="announcement" element={<AdminAnnouncement />} />
           <Route path="menus" element={<AdminMenus />} />
         </Route>
 
