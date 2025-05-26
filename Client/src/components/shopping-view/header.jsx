@@ -8,62 +8,57 @@ import UserCartWrapper from "./cart-wrapper";
 import logo from "@/assets/logo.jpg";
 import { createSelector } from "@reduxjs/toolkit";
 import { Sheet } from "@/components/ui/sheet";
-import axios from "axios"; // ✅ Added for search
+import axios from "axios";
 
-// ✅ Memoized selector
 const selectCartItemCount = createSelector(
   (state) => Array.isArray(state.shopCart.cartItems) ? state.shopCart.cartItems : [],
   (items) => items.reduce((total, item) => total + item.quantity, 0)
 );
 
-const megaMenu = {
-  "Party Supplies": {
-    "Tableware": ["Cups", "Plates", "Napkins", "Cutlery", "Serveware", "Drinkware", "Food Picks", "Tablecovers"],
-    "Decorations": ["Banners", "Confetti", "Garlands", "Centrepieces", "Scene Setters", "Door Decorations", "Hanging Decorations"],
-    "Party Essentials": ["Wearables", "Cake / Cupcake Toppers", "Tattoos", "Yard Signs", "Horns And Blowers", "Pinatas", "Confetti Poppers", "Invitation Cards", "Candles"],
-    "Party Packages": ["The Value Package", "The Value Plus Package", "The Entertainment Package", "The Premium Package", "The Superior Package", "The Deluxe Package", "The Ultimate Package", "SEE ALL"],
-    "Party Favors And Gifts": ["Gifts", "Favor Bags", "Party Favors"],
-    "Art & Craft Stationary & Games": ["Arts & Crafts", "Stationary", "Games & Toys"],
-    "By Theme": ["All Themes"],
-    "By Occasions": ["All Occasions"],
-    "Age": ["Toddler", "Baby", "Child", "Teen", "Adult"],
-  },
-  Balloons: {
-    "Birthdays": ["1st Birthday Balloons", "Adult Birthday Balloons", "Kids Birthday Balloons", "Teens Birthday Balloons", "Father's Birthday Balloons", "Mom's Birthday Balloons", "All Birthdays"],
-    "Occasions": ["Birthday", "Anniversary", "Baby Shower", "Gender Reveal", "Bridal/Wedding", "Mother's Day", "Graduation", "Valentine's Day", "Ramadan/Eid", "UAE National Day", "Halloween", "New Year's", "Seasonal"],
-    "Balloon Bouquets": ["Age Foil Balloon Bouquets", "Birthday Foil Balloon Bouquets", "Custom Age Balloon Bouquets", "Latex Balloon Bouquets", "Chrome Balloon Bouquets", "Printed Balloon Bouquets", "Foil Balloon Bouquets", "All Balloon Bouquets"],
-    "Custom Text Balloons": ["Bubble Balloons With Mini", "Balloon Filling", "Bubble Balloons With Confetti Filling", "Colour Balloons With Custom Text", "All Balloons"],
-    "Balloon Types": ["Balloon Banners", "Number Balloons", "Letter Balloons", "Latex Balloons", "Plain Foil Balloons", "Chrome Latex Balloons", "Metallic Latex Balloons", "Printed Latex Balloons", "Foil Balloons", "Air Balloons", "Latex Balloon Packets", "All Types"],
-    Accessories: ["Balloon Tassels", "Weights", "Confettis", "Inflation Pumps", "Balloon Ribbons", "Balloon Stickers", "Balloon Cup & Sticks", "Double-Sided Stickers"],
-    "Balloon Decorations": ["Balloon Arches", "Personalised Backdrops", "Balloon Pillars", "Hollow Letters", "Bedroom Decorations", "Welcome Board Balloons", "Balloons Sculptures", "Balloons Garlands", "Customised Decorations", "All Decorations"],
-    "Shape & Size": ["Standard", "Supershape", "Jumbo", "Airwalker", "Orbz", "18 Inch", "24 Inch", "32 Inch", "38 Inch", "All Sizes"],
-  },
-  Costumes: {
-    "Costume By Category": ["Animals", "Professions", "Cartoons Characters", "Superheroes", "Historical", "Sports", "TV And Movies", "Book Characters", "Warriors", "Princes & Princesses", "Retro", "All Categories"],
-    "Costume Accessories": ["Armors & Weapons", "Bandanas", "Glasses/Eye Accessories", "Face Masks", "Fake Items", "Helmets", "Jewellery", "Nose & Ear Accessories", "Nails", "Tattoos", "Beards & Moustaches", "Wings", "All Accessories"],
-    Halloween: ["Devils", "Ghosts", "Skeletons", "Vampires", "Zombies", "Witches & Wizards", "Pumpkins", "All Halloween"],
-    "Costume By Age": ["Baby", "Toddler", "Child", "Adult", "All Ages"],
-    "Costume By Gender": ["Male", "Female", "Unisex", "All Gender"],
-  },
-};
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [openCartSheet, setOpenCartSheet] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(""); // ✅
-  const [searchResults, setSearchResults] = useState([]); // ✅
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [dynamicMenu, setDynamicMenu] = useState([]);
+  const [navLinks, setNavLinks] = useState([]);
+  const [megaMenu, setMegaMenu] = useState({});
 
   const dispatch = useDispatch();
   const cartCount = useSelector(selectCartItemCount);
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
 
-  const navLinks = Object.keys(megaMenu).concat([
-    "Entertainment",
-    "Party Rentals",
-    "Customise Your Party",
-  ]);
+  useEffect(() => {
+    const url = `${import.meta.env.VITE_API_URL}/api/admin/menus/header`;
+    console.log("📡 Fetching menu from:", url);
+    axios.get(url)
+      .then((res) => {
+        console.log("🔥 Menu response:", res.data);
+        const items = res.data?.items || [];
+        setDynamicMenu(items);
+      })
+      .catch((err) => {
+        console.error("❌ Failed to fetch menu:", err);
+      });
+  }, []);
+
+  useEffect(() => {
+    const links = [];
+    const structured = {};
+    dynamicMenu.forEach(item => {
+      links.push(item.label);
+      structured[item.label] = {};
+      item.children?.forEach(child => {
+        structured[item.label][child.label] = child.children?.map(sub => sub.label) || [];
+      });
+    });
+    setNavLinks(links);
+    setMegaMenu(structured);
+    console.log("✅ Built navLinks:", links);
+    console.log("✅ Built megaMenu:", structured);
+  }, [dynamicMenu]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -93,8 +88,7 @@ export default function Header() {
     return () => clearTimeout(delay);
   }, [searchQuery]);
 
-  const formatSlug = (text) =>
-    `/shop/category/${encodeURIComponent(text.toLowerCase().replace(/\s+/g, "-"))}`;
+  const formatSlug = (text) => `/shop/category/${encodeURIComponent(text.toLowerCase().replace(/\s+/g, "-"))}`;
 
   return (
     <header className="w-full">

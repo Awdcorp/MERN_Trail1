@@ -54,6 +54,7 @@ app.use("/api/admin/orders", adminOrderRouter);
 app.use("/api/admin/settings", settingsRoutes);
 app.use("/api/admin/homepage-layout", homepageLayoutRoutes);
 app.use("/api/admin/pages", pageRoutes);
+app.use("/api/admin", require("./routes/admin/menu-routes"));
 
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
