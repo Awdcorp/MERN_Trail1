@@ -65,6 +65,8 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
   const [loading, setLoading] = useState(true);
   const [editingBlock, setEditingBlock] = useState(null);
   const [showSidebar, setShowSidebar] = useState(false);
+const [showPreview, setShowPreview] = useState(false);
+const [previewMode, setPreviewMode] = useState("desktop"); // or 'mobile'
 
   const handleLiveUpdate = (blockKey, newData) => {
     setCanvasBlocks((prev) =>
@@ -324,6 +326,13 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
           </div>
           <div className="p-4 border-t bg-white">
             <button
+  onClick={() => setShowPreview(true)}
+  className="w-full mb-2 bg-gray-200 text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-300 transition"
+>
+  👁️ Live Preview
+</button>
+
+            <button
               onClick={saveBlocks}
               className="w-full bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition"
             >
@@ -398,6 +407,52 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
           )}
         </aside>
       </div>
+      {showPreview && (
+  <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
+    <div className="bg-white w-[90vw] h-[90vh] rounded-xl shadow-xl overflow-hidden relative">
+      {/* Header */}
+      <div className="flex justify-between items-center px-4 py-2 border-b bg-gray-100">
+        <div className="text-lg font-semibold">Live Preview</div>
+        <div className="space-x-2">
+          <button
+            onClick={() => setPreviewMode("desktop")}
+            className={`px-3 py-1 rounded text-sm ${previewMode === "desktop" ? "bg-indigo-600 text-white" : "bg-white border"}`}
+          >
+            Desktop
+          </button>
+          <button
+            onClick={() => setPreviewMode("mobile")}
+            className={`px-3 py-1 rounded text-sm ${previewMode === "mobile" ? "bg-indigo-600 text-white" : "bg-white border"}`}
+          >
+            Mobile
+          </button>
+        </div>
+        <button
+          onClick={() => setShowPreview(false)}
+          className="text-gray-500 hover:text-black text-xl"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Preview area */}
+      <div className="w-full h-full overflow-auto p-4 bg-gray-50 flex justify-center items-start">
+        <div className={`${previewMode === "mobile" ? "w-[375px]" : "w-full max-w-5xl"} bg-white shadow rounded overflow-hidden`}>
+          {canvasBlocks.map((block) => (
+            <LiveSectionRenderer
+              key={block.key}
+              type={block.type}
+              data={block.data}
+              blockKey={block.key}
+              preview
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
     </DndProvider>
   );
 }
