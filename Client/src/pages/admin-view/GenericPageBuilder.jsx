@@ -60,7 +60,7 @@ const defaultDataMap = {
   }
 };
 
-export default function HomepageEditor() {
+export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
   const [canvasBlocks, setCanvasBlocks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editingBlock, setEditingBlock] = useState(null);
@@ -146,33 +146,37 @@ export default function HomepageEditor() {
     });
   };
 
-  const fetchHomepageLayout = async () => {
+  const fetchBlocks = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/homepage-layout`);
-      const loaded = res.data?.map((section, idx) => ({
+      const res = await axios.get(fetchUrl);
+      const data = Array.isArray(res.data)
+        ? res.data
+        : res.data?.blocks || res.data?.sections || [];
+
+      const loaded = data.map((section, idx) => ({
         id: `${section.type}-${idx}`,
         type: section.type,
         data: section.data || {},
         key: Date.now() + idx,
         fromPalette: false,
-      })) || [];
+      }));
       setCanvasBlocks(loaded);
     } catch (err) {
-      console.error("Failed to load homepage layout:", err);
+      console.error("Failed to load layout:", err);
     } finally {
       setLoading(false);
     }
   };
 
-  const saveHomepageLayout = async () => {
+  const saveBlocks = async () => {
     const payload = canvasBlocks.map((b) => ({ type: b.type, data: b.data || {} }));
-    await axios.put(`${import.meta.env.VITE_API_URL}/api/admin/homepage-layout`, { sections: payload });
-    alert("Homepage layout saved ✅");
+    await axios.put(saveUrl, Array.isArray(payload) ? payload : { blocks: payload, sections: payload });
+    alert("Layout saved ✅");
   };
 
   useEffect(() => {
-    fetchHomepageLayout();
-  }, []);
+    fetchBlocks();
+  }, [fetchUrl]);
 
   const DraggablePaletteItem = ({ block }) => {
     const [{ isDragging }, dragRef] = useDrag(() => ({
@@ -193,98 +197,109 @@ export default function HomepageEditor() {
   };
 
   const ReorderableCanvasBlock = ({ block, index, moveBlock, onDelete, onDropAt, onEdit }) => {
-    const ref = useRef(null);
-    const [{ isOver, canDrop }, drop] = useDrop({
-      accept: ItemTypes.BLOCK,
-      canDrop: (item) => item.fromPalette,
-      drop: (item, monitor) => {
-        if (monitor.didDrop()) return;
-        onDropAt(item, index);
-        item.fromPalette = false;
-      },
-      hover: (item, monitor) => {
-        if (!ref.current || item.fromPalette) return;
-        const dragIndex = item.index;
-        const hoverIndex = index;
-        if (dragIndex === hoverIndex) return;
-        const { top, bottom } = ref.current.getBoundingClientRect();
-        const hoverMiddleY = (bottom - top) / 2;
-        const { y } = monitor.getClientOffset() || {};
-        const hoverClientY = y - top;
-        if (
-          (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
-          (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
-        ) return;
-        moveBlock(dragIndex, hoverIndex);
-        item.index = hoverIndex;
-      },
-      collect: (monitor) => ({
-        isOver: monitor.isOver({ shallow: true }),
-        canDrop: monitor.canDrop()
-      })
-    });
+  const ref = useRef(null);
+  const [{ isOver, canDrop }, drop] = useDrop({
+    accept: ItemTypes.BLOCK,
+    canDrop: (item) => item.fromPalette,
+    drop: (item, monitor) => {
+      if (monitor.didDrop()) return;
+      onDropAt(item, index);
+      item.fromPalette = false;
+    },
+    hover: (item, monitor) => {
+      if (!ref.current || item.fromPalette) return;
+      const dragIndex = item.index;
+      const hoverIndex = index;
+      if (dragIndex === hoverIndex) return;
+      const { top, bottom } = ref.current.getBoundingClientRect();
+      const hoverMiddleY = (bottom - top) / 2;
+      const { y } = monitor.getClientOffset() || {};
+      const hoverClientY = y - top;
+      if (
+        (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) ||
+        (dragIndex > hoverIndex && hoverClientY > hoverMiddleY)
+      )
+        return;
+      moveBlock(dragIndex, hoverIndex);
+      item.index = hoverIndex;
+    },
+    collect: (monitor) => ({
+      isOver: monitor.isOver({ shallow: true }),
+      canDrop: monitor.canDrop()
+    })
+  });
 
-    const [{ isDragging }, drag] = useDrag({
-      type: ItemTypes.BLOCK,
-      item: { ...block, index, fromPalette: false },
-      collect: (monitor) => ({ isDragging: monitor.isDragging() })
-    });
+  const [{ isDragging }, drag] = useDrag({
+    type: ItemTypes.BLOCK,
+    item: { ...block, index, fromPalette: false },
+    collect: (monitor) => ({ isDragging: monitor.isDragging() })
+  });
 
-    drag(drop(ref));
+  drag(drop(ref));
 
-    return (
-      <div
-        ref={ref}
-        className={`relative bg-white border border-gray-200 rounded p-4 shadow-sm transition-shadow ${
-          isDragging ? "opacity-50 shadow-lg" : "hover:shadow-md"
-        } ${isOver && canDrop ? "border-2 border-indigo-600 bg-indigo-100" : ""}`}
-      >
-        <div className="flex justify-between items-center mb-2">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-sm text-gray-800">
-              {block.data?.label || block.type}
-            </span>
-            {block.type === "layout-section" && (
-              <button
-                className="text-xs text-blue-600 hover:underline"
-                onClick={() => onEdit(block.key, { collapsed: !block.data?.collapsed })}
-              >
-                {block.data?.collapsed ? "Expand" : "Collapse"}
-              </button>
-            )}
-          </div>
-          <div className="space-x-2">
-            <button
-              type="button"
-              onClick={() => onEdit(block.key)}
-              className="text-indigo-600 hover:text-indigo-800 text-sm"
-            >
-              ✏️ Edit
-            </button>
-            <button
-              type="button"
-              onClick={() => onDelete(block.key)}
-              className="text-red-500 hover:text-red-700 text-sm"
-            >
-              🗑️
-            </button>
-          </div>
-        </div>
-
-        {block.data?.collapsed ? (
-          <div className="text-xs italic text-gray-400 px-2 py-1">[Collapsed]</div>
-        ) : (
-          <LiveSectionRenderer
-            type={block.type}
-            data={block.data}
-            blockKey={block.key}
-            onDropElement={dropTextIntoColumn}
-            onResizeColumn={resizeColumns}
-          />
+  return (
+  <div
+    ref={ref}
+    className={`relative group max-w-[1200px] mx-auto bg-white rounded-xl border border-gray-300 mb-6 p-4 shadow-sm transition-all duration-300 ${
+      isDragging ? "opacity-40 scale-[0.98] shadow-md" : "hover:shadow-lg"
+    } ${isOver && canDrop ? "ring-2 ring-indigo-400 bg-indigo-50" : ""}`}
+  >
+    {/* Top Bar */}
+    <div className="flex justify-between items-start mb-2">
+      {/* Left: Type Label + Drag Handle */}
+      <div className="flex items-center gap-2">
+        <div className="text-gray-400 text-lg cursor-grab select-none">⠿</div>
+        <span className="text-sm font-medium text-gray-800 capitalize">
+          {block.data?.label || block.type.replace("-", " ")}
+        </span>
+        {block.type === "layout-section" && (
+          <button
+            onClick={() => onEdit(block.key, { collapsed: !block.data?.collapsed })}
+            className="text-xs text-blue-600 hover:underline"
+          >
+            {block.data?.collapsed ? "Expand" : "Collapse"}
+          </button>
         )}
       </div>
-    );
-  };
+
+      {/* Right: Edit / Delete */}
+      <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition">
+        <button
+          type="button"
+          onClick={() => onEdit(block.key)}
+          className="text-indigo-600 hover:text-indigo-800 text-xs bg-white border rounded px-2 py-1 shadow-sm"
+        >
+          ✏️ Edit
+        </button>
+        <button
+          type="button"
+          onClick={() => onDelete(block.key)}
+          className="text-red-500 hover:text-red-700 text-xs bg-white border rounded px-2 py-1 shadow-sm"
+        >
+          🗑️ Delete
+        </button>
+      </div>
+    </div>
+
+    {/* Block Content */}
+    <div className="rounded overflow-hidden border border-dashed">
+      {block.data?.collapsed ? (
+        <div className="text-xs italic text-gray-400 px-3 py-2">[Collapsed]</div>
+      ) : (
+        <LiveSectionRenderer
+          type={block.type}
+          data={block.data}
+          blockKey={block.key}
+          onDropElement={dropTextIntoColumn}
+          onResizeColumn={resizeColumns}
+        />
+      )}
+    </div>
+  </div>
+);
+
+};
+
 
   return (
     <DndProvider backend={HTML5Backend}>
@@ -309,11 +324,22 @@ export default function HomepageEditor() {
           </div>
           <div className="p-4 border-t bg-white">
             <button
-              onClick={saveHomepageLayout}
+              onClick={saveBlocks}
               className="w-full bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition"
             >
-              Save Homepage Layout
+              Save Layout
             </button>
+            {slug && (
+  <a
+    href={slug === "/" ? "/" : `/pages/${slug}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-2 block text-center text-indigo-600 hover:underline text-sm"
+  >
+    🔍 Preview in New Tab
+  </a>
+)}
+
           </div>
         </aside>
 
@@ -322,7 +348,7 @@ export default function HomepageEditor() {
             <p className="text-gray-500 text-sm text-center py-12">Loading...</p>
           ) : canvasBlocks.length === 0 ? (
             <div className="flex items-center justify-center h-96 border-2 border-dashed rounded-lg m-8 text-gray-400">
-              Drag a block here to start building your homepage
+              Drag a block here to start building your layout
             </div>
           ) : (
             canvasBlocks.map((block, index) => (

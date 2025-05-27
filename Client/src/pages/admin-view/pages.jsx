@@ -1,4 +1,4 @@
-// Client/src/pages/admin-view/pages.jsx
+// [unchanged imports]
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -24,10 +24,8 @@ export default function AdminPagesManager() {
     });
     const [editingId, setEditingId] = useState(null);
 
-    // Fetch all pages
     const fetchPages = async () => {
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/pages`);
-        console.log("Fetched Pages:", res.data);
         setPages(res.data);
     };
 
@@ -119,42 +117,54 @@ export default function AdminPagesManager() {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* 🔥 Homepage row */}
+                        <tr className="border-t bg-yellow-50 font-medium">
+                            <td className="p-2">Homepage</td>
+                            <td className="p-2 text-blue-700">
+                                <a href="/" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">/</a>
+                            </td>
+                            <td className="p-2">Published</td>
+                            <td className="p-2">–</td>
+                            <td className="p-2 flex gap-2">
+                                <Button variant="ghost" asChild>
+                                    <a href="/" target="_blank" rel="noopener noreferrer" title="View">
+                                        <Eye size={16} />
+                                    </a>
+                                </Button>
+                                <Button variant="ghost" asChild>
+                                    <Link to="/admin/page-builder?type=homepage" title="Open Builder">
+                                        <LayoutDashboard size={16} />
+                                    </Link>
+                                </Button>
+                            </td>
+                        </tr>
+
+                        {/* All real CMS pages */}
                         {pages.map((page) => (
                             <tr key={page._id} className="border-t hover:bg-gray-50">
-  <td className="p-2">{page.title}</td>
-  <td className="p-2 text-blue-700">
-    <a
-      href={`/pages/${page.slug}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline hover:text-blue-500"
-    >
-      /pages/{page.slug}
-    </a>
-  </td>
-  <td className="p-2 capitalize">{page.status}</td>
-  <td className="p-2">{new Date(page.updatedAt).toLocaleString()}</td>
-  <td className="p-2 flex gap-2">
-    <Button variant="outline" onClick={() => handleEdit(page)}><Pencil size={16} /></Button>
-    <Button variant="destructive" onClick={() => handleDelete(page._id)}><Trash2 size={16} /></Button>
-    <Button variant="ghost" asChild>
-      <a
-        href={`/pages/${page.slug}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        title="View"
-      >
-        <Eye size={16} />
-      </a>
-    </Button>
-    <Button variant="ghost" asChild>
-  <Link to={`/admin/pages/${page._id}/builder`} title="Open Builder">
-    <LayoutDashboard size={16} />
-  </Link>
-</Button>
-  </td>
-</tr>
-
+                                <td className="p-2">{page.title}</td>
+                                <td className="p-2 text-blue-700">
+                                    <a href={`/pages/${page.slug}`} target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">
+                                        /pages/{page.slug}
+                                    </a>
+                                </td>
+                                <td className="p-2 capitalize">{page.status}</td>
+                                <td className="p-2">{new Date(page.updatedAt).toLocaleString()}</td>
+                                <td className="p-2 flex gap-2">
+                                    <Button variant="outline" onClick={() => handleEdit(page)}><Pencil size={16} /></Button>
+                                    <Button variant="destructive" onClick={() => handleDelete(page._id)}><Trash2 size={16} /></Button>
+                                    <Button variant="ghost" asChild>
+                                        <a href={`/pages/${page.slug}`} target="_blank" rel="noopener noreferrer" title="View">
+                                            <Eye size={16} />
+                                        </a>
+                                    </Button>
+                                    <Button variant="ghost" asChild>
+                                        <Link to={`/admin/page-builder?type=page&id=${page._id}`} title="Open Builder">
+                                            <LayoutDashboard size={16} />
+                                        </Link>
+                                    </Button>
+                                </td>
+                            </tr>
                         ))}
                     </tbody>
                 </table>
