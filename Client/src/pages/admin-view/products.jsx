@@ -17,6 +17,7 @@ import {
   editProduct,
   fetchAllProducts,
 } from "@/store/admin/products-slice";
+import { ListOrdered, CheckCircle, FileEdit, Trash2 } from "lucide-react";
 
 const initialFormData = {
   image: "",
@@ -198,28 +199,65 @@ function isFormValid() {
   }, [dispatch, page, limit, searchTerm, selectedCategory, sortBy, sortOrder]);
 
   const filterUI = (
-    <div className="flex items-center gap-4 flex-wrap">
-      <Input placeholder="Search title..." value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setPage(1); }} className="max-w-sm" />
-      <select value={selectedCategory} onChange={(e) => { setSelectedCategory(e.target.value); setPage(1); }} className="border rounded px-3 py-2 text-sm">
+  <div className="flex flex-wrap items-center justify-between gap-4">
+    {/* Left side: Search + Category + Stats */}
+    <div className="flex flex-wrap items-center gap-4">
+      <Input
+        placeholder="Search title..."
+        value={searchTerm}
+        onChange={(e) => { setSearchTerm(e.target.value); setPage(1); }}
+        className="w-[200px]"
+      />
+      <select
+        value={selectedCategory}
+        onChange={(e) => { setSelectedCategory(e.target.value); setPage(1); }}
+        className="border rounded px-3 py-2 text-sm w-[180px]"
+      >
         <option value="">All Categories</option>
         {allCategories.map((cat) => (
           <option key={cat._id} value={cat._id}>{cat.name}</option>
         ))}
       </select>
+    </div>
+
+    {/* Right side: Buttons */}
+    <div className="flex items-center gap-3 flex-wrap">
+      <div className="relative overflow-hidden">
+        <Button variant="outline">Import CSV</Button>
+        <input
+          type="file"
+          accept=".csv"
+          onChange={handleCSVPreview}
+          className="absolute inset-0 opacity-0 cursor-pointer"
+        />
+      </div>
       <Button asChild><a href="/admin/products/new">+ Create New Product</a></Button>
       <Button variant="outline" onClick={() => setShowExportDialog(true)}>Export Settings</Button>
-      <div className="relative overflow-hidden">
-  <Button variant="outline">Import CSV</Button>
-  <input
-    type="file"
-    accept=".csv"
-    onChange={handleCSVPreview}
-    className="absolute inset-0 opacity-0 cursor-pointer"
-  />
+    </div>
+    {/* 🔢 Product Stats Inline */}
+    <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground ml-2">
+  <span className="flex items-center gap-1">
+    <ListOrdered className="w-4 h-4 text-black" />
+    Total: <span className="text-black font-semibold">3600</span>
+  </span>
+  <span className="flex items-center gap-1">
+    <CheckCircle className="w-4 h-4 text-green-600" />
+    Active: <span className="text-green-600 font-semibold">2800</span>
+  </span>
+  <span className="flex items-center gap-1">
+    <FileEdit className="w-4 h-4 text-yellow-600" />
+    Draft: <span className="text-yellow-600 font-semibold">50</span>
+  </span>
+  <span className="flex items-center gap-1">
+    <Trash2 className="w-4 h-4 text-red-600" />
+    Trash: <span className="text-red-600 font-semibold">100</span>
+  </span>
 </div>
 
-    </div>
-  );
+  </div>
+);
+
+
 
   return (
     <Fragment>

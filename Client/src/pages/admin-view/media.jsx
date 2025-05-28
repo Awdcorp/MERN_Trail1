@@ -12,7 +12,7 @@ export default function AdminMedia() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState([]);
-  const [selectedFolder, setSelectedFolder] = useState("uploads/products");
+  const [selectedFolder, setSelectedFolder] = useState("partyworld/products");
   const [preview, setPreview] = useState(null);
   const [selectedItems, setSelectedItems] = useState([]);
   const [viewMode, setViewMode] = useState("grid");
@@ -119,9 +119,9 @@ export default function AdminMedia() {
           value={selectedFolder}
           onChange={(e) => setSelectedFolder(e.target.value)}
         >
-          <option value="uploads/products">Products</option>
-          <option value="uploads/banners">Banners</option>
-          <option value="uploads/uploads">Uploads</option>
+          <option value="partyworld/products">Products</option>
+          <option value="partyworld/banners">Banners</option>
+          <option value="partyworld/uploads">Uploads</option>
         </select>
 
         <Input

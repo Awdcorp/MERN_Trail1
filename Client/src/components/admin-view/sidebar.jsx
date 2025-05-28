@@ -131,7 +131,7 @@ function MenuItems({ setOpen }) {
   };
 
   return (
-    <nav className="mt-8 flex-col flex gap-2">
+    <nav className="flex flex-col gap-2 flex-1">
       {adminSidebarMenuItems.map((menuItem) => {
         const isParent = !!menuItem.children;
 
@@ -142,8 +142,8 @@ function MenuItems({ setOpen }) {
 
         const parentClasses =
           isDirectMatch
-            ? "bg-muted text-foreground font-semibold"
-            : "text-muted-foreground hover:bg-muted hover:text-foreground";
+            ? "bg-[#393E46] text-white font-semibold"
+            : "text-foreground hover:bg-muted hover:text-foreground";
 
         if (isParent) {
           return (
@@ -166,8 +166,8 @@ function MenuItems({ setOpen }) {
                         onClick={() => navigate(child.path)}
                         className={`cursor-pointer px-2 py-1 rounded-md text-sm ${
                           isActive
-                            ? "bg-accent text-accent-foreground font-medium"
-                            : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                            ? "bg-[#393E46] text-white font-medium"
+                            : "text-foreground hover:bg-muted hover:text-foreground"
                         }`}
                       >
                         {child.label}
@@ -199,14 +199,16 @@ export default function Sidebar() {
   const dispatch = useDispatch();
 
   return (
-    <div className="p-4">
+    <div className="p-4 flex flex-col h-full">
       <MenuItems />
-      <div
-        onClick={() => dispatch(logoutUser())}
-        className="mt-10 cursor-pointer text-muted-foreground hover:text-red-500 flex gap-2 items-center px-3 py-2"
-      >
-        <LogOut />
-        <span>Logout</span>
+      <div className="mt-auto pt-4">
+        <div
+          onClick={() => dispatch(logoutUser())}
+          className="bg-[#393E46] cursor-pointer text-white hover:text-red-500 flex gap-2 items-center px-3 py-2 rounded-md hover:bg-muted"
+        >
+          <LogOut />
+          <span>Logout</span>
+        </div>
       </div>
     </div>
   );
