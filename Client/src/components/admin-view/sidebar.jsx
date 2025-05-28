@@ -7,13 +7,18 @@ import {
   Users,
   Home,
   Settings,
-  LogOut, // ✅ NEW: Import logout icon
+  LogOut,
 } from "lucide-react";
-import { Fragment,useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux"; // ✅ NEW: For logout action
-import { logoutUser } from "@/store/auth-slice"; // ✅ Adjust path to your logout action
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "@/store/auth-slice";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "../ui/sheet";
 
 const adminSidebarMenuItems = [
   {
@@ -23,8 +28,6 @@ const adminSidebarMenuItems = [
     icon: <LayoutDashboard />,
   },
   {
-    id: "products",
-    label: "Products",
     id: "products",
     label: "Products",
     icon: <ShoppingBasket />,
@@ -77,81 +80,86 @@ function MenuItems({ setOpen }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [expandedMenu, setExpandedMenu] = useState(null);
-  
+
+  useEffect(() => {
+    const matchedParent = adminSidebarMenuItems.find((item) =>
+      item.children?.some((child) =>
+        location.pathname.startsWith(child.path)
+      )
+    );
+    if (matchedParent) {
+      setExpandedMenu(matchedParent.id);
+    } else {
+      setExpandedMenu(null);
+    }
+  }, [location.pathname]);
+
   const toggleMenu = (id) => {
     setExpandedMenu((prev) => (prev === id ? null : id));
   };
 
   return (
- <nav className="mt-8 flex-col flex gap-2">
-            {adminSidebarMenuItems.map((menuItem) => {
+    <nav className="mt-8 flex-col flex gap-2">
+      {adminSidebarMenuItems.map((menuItem) => {
         const isParent = !!menuItem.children;
 
-        // ✅ ACTIVE logic — only one item stays active
-        let isActive = false;
+        const isDirectMatch = !isParent && menuItem.path === location.pathname;
+        const isChildPathMatch = menuItem.children?.some((child) =>
+          location.pathname.startsWith(child.path)
+        );
 
-        if (isParent) {
-          isActive = menuItem.children?.some(
-            (child) => location.pathname === child.path
-          );
-        } else if (menuItem.path) {
-          isActive = location.pathname === menuItem.path;
-        }
+        const parentClasses =
+          isDirectMatch
+            ? "bg-muted text-foreground font-semibold"
+            : "text-muted-foreground hover:bg-muted hover:text-foreground";
 
-        // 🔽 Parent with submenu
         if (isParent) {
           return (
             <div key={menuItem.id} className="flex flex-col">
               <div
-                onClick={() => toggleMenu(menuItem.id)}
-                className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${
-                  isActive
-                    ? "bg-muted text-foreground font-semibold"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                }`}
+                onClick={() => {
+                  if (menuItem.id === "products") {
+                    navigate("/admin/products");   // ✅ Go to main products
+                    setExpandedMenu(menuItem.id);  // ✅ Expand submenu
+                  } else {
+                    toggleMenu(menuItem.id);
+                  }
+                }}
+                className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${parentClasses}`}
               >
                 {menuItem.icon}
                 <span>{menuItem.label}</span>
               </div>
 
-              {/* Submenu: only visible if toggled open */}
-              {expandedMenu === menuItem.id &&
-                menuItem.children.map((child) => {
-                  const isChildActive = location.pathname === child.path;
-                  return (
-                    <div
-                      key={child.id}
-                      onClick={() => {
-                        navigate(child.path);
-                        setOpen ? setOpen(false) : null;
-                      }}
-                      className={`ml-6 cursor-pointer rounded-md px-3 py-2 text-sm ${
-                        isChildActive
-                          ? "bg-muted text-foreground font-semibold"
-                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                      }`}
-                    >
-                      {child.label}
-                    </div>
-                  );
-                })}
+              {expandedMenu === menuItem.id && (
+                <div className="ml-6 mt-1 flex flex-col gap-1">
+                  {menuItem.children.map((child) => {
+                    const isActive = location.pathname.startsWith(child.path);
+                    return (
+                      <div
+                        key={child.id}
+                        onClick={() => navigate(child.path)}
+                        className={`cursor-pointer px-2 py-1 rounded-md text-sm ${
+                          isActive
+                            ? "bg-accent text-accent-foreground font-medium"
+                            : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                        }`}
+                      >
+                        {child.label}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           );
         }
 
-        // 🔸 Single-level item
         return (
           <div
             key={menuItem.id}
-            onClick={() => {
-              navigate(menuItem.path);
-              setOpen ? setOpen(false) : null;
-            }}
-            className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${
-              isActive
-                ? "bg-muted text-foreground font-semibold"
-                : "text-muted-foreground hover:bg-muted hover:text-foreground"
-            }`}
+            onClick={() => navigate(menuItem.path)}
+            className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${parentClasses}`}
           >
             {menuItem.icon}
             <span>{menuItem.label}</span>
@@ -162,72 +170,19 @@ function MenuItems({ setOpen }) {
   );
 }
 
-function AdminSideBar({ open, setOpen }) {
-  const navigate = useNavigate();
-  const dispatch = useDispatch(); // ✅ NEW
-
-  // ✅ Logout logic
-  const handleLogout = () => {
-    dispatch(logoutUser());
-    navigate("/auth/login");
-  };
+export default function Sidebar() {
+  const dispatch = useDispatch();
 
   return (
-    <Fragment>
-      {/* Mobile Sidebar */}
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent side="left" className="w-64">
-          <div className="flex flex-col h-full">
-            <SheetHeader className="border-b">
-              <SheetTitle className="flex gap-2 mt-5 mb-5">
-                <ChartNoAxesCombined size={30} />
-                <h1 className="text-2xl font-extrabold">Admin Panel</h1>
-              </SheetTitle>
-            </SheetHeader>
-
-            {/* Menu Items */}
-            <MenuItems setOpen={setOpen} />
-
-            {/* ✅ Logout Button - Mobile */}
-            <div className="mt-auto px-4 pb-4">
-              <button
-                onClick={handleLogout}
-                className="w-full flex items-center gap-2 rounded-md px-3 py-2 text-sm text-red-600 hover:bg-red-100"
-              >
-                <LogOut size={18} />
-                Logout
-              </button>
-            </div>
-          </div>
-        </SheetContent>
-      </Sheet>
-
-      {/* Desktop Sidebar */}
-      <aside className="hidden w-64 flex-col border-r bg-background p-6 lg:flex">
-        <div
-          onClick={() => navigate("/admin/dashboard")}
-          className="flex cursor-pointer items-center gap-2"
-        >
-          <ChartNoAxesCombined size={30} />
-          <h1 className="text-2xl font-extrabold">Admin Panel</h1>
-        </div>
-
-        {/* Menu Items */}
-        <MenuItems />
-
-        {/* ✅ Logout Button - Desktop */}
-        <div className="mt-auto pt-8">
-          <button
-            onClick={handleLogout}
-            className="w-full flex items-center gap-2 rounded-md px-3 py-2 text-sm text-red-600 hover:bg-red-100"
-          >
-            <LogOut size={18} />
-            Logout
-          </button>
-        </div>
-      </aside>
-    </Fragment>
+    <div className="p-4">
+      <MenuItems />
+      <div
+        onClick={() => dispatch(logoutUser())}
+        className="mt-10 cursor-pointer text-muted-foreground hover:text-red-500 flex gap-2 items-center px-3 py-2"
+      >
+        <LogOut />
+        <span>Logout</span>
+      </div>
+    </div>
   );
 }
-
-export default AdminSideBar;
