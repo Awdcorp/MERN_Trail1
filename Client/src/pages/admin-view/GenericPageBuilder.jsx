@@ -239,50 +239,33 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
         drag(drop(ref));
 
         return (
-            <div
-                ref={ref}
-                className={`relative group max-w-[1200px] mx-auto bg-white shadow-sm transition-all duration-300 ${isDragging ? "opacity-40 scale-[0.98] shadow-md" : "hover:shadow-lg"
-                    } ${isOver && canDrop ? "ring-2 ring-indigo-400 bg-indigo-50" : ""}`}
-            >
-                {/* Top Bar */}
-                <div className="flex justify-between bg-[#2b2b2b] items-start">
-                    {/* Left: Type Label + Drag Handle */}
-                    <div className="flex items-center gap-2 px-4 py-1">
-                        <div className="text-gray-400 text-lg cursor-grab select-none">⠿</div>
-                        <span className="text-sm font-medium text-gray-800 capitalize">
-                            {block.data?.label || block.type.replace("-", " ")}
-                        </span>
-                        {block.type === "layout-section" && (
-                            <button
-                                onClick={() => onEdit(block.key, { collapsed: !block.data?.collapsed })}
-                                className="text-xs text-blue-600 hover:underline"
-                            >
-                                {block.data?.collapsed ? "Expand" : "Collapse"}
-                            </button>
-                        )}
-                    </div>
+<div
+  ref={ref}
+  className={`relative group rounded-xl border border-transparent mb-4 bg-white overflow-visible shadow-sm transition-all duration-200 
+    ${isDragging ? "opacity-40 scale-[0.98]" : "hover:shadow-md"}
+    ${isOver && canDrop ? "ring-2 ring-indigo-400 bg-indigo-50" : ""}
+    hover:ring-2 hover:ring-indigo-500`}
+>
+                {/* Floating Toolbar like Elementor */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border border-gray-200 rounded-full shadow px-2 py-1 opacity-0 group-hover:opacity-100 transition z-10">
+    <span className="text-gray-400 cursor-move select-none text-lg">⠿</span>
+    <button
+        onClick={() => onEdit(block.key)}
+        className="text-indigo-600 hover:text-indigo-800 text-xs"
+    >
+        ✏️
+    </button>
+    <button
+        onClick={() => onDelete(block.key)}
+        className="text-red-500 hover:text-red-700 text-xs"
+    >
+        🗑️
+    </button>
+</div>
 
-                    {/* Right: Edit / Delete */}
-                    <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition">
-                        <button
-                            type="button"
-                            onClick={() => onEdit(block.key)}
-                            className="text-indigo-600 hover:text-indigo-800 text-xs bg-white border rounded px-2 py-1 shadow-sm"
-                        >
-                            ✏️ Edit
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => onDelete(block.key)}
-                            className="text-red-500 hover:text-red-700 text-xs bg-white border rounded px-2 py-1 shadow-sm"
-                        >
-                            🗑️ Delete
-                        </button>
-                    </div>
-                </div>
 
                 {/* Block Content */}
-                <div className="rounded overflow-hidden border border-dashed">
+                <div className="overflow-hidden  mb-2">
                     {block.data?.collapsed ? (
                         <div className="text-xs italic text-gray-400 px-3 py-2">[Collapsed]</div>
                     ) : (
@@ -313,16 +296,16 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
                     </button>
                 )}
 
-                <aside className="w-72 h-screen bg-[#2b2b2b] flex flex-col border-r sticky top-0">
+                <aside className="w-72 h-screen bg-[#393E46] flex flex-col sticky top-0">
                     <div className="flex-1 overflow-y-auto p-4">
                         <h2 className="font-semibold text-sm text-white mb-4">Blocks</h2>
-                        <div className="space-y-4">
+                        <div className="space-y-4 pr-2">
                             {paletteTypes.map((type) => (
                                 <DraggablePaletteItem key={type} block={{ type }} />
                             ))}
                         </div>
                     </div>
-                    <div className="p-4 border-t bg-white">
+                    <div className="p-4 bg-[#393E46]">
                         <button
                             onClick={() => setShowPreview(true)}
                             className="w-full mb-2 bg-gray-200 text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-300 transition"
@@ -350,7 +333,7 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
                     </div>
                 </aside>
 
-                <main className={`flex-1 overflow-auto bg-[#2b2b2b] transition-all duration-300 ${showSidebar ? "mr-[320px]" : ""}`}>
+                <main className={`flex-1 overflow-auto bg-[#393E46] pt-4 transition-all duration-300 ${showSidebar ? "mr-[320px]" : ""}`}>
                     {loading ? (
                         <p className="text-gray-500 text-sm text-center py-12">Loading...</p>
                     ) : canvasBlocks.length === 0 ? (
