@@ -8,6 +8,7 @@ import {
   Home,
   Settings,
   LogOut,
+  Brush,
 } from "lucide-react";
 import { Fragment, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -30,6 +31,7 @@ const adminSidebarMenuItems = [
   {
     id: "products",
     label: "Products",
+    path: "/admin/products",
     icon: <ShoppingBasket />,
     children: [
       {
@@ -41,6 +43,16 @@ const adminSidebarMenuItems = [
         id: "product-categories",
         label: "Categories",
         path: "/admin/category",
+      },
+      {
+        id: "inventory",
+        label: "Inventory",
+        path: "/admin/inventory",
+      },
+      {
+        id: "Import Export",
+        label: "Import/Export",
+        path: "/admin/AdminImportHistory",
       },
     ],
   },
@@ -58,7 +70,7 @@ const adminSidebarMenuItems = [
   },
   {
     id: "settings",
-    label: "Settings",
+    label: "SEO Settings",
     path: "/admin/settings",
     icon: <Settings />,
   },
@@ -69,10 +81,27 @@ const adminSidebarMenuItems = [
     icon: <Users />,
   },
   {
-    id: "homepage",
-    label: "Homepage",
-    path: "/admin/homepage",
-    icon: <Home />,
+    id: "pages",
+    label: "Appearance",
+    path: "/admin/pages",
+    icon: <Brush />,
+    children: [
+      {
+        id: "all-pages",
+        label: "Pages",
+        path: "/admin/pages",
+      },
+      {
+        id: "blogs",
+        label: "Blogs",
+        path: "/admin/blogs",
+      },
+      {
+        id: "Announcement",
+        label: "Announcement Bar",
+        path: "/admin/announcement",
+      },
+    ],
   },
 ];
 
@@ -94,8 +123,11 @@ function MenuItems({ setOpen }) {
     }
   }, [location.pathname]);
 
-  const toggleMenu = (id) => {
-    setExpandedMenu((prev) => (prev === id ? null : id));
+  const toggleMenuAndNavigate = (menuItem) => {
+    if (menuItem.path) {
+      navigate(menuItem.path);
+    }
+    setExpandedMenu(menuItem.id);
   };
 
   return (
@@ -117,14 +149,7 @@ function MenuItems({ setOpen }) {
           return (
             <div key={menuItem.id} className="flex flex-col">
               <div
-                onClick={() => {
-                  if (menuItem.id === "products") {
-                    navigate("/admin/products");   // ✅ Go to main products
-                    setExpandedMenu(menuItem.id);  // ✅ Expand submenu
-                  } else {
-                    toggleMenu(menuItem.id);
-                  }
-                }}
+                onClick={() => toggleMenuAndNavigate(menuItem)}
                 className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-xl ${parentClasses}`}
               >
                 {menuItem.icon}

@@ -11,6 +11,8 @@ import AuthRegister from "./pages/auth/register";
 import AdminLayout from "./components/admin-view/layout";
 import AdminDashboard from "./pages/admin-view/dashboard";
 import AdminProducts from "./pages/admin-view/products";
+import AdminInventory from "./pages/admin-view/inventory";
+import AdminBlogs from "./pages/admin-view/blogs";
 import AdminProductEdit from "./pages/admin-view/product-edit";
 import AdminOrders from "./pages/admin-view/orders";
 import AdminFeatures from "./pages/admin-view/features";
@@ -99,12 +101,14 @@ function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="category" element={<AdminCategories />} />
+            <Route path="inventory" element={<AdminInventory />} />
             <Route path="products/:id" element={<AdminProductEdit />} />
             <Route path="orders" element={<AdminOrders />} />
             <Route path="media" element={<MediaDashboard />} />
             <Route path="features" element={<AdminFeatures />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="pages" element={<AdminPages />} />
+            <Route path="blogs" element={<AdminBlogs />} />
             <Route path="settings" element={<AdminSEOSettingsPage />} />
             <Route path="homepage" element={<AdminHomepage />} />
             <Route path="banners" element={<BannerControlPage />} />
