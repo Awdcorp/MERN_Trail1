@@ -83,7 +83,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #2c234d;
 }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
 
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 /* Firefox Support */
 html {
   scrollbar-width: light;

@@ -171,10 +171,13 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
     };
 
     const saveBlocks = async () => {
-        const payload = canvasBlocks.map((b) => ({ type: b.type, data: b.data || {} }));
-        await axios.put(saveUrl, Array.isArray(payload) ? payload : { blocks: payload, sections: payload });
-        alert("Layout saved ✅");
-    };
+  const payload = {
+    blocks: canvasBlocks.map((b) => ({ type: b.type, data: b.data || {} })),
+  };
+  await axios.put(saveUrl, payload);
+  alert("Layout saved ✅");
+};
+
 
     useEffect(() => {
         fetchBlocks();
@@ -241,44 +244,73 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
         return (
 <div
   ref={ref}
-  className={`relative group rounded-xl border border-transparent mb-4 bg-white overflow-visible shadow-sm transition-all duration-200 
-    ${isDragging ? "opacity-40 scale-[0.98]" : "hover:shadow-md"}
+  className={`relative group border-2 border-transparent bg-white overflow-visible shadow-sm transition-all duration-200
+    ${isDragging ? "opacity-40 scale-[0.98]" : ""}
     ${isOver && canDrop ? "ring-2 ring-indigo-400 bg-indigo-50" : ""}
-    hover:ring-2 hover:ring-indigo-500`}
+  `}
 >
-                {/* Floating Toolbar like Elementor */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border border-gray-200 rounded-full shadow px-2 py-1 opacity-0 group-hover:opacity-100 transition z-10">
-    <span className="text-gray-400 cursor-move select-none text-lg">⠿</span>
-    <button
-        onClick={() => onEdit(block.key)}
-        className="text-indigo-600 hover:text-indigo-800 text-xs"
-    >
-        ✏️
-    </button>
-    <button
-        onClick={() => onDelete(block.key)}
-        className="text-red-500 hover:text-red-700 text-xs"
-    >
-        🗑️
-    </button>
+  <div className="group-hover:ring-2 group-hover:ring-indigo-500">
+    {/* Floating Toolbar */}
+    <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 bg-[#393E46] rounded-b-xl shadow px-3 py-1 opacity-0 group-hover:opacity-100 transition z-10">
+  {/* Drag Icon */}
+  <span className="text-white cursor-move select-none">
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 10h16M4 14h16" />
+    </svg>
+  </span>
+
+  {/* Edit Button */}
+  <button
+    onClick={() => onEdit(block.key)}
+    className="text-white hover:text-indigo-300 transition"
+    title="Edit Block"
+  >
+    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="w-4 h-4"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  strokeWidth={2}
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z"
+  />
+</svg>
+  </button>
+
+  {/* Delete Button */}
+  <button
+    onClick={() => onDelete(block.key)}
+    className="text-white hover:text-red-300 transition"
+    title="Delete Block"
+  >
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
 </div>
 
 
-                {/* Block Content */}
-                <div className="overflow-hidden  mb-2">
-                    {block.data?.collapsed ? (
-                        <div className="text-xs italic text-gray-400 px-3 py-2">[Collapsed]</div>
-                    ) : (
-                        <LiveSectionRenderer
-                            type={block.type}
-                            data={block.data}
-                            blockKey={block.key}
-                            onDropElement={dropTextIntoColumn}
-                            onResizeColumn={resizeColumns}
-                        />
-                    )}
-                </div>
-            </div>
+    {/* Block Content */}
+    <div className="overflow-hidden">
+      {block.data?.collapsed ? (
+        <div className="text-xs italic text-gray-400 px-3 py-2">[Collapsed]</div>
+      ) : (
+        <LiveSectionRenderer
+          type={block.type}
+          data={block.data}
+          blockKey={block.key}
+          onDropElement={dropTextIntoColumn}
+          onResizeColumn={resizeColumns}
+        />
+      )}
+    </div>
+  </div>
+</div>
+
         );
 
     };
@@ -297,7 +329,7 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
                 )}
 
                 <aside className="w-72 h-screen bg-[#393E46] flex flex-col sticky top-0">
-                    <div className="flex-1 overflow-y-auto p-4">
+                    <div className="flex-1 overflow-y-auto p-4 scrollbar-hidden">
                         <h2 className="font-semibold text-sm text-white mb-4">Blocks</h2>
                         <div className="space-y-4 pr-2">
                             {paletteTypes.map((type) => (
@@ -306,31 +338,54 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
                         </div>
                     </div>
                     <div className="p-4 bg-[#393E46]">
-                        <button
-                            onClick={() => setShowPreview(true)}
-                            className="w-full mb-2 bg-gray-200 text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-300 transition"
-                        >
-                            👁️ Live Preview
-                        </button>
+  <div className="flex gap-2 justify-between">
+    <button
+      onClick={() => setShowPreview(true)}
+      className="flex items-center justify-center gap-2 w-1/2 bg-white text-gray-800 px-4 py-2 rounded-md shadow hover:bg-gray-100 transition text-sm font-medium"
+    >
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      </svg>
+      Preview
+    </button>
 
-                        <button
-                            onClick={saveBlocks}
-                            className="w-full bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition"
-                        >
-                            Save Layout
-                        </button>
-                        {slug && (
-                            <a
-                                href={slug === "/" ? "/" : `/pages/${slug}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-2 block text-center text-indigo-600 hover:underline text-sm"
-                            >
-                                🔍 Preview in New Tab
-                            </a>
-                        )}
+    <button
+      onClick={saveBlocks}
+      className="flex items-center justify-center gap-2 w-1/2 bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700 transition text-sm font-medium"
+    >
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path d="M5 13l4 4L19 7" />
+      </svg>
+      Save
+    </button>
+  </div>
 
-                    </div>
+  {slug && (
+  <button
+    onClick={() => window.open(slug === "/" ? "/" : `/pages/${slug}`, "_blank")}
+    className="mt-2 w-full flex items-center justify-center gap-2 bg-white text-gray-800 px-4 py-2 rounded-md shadow hover:bg-gray-100 transition text-xs font-medium"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M15 10l4.553-4.553A2 2 0 0017.553 3H13a2 2 0 00-2 2v2M9 14l-4.553 4.553A2 2 0 006.447 21H11a2 2 0 002-2v-2"
+      />
+    </svg>
+    Preview in New Tab
+  </button>
+)}
+
+</div>
+
                 </aside>
 
                 <main className={`flex-1 overflow-auto bg-[#393E46] pt-4 transition-all duration-300 ${showSidebar ? "mr-[320px]" : ""}`}>
@@ -418,7 +473,7 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
                         <div className="flex-1 flex justify-center items-start overflow-auto bg-gray-100 p-4">
                             <iframe
                                 title="Live Preview"
-                                src={`/pages/${slug}`}
+                                src={`/`}
                                 className={`border-none rounded shadow ${previewMode === "mobile" ? "w-[375px] h-[667px]" : "w-full h-[calc(90vh-3rem)]"}`}
                             />
                         </div>
