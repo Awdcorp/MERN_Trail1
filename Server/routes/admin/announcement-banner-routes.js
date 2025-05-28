@@ -35,6 +35,8 @@ router.post("/set", async (req, res) => {
     isActive,
     backgroundColor,
     textColor,
+    startDate,         // ✅ added
+    endDate,           // ✅ added
   } = req.body;
 
   try {
@@ -46,8 +48,8 @@ router.post("/set", async (req, res) => {
       existing.isActive = isActive;
       existing.backgroundColor = backgroundColor;
       existing.textColor = textColor;
-      existing.startDate = startDate ? new Date(startDate) : null;   // ✅
-existing.endDate = endDate ? new Date(endDate) : null;         // ✅
+      existing.startDate = startDate ? new Date(startDate) : null;
+      existing.endDate = endDate ? new Date(endDate) : null;
       await existing.save();
     } else {
       await Announcement.create({
@@ -56,6 +58,8 @@ existing.endDate = endDate ? new Date(endDate) : null;         // ✅
         isActive,
         backgroundColor,
         textColor,
+        startDate: startDate ? new Date(startDate) : null,
+        endDate: endDate ? new Date(endDate) : null,
       });
     }
 
@@ -65,6 +69,7 @@ existing.endDate = endDate ? new Date(endDate) : null;         // ✅
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
+
 
 
 module.exports = router;
