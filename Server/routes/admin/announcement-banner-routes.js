@@ -1,4 +1,3 @@
-// Server/routes/admin/announcement-banner-routes.js
 const express = require("express");
 const router = express.Router();
 const Announcement = require("../../models/AnnouncementBanner");
@@ -7,6 +6,7 @@ const Announcement = require("../../models/AnnouncementBanner");
 router.get("/active", async (req, res) => {
   try {
     const now = new Date();
+    console.log("📥 [GET] /active called at", now.toISOString());
 
     const active = await Announcement.findOne({
       isActive: true,
@@ -19,13 +19,18 @@ router.get("/active", async (req, res) => {
       ]
     });
 
+    if (active) {
+      console.log("✅ Active announcement found:", active);
+    } else {
+      console.log("ℹ️ No active announcement found.");
+    }
+
     res.json(active || {});
   } catch (err) {
     console.error("❌ Failed to fetch active announcement:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
-
 
 // POST or PUT to create/update announcement
 router.post("/set", async (req, res) => {
@@ -35,14 +40,17 @@ router.post("/set", async (req, res) => {
     isActive,
     backgroundColor,
     textColor,
-    startDate,         // ✅ added
-    endDate,           // ✅ added
+    startDate,
+    endDate,
   } = req.body;
+
+  console.log("📥 [POST] /set called with data:", req.body);
 
   try {
     const existing = await Announcement.findOne();
 
     if (existing) {
+      console.log("🔄 Updating existing announcement with ID:", existing._id);
       existing.leftText = leftText;
       existing.rightText = rightText;
       existing.isActive = isActive;
@@ -51,7 +59,9 @@ router.post("/set", async (req, res) => {
       existing.startDate = startDate ? new Date(startDate) : null;
       existing.endDate = endDate ? new Date(endDate) : null;
       await existing.save();
+      console.log("✅ Announcement updated.");
     } else {
+      console.log("🆕 Creating new announcement.");
       await Announcement.create({
         leftText,
         rightText,
@@ -61,6 +71,7 @@ router.post("/set", async (req, res) => {
         startDate: startDate ? new Date(startDate) : null,
         endDate: endDate ? new Date(endDate) : null,
       });
+      console.log("✅ Announcement created.");
     }
 
     res.json({ success: true });
@@ -70,6 +81,24 @@ router.post("/set", async (req, res) => {
   }
 });
 
+// GET latest announcement (for admin view, no filters)
+router.get("/latest", async (req, res) => {
+  try {
+    console.log("📥 [GET] /latest called");
 
+    const latest = await Announcement.findOne().sort({ updatedAt: -1 });
+
+    if (latest) {
+      console.log("✅ Latest announcement found:", latest);
+    } else {
+      console.log("ℹ️ No announcement found.");
+    }
+
+    res.json(latest || {});
+  } catch (err) {
+    console.error("❌ Failed to fetch latest announcement:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
 
 module.exports = router;

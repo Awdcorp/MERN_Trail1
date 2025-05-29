@@ -19,7 +19,7 @@ export default function AdminAnnouncement() {
 
     useEffect(() => {
         axios
-            .get(`${import.meta.env.VITE_API_URL}/api/admin/announcement/active`)
+            .get(`${import.meta.env.VITE_API_URL}/api/admin/announcement/latest`)
             .then((res) => {
                 if (res.data) {
                     setFormData(res.data);
