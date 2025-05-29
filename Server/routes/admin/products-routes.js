@@ -13,6 +13,7 @@ const {
   getImportLogs,
   getExportLogs,           // ✅ make sure this is imported
   revertImportByLogId,
+  countProductsForExport,
   previewCSVHeaders,
 } = require("../../controllers/admin/products-controller");
 
@@ -33,6 +34,7 @@ router.post("/bulk-delete", bulkDeleteProducts);
 router.get("/import-logs", getImportLogs);
 router.get("/export-logs", getExportLogs);               // ✅ ADD THIS ABOVE :id
 router.post("/import-revert", revertImportByLogId);
+router.get("/export/count", countProductsForExport);
 router.post("/preview-csv", uploadCSV.single("file"), previewCSVHeaders);
 router.get("/export", exportProductsToCSV);
 router.post("/import", uploadCSV.single("file"), importProductsFromCSV);

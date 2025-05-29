@@ -500,6 +500,22 @@ const previewCSVHeaders = async (req, res) => {
   }
 };
 
+const countProductsForExport = async (req, res) => {
+  try {
+    const exportIds = req.query.ids?.split(",") || null;
+
+    const count = exportIds?.length
+      ? await Product.countDocuments({ _id: { $in: exportIds } })
+      : await Product.estimatedDocumentCount();
+
+    res.status(200).json({ success: true, count });
+  } catch (err) {
+    console.error("❌ Failed to count export products:", err);
+    res.status(500).json({ success: false, message: "Count failed" });
+  }
+};
+
+
 module.exports = {
   handleImageUpload,
   addProduct,
@@ -515,5 +531,6 @@ module.exports = {
   getImportLogs,
   revertImportByLogId,
   previewCSVHeaders,
+  countProductsForExport,
   getExportLogs,   // ✅ new
 };

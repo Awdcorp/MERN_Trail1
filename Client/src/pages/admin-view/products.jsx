@@ -75,6 +75,7 @@ function AdminProducts() {
   const [importSummary, setImportSummary] = useState(null);
   const [previewData, setPreviewData] = useState(null);
   const [pendingCSVFile, setPendingCSVFile] = useState(null);
+  const [exportCount, setExportCount] = useState(0);
 
   function onSubmit(event) {
     event.preventDefault();
@@ -100,7 +101,17 @@ function AdminProducts() {
     const queryFields = selectedFields.map((f) => `fields=${f}`).join("&");
     const queryIds = selectedProductIds.length > 0 ? `&ids=${selectedProductIds.join(",")}` : "";
     const url = `${import.meta.env.VITE_API_URL}/api/admin/products/export?${queryFields}${queryIds}`;
-
+  
+    // ✅ Fetch export count first
+    try {
+      const countRes = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/export/count?${queryIds}`);
+      const countData = await countRes.json();
+      setExportCount(countData?.count || 0);
+    } catch (err) {
+      console.warn("⚠️ Failed to fetch export count", err);
+      setExportCount(0);
+    }
+  
     try {
       const res = await fetch(url);
       const blob = await res.blob();
@@ -115,6 +126,7 @@ function AdminProducts() {
       toast({ title: "Export failed", variant: "destructive" });
     }
   }
+  
 
   const handleCSVPreview = async (event) => {
     const file = event.target.files?.[0];
@@ -198,6 +210,16 @@ function isFormValid() {
     fetchCategories();
   }, [dispatch, page, limit, searchTerm, selectedCategory, sortBy, sortOrder]);
 
+  useEffect(() => {
+    if (showExportDialog) {
+      const queryIds = selectedProductIds.length > 0 ? `&ids=${selectedProductIds.join(",")}` : "";
+      fetch(`${import.meta.env.VITE_API_URL}/api/admin/products/export/count?${queryIds}`)
+        .then((res) => res.json())
+        .then((data) => setExportCount(data?.count || 0))
+        .catch(() => setExportCount(0));
+    }
+  }, [showExportDialog, selectedProductIds]);
+
   const filterUI = (
   <div className="flex flex-wrap items-center justify-between gap-4">
     {/* Left side: Search + Category + Stats */}
@@ -232,7 +254,7 @@ function isFormValid() {
         />
       </div>
       <Button asChild><a href="/admin/products/new">+ Create New Product</a></Button>
-      <Button variant="outline" onClick={() => setShowExportDialog(true)}>Export Settings</Button>
+      <Button variant="outline" onClick={() => setShowExportDialog(true)}>Export</Button>
     </div>
     {/* 🔢 Product Stats Inline */}
     <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground ml-2">
@@ -339,27 +361,77 @@ function isFormValid() {
       </Sheet>
 
       {showExportDialog && (
-        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg w-[500px] max-h-[80vh] overflow-y-auto">
-            <h2 className="text-lg font-semibold mb-4">Select Fields to Export</h2>
-            <div className="grid grid-cols-2 gap-2 mb-4">
-              {allExportableFields.map((field) => (
-                <label key={field} className="flex items-center space-x-2">
-                  <input type="checkbox" checked={selectedFields.includes(field)} onChange={(e) => {
-                    if (e.target.checked) setSelectedFields([...selectedFields, field]);
-                    else setSelectedFields(selectedFields.filter((f) => f !== field));
-                  }} />
-                  <span className="capitalize">{field}</span>
-                </label>
-              ))}
-            </div>
-            <div className="flex justify-end gap-2">
-              <Button variant="ghost" onClick={() => setShowExportDialog(false)}>Cancel</Button>
-              <Button onClick={() => { setShowExportDialog(false); handleExportProducts(); }}>Export</Button>
-            </div>
-          </div>
+  <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+    <div className="bg-white rounded-lg shadow-lg w-full max-w-[600px] max-h-[90vh] overflow-y-auto p-6">
+      <h2 className="text-xl font-semibold mb-4 text-[#463970]">Select Fields to Export</h2>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-6 mb-6">
+        {allExportableFields.map((field) => (
+          <label key={field} className="flex items-center gap-2 text-sm capitalize text-gray-800">
+            <input
+              type="checkbox"
+              checked={selectedFields.includes(field)}
+              onChange={(e) => {
+                if (e.target.checked) setSelectedFields([...selectedFields, field]);
+                else setSelectedFields(selectedFields.filter((f) => f !== field));
+              }}
+            />
+            {field === "sku"
+              ? "SKU"
+              : field === "seo"
+              ? "SEO Meta"
+              : field === "externalId"
+              ? "External ID"
+              : field.replace(/([A-Z])/g, " $1").replace(/^./, (s) => s.toUpperCase())}
+          </label>
+        ))}
+      </div>
+
+      <hr className="my-4 border-gray-300" />
+
+      <div className="text-sm text-muted-foreground mb-4 space-y-1">
+        <p>
+          📌 <strong>Selected products:</strong>{" "}
+          {selectedProductIds.length > 0 ? selectedProductIds.length : "All"}
+        </p>
+        <p>
+          📦 <strong>Total to export:</strong> {exportCount}
+        </p>
+        <p>
+          📑 <strong>Fields selected:</strong> {selectedFields.length}
+        </p>
+      </div>
+
+      <div className="flex justify-between items-center mt-5">
+        <a
+          href="/admin/AdminImportHistory"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-blue-600 hover:underline"
+        >
+          📄 View Import History
+        </a>
+
+        <div className="flex gap-2">
+          <Button variant="ghost" onClick={() => setShowExportDialog(false)}>
+            Cancel
+          </Button>
+          <Button
+            onClick={() => {
+              setShowExportDialog(false);
+              handleExportProducts();
+            }}
+          >
+            Export
+          </Button>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
+
+
+
 
       {previewData && (
         <CSVPreviewModal
