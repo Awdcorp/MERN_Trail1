@@ -376,13 +376,13 @@ case "slider":
 
           {/* Desktop Image */}
           {img.desktopImage && <img src={img.desktopImage} alt="desktop" className="w-full h-28 object-cover rounded" />}
-          <Button size="sm" variant="outline" onClick={() => setMediaPickerOpen({ index: i, type: "desktopImage" })}>
+          <Button size="sm" variant="default" onClick={() => setMediaPickerOpen({ index: i, type: "desktopImage" })}>
             Select Desktop Image
           </Button>
 
           {/* Mobile Image */}
           {img.mobileImage && <img src={img.mobileImage} alt="mobile" className="w-full h-28 object-cover rounded" />}
-          <Button size="sm" variant="outline" onClick={() => setMediaPickerOpen({ index: i, type: "mobileImage" })}>
+          <Button size="sm" variant="default" onClick={() => setMediaPickerOpen({ index: i, type: "mobileImage" })}>
             Select Mobile Image
           </Button>
 

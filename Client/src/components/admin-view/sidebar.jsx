@@ -7,6 +7,7 @@ import {
   Users,
   Home,
   Settings,
+  Menu,
   LogOut,
   Brush,
 } from "lucide-react";
@@ -67,6 +68,12 @@ const adminSidebarMenuItems = [
     label: "Media",
     path: "/admin/media",
     icon: <Images />,
+  },
+  {
+    id: "menus",
+    label: "Menus",
+    path: "/admin/menus",
+    icon: <Menu />,
   },
   {
     id: "settings",
