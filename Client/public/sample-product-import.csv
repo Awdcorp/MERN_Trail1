@@ -1,0 +1,2 @@
+title,slug,description,shortDescription,price,salePrice,sku,brand,totalStock,weight,categories,tags,images,isActive,isFeatured
+Sample Product,sample-product,"This is a sample product.","Short desc here",99.99,79.99,SP001,SampleBrand,100,0.5,"Category A > Subcategory A","tag1|tag2","https://example.com/image.jpg",true,false
