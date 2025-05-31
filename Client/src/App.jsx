@@ -15,6 +15,7 @@ import AdminInventory from "./pages/admin-view/inventory";
 import AdminBlogs from "./pages/admin-view/blogs";
 import AdminProductEdit from "./pages/admin-view/product-edit";
 import AdminOrders from "./pages/admin-view/orders";
+import AdminRefund from "./pages/admin-view/RefundDetails";
 import AdminFeatures from "./pages/admin-view/features";
 import AdminHomepage from "./pages/admin-view/homepage";
 import AdminCategories from "./pages/admin-view/category";
@@ -104,6 +105,7 @@ function App() {
             <Route path="inventory" element={<AdminInventory />} />
             <Route path="products/:id" element={<AdminProductEdit />} />
             <Route path="orders" element={<AdminOrders />} />
+            <Route path="refund/:id" element={<AdminRefund />} />
             <Route path="media" element={<MediaDashboard />} />
             <Route path="features" element={<AdminFeatures />} />
             <Route path="users" element={<AdminUsers />} />

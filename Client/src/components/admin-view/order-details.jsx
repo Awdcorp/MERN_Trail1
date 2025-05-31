@@ -6,6 +6,7 @@ import {
   getAllOrdersForAdmin,
   updateOrderStatus,
   orderDetailsUpdated,
+  initiateRefund,
 } from "@/store/admin/order-slice";
 import { useToast } from "../ui/use-toast";
 import axios from "axios";
@@ -50,6 +51,10 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [newProductQty, setNewProductQty] = useState(1);
+  const [refundAmount, setRefundAmount] = useState(0); // NEW
+  const [refundReason, setRefundReason] = useState(""); // NEW
+  const [restockItems, setRestockItems] = useState(true); // NEW
+
   const dispatch = useDispatch();
   const { toast } = useToast();
 
@@ -64,6 +69,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         notes: orderDetails.addressInfo?.notes || "",
       });
       setFormProducts(orderDetails.cartItems || []);
+      setRefundAmount(orderDetails.totalAmount || 0);
     }
   }, [orderDetails]);
 
@@ -74,7 +80,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         axios
           .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${searchQuery}`)
           .then((res) => {
-            if (res.data?.success)console.log("🔁 Search results:", res.data.data); setSearchResults(res.data.data);
+            if (res.data?.success) console.log("🔁 Search results:", res.data.data); setSearchResults(res.data.data);
           });
       } else {
         setSearchResults([]);
@@ -139,6 +145,29 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
     setNewProductQty(1);
     setSearchResults([]);
   }
+function handleRefundSubmit() {
+  if (!refundAmount || refundAmount <= 0) {
+    toast({ title: "Invalid refund amount" });
+    return;
+  }
+
+  dispatch(
+    initiateRefund({
+      orderId: orderDetails._id,
+      refundAmount,
+      refundReason,
+      restockItems,
+    })
+  ).then((res) => {
+    if (res?.payload?.success) {
+      toast({ title: "Refund processed" });
+      dispatch(getAllOrdersForAdmin());
+      setOpen(false);
+    } else {
+      toast({ title: "Refund failed" });
+    }
+  });
+}
 
   return (
     <DialogContent className="sm:max-w-[600px]">
@@ -153,7 +182,7 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
             <span className="text-muted-foreground">Order Date</span>
             <span className="font-medium">
               {typeof orderDetails?.orderDate === "string" &&
-              orderDetails.orderDate.includes("T")
+                orderDetails.orderDate.includes("T")
                 ? orderDetails.orderDate.split("T")[0]
                 : "—"}
             </span>
@@ -283,39 +312,39 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
         <div className="grid gap-2 p-4 border rounded-lg">
           <span className="font-medium text-lg">Order Items</span>
 
-<div className="relative w-full">
-  <div className="flex items-center gap-2 mb-2">
-    <input
-      type="text"
-      placeholder="Search product..."
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-      className="border p-2 rounded w-full text-sm"
-    />
-    <input
-      type="number"
-      min={1}
-      value={newProductQty}
-      onChange={(e) => setNewProductQty(parseInt(e.target.value))}
-      className="w-16 border px-2 py-1 rounded text-sm"
-    />
-  </div>
+          <div className="relative w-full">
+            <div className="flex items-center gap-2 mb-2">
+              <input
+                type="text"
+                placeholder="Search product..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="border p-2 rounded w-full text-sm"
+              />
+              <input
+                type="number"
+                min={1}
+                value={newProductQty}
+                onChange={(e) => setNewProductQty(parseInt(e.target.value))}
+                className="w-16 border px-2 py-1 rounded text-sm"
+              />
+            </div>
 
-  {/* ⬇️ Floating Results Box */}
-  {searchResults.length > 0 && (
-    <ul className="absolute bottom-full mb-2 z-50 mt-1 left-0 w-full max-h-80 overflow-y-auto bg-white border rounded shadow-lg text-sm">
-      {searchResults.map((p) => (
-        <li
-          key={p._id}
-          className="px-3 py-2 hover:bg-muted cursor-pointer"
-          onClick={() => handleAddProduct(p)}
-        >
-          {p.title} – AED {p.price}
-        </li>
-      ))}
-    </ul>
-  )}
-</div>
+            {/* ⬇️ Floating Results Box */}
+            {searchResults.length > 0 && (
+              <ul className="absolute bottom-full mb-2 z-50 mt-1 left-0 w-full max-h-80 overflow-y-auto bg-white border rounded shadow-lg text-sm">
+                {searchResults.map((p) => (
+                  <li
+                    key={p._id}
+                    className="px-3 py-2 hover:bg-muted cursor-pointer"
+                    onClick={() => handleAddProduct(p)}
+                  >
+                    {p.title} – AED {p.price}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
 
 
           <ul className="divide-y text-sm">
@@ -356,6 +385,47 @@ function AdminOrderDetailsView({ orderDetails, setOpen }) {
             Update Order Status
           </button>
         </form>
+        {/* Refund Section */}
+{orderDetails?.order_status !== "refunded" && orderDetails?.order_status !== "cancelled" && (
+  <div className="mt-6 border-t pt-4">
+    <h3 className="text-lg font-semibold mb-2">Return / Refund</h3>
+    <div className="flex flex-col gap-3">
+      <div>
+        <label className="block text-sm font-medium mb-1">Refund Amount (AED)</label>
+        <input
+          type="number"
+          className="input"
+          value={refundAmount}
+          onChange={(e) => setRefundAmount(Number(e.target.value))}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Refund Reason (optional)</label>
+        <textarea
+          className="textarea"
+          rows="3"
+          value={refundReason}
+          onChange={(e) => setRefundReason(e.target.value)}
+        ></textarea>
+      </div>
+      <div className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          checked={restockItems}
+          onChange={() => setRestockItems(!restockItems)}
+        />
+        <label className="text-sm">Restock returned items</label>
+      </div>
+      <button
+        className="bg-red-600 text-white px-4 py-2 rounded w-fit"
+        onClick={handleRefundSubmit}
+      >
+        Process Refund
+      </button>
+    </div>
+  </div>
+)}
+
       </div>
     </DialogContent>
   );

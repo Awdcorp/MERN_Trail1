@@ -35,7 +35,25 @@ const OrderSchema = new mongoose.Schema({
   paymentMethod: String,
   paymentStatus: String,
   totalAmount: Number,
-
+ refund: {
+    amount: Number,
+    reason: String,
+    restock: Boolean,
+    refundedAt: Date,
+    method: String,
+    refundedBy: String,
+    cardLast4: String,
+    cardBrand: String,
+    gateway: String,
+    gatewayRefundId: String,
+    status: String,
+    history: [
+      {
+        message: String,
+        time: Date,
+      },
+    ],
+  },
   orderDate: Date,
   orderUpdateDate: Date,
   paymentId: String,

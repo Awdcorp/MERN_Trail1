@@ -50,6 +50,27 @@ export const updateOrderStatus = createAsyncThunk(
   }
 );
 
+export const initiateRefund = createAsyncThunk(
+  "adminOrder/initiateRefund",
+  async ({ orderId, refundAmount, refundReason, restockItems }) => {
+    console.log("📤 Initiating refund request with:", {
+      orderId,
+      refundAmount,
+      refundReason,
+      restockItems,
+    });
+
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/orders/refund`, {
+      orderId,
+      refundAmount,
+      refundReason,
+      restockItems,
+    });
+
+    console.log("✅ Refund API response:", res.data);
+    return res.data;
+  }
+);
 
 
 const adminOrderSlice = createSlice({
@@ -86,6 +107,9 @@ const adminOrderSlice = createSlice({
       .addCase(getOrderDetailsForAdmin.rejected, (state) => {
         state.isLoading = false;
         state.orderDetails = null;
+      })
+      .addCase(initiateRefund.fulfilled, (state, action) => {
+        state.orderDetails = action.payload.data;
       })
       .addCase(updateOrderStatus.fulfilled, (state, action) => {
         console.log("🎯 Redux thunk fulfilled with:", action.payload);

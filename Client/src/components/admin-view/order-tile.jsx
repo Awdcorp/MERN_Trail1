@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import { useNavigate } from "react-router-dom";
 
 // ✅ Helper functions for status badge styling
 const getOrderStatusClasses = (status) => {
@@ -33,6 +34,7 @@ const getPaymentStatusClasses = (status) => {
 };
 
 function AdminOrderRow({ order, onView }) {
+const navigate = useNavigate();
 
   return (
     <tr className="border-b hover:bg-muted/20 transition-colors">
@@ -85,6 +87,17 @@ function AdminOrderRow({ order, onView }) {
 >
   View
 </Button>
+  {order?.order_status === "refunded" && (
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-blue-600 hover:underline"
+            onClick={() => navigate(`/admin/refund/${order._id}`)}
+          >
+            Refund Details
+          </Button>
+        )}
+
       </td>
     </tr>
   );
