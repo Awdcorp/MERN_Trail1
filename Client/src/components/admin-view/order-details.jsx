@@ -181,11 +181,63 @@ function AdminOrderDetailsView({ orderDetails, setOpen, isNewOrder }) {
     }
   }
 
+  function handlePrintInvoice() {
+    const win = window.open("", "_blank");
+    if (!win) return;
+
+    const itemRows = formProducts.map(
+      (item) =>
+        `<tr><td>${item.title}</td><td>${item.quantity}</td><td>AED ${item.price}</td><td>AED ${(
+          parseFloat(item.price) * item.quantity
+        ).toFixed(2)}</td></tr>`
+    );
+
+    const html = `
+      <html>
+      <head>
+        <title>Invoice</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          h2 { margin-bottom: 20px; }
+          table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+          th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+          th { background-color: #f0f0f0; }
+        </style>
+      </head>
+      <body>
+        <h2>Order Invoice</h2>
+        <p><strong>Customer:</strong> ${formAddress.customer_name}</p>
+        <p><strong>Address:</strong> ${formAddress.address}, ${formAddress.city} ${formAddress.pincode}</p>
+        <p><strong>Phone:</strong> ${formAddress.phone}</p>
+        <p><strong>Order Date:</strong> ${new Date(orderDetails?.orderDate).toLocaleDateString()}</p>
+        <table>
+          <thead>
+            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
+          </thead>
+          <tbody>
+            ${itemRows.join("")}
+            <tr><td colspan="3"><strong>Total</strong></td><td><strong>AED ${orderDetails?.totalAmount}</strong></td></tr>
+          </tbody>
+        </table>
+        <script>window.onload = function() { window.print(); }</script>
+      </body>
+      </html>
+    `;
+
+    win.document.write(html);
+    win.document.close();
+  }
+
   return (
     <div className="fixed inset-0 bg-white z-50 overflow-y-auto px-6 py-8 md:px-12 md:py-10">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Order Details</h2>
-        <button onClick={() => setOpen(false)} className="text-xl">×</button>
+        <div className="flex gap-2">
+          {!isNewOrder && (
+            <button onClick={handlePrintInvoice} className="text-sm bg-gray-100 px-3 py-1 rounded border">Print Invoice</button>
+          )}
+          <button onClick={() => setOpen(false)} className="text-xl">×</button>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">

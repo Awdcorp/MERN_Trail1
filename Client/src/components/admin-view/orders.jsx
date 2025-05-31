@@ -39,6 +39,15 @@ function AdminOrdersView() {
     setIsNewOrder(true);
     setOpenDetailsDialog(true);
   }
+function handleExportCSV() {
+  const url = `${import.meta.env.VITE_API_URL}/api/admin/orders/export`;
+  const link = document.createElement("a");
+  link.href = url;
+  link.setAttribute("download", "orders.csv");
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
 
   return (
     <>
@@ -54,7 +63,13 @@ function AdminOrdersView() {
           { label: "Date" },
           { label: "Actions", align: "right" },
         ]}
-        actions={<Button onClick={handleCreateNewOrder}>Add Order</Button>}
+        actions={
+  <div className="flex gap-2">
+    <Button onClick={handleCreateNewOrder}>Add Order</Button>
+    <Button variant="outline" onClick={handleExportCSV}>Export Orders</Button>
+  </div>
+}
+
       >
         {Array.isArray(orderList) && orderList.length > 0 ? (
           orderList.map((order) => (

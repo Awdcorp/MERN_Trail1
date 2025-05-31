@@ -1,4 +1,36 @@
+const { Parser } = require('json2csv');
 const Order = require("../../models/Order");
+
+const exportOrdersAsCSV = async (req, res) => {
+  try {
+    const orders = await Order.find({}).lean();
+
+    if (!orders.length) {
+      return res.status(404).json({ success: false, message: "No orders to export" });
+    }
+
+    const fields = [
+      { label: 'Order ID', value: '_id' },
+      { label: 'Woo ID', value: 'wc_order_id' },
+      { label: 'Customer Name', value: 'customer_name' },
+      { label: 'Order Status', value: 'order_status' },
+      { label: 'Payment Method', value: 'paymentMethod' },
+      { label: 'Payment Status', value: 'paymentStatus' },
+      { label: 'Total', value: 'totalAmount' },
+      { label: 'Date', value: row => row.orderDate?.toISOString().split('T')[0] },
+    ];
+
+    const parser = new Parser({ fields });
+    const csv = parser.parse(orders);
+
+    res.header("Content-Type", "text/csv");
+    res.attachment("orders.csv");
+    res.send(csv);
+  } catch (error) {
+    console.error("❌ CSV export error:", error);
+    res.status(500).json({ success: false, message: "Failed to export CSV" });
+  }
+};
 
 const createNewOrder = async (req, res) => {
   try {
@@ -229,4 +261,5 @@ module.exports = {
   getOrderDetailsForAdmin,
   updateOrderStatus,
   adminRefundOrder,
+  exportOrdersAsCSV,
 };
