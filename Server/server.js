@@ -6,6 +6,7 @@ require("dotenv").config();
 const authRouter = require("./routes/auth/auth-routes");
 const adminProductsRouter = require("./routes/admin/products-routes");
 const adminOrderRouter = require("./routes/admin/order-routes");
+const adminCollectionRoutes = require("./routes/admin/collection-routes");
 const settingsRoutes = require("./routes/admin/settings-routes");
 const homepageLayoutRoutes = require("./routes/admin/homepage-layout-routes");
 const pageRoutes = require("./routes/admin/page-routes");
@@ -55,7 +56,7 @@ app.use("/api/admin/settings", settingsRoutes);
 app.use("/api/admin/homepage-layout", homepageLayoutRoutes);
 app.use("/api/admin/pages", pageRoutes);
 app.use("/api/admin", require("./routes/admin/menu-routes"));
-
+app.use("/api/admin/collections", adminCollectionRoutes);
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
 app.use("/api/shop/address", shopAddressRouter);

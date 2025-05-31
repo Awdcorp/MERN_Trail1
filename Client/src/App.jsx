@@ -19,6 +19,7 @@ import AdminRefund from "./pages/admin-view/RefundDetails";
 import AdminFeatures from "./pages/admin-view/features";
 import AdminHomepage from "./pages/admin-view/homepage";
 import AdminCategories from "./pages/admin-view/category";
+import AdminCollections from "./pages/admin-view/AdminCollections";
 import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
 import AdminPages from "./pages/admin-view/pages";
@@ -102,6 +103,7 @@ function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="category" element={<AdminCategories />} />
+            <Route path="collections" element={<AdminCollections />} />
             <Route path="inventory" element={<AdminInventory />} />
             <Route path="products/:id" element={<AdminProductEdit />} />
             <Route path="orders" element={<AdminOrders />} />
