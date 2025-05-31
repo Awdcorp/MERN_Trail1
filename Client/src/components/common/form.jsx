@@ -165,12 +165,30 @@ function CommonForm({
       onSubmit(e);               // ✅ call handler
     }}>
       <div className="flex flex-col gap-3">
-        {formControls.map((controlItem) => (
-          <div className="grid w-full gap-1.5" key={controlItem.name}>
-            <Label className="mb-1">{controlItem.label}</Label>
-            {renderInputsByComponentType(controlItem)}
-          </div>
-        ))}
+        {formControls.map((controlItem) => {
+  // ✅ NEW: allow custom render block
+  if (controlItem.type === "custom" && typeof controlItem.render === "function") {
+    return (
+      <div key={controlItem.name} className="grid w-full gap-1.5">
+        <Label className="mb-1">{controlItem.label}</Label>
+        {controlItem.render({
+          value: formData[controlItem.name],
+          onChange: (val) =>
+            setFormData((prev) => ({ ...prev, [controlItem.name]: val })),
+        })}
+      </div>
+    );
+  }
+
+  // ✅ Default case — use existing switch logic
+  return (
+    <div className="grid w-full gap-1.5" key={controlItem.name}>
+      <Label className="mb-1">{controlItem.label}</Label>
+      {renderInputsByComponentType(controlItem)}
+    </div>
+  );
+})}
+
       </div>
       <Button disabled={isBtnDisabled} type="submit" className="mt-2 w-full">
         {buttonText || "Submit"}

@@ -1,4 +1,3 @@
-// File: src/pages/admin-view/category.jsx
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import DataTable from "@/components/admin-view/data-table";
 import CommonForm from "@/components/common/form";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useToast } from "@/components/ui/use-toast";
+import MediaPicker from "@/components/admin-view/MediaPicker"; // ✅ added
 
 import {
   fetchAllCategories,
@@ -26,6 +26,7 @@ export default function AdminCategories() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [allCategories, setAllCategories] = useState([]);
+  const [showMediaPicker, setShowMediaPicker] = useState(false); // ✅ added
 
   useEffect(() => {
     dispatch(fetchAllCategories({ page, limit }));
@@ -41,11 +42,11 @@ export default function AdminCategories() {
     event.preventDefault();
     console.log("📝 Submitted Form Data:", formData);
     console.log("✏️ Current Edit ID:", editId);
-const data = {
-  ...formData,
-  parent: formData.parent === "" ? null : formData.parent, // ✅ Fix for ObjectId cast error
-};
 
+    const data = {
+      ...formData,
+      parent: formData.parent === "" ? null : formData.parent,
+    };
 
     if (editId) {
       dispatch(updateCategory({ id: editId, data }))
@@ -139,7 +140,21 @@ const data = {
     { name: "name", label: "Name", type: "text", required: true },
     { name: "slug", label: "Slug", type: "text", required: true },
     { name: "description", label: "Description", type: "textarea" },
-    { name: "image", label: "Image URL", type: "text" },
+    {
+      name: "image",
+      label: "Image",
+      type: "custom",
+      render: ({ value, onChange }) => (
+        <div className="mb-4">
+          {value && (
+            <img src={value} alt="Selected" className="w-20 h-20 object-cover rounded mb-2 border" />
+          )}
+          <Button type="button" variant="outline" onClick={() => setShowMediaPicker(true)}>
+            Choose Image
+          </Button>
+        </div>
+      ),
+    },
     {
       name: "parent",
       label: "Parent Category",
@@ -186,6 +201,15 @@ const data = {
           />
         </SheetContent>
       </Sheet>
+
+      <MediaPicker
+        open={showMediaPicker}
+        onClose={() => setShowMediaPicker(false)}
+        onSelect={(url) => {
+          setFormData((prev) => ({ ...prev, image: url }));
+          setShowMediaPicker(false);
+        }}
+      />
     </Fragment>
   );
 }
