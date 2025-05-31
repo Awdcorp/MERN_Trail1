@@ -9,15 +9,18 @@ import {
   getAllOrdersForAdmin,
   getOrderDetailsForAdmin,
   resetOrderDetails,
+  createOrder,
 } from "@/store/admin/order-slice";
 
 function AdminOrdersView() {
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
+  const [isNewOrder, setIsNewOrder] = useState(false);
   const { orderList, orderDetails } = useSelector((state) => state.adminOrder);
   const dispatch = useDispatch();
 
   function handleFetchOrderDetails(getId) {
     dispatch(getOrderDetailsForAdmin(getId));
+    setIsNewOrder(false);
   }
 
   useEffect(() => {
@@ -30,6 +33,12 @@ function AdminOrdersView() {
       setOpenDetailsDialog(true);
     }
   }, [orderDetails]);
+
+  function handleCreateNewOrder() {
+    dispatch(resetOrderDetails());
+    setIsNewOrder(true);
+    setOpenDetailsDialog(true);
+  }
 
   return (
     <>
@@ -45,7 +54,7 @@ function AdminOrdersView() {
           { label: "Date" },
           { label: "Actions", align: "right" },
         ]}
-        actions={<Button disabled>Add Order</Button>}
+        actions={<Button onClick={handleCreateNewOrder}>Add Order</Button>}
       >
         {Array.isArray(orderList) && orderList.length > 0 ? (
           orderList.map((order) => (
@@ -64,11 +73,12 @@ function AdminOrdersView() {
         )}
       </AdminPanelTemplate>
 
-      {openDetailsDialog && orderDetails && (
+      {openDetailsDialog && (
         <Dialog open={openDetailsDialog} onOpenChange={setOpenDetailsDialog}>
           <AdminOrderDetailsView
-            orderDetails={orderDetails}
+            orderDetails={isNewOrder ? {} : orderDetails}
             setOpen={setOpenDetailsDialog}
+            isNewOrder={isNewOrder}
           />
         </Dialog>
       )}
