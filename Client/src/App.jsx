@@ -32,7 +32,7 @@ import AdminSEOSettingsPage from "./pages/admin-view/settings";
 import BannerControlPage from "./pages/admin-view/banner-control";
 import AboutPage from "@/pages/shopping-view/about";
 import PrivacyPolicyPage from "@/pages/shopping-view/privacy-policy";
-
+import AdminContactMessages from "@/pages/admin-view/AdminContactMessages";
 import ShoppingLayout from "./components/shopping-view/layout";
 import ShoppingHome from "./pages/shopping-view/home";
 import ShoppingListing from "./pages/shopping-view/listing";
@@ -113,6 +113,7 @@ function App() {
             <Route path="refund/:id" element={<AdminRefund />} />
             <Route path="media" element={<MediaDashboard />} />
             <Route path="pagecontent" element={<AdminPageContent />} />
+            <Route path="contact-messages" element={<AdminContactMessages />} />
             <Route path="features" element={<AdminFeatures />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="pages" element={<AdminPages />} />

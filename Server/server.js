@@ -74,4 +74,5 @@ app.use("/api/admin/categories", require("./routes/admin/category-routes"));
 app.use("/api/admin/announcement", require("./routes/admin/announcement-banner-routes"));
 app.use("/api", require("./routes/admin/page-content-routes"));
 app.use("/api/pages", shopPageRoutes);
+app.use("/api", require("./routes/admin/contact-message-routes"));
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
