@@ -79,4 +79,6 @@ app.use("/api", require("./routes/admin/page-content-routes"));
 app.use("/api/pages", shopPageRoutes);
 app.use("/api", require("./routes/admin/contact-message-routes"));
 app.use("/api/coupons", publicCouponRoutes);
+app.use("/api/admin/blogs", require("./routes/admin/blog-routes"));
+app.use("/api/blogs", require("./routes/shop/blog-routes"));
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));

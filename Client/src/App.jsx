@@ -28,6 +28,8 @@ import AdminMenus from "./pages/admin-view/AdminMenus";
 import AdminCupon from "./pages/admin-view/AdminCoupons";
 import CartPage from "./pages/shopping-view/cart";
 import AdminAnnouncement from "./pages/admin-view/AdminAnnouncement";
+import BlogsPage from "./pages/shopping-view/BlogsPage";
+import BlogDetail from "./pages/shopping-view/BlogDetail";
 import PageBuilder from "@/pages/admin-view/page-builder";
 import AdminImportHistory from "@/pages/admin-view/AdminImportExportHistory";
 import AdminSEOSettingsPage from "./pages/admin-view/settings";
@@ -150,6 +152,8 @@ function App() {
             <Route path="search" element={<SearchProducts />} />
             <Route path="checkout" element={<ShoppingCheckout />} />
             <Route path="contact" element={<ContactUs />} />
+            <Route path="blogs" element={<BlogsPage />} />
+<Route path="blogs/:slug" element={<BlogDetail />} />
             <Route path="about" element={<AboutPage />} />
 <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
 
