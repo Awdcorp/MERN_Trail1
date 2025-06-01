@@ -92,52 +92,52 @@ export default function AdminBlogs() {
   };
 
   const columns = [
-  { header: "Title", accessorKey: "title" },
-  { header: "Slug", accessorKey: "slug" },
-  { header: "Author", accessorKey: "author" },
-  {
-    header: "Status",
-    accessorKey: "status",
-    cell: (row) => {
-      const status = row?.status || "draft";
-      const color =
-        status === "published"
-          ? "bg-green-100 text-green-800"
-          : "bg-yellow-100 text-yellow-800";
-      return (
-        <span className={`text-xs font-semibold px-2 py-1 rounded-full ${color}`}>
-          {status}
-        </span>
-      );
+    { header: "Title", accessorKey: "title" },
+    { header: "Slug", accessorKey: "slug" },
+    { header: "Author", accessorKey: "author" },
+    {
+      header: "Status",
+      accessorKey: "status",
+      cell: (row) => {
+        const status = row?.status || "draft";
+        const color =
+          status === "published"
+            ? "bg-green-100 text-green-800"
+            : "bg-yellow-100 text-yellow-800";
+        return (
+          <span className={`text-xs font-semibold px-2 py-1 rounded-full ${color}`}>
+            {status}
+          </span>
+        );
+      },
     },
-  },
-  {
-    header: "Actions",
-    cell: (row) => {
-      const blog = row;
-      return (
-        <div className="flex gap-2">
-          <Button
-            size="sm"
-            onClick={() => {
-              setEditingBlog(blog);
-              setOpenDialog(true);
-            }}
-          >
-            Edit
-          </Button>
-          <Button
-            size="sm"
-            variant="destructive"
-            onClick={() => handleDelete(blog._id)}
-          >
-            Delete
-          </Button>
-        </div>
-      );
+    {
+      header: "Actions",
+      cell: (row) => {
+        const blog = row;
+        return (
+          <div className="flex gap-2">
+            <Button
+              size="sm"
+              onClick={() => {
+                setEditingBlog(blog);
+                setOpenDialog(true);
+              }}
+            >
+              Edit
+            </Button>
+            <Button
+              size="sm"
+              variant="destructive"
+              onClick={() => handleDelete(blog._id)}
+            >
+              Delete
+            </Button>
+          </div>
+        );
+      },
     },
-  },
-];
+  ];
 
   useEffect(() => {
     fetchBlogs();
@@ -160,22 +160,139 @@ export default function AdminBlogs() {
       <DataTable columns={columns} data={blogs} isLoading={loading} />
 
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>
-              {editingBlog ? "Edit Blog" : "Create Blog"}
-            </DialogTitle>
-          </DialogHeader>
-          <CommonForm
-            formControls={formElements}
-            formData={editingBlog || {}}
-            setFormData={(data) =>
-              setEditingBlog((prev) => ({ ...prev, ...data }))
-            }
-            onSubmit={() => handleSave(editingBlog)}
-            buttonText={editingBlog ? "Update Blog" : "Create Blog"}
-          />
+        <DialogContent className="w-screen h-screen max-w-none p-0 flex pr-60">
+          <div className="pl-60 flex-1 bg-white p-8 overflow-y-auto">
+            <h2 className="text-2xl font-bold mb-6">{editingBlog ? "Edit Blog" : "Create Blog"}</h2>
+
+            <div className="space-y-2">
+              {/* Title */}
+              <div>
+                <label className="block text-sm font-medium mb-1">Title</label>
+                <input
+                  type="text"
+                  className="w-full border px-3 py-2 rounded"
+                  value={editingBlog?.title || ""}
+                  onChange={(e) =>
+                    setEditingBlog((prev) => ({ ...prev, title: e.target.value }))
+                  }
+                />
+              </div>
+
+              {/* Content */}
+              <div>
+                <label className="block text-sm font-medium mb-1">Content</label>
+                <textarea
+                  rows={7}
+                  className="w-full border px-3 py-2 rounded"
+                  value={editingBlog?.content || ""}
+                  onChange={(e) =>
+                    setEditingBlog((prev) => ({ ...prev, content: e.target.value }))
+                  }
+                />
+              </div>
+
+              {/* Excerpt */}
+              <div>
+                <label className="block text-sm font-medium mb-1">Summary (Excerpt)</label>
+                <textarea
+                  rows={3}
+                  className="w-full border px-3 py-2 rounded"
+                  value={editingBlog?.summary || ""}
+                  onChange={(e) =>
+                    setEditingBlog((prev) => ({ ...prev, summary: e.target.value }))
+                  }
+                />
+              </div>
+
+              {/* SEO */}
+              <div>
+                <label className="block text-sm font-medium mb-1">Slug</label>
+                <input
+                  type="text"
+                  className="w-full border px-3 py-2 rounded"
+                  value={editingBlog?.slug || ""}
+                  onChange={(e) =>
+                    setEditingBlog((prev) => ({ ...prev, slug: e.target.value }))
+                  }
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="w-[320px] border-l p-6 pt-20 space-y-6 overflow-y-auto">
+            {/* Visibility */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Visibility</label>
+              <div className="space-y-2">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="status"
+                    value="published"
+                    checked={editingBlog?.status === "published"}
+                    onChange={(e) =>
+                      setEditingBlog((prev) => ({ ...prev, status: e.target.value }))
+                    }
+                  />
+                  <span>Visible</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="status"
+                    value="draft"
+                    checked={editingBlog?.status === "draft"}
+                    onChange={(e) =>
+                      setEditingBlog((prev) => ({ ...prev, status: e.target.value }))
+                    }
+                  />
+                  <span>Hidden</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div>
+              <label className="block text-sm font-medium mb-1">Featured Image URL</label>
+              <input
+                type="text"
+                className="w-full border px-3 py-2 rounded"
+                value={editingBlog?.image || ""}
+                onChange={(e) =>
+                  setEditingBlog((prev) => ({ ...prev, image: e.target.value }))
+                }
+              />
+              {editingBlog?.image && (
+                <img
+                  src={editingBlog.image}
+                  alt="Preview"
+                  className="mt-3 w-full rounded border"
+                />
+              )}
+            </div>
+
+            {/* Author */}
+            <div>
+              <label className="block text-sm font-medium mb-1">Author</label>
+              <input
+                type="text"
+                className="w-full border px-3 py-2 rounded"
+                value={editingBlog?.author || ""}
+                onChange={(e) =>
+                  setEditingBlog((prev) => ({ ...prev, author: e.target.value }))
+                }
+              />
+            </div>
+
+            {/* Actions */}
+            <div className="pt-4">
+              <Button className="w-full" onClick={() => handleSave(editingBlog)}>
+                {editingBlog ? "Update Blog" : "Create Blog"}
+              </Button>
+            </div>
+          </div>
         </DialogContent>
+
       </Dialog>
     </div>
   );

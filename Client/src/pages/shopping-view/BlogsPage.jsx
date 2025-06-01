@@ -6,42 +6,69 @@ export default function BlogsPage() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    console.log("📄 Fetching public blogs...");
-    axios.get(`${import.meta.env.VITE_API_URL}/api/blogs`)
-      .then((res) => {
-        console.log("✅ Blogs fetched:", res.data.data);
-        setBlogs(res.data.data || []);
-      })
-      .catch((err) => {
-        console.error("❌ Error fetching blogs:", err);
-      });
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/blogs`)
+      .then((res) => setBlogs(res.data.data || []))
+      .catch((err) => console.error("❌ Error fetching blogs:", err));
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6">Our Blog</h1>
+    <div className="max-w-7xl mx-auto px-6 py-16">
+      {/* Page Header */}
+      <div className="text-center mb-14">
+        <h1 className="text-4xl font-extrabold mb-3">Our Blog</h1>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          Explore stories, ideas, and updates from the world of parties, fun, and celebrations.
+        </p>
+      </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogs.map((blog) => (
-          <Link
-            key={blog._id}
-            to={`/shop/blogs/${blog.slug}`}
-            className="border rounded overflow-hidden hover:shadow transition bg-white"
-          >
-            {blog.image && (
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="h-48 w-full object-cover"
-              />
-            )}
-            <div className="p-4 space-y-1">
-              <h2 className="text-lg font-semibold">{blog.title}</h2>
-              <p className="text-sm text-gray-500">{blog.summary}</p>
-              <p className="text-xs text-gray-400">By {blog.author}</p>
-            </div>
-          </Link>
-        ))}
+      {/* Blog Cards Grid */}
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {blogs.map((blog) => {
+          const formattedDate = blog.createdAt
+            ? new Date(blog.createdAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+              })
+            : "";
+
+          return (
+            <Link
+              key={blog._id}
+              to={`/shop/blogs/${blog.slug}`}
+              className="bg-white group rounded-2xl overflow-hidden shadow-md hover:shadow-xl border transition-all flex flex-col"
+            >
+              {/* Blog Image */}
+              {blog.image && (
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+
+              {/* Blog Content */}
+              <div className="p-5 flex flex-col gap-2 flex-1">
+                <h2 className="text-xl font-semibold leading-snug text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
+                  {blog.title}
+                </h2>
+
+                {blog.summary && (
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {blog.summary}
+                  </p>
+                )}
+
+                <div className="text-xs text-gray-400 mt-auto pt-3">
+                  <p className="font-medium text-gray-700">By {blog.author}</p>
+                  <p>{formattedDate}</p>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

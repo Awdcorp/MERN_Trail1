@@ -14,7 +14,7 @@ const BlogSchema = new mongoose.Schema(
     metaTitle: { type: String },
     metaDescription: { type: String },
     focusKeyword: { type: String },
-
+image: { type: String },
     tags: [String],
     publishedAt: { type: Date, default: Date.now },
   },
