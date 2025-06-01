@@ -25,6 +25,8 @@ import MediaDashboard from "./pages/admin-view/media";
 import AdminUsers from "./pages/admin-view/users";
 import AdminPages from "./pages/admin-view/pages";
 import AdminMenus from "./pages/admin-view/AdminMenus";
+import AdminCupon from "./pages/admin-view/AdminCoupons";
+import CartPage from "./pages/shopping-view/cart";
 import AdminAnnouncement from "./pages/admin-view/AdminAnnouncement";
 import PageBuilder from "@/pages/admin-view/page-builder";
 import AdminImportHistory from "@/pages/admin-view/AdminImportExportHistory";
@@ -112,6 +114,7 @@ function App() {
             <Route path="orders" element={<AdminOrders />} />
             <Route path="refund/:id" element={<AdminRefund />} />
             <Route path="media" element={<MediaDashboard />} />
+            <Route path="cupon" element={<AdminCupon />} />
             <Route path="pagecontent" element={<AdminPageContent />} />
             <Route path="contact-messages" element={<AdminContactMessages />} />
             <Route path="features" element={<AdminFeatures />} />
@@ -154,6 +157,7 @@ function App() {
             <Route path="paypal-return" element={<PaypalReturnPage />} />
             <Route path="payment-success" element={<PaymentSuccessPage />} />
             <Route path="paypal-cancel" element={<PayPalCancelPage />} />
+            <Route path="cart" element={<CartPage />} />
             <Route
               path="account"
               element={

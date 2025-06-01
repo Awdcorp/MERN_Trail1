@@ -4,19 +4,35 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 export const productColumns = [
   {
-    accessorKey: "title",
-    header: "Title",
-    cell: (row) => (
-      <div className="flex items-center gap-2">
+  accessorKey: "title",
+  header: "Title",
+  cell: (row) => {
+    const createdDate = row.createdAt
+      ? new Date(row.createdAt).toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        })
+      : null;
+
+    return (
+      <div className="flex items-start gap-2">
         <img
           src={row.image || row.images?.[0] || "/placeholder.png"}
           className="w-10 h-10 object-cover rounded"
           alt="thumb"
         />
-        <span className="font-medium text-sm">{row.title}</span>
+        <div className="flex flex-col">
+          <span className="font-medium text-sm">{row.title}</span>
+          {createdDate && (
+            <span className="text-xs text-muted-foreground">{createdDate}</span>
+          )}
+        </div>
       </div>
-    ),
+    );
   },
+},
+
   {
   accessorKey: "status",
   header: "Status",

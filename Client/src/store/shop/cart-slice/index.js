@@ -1,8 +1,12 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+// ✅ Load coupon from localStorage if available
+const storedCoupon = localStorage.getItem("applied_coupon");
+
 const initialState = {
   cartItems: [],
+  appliedCoupon: storedCoupon ? JSON.parse(storedCoupon) : null,
   isLoading: false,
 };
 
@@ -71,10 +75,20 @@ export const migrateGuestCartToUser = createAsyncThunk(
     return response.data;
   }
 );
+
 const shoppingCartSlice = createSlice({
   name: "shoppingCart",
   initialState,
-  reducers: {},
+  reducers: {
+    applyCouponToCart(state, action) {
+      state.appliedCoupon = action.payload;
+      localStorage.setItem("applied_coupon", JSON.stringify(action.payload)); // ✅ persist
+    },
+    removeCouponFromCart(state) {
+      state.appliedCoupon = null;
+      localStorage.removeItem("applied_coupon"); // ✅ clear
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(addToCart.pending, (state) => {
@@ -117,13 +131,12 @@ const shoppingCartSlice = createSlice({
         state.isLoading = false;
         state.cartItems = action.payload.data?.items || [];
       })
-      // ✅ FIXED: Do not reset cartItems on failure
       .addCase(deleteCartItem.rejected, (state, action) => {
         state.isLoading = false;
         console.warn("❌ Delete failed:", action?.error?.message);
-        // Do NOT reset cartItems
       });
   },
 });
 
+export const { applyCouponToCart, removeCouponFromCart } = shoppingCartSlice.actions;
 export default shoppingCartSlice.reducer;

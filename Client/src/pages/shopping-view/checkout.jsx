@@ -3,20 +3,27 @@ import img from "../../assets/account.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import UserCartItemsContent from "@/components/shopping-view/cart-items-content";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createNewOrder } from "@/store/shop/order-slice";
-import { Navigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
 import { getGuestId } from "@/lib/guest-id";
+import { fetchCartItems } from "@/store/shop/cart-slice";
 
 function ShoppingCheckout() {
-  const { cartItems } = useSelector((state) => state.shopCart);
+  const dispatch = useDispatch();
+  const { cartItems, appliedCoupon } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
   const { approvalURL } = useSelector((state) => state.shopOrder);
   const [currentSelectedAddress, setCurrentSelectedAddress] = useState(null);
   const [isPaymentStart, setIsPaymemntStart] = useState(false);
-  const dispatch = useDispatch();
   const { toast } = useToast();
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    const guestId = getGuestId();
+    const cartId = userId || guestId;
+    if (cartId) dispatch(fetchCartItems(cartId));
+  }, [dispatch]);
 
   const totalCartAmount =
     cartItems && cartItems.length > 0
@@ -30,6 +37,17 @@ function ShoppingCheckout() {
           0
         )
       : 0;
+
+  const discount = appliedCoupon
+    ? Math.min(
+        appliedCoupon.type === "fixed"
+          ? appliedCoupon.value
+          : (totalCartAmount * appliedCoupon.value) / 100,
+        appliedCoupon.maxDiscount || Infinity
+      )
+    : 0;
+
+  const finalAmount = totalCartAmount - discount;
 
   function handleInitiatePaypalPayment() {
     if (!cartItems || cartItems.length === 0) {
@@ -52,7 +70,7 @@ function ShoppingCheckout() {
 
     const orderData = {
       userId: user?.id || guestId,
-      guestId, // ✅ Add this line
+      guestId,
       cartItems: cartItems.map((item) => ({
         productId: item?.productId,
         title: item?.title,
@@ -71,11 +89,12 @@ function ShoppingCheckout() {
       orderStatus: "pending",
       paymentMethod: "paypal",
       paymentStatus: "pending",
-      totalAmount: totalCartAmount,
+      totalAmount: finalAmount,
       orderDate: new Date(),
       orderUpdateDate: new Date(),
       paymentId: "",
       payerId: "",
+      appliedCoupon: appliedCoupon || null, // ✅ include applied coupon
     };
 
     dispatch(createNewOrder(orderData)).then((data) => {
@@ -94,7 +113,10 @@ function ShoppingCheckout() {
   return (
     <div className="flex flex-col">
       <div className="relative h-[300px] w-full overflow-hidden">
-        <img src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470944/partyworld/occasions/vifgyalvepowqaw1rtwy.png" className="h-full w-full object-cover object-center" />
+        <img
+          src="https://res.cloudinary.com/dyiupjfwp/image/upload/v1747470944/partyworld/occasions/vifgyalvepowqaw1rtwy.png"
+          className="h-full w-full object-cover object-center"
+        />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 py-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 xl:py-28 ">
@@ -120,10 +142,24 @@ function ShoppingCheckout() {
           </div>
 
           {/* 💰 Total */}
-          <div className="mt-4 space-y-4">
+          <div className="mt-4 space-y-1 text-sm">
             <div className="flex justify-between">
-              <span className="font-bold">Total</span>
-              <span className="font-bold">AED {totalCartAmount}</span>
+              <span className="font-bold">Subtotal</span>
+              <span className="font-bold">AED {totalCartAmount.toFixed(2)}</span>
+            </div>
+
+            {appliedCoupon && (
+              <div className="flex justify-between text-green-700">
+                <span>
+                  Discount ({appliedCoupon.code})
+                </span>
+                <span>- AED {discount.toFixed(2)}</span>
+              </div>
+            )}
+
+            <div className="flex justify-between font-semibold text-base">
+              <span>Total</span>
+              <span>AED {finalAmount.toFixed(2)}</span>
             </div>
           </div>
 

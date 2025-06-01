@@ -54,6 +54,11 @@ const OrderSchema = new mongoose.Schema({
       },
     ],
   },
+  coupon: {
+  type: Object,
+  default: null,
+},
+
   orderDate: Date,
   orderUpdateDate: Date,
   paymentId: String,

@@ -18,6 +18,7 @@ const createOrder = async (req, res) => {
       paymentId,
       payerId,
       cartId,
+      appliedCoupon, // ✅ NEW
     } = req.body;
 
     console.log("📦 Received createOrder request for user:", userId);
@@ -25,6 +26,7 @@ const createOrder = async (req, res) => {
     console.log("📍 addressInfo:", addressInfo);
     console.log("💳 paymentMethod:", paymentMethod, "| status:", paymentStatus);
     console.log("📅 orderDate:", orderDate);
+    if (appliedCoupon) console.log("🎟️ appliedCoupon:", appliedCoupon);
 
     if (!Array.isArray(cartItems) || cartItems.length === 0) {
       console.warn("❌ cartItems missing or empty");
@@ -95,6 +97,7 @@ const createOrder = async (req, res) => {
         orderUpdateDate,
         paymentId,
         payerId,
+        appliedCoupon: appliedCoupon || null, // ✅ NEW: saved to DB
       });
 
       await newlyCreatedOrder.save();

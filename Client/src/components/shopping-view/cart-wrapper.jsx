@@ -55,6 +55,27 @@ function UserCartWrapper({ setOpenCartSheet }) {
           <span className="font-bold">AED {totalCartAmount}</span>
         </div>
       </div>
+{/* New Buttons for Cart Page Access */}
+<div className="flex flex-col gap-2 mt-4">
+  <Button
+    variant="outline"
+    onClick={() => {
+      navigate("/shop/cart");
+      setOpenCartSheet(false);
+    }}
+  >
+    Apply Coupon
+  </Button>
+  <Button
+    variant="secondary"
+    onClick={() => {
+      navigate("/shop/cart");
+      setOpenCartSheet(false);
+    }}
+  >
+    View Full Cart
+  </Button>
+</div>
 
       <Button
         onClick={() => {

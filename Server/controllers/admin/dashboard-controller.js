@@ -5,29 +5,66 @@ const Product = require("../../models/Product");
 const User = require("../../models/User");
 
 // GET /api/admin/dashboard-stats
+// GET /api/admin/dashboard-stats
 exports.getDashboardStats = async (req, res) => {
   try {
     const totalOrders = await Order.countDocuments();
-    console.log("📊 Total Paid Orders:", totalOrders);
-
     const totalSalesAgg = await Order.aggregate([
       { $group: { _id: null, total: { $sum: "$totalAmount" } } },
     ]);
     const totalSales = totalSalesAgg[0]?.total || 0;
-    console.log("💰 Total Sales:", totalSales);
 
     const totalProducts = await Product.countDocuments();
-    console.log("📦 Total Products:", totalProducts);
-
     const totalUsers = await User.countDocuments();
-    console.log("👥 Total Users:", totalUsers);
 
-    res.json({ totalOrders, sales: totalSales, products: totalProducts, users: totalUsers });
+    // Orders by status
+    const pendingOrders = await Order.countDocuments({ status: "pending" });
+    const completedOrders = await Order.countDocuments({ status: "completed" });
+    const refundOrders = await Order.countDocuments({ status: "refunded" });
+
+    // Products by status
+    const activeProducts = await Product.countDocuments({ isActive: true });
+    const draftProducts = await Product.countDocuments({ isActive: false });
+    const lowStockProducts = await Product.countDocuments({ totalStock: { $lte: 5 } });
+
+    // Users created in the last 7 days
+    const oneWeekAgo = new Date();
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+    const newUsersThisWeek = await User.countDocuments({ createdAt: { $gte: oneWeekAgo } });
+
+    // Derived metrics
+    const avgOrderValue = totalOrders > 0 ? (totalSales / totalOrders).toFixed(2) : 0;
+    const refundRate = totalOrders > 0 ? ((refundOrders / totalOrders) * 100).toFixed(2) : 0;
+
+    res.json({
+      totalOrders,
+      sales: totalSales,
+      products: totalProducts,
+      users: totalUsers,
+
+      // Order status counts
+      pendingOrders,
+      completedOrders,
+      refundOrders,
+
+      // Product status counts
+      activeProducts,
+      draftProducts,
+      lowStockProducts,
+
+      // User metrics
+      newUsersThisWeek,
+
+      // Performance metrics
+      avgOrderValue,
+      refundRate,
+    });
   } catch (err) {
     console.error("/dashboard-stats error:", err);
     res.status(500).json({ error: "Failed to fetch dashboard stats" });
   }
 };
+
 
 // GET /api/admin/sales-chart
 exports.getSalesChartData = async (req, res) => {
