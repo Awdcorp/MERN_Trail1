@@ -1,18 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import axios from "axios";
 
 export default function ContactUs() {
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  const [pageContent, setPageContent] = useState({});
   const [loading, setLoading] = useState(false);
+
+useEffect(() => {
+  axios
+    .get(`${import.meta.env.VITE_API_URL}/api/page-content/contact`, { withCredentials: true })
+    .then((res) => {
+      setPageContent(res.data?.data?.fields || {});
+    });
+}, []);
+
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,7 +38,6 @@ export default function ContactUs() {
       return;
     }
 
-    // You can later send this to backend or email API
     setLoading(true);
     setTimeout(() => {
       toast({ title: "Message sent!", description: "We’ll get back to you shortly." });
@@ -71,16 +82,15 @@ export default function ContactUs() {
         <div className="space-y-4 text-sm text-gray-600">
           <div>
             <p className="font-semibold text-[#1f2937]">Email</p>
-            <p>info@alrahmaniamobile.com</p>
+            <p>{pageContent.email || "info@yourdomain.com"}</p>
           </div>
           <div>
             <p className="font-semibold text-[#1f2937]">Phone</p>
-            <p>+971 56 747 4593</p>
-            <p>+971 56 907 4775</p>
+            <p>{pageContent.phone || "+971 XXX XXX XXX"}</p>
           </div>
           <div>
             <p className="font-semibold text-[#1f2937]">Address</p>
-            <p>Al Rahmania Mobile Store, Dubai, UAE</p>
+            <p>{pageContent.address || "Your company address here"}</p>
           </div>
         </div>
       </div>

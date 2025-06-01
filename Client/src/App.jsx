@@ -17,6 +17,7 @@ import AdminProductEdit from "./pages/admin-view/product-edit";
 import AdminOrders from "./pages/admin-view/orders";
 import AdminRefund from "./pages/admin-view/RefundDetails";
 import AdminFeatures from "./pages/admin-view/features";
+import AdminPageContent from "./pages/admin-view/page-content";
 import AdminHomepage from "./pages/admin-view/homepage";
 import AdminCategories from "./pages/admin-view/category";
 import AdminCollections from "./pages/admin-view/AdminCollections";
@@ -109,6 +110,7 @@ function App() {
             <Route path="orders" element={<AdminOrders />} />
             <Route path="refund/:id" element={<AdminRefund />} />
             <Route path="media" element={<MediaDashboard />} />
+            <Route path="pagecontent" element={<AdminPageContent />} />
             <Route path="features" element={<AdminFeatures />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="pages" element={<AdminPages />} />
