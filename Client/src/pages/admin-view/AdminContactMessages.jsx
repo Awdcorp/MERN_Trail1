@@ -4,11 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
+import { Card } from "@/components/ui/card";
 
 export default function AdminContactMessages() {
   const [messages, setMessages] = useState([]);
   const [settings, setSettings] = useState({});
+  const [tab, setTab] = useState("messages");
   const { toast } = useToast();
 
   const fetchMessages = async () => {
@@ -68,75 +71,95 @@ export default function AdminContactMessages() {
   const updateSetting = (key, value) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
   };
+return (
+  <div className="p-6 flex justify-center">
+    <div className="w-full max-w-4xl">
+      <h2 className="text-2xl font-semibold mb-4">Contact Form</h2>
 
-  return (
-    <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-4">Contact Form Submissions</h2>
+      <Tabs value={tab} onValueChange={setTab} className="w-full">
+        <TabsList className="mb-4">
+          <TabsTrigger value="messages">Messages</TabsTrigger>
+          <TabsTrigger value="settings">Form Settings</TabsTrigger>
+        </TabsList>
 
-      <div className="space-y-4 mb-8">
-        {messages.map((msg) => (
-          <div
-            key={msg._id}
-            className="border rounded-md p-4 flex justify-between items-start bg-white shadow-sm"
-          >
-            <div>
-              <p className="text-sm text-muted-foreground">{new Date(msg.createdAt).toLocaleString()}</p>
-              <p className="font-semibold">{msg.name} ({msg.email})</p>
-              <p className="mt-1 text-sm">{msg.message}</p>
-            </div>
-            <div className="flex flex-col gap-2 items-end">
-              {!msg.read && (
-                <Button size="sm" variant="outline" onClick={() => handleMarkAsRead(msg._id)}>
-                  Mark as Read
-                </Button>
-              )}
-              <Button size="sm" variant="destructive" onClick={() => handleDelete(msg._id)}>
-                Delete
-              </Button>
-            </div>
+        <TabsContent value="messages">
+          <div className="space-y-4 mb-8">
+            {messages.map((msg) => (
+              <div
+                key={msg._id}
+                className="border rounded-md p-4 flex justify-between items-start bg-white shadow-sm"
+              >
+                <div>
+                  <p className="text-sm text-muted-foreground">{new Date(msg.createdAt).toLocaleString()}</p>
+                  <p className="font-semibold">{msg.name} ({msg.email})</p>
+                  <p className="mt-1 text-sm">{msg.message}</p>
+                </div>
+                <div className="flex flex-col gap-2 items-end">
+                  {!msg.read && (
+                    <Button size="sm" variant="outline" onClick={() => handleMarkAsRead(msg._id)}>
+                      Mark as Read
+                    </Button>
+                  )}
+                  <Button size="sm" variant="destructive" onClick={() => handleDelete(msg._id)}>
+                    Delete
+                  </Button>
+                </div>
+              </div>
+            ))}
+            {messages.length === 0 && <p className="text-muted-foreground">No messages received yet.</p>}
           </div>
-        ))}
-        {messages.length === 0 && <p className="text-muted-foreground">No messages received yet.</p>}
-      </div>
+        </TabsContent>
 
-      <h3 className="text-xl font-semibold mb-2">Form Settings</h3>
-      <div className="space-y-4 max-w-xl">
-        <div className="flex items-center justify-between">
-          <label className="text-sm font-medium">Send Email on Submission</label>
-          <Switch
-            checked={settings.sendEmail || false}
-            onCheckedChange={(val) => updateSetting("sendEmail", val)}
-          />
-        </div>
+        <TabsContent value="settings">
+          <Card className="p-6 max-w-4xl w-full space-y-6">
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium">Send Email on Submission</label>
+              <Switch
+                checked={settings.sendEmail || false}
+                onCheckedChange={(val) => updateSetting("sendEmail", val)}
+              />
+            </div>
 
-        <Input
-          placeholder="Notification Email"
-          value={settings.notificationEmail || ""}
-          onChange={(e) => updateSetting("notificationEmail", e.target.value)}
-        />
+            <div>
+              <label className="text-sm font-medium">Notification Email</label>
+              <Input
+                value={settings.notificationEmail || ""}
+                onChange={(e) => updateSetting("notificationEmail", e.target.value)}
+              />
+            </div>
 
-        <Textarea
-          placeholder="Auto-reply Message"
-          value={settings.autoReplyText || ""}
-          onChange={(e) => updateSetting("autoReplyText", e.target.value)}
-        />
+            <div>
+              <label className="text-sm font-medium">Auto-reply Message</label>
+              <Textarea
+                value={settings.autoReplyText || ""}
+                onChange={(e) => updateSetting("autoReplyText", e.target.value)}
+              />
+            </div>
 
-        <Textarea
-          placeholder="Success Text on UI"
-          value={settings.successText || ""}
-          onChange={(e) => updateSetting("successText", e.target.value)}
-        />
+            <div>
+              <label className="text-sm font-medium">Success Text on UI</label>
+              <Textarea
+                value={settings.successText || ""}
+                onChange={(e) => updateSetting("successText", e.target.value)}
+              />
+            </div>
 
-        <div className="flex items-center justify-between">
-          <label className="text-sm font-medium">Enable CAPTCHA</label>
-          <Switch
-            checked={settings.enableCaptcha || false}
-            onCheckedChange={(val) => updateSetting("enableCaptcha", val)}
-          />
-        </div>
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium">Enable CAPTCHA</label>
+              <Switch
+                checked={settings.enableCaptcha || false}
+                onCheckedChange={(val) => updateSetting("enableCaptcha", val)}
+              />
+            </div>
 
-        <Button onClick={saveSettings}>Save Settings</Button>
-      </div>
+            <div className="flex justify-end">
+              <Button onClick={saveSettings}>Save Settings</Button>
+            </div>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
-  );
+  </div>
+);
+
 }
