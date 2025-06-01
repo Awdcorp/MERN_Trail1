@@ -8,10 +8,13 @@ export default function CategoryMultiSelector({ value = [], onChange }) {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios.get(`/api/categories`).then((res) => {
-      setAllCategories(res.data || []);
+  axios
+    .get(`${import.meta.env.VITE_API_URL}/api/categories`)
+    .then((res) => {
+      setAllCategories(res.data  || []);
     });
-  }, []);
+}, []);
+
 
   const filtered = allCategories.filter((cat) =>
     cat.name.toLowerCase().includes(search.toLowerCase())

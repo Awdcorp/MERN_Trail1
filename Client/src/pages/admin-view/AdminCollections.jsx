@@ -87,7 +87,13 @@ export default function AdminCollections() {
   }
 
   setEditId(row._id);
-  setFormData({ ...row, items: populatedItems });
+  setFormData({
+  ...row,
+  items:
+    row.type === "category"
+      ? populatedItems.map((c) => c?._id).filter(Boolean)
+      : populatedItems,
+});
   setFormOpen(true);
 };
 
