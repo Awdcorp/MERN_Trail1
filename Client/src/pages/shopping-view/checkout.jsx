@@ -3,11 +3,13 @@ import img from "../../assets/account.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import UserCartItemsContent from "@/components/shopping-view/cart-items-content";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
 import { createNewOrder } from "@/store/shop/order-slice";
 import { useToast } from "@/components/ui/use-toast";
 import { getGuestId } from "@/lib/guest-id";
-import { fetchCartItems } from "@/store/shop/cart-slice";
+import { fetchCartItems, applyCouponToCart, removeCouponFromCart } from "@/store/shop/cart-slice";
+import axios from "axios";
 
 function ShoppingCheckout() {
   const dispatch = useDispatch();
@@ -16,6 +18,7 @@ function ShoppingCheckout() {
   const { approvalURL } = useSelector((state) => state.shopOrder);
   const [currentSelectedAddress, setCurrentSelectedAddress] = useState(null);
   const [isPaymentStart, setIsPaymemntStart] = useState(false);
+  const [couponCode, setCouponCode] = useState("");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -25,18 +28,11 @@ function ShoppingCheckout() {
     if (cartId) dispatch(fetchCartItems(cartId));
   }, [dispatch]);
 
-  const totalCartAmount =
-    cartItems && cartItems.length > 0
-      ? cartItems.reduce(
-          (sum, currentItem) =>
-            sum +
-            (currentItem?.salePrice > 0
-              ? currentItem?.salePrice
-              : currentItem?.price) *
-              currentItem?.quantity,
-          0
-        )
-      : 0;
+  const totalCartAmount = cartItems?.reduce(
+    (sum, item) =>
+      sum + (item?.salePrice > 0 ? item?.salePrice : item?.price) * item?.quantity,
+    0
+  ) || 0;
 
   const discount = appliedCoupon
     ? Math.min(
@@ -49,20 +45,37 @@ function ShoppingCheckout() {
 
   const finalAmount = totalCartAmount - discount;
 
+  const handleApplyCoupon = async () => {
+    try {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/coupons/validate`, {
+        code: couponCode,
+        amount: totalCartAmount,
+      });
+      if (res.data.success) {
+        dispatch(applyCouponToCart(res.data.data));
+        toast({ title: "Coupon applied successfully" });
+        setCouponCode("");
+      } else {
+        toast({ title: res.data.message || "Invalid coupon", variant: "destructive" });
+      }
+    } catch (err) {
+      toast({ title: "Failed to apply coupon", variant: "destructive" });
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    dispatch(removeCouponFromCart());
+    toast({ title: "Coupon removed" });
+  };
+
   function handleInitiatePaypalPayment() {
     if (!cartItems || cartItems.length === 0) {
-      toast({
-        title: "Your cart is empty. Please add items to proceed",
-        variant: "destructive",
-      });
+      toast({ title: "Your cart is empty. Please add items to proceed", variant: "destructive" });
       return;
     }
 
     if (currentSelectedAddress === null) {
-      toast({
-        title: "Please select one address to proceed.",
-        variant: "destructive",
-      });
+      toast({ title: "Please select one address to proceed.", variant: "destructive" });
       return;
     }
 
@@ -94,7 +107,7 @@ function ShoppingCheckout() {
       orderUpdateDate: new Date(),
       paymentId: "",
       payerId: "",
-      appliedCoupon: appliedCoupon || null, // ✅ include applied coupon
+      appliedCoupon: appliedCoupon || null,
     };
 
     dispatch(createNewOrder(orderData)).then((data) => {
@@ -120,17 +133,14 @@ function ShoppingCheckout() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 py-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 xl:py-28 ">
-        {/* Address Selection */}
         <Address
           selectedId={currentSelectedAddress}
           setCurrentSelectedAddress={setCurrentSelectedAddress}
         />
 
-        {/* Right Section: Products + Payment */}
         <div className="flex flex-col gap-4 lg:pl-12">
-          {/* 🛒 Scrollable Cart Items */}
           <div className="flex flex-col gap-4 max-h-[60vh] overflow-y-auto pr-2">
-            {cartItems && cartItems.length > 0 ? (
+            {cartItems?.length > 0 ? (
               cartItems.map((item) => (
                 <UserCartItemsContent key={item.productId} cartItem={item} />
               ))
@@ -141,7 +151,26 @@ function ShoppingCheckout() {
             )}
           </div>
 
-          {/* 💰 Total */}
+          {!appliedCoupon ? (
+            <div className="flex gap-2">
+              <Input
+                placeholder="Enter coupon"
+                value={couponCode}
+                onChange={(e) => setCouponCode(e.target.value)}
+              />
+              <Button onClick={handleApplyCoupon}>Apply</Button>
+            </div>
+          ) : (
+            <div className="flex justify-between items-center bg-green-50 px-3 py-2 rounded border border-green-200">
+              <span className="text-green-700 text-sm font-medium">
+                ✅ Coupon <strong>{appliedCoupon.code}</strong> applied
+              </span>
+              <Button size="sm" variant="ghost" onClick={handleRemoveCoupon}>
+                Remove
+              </Button>
+            </div>
+          )}
+
           <div className="mt-4 space-y-1 text-sm">
             <div className="flex justify-between">
               <span className="font-bold">Subtotal</span>
@@ -163,7 +192,6 @@ function ShoppingCheckout() {
             </div>
           </div>
 
-          {/* 💳 Checkout */}
           <div className="mt-2 w-full flex justify-end">
             <Button
               onClick={handleInitiatePaypalPayment}
