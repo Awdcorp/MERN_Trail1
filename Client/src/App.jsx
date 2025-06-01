@@ -30,6 +30,8 @@ import PageBuilder from "@/pages/admin-view/page-builder";
 import AdminImportHistory from "@/pages/admin-view/AdminImportExportHistory";
 import AdminSEOSettingsPage from "./pages/admin-view/settings";
 import BannerControlPage from "./pages/admin-view/banner-control";
+import AboutPage from "@/pages/shopping-view/about";
+import PrivacyPolicyPage from "@/pages/shopping-view/privacy-policy";
 
 import ShoppingLayout from "./components/shopping-view/layout";
 import ShoppingHome from "./pages/shopping-view/home";
@@ -144,6 +146,9 @@ function App() {
             <Route path="search" element={<SearchProducts />} />
             <Route path="checkout" element={<ShoppingCheckout />} />
             <Route path="contact" element={<ContactUs />} />
+            <Route path="about" element={<AboutPage />} />
+<Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+
             <Route path="terms" element={<TermsAndConditions />} />
             <Route path="paypal-return" element={<PaypalReturnPage />} />
             <Route path="payment-success" element={<PaymentSuccessPage />} />
