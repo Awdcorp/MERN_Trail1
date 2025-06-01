@@ -25,7 +25,7 @@ export default function BlogsPage() {
         {blogs.map((blog) => (
           <Link
             key={blog._id}
-            to={`/blogs/${blog.slug}`}
+            to={`/shop/blogs/${blog.slug}`}
             className="border rounded overflow-hidden hover:shadow transition bg-white"
           >
             {blog.image && (
