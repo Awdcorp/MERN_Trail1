@@ -515,6 +515,20 @@ const countProductsForExport = async (req, res) => {
   }
 };
 
+// GET /api/products/search-bulk?ids=123,456,789
+const searchProductsByIds = async (req, res) => {
+  try {
+    const ids = req.query.ids?.split(",") || [];
+    const objectIds = ids.map((id) => new mongoose.Types.ObjectId(id));
+
+    const products = await Product.find({ _id: { $in: objectIds } }).select("_id title price slug");
+
+    return res.status(200).json({ success: true, data: products });
+  } catch (e) {
+    console.error("❌ searchProductsByIds error:", e);
+    res.status(500).json({ success: false, message: "Failed to fetch products" });
+  }
+};
 
 module.exports = {
   handleImageUpload,
@@ -533,4 +547,5 @@ module.exports = {
   previewCSVHeaders,
   countProductsForExport,
   getExportLogs,   // ✅ new
+  searchProductsByIds,
 };

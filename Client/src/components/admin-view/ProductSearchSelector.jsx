@@ -1,42 +1,80 @@
 // File: Client/src/components/admin-view/ProductSearchSelector.jsx
-
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { GripVertical, X } from "lucide-react";
 import axios from "axios";
+import { useToast } from "@/components/ui/use-toast";
+import { cn } from "@/lib/utils";
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import { arrayMove, SortableContext, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
+
+function DraggableItem({ item, index, onRemove }) {
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item._id });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="flex items-center justify-between border rounded px-2 py-1 bg-white"
+      {...attributes}
+    >
+      <div className="flex items-center gap-2">
+        <GripVertical className="w-4 h-4 cursor-move" {...listeners} />
+        <div className="text-sm">{item.title || "Untitled"} {item.price ? `– AED ${item.price}` : ""}</div>
+      </div>
+      <button onClick={() => onRemove(index)}>
+        <X className="w-4 h-4 text-red-500" />
+      </button>
+    </div>
+  );
+}
 
 export default function ProductSearchSelector({ value = [], onChange }) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const { toast } = useToast();
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     const delay = setTimeout(() => {
-      if (searchQuery.length > 1) {
-        console.log("🔍 Searching:", searchQuery);
+      if (query.length > 1) {
         axios
-          .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${searchQuery}`)
+          .get(`${import.meta.env.VITE_API_URL}/api/products/search?query=${query}`)
           .then((res) => {
-            console.log("✅ Results:", res.data);
-            if (res.data?.success) setSearchResults(res.data.data);
-          })
-          .catch((err) => {
-            console.error("❌ Failed search:", err);
+            if (res.data?.success) setResults(res.data.data);
           });
       } else {
-        setSearchResults([]);
+        setResults([]);
       }
     }, 300);
     return () => clearTimeout(delay);
-  }, [searchQuery]);
+  }, [query]);
 
   const handleAdd = (product) => {
-    if (!value.includes(product._id)) {
-      onChange([...value, product._id]);
-      setSearchQuery("");
-      setSearchResults([]);
+    if (value.some((p) => p._id === product._id)) {
+      toast({ title: "Already added" });
+      return;
     }
+    onChange([...value, product]);
+    setQuery("");
+    setResults([]);
   };
 
-  const handleRemove = (id) => {
-    onChange(value.filter((v) => v !== id));
+  const handleRemove = (index) => {
+    onChange(value.filter((_, i) => i !== index));
+  };
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+    if (active.id !== over.id) {
+      const oldIndex = value.findIndex((p) => p._id === active.id);
+      const newIndex = value.findIndex((p) => p._id === over.id);
+      onChange(arrayMove(value, oldIndex, newIndex));
+    }
   };
 
   return (
@@ -44,45 +82,33 @@ export default function ProductSearchSelector({ value = [], onChange }) {
       <input
         type="text"
         placeholder="Search products..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full border rounded px-3 py-2"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="w-full border rounded px-2 py-1"
       />
-
-      {searchResults.length > 0 && (
-        <ul className="border rounded bg-white divide-y max-h-48 overflow-y-auto">
-          {searchResults.map((p) => (
+      {results.length > 0 && (
+        <ul className="border bg-white rounded divide-y">
+          {results.map((p) => (
             <li
               key={p._id}
-              onClick={() => handleAdd(p)}
               className="p-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleAdd(p)}
             >
-              {p.title} – AED {p.price}
+              {p.title} {p.price ? `– AED ${p.price}` : ""}
             </li>
           ))}
         </ul>
       )}
 
-      <div className="flex flex-wrap gap-2">
-        {value.map((id) => {
-          const p = searchResults.find((p) => p._id === id) || {};
-          return (
-            <div
-              key={id}
-              className="bg-gray-100 px-3 py-1 rounded-full flex items-center gap-2"
-            >
-              <span>{p.title || id}</span>
-              <button
-                type="button"
-                onClick={() => handleRemove(id)}
-                className="text-red-600 hover:text-red-800"
-              >
-                ×
-              </button>
-            </div>
-          );
-        })}
-      </div>
+      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis]}>
+        <SortableContext items={value.map((item) => item._id)} strategy={verticalListSortingStrategy}>
+          <div className="space-y-2">
+            {value.map((item, idx) => (
+              <DraggableItem key={item._id} item={item} index={idx} onRemove={handleRemove} />
+            ))}
+          </div>
+        </SortableContext>
+      </DndContext>
     </div>
   );
 }

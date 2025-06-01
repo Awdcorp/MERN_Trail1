@@ -52,11 +52,46 @@ export default function AdminCollections() {
       });
   };
 
-  const handleEdit = (row) => {
-    setEditId(row._id);
-    setFormData(row);
-    setFormOpen(true);
-  };
+  const handleEdit = async (row) => {
+  let populatedItems = [];
+
+  if (row.items?.length && row.type === "product") {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/admin/products/search-bulk?ids=${row.items.join(",")}`
+      );
+      const unordered = data.data || [];
+
+      // 🧠 Preserve original order of row.items by re-mapping
+      populatedItems = row.items.map((id) =>
+        unordered.find((p) => p._id === id)
+      );
+    } catch (err) {
+      console.error("Failed to load product details", err);
+      toast({ title: "Error loading product details", variant: "destructive" });
+    }
+  } else if (row.items?.length && row.type === "category") {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/categories?ids=${row.items.join(",")}`
+      );
+      const unordered = data || [];
+
+      // 🧠 Reorder categories to match saved order
+      populatedItems = row.items.map((id) =>
+        unordered.find((c) => c._id === id)
+      );
+    } catch (err) {
+      console.error("Failed to load categories", err);
+    }
+  }
+
+  setEditId(row._id);
+  setFormData({ ...row, items: populatedItems });
+  setFormOpen(true);
+};
+
+
 
   const handleDelete = (id) => {
     axios

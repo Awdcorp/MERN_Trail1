@@ -15,6 +15,7 @@ const {
   revertImportByLogId,
   countProductsForExport,
   previewCSVHeaders,
+  searchProductsByIds,
 } = require("../../controllers/admin/products-controller");
 
 const { upload } = require("../../helpers/cloudinary");
@@ -38,6 +39,7 @@ router.get("/export/count", countProductsForExport);
 router.post("/preview-csv", uploadCSV.single("file"), previewCSVHeaders);
 router.get("/export", exportProductsToCSV);
 router.post("/import", uploadCSV.single("file"), importProductsFromCSV);
+router.get("/search-bulk", searchProductsByIds);
 
 // ⛔️ This must always be last to avoid overriding static paths
 router.get("/:id", getProductById);
