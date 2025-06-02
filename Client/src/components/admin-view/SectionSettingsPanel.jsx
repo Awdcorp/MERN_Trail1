@@ -9,8 +9,14 @@ export default function SectionSettingsPanel({ block, onSave, onCancel, onLiveUp
   const [formData, setFormData] = useState({});
 
   useEffect(() => {
-    setFormData(block?.data || {});
-  }, [block]);
+  setTimeout(() => {
+    const el = document.activeElement;
+    if (el?.tagName === "INPUT" || el?.tagName === "TEXTAREA") {
+      el.scrollIntoView({ behavior: "instant", block: "nearest" });
+    }
+  }, 0);
+}, [block]);
+
 
   if (!block) return null;
 

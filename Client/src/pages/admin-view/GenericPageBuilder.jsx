@@ -172,11 +172,24 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
 
     const saveBlocks = async () => {
   const payload = {
-    blocks: canvasBlocks.map((b) => ({ type: b.type, data: b.data || {} })),
+    sections: canvasBlocks.map((b) => ({
+      type: b.type,
+      data: b.data || {},
+    })),
   };
-  await axios.put(saveUrl, payload);
-  alert("Layout saved ✅");
+
+  console.log("💾 Saving to:", saveUrl);
+  console.log("📦 Payload:", payload);
+
+  try {
+    await axios.put(saveUrl, payload); // ✅ your backend expects PUT
+    alert("Layout saved ✅");
+  } catch (err) {
+    console.error("❌ Save failed:", err);
+    alert("Failed to save layout ❌");
+  }
 };
+
 
 
     useEffect(() => {
@@ -314,19 +327,35 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
         );
 
     };
+const EmptyDropZone = ({ onDropAt }) => {
+  const [{ isOver, canDrop }, drop] = useDrop({
+    accept: ItemTypes.BLOCK,
+    canDrop: (item) => item.fromPalette,
+    drop: (item) => {
+      onDropAt(item, 0); // Insert at the start
+      item.fromPalette = false;
+    },
+    collect: (monitor) => ({
+      isOver: monitor.isOver({ shallow: true }),
+      canDrop: monitor.canDrop(),
+    }),
+  });
+
+  return (
+    <div
+      ref={drop}
+      className={`flex items-center justify-center h-96 border-2 border-dashed rounded-lg m-8 transition 
+        ${isOver && canDrop ? "border-indigo-400 bg-indigo-50" : "border-gray-400 text-gray-400"}`}
+    >
+      Drag a block here to start building your layout
+    </div>
+  );
+};
 
 
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="flex min-h-screen relative">
-                {!showSidebar && (
-                    <button
-                        className="fixed top-4 right-4 z-[100] p-2 rounded-full shadow bg-gray-800 text-white hover:bg-gray-700"
-                        onClick={() => setShowSidebar(true)}
-                    >
-                        <Settings size={18} />
-                    </button>
-                )}
 
                 <aside className="w-72 h-screen bg-[#393E46] flex flex-col sticky top-0">
                     <div className="flex-1 overflow-y-auto p-4 scrollbar-hidden">
@@ -388,14 +417,14 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
 
                 </aside>
 
-                <main className={`flex-1 overflow-auto bg-[#393E46] pt-4 transition-all duration-300 ${showSidebar ? "mr-[320px]" : ""}`}>
+                <main className="flex-1 overflow-auto bg-[#393E46] pt-4 transition-all duration-300">
+
                     {loading ? (
                         <p className="text-gray-500 text-sm text-center py-12">Loading...</p>
                     ) : canvasBlocks.length === 0 ? (
-                        <div className="flex items-center justify-center h-96 border-2 border-dashed rounded-lg m-8 text-gray-400">
-                            Drag a block here to start building your layout
-                        </div>
-                    ) : (
+  <EmptyDropZone onDropAt={handleDropAt} />
+)
+ : (
                         canvasBlocks.map((block, index) => (
                             <ReorderableCanvasBlock
                                 key={block.key}
@@ -410,37 +439,24 @@ export default function GenericPageBuilder({ fetchUrl, saveUrl, slug = null }) {
                     )}
                 </main>
 
-                <aside
-                    className={`fixed top-0 right-0 h-full w-[320px] bg-white border-l z-50 p-6 shadow-xl transition-transform duration-300 ${showSidebar ? "translate-x-0" : "translate-x-full"
-                        }`}
-                >
-                    <button
-                        className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"
-                        onClick={() => {
-                            setShowSidebar(false);
-                            setEditingBlock(null);
-                        }}
-                    >
-                        ×
-                    </button>
+                <aside className="fixed top-0 right-0 h-full w-[320px] bg-white border-l z-50 p-6 shadow-xl">
+  {editingBlock ? (
+    <>
+      <h2 className="text-lg font-semibold mb-4">Edit Block: {editingBlock.type}</h2>
+      <SectionSettingsPanel
+        block={editingBlock}
+        onSave={(data) => handleSaveBlock(editingBlock.key, data)}
+        onLiveUpdate={(data) => handleLiveUpdate(editingBlock.key, data)}
+        onCancel={() => {
+          setEditingBlock(null);
+        }}
+      />
+    </>
+  ) : (
+    <p className="text-sm text-gray-500 mt-20">No block selected.</p>
+  )}
+</aside>
 
-                    {editingBlock ? (
-                        <>
-                            <h2 className="text-lg font-semibold mb-4">Edit Block: {editingBlock.type}</h2>
-                            <SectionSettingsPanel
-                                block={editingBlock}
-                                onSave={(data) => handleSaveBlock(editingBlock.key, data)}
-                                onLiveUpdate={(data) => handleLiveUpdate(editingBlock.key, data)}
-                                onCancel={() => {
-                                    setEditingBlock(null);
-                                    setShowSidebar(false);
-                                }}
-                            />
-                        </>
-                    ) : (
-                        <p className="text-sm text-gray-500 mt-20">No block selected.</p>
-                    )}
-                </aside>
             </div>
             {showPreview && (
                 <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
