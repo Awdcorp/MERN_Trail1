@@ -167,7 +167,6 @@ export default function AdminMenus() {
               <SortableItem id={child.id}>
                 <div className="flex gap-2 items-center">
                   <span className="cursor-grab">
-                    <GripVertical className="w-3 h-3 text-gray-500" />
                   </span>
                   {child.children?.length > 0 && (
                     <button onClick={() => toggleCollapse(child.id)} className="mt-0.5">
@@ -294,7 +293,6 @@ export default function AdminMenus() {
                   <SortableItem id={item.id}>
                     <div className="flex gap-2 items-center">
                       <span className="cursor-grab">
-                        <GripVertical className="w-3 h-3 text-gray-500" />
                       </span>
                       {item.children?.length > 0 && (
                         <button onClick={() => toggleCollapse(item.id)} className="mt-0.5">
