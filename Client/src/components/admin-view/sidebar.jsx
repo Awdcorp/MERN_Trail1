@@ -10,6 +10,10 @@ import {
   Menu,
   LogOut,
   Brush,
+  ShoppingBag,
+  FileStack,
+  FileSignature,
+  AppWindow ,
 } from "lucide-react";
 import { Fragment, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -88,6 +92,12 @@ const adminSidebarMenuItems = [
     icon: <Users />,
   },
   {
+    id: "cms",
+    label: "CMS",
+    path: "/admin/pagecontent",
+    icon: <AppWindow  />,
+  },
+  {
     id: "pages",
     label: "Appearance",
     path: "/admin/pages",
@@ -99,16 +109,54 @@ const adminSidebarMenuItems = [
         path: "/admin/pages",
       },
       {
-        id: "blogs",
-        label: "Blogs",
-        path: "/admin/blogs",
-      },
-      {
         id: "Announcement",
         label: "Announcement Bar",
         path: "/admin/announcement",
       },
     ],
+  },
+  {
+    id: "shop",
+    label: "Shop",
+    path: "/admin/collections",
+    icon: <ShoppingBag />,
+    children: [
+      {
+        id: "collections",
+        label: "Collections",
+        path: "/admin/collections",
+      },
+      {
+        id: "cupon",
+        label: "Discounts",
+        path: "/admin/cupon",
+      },
+    ],
+  },
+  {
+    id: "blogs",
+    label: "Blogs",
+    path: "/admin/blogs",
+    icon: <FileStack />,
+    children: [
+      {
+        id: "all-blogs",
+        label: "Blogs",
+        path: "/admin/blogs",
+      },
+      {
+        id: "categories",
+        label: "Categories",
+        path: "/admin/category",
+      },
+    ],
+  },
+  
+  {
+    id: "forms",
+    label: "Forms",
+    path: "/admin/contact-messages",
+    icon: <FileSignature />,
   },
 ];
 
@@ -206,9 +254,14 @@ export default function Sidebar() {
   const dispatch = useDispatch();
 
   return (
-    <div className="p-4 flex flex-col h-full">
-      <MenuItems />
-      <div className="mt-auto pt-4">
+    <div className="p-4 h-screen flex flex-col">
+      {/* Make the scrollable content wrapper take all vertical space except logout */}
+      <div className="flex-1 overflow-y-auto pr-1 scrollbar-hide">
+        <MenuItems />
+      </div>
+
+      {/* Keep logout button fixed at bottom */}
+      <div className="pt-4">
         <div
           onClick={() => dispatch(logoutUser())}
           className="bg-[#393E46] cursor-pointer text-white hover:text-red-500 flex gap-2 items-center px-3 py-2 rounded-md hover:bg-muted"
@@ -220,3 +273,4 @@ export default function Sidebar() {
     </div>
   );
 }
+

@@ -59,18 +59,14 @@ function AdminDashboard() {
         <StatCard title="Pending Orders" value={stats.pendingOrders} Icon={ShoppingCart} />
         <StatCard title="Completed Orders" value={stats.completedOrders} Icon={ShoppingCart} />
         <StatCard title="Refunded Orders" value={stats.refundOrders} Icon={ShoppingCart} />
+        <StatCard title="Active Products" value={stats.activeProducts} Icon={Boxes} />
       </div>
 
       {/* Product Status Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard title="Active Products" value={stats.activeProducts} Icon={Boxes} />
+        
         <StatCard title="Draft Products" value={stats.draftProducts} Icon={Boxes} />
         <StatCard title="Low Stock Products" value={stats.lowStockProducts} Icon={Boxes} />
-      </div>
-
-      {/* User & Performance Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard title="New Users This Week" value={stats.newUsersThisWeek} Icon={UsersIcon} />
         <StatCard title="Avg Order Value" value={`${stats.avgOrderValue} د.إ`} Icon={DollarSign} />
         <StatCard title="Refund Rate" value={`${stats.refundRate}%`} Icon={DollarSign} />
       </div>
